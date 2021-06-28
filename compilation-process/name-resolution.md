@@ -60,13 +60,17 @@ mod a {
 
 As a result, what does `NameResolver` actually do from the view of defining is only local variables definitions. Thus at the "Module-Tree Building" stage, we are able to use an easy concept of modules, and suppose to define the things which can be forward-used. And when we resolve names we define the things which cannot be forward-used, these are local variables, function/closure parameters, labels, and lifetimes, keeping name resolution simple.
 
-#### Ribs
+### Ribs
 
 Why we need ribs instead of raw scopes? You've already read about `let` and how ribs solve name shadowing, but there're also some cases when ribs are helpful. Each rib has a kind and each kind has lookup restrictions, e.g. when we enter a local function \(a function defined inside another function\), we're unable to use the upper function locals -- this rule is described with rib kind. There's also `Raw` kind, that is, just a rib without specific restrictions.
 
-Rib does not have to contain any definitions except local variables \(actually function parameters too\) because everything is already defined in the module tree. When a new rib is pushed onto the rib stack specific module from the current module children can be bound, it happens all the time except these cases: `let` statement rib, function parameters rib \(parameter names could collide with `const` generic parameters but we don't want this\). 
+Rib does not have to contain any definitions except local variables \(actually function parameters too\) because everything is already defined in the module tree. When a new rib is pushed onto the rib stack specific module from the current module children can be bound, it happens all the time except these cases: `let` statement rib, function parameters rib \(parameter names could collide with `const` generic parameters but we don't want this\).
 
-#### NameResolver
+#### Module vs Rib
+
+The module is a node in the module tree, that is, a scope containing definitions, whereas rib is kind of a part of an elongating sword that we poke into the module tree. At first, we start with one rib and root the module, then build up a stack of ribs checking the first child of the module until we reach a module without nested modules after that pop the current rib and check the next child of the module, and repeat that till we resolve the whole AST.
+
+### NameResolver
 
 `NameResolver` is the main class of this stage -- it resolves each name in the _party_ and reports errors if failed to resolve. 
 
@@ -81,4 +85,10 @@ All paths, including type paths, are pointing to some definition in the module t
 As a result, we've got filled `ResStorage` which contains mapped values `name nodeId -> Res`, where `Res` is a structure containing info about a resolved name.
 
 `Res` can be of different kinds as far as some names could point to definitions, some to local variables, etc. Also `Res` can be ill-formed \(of kind `Error`\) that obviously is an unresolved name.
+
+An important thing that I need to establish is that resolution \(`Res`\) points to the identifier node \(either to an identifier of name in `Def` or to a local variable identifier\) but key in `ResStorage` map is a node id of a resolved path \(`TypePath` or `PathExpr`\), except labels and lifetimes which are not paths.
+
+#### Labels and lifetimes
+
+Labels and lifetimes resolution is simple, for 
 
