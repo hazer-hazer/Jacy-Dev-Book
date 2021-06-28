@@ -4,3 +4,5 @@ Before compilation workflow, it is important to overview compiler source code st
 
 If you want to contribute to _Jacy_ this is a good place to start sorting out compiler structure. Anyway, I need to note that _Jacy_ is very WIP so some things change often and this documentation would become non-relevant one day.
 
+
+
