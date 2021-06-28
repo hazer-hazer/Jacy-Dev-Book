@@ -47,5 +47,5 @@
 
 ## Ideas
 
-* [Untitled](ideas/untitled.md)
+* [Invert Rust for usability](ideas/untitled.md)
 
