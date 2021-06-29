@@ -39,6 +39,7 @@
 * [Workflow](compilation-process/workflow.md)
 * [Module-Tree building](compilation-process/module-tree-building.md)
 * [Name resolution](compilation-process/name-resolution.md)
+* [HIR](compilation-process/hir.md)
 
 ## Bonus
 
