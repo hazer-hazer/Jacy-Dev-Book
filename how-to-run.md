@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Syntax Decisions
+title: How to run
 nav_order: 5
 description: 'Maybe... idk why, you wanna run it?'
 ---
