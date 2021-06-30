@@ -9,6 +9,9 @@ parent: Ideas
 
 # Invert Rust for usability
 
+**Please read this**
+> When reading my ideas keep in mind that it is a mind flow but not a RFC. While you read you can how my opinion is jumping back and forth, so statements described earlier can conflict with some later.
+
 This idea is really complex and it is hard to predict if it would work.
 
 As far as I want _Jacy_ to be aimed at more high-level than Rust do, I appreciate usability in the way when we save the most important aspects of Rustish safety and power with a lack of some low-level features.
@@ -103,7 +106,7 @@ If we consider that a type which is not a Copy-Type and passed without any quali
 So, let's assume we have some intrinsic method to get type of an expression as string, what will it print for function that accepts `Struct {field: 1234}`? -- `Struct` or `&Struct`.
 
 As far as we don't remove references at all (they are still required to be in the language) -- the type is... 🥁🥁🥁 `&Struct`.
-Yeah, user've written `Struct` but that's not the truth as all non-copy-types are passed by reference. And as far as we anyway separate concepts of references and values, we need it to be a reference.
+Yeah, user have written `Struct` but that's not the truth as all non-copy-types are passed by reference. And as far as we anyway separate concepts of references and values, we need it to be a reference.
 
 #### Generics (!important)
 This is really interesting problem to solve. As we do not have GC we cannot rely on the fact that everything will be cleared as we put `free` at CT.
@@ -111,9 +114,59 @@ The problem is not that `Vec<Struct>` is `&Vec<Struct>`... No, the problem is th
 Rapidly answering this question I would say, it is a `&Vec<Struct>`, because having `&Vec<&Struct>` we will require user to always have all `Struct`s alive as long as `Vec` is used, as far as it contains references.
 
 From the problem of generics I deduce maybe the most important rule about PIR:
-> **Pass by reference means prepending passed type with reference, but not that all types are reference-types by default**
+> **PIR means prepending passed non-copy type with reference, but not that all types are reference-types by default**
 
 Considering this, everything becomes more clear and I hope that I don't miss anything. 😐
+
+#### How do I actually pass-by-value? (!important)
+
+Same as generics this one is really complex question too. Keep in mind that we aren't talking about "How to pass-by-value could be implemented" from view of code generation -- this is an answered question. The problem is in the semantics and syntax.
+What am I talking about is that removing explicit reference types mostly everywhere we get lack of opportunity to qualify value type.
+Further I'm gonna describe a list of all rules about PIR, so here won't be comprehensive solution as it would be more understandable as if we just look at specific rules.
+Anyway, here it is:
+```clike
+// `Kitty` is a structure declared somewhere
+func foo(kitty: Kitty) {
+    print(kitty.msg);
+}
+
+func main {
+    let kitty = Kitty {msg: "Meow, bitch"};
+    foo(kitty);
+}
+```
+Here I meant to copy `kitty`, but because of PIR `kitty` is passed by reference.
+STOP, it is C++ and not Rust, we don't copy by default, and we don't move by default.
+So... How do I make it creating a copy of `kitty`?
+- Overload `Copy` trait?
+- Overload `Clone` trait?
+Both.
+- `Copy` - When type overloads `Copy` trait, it is always (forget about optimizations) copied, thus no reference created.
+- `Clone` - When type overloads `Clone` trait, it is passed by reference!
+
+The rule about `Clone` sounds right as we don't actually modify the source and we just make a copy explicitly.
+There's still a problem -- why do we need a reference as we cloned source, we'll just add additional work for run-time which is not actually required?
+
+#### `Clone` trait (!important)
+`Clone` trait in *Jacy* as in Rust is used to provide explicit way to copy source object.
+
+Let's look at an example similar to one above:
+```
+// Assume somewhere exists the `Kitty` type and it implements the `Clone` trait
+func foo(kitty: Kitty) {
+    print(kitty.msg);
+}
+
+func main {
+    let kitty = Kitty {msg: "Meow, bitch"};
+    foo(kitty.clone());
+} 
+```
+
+We made a clone, but is there any reason to pass it by reference?
+It is a rhetorical question, and the answer is NO, and it forces me to describe implicit-move rules.
+In C++, it is common to optimize some copy cases to move, e.g., when we return a local variable, it is moved -- it is called copy/move elision.
+In *Jacy* these cases are wider as we need not only to handle copies but also references.
 
 ### Examples
 
@@ -129,6 +182,10 @@ To move ownership there must be `move` annotation which
 
 When we create a function like `func foo(param: String)`, `param` is of type `&String`. To make it mutable type must be prepended with `mut`, so it gonna look like `mut String` which is actually a `&mut String`.
 
-Copy-types, e.g. `i32` are copied, that is, they are passed by value and copied. So, if we want to change the value of some variable containing copy type we would write `func foo(param: ref mut i32)` and must be expicitly passed with `ref mut` prefix.
+Copy-types (e.g. `i32`) passed by copy, that is, they are passed by value and copied. So, if we want to change the value of some variable containing copy type we would write `func foo(param: ref mut i32)` and must be explicitly passed with `ref mut` prefix.
 
 
+### Rules
+Finally, after reviewing some cases, I'd like to reduce them to the list of rules.
+
+TODO
