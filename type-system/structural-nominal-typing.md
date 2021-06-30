@@ -1,6 +1,13 @@
+---
+layout: default
+title: Structural/Nominal typing
+nav_order: 5
+parent: Type System
+
+# description: 
+---
+
 # Structural/Nominal typing
-
-
 
 I wanna both:
 

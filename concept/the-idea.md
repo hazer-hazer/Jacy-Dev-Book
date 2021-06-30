@@ -1,3 +1,12 @@
+---
+layout: default
+title: The Idea
+nav_order: 5
+parent: Concept
+
+# description: This stage is where name resolution begins.
+---
+
 # The Idea
 
 _Jacy_ is an experimental project that is aimed to have powerful features with ease of use but without an implicitness.

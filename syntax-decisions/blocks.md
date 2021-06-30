@@ -1,6 +1,13 @@
+---
+layout: default
+title: Blocks
+nav_order: 15
+parent: Syntax Decisions
+
+# description: This stage is where name resolution begins.
+---
+
 # Blocks
-
-
 
 Before the control-flow chapter, I have to establish rules about blocks, which are different from Rust's. All blocks \(in control-flow\) which enclosed into `{}` are last-statement typed \(it means that the last expression of this block is the value and type of the whole block\).
 

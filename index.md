@@ -1,3 +1,9 @@
+---
+layout: default
+title: Table of contents
+nav_order: 1
+---
+
 # Table of contents
 
 * [Intro](intro.md)

@@ -1,3 +1,10 @@
+---
+layout: default
+title: Config & CLI
+nav_order: 20
+parent: Code Docs
+---
+
 # Config & CLI
 
 `Config` is a common singleton class that converts CLI options to programmer-friendly structures \(`enum`s almost always\).

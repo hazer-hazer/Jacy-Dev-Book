@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Compilation Process
-nav_order: 20
+title: Ideas
+nav_order: 50
 has_children: true
 ---
 

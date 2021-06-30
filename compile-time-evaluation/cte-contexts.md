@@ -1,3 +1,12 @@
+---
+layout: default
+title: CTE Contexts
+nav_order: 10
+parent: Compile-Time Evaluation
+
+# description: This stage is where name resolution begins.
+---
+
 # CTE Contexts
 
 In some places, we cannot put run-time computed expressions, e.g. when we declare a fixed-sized array `[T; getSize()]`, `getSize()` function must be CTE.

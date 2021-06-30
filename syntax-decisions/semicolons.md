@@ -1,3 +1,12 @@
+---
+layout: default
+title: Semicolons
+nav_order: 10
+parent: Syntax Decisions
+
+# description: 
+---
+
 # Semicolons
 
 I've made a bad decision to make all `;` optional at the start of development.

@@ -1,3 +1,12 @@
+---
+layout: default
+title: HIR
+nav_order: 15
+parent: Compilation Process
+
+# description: This stage is where name resolution begins.
+---
+
 # HIR
 
 Same as Rust \(again...\) _Jacy_ has HIR - High-level Intermediate Representation. It AST-like IR that is well-formed and lowered.

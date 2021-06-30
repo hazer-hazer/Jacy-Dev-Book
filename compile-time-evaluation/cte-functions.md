@@ -1,3 +1,12 @@
+---
+layout: default
+title: CTE Functions
+nav_order: 15
+parent: Compile-Time Evaluation
+
+# description: This stage is where name resolution begins.
+---
+
 # CTE Functions
 
 A function is CTE if:

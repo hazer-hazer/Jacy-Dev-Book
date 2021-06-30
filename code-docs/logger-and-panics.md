@@ -1,4 +1,11 @@
-# Logger and Panics
+---
+layout: default
+title: Logger & Panics
+nav_order: 15
+parent: Code Docs
+---
+
+# Logger & Panics
 
 `Logger` is an important class, it has a powerful but simple interface for printing, logging, and panicking.
 

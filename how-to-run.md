@@ -1,4 +1,7 @@
 ---
+layout: default
+title: Syntax Decisions
+nav_order: 5
 description: 'Maybe... idk why, you wanna run it?'
 ---
 

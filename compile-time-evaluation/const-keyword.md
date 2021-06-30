@@ -1,4 +1,13 @@
-# const keyword
+---
+layout: default
+title: `const` keyword
+nav_order: 5
+parent: Compile-Time Evaluation
+
+# description: This stage is where name resolution begins.
+---
+
+# `const` keyword
 
 In CTE `const` used to declare, obviously, a constant which will be evaluated at compile-time and which usages will be inlined.
 

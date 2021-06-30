@@ -1,9 +1,9 @@
 ---
 layout: default
-title: Compilation Process
-nav_order: 3
+title: Concept
+nav_order: 5
 has_children: true
 ---
 
-# concept
+# Concept
 

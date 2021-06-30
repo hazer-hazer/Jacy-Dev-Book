@@ -1,3 +1,12 @@
+---
+layout: default
+title: Name resolution
+nav_order: 10
+parent: Compilation Process
+
+# description: This stage is where name resolution begins.
+---
+
 # Name resolution
 
 Now, we've got the module tree, we forward-declared everything and can resolve all names.
