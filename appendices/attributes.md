@@ -2,7 +2,7 @@
 layout: default
 title: Attributes
 nav_order: 10
-parent: Syntax Decisions
+parent: Appendices
 ---
 
 # Attributes
