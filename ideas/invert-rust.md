@@ -15,7 +15,7 @@ As far as I want _Jacy_ to be aimed at more high-level than Rust do, I appreciat
 
 ## Why not Rust-like
 
-What is problematic for me in Rust design \(this is not a list of Rust cons, no, these are things I find too explicit/low-level, etc.\).
+What is problematic for me in Rust design (this is not a list of Rust cons, no, these are things I find too explicit/low-level, etc.).
 
 ### Move by default
 
@@ -23,13 +23,15 @@ Rust is "always move" PL, which means that even primitives are moved but copied 
 
 Anyway, most of the time we pass non-Copy types as immutable references, that is, we rarely need to get a reference to modify its underlying value. Moves, as I think, used more often than `&mut` but not as often as immutable references.
 
-The solution is to have immutable references by default, that is, we replace "Move or Copy" with "Borrow or Copy". I'll call this IBD \(Immutable Borrow by Default\) further.
+The solution is to have immutable references by default, that is, we replace "Move or Copy" with "Borrow or Copy". I'll call this PIR (Pass by Immutable Reference) further.
+
+I want to note that I don't really like the idea of dividing all programming languages to groups like "pass-by-value" or "pass-by-reference", etc. Because most of the languages mix it, or "pass-by-reference" in case means "make a reference and pass-by-value", anyway I'll use PIR as it is simple to describe common cases. Just keep in mind that it mostly about assignment and passing to functions.
 
 Doing so requires "move" to be a first-class operation, it can be a specific operator, e.g. prefix `^` to move or just the `move` keyword.
 
 Example:
 
-```text
+```clike
 struct Struct {
     field: i32,
 }
@@ -71,7 +73,7 @@ func main {
     changeNum(var);
     print(var); // Prints 0
     
-    
+
     let mut a = Struct {field: 100};
     
     let mut r0 = a;
@@ -85,25 +87,41 @@ func main {
 
 I think it is actually impossible to replace Rustish "move by default" with "ref by default" and break everything. The only problems that come up from this solution appear from the view of semantics.
 
+
 #### Copy-Types borrowing
 
-Having IBD we cannot get rid of references in semantics, as far as we don't borrow Copy-types and so need a way to pass them by reference. E.g. we have a variable storing `i32`, that is, it won't be passed as IBD, and if we need to have a function modifying `i32` we need to explicitly pass it by reference.
+Having PIR we cannot get rid of references in semantics, as far as we don't borrow Copy-types and so need a way to pass them by reference. E.g. we have a variable storing `i32`, that is, it won't be passed as PIR, and if we need to have a function modifying `i32` we need to explicitly pass it by reference.
 
 Thus let's imagine we have `ref` keyword which is used in both function signature and passing to function.
 
 #### Lack of explicitness
 
-E.g. in Rust when we want to slice an array, we write `let slice = &array[from..to]`, 'cause the size of the slice is not known at compile-time, so we cannot allocate it on the stack. In IBD it would be `let slice = array[from..to]`, as far as the slice is not a Copy-Type \(same in Rust\). That's just an example of what we hide with IBD but not a problem.
+E.g. in Rust when we want to slice an array, we write `let slice = &array[from..to]`, 'cause the size of the slice is not known at compile-time, so we cannot allocate it on the stack. In PIR it would be `let slice = array[from..to]`, as far as the slice is not a Copy-Type (same in Rust). That's just an example of what we hide with PIR but not a problem.
 
+#### Actual types
+If we consider that a type which is not a Copy-Type and passed without any qualifiers -- it is a reference to type, then this is a reference type.
+So, let's assume we have some intrinsic method to get type of an expression as string, what will it print for function that accepts `Struct {field: 1234}`? -- `Struct` or `&Struct`.
 
+As far as we don't remove references at all (they are still required to be in the language) -- the type is... 🥁🥁🥁 `&Struct`.
+Yeah, user've written `Struct` but that's not the truth as all non-copy-types are passed by reference. And as far as we anyway separate concepts of references and values, we need it to be a reference.
 
-#### Examples
+#### Generics (!important)
+This is really interesting problem to solve. As we do not have GC we cannot rely on the fact that everything will be cleared as we put `free` at CT.
+The problem is not that `Vec<Struct>` is `&Vec<Struct>`... No, the problem is that is it `&Vec<Struct>` or `&Vec<&Struct>`?!
+Rapidly answering this question I would say, it is a `&Vec<Struct>`, because having `&Vec<&Struct>` we will require user to always have all `Struct`s alive as long as `Vec` is used, as far as it contains references.
 
-Let's look at different kinds of data passes:
+From the problem of generics I deduce maybe the most important rule about PIR:
+> **Pass by reference means prepending passed type with reference, but not that all types are reference-types by default**
+
+Considering this, everything becomes more clear and I hope that I don't miss anything. 😐
+
+### Examples
+
+#### "Passes"
 
 **Assignment**
 
-`a = b` in Rust is `a = move b` but with IBD it will become `a = &b`.
+`a = b` in Rust is `a = move b` but with PIR it will become `a = &b`.
 
 To move ownership there must be `move` annotation which 
 
@@ -112,6 +130,5 @@ To move ownership there must be `move` annotation which
 When we create a function like `func foo(param: String)`, `param` is of type `&String`. To make it mutable type must be prepended with `mut`, so it gonna look like `mut String` which is actually a `&mut String`.
 
 Copy-types, e.g. `i32` are copied, that is, they are passed by value and copied. So, if we want to change the value of some variable containing copy type we would write `func foo(param: ref mut i32)` and must be expicitly passed with `ref mut` prefix.
-
 
 

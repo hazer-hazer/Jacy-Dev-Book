@@ -40,3 +40,4 @@ nav_order: 1
   * [Attributes](bonus/attributes.md)
 * [Ideas](ideas/index.md)
   * [Invert Rust for usability](ideas/untitled.md)
+  
