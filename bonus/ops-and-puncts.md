@@ -1,4 +1,9 @@
 ---
+layout: default
+title: Operators and punctuations
+nav_order: 10
+parent: Syntax Decisions
+
 description: Info about punctuations you can find here.
 ---
 
