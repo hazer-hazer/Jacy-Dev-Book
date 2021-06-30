@@ -28,7 +28,7 @@ nav_order: 1
   * [Workflow](compilation-process/workflow.md)
   * [HIR](compilation-process/hir.md)
 * [How to run](how-to-run.md)
-* [CTE Evaluation](compile-time-evaluation/index.md)
+* [Compile-Time Evaluation](compile-time-evaluation/index.md)
   * [CTE Expressions](compile-time-evaluation/cte-expressions.md)
   * [CTE Functions](compile-time-evaluation/cte-functions.md)
   * [const keyword](compile-time-evaluation/const-keyword.md)
