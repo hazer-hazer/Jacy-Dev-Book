@@ -1,6 +1,6 @@
 ---
 layout: default
-title: `const` keyword
+title: const keyword
 nav_order: 5
 parent: Compile-Time Evaluation
 
