@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Intro](Intro.md)
+* [Intro](intro.md)
 * [How to run](how-to-run.md)
 
 ## Concept
