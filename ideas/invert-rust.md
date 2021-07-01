@@ -34,7 +34,7 @@ Doing so requires "move" to be a first-class operation, it can be a specific ope
 
 Example:
 
-```clike
+```
 struct Struct {
     field: i32,
 }
@@ -124,7 +124,7 @@ Same as generics this one is really complex question too. Keep in mind that we a
 What am I talking about is that removing explicit reference types mostly everywhere we get lack of opportunity to qualify value type.
 Further I'm gonna describe a list of all rules about PIR, so here won't be comprehensive solution as it would be more understandable as if we just look at specific rules.
 Anyway, here it is:
-```clike
+```
 // `Kitty` is a structure declared somewhere
 func foo(kitty: Kitty) {
     print(kitty.msg);
@@ -188,4 +188,53 @@ Copy-types (e.g. `i32`) passed by copy, that is, they are passed by value and co
 ### Rules
 Finally, after reviewing some cases, I'd like to reduce them to the list of rules.
 
-TODO
+###### 1. If non-copy type passed to function or assigned, it is passed by immutable reference
+
+Examples:
+```
+func foo(name: String) {
+    print("My name is $name");
+}
+
+func main {
+    let savedName = String::from("Mr. Doctor");
+    let name = savedName; // `savedName` is not either copied or moved -- `name` is an immutable reference to `savedName`
+    foo(name); // `name` is not moved -- it is passed by immutable reference
+}
+```
+
+###### 2. Moves are explicit in signatures and in calls
+
+Example:
+```
+func foo(move name: String) {
+    print("My name is $name");
+}
+
+func main {
+    let name = "Brendan Eich";
+    foo(move name); // `name` must be moved explicitly
+}
+```
+
+###### 3. Data, stored in structures must be explicitly qualified as reference
+
+Example:
+```
+struct Data {
+    inner: Vec<i32>
+}
+
+struct Struct {
+    data: &Data,
+}
+
+func main {
+    let data = Data {inner: Vec::from([1, 2, 3])};
+    let s = Struct {data: &data};
+
+    // let s2 = Struct {data: data} // Error: expected `&Data` type for `data`
+}
+```
+
+Actually, this is just an example where we omit usage of lifetimes. No-lifetimes solutions gonna be researched in further ideas.
