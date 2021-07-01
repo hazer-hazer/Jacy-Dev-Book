@@ -172,13 +172,13 @@ In *Jacy* these cases are wider as we need not only to handle copies but also re
 
 #### "Passes"
 
-**Assignment**
+##### Assignment
 
 `a = b` in Rust is `a = move b` but with PIR it will become `a = &b`.
 
 To move ownership there must be `move` annotation which 
 
-**Functions**
+##### Functions
 
 When we create a function like `func foo(param: String)`, `param` is of type `&String`. To make it mutable type must be prepended with `mut`, so it gonna look like `mut String` which is actually a `&mut String`.
 
