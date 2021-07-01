@@ -29,7 +29,9 @@ Operators in _Jacy_ are not something internally special in comparison with func
 | `a << b` | `std::ops::Shl` |
 | `a >> b` | `std::ops::Shr` |
 | `a ^ b` | `std::ops::Xor` |
-| `a < b`, `a > b`, `a >= b`, `a <= b` | `std::ops::Cmp` |
+| `a < b`, `a > b`, `a >= b`, `a <= b`, `a <=> b` | `std::ops::Cmp` |
+| `a == b`, `a != b` | `std::ops::Eq` |
+| `a === b`, `a !== b` | ??? (Not described) |
 | `a..b` | `std::ops::Range` |
 | `a..=b` | `std::ops::RangeIncl` |
 | `..b` | `std::ops::RangeTo` |
@@ -82,15 +84,17 @@ Precedence (from highest to lowest)
 | `a?` |
 | `-a`<br/>`*a`<br/>`!a`<br/>`&a`<br/>`&mut a` |
 | `a as b` |
+| `a ** b` |
 | `a * b`<br/>`a / b`<br/>`a % b` |
 | `a + b`<br/>`a - b` |
 | `a << b`<br/>`a >> b` |
 | `a & b` |
 | `a ^ b` |
 | `a | b` |
-| `a == b`<br/>`a != b`<br/>`a < b`<br/>`a > b`<br/>`a <= b`<br/>`a >= b` |
+| `a == b`<br/>`a != b`<br/>`a === b`<br/>`a !== b`<br/>`a < b`<br/>`a > b`<br/>`a <= b`<br/>`a >= b`<br/>`<=>` |
 | `a and b` |
 | `a or b` |
 | `a..b`<br/>`a..`<br/>`..`<br/>`..=b`<br/>`..b`<br/>`a..=b` |
-| `a = b`<br/>`a += b`<br/>`a -= b`<br/>`a *= b`<br/>`a /= b`<br/>`a %= b`<br/>`a &= b`<br/>`a |= b`<br/>`a ^= b`<br/>`a <<= b`<br/>`a >>= b` |
+| `a |> b` |
+| `a = b`<br/>`a += b`<br/>`a -= b`<br/>`a *= b`<br/>`a /= b`<br/>`a %= b`<br/>`a **= b`<br/>`a &= b`<br/>`a |= b`<br/>`a ^= b`<br/>`a <<= b`<br/>`a >>= b` |
 | `return a`<br/>`break a`<br/>`() -> {}` |
