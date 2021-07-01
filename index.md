@@ -39,5 +39,5 @@ nav_order: 1
   * [Operators and punctuations](bonus/ops-and-puncts.md)
   * [Attributes](bonus/attributes.md)
 * [Ideas](ideas/index.md)
-  * [Invert Rust for usability](ideas/untitled.md)
+  * [Invert Rust for usability](ideas/invert-rust.md)
   
