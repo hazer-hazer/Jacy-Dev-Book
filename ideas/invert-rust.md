@@ -188,7 +188,7 @@ Copy-types (e.g. `i32`) passed by copy, that is, they are passed by value and co
 ### Rules
 Finally, after reviewing some cases, I'd like to reduce them to the list of rules.
 
-###### 1. If non-copy type passed to function or assigned, it is passed by immutable reference
+#### 1. If non-copy type passed to function or assigned, it is passed by immutable reference
 
 Examples:
 ```
@@ -203,7 +203,7 @@ func main {
 }
 ```
 
-###### 2. Moves are explicit in signatures and in calls
+#### 2. Moves are explicit in signatures and in calls
 
 Example:
 ```
@@ -217,7 +217,7 @@ func main {
 }
 ```
 
-###### 3. Data, stored in structures must be explicitly qualified as reference
+#### 3. Data, stored in structures must be explicitly qualified as reference
 
 Example:
 ```
