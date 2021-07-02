@@ -14,7 +14,7 @@ Operators in _Jacy_ are not something internally special in comparison with func
 ### Operators in expressions
 
 | Operator | Trait to overload |
-| :--- | :--- |
+| :------: | :---------------- |
 | `a + b` | `std::ops::Add` |
 | `a - b` | `std::ops::Sub` |
 | `a * b` | `std::ops::Mul` |
