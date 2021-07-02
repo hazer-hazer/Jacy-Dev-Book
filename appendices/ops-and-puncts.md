@@ -80,21 +80,21 @@ Precedence (from highest to lowest)
 | :-----: |
 | `a::b` |
 | `a.b` |
-| `a()`<br/>`a[]` |
+| `a()`, `a[]` |
 | `a?` |
-| `-a`<br/>`*a`<br/>`!a`<br/>`&a`<br/>`&mut a` |
+| `-a`, `*a`, `!a`, `&a`, `&mut a` |
 | `a as b` |
 | `a ** b` |
-| `a * b`<br/>`a / b`<br/>`a % b` |
-| `a + b`<br/>`a - b` |
-| `a << b`<br/>`a >> b` |
+| `a * b`, `a / b`, `a % b` |
+| `a + b`, `a - b` |
+| `a << b`, `a >> b` |
 | `a & b` |
 | `a ^ b` |
 | `a | b` |
-| `a == b`<br/>`a != b`<br/>`a === b`<br/>`a !== b`<br/>`a < b`<br/>`a > b`<br/>`a <= b`<br/>`a >= b`<br/>`<=>` |
+| `a == b`, `a != b`, `a === b`, `a !== b`, `a < b`, `a > b`, `a <= b`, `a >= b`, `<=>` |
 | `a and b` |
 | `a or b` |
-| `a..b`<br/>`a..`<br/>`..`<br/>`..=b`<br/>`..b`<br/>`a..=b` |
+| `a..b`, `a..`, `..`, `..=b`, `..b`, `a..=b` |
 | `a |> b` |
-| `a = b`<br/>`a += b`<br/>`a -= b`<br/>`a *= b`<br/>`a /= b`<br/>`a %= b`<br/>`a **= b`<br/>`a &= b`<br/>`a |= b`<br/>`a ^= b`<br/>`a <<= b`<br/>`a >>= b` |
-| `return a`<br/>`break a`<br/>`() -> {}` |
+| `a = b`, `a += b`, `a -= b`, `a *= b`, `a /= b`, `a %= b`, `a **= b`, `a &= b`, `a |= b`, `a ^= b`, `a <<= b`, `a >>= b` |
+| `return a`, `break a`, `() -> {}` |
