@@ -35,9 +35,9 @@ nav_order: 1
   * [CTE Contexts](compile-time-evaluation/cte-contexts.md)
   * [Intro](compile-time-evaluation/cte.md)
 * [Table of contents](index.md)
-* [Appendices](bonus/index.md)
-  * [Operators and punctuations](bonus/ops-and-puncts.md)
-  * [Attributes](bonus/attributes.md)
+* [Appendices](appendices/index.md)
+  * [Operators and punctuations](appendices/ops-and-puncts.md)
+  * [Attributes](appendices/attributes.md)
 * [Ideas](ideas/index.md)
   * [Invert Rust for usability](ideas/invert-rust.md)
   
