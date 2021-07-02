@@ -29,9 +29,9 @@ Operators in _Jacy_ are not something internally special in comparison with func
 | `a << b` | `std::ops::Shl` |
 | `a >> b` | `std::ops::Shr` |
 | `a ^ b` | `std::ops::Xor` |
-| `a < b`, `a > b`, `a >= b`, `a <= b`, `a <=> b` | `std::ops::Cmp` |
-| `a == b`, `a != b` | `std::ops::Eq` |
-| `a === b`, `a !== b` | ??? (Not described) |
+| `a < b` &nbsp; &nbsp; `a > b` &nbsp; &nbsp; `a >= b` &nbsp; &nbsp; `a <= b` &nbsp; &nbsp; `a <=> b` | `std::ops::Cmp` |
+| `a == b` &nbsp; &nbsp; `a != b` | `std::ops::Eq` |
+| `a === b` &nbsp; &nbsp; `a !== b` | ??? (Not described) |
 | `a..b` | `std::ops::Range` |
 | `a..=b` | `std::ops::RangeIncl` |
 | `..b` | `std::ops::RangeTo` |
@@ -80,21 +80,21 @@ Precedence (from highest to lowest)
 | :-----: |
 | `a::b` |
 | `a.b` |
-| `a()`, `a[]` |
+| `a()` &nbsp; &nbsp; `a[]` |
 | `a?` |
-| `-a`, `*a`, `!a`, `&a`, `&mut a` |
+| `-a` &nbsp; &nbsp; `*a` &nbsp; &nbsp; `!a` &nbsp; &nbsp; `&a` &nbsp; &nbsp; `&mut a` |
 | `a as b` |
 | `a ** b` |
-| `a * b`, `a / b`, `a % b` |
-| `a + b`, `a - b` |
-| `a << b`, `a >> b` |
+| `a * b` &nbsp; &nbsp; `a / b` &nbsp; &nbsp; `a % b` |
+| `a + b` &nbsp; &nbsp; `a - b` |
+| `a << b` &nbsp; &nbsp; `a >> b` |
 | `a & b` |
 | `a ^ b` |
 | `a | b` |
-| `a == b`, `a != b`, `a === b`, `a !== b`, `a < b`, `a > b`, `a <= b`, `a >= b`, `<=>` |
+| `a == b` &nbsp; &nbsp; `a != b` &nbsp; &nbsp; `a === b` &nbsp; &nbsp; `a !== b` &nbsp; &nbsp; `a < b` &nbsp; &nbsp; `a > b` &nbsp; &nbsp; `a <= b` &nbsp; &nbsp; `a >= b` &nbsp; &nbsp; `<=>` |
 | `a and b` |
 | `a or b` |
-| `a..b`, `a..`, `..`, `..=b`, `..b`, `a..=b` |
+| `a..b` &nbsp; &nbsp; `a..` &nbsp; &nbsp; `..` &nbsp; &nbsp; `..=b` &nbsp; &nbsp; `..b` &nbsp; &nbsp; `a..=b` |
 | `a |> b` |
-| `a = b`, `a += b`, `a -= b`, `a *= b`, `a /= b`, `a %= b`, `a **= b`, `a &= b`, `a |= b`, `a ^= b`, `a <<= b`, `a >>= b` |
-| `return a`, `break a`, `() -> {}` |
+| `a = b` &nbsp; &nbsp; `a += b` &nbsp; &nbsp; `a -= b` &nbsp; &nbsp; `a *= b` &nbsp; &nbsp; `a /= b` &nbsp; &nbsp; `a %= b` &nbsp; &nbsp; `a **= b` &nbsp; &nbsp; `a &= b` &nbsp; &nbsp; `a |= b` &nbsp; &nbsp; `a ^= b` &nbsp; &nbsp; `a <<= b` &nbsp; &nbsp; `a >>= b` |
+| `return a` &nbsp; &nbsp; `break a` &nbsp; &nbsp; `() -> {}` |
