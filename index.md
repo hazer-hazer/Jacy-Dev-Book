@@ -40,4 +40,5 @@ nav_order: 1
   * [Attributes](appendices/attributes.md)
 * [Ideas](ideas/index.md)
   * [Invert Rust for usability](ideas/invert-rust.md)
+  * [Types as first-class citizens](ideas/types-as-first-class-citizens.md)
   
