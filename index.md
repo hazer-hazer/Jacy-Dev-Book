@@ -6,6 +6,7 @@ nav_order: 1
 
 # Table of contents
 
+* [Goal](goal.md)
 * [Intro](intro.md)
 * [Concept](concept/index.md)
   * [The Idea](concept/the-idea.md)
