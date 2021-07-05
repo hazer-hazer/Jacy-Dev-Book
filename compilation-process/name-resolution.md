@@ -97,6 +97,11 @@ As a result, we've got filled `ResStorage` which contains mapped values `name no
 
 An important thing that I need to establish is that resolution \(`Res`\) points to the identifier node \(either to an identifier of name in `Def` or to a local variable identifier\) but key in `ResStorage` map is a node id of a resolved path \(`TypePath` or `PathExpr`\), except labels and lifetimes which are not paths.
 
+#### Patterns
+
+What about patterns? We talked about `let` statement and `func` parameters, but they are patterns.
+Actually, there's nothing hard in pattern name resolution -- every identifier-like pattern is actually a binding, as we unable to match name against name.
+
 #### Labels and lifetimes
 
 Labels and lifetimes resolution is simple, for 
