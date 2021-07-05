@@ -100,7 +100,7 @@ An important thing that I need to establish is that resolution \(`Res`\) points 
 #### Patterns
 
 What about patterns? We talked about `let` statement and `func` parameters, but they are patterns.
-Actually, there's nothing hard in pattern name resolution -- every identifier-like pattern is actually a binding, as we unable to match name against name.
+Actually, there's nothing hard in pattern name resolution -- mostly every identifier, except PathExpr, that appeared in pattern is actually a binding, as we unable to match name against name.
 
 #### Labels and lifetimes
 
