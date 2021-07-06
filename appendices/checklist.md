@@ -1,6 +1,13 @@
+---
+layout: default
+title: Checklist
+nav_order: 11
+parent: Appendices
+---
+
 # *Jacy* Programming language [checklist](https://www.mcmillen.dev/language_checklist.html)
 
-
+```
 You appear to be advocating a new:
 [x] functional  [x] imperative  [x] object-oriented  [ ] procedural [ ] stack-based
 [x] "multi-paradigm"  [ ] lazy  [x] eager  [x] statically-typed  [ ] dynamically-typed
@@ -102,3 +109,4 @@ In conclusion, this is what I think of you:
 [ ] You have some interesting ideas, but this won't fly.
 [ ] This is a bad language, and you should feel bad for inventing it.
 [ ] Programming in this language is an adequate punishment for inventing it.
+```
