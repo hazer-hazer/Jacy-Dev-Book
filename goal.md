@@ -17,8 +17,7 @@ let bor = &mut value;
 print(value); // Prints `1000`
 ```
 
-**Non-Copy types are passed by reference**
-
+#### Non-Copy types are passed by reference
 
 #### *Jacy* supports structural sub-typing with tuples
 
@@ -83,7 +82,7 @@ impl A {
 }
 ```
 
-__*Jacy* respects composition over inheritance__
+#### *Jacy* respects composition over inheritance
 
 #### Struct implementations can be extended
 
