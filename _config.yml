@@ -4,3 +4,5 @@ logo: "/assets/JacyLarge.png"
 aux_links:
   "Jacy on GitHub":
     - "//github.com/hazer-hazer/Jacy"
+
+color_scheme: main
