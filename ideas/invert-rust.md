@@ -171,6 +171,48 @@ It is a rhetorical question, and the answer is NO, and it forces me to describe 
 In C++, it is common to optimize some copy cases to move, e.g., when we return a local variable, it is moved -- it is called copy/move elision.
 In *Jacy* these cases are wider as we need not only to handle copies but also references.
 
+#### Patterns
+
+`let` bindings and `func` parameters are patterns, also there're `if let` and `match`.
+Do patterns need to be PIR or not? -- Actually, they MUST.
+
+Let's assume we've got:
+```
+struct StructType {
+    field: Vec<i32>,
+}
+```
+Note that `StructType.field` is not of type `&Vec<i32>`, it is non-reference, because PIR is only about passing values.
+
+```
+let a: StructType = structInstance; // `structInstance` is non-copy type
+
+// Desugared to
+let a: &StructType = &structInstance;
+// or
+let ref a: &StructType = structInstance;
+```
+
+```
+func foo(param: StructType);
+foo(structInstance);
+
+// Desugared to
+func foo(param: &StructType);
+foo(&structInstance);
+```
+
+```
+match a {
+    StructType {field} => // ...
+}
+
+// Desugared to
+match &a {
+    StructType {ref field} => // ...
+}
+```
+
 ### Examples
 
 #### "Passes"
