@@ -84,12 +84,15 @@ func main {
 }
 ```
 
+Rust revolves around an idea of owning, as *Jacy* does, thus being hardly inspired by Rust we can consider "making a reference" not being a "usage".
+What this means is just all about how we see the language to take a place in world of type theory, saying that we've got affine type, that is, value must be used one or no times, we can say that some cases are not under these rules.
+That's what Rust does -- making reference to some value, we do not use the value just immutably borrowing it. Considering this, our hands are clean 😃.
+Anyway, affine types in Rust give us some cleaner code than PIR, as we make references implicitly, thus it opens a vista to do break linearity of program.
 
 
 ### The problems I see
 
 I think it is actually impossible to replace Rustish "move by default" with "ref by default" and break everything. The only problems that come up from this solution appear from the view of semantics.
-
 
 #### Copy-Types borrowing
 
