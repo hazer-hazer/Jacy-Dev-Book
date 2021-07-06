@@ -8,3 +8,26 @@ aux_links:
 aux_links_new_tab: true
 
 color_scheme: main
+
+back_to_top: true
+back_to_top_text: "Back to top"
+
+last_edit_timestamp: true
+last_edit_time_format: "%b %e %Y at %I:%M %p"
+
+gh_edit_link: true
+gh_edit_link_text: "Contribute to this page on GitHub"
+gh_edit_repository: "https://github.com/hazer-hazer/Jacy"
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
