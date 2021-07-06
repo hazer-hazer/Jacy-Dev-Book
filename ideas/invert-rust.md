@@ -219,9 +219,14 @@ match &a {
 
 ##### Assignment
 
-`a = b` in Rust is `a = move b` but with PIR it will become `a = &b`.
+`a = b` in Rust is `a = move b` but with PIR it will become `a = &b`, if `b` is another variable of non-copy type.
 
-To move ownership there must be `move` annotation which 
+Let's look at examples to grasp when variable is automatically becomes a reference and where not:
+```
+let a = StructType {field: Vec::new()};
+let b = a;
+```
+Here, `a` is of type `StructType` because of move elision, but `b` would be `&StructType` as it is automatically borrowed.
 
 ##### Functions
 
@@ -233,7 +238,7 @@ Copy-types (e.g. `i32`) passed by copy, that is, they are passed by value and co
 ### Rules
 Finally, after reviewing some cases, I'd like to reduce them to the list of rules.
 
-#### 1. If non-copy type passed to function or assigned, it is passed by immutable reference
+#### 1. If non-copy type passed to function or assigned, it is borrowed
 
 Examples:
 ```
