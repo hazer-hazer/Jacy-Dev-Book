@@ -13,6 +13,7 @@ This is a list of features and examples I wish would be possible in *Jacy*.
 - *Jacy* follows Rust' borrowing rules
 
 #### References
+
 ```
 let a = 123;
 let b = &a; // Borrow `a`
@@ -36,6 +37,7 @@ func foo(tup: (str, float, int));
 ### *Jacy* is functional
 
 #### Pattern matching
+
 ```
 let a = (1, 2, 3);
 let (f, s, t) = a;
@@ -46,6 +48,7 @@ match a {
 ```
 
 ##### It is possible to ignore non-important fields
+
 ```
 match a {
     (f, ...) => // Do something with `f` only
@@ -53,6 +56,7 @@ match a {
 ```
 
 ##### Matched expression can be borrowed
+
 ```
 match a {
     (ref f, ...) => // Do something with `f` as reference to `a.0`
