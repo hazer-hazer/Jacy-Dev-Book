@@ -1,11 +1,3 @@
----
-layout: default
-title: Invert Rust for usability
-nav_order: 5
-parent: Ideas
-
-# description: This stage is where name resolution begins.
----
 
 # Invert Rust for usability
 
