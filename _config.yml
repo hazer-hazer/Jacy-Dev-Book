@@ -1,2 +1,6 @@
 remote_theme: pmarsceill/just-the-docs
 logo: "/assets/JacyLarge.png"
+
+aux_links:
+  "Jacy on GitHub":
+    - "//github.com/hazer-hazer/Jacy"
