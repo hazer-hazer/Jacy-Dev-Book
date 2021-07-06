@@ -14,7 +14,7 @@ The idea is growing from powerfulness of compile-time evaluation. All types must
 At first, I thought it would be nice if we could use `type` for declaring not only aliases to types but also use them in the way as type variables.
 Types are items, all items are forwardly declared, that is, if some type is declared in a scope, it can be used before it actually appears in the code.
 Example:
-```
+```rust
 func foo {
     let a: MyType = 123;
 
@@ -23,7 +23,7 @@ func foo {
 ```
 
 For me, it looks problematic as the control flow with types would be either impossible or weird.
-```
+```rust
 func foo {
     if a {
         a = i64;
@@ -39,7 +39,7 @@ Actually, control-flow for types is useless in the way of using declared aliases
 ### Dynamic type checks
 
 Example:
-```
+```rust
 func foo<T>(arg: T) {
     if T == bool {
         print("We've got 'bool'");

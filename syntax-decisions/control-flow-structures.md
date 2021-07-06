@@ -40,7 +40,7 @@ We've got `if`/`if let` as an expression, `loop` as an expression, `while`/`whil
 
 Syntax is following:
 
-```rust
+```antlr4
 ifLetExpression: 'if let' pattern '=' expr block
 ```
 
@@ -143,7 +143,7 @@ let a = if myval {
 
 The syntax is the following:
 
-```rust
+```antlr4
 forLoop: 'for' pattern 'in' expression block
 ```
 
