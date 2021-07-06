@@ -1,3 +1,9 @@
+---
+layout: default
+title: Goal
+nav_order: 3
+---
+
 # Goal
 
 This is a list of features and examples I wish would be possible in *Jacy*.
