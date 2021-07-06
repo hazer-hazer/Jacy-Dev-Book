@@ -14,7 +14,7 @@ This is a list of features and examples I wish would be possible in *Jacy*.
 
 #### References
 
-```
+```rust
 let a = 123;
 let b = &a; // Borrow `a`
 
@@ -28,7 +28,7 @@ print(value); // Prints `1000`
 
 #### *Jacy* supports structural sub-typing with tuples
 
-```
+```rust
 let t = ("abcdef", 2.0, 123);
 
 func foo(tup: (str, float, int));
@@ -38,7 +38,7 @@ func foo(tup: (str, float, int));
 
 #### Pattern matching
 
-```
+```rust
 let a = (1, 2, 3);
 let (f, s, t) = a;
 
@@ -49,7 +49,7 @@ match a {
 
 ##### It is possible to ignore non-important fields
 
-```
+```rust
 match a {
     (f, ...) => // Do something with `f` only
 }
@@ -57,7 +57,7 @@ match a {
 
 ##### Matched expression can be borrowed
 
-```
+```rust
 match a {
     (ref f, ...) => // Do something with `f` as reference to `a.0`
 }
@@ -65,14 +65,14 @@ match a {
 
 ##### Lambdas (closures)
 
-```
+```rust
 let l = x -> x * 2;
 print(l(2)); // 4
 ```
 
 ##### Pipeline operator
 
-```
+```rust
 2 |> l |> print; // 4
 ```
 
@@ -80,7 +80,7 @@ print(l(2)); // 4
 
 Claiming that OOP means that PL has structures containing data and methods -- *Jacy* is OOP language.
 
-```
+```rust
 struct A {
     field: i32,
 }
@@ -96,7 +96,7 @@ impl A {
 
 #### Struct implementations can be extended
 
-```
+```rust
 struct A {
     field: i32,
 }
@@ -112,7 +112,7 @@ Jacy doesn't have Garbage Collector, as far as it is statically sets `free` poin
 
 ### *Jacy* respects Compile-Time Evaluation
 
-```
+```rust
 const a = 123;
 
 const func fib(n: i32): u64 = match n {
