@@ -15,7 +15,7 @@ I wanna note that `const` is a synonym for compile-time evaluable expression, so
 
 `const` must be immediately assigned when declared. Syntax:
 
-```text
+```antlr4
 'const' IDENT '=' expr
 ```
 
@@ -23,7 +23,7 @@ After `'='` goes an expression which MUST also be CTE, but not exactly another `
 
 The difference between `let` and `const` is that `const` is an item, whereas `let` is a statement. As being an item `const` can be placed mostly on any level, including top-level:
 
-```text
+```antlr4
 const a = 10
 
 trait MyTrait {

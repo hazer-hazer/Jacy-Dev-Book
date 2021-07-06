@@ -16,7 +16,7 @@ A function is CTE if:
 
 We mark a function as CTE so:
 
-```text
+```rust
 const func foo() {}
 ```
 
@@ -28,7 +28,7 @@ In another way, the result of the function won't be inlined in usage places, but
 
 Another approach is more complex for the compiler but simple for the user: If we declare a function and use it in CTE context when compiler goes to this function and checks that it's CTE function. Anyway, if we use this function in a run-time context it won't be inlined and evaluated at compile-time. Example:
 
-```text
+```rust
 // Just a simple function that returns `1`
 func foo = 1
 
@@ -43,7 +43,7 @@ func myRawFunc {
 
 After `const` expansion this code will look (structurally) like that:
 
-```text
+```rust
 func foo() = 1
 
 const func myConstFunc() {

@@ -45,7 +45,7 @@ This is the most complex way, but it likely will allow us to save all preferred 
 
 Example:
 
-```text
+```rust
 let a = (name: 123)
 let b = (param: i32) -> param + 1
 ```

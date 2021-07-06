@@ -13,7 +13,7 @@ The first idea was to use `var` and `val`, it's pretty nice, we don't have weird
 
 The syntax:
 
-```text
+```rust
 'let' pattern (':' type)? ('=' expr)?
 ```
 

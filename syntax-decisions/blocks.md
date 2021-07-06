@@ -17,7 +17,7 @@ While Rust has rules about the absence of `;`, _Jacy_ does not have required `;`
 
   we don't use this value
 
-```text
+```rust
 {true}
 ```
 
@@ -25,7 +25,7 @@ While Rust has rules about the absence of `;`, _Jacy_ does not have required `;`
 
   type of `myval` or `()` (unit type)
 
-```text
+```rust
 let a = {if myval => myval}
 ```
 
@@ -33,7 +33,7 @@ let a = {if myval => myval}
 
   value
 
-```text
+```rust
 {if myval => myval}
 ```
 
@@ -43,13 +43,13 @@ So, we already can establish some requirements about type analysis -- we need un
 
 In this thing, _Jacy_ blocks differ from Rust's. I really appreciate the opportunity to declare one-line blocks without `{}`. As far as I wanna _Jacy_ to be consistent, and I established that syntax of `match` expression arms use `=>`, for one-line blocks we use the same syntax. Let's look at the syntax:
 
-```text
+```rust
 while true => print('kek')
 ```
 
 After `=>` we can only place one expression, and if we put `{}` compiler will give a warning because there's no need to put `{}` after `=>`. So, the syntax looks kind of like that:
 
-```text
+```rust
 block: `=>` expr | blockExpression | ';';
 ```
 
@@ -63,7 +63,7 @@ This is a feature that satisfies one definite rule from Zen -- prototyping ease.
 
 Examples:
 
-```text
+```rust
 if myval;
 else doSomething()
 ```

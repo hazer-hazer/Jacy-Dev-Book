@@ -40,7 +40,7 @@ We've got `if`/`if let` as an expression, `loop` as an expression, `while`/`whil
 
 Syntax is following:
 
-```text
+```rust
 ifLetExpression: 'if let' pattern '=' expr block
 ```
 
@@ -54,7 +54,7 @@ ifLetExpression: 'if let' pattern '=' expr block
 
 Here are some thoughts about possible solutions.
 
-```text
+```rust
 while myval {
     // Do something if `myval` is true
 } else {
@@ -80,7 +80,7 @@ It is an obvious solution, but has some problems:
 
 Problem example:
 
-```text
+```rust
 let a = while myval {
     if somethingElse => break true
 } else {
@@ -96,7 +96,7 @@ For now, I cannot come up with any good solution, so `while` is a statement. Any
 
 **IDEA \#1** This one requires static-analysis (maybe complex):
 
-```text
+```rust
 let a = while myval {
     if somethingElse => break true
     break false
@@ -109,7 +109,7 @@ We can analyze this code and say that each `break`-value is `bool`, so we allow 
 
 What about this?:
 
-```text
+```rust
 let a = while myval {
     if somethingElse => break true
 } else {
@@ -121,7 +121,7 @@ Each `break`-value is of type `bool`, so we allow it because the alternative wor
 
 We required some static-analysis on `while`, which is, as I see, is not really complex and not differs much from the `if` expression value inference. The only problem is that the use cases of `while-else` are not common, especially when we cover only this use case:
 
-```text
+```rust
 let a = if myval {
     let mut result = false
     while myval {
@@ -143,13 +143,13 @@ let a = if myval {
 
 The syntax is the following:
 
-```text
+```rust
 forLoop: 'for' pattern 'in' expression block
 ```
 
 Examples:
 
-```text
+```rust
 // In C++ we write
 for (int i = 0; i < something; i++) {
     // ...
