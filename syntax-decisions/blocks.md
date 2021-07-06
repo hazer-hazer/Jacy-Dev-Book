@@ -9,7 +9,7 @@ parent: Syntax Decisions
 
 # Blocks
 
-Before the control-flow chapter, I have to establish rules about blocks, which are different from Rust's. All blocks \(in control-flow\) which enclosed into `{}` are last-statement typed \(it means that the last expression of this block is the value and type of the whole block\).
+Before the control-flow chapter, I have to establish rules about blocks, which are different from Rust's. All blocks (in control-flow) which enclosed into `{}` are last-statement typed (it means that the last expression of this block is the value and type of the whole block).
 
 While Rust has rules about the absence of `;`, _Jacy_ does not have required `;`, so this rule cannot be applied in the same way. Let's look at some examples:
 
@@ -23,7 +23,7 @@ While Rust has rules about the absence of `;`, _Jacy_ does not have required `;`
 
 * This block will produce a type error because it either has a result of
 
-  type of `myval` or `()` \(unit type\)
+  type of `myval` or `()` (unit type)
 
 ```text
 let a = {if myval => myval}
@@ -59,7 +59,7 @@ One important thing is that function declaration has different syntax and rules 
 
 **Ignoring blocks**
 
-This is a feature that satisfies one definite rule from Zen -- prototyping ease. It is a pretty simple thing -- we can ignore any block \(including control-structures, `mod`s, `func`s, etc.\) with `;`.
+This is a feature that satisfies one definite rule from Zen -- prototyping ease. It is a pretty simple thing -- we can ignore any block (including control-structures, `mod`s, `func`s, etc.) with `;`.
 
 Examples:
 

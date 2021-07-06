@@ -41,7 +41,7 @@ func myRawFunc {
 }
 ```
 
-After `const` expansion this code will look \(structurally\) like that:
+After `const` expansion this code will look (structurally) like that:
 
 ```text
 func foo() = 1

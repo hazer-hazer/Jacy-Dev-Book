@@ -7,7 +7,7 @@ parent: Code Docs
 
 # Config & CLI
 
-`Config` is a common singleton class that converts CLI options to programmer-friendly structures \(`enum`s almost always\).
+`Config` is a common singleton class that converts CLI options to programmer-friendly structures (`enum`s almost always).
 
 You can get`Config` via `getInstance` static method, all its properties are global.
 
@@ -21,7 +21,7 @@ Also, `cli::Options` acts as a storage for specified CLI options.
 
 `cli::CLI` is a class that processes input `argv` and produces separate collections of boolean and key-value options. At this step, options are stored as strings. `cli::CLI` class has an interface to work with options to check that something specified or to find if some value passed to a key-value option.
 
-To simplify `argv` processing we don't actually walk through all of them. At first, we split them into a vector of string by delimiters like `=` \(actually, options are already delimited by white space\). By doing so we don't need to worry about cases when a user writes `-print = all` or `-print= all` or `-print =all` -- all these variants result to `["-print", "=", "all"]`.
+To simplify `argv` processing we don't actually walk through all of them. At first, we split them into a vector of string by delimiters like `=` (actually, options are already delimited by white space). By doing so we don't need to worry about cases when a user writes `-print = all` or `-print= all` or `-print =all` -- all these variants result to `["-print", "=", "all"]`.
 
 #### Config
 

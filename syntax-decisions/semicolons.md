@@ -11,7 +11,7 @@ parent: Syntax Decisions
 
 I've made a bad decision to make all `;` optional at the start of development.
 
-Now, `;` is required, anyway, I won't add rules about `;` like Rust does. In Rust, if you place a semicolon at the end of expression-statement, it is treated as return-expression or the value of the block. In Jacy there won't be any rules like that, for control-flow structure blocks the last expression is always the value of the block and in functions explicit `return` is always required if block \(\`{}\`\) syntax is used.
+Now, `;` is required, anyway, I won't add rules about `;` like Rust does. In Rust, if you place a semicolon at the end of expression-statement, it is treated as return-expression or the value of the block. In Jacy there won't be any rules like that, for control-flow structure blocks the last expression is always the value of the block and in functions explicit `return` is always required if block (\`{}\`) syntax is used.
 
 I've promised myself to add "semicolon inference" in the future, so I cannot rely on semicolon as part of any additional rules except the only one -- using as a terminating token.
 

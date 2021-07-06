@@ -20,7 +20,7 @@ We've got `if`/`if let` as an expression, `loop` as an expression, `while`/`whil
 
 `while`/`while let` and `for` are statements, because:
 
-* Why we need to use them as expressions if they return `()` \(unit\)
+* Why we need to use them as expressions if they return `()` (unit)
 * I'm trying to solve the problem above, and it will be solved they'll
 
   become expression which returns an any-type value
@@ -94,7 +94,7 @@ let a = while myval {
 
 For now, I cannot come up with any good solution, so `while` is a statement. Anyway, let's try something:
 
-**IDEA \#1** This one requires static-analysis \(maybe complex\):
+**IDEA \#1** This one requires static-analysis (maybe complex):
 
 ```text
 let a = while myval {
@@ -139,7 +139,7 @@ let a = if myval {
 
 **for**
 
-`for`-loop is a statement, not an expression, here, problems with making it an expression are the same as for `while` \(read above\) but even more complex. `for`-loop in _Jacy_ has only one syntax \(`for ... in ...`\) same as Rust, which covers all usages \(almost\) of `for`-loop from C++.
+`for`-loop is a statement, not an expression, here, problems with making it an expression are the same as for `while` (read above) but even more complex. `for`-loop in _Jacy_ has only one syntax (`for ... in ...`) same as Rust, which covers all usages (almost) of `for`-loop from C++.
 
 The syntax is the following:
 

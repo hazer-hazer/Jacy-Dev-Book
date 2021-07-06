@@ -13,15 +13,15 @@ _Jacy_ is an experimental project that is aimed to have powerful features with e
 
 Some main features _Jacy_ would have one day:
 
-* The base of functional programming \(first-class monads, pattern matching,
+* The base of functional programming (first-class monads, pattern matching,
 
-  etc.\)
+  etc.)
 
 * Rustish ownership system and safety
 * `trait` system
-* Comprehensive type system \(generics, type bounds, `where` clause,
+* Comprehensive type system (generics, type bounds, `where` clause,
 
-  etc.\)
+  etc.)
 
 All of these features are not firmly established, that's just a starting point from which the way of research will be done.
 

@@ -9,7 +9,7 @@ parent: Compilation Process
 
 # HIR
 
-Same as Rust \(again...\) _Jacy_ has HIR - High-level Intermediate Representation. It AST-like IR that is well-formed and lowered.
+Same as Rust (again...) _Jacy_ has HIR - High-level Intermediate Representation. It AST-like IR that is well-formed and lowered.
 
 #### Lowering
 

@@ -20,7 +20,7 @@ Operators in _Jacy_ are not something internally special in comparison with func
 | `a * b` | `std::ops::Mul` |
 | `a / b` | `std::ops::Div` |
 | `a % b` | `std::ops::Rem` |
-| `a ** b` \(\*\) | `std::ops::Pow` |
+| `a ** b` (\*) | `std::ops::Pow` |
 | `a or b` | N/A |
 | `a and b` | N/A |
 | `!a` | `std::ops::Not` |
@@ -37,7 +37,7 @@ Operators in _Jacy_ are not something internally special in comparison with func
 | `..b` | `std::ops::RangeTo` |
 | `a..` | `std::ops::RangeFrom` |
 | `..=b` | `std::ops::RangeToIncl` |
-| `..` | `std::ops::RangeFull` \(\*\*\) |
+| `..` | `std::ops::RangeFull` (\*\*) |
 | `a += b` | `std::ops::AddAssign` |
 | `a -= b` | `std::ops::SubAssign` |
 | `a *= b` | `std::ops::MulAssign` |
@@ -58,8 +58,8 @@ Operators in _Jacy_ are not something internally special in comparison with func
 | `&a` | N/A |
 | `a |> b` | N/A |
 
-* \(\*\) For the exponentiation operator, there can be a conflict with dereferencing operator `*`, to solve it you need to put white space between terms. E.g. `a**b` == `a ** b` as far as `a **b` == `a ** b` but not == `a * *b`, and `a*b` == `a * b`. So, with dereferencing, always put white space before `*` \(as dereferencing operator\).
-* \(\*\*\) `RangeFull` is not a real operator, it is an empty `struct` which can be passed somewhere.
+* (\*) For the exponentiation operator, there can be a conflict with dereferencing operator `*`, to solve it you need to put white space between terms. E.g. `a**b` == `a ** b` as far as `a **b` == `a ** b` but not == `a * *b`, and `a*b` == `a * b`. So, with dereferencing, always put white space before `*` (as dereferencing operator).
+* (\*\*) `RangeFull` is not a real operator, it is an empty `struct` which can be passed somewhere.
 
 ### Punctuations
 
