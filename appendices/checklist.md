@@ -94,7 +94,7 @@ Additionally, your marketing has the following problems:
 
 Taking the wider ecosystem into account, I would like to note that:
 [ ] Your complex sample code would be one line in: _______________________
-[ ] We already have an unsafe imperative language
+[x] We already have an unsafe imperative language
 [ ] We already have a safe imperative OO language
 [ ] We already have a safe statically-typed eager functional language
 [ ] You have reinvented Lisp but worse
