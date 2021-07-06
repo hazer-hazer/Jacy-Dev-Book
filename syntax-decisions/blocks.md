@@ -13,30 +13,28 @@ Before the control-flow chapter, I have to establish rules about blocks, which a
 
 While Rust has rules about the absence of `;`, _Jacy_ does not have required `;`, so this rule cannot be applied in the same way. Let's look at some examples:
 
-* This block is of type `bool` and has result value `true`, even though
+* This block is of type `bool` and has result value `true`, even though we don't use this value
 
-  we don't use this value
 
 ```rust
-
-{true}
+let a = {true}
 ```
 
-* This block will produce a type error because it either has a result of
 
-  type of `myval` or `()` (unit type)
+* This block will produce a type error because it either has a result of type of `myval` or `()` (unit type)
 
 ```rust
 let a = {if myval => myval}
 ```
 
-* This block won't produce a type error, because we don't use the result
 
-  value
+* This block won't produce a type error, because we don't use the result value
+
 
 ```rust
 {if myval => myval}
 ```
+
 
 So, we already can establish some requirements about type analysis -- we need union types which are impossible to be declared in language, but may exist in the type system.
 
