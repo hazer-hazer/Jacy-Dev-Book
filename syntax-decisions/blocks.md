@@ -18,6 +18,7 @@ While Rust has rules about the absence of `;`, _Jacy_ does not have required `;`
   we don't use this value
 
 ```rust
+
 {true}
 ```
 
