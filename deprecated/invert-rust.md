@@ -9,6 +9,8 @@ parent: Ideas
 
 # Invert Rust for usability
 
+## This article is deprecated as far as the key concept was invalidly described, there're replacement in ideas/invert-rust which is right
+
 **Please read this**
 > When reading my ideas keep in mind that it is a mind flow but not a RFC. While you read you can how my opinion is jumping back and forth, so statements described earlier can conflict with some later.
 
