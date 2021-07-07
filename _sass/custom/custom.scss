@@ -117,5 +117,15 @@ div.side-bar {
     position: absolute;
     top: 5px;
     right: 5px;
-    width: 
+    width: 50px;
+    height: 50px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px -1px #ddd;
+    background: #fff;
+    transition: .25s ease;
+
+    &:hover {
+        background: #f0f0f0;
+    }
 }
