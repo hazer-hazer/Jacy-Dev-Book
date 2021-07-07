@@ -77,8 +77,8 @@ pre.lineno {
     grid-template-rows: 1fr;
 }
 
-.rouge-gutter.gl {
-    padding: none;
+td.rouge-gutter.gl {
+    padding: none !important;
 }
 
 .highlight .table-wrapper td.gl {
