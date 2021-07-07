@@ -1,3 +1,10 @@
+---
+layout: default
+title: Lambdas syntax
+nav_order: 25
+parent: Syntax Decisions
+---
+
 # Lambdas syntax
 
 Oh, I fight with lambdas syntax so long, actually still doing this. The problem could be easily solved, just by using
