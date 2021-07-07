@@ -76,6 +76,10 @@ pre.lineno {
     grid-template-rows: 1fr;
 }
 
+.rouge-gutter.gl {
+    width: inherit;
+}
+
 .highlight .table-wrapper td.gl {
     padding-right: 10px !important;
 }
