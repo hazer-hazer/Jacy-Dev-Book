@@ -70,6 +70,10 @@ pre.lineno {
     grid-template-rows: 1fr;
 }
 
+pre.lineno {
+    box-shadow: 1px 0 #f0f0f0;
+}
+
 .anchor-heading svg {
     visibility: visible;
     opacity: 0;
