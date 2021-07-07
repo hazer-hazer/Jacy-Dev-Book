@@ -63,6 +63,10 @@ pre.lineno {
     background-color: lighten(#fff0f0, 2%) !important;
 }
 
+pre {
+    background-color: inherit;
+}
+
 pre.lineno {
     width: 20px !important;
     text-align: left;
