@@ -35,3 +35,5 @@ kramdown:
 
 search.button: true
 
+
+footer_content: '<button type="button" name="button" class="btn" onclick="jtd.setTheme('foo');"></button>'
