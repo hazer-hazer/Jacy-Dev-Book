@@ -70,7 +70,12 @@ pre.lineno {
     grid-template-rows: 1fr;
 }
 
+td.rouge-gutter.gl {
+    padding-right: 10px;
+}
+
 pre.lineno {
+    width: 10px;
     box-shadow: 1px 0 #aaa;
 }
 
