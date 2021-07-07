@@ -64,7 +64,7 @@ pre.lineno {
     background-color: lighten(#fff0f0, 2%) !important;
 }
 
-.rouge-table .tbody .tr {
+.rouge-table tbody tr {
     display: grid;
     grid-template-columns: max-content auto;
     grid-template-rows: 1fr;
