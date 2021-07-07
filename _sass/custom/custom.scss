@@ -21,11 +21,12 @@
     }
 
     &::-webkit-scrollbar-thumb {
-        background: darken(#fff0f0, 5%);
+        background: darken(#fff0f0, 1%);
+        transition: .25s ease;
     }
 
     &::-webkit-scrollbar-thumb:hover {
-        background: darken(#fff0f0, 10%);
+        background: darken(#fff0f0, 5%);
     }
 }
 
