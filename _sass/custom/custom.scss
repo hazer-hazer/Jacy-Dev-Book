@@ -67,6 +67,7 @@ pre.lineno {
 
 pre.lineno {
     width: 100%;
+    padding-right: 5px !important;
     text-align: right;
     box-shadow: 1px 0 #afaaaa;
 }
@@ -79,10 +80,6 @@ pre.lineno {
 
 td.rouge-gutter.gl {
     padding: none !important;
-}
-
-.highlight .table-wrapper td.gl {
-    padding-right: 10px !important;
 }
 
 .anchor-heading svg {
