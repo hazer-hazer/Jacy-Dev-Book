@@ -12,7 +12,8 @@
 }
 
 .nav-list .nav-list-item .nav-list-link,
-.nav-list .nav-list-item .nav-list-expander {
+.nav-list .nav-list-item .nav-list-expander,
+.site-button {
     transition: .25s;
     background-image: none;
     font-size: 15px;
@@ -20,8 +21,14 @@
 }
 
 .nav-list .nav-list-item .nav-list-link:hover,
-.nav-list .nav-list-item .nav-list-expander:hover {
+.nav-list .nav-list-item .nav-list-expander:hover,
+.site-button {
     background: #fff0f0;
+}
+
+.site-button {
+    border-radius: 2px;
+    font-size: 18px;
 }
 
 .nav-list .nav-list-item .nav-list-link.active {
