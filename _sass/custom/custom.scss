@@ -14,6 +14,7 @@
 .nav-list .nav-list-item .nav-list-link {
     transition: .25s;
     background-image: none;
+    border-radius: 5px 0 0 5px;
 }
 
 .nav-list .nav-list-item .nav-list-link:hover {
@@ -23,9 +24,12 @@
 .nav-list .nav-list-item .nav-list-link.active {
     background-image: none;
     box-shadow: 0 3px 5px -1px #972828;
-    border-radius: 5px 0 0 5px;
 }
 
 p {
     font-size: $font-size-4;
+}
+
+div.side-bad {
+    background: #fcf5f5;
 }
