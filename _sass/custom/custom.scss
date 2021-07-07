@@ -67,6 +67,7 @@ pre.lineno {
 pre.lineno {
     width: 20px !important;
     text-align: left;
+    box-shadow: 1px 0 #bfaaaa;
 }
 
 .rouge-table tbody tr {
@@ -77,12 +78,6 @@ pre.lineno {
 
 .highlight .table-wrapper td.gl {
     padding-right: 10px !important;
-}
-
-pre.lineno {
-    padding-right: 15px;
-    text-align: left;
-    box-shadow: 1px 0 #aaa;
 }
 
 .anchor-heading svg {
