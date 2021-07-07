@@ -1,5 +1,8 @@
 ---
-layout: default title: Blocks nav_order: 15 parent: Syntax Decisions
+layout: default
+title: Blocks
+nav_order: 15
+parent: Syntax Decisions
 
 # description: This stage is where name resolution begins.
 ---
