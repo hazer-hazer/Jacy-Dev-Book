@@ -58,7 +58,8 @@ code,
 .highlighter-rouge,
 .highlight,
 .rouge-gutter,
-.rouge-code {
+.rouge-code,
+pre {
     background-color: lighten(#fff0f0, 2%) !important;
 }
 
