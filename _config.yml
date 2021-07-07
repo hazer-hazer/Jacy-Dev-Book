@@ -30,4 +30,4 @@ compress_html:
 
 search.button: true
 
-footer_content: "<button type=\"button\" name=\"button\" class=\"toggle-theme\" onclick=\"jtd.setTheme(jtd.getTheme() === 'dark' ? 'light' : 'dark');\">Toggle theme</button>"
+footer_content: "<button type=\"button\" name=\"button\" class=\"toggle-theme\" onclick=\"jtd.setTheme(jtd.getTheme() === 'dark' ? 'light' : 'dark');\">jtd.getTheme() === 'light' ? '🌑' : '☀️'</button>"
