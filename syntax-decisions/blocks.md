@@ -16,7 +16,7 @@ While Rust has rules about the absence of `;`, _Jacy_ does not have required `;`
 * This block is of type `bool` and has result value `true`, even though we don't use this value
 
 
-```rust
+```
 let a = {true}
 ```
 
