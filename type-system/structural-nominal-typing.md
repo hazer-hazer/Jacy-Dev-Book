@@ -20,9 +20,14 @@ I wanna both:
 
 **Structurally typed records**
 
-I consider using `()` for tuples and `{}` for structs. Anyway, there are some problems, as far as we've got block-expression. `{}` can be either a block-expression, either struct literal. This is why struct-literal is always nominal: `path::to::Struct {...}`.
+I consider using `()` for tuples and `{}` for structs. Anyway, there are some problems, as far as we've got
+block-expression. `{}` can be either a block-expression, either struct literal. This is why struct-literal is always
+nominal: `path::to::Struct {...}`.
 
-Why not use `()` and use named-tuples for structurally typed records? - I want to change syntax of lambda functions (which now use `|params...| expression` syntax) to `(params...) -> expression`. As far as lambda parameters can have type annotation we cannot disambiguate named-tuple and lambda parameters, because in named-tuple we have `name: expression` but in lambda parameters `name: type`.
+Why not use `()` and use named-tuples for structurally typed records? - I want to change syntax of lambda functions
+(which now use `|params...| expression` syntax) to `(params...) -> expression`. As far as lambda parameters can have
+type annotation we cannot disambiguate named-tuple and lambda parameters, because in named-tuple we have `name:
+expression` but in lambda parameters `name: type`.
 
 **Solutions**
 
@@ -41,7 +46,10 @@ Why this is a bad solution:
 
 **\#3**
 
-This is the most complex way, but it likely will allow us to save all preferred syntaxes. We improve parsing of expressions enclosed into `()` and save everything inside `()` into some stack. Then if we see that there's a `->` after `)` -- it is a lambda, otherwise -- it is a named-tuple. As knowing that, we can parse tokens inside `()` considering `something` in `(name: something)` to be either an expression either type.
+This is the most complex way, but it likely will allow us to save all preferred syntaxes. We improve parsing of
+expressions enclosed into `()` and save everything inside `()` into some stack. Then if we see that there's a `->` after
+`)` -- it is a lambda, otherwise -- it is a named-tuple. As knowing that, we can parse tokens inside `()` considering
+`something` in `(name: something)` to be either an expression either type.
 
 Example:
 
@@ -50,7 +58,9 @@ let a = (name: 123)
 let b = (param: i32) -> param + 1
 ```
 
-When we parse `a`'s and `b`'s assigned expressions we see `(`, then collect all tokens until we find `)` and if we found `->` after `)` -- we parse these tokens as lambda parameters (`b` case), if there isn't `->` after `)` -- we parse tokens as named-tuple (`a` case).
+When we parse `a`'s and `b`'s assigned expressions we see `(`, then collect all tokens until we find `)` and if we found
+`->` after `)` -- we parse these tokens as lambda parameters (`b` case), if there isn't `->` after `)` -- we parse
+tokens as named-tuple (`a` case).
 
 **\#4**
 

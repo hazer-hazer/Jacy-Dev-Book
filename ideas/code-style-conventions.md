@@ -13,12 +13,14 @@ As far as *Jacy* is VERY WIP, I won't describe serious conventions, thus it's go
 
 ## Namings
 
-Okay, I respect Rust, but snake_case is not kind of what most of people use I think, even not considering things like "most people do ...", does not matter, I can describe everything from my view.
+Okay, I respect Rust, but snake_case is not kind of what most of people use I think, even not considering things like
+"most people do ...", does not matter, I can describe everything from my view.
 
 
 ##### To be (snake) or not to be
 
-Actually, it does not matter for me. The only thing I won't accept is usage of, so called, PascalCase for functions, variables, etc. except types, names.
+Actually, it does not matter for me. The only thing I won't accept is usage of, so called, PascalCase for functions,
+variables, etc. except types, names.
 
 
 ### Intro and common rules
@@ -31,10 +33,12 @@ List of all writing styles referenced in convention:
 
 All other variations MUST NOT be used in code.
 
-Further in this text I will use "MUST" and "SHOULD", "MAY" (mostly for alternatives to things that "SHOULD BE..."), so that gonna be clean what is my view.
+Further in this text I will use "MUST" and "SHOULD", "MAY" (mostly for alternatives to things that "SHOULD BE..."), so
+that gonna be clean what is my view.
 
-"__Different code-styles MUST not be mixed__" is the most important rule here, I think.
-It means, that if somewhere here is written that something "SHOULD BE ..." but "MAY BE ..." and you've chosen a described alternative -- use it everywhere in your code.
+"__Different code-styles MUST not be mixed__" is the most important rule here, I think. It means, that if somewhere here
+is written that something "SHOULD BE ..." but "MAY BE ..." and you've chosen a described alternative -- use it
+everywhere in your code.
 
 
 ### Variables and functions
@@ -48,7 +52,8 @@ If one of style is chosen it MUST be followed in the whole code.
 
 ### Constants
 
-Talking about constants, I mean constants declared with `const`. Actually `let` without `mut` is a constant, but `let` is under rule above
+Talking about constants, I mean constants declared with `const`. Actually `let` without `mut` is a constant, but `let`
+is under rule above
 
 `const` SHOULD BE named in __SCREAMING_SNAKE_CASE__: `UNCHANGEABLE_VALUE`
 
@@ -67,7 +72,8 @@ Type names include names for:
 
 All types MUST be in __PascalCase__: `MyType`, `SomeStructure`, `EnumWithEverythingINeed`
 
-__Exception__ is built-in primitive types: `i8`, `i16`, `i32`, `int`, `i64`, `i128`, `u8`, `u16`, `u32`, `uint`, `u64`, `u128`, `isize`, `usize`, `f32`, `f64`, `double`, `bool`, `char`, `str`
+__Exception__ is built-in primitive types: `i8`, `i16`, `i32`, `int`, `i64`, `i128`, `u8`, `u16`, `u32`, `uint`, `u64`,
+`u128`, `isize`, `usize`, `f32`, `f64`, `double`, `bool`, `char`, `str`
 
 Nothing else CANNOT BE named in __PascalCase__ except user-defined types!
 
@@ -77,8 +83,8 @@ Actually, type parameters are under rule above ("Type names"), anyway, they are 
 
 Type parameters MUST BE named in __PascalCase__: `T`, `U`, `V` and SHOULD BE 1 character long.
 
-As you can see, 1 uppercase character is used for type parameters, but which to use when there're more than one or usage is specific?
-Here's the table of common cases:
+As you can see, 1 uppercase character is used for type parameters, but which to use when there're more than one or usage
+is specific? Here's the table of common cases:
 
 |   Case   |   Names   |
 | :------: | :-------- |

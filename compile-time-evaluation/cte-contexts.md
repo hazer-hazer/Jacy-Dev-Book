@@ -9,7 +9,8 @@ parent: Compile-Time Evaluation
 
 # CTE Contexts
 
-In some places, we cannot put run-time computed expressions, e.g. when we declare a fixed-sized array `[T; getSize()]`, `getSize()` function must be CTE.
+In some places, we cannot put run-time computed expressions, e.g. when we declare a fixed-sized array `[T; getSize()]`,
+`getSize()` function must be CTE.
 
 Here's the list of all (I hope) this kind of places (`N` and `M` are `const` expressions):
 

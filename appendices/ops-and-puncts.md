@@ -9,7 +9,9 @@ description: Info about punctuations you can find here.
 
 # Operators and punctuations
 
-Operators in _Jacy_ are not something internally special in comparison with functions. When calling `a + b` the trait `std::ops::Add` will be used. Mostly all operators are overloadable.
+Operators in _Jacy_ are not something internally special in comparison with
+functions. When calling `a + b` the trait `std::ops::Add` will be used. Mostly
+all operators are overloadable.
 
 ### Operators in expressions
 
@@ -58,8 +60,13 @@ Operators in _Jacy_ are not something internally special in comparison with func
 | `&a` | N/A |
 | `a |> b` | N/A |
 
-* (\*) For the exponentiation operator, there can be a conflict with dereferencing operator `*`, to solve it you need to put white space between terms. E.g. `a**b` == `a ** b` as far as `a **b` == `a ** b` but not == `a * *b`, and `a*b` == `a * b`. So, with dereferencing, always put white space before `*` (as dereferencing operator).
-* (\*\*) `RangeFull` is not a real operator, it is an empty `struct` which can be passed somewhere.
+* (\*) For the exponentiation operator, there can be a conflict with
+  dereferencing operator `*`, to solve it you need to put white space between
+  terms. E.g. `a**b` == `a ** b` as far as `a **b` == `a ** b` but not == `a *
+  *b`, and `a*b` == `a * b`. So, with dereferencing, always put white space
+  before `*` (as dereferencing operator).
+* (\*\*) `RangeFull` is not a real operator, it is an empty `struct` which can
+  be passed somewhere.
 
 ### Punctuations
 

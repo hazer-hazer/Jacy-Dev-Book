@@ -7,13 +7,15 @@ parent: Ideas
 
 # Types as first-class citizens
 
-The idea is growing from powerfulness of compile-time evaluation. All types must be known at compile-time, and as far as I am going to implement comprehensive CTE system, "types as first-class citizens" sounds really fittable in this picture.
+The idea is growing from powerfulness of compile-time evaluation. All types must be known at compile-time, and as far as
+I am going to implement comprehensive CTE system, "types as first-class citizens" sounds really fittable in this
+picture.
 
 ### Type declarations
 
-At first, I thought it would be nice if we could use `type` for declaring not only aliases to types but also use them in the way as type variables.
-Types are items, all items are forwardly declared, that is, if some type is declared in a scope, it can be used before it actually appears in the code.
-Example:
+At first, I thought it would be nice if we could use `type` for declaring not only aliases to types but also use them in
+the way as type variables. Types are items, all items are forwardly declared, that is, if some type is declared in a
+scope, it can be used before it actually appears in the code. Example:
 ```rust
 func foo {
     let a: MyType = 123;
@@ -34,7 +36,9 @@ func foo {
 ```
 Hmm... WTF???
 
-Actually, control-flow for types is useless in the way of using declared aliases. Aliases are not dynamic, thus if we declared one -- we already know what type it is. But what if we don't know what type we receive? E.g. in generics, we get type parameter which is unknown, and what if it would be possible to check this type as a value?
+Actually, control-flow for types is useless in the way of using declared aliases. Aliases are not dynamic, thus if we
+declared one -- we already know what type it is. But what if we don't know what type we receive? E.g. in generics, we
+get type parameter which is unknown, and what if it would be possible to check this type as a value?
 
 ### Dynamic type checks
 
@@ -49,7 +53,8 @@ func foo<T>(arg: T) {
 }
 ```
 
-Looks useful, but... not, actually. I cannot come up with a case when this cannot be described with generics and constraints.
+Looks useful, but... not, actually. I cannot come up with a case when this cannot be described with generics and
+constraints.
 
 ### Returning types
 
