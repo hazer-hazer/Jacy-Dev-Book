@@ -29,6 +29,16 @@
     background: lighten(#fff0f0, 1%);
 }
 
+.anchor-heading svg {
+    visibility: visible;
+    opacity: 0;
+    transition: .15s ease;
+}
+
+h4:hover .anchor-heading svg {
+    opacity: 1;
+}
+
 p {
     font-size: $font-size-4;
 }
@@ -36,6 +46,7 @@ p {
 h4 {
     margin-top: 25px;
     box-shadow: 0 1px #ddd;
+    font-size: $font-size-5;
 }
 
 li {
