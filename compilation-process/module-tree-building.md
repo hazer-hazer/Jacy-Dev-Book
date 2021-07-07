@@ -25,7 +25,7 @@ mod b {
 }
 ```
 
-This is a valid code in _Jacy,_ and as you can see here we use items before they actually appear in the code. To make it
+This is a valid code in _Jacy_, and as you can see here we use items before they actually appear in the code. To make it
 possible name resolution goes in two stages, the first one is Module-Tree Building.
 
 What is a module? Don't confuse it with `mod`, a module is a wider concept that includes: `mod`, `trait`, block
