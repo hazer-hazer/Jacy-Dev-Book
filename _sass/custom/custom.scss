@@ -21,11 +21,12 @@
 
 .nav-list .nav-list-item .nav-list-link:hover {
     background: #fff;
+    box-shadow: -2px 0 3px -1px #f0f0f0;
 }
 
 .nav-list .nav-list-item .nav-list-link.active {
     background-image: none;
-    box-shadow: inset 0 0 25px -1px #fff;
+    box-shadow: inset 0 0 25px -1px #fff, -2px 0 4px -1px #f0f0f0;
 }
 
 .nav-list .nav-list-item .nav-list-expander:hover {
