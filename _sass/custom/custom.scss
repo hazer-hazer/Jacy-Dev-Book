@@ -66,14 +66,13 @@ pre.lineno {
 }
 
 pre.lineno {
-    min-width: 20px !important;
     text-align: left;
     box-shadow: 1px 0 #afaaaa;
 }
 
 .rouge-table tbody tr {
     display: grid;
-    grid-template-columns: max-content auto;
+    grid-template-columns: minmax(20px, max-content) auto;
     grid-template-rows: 1fr;
 }
 
