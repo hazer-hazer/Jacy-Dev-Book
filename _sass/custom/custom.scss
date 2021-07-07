@@ -64,9 +64,10 @@ pre.lineno {
     background-color: lighten(#fff0f0, 2%) !important;
 }
 
-pre.lineno,
-td.rouge-gutter.gl {
-    width: max-content !important;
+.rouge-table .tbody .tr {
+    display: grid;
+    grid-template-columns: max-content auto;
+    grid-template-rows: 1fr;
 }
 
 .anchor-heading svg {
