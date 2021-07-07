@@ -4,7 +4,7 @@ title: Operators and punctuations
 nav_order: 10
 parent: Appendices
 
-description: Info about punctuations you can find here.
+# description: Info about punctuations you can find here.
 ---
 
 # Operators and punctuations

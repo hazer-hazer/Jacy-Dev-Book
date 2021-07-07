@@ -2,7 +2,7 @@
 layout: default
 title: How to run
 nav_order: 5
-description: 'Maybe... idk why, you wanna run it?'
+# description: 'Maybe... idk why, you wanna run it?'
 ---
 
 # How to run
