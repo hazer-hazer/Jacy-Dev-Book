@@ -11,6 +11,24 @@
     opacity: 0.5;
 }
 
+.site-nav {
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #ffff;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: darken(#fff0f0, 5%);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: darken(#fff0f0, 10%);
+    }
+}
+
 .nav-list .nav-list-item .nav-list-link,
 .nav-list .nav-list-item .nav-list-expander,
 .site-button {
