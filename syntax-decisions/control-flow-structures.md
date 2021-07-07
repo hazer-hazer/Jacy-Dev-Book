@@ -32,7 +32,7 @@ _Jacy_ does not support implicit `bool` conversion even through operator overloa
 `if let` is a way to check if some value matches a specific pattern. Also, as this is a pattern matching we able to
 destruct our value.
 
-Syntax is following:
+Syntax is following.
 
 ```antlr4
 ifLetExpression: 'if let' pattern '=' expr block
@@ -64,7 +64,7 @@ It is an obvious solution, but has some problems:
 * If we don't `break` with value, then what would be the result? - It cannot be simply written in asm-like code with
   jumps, because we don't know when our `while` "does not break".
 
-Problem example:
+Problem example.
 
 ```rust
 let a = while myval {
@@ -78,7 +78,7 @@ let a = while myval {
 
 For now, I cannot come up with any good solution, so `while` is a statement. Anyway, let's try something:
 
-**IDEA \#1** This one requires static-analysis (maybe complex):
+**IDEA \#1** This one requires static-analysis (maybe complex).
 
 ```rust
 let a = while myval {
@@ -91,7 +91,7 @@ let a = while myval {
 
 We can analyze this code and say that each `break`-value is `bool`, so we allow this.
 
-What about this?:
+What about this?.
 
 ```rust
 let a = while myval {
@@ -105,7 +105,7 @@ Each `break`-value is of type `bool`, so we allow it because the alternative wor
 
 We required some static-analysis on `while`, which is, as I see, is not really complex and not differs much from the
 `if` expression value inference. The only problem is that the use cases of `while-else` are not common, especially when
-we cover only this use case:
+we cover only this use case.
 
 ```rust
 let a = if myval {
@@ -129,13 +129,13 @@ let a = if myval {
 (read above) but even more complex. `for`-loop in _Jacy_ has only one syntax (`for ... in ...`) same as Rust, which
 covers all usages (almost) of `for`-loop from C++.
 
-The syntax is the following:
+The syntax is the following.
 
 ```antlr4
 forLoop: 'for' pattern 'in' expression block
 ```
 
-Examples:
+Examples.
 
 ```rust
 // In C++ we write

@@ -15,7 +15,7 @@ picture.
 
 At first, I thought it would be nice if we could use `type` for declaring not only aliases to types but also use them in
 the way as type variables. Types are items, all items are forwardly declared, that is, if some type is declared in a
-scope, it can be used before it actually appears in the code. Example:
+scope, it can be used before it actually appears in the code. Example.
 ```rust
 func foo {
     let a: MyType = 123;
@@ -42,7 +42,7 @@ get type parameter which is unknown, and what if it would be possible to check t
 
 ### Dynamic type checks
 
-Example:
+Example.
 ```rust
 func foo<T>(arg: T) {
     if T == bool {

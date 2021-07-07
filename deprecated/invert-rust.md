@@ -36,7 +36,7 @@ assignment and passing to functions.
 Doing so requires "move" to be a first-class operation, it can be a specific operator, e.g. prefix `^` to move or just
 the `move` keyword.
 
-Example:
+Example.
 
 ```rust
 struct Struct {
@@ -142,7 +142,7 @@ Same as generics this one is really complex question too. Keep in mind that we a
 pass-by-value could be implemented" from view of code generation -- this is an answered question. The problem is in the
 semantics and syntax. What am I talking about is that removing explicit reference types mostly everywhere we get lack of
 opportunity to qualify value type. Further I'm gonna describe a list of all rules about PIR, so here won't be
-comprehensive solution as it would be more understandable as if we just look at specific rules. Anyway, here it is:
+comprehensive solution as it would be more understandable as if we just look at specific rules. Anyway, here it is.
 ```rust
 // `Kitty` is a structure declared somewhere
 func foo(kitty: Kitty) {
@@ -169,7 +169,7 @@ not actually required?
 #### `Clone` trait (!important)
 `Clone` trait in *Jacy* as in Rust is used to provide explicit way to copy source object.
 
-Let's look at an example similar to one above:
+Let's look at an example similar to one above.
 ```rust
 // Assume somewhere exists the `Kitty` type and it implements the `Clone` trait
 func foo(kitty: Kitty) {
@@ -192,7 +192,7 @@ only to handle copies but also references.
 `let` bindings and `func` parameters are patterns, also there're `if let` and `match`. Do patterns need to be PIR or
 not? -- Actually, they MUST.
 
-Let's assume we've got:
+Let's assume we've got.
 ```rust
 struct StructType {
     field: Vec<i32>,
@@ -237,7 +237,7 @@ match &a {
 
 `a = b` in Rust is `a = move b` but with PIR it will become `a = &b`, if `b` is another variable of non-copy type.
 
-Let's look at examples to grasp when variable is automatically becomes a reference and where not:
+Let's look at examples to grasp when variable is automatically becomes a reference and where not.
 ```rust
 let a = StructType {field: Vec::new()};
 let b = a;
@@ -260,7 +260,7 @@ Finally, after reviewing some cases, I'd like to reduce them to the list of rule
 
 #### 1. If non-copy type passed to function or assigned, it is borrowed
 
-Examples:
+Examples.
 ```rust
 func foo(name: String) {
     print("My name is $name");
@@ -275,7 +275,7 @@ func main {
 
 #### 2. Moves are explicit in signatures and in calls
 
-Example:
+Example.
 ```rust
 func foo(move name: String) {
     print("My name is $name");
@@ -289,7 +289,7 @@ func main {
 
 #### 3. Data, stored in structures must be explicitly qualified as reference
 
-Example:
+Example.
 ```rust
 struct Data {
     inner: Vec<i32>

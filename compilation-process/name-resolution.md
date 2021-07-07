@@ -24,7 +24,7 @@ could collide with other names but we don't want this for reasons of possibility
 #### Name shadowing
 
 The one important thing we need to establish -- _Jacy_ allows local names shadowing! Why? Let's look at an example where
-it is practically convenient:
+it is practically convenient.
 
 ```rust
 func strangeCheck(param: i32): i32? = // Note: `T?` is a shortcut for `Option<T>`
@@ -37,7 +37,7 @@ func main {
 ```
 
 The function `strangeCheck` returns `Option` and we want to do something with this result, in other languages we either
-don't actually need this (because of lack of so many wrappers like `Option`, etc.) or we write code like that:
+don't actually need this (because of lack of so many wrappers like `Option`, etc.) or we write code like that.
 
 ```rust
 let maybeA = strangeCheck(10);
@@ -49,7 +49,7 @@ Which is annoying... Why do we need to add a new variable making code noisier? W
 
 One could argue that someone would write unclear code using this feature. This is why _Jacy_ has a linter warning for
 these cases, and the rule not to get this warning is simple: "Only shadow variable with computations related to the
-shadowed variable", for example:
+shadowed variable", for example.
 
 ```rust
 // This is a good case to use variable shadowing
@@ -68,7 +68,7 @@ Actually, not, every time we meet `let` statement -- we push a new rib onto the 
 can accidentally allow redeclarations of items -- again, no. All items are already defined in the module tree and, as
 far as when we're building the module tree we operating with strict scopes -- redeclarations are not possible.
 
-Example:
+Example.
 
 ```rust
 mod a {

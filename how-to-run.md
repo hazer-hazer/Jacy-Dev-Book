@@ -7,7 +7,7 @@ description: 'Maybe... idk why, you wanna run it?'
 
 # How to run
 
-CLI tool needs improvements, anyway it works and here's the syntax:
+CLI tool needs improvements, anyway it works and here's the syntax.
 
 ```
 ./jc (.exe for windows) [source files] --boolean-argument -key-value-argument=param1, param2, ..., paramN
@@ -26,7 +26,7 @@ Also arguments have constraints:
 * Dependencies. It means that some arguments are not allowed if other argument is not set, e.g. you cannot use
   `-compile-depth` (it controls how deep will compilation process go by workflow) without setting `--dev` argument.
 
-Example usage:
+Example usage.
 
 ```
 ./bin example.jc -print=ast
@@ -77,7 +77,7 @@ Example usage:
 **Explicit Boolean argument value**
 
 What if you want to set bool-arg to `false`? Let's imagine that `--dev` is set by default (it is not anyway). There is
-pretty same syntax for bool-args as for key-value args:
+pretty same syntax for bool-args as for key-value args.
 
 ```
 --dev=no

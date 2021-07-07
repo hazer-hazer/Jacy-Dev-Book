@@ -51,7 +51,7 @@ expressions enclosed into `()` and save everything inside `()` into some stack. 
 `)` -- it is a lambda, otherwise -- it is a named-tuple. As knowing that, we can parse tokens inside `()` considering
 `something` in `(name: something)` to be either an expression either type.
 
-Example:
+Example.
 
 ```rust
 let a = (name: 123)

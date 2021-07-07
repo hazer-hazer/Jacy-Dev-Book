@@ -14,7 +14,7 @@ inlined.
 
 I wanna note that `const` is a synonym for compile-time evaluable expression, so further I'll use it in this context.
 
-`const` must be immediately assigned when declared. Syntax:
+`const` must be immediately assigned when declared. Syntax.
 
 ```antlr4
 'const' IDENT '=' expr
@@ -23,7 +23,7 @@ I wanna note that `const` is a synonym for compile-time evaluable expression, so
 After `'='` goes an expression which MUST also be CTE, but not exactly another `const`.
 
 The difference between `let` and `const` is that `const` is an item, whereas `let` is a statement. As being an item
-`const` can be placed mostly on any level, including top-level:
+`const` can be placed mostly on any level, including top-level.
 
 ```antlr4
 const a = 10

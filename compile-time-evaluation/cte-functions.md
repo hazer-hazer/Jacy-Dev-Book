@@ -14,7 +14,7 @@ A function is CTE if:
 * It is marked with `const` modifier
 * It is possible to infer that function can be CTE
 
-We mark a function as CTE so:
+We mark a function as CTE so.
 
 ```rust
 const func foo() {}
@@ -30,7 +30,7 @@ wasn't qualified as `const` in a CTE context. More about that below.
 
 Another approach is more complex for the compiler but simple for the user: If we declare a function and use it in CTE
 context when compiler goes to this function and checks that it's CTE function. Anyway, if we use this function in a
-run-time context it won't be inlined and evaluated at compile-time. Example:
+run-time context it won't be inlined and evaluated at compile-time. Example.
 
 ```rust
 // Just a simple function that returns `1`
@@ -45,7 +45,7 @@ func myRawFunc {
 }
 ```
 
-After `const` expansion this code will look (structurally) like that:
+After `const` expansion this code will look (structurally) like that.
 
 ```rust
 func foo() = 1

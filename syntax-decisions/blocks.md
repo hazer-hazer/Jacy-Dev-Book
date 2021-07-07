@@ -38,14 +38,14 @@ declared in language, but may exist in the type system.
 
 In this thing, _Jacy_ blocks differ from Rust's. I really appreciate the opportunity to declare one-line blocks without
 `{}`. As far as I wanna _Jacy_ to be consistent, and I established that syntax of `match` expression arms use `=>`, for
-one-line blocks we use the same syntax. Let's look at the syntax:
+one-line blocks we use the same syntax. Let's look at the syntax.
 
 ```rust
 while true => print('kek')
 ```
 
 After `=>` we can only place one expression, and if we put `{}` compiler will give a warning because there's no need to
-put `{}` after `=>`. So, the syntax looks kind of like that:
+put `{}` after `=>`. So, the syntax looks kind of like that.
 
 ```rust
 block: `=>` expr | blockExpression | ';';
@@ -61,7 +61,7 @@ below.
 This is a feature that satisfies one definite rule from Zen -- prototyping ease. It is a pretty simple thing -- we can
 ignore any block (including control-structures, `mod`s, `func`s, etc.) with `;`.
 
-Examples:
+Examples.
 
 ```rust
 if myval;

@@ -9,7 +9,7 @@ description: This stage is where name resolution begins.
 
 # Module-Tree building
 
-Let's look at the code sample:
+Let's look at the code sample.
 
 ```antlr4
 func main {

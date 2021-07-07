@@ -16,7 +16,7 @@ pattern-matching, Rust's solution is right because `let` is not a constant var d
 a variable, and the variable name is a pattern in which we can set if it is a `mut`able or not. I've already reserved
 the `mut` keyword, so now we have only one keyword for variable declaration (run-time!).
 
-The syntax:
+The syntax.
 
 ```antlr4
 'let' pattern (':' type)? ('=' expr)?

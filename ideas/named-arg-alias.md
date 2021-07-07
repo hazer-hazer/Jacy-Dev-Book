@@ -1,4 +1,4 @@
-The idea:
+The idea.
 ```rust
 func printName(name: str) {
   print(name);
