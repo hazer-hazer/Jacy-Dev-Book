@@ -2,7 +2,7 @@
 layout: default
 title: Invert Rust for usability. Attempt \#2
 nav_order: 5
-parent: backlog
+parent: Backlog
 ---
 
 # Invert Rust
