@@ -1,3 +1,9 @@
+---
+layout: default
+title: Invert Rust for usability. Attempt \#1
+nav_order: 1
+parent: backlog
+---
 
 # Invert Rust for usability
 
