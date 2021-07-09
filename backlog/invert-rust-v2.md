@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Invert Rust for usability. Attempt \#2
+title: 'Invert Rust for usability. Attempt #2'
 nav_order: 5
 parent: Backlog
 ---
