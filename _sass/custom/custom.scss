@@ -11,9 +11,11 @@
     opacity: 0.5;
 }
 
-.site-nav {
+.site-nav,
+div.table-wrapper {
     &::-webkit-scrollbar {
         width: 7px;
+        height: 6px;
     }
 
     &::-webkit-scrollbar-track {
