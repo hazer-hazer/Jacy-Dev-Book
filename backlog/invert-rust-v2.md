@@ -58,7 +58,7 @@ Invert Rust means that:
 At first, it might be confusing or even a nice solution.
 
 Let's look at examples:
-```
+```rust
 // We have
 func foo(a: str);
 // Rust has
