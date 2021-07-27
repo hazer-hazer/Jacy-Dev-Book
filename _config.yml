@@ -3,7 +3,7 @@ logo: "/assets/JacyLarge.png"
 
 aux_links:
   "Jacy on GitHub":
-    - "//github.com/hazer-hazer/Jacy"
+    - "//github.com/jacylang/Jacy"
 
 aux_links_new_tab: true
 
@@ -17,7 +17,7 @@ last_edit_time_format: "%b %e %Y at %I:%M %p"
 
 gh_edit_link: true
 gh_edit_link_text: "Contribute to this page on GitHub"
-gh_edit_repository: "https://github.com/hazer-hazer/Jacy"
+gh_edit_repository: "https://github.com/jacylang/Jacy"
 
 kramdown:
   syntax_highlighter_opts:
