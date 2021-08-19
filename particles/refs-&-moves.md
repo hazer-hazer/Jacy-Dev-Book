@@ -112,3 +112,6 @@ func example2 {
 }
 ```
 
+What I want to show is that we don't lose the safety as we still have move semantics and borrowing rules. The only change is that now passing by reference is implicit for callee that is, as I think, not really bad.
+
+
