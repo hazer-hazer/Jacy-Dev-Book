@@ -114,4 +114,87 @@ func example2 {
 
 What I want to show is that we don't lose the safety as we still have move semantics and borrowing rules. The only change is that now passing by reference is implicit for callee that is, as I think, not really bad.
 
+That all sounds good, but...
+
+## PROBLEM
+
+Yes, we don't lose safety and Rustish semantics of reference passing, anyway, I missed something.
+Unlike C++, in Rust (and in _Jacy_) `&T` has different, more specific, semantics, that is, C++ operates on types and when you pass this type by reference it is not required it to be pointer-like (as Rust does). C++ specification does not tell must implementation always use pointers to implement references, that is internal behavior is implementation-relative. This is why C++ does not specify an operator for creating a reference -- you cannot make a reference manually because compiler could decide not to wrap reference to pointer.
+In _Jacy_, as in Rust, reference is a "pointer with constraint" that are:
+- References are always pointers, that is `T` and `&T`, and can be thought of as `T` and `ReferenceOf<T>`
+- Reference always points to valid data
+  - It cannot be null
+  - It cannot be a dangling pointer
+- References are strong - there's nothing like `void&` respectively to `void*`
+
+Keeping this in mind some problems arise, like, `impl &T`.
+
+Example:
+```rust
+struct S {}
+
+impl SomeTrait for S {
+    func kek {}
+}
+
+impl SomeTrait for &S {
+    func kek {}
+}
+
+func foo<T: SomeTrait>(st: T) {
+    st.kek();
+}
+
+func main {
+    let s = S {};
+
+    foo(s); // ???
+}
+```
+
+We passed `s` to `foo` which expects something implementing `SomeTrait`, but `SomeTrait` is implemented for both `S` and `&S`, do we need to implicitly pass `s` by reference?
+
+Actually, I would answer "No", as moving `s` is nearly what signature of function `foo` specifies -- there is no `&` for type `T`, it is actually moved. Thus user needs to explicitly pass by reference.
+
+So, this code will call `SomeTrait::kek(S)` (without `&`).
+
+User have to explicitly say that he wants to pass by reference (implicit pass does not exclude existence of Rustish `&` borrowing operator):
+```rust
+func main {
+    let s = S {};
+
+    foo(&s);
+}
+```
+
+Okay, problem is solved? Actually, no. Let's look at more difficult example:
+```rust
+struct S {}
+
+impl SomeTrait for &S {
+    func kek {}
+}
+
+mod module {
+    impl SomeTrait for S {
+        func kek {}
+    }
+
+    pub func foo<T: SomeTrait>(s: T) {}
+}
+
+func main {
+    let s = S {};
+
+    module::foo(s);
+}
+```
+
+What is `T` in `module::foo`? `&T` or `T`? Actually, the answer is same as for example above -- the best fit for this call is `T` (without reference). Anyway, here, I want to show how difficult-to-read implicit pass-by-reference can be structured.
+
+## CONCLUSION
+
+__STATUS__ - IDEA IS DENIED.
+
+__REVISIONS__ - ALLOWED
 
