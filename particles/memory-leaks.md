@@ -10,6 +10,8 @@ GC is not really interesting for me (tracing GC). Rust does not have GC at all a
 Memory leaks with references are not possible in Rust as it would break the whole theory of its safety, by the way, ML can be caused by cyclic Rc without Weak break or when we use unsafe pointers, for example, in FFI.
 Actually, FFI kind of "requires" memory leaks as if memory is fully managed by the language, it is impossible to say it: "this mekory gonna be used externally by C program", thus we need to be able to leave memory out of control.
 
-# ARC
+# ARC as first-class entity
 
-I want to disassemble an idea of first-class ARC. The reason to have 
+I want to disassemble an idea of first-class ARC. The reason to have ARC as first-class entity is an ability to statically check wherever a problem like cyclic references occur and may cause a memory leak.
+
+
