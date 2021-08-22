@@ -14,3 +14,4 @@ The power of attributes is that they are:
 
 As far as attributes are namespaced we can build a huge "official" ecosystem for _Jacy_ with no loss for user to build his/her own.
 
+
