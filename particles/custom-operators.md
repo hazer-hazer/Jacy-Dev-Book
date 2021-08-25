@@ -61,3 +61,27 @@ Before name resolution all items are declared, it gives compiler opportunity to 
 I consider making operator declarations items as a good solution.
 
 
+#### Syntax
+
+For now, I propose this syntax:
+```
+// Operator type declaration
+operator type Assignment {
+    higherThan: Pipe
+    lowerThan: Additive
+    associativity: left
+}
+
+// Operator declaration
+infix operator `×=`: Assignment
+
+struct S {
+    field: int
+
+    mut func operator`×=`(rhs: &Self): &mut self {
+        self.field *= rhs.field
+        return self
+    }
+}
+```
+
