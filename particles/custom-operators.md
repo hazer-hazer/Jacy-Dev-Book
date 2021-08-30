@@ -64,7 +64,7 @@ I consider making operator declarations items as a good solution.
 #### Syntax
 
 For now, I propose this syntax:
-```
+```jc
 // Operator type declaration
 operator type Assignment {
     higherThan: Pipe
@@ -73,15 +73,19 @@ operator type Assignment {
 }
 
 // Operator declaration
-infix operator `×=`: Assignment
+infix operator `×=`: Assignment;
 
 struct S {
     field: int
 
-    mut func operator`×=`(rhs: &Self): &mut self {
+    mut func `×=`(rhs: &Self): &mut self {
         self.field *= rhs.field
         return self
     }
 }
 ```
+
+`operator type` pair is used to reduce count of keywords against Swift solution with `precedencegroup`.
+`operator` might be a soft keyword in the future, anyway as all of current keywords now it gonna be hard keyword.
+
 
