@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Custom-operators
+title: Custom Operators
 parent: Particles
 nav_order: 3
 ---
