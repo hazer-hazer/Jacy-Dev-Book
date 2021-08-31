@@ -107,3 +107,6 @@ Operators can begin with: `=`, `+`, `-`, `*`, `/`, `%`, `<`, `>`, `&`, `|`, `^`,
 
 Regardless the fact that operators cannot contain `:`, there's one special case -- `:=` operator which is overloadable.
 
+
+Symbols that might be used as part of custom operators (maybe only in the middle or beginning/end):
+- `$` (often used in functional languages but in _Jacy_ proposed for macros and maybe lambdas)
