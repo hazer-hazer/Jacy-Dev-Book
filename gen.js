@@ -73,13 +73,7 @@ class Generator {
             parentNavOrder: navOrder,
         }
 
-        entities.sort((lhs, rhs) => {
-            const titleCmp = lhs.localeCompare(rhs)
-            if (titleCmp > 0) return -1
-            if (titleCmp < 0) return 1
-
-            return 0
-        })
+        entities.sort()
 
         let index = 0
 
