@@ -2,7 +2,7 @@
 layout: default
 title: Organic _Jacy_
 parent: Particles
-nav_order: 1
+nav_order: 7
 ---
 
 # Organic _Jacy_

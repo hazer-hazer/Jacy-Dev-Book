@@ -2,7 +2,7 @@
 layout: default
 title: `not` prependent operator
 parent: Particles
-nav_order: 1
+nav_order: 5
 ---
 
 # `not` prependent operator

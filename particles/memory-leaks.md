@@ -2,7 +2,7 @@
 layout: default
 title: Memory leaks
 parent: Particles
-nav_order: 1
+nav_order: 4
 ---
 
 # Memory leaks
