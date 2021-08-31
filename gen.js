@@ -77,7 +77,7 @@ class Generator {
 
         let relPath = null
         if (!title) {
-            relPath = DIST_PATH
+            relPath = ''
         } else {
             relPath = path.relative(SOURCE_PATH, dirPath)
         }
@@ -86,16 +86,15 @@ class Generator {
             isDir: true,
             name: title,
             children,
-            path: dirPath,
             relPath,
         }
     }
 
     async _genDir(dir) {
         const dirPath = path.join(DIST_PATH, dir.relPath)
-        if (!fs.existsSync(dirPath)){
-            console.log(`mkdir ${dirPath}`);
-            // fs.mkdirSync(dir.absPath);
+        if (!fs.existsSync(dirPath)) {
+            // console.log(`mkdir ${dirPath}`);
+            fs.mkdirSync(dirPath);
         }
 
         for (const child of Object.values(dir.children)) {
@@ -104,8 +103,8 @@ class Generator {
     }
 
     async _genFile(file) {
-        console.log(`write file: ${path.join(DIST_PATH, file.relPath)}`);
-        // fs.writeFileSync(path.join(DIST_PATH, file.path), fileTmpl(file), 'utf8')
+        // console.log(`file path: ${path.join(DIST_PATH, file.relPath)}`);
+        fs.writeFileSync(path.join(DIST_PATH, file.relPath), fileTmpl(file), 'utf8')
     }
 
     async gen(entity) {
