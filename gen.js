@@ -83,16 +83,21 @@ class Generator {
         }
 
         children.sort((lhs, rhs) => {
-            const nameCmp = lhs.name.localeCompare(rhs.name)
-            if (nameCmp > 0) return -1
-            if (nameCmp < 0) return 1
+            const titleCmp = lhs.title.localeCompare(rhs.title)
+            if (titleCmp > 0) return -1
+            if (titleCmp < 0) return 1
 
             return 0
         })
 
+        let i = 1
+        for (const child of children) {
+            child.navOrder = i++
+        }
+
         return {
             isDir: true,
-            name: title,
+            title,
             children,
             relPath,
         }
