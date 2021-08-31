@@ -1,5 +1,9 @@
 const fs = require('fs')
 const path = require('path')
+const {
+    STRUCTURE,
+    SOURCE_DIR,
+} = require('./config')
 
 const capitalize = str => str[0].toUpperCase() + str.slice(1)
 
