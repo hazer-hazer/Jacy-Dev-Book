@@ -29,11 +29,14 @@ const nameFromFilename = filename => {
 
 class Generator {
     async run() {
-        const sourceDir = await this._processDir(SOURCE_PATH, STRUCT, null, null)
+        const sourceDir = await this._processDir(SOURCE_PATH, STRUCT, null, {
+            parentTitle: null,
+            navOrder: 1,
+        })
         await this._genDir(sourceDir)
     }
 
-    async _processFile(filePath, struct, title, {navOrder, parentTitle}) {
+    async _processFile(filePath, struct, title, {navOrder, parentTitle, parentNavOrder}) {
         if (!filePath.endsWith('.md')) {
             return null
         }
@@ -45,6 +48,10 @@ class Generator {
         }
 
         const src = fs.readFileSync(filePath, 'utf8')
+
+        if (filename === INDEX_FILENAME) {
+            navOrder = parentNavOrder
+        }
 
         return {
             isDir: false,
@@ -61,10 +68,20 @@ class Generator {
         const children = []
         const entities = fs.readdirSync(dirPath)
 
-        const parentSettings = {
+        const settings = {
             parentTitle: title,
-            navOrder,
+            parentNavOrder: navOrder,
         }
+
+        entities.sort((lhs, rhs) => {
+            const titleCmp = lhs.title.localeCompare(rhs.title)
+            if (titleCmp > 0) return -1
+            if (titleCmp < 0) return 1
+
+            return 0
+        })
+
+        let index = 0
 
         for (const subPath of entities) {
             const childPath = path.join(dirPath, subPath)
@@ -74,15 +91,18 @@ class Generator {
             const childStruct = struct[childFilename] || {}
             const childName = childStruct.name || nameFromFilename(childFilename)
 
+            settings.navOrder = index + 1
+
             if (childIsDir) {
-                children.push(await this._processDir(childPath, childStruct, childName, parentSettings))
+                children.push(await this._processDir(childPath, childStruct, childName, settings))
             } else {
-                const file = await this._processFile(childPath, childStruct, childName, parentSettings)
+                const file = await this._processFile(childPath, childStruct, childName, settings)
                 if (file) {
                     children.push(file)
                 }
             }
 
+            index++
             // Ignore non-markdown files
         }
 
@@ -91,23 +111,6 @@ class Generator {
             relPath = ''
         } else {
             relPath = path.relative(SOURCE_PATH, dirPath)
-        }
-
-        children.sort((lhs, rhs) => {
-            const titleCmp = lhs.title.localeCompare(rhs.title)
-            if (titleCmp > 0) return -1
-            if (titleCmp < 0) return 1
-
-            return 0
-        })
-
-        let i = 1
-        for (const child of children) {
-            if (!child.isIndex) {
-                child.navOrder = i++                
-            } else {
-                child.navOrder = navOrder
-            }
         }
 
         return {
