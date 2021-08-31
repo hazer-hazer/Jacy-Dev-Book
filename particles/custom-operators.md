@@ -107,6 +107,10 @@ Operators can begin with: `=`, `+`, `-`, `*`, `/`, `%`, `<`, `>`, `&`, `|`, `^`,
 
 Regardless the fact that operators cannot contain `:`, there's one special case -- `:=` operator which is overloadable.
 
+Custom operators containing dot must begin with a dot to be full operator, so if operator begins with `.` then it can contain more dots after, if not then it is splitted to two/more operator:
+- `%.%` is a `%` followed by `.%` operator
+- `.%.` is a full operator `.%.`
+- `...` and `..=` (natively "range operators") are full operators too
 
 Symbols that might be used as part of custom operators (maybe only in the middle or beginning/end):
 - `$` (often used in functional languages but in _Jacy_ proposed for macros and maybe lambdas)
