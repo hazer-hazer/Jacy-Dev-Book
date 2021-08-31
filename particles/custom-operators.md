@@ -143,8 +143,16 @@ Questions I have:
 
 __Question 2.__
 
-Operator `?` has pretty common in many languages (JavaScript with its `?.`, Swift )
+Operator `?` is pretty common in many languages (JavaScript with its `?.`, Swift with `?`, etc.), and the behavior with returning error on fail is pretty uncommon and specific to Rust.
+Keeping this in mind I would say that `?` should mean optional-chaining.
 
+> SOLUTION: `?` stands for "optional-chaining"
+
+__Question 3.__
+
+In question 2. I said that would like to see `?` as optional-chaining operator, so now I need to choose an operator for error-propagation. It must be non-conflicting postfix operator with obvious meaning.
+
+`??`, `!!` or `?!`, and other combinations of `?` and `!` are conflicting as meaning is hard to comprehend if we unwrap 
 
 ### Lexing
 
