@@ -114,3 +114,22 @@ Custom operators containing dot must begin with a dot to be full operator, so if
 
 Symbols that might be used as part of custom operators (maybe only in the middle or beginning/end):
 - `$` (often used in functional languages but in _Jacy_ proposed for macros and maybe lambdas)
+
+#### Problems to solve
+
+##### Generic params problem
+
+When operator ends with `<` here comes a problem:
+```jc
+func <<<T>(other: T) {
+    // ...
+}
+```
+
+Anyway, I already proposed a syntax where function generics are written after `func` keyword (like in Kotlin) instead of after identifier.
+So, this would be parsed successfully:
+```jc
+func<T> <<(other: T) {}
+```
+
+##### 
