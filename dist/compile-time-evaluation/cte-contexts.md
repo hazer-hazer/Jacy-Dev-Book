@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Cte contexts'
-nav_order: 1
+nav_order: 3
 parent: Compile time evaluation
 ---
 

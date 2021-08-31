@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Intro'
-nav_order: 1
+nav_order: 6
 parent: null
 ---
 

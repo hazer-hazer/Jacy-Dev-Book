@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Attributes'
-nav_order: 1
+nav_order: 3
 parent: Appendices
 ---
 

@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Module tree building'
-nav_order: 1
+nav_order: 2
 parent: Compilation process
 ---
 

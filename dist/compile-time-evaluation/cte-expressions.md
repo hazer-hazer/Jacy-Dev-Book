@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Cte expressions'
-nav_order: 1
+nav_order: 2
 parent: Compile time evaluation
 ---
 

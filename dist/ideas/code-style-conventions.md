@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Code style conventions'
-nav_order: 1
+nav_order: 3
 parent: Ideas
 ---
 

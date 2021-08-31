@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Dev conventions'
-nav_order: 1
+nav_order: 3
 parent: Code docs
 ---
 

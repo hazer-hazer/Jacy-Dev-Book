@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'How to run'
-nav_order: 1
+nav_order: 8
 parent: null
 ---
 

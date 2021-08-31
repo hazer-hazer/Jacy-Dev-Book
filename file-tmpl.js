@@ -2,7 +2,7 @@ module.exports = ({
     src,
     layout = 'default',
     title = 'Untitled',
-    navOrder = 1,
+    navOrder,
     parent,
 }) => {
     // Remove front matter if file has
@@ -15,7 +15,7 @@ module.exports = ({
 ---
 layout: '${layout}'
 title: '${title}'
-nav_order: ${navOrder}
+${navOrder ? `nav_order: ${navOrder}` : '# No nav_order'}
 parent: ${parent}
 ---
 

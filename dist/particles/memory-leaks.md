@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Memory leaks'
-nav_order: 1
+nav_order: 8
 parent: Particles
 ---
 

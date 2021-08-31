@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Index'
-nav_order: 1
+# No nav_order
 parent: Code docs
 ---
 

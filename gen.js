@@ -3,6 +3,7 @@ const path = require('path')
 const {
     SOURCE_PATH,
     DIST_PATH,
+    INDEX_FILENAME,
 } = require('./config')
 const STRUCT = require('./struct')
 const fileTmpl = require('./file-tmpl')
@@ -36,6 +37,8 @@ class Generator {
             return null
         }
 
+        const filename = path.basename(filePath, '.md')
+
         if ('children' in struct) {
             throw Error(`Invalid structure: ${filePath} has children but exists as file`)
         }
@@ -47,6 +50,7 @@ class Generator {
             title,
             parent: parentTitle,
             src,
+            isIndex: filename == INDEX_FILENAME,
             relPath: path.relative(SOURCE_PATH, filePath),
         }
     }
@@ -92,7 +96,9 @@ class Generator {
 
         let i = 1
         for (const child of children) {
-            child.navOrder = i++
+            if (!child.isIndex) {
+                child.navOrder = i++                
+            }
         }
 
         return {
