@@ -120,7 +120,31 @@ Trait operators are pretty same as those defined in Rust in `std::ops` module, b
 
 Available Trait operators:
 - `Deref` and `DerefMut` for `*a` prefix operator.
-- `Drop` - not a real operator, anyway 
+- `Drop` - not a real operator, anyway it is included in `std::ops` module.
+- `Fn`-like traits (not sure if there would be many like `Fn`, `FnMut` and `FnOnce` as in Rust) for `a(...)` invocation operations.
+- `Index` and `IndexMut` stand for `a[...]` and `a[...] = ...` operations.
+- `Unwrap` stands for `a!` operation, it is a trait-operator as it would likely to have complex code transformations which are inexpressible in code.
+- `Try` stands for `a?` operation and reason of being trait-operator is the same as for `a!`
+
+#### Nullable-operators
+
+> Disclaimer: _Jacy_ does not have `null` and by it I mean `Option` type constructor.
+
+This dilemma I came up with is about functionality that Rust has /vs/ functionality of more common nullable-operators.
+In Swift, `a?.b` means `if a is not null then get property b of a, otherwise end up with nil`.
+One the other side, in Rust, operation `a?.b` means `if a is not Option::None/Result::Error then get property b of unwrapped value a, otherwise RETURN None/Err`.
+
+I don't want to discuss generality of Rust `?` operator, instead I want bring up the subject of having both functionality.
+
+Questions I have:
+1. Do we need Rust-like error-propagation operator? - Answer is yes, otherwise there wouldn't be any questions.
+2. What is better for `?` operator - error-propagation or optional-chaining?
+3. What operator to use for error-propagation or optional-chaining if some of them would use `?` operator?
+
+__Question 2.__
+
+Operator `?` has pretty common in many languages (JavaScript with its `?.`, Swift )
+
 
 ### Lexing
 
@@ -179,5 +203,4 @@ There're three solutions I see:
 
 The 1. solution sounds better for me as I assumed to implement function overloading in the future.
 If one day I'll 100% establish that _Jacy_ would never have function overloading -- 2. variant will be used.
-
 
