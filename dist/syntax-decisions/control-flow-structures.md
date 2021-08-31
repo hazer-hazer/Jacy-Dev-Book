@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Control flow structures'
-nav_order: 4
+nav_order: 5
 parent: Syntax decisions
 ---
 

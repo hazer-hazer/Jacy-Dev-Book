@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Invert rust'
-nav_order: 2
+nav_order: 1
 parent: Backlog
 ---
 

@@ -74,7 +74,7 @@ class Generator {
         }
 
         entities.sort((lhs, rhs) => {
-            const titleCmp = lhs.title.localeCompare(rhs.title)
+            const titleCmp = lhs.localeCompare(rhs)
             if (titleCmp > 0) return -1
             if (titleCmp < 0) return 1
 
