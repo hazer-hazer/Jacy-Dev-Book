@@ -1,4 +1,5 @@
-module.exports = (src, {
+module.exports = ({
+    src,
     layout = 'default',
     title = 'Untitled',
     nav_order = 1,
