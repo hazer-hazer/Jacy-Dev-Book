@@ -164,4 +164,11 @@ func<T> <<(other: T) {}
 One more problem I found is that some desired functionality requires function overloading.
 For example, in _Jacy_ as in Rust I would like to be able to use `..` and `..=` range operators not only as infix operators but also as prefix and postfix like `a..`, `..b` and `..=b` (`a..=` does not exists, as obviously `Infinity + 1` is `Infinity`).
 
+There're three solutions I see:
+1. Disallow one-sided range operators until operator overloading will be implemented.
+2. Make range operators trait-operators only, thus disallow to customize them.
+
+The 1. solution sounds better for me as I assumed to implement function overloading in the future.
+If one day I'll 100% establish that _Jacy_ would never have function overloading -- 2. variant will be used.
+
 
