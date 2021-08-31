@@ -88,7 +88,34 @@ struct S {
 `operator type` pair is used to reduce count of keywords against Swift solution with `precedencegroup`.
 `operator` might be a soft keyword in the future, anyway as all of current keywords now it gonna be hard keyword.
 
+### Reserved operators (non-overloadable)
 
+Some operators are inexpressible with code as they require more complex internal transformations.
+E.g. `|>` operator passes lhs to rhs (function) -- we can some way implement this behavior but it won't be extensible as if we would like to add placeholders like `a |> b(_, 123)` where `a` is passed instead of `_`.
+
+> __Reserved operators cannot be overloaded and used as function name__
+
+Reserved operators:
+- `=` - Raw assignment is always per-byte copy operation
+- `|>` - Transforms AST, that is it is a syntax sugar
+- `or`/`and` - These logic operators are short-circuit, thus cannot be overloaded without lazy evaluation (no lazy in _Jacy_ so far)
+- `...` - Spread operator is not a real operator (maybe it will be changed in the future), it is mostly a punctuation with different behavior depending on context.
+
+Reserved operators also include special cases described in [Lexing] part below, these are:
+- `<` (as prefix)
+- `>` (as postfix)
+- `&` (as prefix)
+- `?` (as infix)
+- and punctuations `//`, `/*`/`*/` for comments, etc.
+
+### Trait-operators
+
+Trait operators are overloadable operators with syntax inexpressible as prefix, infix or postfix operators, e.g. `()` for invocations. Of course we would allow writing something like `func ()() {}`, but we've got a rule: "All operators that written as identifiers (such as in `func +` where `+` is an ident-like) -- are customized if not reserved", thus there're no special case like: you can overload `func ()()` but cannot define `postfix operator ()`.
+
+Trait operators are pretty same as those defined in Rust in `std::ops` module, but some Rust standard operators became custom-operators.
+
+Available Trait operators:
+- 
 
 ### Lexing
 
@@ -110,7 +137,7 @@ Regardless the fact that operators cannot contain `:`, there's one special case 
 Custom operators containing dot must begin with a dot to be full operator, so if operator begins with `.` then it can contain more dots after, if not then it is splitted to two/more operator:
 - `%.%` is a `%` followed by `.%` operator
 - `.%.` is a full operator `.%.`
-- `...` and `..=` (natively "range operators") are full operators too
+- `..` and `..=` (natively "range operators") are full operators too
 
 Symbols that might be used as part of custom operators (maybe only in the middle or beginning/end):
 - `$` (often used in functional languages but in _Jacy_ proposed for macros and maybe lambdas)
@@ -132,4 +159,9 @@ So, this would be parsed successfully:
 func<T> <<(other: T) {}
 ```
 
-##### 
+##### Function overloading
+
+One more problem I found is that some desired functionality requires function overloading.
+For example, in _Jacy_ as in Rust I would like to be able to use `..` and `..=` range operators not only as infix operators but also as prefix and postfix like `a..`, `..b` and `..=b` (`a..=` does not exists, as obviously `Infinity + 1` is `Infinity`).
+
+
