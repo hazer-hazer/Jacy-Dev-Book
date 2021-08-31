@@ -104,9 +104,13 @@ Reserved operators:
 Reserved operators also include special cases described in [Lexing] part below, these are:
 - `<` (as prefix)
 - `>` (as postfix)
-- `&` (as prefix)
-- `?` (as infix)
+- `&` and `*` (as prefix)
+- `?` (as prefix, infix and postfix)
 - and punctuations `//`, `/*`/`*/` for comments, etc.
+
+> Punctuations are recognized on lexing level, thus user won't get operator at all.
+> For example, if code is such as `func /**/()` the error would be like `Expected function name`
+> rather than `Cannot use /**/ as custom operator` as comments are processed before and ignored.
 
 ### Trait-operators
 
@@ -115,7 +119,8 @@ Trait operators are overloadable operators with syntax inexpressible as prefix, 
 Trait operators are pretty same as those defined in Rust in `std::ops` module, but some Rust standard operators became custom-operators.
 
 Available Trait operators:
-- 
+- `Deref` and `DerefMut` for `*a` prefix operator.
+- `Drop` - not a real operator, anyway 
 
 ### Lexing
 
@@ -127,8 +132,12 @@ These symbols considered white-spaces (in sense of operator lexing):
 
 I would start with punctuation symbols/sequences which are disallowed in operators at all:
 - Reserved sequences: `//`, `/*`/`*/`, `=`
-- Prefix operators: `<` (used for generics), `&` (used for borrowing), `?` (reserved for some use)
-- Postfix operators: `>` (used for generics)
+- Prefix operators: `<` (used for generics), `&` (used for borrowing), `*` (used for dereferencing), `?` (reserved for some use)
+- Postfix operators: `>` (used for generics), `?` (for short-circuit optional chaining)
+- Infix operators: `?` (reserved for some use)
+
+> Operator `*` is reserved for dereferencing use as it is context-dependent.
+> Depending on context mutability where `*` appears - different trait method called (`Deref` for immutable dereferencing like `*a` or `DerefMut` for mutable dereferencing like `*a = ...`)
 
 Operators can begin with: `=`, `+`, `-`, `*`, `/`, `%`, `<`, `>`, `&`, `|`, `^`, `?`, `~`.
 
