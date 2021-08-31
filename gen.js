@@ -7,6 +7,7 @@ const {
 } = require('./config')
 const STRUCT = require('./struct')
 const fileTmpl = require('./file-tmpl')
+const { chdir } = require('process')
 
 const capitalize = str => str[0].toUpperCase() + str.slice(1)
 
@@ -32,7 +33,7 @@ class Generator {
         await this._genDir(sourceDir)
     }
 
-    async _processFile(filePath, struct, title, parentTitle) {
+    async _processFile(filePath, struct, title, {navOrder, parentTitle}) {
         if (!filePath.endsWith('.md')) {
             return null
         }
@@ -50,14 +51,20 @@ class Generator {
             title,
             parent: parentTitle,
             src,
+            navOrder,
             isIndex: filename == INDEX_FILENAME,
             relPath: path.relative(SOURCE_PATH, filePath),
         }
     }
 
-    async _processDir(dirPath, struct, title, parentTitle) {
+    async _processDir(dirPath, struct, title, {navOrder, parentTitle}) {
         const children = []
         const entities = fs.readdirSync(dirPath)
+
+        const parentSettings = {
+            parentTitle: title,
+            navOrder,
+        }
 
         for (const subPath of entities) {
             const childPath = path.join(dirPath, subPath)
@@ -68,9 +75,9 @@ class Generator {
             const childName = childStruct.name || nameFromFilename(childFilename)
 
             if (childIsDir) {
-                children.push(await this._processDir(childPath, childStruct, childName, title))
+                children.push(await this._processDir(childPath, childStruct, childName, parentSettings))
             } else {
-                const file = await this._processFile(childPath, childStruct, childName, title)
+                const file = await this._processFile(childPath, childStruct, childName, parentSettings)
                 if (file) {
                     children.push(file)
                 }
@@ -98,6 +105,8 @@ class Generator {
         for (const child of children) {
             if (!child.isIndex) {
                 child.navOrder = i++                
+            } else {
+                child.navOrder = navOrder
             }
         }
 
