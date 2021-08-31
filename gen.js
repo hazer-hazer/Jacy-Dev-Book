@@ -6,6 +6,7 @@ const {
 } = require('./config')
 const STRUCT = require('./struct')
 const fileTmpl = require('./file-tmpl')
+const { dir } = require('console')
 
 const capitalize = str => str[0].toUpperCase() + str.slice(1)
 
@@ -27,51 +28,64 @@ const nameFromFilename = filename => {
 
 class Generator {
     async run() {
-        await this.gen(await this.collectSources(SOURCE_PATH))
+        const sourceDir = await this._processDir(SOURCE_PATH, STRUCT, null)
+        await this._genDir(sourceDir)
     }
 
-    /// Collects all source files, auto-generates config and merges it with config described in `struct.js`
-    async collectSources(p = SOURCE_PATH, struct = STRUCT) {
-        const result = {}
-        const entities = fs.readdirSync(p)
-    
-        const parentName = path.dirname(p).split(path.sep).pop()
-    
+    async _processFile(filePath, struct, title, parentTitle) {
+        if (!filePath.endsWith('.md')) {
+            return null
+        }
+
+        if ('children' in struct) {
+            throw Error(`Invalid structure: ${filePath} has children but exists as file`)
+        }
+
+        const src = fs.readFileSync(filePath, 'utf8')
+
+        return {
+            isDir: false,
+            title,
+            parent: parentTitle,
+            src,
+            relPath: path.relative(SOURCE_PATH, filePath),
+        }
+    }
+
+    async _processDir(dirPath, struct, title, parentTitle) {
+        const children = []
+        const entities = fs.readdirSync(dirPath)
+
         for (const subPath of entities) {
-            const childPath = path.join(p, subPath)
-            const stat = fs.lstatSync(childPath)
-            const childName = path.basename(subPath, '.md')
-            const subStruct = struct[childName] || {}
-    
-            if (stat.isDirectory()) {
-                result[childName] = {
-                    isDir: true,
-                    children: await this.collectSources(childPath, subStruct),
-                }
-            } else if (subPath.endsWith('.md')) {
-                if ('children' in subStruct) {
-                    throw Error(`Invalid structure: ${p} has children but exists as file`)
-                }
-    
-                const src = fs.readFileSync(childPath, 'utf8')
-    
-                result[childName] = {
-                    isDir: false,
-                    name: subStruct.name || nameFromFilename(childName),
-                    parent: parentName,
-                    src,
-                    path: path.relative(SOURCE_PATH, childPath),
+            const childPath = path.join(dirPath, subPath)
+            const childIsDir = fs.lstatSync(childPath).isDirectory()
+            const childFilename = path.basename(subPath, '.md')
+
+            const childStruct = struct[childFilename] || {}
+            const childName = childStruct.name || nameFromFilename(childFilename)
+
+            if (childIsDir) {
+                children.push(await this._processDir(childPath, childStruct, childName, title))
+            } else {
+                const file = await this._processFile(childPath, childStruct, childName, title)
+                if (file) {
+                    children.push(file)
                 }
             }
-    
+
             // Ignore non-markdown files
         }
-    
-        return result
+
+        return {
+            isDir: true,
+            name: title,
+            children,
+            relPath: path.relative(SOURCE_PATH, dirPath),
+        }
     }
 
     async _genDir(dir) {
-        for (const child of dir.children) {
+        for (const child of Object.values(dir.children)) {
             this.gen(child)
         }
     }
