@@ -6,7 +6,6 @@ const {
 } = require('./config')
 const STRUCT = require('./struct')
 const fileTmpl = require('./file-tmpl')
-const { dir } = require('console')
 
 const capitalize = str => str[0].toUpperCase() + str.slice(1)
 
@@ -76,24 +75,27 @@ class Generator {
             // Ignore non-markdown files
         }
 
-        let absPath = null
+        let relPath = null
         if (!title) {
-            absPath = DIST_PATH
+            relPath = DIST_PATH
         } else {
-            absPath = path.relative(SOURCE_PATH, dirPath)
+            relPath = path.relative(SOURCE_PATH, dirPath)
         }
 
         return {
             isDir: true,
             name: title,
             children,
-            absPath,
+            path: dirPath,
+            relPath,
         }
     }
 
     async _genDir(dir) {
-        if (!fs.existsSync(dir.absPath)){
-            fs.mkdirSync(dir.absPath);
+        const dirPath = path.join(DIST_PATH, dir.absPath)
+        if (!fs.existsSync(dirPath)){
+            console.log(`mkdir ${dirPath}`);
+            // fs.mkdirSync(dir.absPath);
         }
 
         for (const child of Object.values(dir.children)) {
@@ -102,7 +104,8 @@ class Generator {
     }
 
     async _genFile(file) {
-        fs.writeFileSync(path.join(DIST_PATH, file.path), fileTmpl(file), 'utf8')
+        console.log(`write file: ${path.join(DIST_PATH, file.relPath)}`);
+        // fs.writeFileSync(path.join(DIST_PATH, file.path), fileTmpl(file), 'utf8')
     }
 
     async gen(entity) {
