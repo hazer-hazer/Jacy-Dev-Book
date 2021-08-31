@@ -1,11 +1,11 @@
 const fs = require('fs')
 const path = require('path')
 const {
-    STRUCTURE,
     SOURCE_PATH,
     DIST_PATH,
 } = require('./config')
 const STRUCT = require('./struct')
+const fileTmpl = require('./file-tmpl')
 
 const capitalize = str => str[0].toUpperCase() + str.slice(1)
 
@@ -48,13 +48,13 @@ const collectSources = async (p = SOURCE_PATH, struct = STRUCT) => {
                 throw Error(`Invalid structure: ${p} has children but exists as file`)
             }
 
-            const src = fs.readFileSync(childPath)
+            const src = fs.readFileSync(childPath, 'utf8')
 
             result[childName] = {
                 isDir: false,
                 name: subStruct.name || nameFromFilename(childName),
                 parentName: parentName,
-                src,
+                // src,
                 path: path.relative(SOURCE_PATH, childPath),
             }
         }
@@ -63,6 +63,10 @@ const collectSources = async (p = SOURCE_PATH, struct = STRUCT) => {
     }
 
     return result
+}
+
+const gen = async () => {
+    
 }
 
 ;(async () => {
