@@ -5,9 +5,6 @@ nav_order: 1
 parent: Backlog
 ---
 
+# Backlog
 
-layout: default
-title: Backlog
-nav_order: 1000
-has_children: true
-
+Deprecated ideas, etc.

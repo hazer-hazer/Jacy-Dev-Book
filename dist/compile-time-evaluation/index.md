@@ -5,9 +5,15 @@ nav_order: 1
 parent: Compile time evaluation
 ---
 
+# Compile-Time Evaluation
 
-layout: default
-title: Compile-Time Evaluation
-nav_order: 15
-has_children: true
+One thing I appreciate much is the ability of compile-time evaluation (CTE - compile-time evaluated(-ion) further)
+Unlike Zig, there's no hardly separate syntax like `comptime`, etc., as far as we don't base something else (like type
+parameters in Zig) on CTE, we only use it for computations.
 
+There are some terms we need to establish:
+
+* `const` keyword in the context of CTE
+* CTE contexts
+* CTE functions
+* CTE expressions

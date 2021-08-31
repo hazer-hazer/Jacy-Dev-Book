@@ -7,7 +7,7 @@ module.exports = ({
 }) => {
     src = src.trim()
     if (src.startsWith('---')) {
-        src = src.slice(3, src.indexOf('---', 3))
+        src = src.slice(src.indexOf('---', 3) + 3).trim()
     }
 
     return `
