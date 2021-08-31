@@ -28,7 +28,7 @@ const nameFromFilename = filename => {
 
 class Generator {
     async run() {
-        const sourceDir = await this._processDir(SOURCE_PATH, STRUCT, null)
+        const sourceDir = await this._processDir(SOURCE_PATH, STRUCT, null, null)
         await this._genDir(sourceDir)
     }
 
@@ -76,15 +76,26 @@ class Generator {
             // Ignore non-markdown files
         }
 
+        let absPath = null
+        if (!title) {
+            absPath = DIST_PATH
+        } else {
+            absPath = path.relative(SOURCE_PATH, dirPath)
+        }
+
         return {
             isDir: true,
             name: title,
             children,
-            relPath: path.relative(SOURCE_PATH, dirPath),
+            absPath,
         }
     }
 
     async _genDir(dir) {
+        if (!fs.existsSync(dir.absPath)){
+            fs.mkdirSync(dir.absPath);
+        }
+
         for (const child of Object.values(dir.children)) {
             this.gen(child)
         }
