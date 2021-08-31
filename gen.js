@@ -82,6 +82,14 @@ class Generator {
             relPath = path.relative(SOURCE_PATH, dirPath)
         }
 
+        children.sort((lhs, rhs) => {
+            const nameCmp = lhs.name.localeCompare(rhs.name)
+            if (nameCmp > 0) return -1
+            if (nameCmp < 0) return 1
+
+            return 0
+        })
+
         return {
             isDir: true,
             name: title,
