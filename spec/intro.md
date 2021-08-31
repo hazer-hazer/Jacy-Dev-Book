@@ -1,3 +1,10 @@
+---
+layout: default
+title: Intro
+parent: Spec
+nav_order: 1
+---
+
 # Intro
 
 *Jacy*, being WIP is updating everyday, and that's okay, but problem is that the main question is not answered yet: "What am I doing?".

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Particles
-nav_order: 2
-has_children: true
+title: References and move semantics
+parent: Particles
+nav_order: 8
 ---
 
 # References and move semantics

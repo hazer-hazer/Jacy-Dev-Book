@@ -1,3 +1,10 @@
+---
+layout: default
+title: not prependent operator
+parent: Particles
+nav_order: 5
+---
+
 # `not` prependent operator
 
 Briefly, the idea is to allow putting `not` operator before an infix operators. 
