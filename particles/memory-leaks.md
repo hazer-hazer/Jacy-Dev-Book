@@ -1,3 +1,10 @@
+---
+layout: default
+title: Memory leaks
+parent: Particles
+nav_order: 1
+---
+
 # Memory leaks
 
 What are memory leaks and how do we prevent them and should we?

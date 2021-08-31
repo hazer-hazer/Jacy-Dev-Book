@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Particles
+title: Assignment
+parent: Particles
 nav_order: 1
-has_children: true
 ---
 
 # Assignment

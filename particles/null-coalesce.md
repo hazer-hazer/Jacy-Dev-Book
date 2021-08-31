@@ -1,3 +1,10 @@
+---
+layout: default
+title: Null coalesce
+parent: Particles
+nav_order: 1
+---
+
 # Null coalesce
 
 Despite the fact that _Jacy_ does not have null replacing it with `Option` such as what Rust does, this particle is called so to use common term "null-coalesce" familiar to SQL, JS, etc. programmers.

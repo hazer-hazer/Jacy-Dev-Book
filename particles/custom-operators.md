@@ -1,3 +1,10 @@
+---
+layout: default
+title: Custom-operators
+parent: Particles
+nav_order: 1
+---
+
 # Custom Operators
 
 There are three ways I see:

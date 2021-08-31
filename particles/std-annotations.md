@@ -1,3 +1,10 @@
+---
+layout: default
+title: `std` annotations
+parent: Particles
+nav_order: 1
+---
+
 # `std` annotations
 
 ### Analysis helpers

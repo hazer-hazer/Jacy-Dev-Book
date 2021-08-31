@@ -1,3 +1,10 @@
+---
+layout: default
+title: Organic _Jacy_
+parent: Particles
+nav_order: 1
+---
+
 # Organic _Jacy_
 
 The idea of organic _Jacy_ is to have deeper underlying language than main and unsafe dialect.    

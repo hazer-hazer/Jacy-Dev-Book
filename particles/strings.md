@@ -1,3 +1,10 @@
+---
+layout: default
+title: Strings
+parent: Particles
+nav_order: 1
+---
+
 # Strings
 
 This particle is about the design of strings and characters, from view of the syntax to language features.
