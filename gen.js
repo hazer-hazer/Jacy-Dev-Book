@@ -92,7 +92,7 @@ class Generator {
     }
 
     async _genDir(dir) {
-        const dirPath = path.join(DIST_PATH, dir.absPath)
+        const dirPath = path.join(DIST_PATH, dir.relPath)
         if (!fs.existsSync(dirPath)){
             console.log(`mkdir ${dirPath}`);
             // fs.mkdirSync(dir.absPath);
