@@ -9,6 +9,7 @@ This site is supposed to be hosted on GitHub pages, thus needs to be static.
 I use Just-The-Docs theme (customized a little bit) but it is not really flexible and easy-to-use.
 
 The `gen.js` is a dependency-free simple script that prepares pages and automatically adds Jekyll's Front Matter to each page.
+`gen.js` requires NodeJS >= 14 (13 might also work)
 
 Rules:
 - Every `index.md` becomes parent of sibling files and is used to set up directory it is located in.
