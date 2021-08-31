@@ -89,3 +89,21 @@ struct S {
 `operator` might be a soft keyword in the future, anyway as all of current keywords now it gonna be hard keyword.
 
 
+
+### Lexing
+
+Lexing can be hard with custom operators.
+Let's at first describe what symbols can operators contain, start/end with, as these rules needed to avoid breaking the entire language syntax.
+
+These symbols considered white-spaces (in sense of operator lexing):
+- `(`/`)`, `[`/`]`, `{`/`}`, `,`, `:`, `;`
+
+I would start with punctuation symbols/sequences which are disallowed in operators at all:
+- Reserved sequences: `//`, `/*`/`*/`, `=`
+- Prefix operators: `<` (used for generics), `&` (used for borrowing), `?` (reserved for some use)
+- Postfix operators: `>` (used for generics)
+
+Operators can begin with: `=`, `+`, `-`, `*`, `/`, `%`, `<`, `>`, `&`, `|`, `^`, `?`, `~`.
+
+Regardless the fact that operators cannot contain `:`, there's one special case -- `:=` operator which is overloadable.
+
