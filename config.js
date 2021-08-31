@@ -1,6 +1,6 @@
 const path = require('path')
 
-const SOURCE_DIR = 'src'
+const SOURCE_DIR = '_docs'
 const DIST_DIR = 'dist'
 
 const INDEX_FILENAME = 'index'
