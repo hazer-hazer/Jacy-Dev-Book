@@ -1,6 +1,6 @@
 ---
 layout: default
-title: `not` prependent operator
+title: not prependent operator
 parent: Particles
 nav_order: 5
 ---

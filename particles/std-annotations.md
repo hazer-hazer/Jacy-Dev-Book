@@ -1,6 +1,6 @@
 ---
 layout: default
-title: `std` annotations
+title: std annotations
 parent: Particles
 nav_order: 9
 ---
