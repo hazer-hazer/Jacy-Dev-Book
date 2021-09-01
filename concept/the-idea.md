@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'The idea'
-nav_order: 2
-parent: Concept
+nav_order: 1
+parent: Kek
 # No children
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Hir'
-nav_order: 1
-parent: Compilation process
+# No nav_order
+parent: Kek
 # No children
 ---
 

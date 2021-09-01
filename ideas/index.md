@@ -1,9 +1,9 @@
 ---
 layout: 'default'
-title: 'Ideas'
-nav_order: 10
-# No parent
-has_children: true
+title: 'Kek'
+nav_order: 2
+parent: Kek
+# No children
 ---
 
 # Ideas

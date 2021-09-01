@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Attributes'
-nav_order: 1
-parent: Extended tools
+# No nav_order
+parent: Kek
 # No children
 ---
 

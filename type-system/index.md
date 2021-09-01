@@ -1,9 +1,9 @@
 ---
 layout: 'default'
-title: 'Type system'
-nav_order: 17
-# No parent
-has_children: true
+title: 'Kek'
+# No nav_order
+parent: Kek
+# No children
 ---
 
 # Type System

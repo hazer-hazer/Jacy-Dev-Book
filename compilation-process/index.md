@@ -1,9 +1,9 @@
 ---
 layout: 'default'
-title: 'Compilation process'
-nav_order: 4
-# No parent
-has_children: true
+title: 'Kek'
+nav_order: 1
+parent: Kek
+# No children
 ---
 
 # compilation-process

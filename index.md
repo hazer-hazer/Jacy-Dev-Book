@@ -1,8 +1,8 @@
 ---
 layout: 'default'
-title: 'null'
-nav_order: 1
-# No parent
+title: 'Kek'
+nav_order: 10
+parent: Kek
 # No children
 ---
 

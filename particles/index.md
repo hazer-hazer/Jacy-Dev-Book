@@ -1,9 +1,9 @@
 ---
 layout: 'default'
-title: 'Particles'
-nav_order: 14
-# No parent
-has_children: true
+title: 'Kek'
+nav_order: 4
+parent: Kek
+# No children
 ---
 
 # Particles

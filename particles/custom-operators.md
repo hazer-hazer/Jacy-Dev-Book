@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Custom operators'
-nav_order: 4
-parent: Particles
+nav_order: 3
+parent: Kek
 # No children
 ---
 
