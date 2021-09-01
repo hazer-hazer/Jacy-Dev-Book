@@ -95,7 +95,7 @@ class Generator {
             parentNavOrder: navOrder,
         }
 
-        let index = 1
+        let index = 100
 
         for (const subPath of entities) {
             const childPath = path.join(dirPath, subPath)
