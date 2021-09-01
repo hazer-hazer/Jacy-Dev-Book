@@ -1,0 +1,22 @@
+{
+  "name": "jacy-dev-book",
+  "version": "1.0.0",
+  "description": "Page-gen script",
+  "main": "gen.js",
+  "scripts": {
+    "gen": "node gen.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hazer-hazer/Jacy-Dev-Book.git"
+  },
+  "keywords": [
+    "Jacy"
+  ],
+  "author": "hazer-hazer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hazer-hazer/Jacy-Dev-Book/issues"
+  },
+  "homepage": "https://github.com/hazer-hazer/Jacy-Dev-Book#readme"
+}
