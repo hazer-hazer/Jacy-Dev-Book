@@ -30,4 +30,14 @@ compress_html:
 
 search.button: true
 
+collections:
+  docs:
+    permalink: "/:collection/:path/"
+    output: true
+
+just_the_docs:
+  collections:
+    docs:
+      name: Dev Docs
+
 # footer_content: "<button type=\"button\" name=\"button\" class=\"toggle-theme\" onclick=\"jtd.setTheme(jtd.getTheme() === 'dark' ? 'light' : 'dark');\">🌗</button>"
