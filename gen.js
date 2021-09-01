@@ -72,7 +72,7 @@ class Generator {
         const entities = fs.readdirSync(dirPath)
 
         const settings = {
-            parentTitle: title,
+            parentTitle,
             parentNavOrder: navOrder,
         }
 
