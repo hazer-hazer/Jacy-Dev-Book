@@ -8,9 +8,18 @@ const navBtn = (next, {relPath, title}) => {
         title = "< " + title
     }
     return `
-<button class="btn btn-outline" style="float: ${align};">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/${relPath.replace('\\', '/').replace('.md', '.html')}">${title}</a>
+<button class="nav-btn">
+    <a href="/Jacy-Dev-Book/${relPath.replace('\\', '/').replace('.md', '.html')}">${title}</a>
 </button>
+`.trim() + '\n'
+}
+
+const navBtnBlock = (previous, next) => {
+return `
+<div class="nav-btns">
+    ${previous ? navBtn(false, previous) : ''}
+    ${next ? navBtn(true, next) : ''}
+</div>
 `.trim() + '\n'
 }
 
@@ -43,13 +52,7 @@ ${src}
     },
 
     addNavButtons(fileStr, previous, next) {
-        if (previous) {
-            fileStr += navBtn(false, previous)
-        }
-        if (next) {
-            fileStr += navBtn(true, next)
-        }
-        return fileStr
+        return fileStr + navBtnBlock(previous, next)
     }
 }
 
