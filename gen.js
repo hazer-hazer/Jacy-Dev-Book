@@ -29,7 +29,7 @@ const nameFromFilename = filename => {
 class Generator {
     async run() {
         const sourceDir = await this._processDir(SOURCE_PATH, STRUCT, null, {
-            parentTitle: null,
+            parentTitle: 'Table of contents',
             navOrder: 1,
             isRootDir: true,
         })
