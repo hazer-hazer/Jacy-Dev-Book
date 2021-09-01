@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Index'
 nav_order: 14
-parent: Particles
+parent: null
 has_children: true
 ---
 

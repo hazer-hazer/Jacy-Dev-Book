@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Variables'
 nav_order: 6
-parent: Syntax decisions
+parent: null
 has_children: false
 ---
 

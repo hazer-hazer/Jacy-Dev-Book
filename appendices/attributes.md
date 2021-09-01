@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Attributes'
 nav_order: 1
-parent: Appendices
+parent: null
 has_children: false
 ---
 

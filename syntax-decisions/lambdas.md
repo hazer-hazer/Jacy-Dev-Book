@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Lambdas'
 nav_order: 4
-parent: Syntax decisions
+parent: null
 has_children: false
 ---
 

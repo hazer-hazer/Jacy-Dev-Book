@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Index'
 nav_order: 16
-parent: Syntax decisions
+parent: null
 has_children: true
 ---
 

@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Structural nominal typing'
 nav_order: 2
-parent: Type system
+parent: null
 has_children: false
 ---
 

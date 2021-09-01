@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Index'
 nav_order: 5
-parent: Compile time evaluation
+parent: null
 has_children: true
 ---
 

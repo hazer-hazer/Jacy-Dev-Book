@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Config and cli'
 nav_order: 1
-parent: Code docs
+parent: null
 has_children: false
 ---
 

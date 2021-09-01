@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Blocks'
 nav_order: 1
-parent: Syntax decisions
+parent: null
 has_children: false
 ---
 

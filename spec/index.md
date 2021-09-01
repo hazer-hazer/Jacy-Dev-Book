@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Index'
 nav_order: 15
-parent: Spec
+parent: null
 has_children: true
 ---
 

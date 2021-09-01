@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Index'
 nav_order: 6
-parent: Concept
+parent: null
 has_children: true
 ---
 

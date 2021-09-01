@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Cte functions'
 nav_order: 4
-parent: Compile time evaluation
+parent: null
 has_children: false
 ---
 

@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Control flow structures'
 nav_order: 2
-parent: Syntax decisions
+parent: null
 has_children: false
 ---
 
