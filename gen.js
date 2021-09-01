@@ -31,12 +31,12 @@ class Generator {
         const sourceDir = await this._processDir(SOURCE_PATH, STRUCT, null, {
             parentTitle: null,
             navOrder: 1,
-            isRoot: true,
+            isRootDir: true,
         })
         await this._genDir(sourceDir)
     }
 
-    async _processFile(filePath, struct, title, {navOrder, parentTitle, parentNavOrder, isRoot = false}) {
+    async _processFile(filePath, struct, title, {navOrder, parentTitle, parentNavOrder, isRootDir = false}) {
         if (!filePath.endsWith('.md')) {
             return null
         }
@@ -52,7 +52,7 @@ class Generator {
         let hasChildren = false
         if (filename === INDEX_FILENAME) {
             navOrder = parentNavOrder
-            hasChildren = !isRoot
+            hasChildren = !isRootDir
         }
 
         return {
@@ -67,7 +67,7 @@ class Generator {
         }
     }
 
-    async _processDir(dirPath, struct, title, {navOrder, parentTitle, isRoot = false}) {
+    async _processDir(dirPath, struct, title, {navOrder, parentTitle, isRootDir = false}) {
         const children = []
         const entities = fs.readdirSync(dirPath)
 
@@ -95,7 +95,7 @@ class Generator {
             } else {
                 const file = await this._processFile(childPath, childStruct, childName, {
                     ...settings,
-                    isRoot,
+                    isRootDir,
                 })
                 if (file) {
                     children.push(file)
