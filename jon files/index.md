@@ -1,9 +1,9 @@
 ---
 layout: 'default'
-title: 'Index'
-# No nav_order
-parent: Kek
-# No children
+title: 'Jon files'
+nav_order: 13
+parent: Table of contents
+has_children: true
 ---
 
 # JON files

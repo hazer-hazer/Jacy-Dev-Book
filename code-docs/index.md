@@ -1,9 +1,9 @@
 ---
 layout: 'default'
-title: 'Index'
-nav_order: 2
-parent: Kek
-# No children
+title: 'Code docs'
+nav_order: 3
+parent: Table of contents
+has_children: true
 ---
 
 # Code Docs

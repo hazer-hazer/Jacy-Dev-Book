@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Logger and panics'
-nav_order: 4
-parent: Kek
+nav_order: 5
+parent: Code docs
 # No children
 ---
 

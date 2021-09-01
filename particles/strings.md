@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Strings'
-nav_order: 12
-parent: Kek
+nav_order: 13
+parent: Particles
 # No children
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Semicolons'
-nav_order: 4
-parent: Kek
+nav_order: 5
+parent: Syntax decisions
 # No children
 ---
 

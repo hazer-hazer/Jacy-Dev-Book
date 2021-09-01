@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Checklist'
-nav_order: 1
-parent: Kek
+nav_order: 2
+parent: Appendices
 # No children
 ---
 

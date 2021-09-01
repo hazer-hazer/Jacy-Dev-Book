@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Invert rust'
-nav_order: 2
-parent: Kek
+nav_order: 3
+parent: Backlog
 # No children
 ---
 

@@ -1,9 +1,9 @@
 ---
 layout: 'default'
-title: 'Index'
-# No nav_order
-parent: Kek
-# No children
+title: 'Backlog'
+nav_order: 2
+parent: Table of contents
+has_children: true
 ---
 
 # Backlog

@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Lambdas'
-nav_order: 3
-parent: Kek
+nav_order: 4
+parent: Syntax decisions
 # No children
 ---
 

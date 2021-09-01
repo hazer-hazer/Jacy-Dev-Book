@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Cte expressions'
-nav_order: 2
-parent: Kek
+nav_order: 3
+parent: Compile time evaluation
 # No children
 ---
 

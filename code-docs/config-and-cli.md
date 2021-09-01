@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Config and cli'
-# No nav_order
-parent: Kek
+nav_order: 1
+parent: Code docs
 # No children
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Name resolution'
-nav_order: 3
-parent: Kek
+nav_order: 4
+parent: Compilation process
 # No children
 ---
 

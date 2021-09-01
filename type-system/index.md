@@ -1,9 +1,9 @@
 ---
 layout: 'default'
-title: 'Index'
-# No nav_order
-parent: Kek
-# No children
+title: 'Type system'
+nav_order: 17
+parent: Table of contents
+has_children: true
 ---
 
 # Type System

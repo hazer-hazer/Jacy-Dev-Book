@@ -1,9 +1,9 @@
 ---
 layout: 'default'
-title: 'Index'
-nav_order: 4
-parent: Kek
-# No children
+title: 'Particles'
+nav_order: 14
+parent: Table of contents
+has_children: true
 ---
 
 # Particles
