@@ -13,5 +13,5 @@ but not in stage classes, it's kinda bad but...
 
 `Interface` catches errors, that is, when something went wrong at any stage we can log debug info about the current
 compiler state, etc.
-<button class="btn btn-outline" href="/code-docs/index.md">< Code docs</button>
-<button class="btn btn-outline" href="/code-docs/logger-and-panics.md">Logger and panics ></button>
+<button class="btn btn-outline"><a href="/code-docs/index.md">< Code docs</a></button>
+<button class="btn btn-outline"><a href="/code-docs/logger-and-panics.md">Logger and panics ></a></button>

@@ -7,5 +7,5 @@ parent: 'Particles'
 ---
 
 
-<button class="btn btn-outline" href="/particles/assignment.md">< Assignment</button>
-<button class="btn btn-outline" href="/particles/custom-allocators.md">Custom allocators ></button>
+<button class="btn btn-outline"><a href="/particles/assignment.md">< Assignment</a></button>
+<button class="btn btn-outline"><a href="/particles/custom-allocators.md">Custom allocators ></a></button>

@@ -39,4 +39,4 @@ is we set the option in `Config`.
 
 It is important to note that all default values for options inside `Config` must be set in place, that is, inited like
 `PrintKind printKind{PrintKind::None}`.
-<button class="btn btn-outline" href="/code-docs/dev-conventions.md">Dev conventions ></button>
+<button class="btn btn-outline"><a href="/code-docs/dev-conventions.md">Dev conventions ></a></button>

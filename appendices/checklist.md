@@ -111,5 +111,5 @@ In conclusion, this is what I think of you:
 [ ] This is a bad language, and you should feel bad for inventing it.
 [ ] Programming in this language is an adequate punishment for inventing it.
 ```
-<button class="btn btn-outline" href="/appendices/attributes.md">< Attributes</button>
-<button class="btn btn-outline" href="/appendices/index.md">Appendices ></button>
+<button class="btn btn-outline"><a href="/appendices/attributes.md">< Attributes</a></button>
+<button class="btn btn-outline"><a href="/appendices/index.md">Appendices ></a></button>

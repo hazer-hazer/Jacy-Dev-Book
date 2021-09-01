@@ -129,5 +129,5 @@ func main {
     print(fib100);
 }
 ```
-<button class="btn btn-outline" href="/extended-tools">< Extended tools</button>
-<button class="btn btn-outline" href="/how-to-run.md">How to run ></button>
+<button class="btn btn-outline"><a href="/extended-tools">< Extended tools</a></button>
+<button class="btn btn-outline"><a href="/how-to-run.md">How to run ></a></button>

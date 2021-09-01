@@ -102,5 +102,5 @@ Also, they're case insensitive (alpha-values of course):
 | Y | N |
 | True | False |
 | On | Off |
-<button class="btn btn-outline" href="/goal.md">< Goal</button>
-<button class="btn btn-outline" href="/ideas">Ideas ></button>
+<button class="btn btn-outline"><a href="/goal.md">< Goal</a></button>
+<button class="btn btn-outline"><a href="/ideas">Ideas ></a></button>

@@ -7,5 +7,5 @@ has_children: true
 ---
 
 # Syntax Decisions
-<button class="btn btn-outline" href="/syntax-decisions/control-flow-structures.md">< Control flow structures</button>
-<button class="btn btn-outline" href="/syntax-decisions/lambdas.md">Lambdas ></button>
+<button class="btn btn-outline"><a href="/syntax-decisions/control-flow-structures.md">< Control flow structures</a></button>
+<button class="btn btn-outline"><a href="/syntax-decisions/lambdas.md">Lambdas ></a></button>

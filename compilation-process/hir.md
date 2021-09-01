@@ -19,4 +19,4 @@ E.g. all kinds of loops are converted to `loop` structure because every loop is 
 something". That is, `for` loop iterates over data until there're some data, same for while and `while let`.
 
 By doing so, we reduce a large amount of AST nodes to some more common structures.
-<button class="btn btn-outline" href="/compilation-process/index.md">Compilation process ></button>
+<button class="btn btn-outline"><a href="/compilation-process/index.md">Compilation process ></a></button>

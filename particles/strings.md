@@ -35,4 +35,4 @@ I really like single-quoted strings, idk why, but solutions to allow single-quot
 Anyway, Swift gift me an solution -- no character literals 😐.  Btw, Swift doesn't have single-quoted strings at all -- we will.
 
 To infer that user assumed to use character instead of string we need to know types at first, thus, creating character becomes something run-time dependent 🤔.
-<button class="btn btn-outline" href="/particles/std-annotations.md">< Std annotations</button>
+<button class="btn btn-outline"><a href="/particles/std-annotations.md">< Std annotations</a></button>

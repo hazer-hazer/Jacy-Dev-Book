@@ -67,5 +67,5 @@ Cons:
 
 Also, this syntax allows simplifications:
 - We can allow `IDENT -> expr` as a shortcut for `BorrowPattern(IDENT) -> expr`
-<button class="btn btn-outline" href="/syntax-decisions/index.md">< Syntax decisions</button>
-<button class="btn btn-outline" href="/syntax-decisions/semicolons.md">Semicolons ></button>
+<button class="btn btn-outline"><a href="/syntax-decisions/index.md">< Syntax decisions</a></button>
+<button class="btn btn-outline"><a href="/syntax-decisions/semicolons.md">Semicolons ></a></button>

@@ -28,5 +28,5 @@ And this code will produce an error like:
 Invalid type String for int
 Note: try call s.toInt()
 ```
-<button class="btn btn-outline" href="/particles/soft-keywords.md">< Soft keywords</button>
-<button class="btn btn-outline" href="/particles/strings.md">Strings ></button>
+<button class="btn btn-outline"><a href="/particles/soft-keywords.md">< Soft keywords</a></button>
+<button class="btn btn-outline"><a href="/particles/strings.md">Strings ></a></button>
