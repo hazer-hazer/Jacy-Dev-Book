@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Custom operators'
-nav_order: 4
+nav_order: 103
 parent: 'Particles'
 # No children
 ---

@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'The idea'
-nav_order: 2
+nav_order: 101
 parent: 'Concept'
 # No children
 ---

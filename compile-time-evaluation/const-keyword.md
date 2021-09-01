@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Const keyword'
-nav_order: 1
+nav_order: 100
 parent: 'Compile time evaluation'
 # No children
 ---

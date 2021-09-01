@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Control flow structures'
-nav_order: 2
+nav_order: 101
 parent: 'Syntax decisions'
 # No children
 ---

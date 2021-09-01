@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Config and cli'
-nav_order: 1
+nav_order: 100
 parent: 'Code docs'
 # No children
 ---

@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Intro'
-nav_order: 2
+nav_order: 101
 parent: 'Spec'
 # No children
 ---
