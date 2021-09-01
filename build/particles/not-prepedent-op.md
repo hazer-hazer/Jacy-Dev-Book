@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Not prepedent op'
 nav_order: 7
-parent: null
+parent: Particles
 has_children: false
 ---
 

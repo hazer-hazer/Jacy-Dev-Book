@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Soft keywords'
 nav_order: 11
-parent: null
+parent: Particles
 has_children: false
 ---
 

@@ -53,6 +53,7 @@ class Generator {
         if (filename === INDEX_FILENAME) {
             navOrder = parentNavOrder
             hasChildren = !isRootDir
+            parentTitle = null
         }
 
         return {
@@ -72,7 +73,7 @@ class Generator {
         const entities = fs.readdirSync(dirPath)
 
         const settings = {
-            parentTitle,
+            parentTitle: title,
             parentNavOrder: navOrder,
         }
 

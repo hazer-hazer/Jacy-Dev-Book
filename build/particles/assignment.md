@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Assignment'
 nav_order: 1
-parent: null
+parent: Particles
 has_children: false
 ---
 

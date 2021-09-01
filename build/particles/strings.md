@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Strings'
 nav_order: 13
-parent: null
+parent: Particles
 has_children: false
 ---
 

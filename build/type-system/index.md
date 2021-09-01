@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Index'
 nav_order: 18
-parent: null
+# No parent
 has_children: true
 ---
 
