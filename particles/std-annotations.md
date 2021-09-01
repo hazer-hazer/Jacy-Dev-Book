@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Std annotations'
 nav_order: 12
-parent: Particles
+parent: 'Particles'
 # No children
 ---
 

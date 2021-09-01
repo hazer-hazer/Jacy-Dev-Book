@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Name resolution'
 nav_order: 4
-parent: Compilation process
+parent: 'Compilation process'
 # No children
 ---
 

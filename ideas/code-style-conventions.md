@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Code style conventions'
 nav_order: 2
-parent: Ideas
+parent: 'Ideas'
 # No children
 ---
 

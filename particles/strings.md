@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Strings'
 nav_order: 13
-parent: Particles
+parent: 'Particles'
 # No children
 ---
 

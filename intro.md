@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Intro'
 nav_order: 12
-parent: Table of contents
+parent: 'Table of contents'
 # No children
 ---
 

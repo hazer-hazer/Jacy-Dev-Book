@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Checklist'
 nav_order: 2
-parent: Appendices
+parent: 'Appendices'
 # No children
 ---
 

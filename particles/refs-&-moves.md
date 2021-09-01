@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Refs & moves'
 nav_order: 10
-parent: Particles
+parent: 'Particles'
 # No children
 ---
 

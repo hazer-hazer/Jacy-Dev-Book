@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Goal'
 nav_order: 8
-parent: Table of contents
+parent: 'Table of contents'
 # No children
 ---
 
