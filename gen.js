@@ -6,7 +6,7 @@ const {
     INDEX_FILENAME,
 } = require('./config')
 const STRUCT = require('./struct')
-const fileTmpl = require('./file-tmpl')
+const {earlyTmpl} = require('./file-tmpl')
 
 const capitalize = str => str[0].toUpperCase() + str.slice(1)
 
@@ -168,7 +168,7 @@ class Generator {
 
     async _genFile(file) {
         // console.log(`file path: ${path.join(DIST_PATH, file.relPath)}`);
-        fs.writeFileSync(path.join(DIST_PATH, file.relPath), fileTmpl(file), 'utf8')
+        fs.writeFileSync(path.join(DIST_PATH, file.relPath), earlyTmpl(file), 'utf8')
     }
 
     async gen(entity) {
