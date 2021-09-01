@@ -1,6 +1,6 @@
 ---
 layout: 'default'
-title: 'Index'
+title: 'null'
 nav_order: 1
 # No parent
 # No children

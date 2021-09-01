@@ -1,6 +1,6 @@
 ---
 layout: 'default'
-title: 'Index'
+title: 'Code docs'
 nav_order: 3
 # No parent
 has_children: true

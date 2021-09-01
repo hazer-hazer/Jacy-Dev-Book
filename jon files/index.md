@@ -1,6 +1,6 @@
 ---
 layout: 'default'
-title: 'Index'
+title: 'Jon files'
 nav_order: 13
 # No parent
 has_children: true
