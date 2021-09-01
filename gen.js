@@ -36,7 +36,7 @@ class Generator {
         await this._genDir(sourceDir)
     }
 
-    async _processFile(filePath, struct, {isIndex, navOrder, parentTitle, grandParentTitle, parentNavOrder, isRootDir = false}) {
+    async _processFile(filePath, struct, {isIndex, navOrder, parentTitle, grandParentTitle, ggpTitle, parentNavOrder, isRootDir = false}) {
         if (!filePath.endsWith('.md')) {
             return null
         }
@@ -60,12 +60,17 @@ class Generator {
                 hasChildren = false
                 parentTitle = null
             }
+
+            if (!ggpTitle) {
+                parentTitle = null
+            }
         }
 
         return {
             isDir: false,
             title,
             parent: parentTitle,
+            grandParent: ggpTitle,
             src,
             navOrder,
             hasChildren,
@@ -74,7 +79,7 @@ class Generator {
         }
     }
 
-    async _processDir(dirPath, struct, {navOrder, parentTitle = null, isRootDir = false}) {
+    async _processDir(dirPath, struct, {navOrder, parentTitle = null, grandParentTitle, isRootDir = false}) {
         const children = []
         const entities = fs.readdirSync(dirPath)
         entities.sort()
@@ -86,6 +91,7 @@ class Generator {
         const settings = {
             parentTitle: title,
             grandParentTitle: parentTitle,
+            ggpTitle: grandParentTitle,
             parentNavOrder: navOrder,
         }
 

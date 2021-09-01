@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Jon files'
 nav_order: 14
-parent: 'Table of contents'
+# No parent
 has_children: true
 ---
 

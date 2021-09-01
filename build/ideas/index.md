@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Ideas'
 nav_order: 11
-parent: 'Table of contents'
+# No parent
 has_children: true
 ---
 

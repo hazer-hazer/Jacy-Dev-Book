@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Spec'
 nav_order: 16
-parent: 'Table of contents'
+# No parent
 has_children: true
 ---
 
