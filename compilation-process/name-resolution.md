@@ -137,7 +137,7 @@ actually a binding, as we unable to match name against name.
 Labels and lifetimes resolution is simple, for
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/compilation-process/module-tree-building.html">< Module tree building</a>
+    <a href="/Jacy-Dev-Book/compilation-process/module-tree-building.html">❮ Module tree building</a>
 </button>
 
     

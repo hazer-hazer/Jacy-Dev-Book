@@ -12,7 +12,7 @@ In \*Jacy\* attributes are
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/appendices/checklist.html">Checklist ></a>
+    <a href="/Jacy-Dev-Book/appendices/checklist.html">Checklist ❯</a>
 </button>
 
 </div>

@@ -79,7 +79,7 @@ tokens as named-tuple (`a` case).
 >   `struct`)
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/type-system/index.html">< Type system</a>
+    <a href="/Jacy-Dev-Book/type-system/index.html">❮ Type system</a>
 </button>
 
     

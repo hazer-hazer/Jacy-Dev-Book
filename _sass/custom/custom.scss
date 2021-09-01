@@ -161,9 +161,15 @@ div.side-bar {
         border-radius: 5px;
         background: #fff;
         border: none;
-        font-weight: 500;
 
         transition: .2s ease;
+
+        a {
+            height: 20px;
+            font-size: 18px;
+            font-weight: 500;
+            text-decoration: none;
+        }
 
         &:hover {
             background: darken(#fff0f0, 2%);

@@ -9,11 +9,11 @@ has_children: true
 # compilation-process
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/compilation-process/hir.html">< Hir</a>
+    <a href="/Jacy-Dev-Book/compilation-process/hir.html">❮ Hir</a>
 </button>
 
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/compilation-process/module-tree-building.html">Module tree building ></a>
+    <a href="/Jacy-Dev-Book/compilation-process/module-tree-building.html">Module tree building ❯</a>
 </button>
 
 </div>

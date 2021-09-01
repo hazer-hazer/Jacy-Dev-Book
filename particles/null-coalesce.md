@@ -46,11 +46,11 @@ What this operator should return if both of `a` AND `b` are `Some` values is des
 Return `(a!, b!): (T, U)`, that is a tuple where first and second elements are unwrapped `a` and `b` respectively.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/particles/not-prepedent-op.html">< Not prepedent op</a>
+    <a href="/Jacy-Dev-Book/particles/not-prepedent-op.html">❮ Not prepedent op</a>
 </button>
 
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/particles/organic-jacy.html">Organic jacy ></a>
+    <a href="/Jacy-Dev-Book/particles/organic-jacy.html">Organic jacy ❯</a>
 </button>
 
 </div>

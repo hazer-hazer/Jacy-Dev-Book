@@ -42,7 +42,7 @@ It is important to note that all default values for options inside `Config` must
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/code-docs/dev-conventions.html">Dev conventions ></a>
+    <a href="/Jacy-Dev-Book/code-docs/dev-conventions.html">Dev conventions ❯</a>
 </button>
 
 </div>

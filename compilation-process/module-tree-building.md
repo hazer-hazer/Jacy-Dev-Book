@@ -56,11 +56,11 @@ process it as a relative path, e.g. if we are inside `mod a` which contains `mod
 with `::` prefix, in this case, we'll resolve it starting from the root module but not from the current.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/compilation-process/index.html">< Compilation process</a>
+    <a href="/Jacy-Dev-Book/compilation-process/index.html">❮ Compilation process</a>
 </button>
 
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/compilation-process/name-resolution.html">Name resolution ></a>
+    <a href="/Jacy-Dev-Book/compilation-process/name-resolution.html">Name resolution ❯</a>
 </button>
 
 </div>

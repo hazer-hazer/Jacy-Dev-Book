@@ -37,7 +37,7 @@ Anyway, Swift gift me an solution -- no character literals 😐.  Btw, Swift doe
 To infer that user assumed to use character instead of string we need to know types at first, thus, creating character becomes something run-time dependent 🤔.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/particles/std-annotations.html">< Std annotations</a>
+    <a href="/Jacy-Dev-Book/particles/std-annotations.html">❮ Std annotations</a>
 </button>
 
     

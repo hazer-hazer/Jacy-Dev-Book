@@ -60,7 +60,7 @@ constraints.
 ### Returning types
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/ideas/named-arg-alias.html">< Named arg alias</a>
+    <a href="/Jacy-Dev-Book/ideas/named-arg-alias.html">❮ Named arg alias</a>
 </button>
 
     

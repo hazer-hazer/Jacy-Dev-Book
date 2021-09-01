@@ -46,11 +46,11 @@ nav_order: 1
   * [Types as first-class citizens](ideas/types-as-first-class-citizens.md)
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/ideas">< Ideas</a>
+    <a href="/Jacy-Dev-Book/ideas">❮ Ideas</a>
 </button>
 
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/intro.html">Intro ></a>
+    <a href="/Jacy-Dev-Book/intro.html">Intro ❯</a>
 </button>
 
 </div>

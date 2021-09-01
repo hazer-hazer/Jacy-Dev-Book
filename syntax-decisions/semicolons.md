@@ -28,11 +28,11 @@ Resources:
 * [Semicolon Inference](https://pling.jondgoodwin.com/post/semicolon-inference/)
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/syntax-decisions/lambdas.html">< Lambdas</a>
+    <a href="/Jacy-Dev-Book/syntax-decisions/lambdas.html">❮ Lambdas</a>
 </button>
 
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/syntax-decisions/variables.html">Variables ></a>
+    <a href="/Jacy-Dev-Book/syntax-decisions/variables.html">Variables ❯</a>
 </button>
 
 </div>

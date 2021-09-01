@@ -24,11 +24,11 @@ Expression is CTEE if:
 > More on CTE structs and enums in next chapters
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/compile-time-evaluation/cte-contexts.html">< Cte contexts</a>
+    <a href="/Jacy-Dev-Book/compile-time-evaluation/cte-contexts.html">❮ Cte contexts</a>
 </button>
 
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/compile-time-evaluation/cte-functions.html">Cte functions ></a>
+    <a href="/Jacy-Dev-Book/compile-time-evaluation/cte-functions.html">Cte functions ❯</a>
 </button>
 
 </div>

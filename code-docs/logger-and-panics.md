@@ -79,7 +79,7 @@ These are methods that differ from log methods:
 * `notImplemented` - TODO dev-panic.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/code-docs/interface.html">< Interface</a>
+    <a href="/Jacy-Dev-Book/code-docs/interface.html">❮ Interface</a>
 </button>
 
     

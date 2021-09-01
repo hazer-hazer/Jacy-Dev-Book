@@ -318,7 +318,7 @@ Actually, this is just an example where we omit usage of lifetimes. No-lifetimes
 further ideas.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/backlog/invert-rust-v2.html">< Invert rust v2</a>
+    <a href="/Jacy-Dev-Book/backlog/invert-rust-v2.html">❮ Invert rust v2</a>
 </button>
 
     

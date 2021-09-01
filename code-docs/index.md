@@ -16,11 +16,11 @@ If you want to contribute to _Jacy_ this is a good place to start sorting out co
 that _Jacy_ is very WIP so some things change often and this documentation would become non-relevant one day.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/code-docs/dev-conventions.html">< Dev conventions</a>
+    <a href="/Jacy-Dev-Book/code-docs/dev-conventions.html">❮ Dev conventions</a>
 </button>
 
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/code-docs/interface.html">Interface ></a>
+    <a href="/Jacy-Dev-Book/code-docs/interface.html">Interface ❯</a>
 </button>
 
 </div>

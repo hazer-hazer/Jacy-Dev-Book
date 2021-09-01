@@ -26,7 +26,7 @@ pattern, just only an identifier, so we also lose the ability of destructuring. 
 with `let` and `let mut`.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/syntax-decisions/semicolons.html">< Semicolons</a>
+    <a href="/Jacy-Dev-Book/syntax-decisions/semicolons.html">❮ Semicolons</a>
 </button>
 
     

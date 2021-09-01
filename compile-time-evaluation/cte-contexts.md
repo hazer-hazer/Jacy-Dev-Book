@@ -20,11 +20,11 @@ Here's the list of all (I hope) this kind of places (`N` and `M` are `const` exp
 * `static` items initializers
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/compile-time-evaluation/const-keyword.html">< Const keyword</a>
+    <a href="/Jacy-Dev-Book/compile-time-evaluation/const-keyword.html">❮ Const keyword</a>
 </button>
 
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/compile-time-evaluation/cte-expressions.html">Cte expressions ></a>
+    <a href="/Jacy-Dev-Book/compile-time-evaluation/cte-expressions.html">Cte expressions ❯</a>
 </button>
 
 </div>
