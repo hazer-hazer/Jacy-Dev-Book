@@ -219,5 +219,9 @@ There're three solutions I see:
 
 The 1. solution sounds better for me as I assumed to implement function overloading in the future.
 If one day I'll 100% establish that _Jacy_ would never have function overloading -- 2. variant will be used.
-<button class="btn btn-outline"><a href="/particles/custom-allocators.md">< Custom allocators</a></button>
-<button class="btn btn-outline"><a href="/particles/index.md">Particles ></a></button>
+<button class="btn btn-outline" style="float: left;">
+    <a style="text-decoration: none;" href="/Jacy-Dev-Book/particles/custom-allocators.html">< Custom allocators</a>
+</button>
+<button class="btn btn-outline" style="float: right;">
+    <a style="text-decoration: none;" href="/Jacy-Dev-Book/particles/index.html">Particles ></a>
+</button>

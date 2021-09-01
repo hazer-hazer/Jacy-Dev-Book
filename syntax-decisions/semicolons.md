@@ -26,5 +26,9 @@ rules except the only one -- using as a terminating token.
 Resources:
 
 * [Semicolon Inference](https://pling.jondgoodwin.com/post/semicolon-inference/)
-<button class="btn btn-outline"><a href="/syntax-decisions/lambdas.md">< Lambdas</a></button>
-<button class="btn btn-outline"><a href="/syntax-decisions/variables.md">Variables ></a></button>
+<button class="btn btn-outline" style="float: left;">
+    <a style="text-decoration: none;" href="/Jacy-Dev-Book/syntax-decisions/lambdas.html">< Lambdas</a>
+</button>
+<button class="btn btn-outline" style="float: right;">
+    <a style="text-decoration: none;" href="/Jacy-Dev-Book/syntax-decisions/variables.html">Variables ></a>
+</button>

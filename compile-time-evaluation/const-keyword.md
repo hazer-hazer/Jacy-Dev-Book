@@ -35,4 +35,6 @@ func main() {
     const b = 123
 }
 ```
-<button class="btn btn-outline"><a href="/compile-time-evaluation/cte-contexts.md">Cte contexts ></a></button>
+<button class="btn btn-outline" style="float: right;">
+    <a style="text-decoration: none;" href="/Jacy-Dev-Book/compile-time-evaluation/cte-contexts.html">Cte contexts ></a>
+</button>

@@ -11,4 +11,6 @@ has_children: true
 **This is not the reference and especially specification**
 
 You can think of it as wishlist and collection of thoughts I came up with 🙂
-<button class="btn btn-outline"><a href="/spec/intro.md">Intro ></a></button>
+<button class="btn btn-outline" style="float: right;">
+    <a style="text-decoration: none;" href="/Jacy-Dev-Book/spec/intro.html">Intro ></a>
+</button>

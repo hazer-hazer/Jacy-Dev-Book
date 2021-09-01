@@ -135,4 +135,6 @@ actually a binding, as we unable to match name against name.
 #### Labels and lifetimes
 
 Labels and lifetimes resolution is simple, for
-<button class="btn btn-outline"><a href="/compilation-process/module-tree-building.md">< Module tree building</a></button>
+<button class="btn btn-outline" style="float: left;">
+    <a style="text-decoration: none;" href="/Jacy-Dev-Book/compilation-process/module-tree-building.html">< Module tree building</a>
+</button>

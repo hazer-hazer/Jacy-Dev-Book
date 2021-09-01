@@ -58,4 +58,6 @@ Looks useful, but... not, actually. I cannot come up with a case when this canno
 constraints.
 
 ### Returning types
-<button class="btn btn-outline"><a href="/ideas/named-arg-alias.md">< Named arg alias</a></button>
+<button class="btn btn-outline" style="float: left;">
+    <a style="text-decoration: none;" href="/Jacy-Dev-Book/ideas/named-arg-alias.html">< Named arg alias</a>
+</button>

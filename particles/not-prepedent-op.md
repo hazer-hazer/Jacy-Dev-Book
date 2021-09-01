@@ -19,5 +19,9 @@ not (a in b)
 ```
 
 I'm not sure, but think that there won't be any troubles with precedence, as expressions are already parsed, and then transformed.
-<button class="btn btn-outline"><a href="/particles/memory-leaks.md">< Memory leaks</a></button>
-<button class="btn btn-outline"><a href="/particles/null-coalesce.md">Null coalesce ></a></button>
+<button class="btn btn-outline" style="float: left;">
+    <a style="text-decoration: none;" href="/Jacy-Dev-Book/particles/memory-leaks.html">< Memory leaks</a>
+</button>
+<button class="btn btn-outline" style="float: right;">
+    <a style="text-decoration: none;" href="/Jacy-Dev-Book/particles/null-coalesce.html">Null coalesce ></a>
+</button>
