@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Variables'
-nav_order: 6
-parent: Syntax decisions
+nav_order: 5
+parent: Kek
 # No children
 ---
 

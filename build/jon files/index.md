@@ -1,9 +1,9 @@
 ---
 layout: 'default'
-title: 'Jon files'
-nav_order: 14
-# No parent
-has_children: true
+title: 'Kek'
+# No nav_order
+parent: Kek
+# No children
 ---
 
 # JON files

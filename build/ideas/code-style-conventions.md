@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Code style conventions'
-nav_order: 2
-parent: Ideas
+nav_order: 1
+parent: Kek
 # No children
 ---
 

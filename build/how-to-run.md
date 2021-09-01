@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'How to run'
-nav_order: 10
-# No parent
+nav_order: 9
+parent: Kek
 # No children
 ---
 

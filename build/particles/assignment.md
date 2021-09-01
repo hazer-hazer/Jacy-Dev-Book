@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Assignment'
-nav_order: 1
-parent: Particles
+# No nav_order
+parent: Kek
 # No children
 ---
 

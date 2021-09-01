@@ -28,7 +28,7 @@ const nameFromFilename = filename => {
 
 class Generator {
     async run() {
-        const sourceDir = await this._processDir(SOURCE_PATH, STRUCT, null, {
+        const sourceDir = await this._processDir(SOURCE_PATH, STRUCT, {
             parentTitle: 'Table of contents',
             navOrder: 1,
             isRootDir: true,
@@ -36,12 +36,14 @@ class Generator {
         await this._genDir(sourceDir)
     }
 
-    async _processFile(filePath, struct, title, {navOrder, parentTitle, parentNavOrder, isRootDir = false}) {
+    async _processFile(filePath, struct, {isIndex, navOrder, parentTitle, parentNavOrder, isRootDir = false}) {
         if (!filePath.endsWith('.md')) {
             return null
         }
 
         const filename = path.basename(filePath, '.md')
+
+        let title = struct.title || nameFromFilename(filename)
 
         if ('children' in struct) {
             throw Error(`Invalid structure: ${filePath} has children but exists as file`)
@@ -50,11 +52,9 @@ class Generator {
         const src = fs.readFileSync(filePath, 'utf8')
 
         let hasChildren = false
-        if (filename === INDEX_FILENAME) {
+        if (isIndex) {
             navOrder = parentNavOrder
             hasChildren = !isRootDir
-            title = parentTitle
-            parentTitle = null
         }
 
         return {
@@ -69,16 +69,20 @@ class Generator {
         }
     }
 
-    async _processDir(dirPath, struct, title, {navOrder, parentTitle, isRootDir = false}) {
+    async _processDir(dirPath, struct, {navOrder, parentTitle, isRootDir = false}) {
         const children = []
         const entities = fs.readdirSync(dirPath)
+        entities.sort()
 
+        const dirName = path.basename(dirPath)
+        const title = struct.title || nameFromFilename(dirName)
+
+        // Settings for children
         const settings = {
             parentTitle: title,
+            grandParentTitle: parentTitle,
             parentNavOrder: navOrder,
         }
-
-        entities.sort()
 
         let index = 0
 
@@ -86,16 +90,19 @@ class Generator {
             const childPath = path.join(dirPath, subPath)
             const childIsDir = fs.lstatSync(childPath).isDirectory()
             const childFilename = path.basename(subPath, '.md')
+            const isIndex = childFilename === INDEX_FILENAME
 
-            const childStruct = struct[childFilename] || {}
-            const childName = childStruct.name || nameFromFilename(childFilename)
+            const childStruct = (childIsDir || isIndex ? struct : struct[childFilename]) || {}
 
-            settings.navOrder = index + 1
+            settings.navOrder = childStruct.order || index++
 
             if (childIsDir) {
-                children.push(await this._processDir(childPath, childStruct, childName, settings))
+                children.push(await this._processDir(childPath, childStruct, {
+                    ...settings,
+                    isIndex,
+                }))
             } else {
-                const file = await this._processFile(childPath, childStruct, childName, {
+                const file = await this._processFile(childPath, childStruct, {
                     ...settings,
                     isRootDir,
                 })
@@ -104,8 +111,11 @@ class Generator {
                 }
             }
 
-            index++
-            // Ignore non-markdown files
+            // if ('after' in childStruct) {
+            //     childStruct.sortFactor = childStruct.after + '_'
+            // } else {
+            //     childStruct.sortFactor = childName
+            // }
         }
 
         let relPath = null

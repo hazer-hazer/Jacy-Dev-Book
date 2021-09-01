@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Ops and puncts'
-nav_order: 4
-parent: Appendices
+nav_order: 3
+parent: Kek
 # No children
 ---
 

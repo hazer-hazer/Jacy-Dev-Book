@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Not prepedent op'
-nav_order: 7
-parent: Particles
+nav_order: 6
+parent: Kek
 # No children
 ---
 

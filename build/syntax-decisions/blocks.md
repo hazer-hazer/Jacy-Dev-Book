@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Blocks'
-nav_order: 1
-parent: Syntax decisions
+# No nav_order
+parent: Kek
 # No children
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Organic jacy'
-nav_order: 9
-parent: Particles
+nav_order: 8
+parent: Kek
 # No children
 ---
 

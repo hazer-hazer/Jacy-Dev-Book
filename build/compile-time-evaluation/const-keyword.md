@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Const keyword'
-nav_order: 1
-parent: Compile time evaluation
+# No nav_order
+parent: Kek
 # No children
 ---
 

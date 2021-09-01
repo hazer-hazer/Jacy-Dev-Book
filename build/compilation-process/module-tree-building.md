@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Module tree building'
-nav_order: 3
-parent: Compilation process
+nav_order: 2
+parent: Kek
 # No children
 ---
 
