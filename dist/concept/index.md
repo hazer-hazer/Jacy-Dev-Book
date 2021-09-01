@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Index'
-nav_order: 12
+nav_order: 7
 parent: Concept
 ---
 

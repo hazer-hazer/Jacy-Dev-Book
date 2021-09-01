@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Index'
-nav_order: 13
+nav_order: 6
 parent: Compile time evaluation
 ---
 

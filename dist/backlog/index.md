@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Index'
-nav_order: 16
+nav_order: 3
 parent: Backlog
 ---
 

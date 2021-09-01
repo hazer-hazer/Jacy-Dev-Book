@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Assignment'
-nav_order: 13
+nav_order: 1
 parent: Particles
 ---
 
