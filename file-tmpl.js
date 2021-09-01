@@ -1,7 +1,3 @@
-const {
-    DIST_PATH,
-} = require('./config')
-
 const navBtn = (next, {relPath, title}) => {
     if (next) {
         title += " >"
