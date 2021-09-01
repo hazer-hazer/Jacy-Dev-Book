@@ -9,7 +9,7 @@ const navBtn = (next, {relPath, title}) => {
     }
     return `
 <button class="nav-btn ${align}">
-    <a href="/Jacy-Dev-Book/${relPath.replace('\\', '/').replace('.md', '.html')}">${title}</a>
+    <a class="link" href="/Jacy-Dev-Book/${relPath.replace('\\', '/').replace('.md', '.html')}">${title}</a>
 </button>
 `.trim() + '\n'
 }
