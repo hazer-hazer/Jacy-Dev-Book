@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Semicolons'
-nav_order: 5
+nav_order: 104
 parent: 'Syntax decisions'
 # No children
 ---

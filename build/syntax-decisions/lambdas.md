@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Lambdas'
-nav_order: 4
+nav_order: 103
 parent: 'Syntax decisions'
 # No children
 ---

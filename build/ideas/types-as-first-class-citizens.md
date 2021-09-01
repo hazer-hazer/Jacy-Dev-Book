@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Types as first class citizens'
-nav_order: 5
+nav_order: 104
 parent: 'Ideas'
 # No children
 ---

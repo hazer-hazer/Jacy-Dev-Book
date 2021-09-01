@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Intro'
-nav_order: 13
-parent: 'Table of contents'
+nav_order: 112
+# No parent
 # No children
 ---
 

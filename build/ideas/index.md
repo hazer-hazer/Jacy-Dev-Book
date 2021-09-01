@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Ideas'
-nav_order: 11
+nav_order: 110
 # No parent
 has_children: true
 ---

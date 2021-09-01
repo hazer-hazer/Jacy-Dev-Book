@@ -64,6 +64,8 @@ class Generator {
             if (!ggpTitle) {
                 parentTitle = null
             }
+        } else if (!grandParentTitle) {
+            parentTitle = null
         }
 
         return {

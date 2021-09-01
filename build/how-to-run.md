@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'How to run'
-nav_order: 10
-parent: 'Table of contents'
+nav_order: 109
+# No parent
 # No children
 ---
 

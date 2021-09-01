@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Dev conventions'
-nav_order: 2
+nav_order: 101
 parent: 'Code docs'
 # No children
 ---

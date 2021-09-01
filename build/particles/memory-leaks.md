@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Memory leaks'
-nav_order: 6
+nav_order: 105
 parent: 'Particles'
 # No children
 ---

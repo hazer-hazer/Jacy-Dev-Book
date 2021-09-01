@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Invert rust v2'
-nav_order: 2
+nav_order: 101
 parent: 'Backlog'
 # No children
 ---

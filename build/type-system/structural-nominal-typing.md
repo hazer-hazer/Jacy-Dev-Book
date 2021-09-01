@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Structural nominal typing'
-nav_order: 2
+nav_order: 101
 parent: 'Type system'
 # No children
 ---
