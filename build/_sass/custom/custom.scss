@@ -141,7 +141,7 @@ div.side-bar {
     position: relative;
     width: 100%;
     height: 50px;
-    padding: 10px;
+    padding: 5px;
     margin: 5px auto;
     box-sizing: border-box;
 
@@ -158,7 +158,9 @@ div.side-bar {
         padding: 5px 10px;
         line-height: 30px;
         vertical-align: middle;
-        border-radius: 10px;
+        border-radius: 5px;
+        background: #fff;
+        border: none;
 
         transition: .2s ease;
 
