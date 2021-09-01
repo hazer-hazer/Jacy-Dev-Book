@@ -92,7 +92,7 @@ class Generator {
             const childFilename = path.basename(subPath, '.md')
             const isIndex = childFilename === INDEX_FILENAME
 
-            const childStruct = (childIsDir || isIndex ? struct : struct[childFilename]) || {}
+            const childStruct = (childIsDir ? struct : struct[childFilename]) || {}
 
             settings.navOrder = childStruct.order || index++
 
