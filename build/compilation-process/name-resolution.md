@@ -135,4 +135,4 @@ actually a binding, as we unable to match name against name.
 #### Labels and lifetimes
 
 Labels and lifetimes resolution is simple, for
-<button class="btn btn-outline" href="/compilation-process\module-tree-building.md">< Module tree building</button>
+<button class="btn btn-outline" href="/compilation-process/module-tree-building.md">< Module tree building</button>

@@ -7,4 +7,4 @@ has_children: true
 ---
 
 # Concept
-<button class="btn btn-outline" href="/concept\the-idea.md">The idea ></button>
+<button class="btn btn-outline" href="/concept/the-idea.md">The idea ></button>

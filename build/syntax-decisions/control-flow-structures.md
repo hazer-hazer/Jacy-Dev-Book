@@ -157,5 +157,5 @@ for x in &vec {
     // ...
 }
 ```
-<button class="btn btn-outline" href="/syntax-decisions\blocks.md">< Blocks</button>
-<button class="btn btn-outline" href="/syntax-decisions\index.md">Syntax decisions ></button>
+<button class="btn btn-outline" href="/syntax-decisions/blocks.md">< Blocks</button>
+<button class="btn btn-outline" href="/syntax-decisions/index.md">Syntax decisions ></button>

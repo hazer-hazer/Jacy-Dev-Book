@@ -5,7 +5,7 @@ const navBtn = (next, {relPath, title}) => {
         title = "< " + title
     }
     return `
-<button class="btn btn-outline" href="/${relPath.replace('\\', '/')}">${title}</button>
+<button class="btn btn-outline"><a href="/${relPath.replace('\\', '/')}">${title}</a></button>
 `.trim() + '\n'
 }
 

@@ -17,5 +17,5 @@ func main {
   foo(:name);
 }
 ```
-<button class="btn btn-outline" href="/ideas\index.md">< Ideas</button>
-<button class="btn btn-outline" href="/ideas\types-as-first-class-citizens.md">Types as first class citizens ></button>
+<button class="btn btn-outline" href="/ideas/index.md">< Ideas</button>
+<button class="btn btn-outline" href="/ideas/types-as-first-class-citizens.md">Types as first class citizens ></button>

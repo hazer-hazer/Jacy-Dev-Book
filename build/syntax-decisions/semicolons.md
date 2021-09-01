@@ -26,5 +26,5 @@ rules except the only one -- using as a terminating token.
 Resources:
 
 * [Semicolon Inference](https://pling.jondgoodwin.com/post/semicolon-inference/)
-<button class="btn btn-outline" href="/syntax-decisions\lambdas.md">< Lambdas</button>
-<button class="btn btn-outline" href="/syntax-decisions\variables.md">Variables ></button>
+<button class="btn btn-outline" href="/syntax-decisions/lambdas.md">< Lambdas</button>
+<button class="btn btn-outline" href="/syntax-decisions/variables.md">Variables ></button>

@@ -7,4 +7,4 @@ has_children: true
 ---
 
 # Type System
-<button class="btn btn-outline" href="/type-system\structural-nominal-typing.md">Structural nominal typing ></button>
+<button class="btn btn-outline" href="/type-system/structural-nominal-typing.md">Structural nominal typing ></button>

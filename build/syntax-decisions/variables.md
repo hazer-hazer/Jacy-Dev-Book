@@ -24,4 +24,4 @@ The syntax.
 Anyway, I'm able to add the `var` keyword and just use it as an alias for `let mut`. In this way, we are not able to use
 pattern, just only an identifier, so we also lose the ability of destructuring. I think it does not worth it, let's stay
 with `let` and `let mut`.
-<button class="btn btn-outline" href="/syntax-decisions\semicolons.md">< Semicolons</button>
+<button class="btn btn-outline" href="/syntax-decisions/semicolons.md">< Semicolons</button>

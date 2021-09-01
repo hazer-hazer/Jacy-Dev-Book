@@ -9,4 +9,4 @@ parent: 'Appendices'
 # Attributes
 
 In \*Jacy\* attributes are
-<button class="btn btn-outline" href="/appendices\checklist.md">Checklist ></button>
+<button class="btn btn-outline" href="/appendices/checklist.md">Checklist ></button>

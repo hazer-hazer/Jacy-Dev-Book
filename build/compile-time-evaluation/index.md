@@ -18,4 +18,4 @@ There are some terms we need to establish:
 * CTE contexts
 * CTE functions
 * CTE expressions
-<button class="btn btn-outline" href="/compile-time-evaluation\cte-functions.md">< Cte functions</button>
+<button class="btn btn-outline" href="/compile-time-evaluation/cte-functions.md">< Cte functions</button>

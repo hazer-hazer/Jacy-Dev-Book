@@ -77,4 +77,4 @@ tokens as named-tuple (`a` case).
 >   implementations for them, so in every complex case we would prefer
 >
 >   `struct`)
-<button class="btn btn-outline" href="/type-system\index.md">< Type system</button>
+<button class="btn btn-outline" href="/type-system/index.md">< Type system</button>
