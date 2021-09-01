@@ -1,5 +1,9 @@
-const navBtn = ({relPath, title}) => {
-    console.log(`file btns: ${relPath}, ${title}`);
+const navBtn = (next, {relPath, title}) => {
+    if (next) {
+        title += " >"
+    } else {
+        title = "< " + title
+    }
     return `
 [${title}](${relPath}){: .btn .btn-outline }
     `.trim()
@@ -35,10 +39,10 @@ ${src}
 
     addNavButtons(fileStr, previous, next) {
         if (previous) {
-            fileStr += navBtn(previous)
+            fileStr += navBtn(false, previous)
         }
         if (next) {
-            fileStr += navBtn(next)
+            fileStr += navBtn(true, next)
         }
         return fileStr
     }
