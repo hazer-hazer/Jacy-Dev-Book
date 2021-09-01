@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Backlog'
 nav_order: 2
-parent: 'Table of contents'
+# No parent
 has_children: true
 ---
 

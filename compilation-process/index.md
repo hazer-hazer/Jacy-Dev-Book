@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Compilation process'
 nav_order: 4
-parent: 'Table of contents'
+# No parent
 has_children: true
 ---
 

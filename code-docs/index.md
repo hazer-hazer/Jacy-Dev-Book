@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Code docs'
 nav_order: 3
-parent: 'Table of contents'
+# No parent
 has_children: true
 ---
 

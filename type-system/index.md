@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Type system'
 nav_order: 17
-parent: 'Table of contents'
+# No parent
 has_children: true
 ---
 
