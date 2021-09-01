@@ -77,4 +77,4 @@ These are methods that differ from log methods:
 * `colorized` - (appends NL) - Receives `Color` as first argument and print full text colorized resetting color at the
   end. Used rarely as not so many logs should be fully colorized.
 * `notImplemented` - TODO dev-panic.
-[Interface](code-docs/interface.md){: .btn .btn-outline }
+<button class="btn btn-outline" href="/code-docs/interface.md">< Interface</button>

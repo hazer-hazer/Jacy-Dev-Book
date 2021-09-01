@@ -28,4 +28,5 @@ Same as function item but without `func` keyword. Absence of `func` keyword give
 
 __Problems__:
 - Requires context-dependent parsing, as we need to check for `init` appearance only inside `struct` (maybe `trait`) but not in `func` (expression context)
-[Refs & moves](particles/refs-&-moves.md){: .btn .btn-outline }[Std annotations](particles/std-annotations.md){: .btn .btn-outline }
+<button class="btn btn-outline" href="/particles/refs-&-moves.md">< Refs & moves</button>
+<button class="btn btn-outline" href="/particles/std-annotations.md">Std annotations ></button>

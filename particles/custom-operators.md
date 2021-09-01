@@ -219,4 +219,5 @@ There're three solutions I see:
 
 The 1. solution sounds better for me as I assumed to implement function overloading in the future.
 If one day I'll 100% establish that _Jacy_ would never have function overloading -- 2. variant will be used.
-[Custom allocators](particles/custom-allocators.md){: .btn .btn-outline }[Particles](particles/index.md){: .btn .btn-outline }
+<button class="btn btn-outline" href="/particles/custom-allocators.md">< Custom allocators</button>
+<button class="btn btn-outline" href="/particles/index.md">Particles ></button>

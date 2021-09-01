@@ -102,4 +102,5 @@ Also, they're case insensitive (alpha-values of course):
 | Y | N |
 | True | False |
 | On | Off |
-[Goal](goal.md){: .btn .btn-outline }[Ideas](ideas){: .btn .btn-outline }
+<button class="btn btn-outline" href="/goal.md">< Goal</button>
+<button class="btn btn-outline" href="/ideas">Ideas ></button>

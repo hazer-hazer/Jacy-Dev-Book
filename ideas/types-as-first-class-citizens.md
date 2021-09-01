@@ -58,4 +58,4 @@ Looks useful, but... not, actually. I cannot come up with a case when this canno
 constraints.
 
 ### Returning types
-[Named arg alias](ideas/named-arg-alias.md){: .btn .btn-outline }
+<button class="btn btn-outline" href="/ideas/named-arg-alias.md">< Named arg alias</button>

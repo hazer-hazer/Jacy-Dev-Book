@@ -28,4 +28,5 @@ And this code will produce an error like:
 Invalid type String for int
 Note: try call s.toInt()
 ```
-[Soft keywords](particles/soft-keywords.md){: .btn .btn-outline }[Strings](particles/strings.md){: .btn .btn-outline }
+<button class="btn btn-outline" href="/particles/soft-keywords.md">< Soft keywords</button>
+<button class="btn btn-outline" href="/particles/strings.md">Strings ></button>

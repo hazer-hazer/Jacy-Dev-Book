@@ -9,4 +9,4 @@ has_children: true
 # Backlog
 
 Deprecated ideas, etc.
-[Invert rust v2](backlog/invert-rust-v2.md){: .btn .btn-outline }
+<button class="btn btn-outline" href="/backlog/invert-rust-v2.md">Invert rust v2 ></button>

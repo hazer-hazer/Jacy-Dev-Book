@@ -7,4 +7,5 @@ has_children: true
 ---
 
 
-[Checklist](appendices/checklist.md){: .btn .btn-outline }[Ops and puncts](appendices/ops-and-puncts.md){: .btn .btn-outline }
+<button class="btn btn-outline" href="/appendices/checklist.md">< Checklist</button>
+<button class="btn btn-outline" href="/appendices/ops-and-puncts.md">Ops and puncts ></button>

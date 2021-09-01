@@ -21,4 +21,5 @@ If some feature idea sounds awkward or dangerous for target user, but by the way
 
 Organic _Jacy_ does not extend parser, it does not include DSL for parser-generator whatever. 
 Anyway, OJ includes some constructions that extend syntax, e.g. custom operators declaration.
-[Null coalesce](particles/null-coalesce.md){: .btn .btn-outline }[Refs & moves](particles/refs-&-moves.md){: .btn .btn-outline }
+<button class="btn btn-outline" href="/particles/null-coalesce.md">< Null coalesce</button>
+<button class="btn btn-outline" href="/particles/refs-&-moves.md">Refs & moves ></button>
