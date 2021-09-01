@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Logger and panics'
 nav_order: 5
-parent: null
+parent: Code docs
 has_children: false
 ---
 

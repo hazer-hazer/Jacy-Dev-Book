@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Cte expressions'
 nav_order: 3
-parent: null
+parent: Compile time evaluation
 has_children: false
 ---
 

@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Dev conventions'
 nav_order: 2
-parent: null
+parent: Code docs
 has_children: false
 ---
 

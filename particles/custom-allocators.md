@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Custom allocators'
 nav_order: 3
-parent: null
+parent: Particles
 has_children: false
 ---
 

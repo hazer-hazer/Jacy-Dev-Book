@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'How to run'
 nav_order: 9
-parent: null
+# No parent
 has_children: false
 ---
 

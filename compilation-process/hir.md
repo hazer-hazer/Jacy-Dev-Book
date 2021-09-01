@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Hir'
 nav_order: 1
-parent: null
+parent: Compilation process
 has_children: false
 ---
 
