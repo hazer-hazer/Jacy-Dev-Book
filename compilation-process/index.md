@@ -7,9 +7,13 @@ has_children: true
 ---
 
 # compilation-process
-<button class="btn btn-outline" style="float: left;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/compilation-process/hir.html">< Hir</a>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a href="/Jacy-Dev-Book/compilation-process/hir.html">< Hir</a>
 </button>
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/compilation-process/module-tree-building.html">Module tree building ></a>
+
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/compilation-process/module-tree-building.html">Module tree building ></a>
 </button>
+
+</div>

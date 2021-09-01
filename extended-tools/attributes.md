@@ -21,3 +21,7 @@ The power of attributes is that they are:
 - They are first-class citizens thus have stronger syntax and rules, I appreciate it
 
 As far as attributes are namespaced we can build a huge "official" ecosystem for _Jacy_ with no loss for user to build his/her own.
+<div class="nav-btn-block">
+    
+    
+</div>

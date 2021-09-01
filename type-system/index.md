@@ -7,6 +7,10 @@ has_children: true
 ---
 
 # Type System
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/type-system/structural-nominal-typing.html">Structural nominal typing ></a>
+<div class="nav-btn-block">
+    
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/type-system/structural-nominal-typing.html">Structural nominal typing ></a>
 </button>
+
+</div>

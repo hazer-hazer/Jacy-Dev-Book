@@ -74,6 +74,10 @@ Of course, I couldn't leave this thing without covering the Zen rule about helpi
 be a warning if you're writing code like that.
 
 > Don't confuse block-ignorance with trait method signatures, in case of traits it is not ignorance.
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/syntax-decisions/control-flow-structures.html">Control flow structures ></a>
+<div class="nav-btn-block">
+    
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/syntax-decisions/control-flow-structures.html">Control flow structures ></a>
 </button>
+
+</div>

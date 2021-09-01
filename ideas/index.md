@@ -9,9 +9,13 @@ has_children: true
 # Ideas
 
 Ideas, pre-RFCs, thoughts and early documentation.
-<button class="btn btn-outline" style="float: left;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/ideas/code-style-conventions.html">< Code style conventions</a>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a href="/Jacy-Dev-Book/ideas/code-style-conventions.html">< Code style conventions</a>
 </button>
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/ideas/named-arg-alias.html">Named arg alias ></a>
+
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/ideas/named-arg-alias.html">Named arg alias ></a>
 </button>
+
+</div>

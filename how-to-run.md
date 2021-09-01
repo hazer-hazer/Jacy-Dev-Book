@@ -102,9 +102,13 @@ Also, they're case insensitive (alpha-values of course):
 | Y | N |
 | True | False |
 | On | Off |
-<button class="btn btn-outline" style="float: left;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/goal.html">< Goal</a>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a href="/Jacy-Dev-Book/goal.html">< Goal</a>
 </button>
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/ideas">Ideas ></a>
+
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/ideas">Ideas ></a>
 </button>
+
+</div>

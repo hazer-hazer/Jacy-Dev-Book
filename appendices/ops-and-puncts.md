@@ -104,6 +104,10 @@ Precedence (from highest to lowest)
 | `a |> b` |
 | `a = b` &nbsp; `a += b` &nbsp; `a -= b` &nbsp; `a *= b` &nbsp; `a /= b` &nbsp; `a %= b` &nbsp; `a **= b` &nbsp; `a &= b` &nbsp; `a |= b` &nbsp; `a ^= b` &nbsp; `a <<= b` &nbsp; `a >>= b` |
 | `return a` &nbsp; `break a` &nbsp; `() -> {}` |
-<button class="btn btn-outline" style="float: left;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/appendices/index.html">< Appendices</a>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a href="/Jacy-Dev-Book/appendices/index.html">< Appendices</a>
 </button>
+
+    
+</div>

@@ -77,6 +77,10 @@ tokens as named-tuple (`a` case).
 >   implementations for them, so in every complex case we would prefer
 >
 >   `struct`)
-<button class="btn btn-outline" style="float: left;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/type-system/index.html">< Type system</a>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a href="/Jacy-Dev-Book/type-system/index.html">< Type system</a>
 </button>
+
+    
+</div>

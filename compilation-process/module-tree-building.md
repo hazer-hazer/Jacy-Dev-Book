@@ -54,9 +54,13 @@ start point is the root module, that is, a module containing full Party definiti
 process it as a relative path, e.g. if we are inside `mod a` which contains `mod b` then we resolve the path
 `b::something` as `a::b::something`. Anyway, it is possible to qualify an absolute path (relative to the Party root)
 with `::` prefix, in this case, we'll resolve it starting from the root module but not from the current.
-<button class="btn btn-outline" style="float: left;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/compilation-process/index.html">< Compilation process</a>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a href="/Jacy-Dev-Book/compilation-process/index.html">< Compilation process</a>
 </button>
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/compilation-process/name-resolution.html">Name resolution ></a>
+
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/compilation-process/name-resolution.html">Name resolution ></a>
 </button>
+
+</div>

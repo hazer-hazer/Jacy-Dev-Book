@@ -316,6 +316,10 @@ func main {
 
 Actually, this is just an example where we omit usage of lifetimes. No-lifetimes solutions gonna be researched in
 further ideas.
-<button class="btn btn-outline" style="float: left;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/backlog/invert-rust-v2.html">< Invert rust v2</a>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a href="/Jacy-Dev-Book/backlog/invert-rust-v2.html">< Invert rust v2</a>
 </button>
+
+    
+</div>

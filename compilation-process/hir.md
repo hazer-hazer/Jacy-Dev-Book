@@ -19,6 +19,10 @@ E.g. all kinds of loops are converted to `loop` structure because every loop is 
 something". That is, `for` loop iterates over data until there're some data, same for while and `while let`.
 
 By doing so, we reduce a large amount of AST nodes to some more common structures.
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/compilation-process/index.html">Compilation process ></a>
+<div class="nav-btn-block">
+    
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/compilation-process/index.html">Compilation process ></a>
 </button>
+
+</div>

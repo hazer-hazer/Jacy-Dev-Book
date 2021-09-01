@@ -18,6 +18,10 @@ There are some terms we need to establish:
 * CTE contexts
 * CTE functions
 * CTE expressions
-<button class="btn btn-outline" style="float: left;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/compile-time-evaluation/cte-functions.html">< Cte functions</a>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a href="/Jacy-Dev-Book/compile-time-evaluation/cte-functions.html">< Cte functions</a>
 </button>
+
+    
+</div>

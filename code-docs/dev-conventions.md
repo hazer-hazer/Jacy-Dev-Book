@@ -11,9 +11,13 @@ parent: 'Code docs'
 This is a collection of code conventions, some of them are strict some not. In conventions, "MUST" really means that a
 rule MUST be followed, "SHOULD" means that in most cases it is better to choose this rule than different "CAN (be)"
 means that there's a preferred way to do something but it is either optional either often requires another approach.
-<button class="btn btn-outline" style="float: left;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/code-docs/config-and-cli.html">< Config and cli</a>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a href="/Jacy-Dev-Book/code-docs/config-and-cli.html">< Config and cli</a>
 </button>
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/code-docs/index.html">Code docs ></a>
+
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/code-docs/index.html">Code docs ></a>
 </button>
+
+</div>

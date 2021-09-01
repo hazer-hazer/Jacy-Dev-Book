@@ -7,6 +7,10 @@ has_children: true
 ---
 
 # Concept
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/concept/the-idea.html">The idea ></a>
+<div class="nav-btn-block">
+    
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/concept/the-idea.html">The idea ></a>
 </button>
+
+</div>

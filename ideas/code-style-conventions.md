@@ -98,9 +98,13 @@ is specific? Here's the table of common cases:
 ### Modules (`mod`)
 
 `mod` MUST BE named in __snake_case__: `std`, `my_lib`, `some_module`
-<button class="btn btn-outline" style="float: left;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/ideas/#1.html">< #1</a>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a href="/Jacy-Dev-Book/ideas/#1.html">< #1</a>
 </button>
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/ideas/index.html">Ideas ></a>
+
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/ideas/index.html">Ideas ></a>
 </button>
+
+</div>

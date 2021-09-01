@@ -9,6 +9,10 @@ has_children: true
 # Backlog
 
 Deprecated ideas, etc.
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/backlog/invert-rust-v2.html">Invert rust v2 ></a>
+<div class="nav-btn-block">
+    
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/backlog/invert-rust-v2.html">Invert rust v2 ></a>
 </button>
+
+</div>

@@ -18,9 +18,13 @@ Here's the list of all (I hope) this kind of places (`N` and `M` are `const` exp
 * When we set default value for `const` parameter like `<const N: usize = M>`
 * Enum discriminant `enum MyEnum { Kind = N }`
 * `static` items initializers
-<button class="btn btn-outline" style="float: left;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/compile-time-evaluation/const-keyword.html">< Const keyword</a>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a href="/Jacy-Dev-Book/compile-time-evaluation/const-keyword.html">< Const keyword</a>
 </button>
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/compile-time-evaluation/cte-expressions.html">Cte expressions ></a>
+
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/compile-time-evaluation/cte-expressions.html">Cte expressions ></a>
 </button>
+
+</div>

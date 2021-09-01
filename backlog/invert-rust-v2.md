@@ -108,9 +108,13 @@ But stop... Now we need to always write `own i32`, etc. just not to make a `&i32
 - Problem with copy-types, like `own i32`
 - Generics become `<own T, own T2, ...>`
 - We may be confused with `own` and `move`, because `own` is in-type annotation but `move` is in-expression annotation
-<button class="btn btn-outline" style="float: left;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/backlog/index.html">< Backlog</a>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a href="/Jacy-Dev-Book/backlog/index.html">< Backlog</a>
 </button>
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/backlog/invert-rust.html">Invert rust ></a>
+
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/backlog/invert-rust.html">Invert rust ></a>
 </button>
+
+</div>

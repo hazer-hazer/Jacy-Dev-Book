@@ -129,9 +129,13 @@ func main {
     print(fib100);
 }
 ```
-<button class="btn btn-outline" style="float: left;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/extended-tools">< Extended tools</a>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a href="/Jacy-Dev-Book/extended-tools">< Extended tools</a>
 </button>
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/how-to-run.html">How to run ></a>
+
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/how-to-run.html">How to run ></a>
 </button>
+
+</div>

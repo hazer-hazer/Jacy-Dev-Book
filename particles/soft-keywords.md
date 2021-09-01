@@ -28,9 +28,13 @@ Same as function item but without `func` keyword. Absence of `func` keyword give
 
 __Problems__:
 - Requires context-dependent parsing, as we need to check for `init` appearance only inside `struct` (maybe `trait`) but not in `func` (expression context)
-<button class="btn btn-outline" style="float: left;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/particles/refs-&-moves.html">< Refs & moves</a>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a href="/Jacy-Dev-Book/particles/refs-&-moves.html">< Refs & moves</a>
 </button>
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/particles/std-annotations.html">Std annotations ></a>
+
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/particles/std-annotations.html">Std annotations ></a>
 </button>
+
+</div>

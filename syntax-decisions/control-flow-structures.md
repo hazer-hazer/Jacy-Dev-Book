@@ -157,9 +157,13 @@ for x in &vec {
     // ...
 }
 ```
-<button class="btn btn-outline" style="float: left;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/syntax-decisions/blocks.html">< Blocks</a>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a href="/Jacy-Dev-Book/syntax-decisions/blocks.html">< Blocks</a>
 </button>
-<button class="btn btn-outline" style="float: right;">
-    <a style="text-decoration: none;" href="/Jacy-Dev-Book/syntax-decisions/index.html">Syntax decisions ></a>
+
+    <button class="nav-btn right">
+    <a href="/Jacy-Dev-Book/syntax-decisions/index.html">Syntax decisions ></a>
 </button>
+
+</div>
