@@ -1,11 +1,16 @@
 const navBtn = (next, {relPath, title}) => {
+    let align
     if (next) {
+        align = 'right'
         title += " >"
     } else {
+        align = left
         title = "< " + title
     }
     return `
-<button class="btn btn-outline"><a href="/${relPath.replace('\\', '/')}">${title}</a></button>
+<button class="btn btn-outline" style="float: ${align};">
+    <a style="text-decoration: none;" href="/${relPath.replace('\\', '/')}">${title}</a>
+</button>
 `.trim() + '\n'
 }
 
