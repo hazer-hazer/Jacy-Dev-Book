@@ -131,11 +131,11 @@ func main {
 ```
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/extended-tools">❮ Extended tools</a>
+    <a class="link" href="/Jacy-Dev-Book/extended-tools">❮ Extended tools</a>
 </button>
 
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/how-to-run.html">How to run ❯</a>
+    <a class="link" href="/Jacy-Dev-Book/how-to-run.html">How to run ❯</a>
 </button>
 
 </div>

@@ -69,11 +69,11 @@ Also, this syntax allows simplifications:
 - We can allow `IDENT -> expr` as a shortcut for `BorrowPattern(IDENT) -> expr`
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/syntax-decisions/index.html">❮ Syntax decisions</a>
+    <a class="link" href="/Jacy-Dev-Book/syntax-decisions/index.html">❮ Syntax decisions</a>
 </button>
 
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/syntax-decisions/semicolons.html">Semicolons ❯</a>
+    <a class="link" href="/Jacy-Dev-Book/syntax-decisions/semicolons.html">Semicolons ❯</a>
 </button>
 
 </div>

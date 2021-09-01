@@ -30,11 +30,11 @@ __Problems__:
 - Requires context-dependent parsing, as we need to check for `init` appearance only inside `struct` (maybe `trait`) but not in `func` (expression context)
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/particles/refs-&-moves.html">❮ Refs & moves</a>
+    <a class="link" href="/Jacy-Dev-Book/particles/refs-&-moves.html">❮ Refs & moves</a>
 </button>
 
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/particles/std-annotations.html">Std annotations ❯</a>
+    <a class="link" href="/Jacy-Dev-Book/particles/std-annotations.html">Std annotations ❯</a>
 </button>
 
 </div>

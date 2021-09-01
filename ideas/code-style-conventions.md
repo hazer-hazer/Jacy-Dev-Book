@@ -100,11 +100,11 @@ is specific? Here's the table of common cases:
 `mod` MUST BE named in __snake_case__: `std`, `my_lib`, `some_module`
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/ideas/#1.html">❮ #1</a>
+    <a class="link" href="/Jacy-Dev-Book/ideas/#1.html">❮ #1</a>
 </button>
 
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/ideas/index.html">Ideas ❯</a>
+    <a class="link" href="/Jacy-Dev-Book/ideas/index.html">Ideas ❯</a>
 </button>
 
 </div>

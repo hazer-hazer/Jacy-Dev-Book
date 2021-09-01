@@ -17,7 +17,7 @@ The reasons why overloading is not allowed are:
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/particles/computed-properties.html">Computed properties ❯</a>
+    <a class="link" href="/Jacy-Dev-Book/particles/computed-properties.html">Computed properties ❯</a>
 </button>
 
 </div>

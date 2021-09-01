@@ -64,11 +64,11 @@ everything inside it will be inlined, you still can declare `let` or use `if` in
 compiler will check function for constness and tell you if it's not.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/compile-time-evaluation/cte-expressions.html">❮ Cte expressions</a>
+    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/cte-expressions.html">❮ Cte expressions</a>
 </button>
 
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/compile-time-evaluation/index.html">Compile time evaluation ❯</a>
+    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/index.html">Compile time evaluation ❯</a>
 </button>
 
 </div>

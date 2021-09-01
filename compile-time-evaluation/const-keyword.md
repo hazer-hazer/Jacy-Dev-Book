@@ -38,7 +38,7 @@ func main() {
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/compile-time-evaluation/cte-contexts.html">Cte contexts ❯</a>
+    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/cte-contexts.html">Cte contexts ❯</a>
 </button>
 
 </div>

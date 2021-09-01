@@ -13,11 +13,11 @@ will explain why I've chosen certain solutions and not how to work with them. So
 meticulous, but I want to cover even the simplest aspects of PL.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a href="/Jacy-Dev-Book/index.html">❮ Table of contents</a>
+    <a class="link" href="/Jacy-Dev-Book/index.html">❮ Table of contents</a>
 </button>
 
     <button class="nav-btn right">
-    <a href="/Jacy-Dev-Book/jon files">Jon files ❯</a>
+    <a class="link" href="/Jacy-Dev-Book/jon files">Jon files ❯</a>
 </button>
 
 </div>
