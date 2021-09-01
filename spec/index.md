@@ -1,6 +1,6 @@
 ---
 layout: 'default'
-title: 'Kek'
+title: 'Index'
 # No nav_order
 parent: Kek
 # No children
