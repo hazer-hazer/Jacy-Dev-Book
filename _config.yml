@@ -1,0 +1,43 @@
+remote_theme: pmarsceill/just-the-docs
+logo: "/assets/JacyLarge.png"
+
+aux_links:
+  "Jacy on GitHub":
+    - "//github.com/jacylang/Jacy"
+
+aux_links_new_tab: true
+
+color_scheme: main
+
+back_to_top: true
+back_to_top_text: "Back to top"
+
+last_edit_timestamp: true
+last_edit_time_format: "%b %e %Y at %I:%M %p"
+
+gh_edit_link: true
+gh_edit_link_text: "Contribute to this page on GitHub"
+gh_edit_repository: "https://github.com/jacylang/Jacy"
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: true
+
+compress_html:
+  ignore:
+    envs: all
+
+search.button: true
+
+collections:
+  docs:
+    permalink: "/:collection/:path/"
+    output: true
+
+just_the_docs:
+  collections:
+    docs:
+      name: Dev Docs
+
+# footer_content: "<button type=\"button\" name=\"button\" class=\"toggle-theme\" onclick=\"jtd.setTheme(jtd.getTheme() === 'dark' ? 'light' : 'dark');\">🌗</button>"
