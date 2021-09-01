@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Module tree building'
 nav_order: 3
-parent: Compilation process
+parent: 'Compilation process'
 # No children
 ---
 

@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Attributes'
 nav_order: 1
-parent: Extended tools
+parent: 'Extended tools'
 # No children
 ---
 

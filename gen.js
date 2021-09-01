@@ -57,6 +57,7 @@ class Generator {
             parentTitle = grandParentTitle
             navOrder = parentNavOrder
             if (isRootDir) {
+                hasChildren = false
                 parentTitle = null
             }
         }

@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Const keyword'
 nav_order: 1
-parent: Compile time evaluation
+parent: 'Compile time evaluation'
 # No children
 ---
 

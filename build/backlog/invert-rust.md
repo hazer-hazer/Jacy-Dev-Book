@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Invert rust'
 nav_order: 3
-parent: Backlog
+parent: 'Backlog'
 # No children
 ---
 
