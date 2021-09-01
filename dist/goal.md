@@ -1,8 +1,9 @@
 ---
 layout: 'default'
 title: 'Goal'
-nav_order: 9
+nav_order: 8
 parent: null
+has_children: false
 ---
 
 # Goal

@@ -3,6 +3,7 @@ layout: 'default'
 title: 'Named arg alias'
 nav_order: 4
 parent: Ideas
+has_children: false
 ---
 
 The idea.

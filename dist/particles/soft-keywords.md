@@ -3,6 +3,7 @@ layout: 'default'
 title: 'Soft keywords'
 nav_order: 11
 parent: Particles
+has_children: false
 ---
 
 # Soft keywords

@@ -3,6 +3,7 @@ layout: 'default'
 title: 'Name resolution'
 nav_order: 4
 parent: Compilation process
+has_children: false
 ---
 
 # Name resolution

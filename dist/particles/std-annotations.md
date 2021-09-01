@@ -3,6 +3,7 @@ layout: 'default'
 title: 'Std annotations'
 nav_order: 12
 parent: Particles
+has_children: false
 ---
 
 # `std` annotations

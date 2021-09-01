@@ -3,6 +3,7 @@ layout: 'default'
 title: 'Memory leaks'
 nav_order: 6
 parent: Particles
+has_children: false
 ---
 
 # Memory leaks

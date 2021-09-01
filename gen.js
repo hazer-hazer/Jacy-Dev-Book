@@ -49,8 +49,10 @@ class Generator {
 
         const src = fs.readFileSync(filePath, 'utf8')
 
+        let hasChildren = false
         if (filename === INDEX_FILENAME) {
             navOrder = parentNavOrder
+            hasChildren = true
         }
 
         return {
@@ -59,6 +61,7 @@ class Generator {
             parent: parentTitle,
             src,
             navOrder,
+            hasChildren,
             isIndex: filename == INDEX_FILENAME,
             relPath: path.relative(SOURCE_PATH, filePath),
         }

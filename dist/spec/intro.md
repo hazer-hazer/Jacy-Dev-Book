@@ -3,6 +3,7 @@ layout: 'default'
 title: 'Intro'
 nav_order: 2
 parent: Spec
+has_children: false
 ---
 
 # Intro

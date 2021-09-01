@@ -1,8 +1,9 @@
 ---
 layout: 'default'
 title: 'Index'
-nav_order: 16
+nav_order: 15
 parent: Spec
+has_children: true
 ---
 
 # Spec

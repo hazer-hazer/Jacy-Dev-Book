@@ -1,8 +1,9 @@
 ---
 layout: 'default'
 title: 'Index'
-nav_order: 4
+nav_order: 3
 parent: Code docs
+has_children: true
 ---
 
 # Code Docs

@@ -3,6 +3,7 @@ layout: 'default'
 title: 'Dev conventions'
 nav_order: 2
 parent: Code docs
+has_children: false
 ---
 
 # Dev Conventions

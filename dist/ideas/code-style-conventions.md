@@ -3,6 +3,7 @@ layout: 'default'
 title: 'Code style conventions'
 nav_order: 2
 parent: Ideas
+has_children: false
 ---
 
 # Code Style Conventions

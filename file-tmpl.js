@@ -4,6 +4,7 @@ module.exports = ({
     title = 'Untitled',
     navOrder,
     parent,
+    hasChildren,
 }) => {
     // Remove front matter if file has
     src = src.trim()
@@ -17,6 +18,7 @@ layout: '${layout}'
 title: '${title}'
 ${navOrder ? `nav_order: ${navOrder}` : '# No nav_order'}
 parent: ${parent}
+has_children: ${hasChildren.toString()}
 ---
 
 ${src}

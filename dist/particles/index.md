@@ -1,8 +1,9 @@
 ---
 layout: 'default'
 title: 'Index'
-nav_order: 15
+nav_order: 14
 parent: Particles
+has_children: true
 ---
 
 # Particles

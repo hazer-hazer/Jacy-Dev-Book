@@ -3,6 +3,7 @@ layout: 'default'
 title: 'Cte functions'
 nav_order: 4
 parent: Compile time evaluation
+has_children: false
 ---
 
 # CTE Functions

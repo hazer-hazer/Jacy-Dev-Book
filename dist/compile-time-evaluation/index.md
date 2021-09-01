@@ -1,8 +1,9 @@
 ---
 layout: 'default'
 title: 'Index'
-nav_order: 6
+nav_order: 5
 parent: Compile time evaluation
+has_children: true
 ---
 
 # Compile-Time Evaluation
