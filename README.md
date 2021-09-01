@@ -20,5 +20,3 @@ Rules:
 Just-The-Docs (JTD further) requires Front Matter in each page to connect it with parent page.
 The script builds connections automatically by simple rule: every directory is a parent, and it works recursively, thus dir/dir is possible.
 
-
-
