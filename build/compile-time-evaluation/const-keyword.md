@@ -35,3 +35,6 @@ func main() {
     const b = 123
 }
 ```
+
+[Cte contexts](compile-time-evaluation\cte-contexts.md){: .btn .btn-outline }
+    

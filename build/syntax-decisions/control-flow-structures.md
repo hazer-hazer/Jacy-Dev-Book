@@ -157,3 +157,8 @@ for x in &vec {
     // ...
 }
 ```
+
+[Blocks](syntax-decisions\blocks.md){: .btn .btn-outline }
+    
+[Syntax decisions](syntax-decisions\index.md){: .btn .btn-outline }
+    

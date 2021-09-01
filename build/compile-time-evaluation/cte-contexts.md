@@ -18,3 +18,8 @@ Here's the list of all (I hope) this kind of places (`N` and `M` are `const` exp
 * When we set default value for `const` parameter like `<const N: usize = M>`
 * Enum discriminant `enum MyEnum { Kind = N }`
 * `static` items initializers
+
+[Const keyword](compile-time-evaluation\const-keyword.md){: .btn .btn-outline }
+    
+[Cte expressions](compile-time-evaluation\cte-expressions.md){: .btn .btn-outline }
+    

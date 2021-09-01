@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Goal'
-nav_order: 108
+nav_order: 107
 # No parent
 # No children
 ---
@@ -129,3 +129,8 @@ func main {
     print(fib100);
 }
 ```
+
+[Extended tools](extended-tools){: .btn .btn-outline }
+    
+[How to run](how-to-run.md){: .btn .btn-outline }
+    

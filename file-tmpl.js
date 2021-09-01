@@ -1,4 +1,11 @@
-module.exports = {
+const navBtn = ({relPath, title}) => {
+    console.log(`file btns: ${relPath}, ${title}`);
+    return `
+[${title}](${relPath}){: .btn .btn-outline }
+    `.trim()
+}
+
+const tmpl = {
     earlyTmpl({
         src,
         layout = 'default',
@@ -26,19 +33,15 @@ ${src}
 `.trimLeft()
     },
 
-    navBtn({relPath, title}) {
-        return `
-[${title}](${relPath}){: .btn .btn-outline }
-        `
-    },
-
     addNavButtons(fileStr, previous, next) {
         if (previous) {
-            fileStr += this.navBtn(previous)
+            fileStr += navBtn(previous)
         }
         if (next) {
-            fileStr += this.navBtn(next)
+            fileStr += navBtn(next)
         }
         return fileStr
     }
 }
+
+module.exports = tmpl

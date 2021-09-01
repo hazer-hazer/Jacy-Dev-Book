@@ -316,3 +316,6 @@ func main {
 
 Actually, this is just an example where we omit usage of lifetimes. No-lifetimes solutions gonna be researched in
 further ideas.
+
+[Invert rust v2](backlog\invert-rust-v2.md){: .btn .btn-outline }
+    

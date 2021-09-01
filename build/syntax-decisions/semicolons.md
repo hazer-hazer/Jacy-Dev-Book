@@ -26,3 +26,8 @@ rules except the only one -- using as a terminating token.
 Resources:
 
 * [Semicolon Inference](https://pling.jondgoodwin.com/post/semicolon-inference/)
+
+[Lambdas](syntax-decisions\lambdas.md){: .btn .btn-outline }
+    
+[Variables](syntax-decisions\variables.md){: .btn .btn-outline }
+    

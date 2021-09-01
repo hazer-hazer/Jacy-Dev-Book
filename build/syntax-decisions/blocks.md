@@ -74,3 +74,6 @@ Of course, I couldn't leave this thing without covering the Zen rule about helpi
 be a warning if you're writing code like that.
 
 > Don't confuse block-ignorance with trait method signatures, in case of traits it is not ignorance.
+
+[Control flow structures](syntax-decisions\control-flow-structures.md){: .btn .btn-outline }
+    

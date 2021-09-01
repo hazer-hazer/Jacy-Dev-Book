@@ -7,3 +7,8 @@ parent: 'Particles'
 ---
 
 # Custom Allocators
+
+[Computed properties](particles\computed-properties.md){: .btn .btn-outline }
+    
+[Custom operators](particles\custom-operators.md){: .btn .btn-outline }
+    

@@ -9,3 +9,6 @@ parent: 'Appendices'
 # Attributes
 
 In \*Jacy\* attributes are
+
+[Checklist](appendices\checklist.md){: .btn .btn-outline }
+    

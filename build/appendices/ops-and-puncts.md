@@ -104,3 +104,6 @@ Precedence (from highest to lowest)
 | `a |> b` |
 | `a = b` &nbsp; `a += b` &nbsp; `a -= b` &nbsp; `a *= b` &nbsp; `a /= b` &nbsp; `a %= b` &nbsp; `a **= b` &nbsp; `a &= b` &nbsp; `a |= b` &nbsp; `a ^= b` &nbsp; `a <<= b` &nbsp; `a >>= b` |
 | `return a` &nbsp; `break a` &nbsp; `() -> {}` |
+
+[Appendices](appendices\index.md){: .btn .btn-outline }
+    

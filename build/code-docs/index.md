@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Code docs'
-nav_order: 103
+nav_order: 102
 # No parent
 has_children: true
 ---
@@ -14,3 +14,8 @@ important notes but not how to use specific class, method, etc.
 
 If you want to contribute to _Jacy_ this is a good place to start sorting out compiler structure. Anyway, I need to note
 that _Jacy_ is very WIP so some things change often and this documentation would become non-relevant one day.
+
+[Dev conventions](code-docs\dev-conventions.md){: .btn .btn-outline }
+    
+[Interface](code-docs\interface.md){: .btn .btn-outline }
+    

@@ -22,3 +22,8 @@ Expression is CTEE if:
 * It is a result of `const func` 
 * 
 > More on CTE structs and enums in next chapters
+
+[Cte contexts](compile-time-evaluation\cte-contexts.md){: .btn .btn-outline }
+    
+[Cte functions](compile-time-evaluation\cte-functions.md){: .btn .btn-outline }
+    

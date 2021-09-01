@@ -62,3 +62,8 @@ As you can see in `myRawFunc` `foo` is still a function call, because `foo` used
 `myConstFunc` value returned by `foo` was inlined as we declared `a` as `const`. `const` qualifier does not mean that
 everything inside it will be inlined, you still can declare `let` or use `if` inside of it. `const` just means the
 compiler will check function for constness and tell you if it's not.
+
+[Cte expressions](compile-time-evaluation\cte-expressions.md){: .btn .btn-outline }
+    
+[Compile time evaluation](compile-time-evaluation\index.md){: .btn .btn-outline }
+    

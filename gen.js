@@ -161,11 +161,12 @@ class Generator {
         }
 
         const children = Object.values(dir.children)
-        for (let i = 0; i < children; i++) {
+        for (let i = 0; i < children.length; i++) {
             const child = children[i]
             const previous = i > 0 ? children[i - 1] : null
             const next = i < children.length - 1 ? children[i + 1] : null
-            this.gen(child, previous, next)
+
+            await this.gen(child, previous, next)
         }
     }
 
@@ -175,11 +176,11 @@ class Generator {
         fs.writeFileSync(path.join(DIST_PATH, file.relPath), fileStrWithBtns, 'utf8')
     }
 
-    async gen(entity) {
+    async gen(entity, previous, next) {
         if (entity.isDir) {
-            await this._genDir(entity)
+            await this._genDir(entity, previous, next)
         } else {
-            await this._genFile(entity)
+            await this._genFile(entity, previous, next)
         }
     }
 }

@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Compile time evaluation'
-nav_order: 105
+nav_order: 104
 # No parent
 has_children: true
 ---
@@ -18,3 +18,6 @@ There are some terms we need to establish:
 * CTE contexts
 * CTE functions
 * CTE expressions
+
+[Cte functions](compile-time-evaluation\cte-functions.md){: .btn .btn-outline }
+    
