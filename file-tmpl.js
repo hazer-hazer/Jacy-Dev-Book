@@ -8,7 +8,7 @@ const navBtn = (next, {relPath, title}) => {
         title = "< " + title
     }
     return `
-<button class="nav-btn">
+<button class="nav-btn ${align}">
     <a href="/Jacy-Dev-Book/${relPath.replace('\\', '/').replace('.md', '.html')}">${title}</a>
 </button>
 `.trim() + '\n'
@@ -16,7 +16,7 @@ const navBtn = (next, {relPath, title}) => {
 
 const navBtnBlock = (previous, next) => {
 return `
-<div class="nav-btns">
+<div class="nav-btn-block">
     ${previous ? navBtn(false, previous) : ''}
     ${next ? navBtn(true, next) : ''}
 </div>
