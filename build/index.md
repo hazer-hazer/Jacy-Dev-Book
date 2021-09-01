@@ -1,9 +1,9 @@
 ---
 layout: 'default'
-title: 'Index'
+title: 'null'
 nav_order: 1
 # No parent
-has_children: false
+# No children
 ---
 
 # Table of contents

@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Cte contexts'
 nav_order: 2
 parent: Compile time evaluation
-has_children: false
+# No children
 ---
 
 # CTE Contexts

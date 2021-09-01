@@ -1,6 +1,6 @@
 ---
 layout: 'default'
-title: 'Index'
+title: 'Compilation process'
 nav_order: 5
 # No parent
 has_children: true

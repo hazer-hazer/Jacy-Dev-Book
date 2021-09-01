@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Cte expressions'
 nav_order: 3
 parent: Compile time evaluation
-has_children: false
+# No children
 ---
 
 # CTE Expressions

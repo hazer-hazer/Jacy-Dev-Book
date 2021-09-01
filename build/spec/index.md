@@ -1,6 +1,6 @@
 ---
 layout: 'default'
-title: 'Index'
+title: 'Spec'
 nav_order: 16
 # No parent
 has_children: true

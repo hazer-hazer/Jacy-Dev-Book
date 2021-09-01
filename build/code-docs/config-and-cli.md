@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Config and cli'
 nav_order: 1
 parent: Code docs
-has_children: false
+# No children
 ---
 
 # Config & CLI

@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Invert rust'
 nav_order: 3
 parent: Backlog
-has_children: false
+# No children
 ---
 
 # Invert Rust for usability

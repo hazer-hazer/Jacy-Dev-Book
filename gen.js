@@ -53,6 +53,7 @@ class Generator {
         if (filename === INDEX_FILENAME) {
             navOrder = parentNavOrder
             hasChildren = !isRootDir
+            title = parentTitle
             parentTitle = null
         }
 

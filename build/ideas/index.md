@@ -1,6 +1,6 @@
 ---
 layout: 'default'
-title: 'Index'
+title: 'Ideas'
 nav_order: 11
 # No parent
 has_children: true

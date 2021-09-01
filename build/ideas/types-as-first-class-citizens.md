@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Types as first class citizens'
 nav_order: 5
 parent: Ideas
-has_children: false
+# No children
 ---
 
 # Types as first-class citizens

@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Null coalesce'
 nav_order: 8
 parent: Particles
-has_children: false
+# No children
 ---
 
 # Null coalesce

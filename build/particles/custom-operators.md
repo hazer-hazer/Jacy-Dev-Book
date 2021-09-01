@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Custom operators'
 nav_order: 4
 parent: Particles
-has_children: false
+# No children
 ---
 
 # Custom Operators

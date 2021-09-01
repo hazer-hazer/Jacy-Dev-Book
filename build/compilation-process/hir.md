@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Hir'
 nav_order: 1
 parent: Compilation process
-has_children: false
+# No children
 ---
 
 # HIR
