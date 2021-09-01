@@ -9,8 +9,8 @@ const navBtn = (next, {relPath, title}) => {
         title = "< " + title
     }
     return `
-<button class="btn btn-outline" href="${DIST_PATH + '/' + relPath}">${title}</button>
-`.trim()
+<button class="btn btn-outline" href="/${relPath.replace('\\', '/')}">${title}</button>
+`.trim() + '\n'
 }
 
 const tmpl = {

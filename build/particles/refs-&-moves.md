@@ -198,8 +198,5 @@ What is `T` in `module::foo`? `&T` or `T`? Actually, the answer is same as for e
 __STATUS__ - IDEA IS DENIED.
 
 __REVISIONS__ - ALLOWED
-
-[Organic jacy](particles\organic-jacy.md){: .btn .btn-outline }
-    
-[Soft keywords](particles\soft-keywords.md){: .btn .btn-outline }
-    
+<button class="btn btn-outline" href="/particles\organic-jacy.md">< Organic jacy</button>
+<button class="btn btn-outline" href="/particles\soft-keywords.md">Soft keywords ></button>

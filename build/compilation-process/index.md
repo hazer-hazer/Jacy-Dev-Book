@@ -7,8 +7,5 @@ has_children: true
 ---
 
 # compilation-process
-
-[Hir](compilation-process\hir.md){: .btn .btn-outline }
-    
-[Module tree building](compilation-process\module-tree-building.md){: .btn .btn-outline }
-    
+<button class="btn btn-outline" href="/compilation-process\hir.md">< Hir</button>
+<button class="btn btn-outline" href="/compilation-process\module-tree-building.md">Module tree building ></button>

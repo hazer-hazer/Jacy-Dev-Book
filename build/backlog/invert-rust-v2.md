@@ -108,8 +108,5 @@ But stop... Now we need to always write `own i32`, etc. just not to make a `&i32
 - Problem with copy-types, like `own i32`
 - Generics become `<own T, own T2, ...>`
 - We may be confused with `own` and `move`, because `own` is in-type annotation but `move` is in-expression annotation
-
-[Backlog](backlog\index.md){: .btn .btn-outline }
-    
-[Invert rust](backlog\invert-rust.md){: .btn .btn-outline }
-    
+<button class="btn btn-outline" href="/backlog\index.md">< Backlog</button>
+<button class="btn btn-outline" href="/backlog\invert-rust.md">Invert rust ></button>

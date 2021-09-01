@@ -11,6 +11,4 @@ has_children: true
 **This is not the reference and especially specification**
 
 You can think of it as wishlist and collection of thoughts I came up with 🙂
-
-[Intro](spec\intro.md){: .btn .btn-outline }
-    
+<button class="btn btn-outline" href="/spec\intro.md">Intro ></button>

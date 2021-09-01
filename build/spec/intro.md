@@ -29,6 +29,4 @@ Rust has: function pointer types, `Fn`, `FnMut` and `FnOnce`.
 #### 1. Is it possible to remove function pointer type?
 
 The answer is in what function pointer is -- it is pointer to function item, i.e.
-
-[Spec](spec\index.md){: .btn .btn-outline }
-    
+<button class="btn btn-outline" href="/spec\index.md">< Spec</button>

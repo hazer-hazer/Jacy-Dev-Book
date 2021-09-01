@@ -35,6 +35,4 @@ func main() {
     const b = 123
 }
 ```
-
-[Cte contexts](compile-time-evaluation\cte-contexts.md){: .btn .btn-outline }
-    
+<button class="btn btn-outline" href="/compile-time-evaluation\cte-contexts.md">Cte contexts ></button>

@@ -17,8 +17,5 @@ func main {
   foo(:name);
 }
 ```
-
-[Ideas](ideas\index.md){: .btn .btn-outline }
-    
-[Types as first class citizens](ideas\types-as-first-class-citizens.md){: .btn .btn-outline }
-    
+<button class="btn btn-outline" href="/ideas\index.md">< Ideas</button>
+<button class="btn btn-outline" href="/ideas\types-as-first-class-citizens.md">Types as first class citizens ></button>
