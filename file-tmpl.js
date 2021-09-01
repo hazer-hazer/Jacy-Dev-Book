@@ -26,20 +26,19 @@ ${src}
 `.trimLeft()
     },
 
-    navBtn({link, title}) {
+    navBtn({relPath, title}) {
         return `
-[${title}](link){: .btn .btn-outline }
+[${title}](${relPath}){: .btn .btn-outline }
         `
     },
 
-    navBtns({previous, next}) {
-        let str = ''
+    addNavButtons(fileStr, previous, next) {
         if (previous) {
-            str += this.navBtn(previous)
+            fileStr += this.navBtn(previous)
         }
         if (next) {
-            str += this.navBtn(next)
+            fileStr += this.navBtn(next)
         }
-        return str
+        return fileStr
     }
 }

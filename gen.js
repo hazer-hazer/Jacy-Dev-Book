@@ -6,7 +6,7 @@ const {
     INDEX_FILENAME,
 } = require('./config')
 const STRUCT = require('./struct')
-const {earlyTmpl} = require('./file-tmpl')
+const {earlyTmpl, addNavButtons} = require('./file-tmpl')
 
 const capitalize = str => str[0].toUpperCase() + str.slice(1)
 
@@ -157,18 +157,22 @@ class Generator {
     async _genDir(dir) {
         const dirPath = path.join(DIST_PATH, dir.relPath)
         if (!fs.existsSync(dirPath)) {
-            // console.log(`mkdir ${dirPath}`);
             fs.mkdirSync(dirPath);
         }
 
-        for (const child of Object.values(dir.children)) {
-            this.gen(child)
+        const children = Object.values(dir.children)
+        for (let i = 0; i < children; i++) {
+            const child = children[i]
+            const previous = i > 0 ? children[i - 1] : null
+            const next = i < children.length - 1 ? children[i + 1] : null
+            this.gen(child, previous, next)
         }
     }
 
-    async _genFile(file) {
-        // console.log(`file path: ${path.join(DIST_PATH, file.relPath)}`);
-        fs.writeFileSync(path.join(DIST_PATH, file.relPath), earlyTmpl(file), 'utf8')
+    async _genFile(file, previous, next) {
+        const fileStr = earlyTmpl(file)
+        const fileStrWithBtns = addNavButtons(fileStr, previous, next)
+        fs.writeFileSync(path.join(DIST_PATH, file.relPath), fileStrWithBtns, 'utf8')
     }
 
     async gen(entity) {
