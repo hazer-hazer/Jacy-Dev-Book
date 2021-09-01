@@ -7,7 +7,6 @@ const {
 } = require('./config')
 const STRUCT = require('./struct')
 const fileTmpl = require('./file-tmpl')
-const { chdir } = require('process')
 
 const capitalize = str => str[0].toUpperCase() + str.slice(1)
 
