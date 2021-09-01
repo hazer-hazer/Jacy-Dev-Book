@@ -17,7 +17,7 @@ last_edit_time_format: "%b %e %Y at %I:%M %p"
 
 gh_edit_link: true
 gh_edit_link_text: "Contribute to this page on GitHub"
-gh_edit_repository: "https://github.com/jacylang/Jacy"
+gh_edit_repository: "https://github.com/jacylang/Jacy-Dev-Book"
 
 kramdown:
   syntax_highlighter_opts:
@@ -30,14 +30,5 @@ compress_html:
 
 search.button: true
 
-collections:
-  docs:
-    permalink: "/:collection/:path/"
-    output: true
-
-just_the_docs:
-  collections:
-    docs:
-      name: Dev Docs
 
 # footer_content: "<button type=\"button\" name=\"button\" class=\"toggle-theme\" onclick=\"jtd.setTheme(jtd.getTheme() === 'dark' ? 'light' : 'dark');\">🌗</button>"
