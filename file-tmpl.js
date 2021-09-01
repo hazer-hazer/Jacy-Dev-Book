@@ -18,7 +18,7 @@ layout: '${layout}'
 title: '${title}'
 ${navOrder ? `nav_order: ${navOrder}` : '# No nav_order'}
 ${parent ? `parent: ${parent}` : '# No parent'}
-has_children: ${hasChildren.toString()}
+${hasChildren ? 'has_children: true' : '# No children'}
 ---
 
 ${src}
