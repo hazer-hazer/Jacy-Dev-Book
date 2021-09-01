@@ -98,3 +98,4 @@ is specific? Here's the table of common cases:
 ### Modules (`mod`)
 
 `mod` MUST BE named in __snake_case__: `std`, `my_lib`, `some_module`
+[#1](ideas/#1.md){: .btn .btn-outline }[Ideas](ideas/index.md){: .btn .btn-outline }

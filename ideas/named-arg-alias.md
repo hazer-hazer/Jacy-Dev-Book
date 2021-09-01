@@ -17,3 +17,4 @@ func main {
   foo(:name);
 }
 ```
+[Ideas](ideas/index.md){: .btn .btn-outline }[Types as first class citizens](ideas/types-as-first-class-citizens.md){: .btn .btn-outline }

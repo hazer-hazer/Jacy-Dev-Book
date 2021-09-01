@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'How to run'
-nav_order: 109
+nav_order: 108
 # No parent
 # No children
 ---
@@ -102,3 +102,4 @@ Also, they're case insensitive (alpha-values of course):
 | Y | N |
 | True | False |
 | On | Off |
+[Goal](goal.md){: .btn .btn-outline }[Ideas](ideas){: .btn .btn-outline }

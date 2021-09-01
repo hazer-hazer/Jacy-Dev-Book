@@ -28,3 +28,4 @@ And this code will produce an error like:
 Invalid type String for int
 Note: try call s.toInt()
 ```
+[Soft keywords](particles/soft-keywords.md){: .btn .btn-outline }[Strings](particles/strings.md){: .btn .btn-outline }

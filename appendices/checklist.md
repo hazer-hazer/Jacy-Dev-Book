@@ -111,3 +111,4 @@ In conclusion, this is what I think of you:
 [ ] This is a bad language, and you should feel bad for inventing it.
 [ ] Programming in this language is an adequate punishment for inventing it.
 ```
+[Attributes](appendices/attributes.md){: .btn .btn-outline }[Appendices](appendices/index.md){: .btn .btn-outline }

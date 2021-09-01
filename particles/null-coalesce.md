@@ -44,3 +44,4 @@ What this operator should return if both of `a` AND `b` are `Some` values is des
 ### Variant #1
 
 Return `(a!, b!): (T, U)`, that is a tuple where first and second elements are unwrapped `a` and `b` respectively.
+[Not prepedent op](particles/not-prepedent-op.md){: .btn .btn-outline }[Organic jacy](particles/organic-jacy.md){: .btn .btn-outline }

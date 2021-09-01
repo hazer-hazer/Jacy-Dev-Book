@@ -67,3 +67,4 @@ Cons:
 
 Also, this syntax allows simplifications:
 - We can allow `IDENT -> expr` as a shortcut for `BorrowPattern(IDENT) -> expr`
+[Syntax decisions](syntax-decisions/index.md){: .btn .btn-outline }[Semicolons](syntax-decisions/semicolons.md){: .btn .btn-outline }

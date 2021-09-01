@@ -54,3 +54,4 @@ start point is the root module, that is, a module containing full Party definiti
 process it as a relative path, e.g. if we are inside `mod a` which contains `mod b` then we resolve the path
 `b::something` as `a::b::something`. Anyway, it is possible to qualify an absolute path (relative to the Party root)
 with `::` prefix, in this case, we'll resolve it starting from the root module but not from the current.
+[Compilation process](compilation-process/index.md){: .btn .btn-outline }[Name resolution](compilation-process/name-resolution.md){: .btn .btn-outline }
