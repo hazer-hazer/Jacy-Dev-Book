@@ -9,7 +9,7 @@ const navBtn = (next, {relPath, title}) => {
     }
     return `
 <button class="btn btn-outline" style="float: ${align};">
-    <a style="text-decoration: none;" href="/${relPath.replace('\\', '/')}">${title}</a>
+    <a style="text-decoration: none;" href="/Jacy-Dev-Book/${relPath.replace('\\', '/').replace('.md', '.html')}">${title}</a>
 </button>
 `.trim() + '\n'
 }
