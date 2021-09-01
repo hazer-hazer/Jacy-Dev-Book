@@ -23,9 +23,9 @@ jobs:
 
       - name: Generate pages with node ${{ matrix.node-version }}
         uses: actions/setup-node@v2
+        run: node gen.js
         with:
           node-version: ${{ matrix.node-version }}
-        run: node gen.js
 
       - name: Deploy GH-Pages
         uses: JamesIves/github-pages-deploy-action@4.1.5
