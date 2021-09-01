@@ -1,9 +1,9 @@
 ---
 layout: 'default'
-title: 'Kek'
-nav_order: 11
-parent: Kek
-# No children
+title: 'Table of contents'
+nav_order: 1
+# No parent
+has_children: true
 ---
 
 # Table of contents

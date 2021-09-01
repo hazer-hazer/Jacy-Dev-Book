@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Refs & moves'
-nav_order: 9
-parent: Kek
+nav_order: 10
+parent: Particles
 # No children
 ---
 

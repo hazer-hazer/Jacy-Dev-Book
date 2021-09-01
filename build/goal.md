@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Goal'
-nav_order: 8
-parent: Kek
+nav_order: 9
+parent: Table of contents
 # No children
 ---
 

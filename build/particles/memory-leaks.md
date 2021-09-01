@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Memory leaks'
-nav_order: 5
-parent: Kek
+nav_order: 6
+parent: Particles
 # No children
 ---
 

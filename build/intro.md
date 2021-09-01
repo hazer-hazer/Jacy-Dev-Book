@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Intro'
-nav_order: 12
-parent: Kek
+nav_order: 13
+parent: Table of contents
 # No children
 ---
 

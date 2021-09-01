@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Structural nominal typing'
-nav_order: 1
-parent: Kek
+nav_order: 2
+parent: Type system
 # No children
 ---
 

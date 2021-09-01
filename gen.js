@@ -29,14 +29,14 @@ const nameFromFilename = filename => {
 class Generator {
     async run() {
         const sourceDir = await this._processDir(SOURCE_PATH, STRUCT, {
-            parentTitle: 'Table of contents',
             navOrder: 1,
             isRootDir: true,
         })
+        // console.log(JSON.stringify(sourceDir, null, 2));
         await this._genDir(sourceDir)
     }
 
-    async _processFile(filePath, struct, {isIndex, navOrder, parentTitle, parentNavOrder, isRootDir = false}) {
+    async _processFile(filePath, struct, {isIndex, navOrder, parentTitle, grandParentTitle, parentNavOrder, isRootDir = false}) {
         if (!filePath.endsWith('.md')) {
             return null
         }
@@ -51,10 +51,14 @@ class Generator {
 
         const src = fs.readFileSync(filePath, 'utf8')
 
-        let hasChildren = false
+        let hasChildren = isIndex
         if (isIndex) {
+            title = parentTitle
+            parentTitle = grandParentTitle
             navOrder = parentNavOrder
-            hasChildren = !isRootDir
+            if (isRootDir) {
+                parentTitle = null
+            }
         }
 
         return {
@@ -69,7 +73,7 @@ class Generator {
         }
     }
 
-    async _processDir(dirPath, struct, {navOrder, parentTitle, isRootDir = false}) {
+    async _processDir(dirPath, struct, {navOrder, parentTitle = null, isRootDir = false}) {
         const children = []
         const entities = fs.readdirSync(dirPath)
         entities.sort()
@@ -84,7 +88,7 @@ class Generator {
             parentNavOrder: navOrder,
         }
 
-        let index = 0
+        let index = 1
 
         for (const subPath of entities) {
             const childPath = path.join(dirPath, subPath)
@@ -92,24 +96,32 @@ class Generator {
             const childFilename = path.basename(subPath, '.md')
             const isIndex = childFilename === INDEX_FILENAME
 
-            const childStruct = (childIsDir ? struct : struct[childFilename]) || {}
+            let childStruct = {}
+            if (isIndex) {
+                childStruct = struct
+            } else {
+                childStruct = struct?.children?.[childFilename] || {}
+            }
 
-            settings.navOrder = childStruct.order || index++
+            settings.navOrder = childStruct.order || index
 
             if (childIsDir) {
                 children.push(await this._processDir(childPath, childStruct, {
                     ...settings,
-                    isIndex,
+                    isIndex
                 }))
             } else {
                 const file = await this._processFile(childPath, childStruct, {
                     ...settings,
                     isRootDir,
+                    isIndex,
                 })
                 if (file) {
                     children.push(file)
                 }
             }
+
+            index++
 
             // if ('after' in childStruct) {
             //     childStruct.sortFactor = childStruct.after + '_'

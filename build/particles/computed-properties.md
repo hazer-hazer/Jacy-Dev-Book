@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Computed properties'
-nav_order: 1
-parent: Kek
+nav_order: 2
+parent: Particles
 # No children
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Cte contexts'
-nav_order: 1
-parent: Kek
+nav_order: 2
+parent: Compile time evaluation
 # No children
 ---
 

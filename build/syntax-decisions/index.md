@@ -1,9 +1,9 @@
 ---
 layout: 'default'
-title: 'Kek'
-nav_order: 2
-parent: Kek
-# No children
+title: 'Syntax decisions'
+nav_order: 17
+parent: Table of contents
+has_children: true
 ---
 
 # Syntax Decisions

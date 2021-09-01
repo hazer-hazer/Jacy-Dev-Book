@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Std annotations'
-nav_order: 11
-parent: Kek
+nav_order: 12
+parent: Particles
 # No children
 ---
 

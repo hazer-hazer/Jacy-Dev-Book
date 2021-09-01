@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Types as first class citizens'
-nav_order: 4
-parent: Kek
+nav_order: 5
+parent: Ideas
 # No children
 ---
 

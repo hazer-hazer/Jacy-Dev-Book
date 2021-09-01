@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Soft keywords'
-nav_order: 10
-parent: Kek
+nav_order: 11
+parent: Particles
 # No children
 ---
 

@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Dev conventions'
-nav_order: 1
-parent: Kek
+nav_order: 2
+parent: Code docs
 # No children
 ---
 

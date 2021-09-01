@@ -1,9 +1,9 @@
 ---
 layout: 'default'
-title: 'Kek'
-nav_order: 4
-parent: Kek
-# No children
+title: 'Compile time evaluation'
+nav_order: 6
+parent: Table of contents
+has_children: true
 ---
 
 # Compile-Time Evaluation

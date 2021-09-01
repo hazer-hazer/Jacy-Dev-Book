@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Interface'
-nav_order: 3
-parent: Kek
+nav_order: 4
+parent: Code docs
 # No children
 ---
 
