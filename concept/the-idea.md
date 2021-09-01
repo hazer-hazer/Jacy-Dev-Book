@@ -3,7 +3,7 @@ layout: 'default'
 title: 'The idea'
 nav_order: 2
 parent: Concept
-has_children: false
+# No children
 ---
 
 # The Idea

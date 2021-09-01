@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Variables'
 nav_order: 6
 parent: Syntax decisions
-has_children: false
+# No children
 ---
 
 # Variables

@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Strings'
 nav_order: 13
 parent: Particles
-has_children: false
+# No children
 ---
 
 # Strings

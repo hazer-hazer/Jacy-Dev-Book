@@ -3,7 +3,7 @@ layout: 'default'
 title: 'How to run'
 nav_order: 9
 # No parent
-has_children: false
+# No children
 ---
 
 # How to run

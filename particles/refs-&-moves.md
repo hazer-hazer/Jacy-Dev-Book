@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Refs & moves'
 nav_order: 10
 parent: Particles
-has_children: false
+# No children
 ---
 
 # References and move semantics

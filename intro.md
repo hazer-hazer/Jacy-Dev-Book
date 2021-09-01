@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Intro'
 nav_order: 12
 # No parent
-has_children: false
+# No children
 ---
 
 # Intro

@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Not prepedent op'
 nav_order: 7
 parent: Particles
-has_children: false
+# No children
 ---
 
 # `not` prependent operator

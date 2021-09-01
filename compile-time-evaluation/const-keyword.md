@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Const keyword'
 nav_order: 1
 parent: Compile time evaluation
-has_children: false
+# No children
 ---
 
 # `const` keyword

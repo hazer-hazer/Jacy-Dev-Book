@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Organic jacy'
 nav_order: 9
 parent: Particles
-has_children: false
+# No children
 ---
 
 # Organic _Jacy_

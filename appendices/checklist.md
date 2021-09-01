@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Checklist'
 nav_order: 2
 parent: Appendices
-has_children: false
+# No children
 ---
 
 # *Jacy* Programming language [checklist](https://www.mcmillen.dev/language_checklist.html)
