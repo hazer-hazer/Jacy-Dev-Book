@@ -4,7 +4,7 @@ const navBtn = (next, {relPath, title}) => {
         align = 'right'
         title += " >"
     } else {
-        align = left
+        align = 'left'
         title = "< " + title
     }
     return `
