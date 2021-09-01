@@ -1,3 +1,7 @@
+const {
+    DIST_PATH,
+} = require('./config')
+
 const navBtn = (next, {relPath, title}) => {
     if (next) {
         title += " >"
@@ -5,8 +9,8 @@ const navBtn = (next, {relPath, title}) => {
         title = "< " + title
     }
     return `
-[${title}](${relPath}){: .btn .btn-outline }
-    `.trim()
+<button class="btn btn-outline" href="${DIST_PATH + '/' + relPath}">${title}</button>
+`.trim()
 }
 
 const tmpl = {
