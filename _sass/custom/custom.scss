@@ -154,10 +154,7 @@ div.side-bar {
 
     .nav-btn {
         width: max-content;
-        height: 40px;
-        padding: 5px 10px;
-        line-height: 30px;
-        vertical-align: middle;
+        height: max-content;
         border-radius: 6px;
         background: #fff;
         border: none;
@@ -165,7 +162,10 @@ div.side-bar {
         transition: .2s ease;
 
         .link {
-            height: 20px !important;
+            padding: 5px 10px;
+            height: 30px !important;
+            line-height: 30px;
+            vertical-align: middle;
             font-size: 18px;
             font-weight: 500;
             text-decoration: none;
