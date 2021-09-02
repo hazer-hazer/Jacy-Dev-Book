@@ -2,10 +2,10 @@ const navBtn = (next, {relPath, title}) => {
     let align
     if (next) {
         align = 'right'
-        title += " ❯"
+        title += " >"
     } else {
         align = 'left'
-        title = "❮ " + title
+        title = "< " + title
     }
     return `
 <button class="nav-btn ${align}">
