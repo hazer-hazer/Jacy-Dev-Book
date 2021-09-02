@@ -226,7 +226,7 @@ If one day I'll 100% establish that _Jacy_ would never have function overloading
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/index.html">Particles ></a>
+    <a class="link" href="/Jacy-Dev-Book/particles/function-type-&-names.html">Function type & names ></a>
 </button>
 
 </div>
