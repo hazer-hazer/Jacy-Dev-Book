@@ -101,7 +101,7 @@ struct S {
 Some operators are inexpressible with code as they require more complex internal transformations.
 E.g. `|>` operator passes lhs to rhs (function) -- we can someway implement this behavior but it won't be extensible as if we would like to add placeholders like `a |> b(_, 123)` where `a` is passed instead of `_`.
 
-> __Reserved operators cannot be overloaded and used as function name__
+> __Reserved operators cannot be overloaded or used as function name__
 
 Reserved operators:
 - `=` - Raw assignment is always per-byte copy operation
