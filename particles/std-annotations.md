@@ -30,11 +30,11 @@ Note: try call s.toInt()
 ```
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/soft-keywords.html">❮ Soft keywords</a>
+    <a class="link" href="/Jacy-Dev-Book/particles/soft-keywords.html">< Soft keywords</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/strings.html">Strings ❯</a>
+    <a class="link" href="/Jacy-Dev-Book/particles/strings.html">Strings ></a>
 </button>
 
 </div>

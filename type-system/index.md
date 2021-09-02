@@ -10,7 +10,7 @@ has_children: true
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/type-system/structural-nominal-typing.html">Structural nominal typing ❯</a>
+    <a class="link" href="/Jacy-Dev-Book/type-system/structural-nominal-typing.html">Structural nominal typing ></a>
 </button>
 
 </div>

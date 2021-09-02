@@ -20,7 +20,7 @@ There are some terms we need to establish:
 * CTE expressions
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/cte-functions.html">❮ Cte functions</a>
+    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/cte-functions.html">< Cte functions</a>
 </button>
 
     

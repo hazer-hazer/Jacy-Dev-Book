@@ -159,11 +159,11 @@ for x in &vec {
 ```
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/syntax-decisions/blocks.html">❮ Blocks</a>
+    <a class="link" href="/Jacy-Dev-Book/syntax-decisions/blocks.html">< Blocks</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/syntax-decisions/index.html">Syntax decisions ❯</a>
+    <a class="link" href="/Jacy-Dev-Book/syntax-decisions/index.html">Syntax decisions ></a>
 </button>
 
 </div>

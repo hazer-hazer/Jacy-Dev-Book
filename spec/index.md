@@ -14,7 +14,7 @@ You can think of it as wishlist and collection of thoughts I came up with 🙂
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/spec/intro.html">Intro ❯</a>
+    <a class="link" href="/Jacy-Dev-Book/spec/intro.html">Intro ></a>
 </button>
 
 </div>

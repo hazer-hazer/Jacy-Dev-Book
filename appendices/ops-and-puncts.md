@@ -106,7 +106,7 @@ Precedence (from highest to lowest)
 | `return a` &nbsp; `break a` &nbsp; `() -> {}` |
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/appendices/index.html">❮ Appendices</a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/index.html">< Appendices</a>
 </button>
 
     

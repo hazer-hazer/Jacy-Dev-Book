@@ -77,7 +77,7 @@ be a warning if you're writing code like that.
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/syntax-decisions/control-flow-structures.html">Control flow structures ❯</a>
+    <a class="link" href="/Jacy-Dev-Book/syntax-decisions/control-flow-structures.html">Control flow structures ></a>
 </button>
 
 </div>

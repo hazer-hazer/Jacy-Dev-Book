@@ -10,7 +10,7 @@ has_children: true
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/concept/the-idea.html">The idea ❯</a>
+    <a class="link" href="/Jacy-Dev-Book/concept/the-idea.html">The idea ></a>
 </button>
 
 </div>

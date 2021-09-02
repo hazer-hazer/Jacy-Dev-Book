@@ -104,11 +104,11 @@ Also, they're case insensitive (alpha-values of course):
 | On | Off |
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/goal.html">❮ Goal</a>
+    <a class="link" href="/Jacy-Dev-Book/goal.html">< Goal</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/ideas">Ideas ❯</a>
+    <a class="link" href="/Jacy-Dev-Book/ideas">Ideas ></a>
 </button>
 
 </div>
