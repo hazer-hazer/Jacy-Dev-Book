@@ -85,6 +85,14 @@ td.rouge-gutter.gl {
     padding: none !important;
 }
 
+blockquote {
+    display: block;
+    position: relative;
+    margin: 5px auto;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px -1px #ddd;
+}
+
 .anchor-heading svg {
     visibility: visible;
     opacity: 0;
