@@ -59,7 +59,7 @@ From the view of working with AST:
 
 #### AST transformations
 
-I see two ways to solve a problem of lack of information about operators at the parsing stage:
+I see two ways to solve the problem of lack of information about operators at the parsing stage:
 1. Require user to write operator declarations before usage and make parsing context-dependent
 2. Make operator declarations items and transform AST right after parsing
 
@@ -198,7 +198,6 @@ Symbols that might be used as part of custom operators (maybe only in the middle
 
 When an operator ends with `<` here comes a problem:
 ```jc
-// `<<` operator
 func <<<T>(other: T) {
     // ...
 }
@@ -207,7 +206,6 @@ func <<<T>(other: T) {
 Anyway, I already proposed a syntax where function generics are written after `func` keyword (like in Kotlin) instead of after identifier.
 So, this would be parsed successfully:
 ```jc
-// `<<` operator
 func<T> <<(other: T) {}
 ```
 
