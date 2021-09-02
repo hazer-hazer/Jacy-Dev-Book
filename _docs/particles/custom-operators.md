@@ -194,23 +194,20 @@ Symbols that might be used as part of custom operators (maybe only in the middle
 
 ##### Generic params problem
 
+
 When an operator ends with `<` here comes a problem:
-
 ```jc
-
+// `<<` operator
 func <<<T>(other: T) {
     // ...
 }
-
 ```
 
 Anyway, I already proposed a syntax where function generics are written after `func` keyword (like in Kotlin) instead of after identifier.
 So, this would be parsed successfully:
-
 ```jc
-
+// `<<` operator
 func<T> <<(other: T) {}
-
 ```
 
 ##### Function overloading
