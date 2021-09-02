@@ -72,7 +72,7 @@ I consider making operator declarations items as a good solution.
 #### Syntax
 
 For now, I propose this syntax:
-```jc
+```rust
 // Operator type declaration
 operator type Assignment {
     higherThan: Pipe

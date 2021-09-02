@@ -18,7 +18,7 @@ For now, I'll leave all keywords hard, as syntax often changes, thus there would
 ### `init`
 
 `init` keyword is used for initializers (constructors), and syntax is following:
-```jc
+```rust
 init() {
     // ...
 }

@@ -30,7 +30,7 @@ Operator syntax is not specified, thus `[OP]` will be used further.
 
 
 Code sample:
-```jc
+```rust
 a [OP] b
 ```
 Where `a` has type `Option<T>` and `Option<b>` has type `U`.
