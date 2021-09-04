@@ -51,20 +51,20 @@ class Generator {
         await this._genDir(sourceDir)
     }
 
-    async _cleanup() {
-        for (const apx of APPENDICES) {
-            copyRecSync(apx, DIST_PATH)
+    async _cleanup(p = DIST_PATH) {
+        const isDir = fs.lstatSync(p).isDirectory()
+        if (isDir) {
+            for (const el of fs.readdirSync(p)) {
+                this._cleanup(path.join(p, el))
+            }
+        } else if (p.endsWith('.md')) {
+            fs.rmSync(p)
         }
     }
 
     async _prepare() {
         for (const apx of APPENDICES) {
-            const isDir = fs.lstatSync(apx).isDirectory()
-            if (isDir) {
-                fs.
-            } else {
-                fs.copyFileSync(apx, DIST_PATH)
-            }
+            copyRecSync(apx, DIST)
         }
     }
 
