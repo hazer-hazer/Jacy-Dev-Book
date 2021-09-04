@@ -28,14 +28,19 @@ const nameFromFilename = filename => {
 }
 
 const copyRecSync = (src, dest) => {
-    const exists = fs.existsSync(src)
-    const isDir = exists && fs.lstatSync(src).isDirectory()
+    const exists = fs.existsSync(dest)
+    const isDir = fs.lstatSync(src).isDirectory()
     if (isDir) {
-        fs.mkdirSync(dest)
+        if (!exists) {
+            fs.mkdirSync(dest)
+        }
         for (const el of fs.readdirSync(src)) {
             copyRecSync(path.join(src, el), path.join(dest, el))
         }
     } else {
+        if (exists) {
+            fs.rm(dest)
+        }
         fs.copyFileSync(src, dest)
     }
 }
@@ -43,6 +48,7 @@ const copyRecSync = (src, dest) => {
 class Generator {
     async run() {
         await this._cleanup()
+        await this._prepare()
         const sourceDir = await this._processDir(SOURCE_PATH, STRUCT, {
             navOrder: 1,
             isRootDir: true,
@@ -64,7 +70,7 @@ class Generator {
 
     async _prepare() {
         for (const apx of APPENDICES) {
-            copyRecSync(apx, DIST)
+            copyRecSync(apx, DIST_PATH)
         }
     }
 
