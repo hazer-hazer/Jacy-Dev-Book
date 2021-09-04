@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Goal'
-nav_order: 108
+nav_order: 107
 # No parent
 # No children
 ---
