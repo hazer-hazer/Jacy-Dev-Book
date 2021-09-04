@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'How to run'
-nav_order: 108
+nav_order: 109
 # No parent
 # No children
 ---
@@ -102,5 +102,13 @@ Also, they're case insensitive (alpha-values of course):
 | Y | N |
 | True | False |
 | On | Off |
-<button class="btn btn-outline" href="/goal.md">< Goal</button>
-<button class="btn btn-outline" href="/ideas">Ideas ></button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/goal.html">< Goal</a>
+</button>
+
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/ideas">Ideas ></a>
+</button>
+
+</div>

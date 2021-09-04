@@ -17,5 +17,13 @@ func main {
   foo(:name);
 }
 ```
-<button class="btn btn-outline" href="/ideas/index.md">< Ideas</button>
-<button class="btn btn-outline" href="/ideas/types-as-first-class-citizens.md">Types as first class citizens ></button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/ideas/index.html">< Ideas</a>
+</button>
+
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/ideas/types-as-first-class-citizens.html">Types as first class citizens ></a>
+</button>
+
+</div>

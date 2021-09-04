@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Organic jacy'
-nav_order: 108
+nav_order: 109
 parent: 'Particles'
 # No children
 ---
@@ -21,5 +21,13 @@ If some feature idea sounds awkward or dangerous for target user, but by the way
 
 Organic _Jacy_ does not extend parser, it does not include DSL for parser-generator whatever. 
 Anyway, OJ includes some constructions that extend syntax, e.g. custom operators declaration.
-<button class="btn btn-outline" href="/particles/null-coalesce.md">< Null coalesce</button>
-<button class="btn btn-outline" href="/particles/refs-&-moves.md">Refs & moves ></button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/particles/null-coalesce.html">< Null coalesce</a>
+</button>
+
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/particles/refs-&-moves.html">Refs & moves ></a>
+</button>
+
+</div>

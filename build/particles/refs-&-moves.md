@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Refs & moves'
-nav_order: 109
+nav_order: 110
 parent: 'Particles'
 # No children
 ---
@@ -198,5 +198,13 @@ What is `T` in `module::foo`? `&T` or `T`? Actually, the answer is same as for e
 __STATUS__ - IDEA IS DENIED.
 
 __REVISIONS__ - ALLOWED
-<button class="btn btn-outline" href="/particles/organic-jacy.md">< Organic jacy</button>
-<button class="btn btn-outline" href="/particles/soft-keywords.md">Soft keywords ></button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/particles/organic-jacy.html">< Organic jacy</a>
+</button>
+
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/particles/soft-keywords.html">Soft keywords ></a>
+</button>
+
+</div>

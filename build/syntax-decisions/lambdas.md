@@ -67,5 +67,13 @@ Cons:
 
 Also, this syntax allows simplifications:
 - We can allow `IDENT -> expr` as a shortcut for `BorrowPattern(IDENT) -> expr`
-<button class="btn btn-outline" href="/syntax-decisions/index.md">< Syntax decisions</button>
-<button class="btn btn-outline" href="/syntax-decisions/semicolons.md">Semicolons ></button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/syntax-decisions/index.html">< Syntax decisions</a>
+</button>
+
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/syntax-decisions/semicolons.html">Semicolons ></a>
+</button>
+
+</div>

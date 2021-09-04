@@ -44,5 +44,13 @@ nav_order: 1
 * [Ideas](ideas/index.md)
   * [Invert Rust for usability](ideas/invert-rust.md)
   * [Types as first-class citizens](ideas/types-as-first-class-citizens.md)
-<button class="btn btn-outline" href="/ideas">< Ideas</button>
-<button class="btn btn-outline" href="/intro.md">Intro ></button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/ideas">< Ideas</a>
+</button>
+
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/intro.html">Intro ></a>
+</button>
+
+</div>

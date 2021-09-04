@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Compile time evaluation'
-nav_order: 104
+nav_order: 105
 # No parent
 has_children: true
 ---
@@ -18,4 +18,10 @@ There are some terms we need to establish:
 * CTE contexts
 * CTE functions
 * CTE expressions
-<button class="btn btn-outline" href="/compile-time-evaluation/cte-functions.md">< Cte functions</button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/cte-functions.html">< Cte functions</a>
+</button>
+
+    
+</div>

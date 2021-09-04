@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Null coalesce'
-nav_order: 107
+nav_order: 108
 parent: 'Particles'
 # No children
 ---
@@ -30,7 +30,7 @@ Operator syntax is not specified, thus `[OP]` will be used further.
 
 
 Code sample:
-```jc
+```rust
 a [OP] b
 ```
 Where `a` has type `Option<T>` and `Option<b>` has type `U`.
@@ -44,5 +44,13 @@ What this operator should return if both of `a` AND `b` are `Some` values is des
 ### Variant #1
 
 Return `(a!, b!): (T, U)`, that is a tuple where first and second elements are unwrapped `a` and `b` respectively.
-<button class="btn btn-outline" href="/particles/not-prepedent-op.md">< Not prepedent op</button>
-<button class="btn btn-outline" href="/particles/organic-jacy.md">Organic jacy ></button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/particles/not-prepedent-op.html">< Not prepedent op</a>
+</button>
+
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/particles/organic-jacy.html">Organic jacy ></a>
+</button>
+
+</div>

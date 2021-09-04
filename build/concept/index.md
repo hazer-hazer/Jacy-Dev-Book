@@ -1,10 +1,16 @@
 ---
 layout: 'default'
 title: 'Concept'
-nav_order: 105
+nav_order: 106
 # No parent
 has_children: true
 ---
 
 # Concept
-<button class="btn btn-outline" href="/concept/the-idea.md">The idea ></button>
+<div class="nav-btn-block">
+    
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/concept/the-idea.html">The idea ></a>
+</button>
+
+</div>

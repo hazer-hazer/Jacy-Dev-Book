@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Intro'
-nav_order: 111
+nav_order: 112
 # No parent
 # No children
 ---
@@ -11,5 +11,13 @@ nav_order: 111
 That's not the real documentation especially a tutorial, just some thoughts about the view on this project. I mostly
 will explain why I've chosen certain solutions and not how to work with them. Some thoughts may seem simple and
 meticulous, but I want to cover even the simplest aspects of PL.
-<button class="btn btn-outline" href="/index.md">< Table of contents</button>
-<button class="btn btn-outline" href="/jon files">Jon files ></button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/index.html">< Table of contents</a>
+</button>
+
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/jon files">Jon files ></a>
+</button>
+
+</div>

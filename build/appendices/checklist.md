@@ -111,5 +111,13 @@ In conclusion, this is what I think of you:
 [ ] This is a bad language, and you should feel bad for inventing it.
 [ ] Programming in this language is an adequate punishment for inventing it.
 ```
-<button class="btn btn-outline" href="/appendices/attributes.md">< Attributes</button>
-<button class="btn btn-outline" href="/appendices/index.md">Appendices ></button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/appendices/attributes.html">< Attributes</a>
+</button>
+
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/appendices/index.html">Appendices ></a>
+</button>
+
+</div>

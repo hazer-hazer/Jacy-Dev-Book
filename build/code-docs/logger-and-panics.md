@@ -77,4 +77,10 @@ These are methods that differ from log methods:
 * `colorized` - (appends NL) - Receives `Color` as first argument and print full text colorized resetting color at the
   end. Used rarely as not so many logs should be fully colorized.
 * `notImplemented` - TODO dev-panic.
-<button class="btn btn-outline" href="/code-docs/interface.md">< Interface</button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/code-docs/interface.html">< Interface</a>
+</button>
+
+    
+</div>

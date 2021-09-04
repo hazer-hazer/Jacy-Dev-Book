@@ -13,5 +13,13 @@ but not in stage classes, it's kinda bad but...
 
 `Interface` catches errors, that is, when something went wrong at any stage we can log debug info about the current
 compiler state, etc.
-<button class="btn btn-outline" href="/code-docs/index.md">< Code docs</button>
-<button class="btn btn-outline" href="/code-docs/logger-and-panics.md">Logger and panics ></button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/code-docs/index.html">< Code docs</a>
+</button>
+
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/code-docs/logger-and-panics.html">Logger and panics ></a>
+</button>
+
+</div>

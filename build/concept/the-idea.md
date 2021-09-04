@@ -38,4 +38,10 @@ Also, I want to describe some kind of Zen, I need a list of common values that _
 4. Sometimes we just prototype something and want to write code with the speed of speaking. So every feature in _Jacy_
    should be review from the side of coding speed and ease. 
 5. If we can help a user with avoiding mistakes -- we help him.
-<button class="btn btn-outline" href="/concept/index.md">< Concept</button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/concept/index.html">< Concept</a>
+</button>
+
+    
+</div>

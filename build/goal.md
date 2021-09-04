@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Goal'
-nav_order: 107
+nav_order: 108
 # No parent
 # No children
 ---
@@ -129,5 +129,13 @@ func main {
     print(fib100);
 }
 ```
-<button class="btn btn-outline" href="/extended-tools">< Extended tools</button>
-<button class="btn btn-outline" href="/how-to-run.md">How to run ></button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/extended-tools">< Extended tools</a>
+</button>
+
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/how-to-run.html">How to run ></a>
+</button>
+
+</div>

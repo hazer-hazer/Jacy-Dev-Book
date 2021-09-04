@@ -39,4 +39,10 @@ is we set the option in `Config`.
 
 It is important to note that all default values for options inside `Config` must be set in place, that is, inited like
 `PrintKind printKind{PrintKind::None}`.
-<button class="btn btn-outline" href="/code-docs/dev-conventions.md">Dev conventions ></button>
+<div class="nav-btn-block">
+    
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/code-docs/dev-conventions.html">Dev conventions ></a>
+</button>
+
+</div>

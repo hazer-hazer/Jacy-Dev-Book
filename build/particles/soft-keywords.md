@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Soft keywords'
-nav_order: 110
+nav_order: 111
 parent: 'Particles'
 # No children
 ---
@@ -18,7 +18,7 @@ For now, I'll leave all keywords hard, as syntax often changes, thus there would
 ### `init`
 
 `init` keyword is used for initializers (constructors), and syntax is following:
-```jc
+```rust
 init() {
     // ...
 }
@@ -28,5 +28,13 @@ Same as function item but without `func` keyword. Absence of `func` keyword give
 
 __Problems__:
 - Requires context-dependent parsing, as we need to check for `init` appearance only inside `struct` (maybe `trait`) but not in `func` (expression context)
-<button class="btn btn-outline" href="/particles/refs-&-moves.md">< Refs & moves</button>
-<button class="btn btn-outline" href="/particles/std-annotations.md">Std annotations ></button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/particles/refs-&-moves.html">< Refs & moves</a>
+</button>
+
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/particles/std-annotations.html">Std annotations ></a>
+</button>
+
+</div>

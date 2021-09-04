@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Strings'
-nav_order: 112
+nav_order: 113
 parent: 'Particles'
 # No children
 ---
@@ -35,4 +35,10 @@ I really like single-quoted strings, idk why, but solutions to allow single-quot
 Anyway, Swift gift me an solution -- no character literals 😐.  Btw, Swift doesn't have single-quoted strings at all -- we will.
 
 To infer that user assumed to use character instead of string we need to know types at first, thus, creating character becomes something run-time dependent 🤔.
-<button class="btn btn-outline" href="/particles/std-annotations.md">< Std annotations</button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/particles/std-annotations.html">< Std annotations</a>
+</button>
+
+    
+</div>

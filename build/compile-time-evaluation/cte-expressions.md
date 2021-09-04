@@ -22,5 +22,13 @@ Expression is CTEE if:
 * It is a result of `const func` 
 * 
 > More on CTE structs and enums in next chapters
-<button class="btn btn-outline" href="/compile-time-evaluation/cte-contexts.md">< Cte contexts</button>
-<button class="btn btn-outline" href="/compile-time-evaluation/cte-functions.md">Cte functions ></button>
+<div class="nav-btn-block">
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/cte-contexts.html">< Cte contexts</a>
+</button>
+
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/cte-functions.html">Cte functions ></a>
+</button>
+
+</div>

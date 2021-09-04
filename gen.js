@@ -38,12 +38,12 @@ class Generator {
     }
 
     async _cleanup(p = DIST_PATH) {
-        const isDir = fs.lstatSync(childPath).isDirectory()
+        const isDir = fs.lstatSync(p).isDirectory()
         if (isDir) {
             for (const el of fs.readdirSync(p)) {
                 this._cleanup(path.join(p, el))
             }
-        } else {
+        } else if (p.endsWith('.md')) {
             fs.rmSync(p)
         }
     }
