@@ -28,12 +28,24 @@ const nameFromFilename = filename => {
 
 class Generator {
     async run() {
+        await this._cleanup()
         const sourceDir = await this._processDir(SOURCE_PATH, STRUCT, {
             navOrder: 1,
             isRootDir: true,
         })
         // console.log(JSON.stringify(sourceDir, null, 2));
         await this._genDir(sourceDir)
+    }
+
+    async _cleanup(p = DIST_PATH) {
+        const isDir = fs.lstatSync(childPath).isDirectory()
+        if (isDir) {
+            for (const el of fs.readdirSync(p)) {
+                this._cleanup(path.join(p, el))
+            }
+        } else {
+            fs.rmSync(p)
+        }
     }
 
     async _processFile(filePath, struct, {isIndex, navOrder, parentTitle, grandParentTitle, ggpTitle, parentNavOrder, isRootDir = false}) {
