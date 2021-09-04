@@ -129,7 +129,8 @@ class Generator {
     async _processDir(dirPath, struct, {navOrder, parentTitle = null, grandParentTitle, isRootDir = false}) {
         const children = []
         const entities = fs.readdirSync(dirPath)
-        entities.sort()
+
+        entities.sort((lhs, rhs) => lhs.toLowerCase() < rhs.toLowerCase())
 
         const dirName = path.basename(dirPath)
         const title = struct.title || nameFromFilename(dirName)
