@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Appendices'
-nav_order: 100
+nav_order: 101
 # No parent
 has_children: true
 ---
