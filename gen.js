@@ -130,7 +130,7 @@ class Generator {
         const children = []
         const entities = fs.readdirSync(dirPath)
 
-        entities.sort((lhs, rhs) => lhs.toLowerCase() < rhs.toLowerCase())
+        entities.sort((lhs, rhs) => lhs.toLowerCase().localeCompare(rhs.toLowerCase()))
 
         const dirName = path.basename(dirPath)
         const title = struct.title || nameFromFilename(dirName)
