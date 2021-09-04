@@ -133,7 +133,7 @@ li {
     font-size: $font-size-4;
 
     &::before {
-        margin-left: 0.5em;
+        margin-left: 0.5em !important;
     }
 }
 
