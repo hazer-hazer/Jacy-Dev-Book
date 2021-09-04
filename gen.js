@@ -39,7 +39,7 @@ const copyRecSync = (src, dest) => {
         }
     } else {
         if (exists) {
-            fs.rm(dest)
+            fs.rmSync(dest)
         }
         fs.copyFileSync(src, dest)
     }
@@ -58,6 +58,12 @@ class Generator {
     }
 
     async _cleanup(p = DIST_PATH) {
+        const exists = fs.existsSync(p)
+
+        if (!exists) {
+            return
+        }
+
         const isDir = fs.lstatSync(p).isDirectory()
         if (isDir) {
             for (const el of fs.readdirSync(p)) {
@@ -69,8 +75,9 @@ class Generator {
     }
 
     async _prepare() {
+        !fs.existsSync(DIST_PATH) && fs.mkdirSync(DIST_PATH)
         for (const apx of APPENDICES) {
-            copyRecSync(apx, DIST_PATH)
+            copyRecSync(apx, path.join(DIST_PATH, apx))
         }
     }
 
