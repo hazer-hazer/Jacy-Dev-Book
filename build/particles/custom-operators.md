@@ -221,3 +221,18 @@ The 1. solution sounds better for me as I assumed to implement function overload
 If one day I'll 100% establish that _Jacy_ would never have function overloading -- 2. variant will be used.
 <button class="btn btn-outline" href="/particles/custom-allocators.md">< Custom allocators</button>
 <button class="btn btn-outline" href="/particles/index.md">Particles ></button>
+
+### Parsing
+
+At the parsing stage we don't care about precedence, anyway some additional rules are added.
+We need to check operator spacing for infix-like cases, that is when operator is placed between two expressions but mostly looks like prefix or postfix rather than infix.
+
+#### Internals
+
+How to get the spacing between tokens? It's very simple and we don't even need to store spacing inside `Token` and compute it at the Lexing stage.
+All data we need is already in `Span` -- length of token and position of token.
+
+So, _left_ spacing is computed as `current.span.pos - previous.span.pos + previous.span.len`, that is we subtract position of current token from the last symbol of previous token.
+_right_ spacing, is computed as `next.span.pos - current.span.pos + current.span.len`, similarly to _left_ spacing but we treat current as previous.
+
+Of course, we need to check if `next` or `previous` is `EOF`/`BOF` setting spacing to `0`.
