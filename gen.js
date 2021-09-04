@@ -4,6 +4,7 @@ const {
     SOURCE_PATH,
     DIST_PATH,
     INDEX_FILENAME,
+    APPENDICES,
 } = require('./config')
 const STRUCT = require('./struct')
 const {earlyTmpl, addNavButtons} = require('./file-tmpl')
@@ -26,6 +27,19 @@ const nameFromFilename = filename => {
     return res.join(' ')
 }
 
+const copyRecSync = (src, dest) => {
+    const exists = fs.existsSync(src)
+    const isDir = exists && fs.lstatSync(src).isDirectory()
+    if (isDir) {
+        fs.mkdirSync(dest)
+        for (const el of fs.readdirSync(src)) {
+            copyRecSync(path.join(src, el), path.join(dest, el))
+        }
+    } else {
+        fs.copyFileSync(src, dest)
+    }
+}
+
 class Generator {
     async run() {
         await this._cleanup()
@@ -37,14 +51,20 @@ class Generator {
         await this._genDir(sourceDir)
     }
 
-    async _cleanup(p = DIST_PATH) {
-        const isDir = fs.lstatSync(p).isDirectory()
-        if (isDir) {
-            for (const el of fs.readdirSync(p)) {
-                this._cleanup(path.join(p, el))
+    async _cleanup() {
+        for (const apx of APPENDICES) {
+            copyRecSync(apx, DIST_PATH)
+        }
+    }
+
+    async _prepare() {
+        for (const apx of APPENDICES) {
+            const isDir = fs.lstatSync(apx).isDirectory()
+            if (isDir) {
+                fs.
+            } else {
+                fs.copyFileSync(apx, DIST_PATH)
             }
-        } else if (p.endsWith('.md')) {
-            fs.rmSync(p)
         }
     }
 

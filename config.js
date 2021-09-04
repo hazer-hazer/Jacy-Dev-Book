@@ -14,6 +14,7 @@ const APPENDICES = [
 ]
 
 module.exports = {
+    APPENDICES,
     SOURCE_PATH,
     DIST_PATH,
     INDEX_FILENAME,
