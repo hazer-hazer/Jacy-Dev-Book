@@ -65,4 +65,22 @@ func main {
 }
 ```
 
-##### #2. 
+The solution to disambiguate this case is the same as in Swift.
+1. Function types do not have labels
+2. Labels are used only for function overloading resolution (in name resolution) and nowhere else
+
+We cannot store some function in a variable with type `(foo: T, bar: U) -> V`, it would be `(T, U) -> V`, thus when a function is assigned to a variable (or passed to function), that is, stored somewhere, it does not have labels.
+Summing up, parameter labels are just name-resolution level overloading and markers for calls, nothing more.
+Anyway, to disambiguate the case present above we need some mechanism to say that we're gonna use the specific `doSmth` function. It is done with Swift-like syntax `functionName(label1:label2:...)`, that is, we don't call function but resolve its overloading.
+
+So, it looks such as:
+```jc
+func doSmth(with: int);
+func doSmth(from: int);
+
+func main {
+    // Error: Call to `doSmth` is ambiguous -- add argument label `with` or `from`
+    doSmth(with:)(123);
+}
+```
+
