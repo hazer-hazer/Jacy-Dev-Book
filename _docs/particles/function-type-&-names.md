@@ -84,3 +84,5 @@ func main {
 }
 ```
 
+I need to note that type of `doSmth(with:)` is not `(with: int) -> ()`, just a `(int) -> ()`. 
+So, names have gone and cannot be used after.
