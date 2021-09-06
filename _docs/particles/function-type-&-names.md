@@ -86,3 +86,5 @@ func main {
 
 I need to note that type of `doSmth(with:)` is not `(with: int) -> ()`, just a `(int) -> ()`. 
 So, names have gone and cannot be used after.
+
+Anyway, parameter names in function types are allowed, but they just markers for user and do not affect real function type. That is to say, parameter names in types are used for documentation purposes.
