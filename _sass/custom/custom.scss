@@ -209,3 +209,27 @@ div.side-bar {
         }
     }
 }
+
+.fold-block {
+    label {
+        display: inline-block;
+    }
+
+    input {
+        display: none;
+    }
+
+    .clicker {
+        background: green;
+        padding: 5px 10px;
+    }
+
+    .content {
+        display: none;
+        width: 100%;
+    }
+
+    input:checked ~ .content {
+        display: block;
+    }
+}
