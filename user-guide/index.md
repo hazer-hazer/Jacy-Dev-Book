@@ -90,8 +90,8 @@ The table is from high to low precedence ordered -- the operators in the first r
 
 
 <div class="fold-block">
-    <input class="clicker" id="input-89806e15cc39f3f4b8398bc1c445b188">
-    <label class="narrow" for="input-89806e15cc39f3f4b8398bc1c445b188">></label>
+    <input id="input-89806e15cc39f3f4b8398bc1c445b188" type="checkbox">
+    <label class="clicker" for="input-89806e15cc39f3f4b8398bc1c445b188">></label>
     <div class="content">
 
 }
