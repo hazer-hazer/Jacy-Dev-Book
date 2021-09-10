@@ -32,8 +32,8 @@ const addCustomElements = src => {
         let id = `input-${md5(contents)}`
         return `
 <div class="fold-block">
-    <input class="clicker" id="${id}">
-    <label class="narrow" for="${id}">></label>
+    <input id="${id}" type="checkbox">
+    <label class="clicker" for="${id}">></label>
     <div class="content">${contents}</div>
 </div>
 `.trim() + '\n'
