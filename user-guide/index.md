@@ -77,6 +77,7 @@ The table is from high to low precedence ordered -- the operators in the first r
 |  | `as` | left |
 |  | `*` `/` `%` | left |
 |  | `+` `-` | left |
+|  | `..` `..=` | Non-associative |
 |  | `<<` `>>` | left |
 |  | `&` (infix) | left |
 |  | `^` | left |
@@ -90,20 +91,10 @@ The table is from high to low precedence ordered -- the operators in the first r
 
 
 <div class="fold-block">
-    <input id="input-b8b3e60c7c9bf3ead67e6886c80b5599" type="checkbox">
-    <label class="clicker" for="input-b8b3e60c7c9bf3ead67e6886c80b5599">> </label>
-    <blockquote class="content">Folded text
-More text
-Moooore
-</blockquote>
-</div>
-
-
-<div class="fold-block">
-    <input id="input-67404bebca726b5852e340586d418aae" type="checkbox">
-    <label class="clicker" for="input-67404bebca726b5852e340586d418aae">> </label>
-    <blockquote class="content">One more fold
-MOOROEROEOROEROO</blockquote>
+    <input id="input-50b7a31fe36c6574226a72da3ef1cd45" type="checkbox">
+    <label class="clicker" for="input-50b7a31fe36c6574226a72da3ef1cd45">> Range operators internals</label>
+    <blockquote class="content">Range operators have this kind of precedence as we want to write `a..b+1` which means `a..(b+1)`
+as far as writing `a..b == c..d` which means `(a..b) == (c..d)`</blockquote>
 </div>
 
 <div class="nav-btn-block">
