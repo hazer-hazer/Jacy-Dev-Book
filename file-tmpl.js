@@ -33,7 +33,7 @@ const addCustomElements = src => {
         return `
 <div class="fold-block">
     <input class="clicker" id="${id}">
-    <label class="narrow"></label>
+    <label class="narrow">></label>
     <div class="content">${contents}</div>
 </div>
 `.trim() + '\n'
