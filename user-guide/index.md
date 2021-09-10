@@ -90,20 +90,20 @@ The table is from high to low precedence ordered -- the operators in the first r
 
 
 <div class="fold-block">
-    <input id="input-e50202113e41e327480d8f1ef1855c10" type="checkbox">
-    <label class="clicker" for="input-e50202113e41e327480d8f1ef1855c10">></label>
-    <div class="content">> Folded text
-> More text
-> Moooore
+    <input id="input-b8b3e60c7c9bf3ead67e6886c80b5599" type="checkbox">
+    <label class="clicker" for="input-b8b3e60c7c9bf3ead67e6886c80b5599">></label>
+    <div class="content">Folded text
+More text
+Moooore
 </div>
 </div>
 
 
 <div class="fold-block">
-    <input id="input-21313442b776bac7ea5ef3723f050650" type="checkbox">
-    <label class="clicker" for="input-21313442b776bac7ea5ef3723f050650">></label>
-    <div class="content">> One more fold
-> MOOROEROEOROEROO</div>
+    <input id="input-67404bebca726b5852e340586d418aae" type="checkbox">
+    <label class="clicker" for="input-67404bebca726b5852e340586d418aae">></label>
+    <div class="content">One more fold
+MOOROEROEOROEROO</div>
 </div>
 
 <div class="nav-btn-block">
