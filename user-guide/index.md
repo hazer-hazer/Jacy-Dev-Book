@@ -90,17 +90,22 @@ The table is from high to low precedence ordered -- the operators in the first r
 
 
 <div class="fold-block">
-    <input id="input-89806e15cc39f3f4b8398bc1c445b188" type="checkbox">
-    <label class="clicker" for="input-89806e15cc39f3f4b8398bc1c445b188">></label>
-    <div class="content">
-
-}
-
-{:fold:
-
+    <input id="input-bcd85e9d9ffdcbaa71da8633bb11f2c1" type="checkbox">
+    <label class="clicker" for="input-bcd85e9d9ffdcbaa71da8633bb11f2c1">></label>
+    <div class="content">> Folded text
 </div>
 </div>
+> More text
+> Moooore
 
+
+<div class="fold-block">
+    <input id="input-8d69aa174a4a7b174dd6f59758ad318b" type="checkbox">
+    <label class="clicker" for="input-8d69aa174a4a7b174dd6f59758ad318b">></label>
+    <div class="content">> One more fold
+</div>
+</div>
+> MOOROEROEOROEROO
 <div class="nav-btn-block">
     
     
