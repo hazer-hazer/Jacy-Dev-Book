@@ -1,3 +1,7 @@
+const crypto = require('crypto')
+
+const md5 = str => crypto.createHash('md5').update(str).digest('hex')
+
 const navBtn = (next, {relPath, title}) => {
     let align
     if (next) {
@@ -23,6 +27,19 @@ return `
 `.trim() + '\n'
 }
 
+const addCustomElements = src => {
+    src.replace(/{:fold:(\n*[\s\S]+?)}/g, (match, contents) => {
+        let id = `input-${md5(contents)}`
+        return `
+<div class="fold-block">
+    <input class="clicker" id="${id}">
+    <label class="narrow"></label>
+    <div class="content">${contents}</div>
+</div>
+`.trim() + '\n'
+    })
+}
+
 const tmpl = {
     earlyTmpl({
         src,
@@ -40,6 +57,8 @@ const tmpl = {
 
         src = src.replace('```jc', '```rust')
     
+        src = addCustomElements()
+
         return `
 ---
 layout: '${layout}'
