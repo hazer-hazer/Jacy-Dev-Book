@@ -232,6 +232,7 @@ div.side-bar {
         transition: .15s ease;
         font-size: 16px;
         cursor: pointer;
+        box-shadow: 0 0 0 1px #f0f0f0;
 
         &:hover {
             background: #f0f0f0;
