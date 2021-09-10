@@ -28,7 +28,8 @@ return `
 }
 
 const addCustomElements = src => {
-    return src.replace(/\{:fold:\}\n+(.*\n?)/g, (match, contents) => {
+    return src.replace(/\{:fold:\}\n+((>.*\n?)+)/g, (match, contents) => {
+        contents = contents.replace(/$>\s/, '')
         let id = `input-${md5(contents)}`
         return `
 <div class="fold-block">
