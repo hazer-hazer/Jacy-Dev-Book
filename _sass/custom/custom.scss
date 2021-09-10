@@ -220,8 +220,13 @@ div.side-bar {
     }
 
     .clicker {
-        background: #fff;
+        width: 20px;
+        height: 20px;
         padding: 5px;
+        line-height: 20px;
+        vertical-align: middle;
+        text-align: center;
+        background: #fff;
         border-radius: 5px;
         transition: .15s ease;
 
