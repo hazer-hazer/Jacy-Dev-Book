@@ -69,6 +69,7 @@ The table is from high to low precedence ordered -- the operators in the first r
 |  | `as` | left |
 |  | `*` `/` `%` | left |
 |  | `+` `-` | left |
+|  | `..` `..=` | Non-associative |
 |  | `<<` `>>` | left |
 |  | `&` (infix) | left |
 |  | `^` | left |
@@ -81,12 +82,8 @@ The table is from high to low precedence ordered -- the operators in the first r
 |  | `=` `+=` `-=` `*=` `/=` `%=` `&=` `|=` `^=` `<<=` `>>=` | left |
 
 
-{:fold Internals:}
-> Folded text
-> More text
-> Moooore
+{:> Range operators internals :}
+> Range operators have this kind of precedence as we want to write `a..b+1` which means `a..(b+1)`
+> as far as writing `a..b == c..d` which means `(a..b) == (c..d)`
 
 
-{:fold:}
-> One more fold
-> MOOROEROEOROEROO
