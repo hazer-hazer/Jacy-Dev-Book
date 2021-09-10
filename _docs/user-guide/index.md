@@ -1,6 +1,6 @@
 # User Guide
 
-_This is a WIP fast overview of _Jacy_. _
+**This is a WIP fast overview of _Jacy_**
 
 #### What is _Jacy_?
 
