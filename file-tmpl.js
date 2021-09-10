@@ -28,13 +28,13 @@ return `
 }
 
 const addCustomElements = src => {
-    return src.replace(/\{:fold:\}\n+((>.*\n?)+)/g, (match, contents) => {
+    return src.replace(/\{:fold (.*):\}\n+((>.*\n?)+)/g, (match, name, contents) => {
         contents = contents.replace(/>\s*/g, '')
         let id = `input-${md5(contents)}`
         return `
 <div class="fold-block">
     <input id="${id}" type="checkbox">
-    <label class="clicker" for="${id}">></label>
+    <label class="clicker" for="${id}">> ${name}</label>
     <blockquote class="content">${contents}</blockquote>
 </div>
 `.trim() + '\n'
