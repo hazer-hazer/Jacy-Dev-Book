@@ -35,7 +35,7 @@ const addCustomElements = src => {
 <div class="fold-block">
     <input id="${id}" type="checkbox">
     <label class="clicker" for="${id}">></label>
-    <div class="content">${contents}</div>
+    <blockquote class="content">${contents}</blockquote>
 </div>
 `.trim() + '\n'
     })
