@@ -89,15 +89,23 @@ The table is from high to low precedence ordered -- the operators in the first r
 |  | `=` `+=` `-=` `*=` `/=` `%=` `&=` `|=` `^=` `<<=` `>>=` | left |
 
 
-{:fold:}
-> Folded text
-> More text
-> Moooore
+<div class="fold-block">
+    <input id="input-b8b3e60c7c9bf3ead67e6886c80b5599" type="checkbox">
+    <label class="clicker" for="input-b8b3e60c7c9bf3ead67e6886c80b5599">> </label>
+    <blockquote class="content">Folded text
+More text
+Moooore
+</blockquote>
+</div>
 
 
-{:fold:}
-> One more fold
-> MOOROEROEOROEROO
+<div class="fold-block">
+    <input id="input-67404bebca726b5852e340586d418aae" type="checkbox">
+    <label class="clicker" for="input-67404bebca726b5852e340586d418aae">> </label>
+    <blockquote class="content">One more fold
+MOOROEROEOROEROO</blockquote>
+</div>
+
 <div class="nav-btn-block">
     
     
