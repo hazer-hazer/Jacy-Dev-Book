@@ -28,7 +28,7 @@ return `
 }
 
 const addCustomElements = src => {
-    return src.replace(/\{:fold(.*):\}\n+((>.*\n?)+)/g, (match, name, contents) => {
+    return src.replace(/\{:>(.*):\}\n+((>.*\n?)+)/g, (match, name, contents) => {
         contents = contents.replace(/>\s*/g, '')
         let id = `input-${md5(contents)}`
         return `

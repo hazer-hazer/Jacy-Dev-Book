@@ -81,7 +81,7 @@ The table is from high to low precedence ordered -- the operators in the first r
 |  | `=` `+=` `-=` `*=` `/=` `%=` `&=` `|=` `^=` `<<=` `>>=` | left |
 
 
-{:fold:}
+{:fold Internals:}
 > Folded text
 > More text
 > Moooore
