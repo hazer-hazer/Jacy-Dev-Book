@@ -56,8 +56,8 @@ const tmpl = {
         }
 
         src = src.replace('```jc', '```rust')
-    
-        src = addCustomElements()
+
+        src = addCustomElements(src)
 
         return `
 ---
