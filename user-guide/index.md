@@ -8,7 +8,7 @@ has_children: true
 
 # User Guide
 
-_This is a WIP fast overview of _Jacy_. _
+**This is a WIP fast overview of _Jacy_**
 
 #### What is _Jacy_?
 
@@ -91,7 +91,7 @@ The table is from high to low precedence ordered -- the operators in the first r
 
 <div class="fold-block">
     <input class="clicker" id="input-89806e15cc39f3f4b8398bc1c445b188">
-    <label class="narrow">></label>
+    <label class="narrow" for="input-89806e15cc39f3f4b8398bc1c445b188">></label>
     <div class="content">
 
 }
