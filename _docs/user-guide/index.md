@@ -8,6 +8,8 @@ _Jacy_ is a small project, the reason I'm creating it is to learn compiler devel
 
 ## Lexical structure
 
+You can skip [Lexical structure] part and just move to [Intro](#intro).
+
 _Jacy_ might be easy to read for users familiar with C-like syntax. Its syntax is influenced by Rust, Swift, and C++.
 Anyway, some things might be uncommon especially for users not coming from Rust, and I'll try to explain everything as clean as I can.
 
@@ -51,6 +53,10 @@ Most infix operators are left-associative.
 
 Prefix and postfix operators in _Jacy_ all have one precedence by groups: postfix is stronger than prefix operator.
 
+{:> Custom operators [future feature]:}
+> Is is planned to add custom operators in the future, likely it will be similar to how Swift does it.
+> Anyway, the first versions won't allow customizing operators.
+
 #### Operator precedence table
 
 This table shows which operators are stronger than others, associativity is marked as "left to right" for left-associative operators and "right to left" for right-associative operators.
@@ -61,7 +67,7 @@ This table also includes expressions that are not operator expressions, anyway, 
 The table is from high to low precedence ordered -- the operators in the first row have the strongest precedence.
 
 | Precedence index | Operator groups / expressions | Associativity |
-|  | Paths (`::` punctuation) | N/A |
+|  | Paths (`::`) | N/A |
 |  | Field expression (aka member access - `a.b`) | left to right |
 |  | Invocations (aka calls - `a(...)`), array access (aka indexing - `a[...]`) | N/A |
 |  | [Postfix operators] `?` | N/A |
@@ -74,6 +80,7 @@ The table is from high to low precedence ordered -- the operators in the first r
 |  | `&` (infix) | left |
 |  | `^` | left |
 |  | `|` | left |
+|  | `in` | Non-associative |
 |  | `<=>` | Non-associative |
 |  | `<` `>` `<=` `=>` | Non-associative |
 |  | `==` `!=` | Non-associative |
@@ -82,8 +89,37 @@ The table is from high to low precedence ordered -- the operators in the first r
 |  | `=` `+=` `-=` `*=` `/=` `%=` `&=` `|=` `^=` `<<=` `>>=` | left |
 
 
-{:> Range operators internals :}
+Prefix operators: `not`, `&` (borrow), `&mut` (borrow as mutable, `&` and `mut` can have whitespace between), `-` (negation), `*` (dereference).
+
+Postfix operators: `?` (optional chaining), `!` (unwrap).
+
+{:> Range operators precedence [why?]:}
 > Range operators have this kind of precedence as we want to write `a..b+1` which means `a..(b+1)`
 > as far as writing `a..b == c..d` which means `(a..b) == (c..d)`
 
+#### `not` prefix
 
+_Jacy_ has a special feature -- you can put `not` operator before infix operator to negate boolean operation.
+Example: `a not in b` is the same as `not (a in b)`.
+This is useful for operators like `in`, by the way, it is possible to write something like `a not and b` that would be the same as `not (a and b)`, but code like this is hard to read.
+
+Of course, when you write `a not OP b` you got `not (a OP b)` thus keep in mind that `OP` must be a logical operator, otherwise you'll have a type error.
+
+### Punctuation
+
+Some symbols are reserved punctuations, punctuations differ from operators in the sense that operators, obviously, perform some operations, whereas punctuations are used as syntax units: delimiters, disambiguators, etc.
+
+Also, some symbols depend on the context, sometimes they can be operators, sometimes punctuations. E.g. `=` is an assignment operator, but only in expressions, for function definition, we use `=` as body beginning (in expression-body case).
+
+Symbols considered punctuations: `(`, `)`, `[`, `]`, `{`, `}`, `,`, `;`, `:`, `<`, `>` (in generics, not "less/greater than" operators).
+
+
+
+## Intro
+
+Let's begin with the cliché -- "Hello, world" in _Jacy_:
+```jc
+func main {
+    print("Hello, world");
+}
+```
