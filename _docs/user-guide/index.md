@@ -115,7 +115,6 @@ Also, some symbols depend on the context, sometimes they can be operators, somet
 Symbols considered punctuations: `(`, `)`, `[`, `]`, `{`, `}`, `,`, `;`, `:`, `<`, `>` (in generics, not "less/greater than" operators).
 
 
-
 ## Intro
 
 Let's begin with the cliché -- "Hello, world" in _Jacy_:
@@ -260,4 +259,24 @@ func add(floatA: f64, floatB: f64): f64 {
     return floatA + floatB;
 }
 ```
+
+### Structures
+
+Structures in _Jacy_ are declared the same way as in Rust:
+```jc
+struct MyStruct {
+    field: i32,
+}
+```
+
+### Traits
+
+Traits are also similar to Rust:
+```jc
+trait DoesSmth {
+    func doSmth();
+}
+```
+
+
 
