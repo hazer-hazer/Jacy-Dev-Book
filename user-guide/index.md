@@ -8,7 +8,8 @@ has_children: true
 
 # User Guide
 
-**This is a WIP fast overview of _Jacy_**
+**This is a WIP quick overview of _Jacy_**
+__You're unable to run any code present here. Please, think of this as an image from my mind 🥺__
 
 #### What is _Jacy_?
 
@@ -137,6 +138,158 @@ Let's begin with the cliché -- "Hello, world" in _Jacy_:
 ```rust
 func main {
     print("Hello, world");
+}
+```
+
+Here you can see:
+- Functions in _Jacy_ are defined with `func` keyword.
+- Parentheses are omitted -- if a function expects 0 parameters you're able not to write parentheses.
+- _Jacy_ requires semicolons as a statement terminator.
+- There's a `main` function, that is, the entry point of the program, as in many other compiled programming languages.
+
+<div class="fold-block">
+    <input id="input-ef70f1ee0370354bbdf31bdcfc3e8f21" type="checkbox">
+    <label class="clicker" for="input-ef70f1ee0370354bbdf31bdcfc3e8f21">> Optional semicolons</label>
+    <blockquote class="content">You may notice that in _Jacy_ semicolon is a required terminator for statements.
+In the first version, it would be so, anyway semicolon inference would be one of the first updates in future versions though.
+</blockquote>
+</div>
+
+As we already started with a function, let's talk about them right after introduction to literals.
+
+### Primitive types & Literals
+
+Primitive types in _Jacy_:
+- boolean type: `bool`.
+- character type `char`.
+- signed integer types: `i8`, `i16`, `i32`, `i64` and `int`.
+- unsigned integer types: `u8`, `u16`, `u32`, `u64` and `uint`.
+- floating-point number types: `f32` and `f64`.
+- slice type: `[T]`.
+- string slice type: `str`.
+- tuple type: `(T1, T2, T3, ...)`
+- array type: `[T; N]`
+
+<div class="fold-block">
+    <input id="input-e391ea2747cfd5c5b78473dbf57ce2c0" type="checkbox">
+    <label class="clicker" for="input-e391ea2747cfd5c5b78473dbf57ce2c0">> Type naming</label>
+    <blockquote class="content">Despite the names of primitive type, in _Jacy_, by convention, type names must begin with upper-case letter.
+Primitive type names are exceptions, you must use PascalCase (capitalized camelCase) for type names.
+</blockquote>
+</div>
+
+
+#### Boolean
+
+Boolean type can hold one of two values: `true` or `false`.
+
+#### Character
+
+In _Jacy_ characters are always valid, utf-8 encoded unicode points, thus the size of one character is 4 bytes.
+In contrast to Rust, C, C++ and other languages that have character literal, in _Jacy_ you character literal is written in the same way as string literal (as in Swift).
+
+So, `"a"` can be a character, but `"abcde"` cannot, because it holds multiple characters (it is a string).
+The question that you may come with is "How do I say that it is a character" -- you need to annotate the type of expression, depending on the context.
+For variables, you need to write `let a: char = "a"`, but for function you can just pass character without any annotation `foo("a")` if function expects `char` as first argument.
+
+#### Integer types
+
+Integer types in _Jacy_ exist in 4 static sizes: 8, 16, 32 and 64 bit size, and two kinds - signed and unsigned.
+The types `int` and `uint` are platform-dependent types, in Rust they are the same as `isize` and `usize` respectively.
+
+By default, integer literal is of type `int`.
+To create an integer literal of specific type, you can use a type suffix same as type name, e.g. for `u8` typed integer `123` you write `123u8`.
+
+<div class="fold-block">
+    <input id="input-8951bff10c5139b2c8085036efe962ea" type="checkbox">
+    <label class="clicker" for="input-8951bff10c5139b2c8085036efe962ea">> `i128` and `u128`</label>
+    <blockquote class="content">As you can see, there's no 128-bit sized integer types in _Jacy_ for now, by the way they are in future plan.
+</blockquote>
+</div>
+
+
+#### Floating point types
+
+For floating-point number there're two types: `f32` and `f64` - 32-bit sized and 64-bit sized respectively.
+
+Float literals support suffixes too as int's: `1.6783f32` or `55f64`.
+
+<div class="fold-block">
+    <input id="input-c984ecac9b5c059b293c38301bde1255" type="checkbox">
+    <label class="clicker" for="input-c984ecac9b5c059b293c38301bde1255">> `f128`</label>
+    <blockquote class="content">As 128-bit integers, `f128` is in the future plan.
+</blockquote>
+</div>
+
+#### Slice type
+
+If you have no experience with Rust, slice type might be hard to comprehend. Slice is a kind of "view" into memory where data is placed, it is statically sized but size is not unknown at compile-time.
+In C, slice would be the same as pointer + size, like `char * arr; int size`. While in C you can access any address you want and you pass a size everywhere to know how many elements you have access to. In _Jacy_ it is impossible (without hack-like code) to access invalid memory location.
+
+Don't confuse "slice" in _Jacy_ with slice of list, etc. in other programming languages, while concepts are pretty relative.
+
+Slice type is a type enclosed into brackets - `[T]`, e.g. `[int]` is an "int slice".
+
+#### `str` / String Slice type
+
+There's a one specific kind of slice which is used so often thus got his own type -- `str`.
+It is simply a string slice, pretty same as `[char]`.
+
+
+#### Tuple type
+
+Tuple is a heterogeneous collection, i.e. collection of different types. Tuple elements do not have names and can be access by index, e.g. `(123, 666).0` will be `123`.
+
+##### Unit type
+
+Unit type is an empty tuple - `()`, it's purpose is the same as of `void` in some programming languages.
+By default, if type omitted - functions return `()`.
+
+#### Array type
+
+Array is a homogeneous collection, i.e. all elements are of the same type. Arrays have static compile-time-known size, so you cannot resize it.
+
+Array type looks like slice type but with size ascription after `;` - `[T; N]`, e.g. `[int; 100]` is an array of `100` int's.
+
+### Functions
+
+You can declare a function with `func` keyword followed by its name, parameters, and body (there're also some more particles but we'll review them further).
+
+Let's disassemble a simple function:
+```jc
+func add(a: int, b: int): int {
+    return a + b;
+}
+```
+
+- `(a: int, b: int)` is a parameter list where `a` and `b` are names of parameters and `int`'s are types for each of them.
+- After parameter list goes return type, it is annotated with same punctuation - `:`
+- Function body is enclosed into `{}` (curly brackets, also I'll probably call them "braces" further)
+
+To invoke `add` we need to pass two integers in it -- `add(1, 2)`, this expression will result in integer `3`.
+
+#### Invocations with labels
+
+_Jacy_ supports labeled arguments, it is a way to call function without writing arguments in the same order as parameters are declared.
+
+Let's call `add` function from example above with named arguments:
+```jc
+add(a: 6, b: 13); // 19
+add(b: 13, a: 6); // 19. Order does not matter
+```
+
+#### Function overloading
+
+_Jacy_ does not support type function overloading, but you can overload function with different parameter labels.
+
+Example:
+```jc
+func add(intA: int, intB: int): int {
+    return intA + intB;
+}
+
+func add(floatA: f64, floatB: f64): f64 {
+    return floatA + floatB;
 }
 ```
 <div class="nav-btn-block">
