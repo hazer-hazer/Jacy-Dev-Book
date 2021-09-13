@@ -145,6 +145,7 @@ Primitive types in _Jacy_:
 - signed integer types: `i8`, `i16`, `i32`, `i64` and `int`.
 - unsigned integer types: `u8`, `u16`, `u32`, `u64` and `uint`.
 - floating-point number types: `f32` and `f64`.
+- slice type: `[T]`.
 - string slice type: `str`.
 - tuple type: `(T1, T2, T3, ...)`
 - array type: `[T; N]`
@@ -186,7 +187,37 @@ For floating-point number there're two types: `f32` and `f64` - 32-bit sized and
 Float literals support suffixes too as int's: `1.6783f32` or `55f64`.
 
 {:> `f128` :}
-> 
+> As 128-bit integers, `f128` is in the future plan.
+
+#### Slice type
+
+If you have no experience with Rust, slice type might be hard to comprehend. Slice is a kind of "view" into memory where data is placed, it is statically sized but size is not unknown at compile-time.
+In C, slice would be the same as pointer + size, like `char * arr; int size`. While in C you can access any address you want and you pass a size everywhere to know how many elements you have access to. In _Jacy_ it is impossible (without hack-like code) to access invalid memory location.
+
+Don't confuse "slice" in _Jacy_ with slice of list, etc. in other programming languages, while concepts are pretty relative.
+
+Slice type is a type enclosed into brackets - `[T]`, e.g. `[int]` is an "int slice".
+
+#### `str` / String Slice type
+
+There's a one specific kind of slice which is used so often thus got his own type -- `str`.
+It is simply a string slice, pretty same as `[char]`.
+
+
+#### Tuple type
+
+Tuple is a heterogeneous collection, i.e. collection of different types. Tuple elements do not have names and can be access by index, e.g. `(123, 666).0` will be `123`.
+
+##### Unit type
+
+Unit type is an empty tuple - `()`, it's purpose is the same as of `void` in some programming languages.
+By default, if type omitted - functions return `()`.
+
+#### Array type
+
+Array is a homogeneous collection, i.e. all elements are of the same type. Arrays have static compile-time-known size, so you cannot resize it.
+
+Array type looks like slice type but with size ascription after `;` - `[T; N]`, e.g. `[int; 100]` is an array of `100` int's.
 
 ### Functions
 
