@@ -201,4 +201,8 @@ For name resolution, we look at the path as at following structure:
 
 All prefix segments are items from the _type_ namespace, because only items from _type_ namespace can export something outside.
 
+One special, but the most popular case is a single-segment path. In that case, we need to think of a path not only as a possible path to an item but also as a local variable.
+In single-segment paths, local variables have higher precedence, that is, if we see a single-segment path we need at first check if there's a local variable with this name and only if it does not exists -- check for items.
+
+
 
