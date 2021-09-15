@@ -134,7 +134,7 @@ Here you can see:
 > You may notice that in _Jacy_ semicolon is a required terminator for statements.
 > In the first version, it would be so, anyway semicolon inference would be one of the first updates in future versions though.
 
-As we already started with a function, let's talk about them right after introduction to literals.
+As we already started with a function, let's talk about them right after the introduction to literals.
 
 ### Primitive types & Literals
 
@@ -150,38 +150,38 @@ Primitive types in _Jacy_:
 - array type: `[T; N]`
 
 {:> Type naming :}
-> Despite the names of primitive type, in _Jacy_, by convention, type names must begin with upper-case letter.
+> Despite the names of primitive type, in _Jacy_, by convention, type names must begin with an upper-case letter.
 > Primitive type names are exceptions, you must use PascalCase (capitalized camelCase) for type names.
 
 
 #### Boolean
 
-Boolean type can hold one of two values: `true` or `false`.
+The boolean type can hold one of two values: `true` or `false`.
 
 #### Character
 
-In _Jacy_ characters are always valid, utf-8 encoded unicode points, thus the size of one character is 4 bytes.
-In contrast to Rust, C, C++ and other languages that have character literal, in _Jacy_ you character literal is written in the same way as string literal (as in Swift).
+In _Jacy_ characters are always valid, utf8 encoded Unicode points, thus the size of one character is 4 bytes.
+In contrast to Rust, C, C++, and other languages that have character literal, in _Jacy_, you character literal is written in the same way as a string literal (as in Swift).
 
 So, `"a"` can be a character, but `"abcde"` cannot, because it holds multiple characters (it is a string).
 The question that you may come with is "How do I say that it is a character" -- you need to annotate the type of expression, depending on the context.
-For variables, you need to write `let a: char = "a"`, but for function you can just pass character without any annotation `foo("a")` if function expects `char` as first argument.
+For variables, you need to write `let a: char = "a"`, but for function, you can just pass character without any annotation `foo("a")` if function expects `char` as the first argument.
 
 #### Integer types
 
-Integer types in _Jacy_ exist in 4 static sizes: 8, 16, 32 and 64 bit size, and two kinds - signed and unsigned.
-The types `int` and `uint` are platform-dependent types, in Rust they are the same as `isize` and `usize` respectively.
+Integer types in _Jacy_ exist in 4 static sizes: 8, 16, 32, and 64-bit size, and two kinds - signed and unsigned.
+The types `int` and `uint` are platform-dependent types, in Rust, they are the same as `isize` and `usize` respectively.
 
 By default, integer literal is of type `int`.
-To create an integer literal of specific type, you can use a type suffix same as type name, e.g. for `u8` typed integer `123` you write `123u8`.
+To create an integer literal of a specific type, you can use a type suffix same as a type name, e.g. for `u8` typed integer `123` you write `123u8`.
 
 {:> `i128` and `u128` :}
-> As you can see, there's no 128-bit sized integer types in _Jacy_ for now, by the way they are in future plan.
+> As you can see, there is no 128-bit sized integer type in _Jacy_ for now, by the way, they are in the future plan.
 
 
 #### Floating point types
 
-For floating-point number there're two types: `f32` and `f64` - 32-bit sized and 64-bit sized respectively.
+For floating-point numbers, there're two types: `f32` and `f64` - 32-bit sized and 64-bit sized respectively.
 
 Float literals support suffixes too as int's: `1.6783f32` or `55f64`.
 
@@ -190,33 +190,33 @@ Float literals support suffixes too as int's: `1.6783f32` or `55f64`.
 
 #### Slice type
 
-If you have no experience with Rust, slice type might be hard to comprehend. Slice is a kind of "view" into memory where data is placed, it is statically sized but size is not unknown at compile-time.
-In C, slice would be the same as pointer + size, like `char * arr; int size`. While in C you can access any address you want and you pass a size everywhere to know how many elements you have access to. In _Jacy_ it is impossible (without hack-like code) to access invalid memory location.
+If you have no experience with Rust, slice type might be hard to comprehend. Slice is a kind of "view" into memory where data is placed, it is statically sized but the size is not unknown at compile-time.
+In C, a slice would be the same as pointer + size, like `char * arr; int size`. While in C you can access any address you want and you pass a size everywhere to know how many elements you have access to. In _Jacy_ it is impossible (without hack-like code) to access invalid memory locations.
 
-Don't confuse "slice" in _Jacy_ with slice of list, etc. in other programming languages, while concepts are pretty relative.
+Don't confuse "slice" in _Jacy_ with a slice of the list, etc. in other programming languages, while concepts are pretty relative.
 
 Slice type is a type enclosed into brackets - `[T]`, e.g. `[int]` is an "int slice".
 
 #### `str` / String Slice type
 
-There's a one specific kind of slice which is used so often thus got his own type -- `str`.
+There's one specific kind of slice that is used so often thus got his own type -- `str`.
 It is simply a string slice, pretty same as `[char]`.
 
 
 #### Tuple type
 
-Tuple is a heterogeneous collection, i.e. collection of different types. Tuple elements do not have names and can be access by index, e.g. `(123, 666).0` will be `123`.
+Tuple is a heterogeneous collection, i.e. collection of different types. Tuple elements do not have names and can be accessed by index, e.g. `(123, 666).0` will be `123`.
 
 ##### Unit type
 
-Unit type is an empty tuple - `()`, it's purpose is the same as of `void` in some programming languages.
+Unit type is an empty tuple - `()`, its purpose is the same as of `void` in some programming languages.
 By default, if type omitted - functions return `()`.
 
 #### Array type
 
 Array is a homogeneous collection, i.e. all elements are of the same type. Arrays have static compile-time-known size, so you cannot resize it.
 
-Array type looks like slice type but with size ascription after `;` - `[T; N]`, e.g. `[int; 100]` is an array of `100` int's.
+Array type looks like slice type but with size, ascription after `;` - `[T; N]`, e.g. `[int; 100]` is an array of `100` ints.
 
 ### Functions
 
@@ -230,14 +230,14 @@ func add(a: int, b: int): int {
 ```
 
 - `(a: int, b: int)` is a parameter list where `a` and `b` are names of parameters and `int`'s are types for each of them.
-- After parameter list goes return type, it is annotated with same punctuation - `:`
+- After the parameter list goes return type, it is annotated with the same punctuation - `:`
 - Function body is enclosed into `{}` (curly brackets, also I'll probably call them "braces" further)
 
 To invoke `add` we need to pass two integers in it -- `add(1, 2)`, this expression will result in integer `3`.
 
 #### Invocations with labels
 
-_Jacy_ supports labeled arguments, it is a way to call function without writing arguments in the same order as parameters are declared.
+_Jacy_ supports labeled arguments, it is a way to call a function without writing arguments in the same order as parameters are declared.
 
 Let's call `add` function from example above with named arguments:
 ```jc
