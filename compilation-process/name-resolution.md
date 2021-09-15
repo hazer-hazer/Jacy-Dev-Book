@@ -50,7 +50,7 @@ One could argue that someone would write unclear code using this feature. This i
 these cases, and the rule not to get this warning is simple: "Only shadow variable with computations related to the
 shadowed variable", for example.
 
-```rust
+```jc
 // This is a good case to use variable shadowing
 let a: i32? = None;
 let a = a.unwrap();
@@ -63,13 +63,13 @@ func foo(param: i32) {
 ```
 
 How variable shadowing is possible? Do we use multi-entry mapping for local variables at the name resolution stage? --
-Actually, not, every time we meet `let` statement -- we push a new rib onto the stack. You can think that by doing so we
+Actually, no, every time we meet `let` statement -- we push a new rib onto the stack. You can think that by doing so we
 can accidentally allow redeclarations of items -- again, no. All items are already defined in the module tree and, as
 far as when we're building the module tree we operating with strict scopes -- redeclarations are not possible.
 
 Example.
 
-```rust
+```jc
 mod a {
     func nested() {}
     func nested() {} // Here is an error produced at "Module-tree Building" stage
@@ -83,10 +83,7 @@ variables, function/closure parameters, labels, and lifetimes, keeping name reso
 
 ### Ribs
 
-Why we need ribs instead of raw scopes? You've already read about `let` and how ribs solve name shadowing, but there're
-also some cases when ribs are helpful. Each rib has a kind and each kind has lookup restrictions, e.g. when we enter a
-local function (a function defined inside another function), we're unable to use the upper function locals -- this rule
-is described with rib kind. There's also `Raw` kind, that is, just a rib without specific restrictions.
+Why do we need ribs instead of raw scopes? You've already read about `let` and how ribs solve name shadowing, but there're also some cases when ribs are helpful. Each rib has a kind and each kind has lookup restrictions, e.g. when we enter a local function (a function defined inside another function), we're unable to use the upper function locals -- this rule is described with rib kind. There's also `Raw` kind, that is, just a rib without specific restrictions.
 
 Rib does not have to contain any definitions except local variables (actually function parameters too) because
 everything is already defined in the module tree. When a new rib is pushed onto the rib stack specific module from the
@@ -107,7 +104,7 @@ resolve.
 
 #### Path resolution
 
-Actually, we don't have raw identifiers in the code, even in types. So, if we write `a + 1` from the view of AST, it is
+We don't have raw identifiers in the code, even in types. So, if we write `a + 1` from the view of AST, it is
 "PathExpr(A) ...". There're some exceptions like labels (e.g. `break@myLoop`) and lifetimes, but their resolution is
 much simpler and will be discussed further.
 
@@ -120,7 +117,7 @@ As a result, we've got filled `ResStorage` which contains mapped values `name no
 containing info about a resolved name.
 
 `Res` can be of different kinds as far as some names could point to definitions, some to local variables, etc. Also
-`Res` can be ill-formed (of kind `Error`) that obviously is an unresolved name.
+`Res` can be ill-formed (of kind `Error`) that is an unresolved name.
 
 An important thing that I need to establish is that resolution (`Res`) points to the identifier node (either to an
 identifier of name in `Def` or to a local variable identifier) but key in `ResStorage` map is a node id of a resolved
@@ -128,13 +125,20 @@ path (`TypePath` or `PathExpr`), except labels and lifetimes which are not paths
 
 #### Patterns
 
-What about patterns? We talked about `let` statement and `func` parameters, but they are patterns. Actually, there's
-nothing hard in pattern name resolution -- mostly every identifier, except PathExpr, that appeared in pattern is
-actually a binding, as we unable to match name against name.
+What about patterns? We talked about `let` statement and `func` parameters, but they are patterns. There's
+nothing hard in pattern name resolution -- mostly every identifier, except PathExpr, that appeared in the pattern is
+a binding.
 
 #### Labels and lifetimes
 
-Labels and lifetimes resolution is simple, for
+__TODO__
+
+
+#### `lang` items
+
+Some items are required for internal logic, e.g. when we write `int?`, it is an `Option<int>` type, and the compiler must at first find the `Option` ADT to lower `int?`.
+
+`lang` is an attribute of the form `@lang(name: '[NAME]')`, where `name` is an optional label and should be used to avoid problems if in the future new parameters will be added.
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/compilation-process/module-tree-building.html">< Module tree building</a>
