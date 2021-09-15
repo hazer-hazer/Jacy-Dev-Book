@@ -138,8 +138,23 @@ By convention, this code is not a good one, as we use a lower-case name for `str
 `NameResolver` goes inside the ROOT module and resolves:
 - `foo` type for local variable `f`, looking up for it in _type_ namespace (doesn't even try to find it in _value_ namespace).
 
+What namespace does each item belong to?
 
+- Value namespace
+  - `func`
+  - `init` (initializers, aka constructors)
+  - `const` items and `const` generic parameters
+  - `static`
+  - Pattern bindings in `let` locals, `for` loops, `match` (`if let`, `while let`), function parameters and lambda parameters. Just all pattern bindings.
+- Type namespace
+  - `mod` (modules)
+  - `struct`
+  - `enum`
+  - `type` (aliases and associated types too)
+  - `trait`
+  - Generic types
 
+There are also Lifetime, macro, and label namespaces, but I'll write about them after (especially, macros is not a fully developed idea)
 
 #### Result -- Resolutions
 
