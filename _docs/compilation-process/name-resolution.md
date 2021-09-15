@@ -178,6 +178,12 @@ Some items are required for internal logic, e.g. when we write `int?`, it is an 
 Here the interesting things come up.
 In _Jacy_, a path is actually "any name", just an `a` is a path, `path::to::something` is a path too.
 
-Fir name resolution, we look at the path as at following structure:
+For name resolution, we look at the path as at following structure:
 `path::to::something`
 - `path` is a prefix segment, which is always "something from type namespace"
+- `to` is also a prefix segment
+- `something` is, so-called, _target_ segment, this is what the user wants
+
+All prefix segments are items from the _type_ namespace, because only items from _type_ namespace can export something outside.
+
+
