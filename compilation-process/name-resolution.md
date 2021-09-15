@@ -102,7 +102,7 @@ current rib and check the next child of the module, and repeat that till we reso
 `NameResolver` is the main class of this stage -- it resolves each name in the _party_ and reports errors if failed to
 resolve. 
 
-#### Path resolution
+#### Paths
 
 We don't have raw identifiers in the code, even in types. So, if we write `a + 1` from the view of AST, it is
 "PathExpr(A) ...". There're some exceptions like labels (e.g. `break@myLoop`) and lifetimes, but their resolution is
@@ -110,6 +110,50 @@ much simpler and will be discussed further.
 
 All paths, including type paths, are pointing to some definition in the module tree, and as we've already defined
 everything at the previous stage, resolving paths is mostly a simple process. 
+
+More about path resolution read [the further chapter](#path-resolution).
+
+#### Namespaces
+
+In _Jacy_, you can define type `i32`, function `i32`, or a lifetime with the name `i32`.
+It is possible because all these items are context-dependent -- you cannot use function as a type and cannot use type alias as a value in an expression.
+At the module-tree-building stage, we define all items, each in the namespace it belongs to, at the name resolution stage, we lookup for a name in a specific namespace in a module.
+
+For example:
+```jc
+struct foo {}
+
+func foo() {
+    let f: foo;
+}
+```
+
+By convention, this code is not a good one, as we use a lower-case name for `struct`, but this code is valid from the view of name resolution.
+
+`ModuleTreeBuilder` defines:
+- `foo` in ROOT module in _type_ namespace
+- `foo` in ROOT module in _value_ namespace
+
+`NameResolver` goes inside the ROOT module and resolves:
+- `foo` type for local variable `f`, looking up for it in _type_ namespace (doesn't even try to find it in _value_ namespace).
+
+What namespace does each item belong to?
+
+- Value namespace
+  - `func`
+  - `init` (initializers, aka constructors)
+  - `const` items and `const` generic parameters
+  - `static`
+  - Pattern bindings in `let` locals, `for` loops, `match` (`if let`, `while let`), function parameters and lambda parameters. Just all pattern bindings.
+- Type namespace
+  - `mod` (modules)
+  - `struct`
+  - `enum`
+  - `type` (aliases and associated types too)
+  - `trait`
+  - Generic types
+
+There are also Lifetime, macro, and label namespaces, but I'll write about them after (especially, macros is not a fully developed idea)
 
 #### Result -- Resolutions
 
@@ -139,6 +183,25 @@ __TODO__
 Some items are required for internal logic, e.g. when we write `int?`, it is an `Option<int>` type, and the compiler must at first find the `Option` ADT to lower `int?`.
 
 `lang` is an attribute of the form `@lang(name: '[NAME]')`, where `name` is an optional label and should be used to avoid problems if in the future new parameters will be added.
+
+
+
+
+### Path resolution
+
+Here the interesting things come up.
+In _Jacy_, a path is actually "any name", just an `a` is a path, `path::to::something` is a path too.
+
+For name resolution, we look at the path as at following structure:
+`path::to::something`
+- `path` is a prefix segment, which is always "something from type namespace"
+- `to` is also a prefix segment
+- `something` is, so-called, _target_ segment, this is what the user wants
+
+All prefix segments are items from the _type_ namespace, because only items from _type_ namespace can export something outside.
+
+One special, but the most popular case is a single-segment path. In that case, we need to think of a path not only as a possible path to an item but also as a local variable.
+In single-segment paths, local variables have higher precedence, that is, if we see a single-segment path we need at first check if there's a local variable with this name and only if it does not exists -- check for items.
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/compilation-process/module-tree-building.html">< Module tree building</a>
