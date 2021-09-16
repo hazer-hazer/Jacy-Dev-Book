@@ -154,7 +154,7 @@ What namespace does each item belong to?
   - `trait`
   - Generic types
 
-There are also Lifetime, macro, and label namespaces, but I'll write about them after (especially, macros is not a fully developed idea)
+There are also Lifetime, macro, and label namespaces, but I'll write about them after (especially, macros is not a fully developed idea).
 
 #### Result -- Resolutions
 
@@ -186,8 +186,6 @@ Some items are required for internal logic, e.g. when we write `int?`, it is an 
 `lang` is an attribute of the form `@lang(name: '[NAME]')`, where `name` is an optional label and should be used to avoid problems if in the future new parameters will be added.
 
 
-
-
 ### Path resolution
 
 Here the interesting things come up.
@@ -204,5 +202,36 @@ All prefix segments are items from the _type_ namespace, because only items from
 One special, but the most popular case is a single-segment path. In that case, we need to think of a path not only as a possible path to an item but also as a local variable.
 In single-segment paths, local variables have higher precedence, that is, if we see a single-segment path we need at first check if there's a local variable with this name and only if it does not exists -- check for items.
 
+
+The work for resolving items in module tree is implemented inside `PathResolver`.
+When resolving items we need to keep in mind some concepts:
+- Multiple namespaces - _type_, _value_, etc. namespaces have pretty different logic
+- Function overloading - in _value_ namespace instead of having pair `Name: DefId` it can be `Name: FuncOverloadId`, which points to, possibly multiple, function definitions
+- Only items from _type_ namespace can be descent into
+
+Even though resolution source code might look hard to comprehend, it's pretty straightforward, however complex.
+Assume we have path `path::to::something`, these steps are included in workflow:
+0. At the start point we know:
+   - What namespace look for item in. It is known from context, for example in `1 + foo` we 100% sure that `foo` is from _value_ namespace because it is used in an expression. Having target namespace is not required for all resolution cases though.
+1. Lookup for a module that has `path` item starting from current module and going up until root module
+   - If root module reached and nothing found -- report an error
+2. When first "search-module" found we don't repeat step one as only first segment is resolved relatively and subsequent segments relative to it.
+3. Lookup for a `to` item in current "search-module".
+4. After `path::to` prefix (this is how I call all segments going before last one) is successfully resolved and we are now searching inside `path::to` module, we apply specific rules for last segment, depending on resolution case.
+5. __read further__
+
+There are three common resolution cases:
+1. Resolve specific item (usage of some item)
+2. Resolve name import (`use ...`)
+3. Descend to module and apply custom logic (specific for some `use ...` cases)
+
+
+##### 1. Resolving specific items
+
+This way is how resolver works most of the time. When user writes `let a = b` and `b` is not a local, we need to resolve `b` as some item.
+
+As described above, we resolved `path::to` prefix part, now having `something` part on hand we lookup for a specific item in target namespace.
+`path::` and `to::` parts were found in _type_ namespace, because only items from _type_ namespace can be looked into via path.
+Now, we
 
 
