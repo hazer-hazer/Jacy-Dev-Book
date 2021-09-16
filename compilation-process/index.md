@@ -9,7 +9,7 @@ has_children: true
 # compilation-process
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/compilation-process/hir.html">< Hir</a>
+    <a class="link" href="/Jacy-Dev-Book/compilation-process/import.html">< Import</a>
 </button>
 
     <button class="nav-btn right">
