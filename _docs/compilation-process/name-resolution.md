@@ -226,6 +226,13 @@ There are three common resolution cases:
 2. Resolve single name import (`use ...`)
 3. Descend to module and apply custom logic (specific for some `use ...` cases)
 
+> _Note_
+> Some terminology:
+> - `use *` is called use-all import
+> - `use {...}` is called use-specific import
+> - "target" namespace is the namespace context requires (e.g. in expression _value_ namespace is used). "target" segment is the last segment of the path, that in some cases is resolved inside specific namespace, sometimes in all.
+> - "path prefix" or "prefix of the path" is a part of the path that includes all segments begin last one.
+> - "import (-s)" one or more `use` declarations.
 
 ##### 1. Resolving specific items
 
@@ -267,4 +274,12 @@ The logic of collecting names is following:
   - Collect each definition
   - Collect all definitions of function overloads
     - Only if definition is public
+- If no definitions inside `path::to::something` module -- do nothing
+- Apply [importing](import) logic
+
+
+###### `use {}`
+
+This kind of `use` is called "specific", what it does is importing multiple paths relatively to prefix one, i.e. in `use path::to::something::{...}` all imports inside `{}` are resolved relatively to `path::to::something`. That's it, nothing complex, we just descend into the module `path::to::something` and then resolve each import inside `{}` starting search from `path::to::something`.
+
 
