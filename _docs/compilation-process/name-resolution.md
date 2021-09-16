@@ -213,6 +213,7 @@ Even though resolution source code might look hard to comprehend, it's pretty st
 Assume we have path `path::to::something`, these steps are included in workflow:
 0. At the start point we know:
    - What namespace look for item in. It is known from context, for example in `1 + foo` we 100% sure that `foo` is from _value_ namespace because it is used in an expression. Having target namespace is not required for all resolution cases though.
+   - Suffix (option). E.g. if user has written `path::to::function(a: 123, b: 123)` the suffix is `(a:b:)`.
 1. Lookup for a module that has `path` item starting from current module and going up until root module
    - If root module reached and nothing found -- report an error
 2. When first "search-module" found we don't repeat step one as only first segment is resolved relatively and subsequent segments relative to it.
@@ -222,7 +223,7 @@ Assume we have path `path::to::something`, these steps are included in workflow:
 
 There are three common resolution cases:
 1. Resolve specific item (usage of some item)
-2. Resolve name import (`use ...`)
+2. Resolve single name import (`use ...`)
 3. Descend to module and apply custom logic (specific for some `use ...` cases)
 
 
@@ -232,6 +233,36 @@ This way is how resolver works most of the time. When user writes `let a = b` an
 
 As described above, we resolved `path::to` prefix part, now having `something` part on hand we lookup for a specific item in target namespace.
 `path::` and `to::` parts were found in _type_ namespace, because only items from _type_ namespace can be looked into via path.
-Now, we
 
+1. Search for an item in current "search-module"
+2. If found, now we have either `DefId` or `FuncOverloadId`
+   - In case of `DefId` we reached the target and just set resolution binding `path.node_id -> found DefId`
+   - In case of `FuncOverloadId` we need to get overloads
+     - If there is a single overload -- just use it
+     - If there is no overloads -- it is a resolution error (actually, having `FuncOverloadId` pointing to empty overloads list considered a bug as we don't create `FuncOverloadId` unless some function appeared)
+     - If there are multiple overloads we need to disambiguate usage of function with suffix, if no suffix present it is an "ambiguous use of function"
+     - If we have a suffix and no matter how many overloads -- we look up for an overload by `suffix -> DefId` map
+3. We always end up with either an error resolution or a __single__ definition id.
+
+
+##### 2. Resolving single name imports
+
+When user writes `use path::to::something` or `use path::to::something as rebind` we need to resolve the whole path, but, in contrast with ["specific resolution"](#1-resolving-specific-items), we collect all the items with name `something`.
+As a result we got an error or a list of definitions ids.
+
+More about importing items read [import](import).
+
+##### 3. Descending to module (`use *` and `use {}`)
+
+Resolution of `use path::to::something::*` and `use {...}` differ from single name imports resolution -- in these cases we import multiple names.
+
+###### `use *`
+
+`use path::to::something::*` is a bad decision for general use in your code, anyway it is useful, for example, in prelude.
+
+The logic of collecting names is following:
+- For each namespace in `path::to::something` module
+  - Collect each definition
+  - Collect all definitions of function overloads
+    - Only if definition is public
 
