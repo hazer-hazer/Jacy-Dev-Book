@@ -239,8 +239,10 @@ As described above, we resolved `path::to` prefix part, now having `something` p
    - In case of `DefId` we reached the target and just set resolution binding `path.node_id -> found DefId`
    - In case of `FuncOverloadId` we need to get overloads
      - If there is a single overload -- just use it
+     - If there is a single overload and it is private -- report an error
      - If there is no overloads -- it is a resolution error (actually, having `FuncOverloadId` pointing to empty overloads list considered a bug as we don't create `FuncOverloadId` unless some function appeared)
      - If there are multiple overloads we need to disambiguate usage of function with suffix, if no suffix present it is an "ambiguous use of function"
+     - If there are multiple overloads and all of them not public -- report an error
      - If we have a suffix and no matter how many overloads -- we look up for an overload by `suffix -> DefId` map
 3. We always end up with either an error resolution or a __single__ definition id.
 
