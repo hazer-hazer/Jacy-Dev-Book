@@ -12,7 +12,8 @@
 }
 
 .site-nav,
-div.table-wrapper {
+div.table-wrapper,
+body {
     &::-webkit-scrollbar {
         width: 7px;
         height: 6px;
