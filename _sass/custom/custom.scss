@@ -33,6 +33,13 @@ body {
     }
 }
 
+body {
+    &::-webkit-scrollbar {
+        width: 10px;
+        height: 8px;
+    }
+}
+
 .nav-list .nav-list-item .nav-list-link,
 .nav-list .nav-list-item .nav-list-expander,
 .site-button {
