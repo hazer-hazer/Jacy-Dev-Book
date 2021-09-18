@@ -11,7 +11,7 @@ parent: Compilation Process
 
 Let's look at the code sample.
 
-```antlr4
+```jc
 func main {
     let var: a::A = 123;
 }
