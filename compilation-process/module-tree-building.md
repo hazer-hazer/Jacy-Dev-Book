@@ -10,7 +10,7 @@ parent: 'Compilation process'
 
 Let's look at the code sample.
 
-```antlr4
+```rust
 func main {
     let var: a::A = 123;
 }
