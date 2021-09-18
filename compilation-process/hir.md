@@ -22,7 +22,7 @@ By doing so, we reduce a large amount of AST nodes to some more common structure
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/compilation-process/import.html">Import ></a>
+    <a class="link" href="/Jacy-Dev-Book/compilation-process/importation-&-module-system.html">Importation & module system ></a>
 </button>
 
 </div>

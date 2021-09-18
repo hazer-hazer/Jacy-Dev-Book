@@ -257,7 +257,7 @@ As described above, we resolved the `path::to` prefix part, now having the `some
 When a user writes `use path::to::something` or `use path::to::something as rebinding` we need to resolve the whole path, but, in contrast with ["specific resolution"](#1-resolving-specific-items), we collect all the items with the name `something`.
 As a result, we got an error or a list of definitions ids.
 
-More about importing items read [import](import).
+More about importing items read [Importation & Module System](importation-&-module-system).
 
 ##### 3. Descending to module (`use *` and `use {}`)
 
@@ -273,7 +273,7 @@ The logic of collecting names is following:
   - Collect all definitions of function overloads
     - Only if definition is public
 - If no definitions inside `path::to::something` module -- do nothing
-- Apply [importing](import) logic
+- Apply [Importation & Module System](importation-&-module-system) logic
 
 
 ###### `use {}`
