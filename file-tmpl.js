@@ -56,9 +56,7 @@ const tmpl = {
             src = src.slice(src.indexOf('---', 3) + 3).trim()
         }
 
-        src = src.replace('```jc', '```rust')
-
-        src = addCustomElements(src)
+        src = addCustomElements(src.replace(/```jc/g, '```rust'))
 
         return `
 ---
