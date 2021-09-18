@@ -255,7 +255,7 @@ Array type looks like slice type but with size, ascription after `;` - `[T; N]`,
 You can declare a function with `func` keyword followed by its name, parameters, and body (there're also some more particles but we'll review them further).
 
 Let's disassemble a simple function:
-```jc
+```rust
 func add(a: int, b: int): int {
     return a + b;
 }
@@ -272,7 +272,7 @@ To invoke `add` we need to pass two integers in it -- `add(1, 2)`, this expressi
 _Jacy_ supports labeled arguments, it is a way to call a function without writing arguments in the same order as parameters are declared.
 
 Let's call `add` function from example above with named arguments:
-```jc
+```rust
 add(a: 6, b: 13); // 19
 add(b: 13, a: 6); // 19. Order does not matter
 ```
@@ -282,7 +282,7 @@ add(b: 13, a: 6); // 19. Order does not matter
 _Jacy_ does not support type function overloading, but you can overload function with different parameter labels.
 
 Example:
-```jc
+```rust
 func add(intA: int, intB: int): int {
     return intA + intB;
 }
@@ -295,7 +295,7 @@ func add(floatA: f64, floatB: f64): f64 {
 ### Structures
 
 Structures in _Jacy_ are declared the same way as in Rust:
-```jc
+```rust
 struct MyStruct {
     field: i32,
 }
@@ -304,7 +304,7 @@ struct MyStruct {
 ### Traits
 
 Traits are also similar to Rust:
-```jc
+```rust
 trait DoesSmth {
     func doSmth();
 }

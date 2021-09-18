@@ -36,7 +36,7 @@ func foo(label! paramName: Type)
 Here, we annotate `label` with `!` to say that the user must pass a parameter with a label, otherwise, it would be an error.
 
 The shortcut variant would look like that:
-```jc
+```rust
 func foo(paramName!: Type)
 ```
 
@@ -63,7 +63,7 @@ Anyway, there're some cons from the view of additional complexity in the compile
 
 ##### #1. Ambiguous invocation
 
-```jc
+```rust
 func doSmth(with: int);
 func doSmth(from: int);
 
@@ -82,7 +82,7 @@ Summing up, parameter labels are just name-resolution level overloading and mark
 Anyway, to disambiguate the case present above we need some mechanism to say that we're gonna use the specific `doSmth` function. It is done with Swift-like syntax `functionName(label1:label2:...)`, that is, we don't call function but resolve its overloading.
 
 So, it looks such as:
-```jc
+```rust
 func doSmth(with: int);
 func doSmth(from: int);
 

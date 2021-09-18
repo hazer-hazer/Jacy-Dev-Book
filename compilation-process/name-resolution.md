@@ -50,7 +50,7 @@ One could argue that someone would write unclear code using this feature. This i
 these cases, and the rule not to get this warning is simple: "Only shadow variable with computations related to the
 shadowed variable", for example.
 
-```jc
+```rust
 // This is a good case to use variable shadowing
 let a: i32? = None;
 let a = a.unwrap();
@@ -69,7 +69,7 @@ far as when we're building the module tree we operating with strict scopes -- re
 
 Example.
 
-```jc
+```rust
 mod a {
     func nested() {}
     func nested() {} // Here is an error produced at "Module-tree Building" stage
@@ -120,7 +120,7 @@ It is possible because all these items are context-dependent -- you cannot use f
 At the module-tree-building stage, we define all items, each in the namespace it belongs to, at the name resolution stage, we lookup for a name in a specific namespace in a module.
 
 For example:
-```jc
+```rust
 struct foo {}
 
 func foo() {
