@@ -54,7 +54,79 @@ The module-tree before importation process will look so:
 
 After importation, module `n` must contain alias to function `foo(label1:label2)` and locally defined `foo(label3:label4)`.
 When module tree is building we create FOSes (Function Overload Sets) each of those has a unique index id.
-So, when we importing a function with the same name should we update existent FOS?
+So, when we importing a function with the same name should we update existent FOS? 
+
+```rust
+mod m {
+    func foo(private: int); // #1
+    pub func foo(public: int); // #2
+} // #0
+
+mod n {
+    use m::foo;
+
+    func foo(nested: int); // #4
+} // #3
+```
+
+DefTable:
+```jon
+FOSes: [
+    {
+        '(private:)': #1
+        '(public:)': #2
+    }
+    {
+        '(nested:)': #4
+    }
+]
+```
+
+Module Tree:
+```jon
+{
+    'm': {
+        kind: 'mod'
+        defId: 0
+        defs: {
+            foo: {
+                funcOverloadId: 0
+            }
+        }
+    }
+    'n': {
+        kind: 'mod'
+        defId: 1
+        defs: {
+            foo: {
+                funcOverloadId: 1
+            }
+        }
+    }
+}
+```
+
+After importation, if FOSes updated.
+
+DefTable:
+```jon
+FOSes: [
+    {
+        '(private:)': #1
+        '(public:)': #2
+    }
+    {
+        '(private:)': 'Alias to #1'
+        '(public:)': 'Alias to #2'
+        '(nested:)': #4
+    }
+]
+```
+
+So, let's establish how overloads importation works:
+- We never modify FOS which we import into the module
+- On importation, FOS of the module where `use`-declaration present is modified -- imported overloads added
+- Each FOS is unique per module, never redefine the same FOS in different modules
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/compilation-process/hir.html">< Hir</a>
