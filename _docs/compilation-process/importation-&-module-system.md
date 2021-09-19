@@ -114,3 +114,8 @@ FOSes: [
     }
 ]
 ```
+
+So, let's establish how overloads importation works:
+- We never modify FOS which we import into the module
+- On importation, FOS of the module where `use`-declaration present is modified -- imported overloads added
+- Each FOS is unique per module, never redefine the same FOS in different modules
