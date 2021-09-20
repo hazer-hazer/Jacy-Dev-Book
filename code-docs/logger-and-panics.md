@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Logger and panics'
-nav_order: 104
+nav_order: 105
 parent: 'Code docs'
 # No children
 ---
@@ -79,7 +79,7 @@ These are methods that differ from log methods:
 * `notImplemented` - TODO dev-panic.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/code-docs/interface.html">< Interface</a>
+    <a class="link" href="/Jacy-Dev-Book/code-docs/interning.html">< Interning</a>
 </button>
 
     

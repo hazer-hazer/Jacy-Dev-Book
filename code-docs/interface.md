@@ -19,7 +19,7 @@ compiler state, etc.
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/code-docs/logger-and-panics.html">Logger and panics ></a>
+    <a class="link" href="/Jacy-Dev-Book/code-docs/interning.html">Interning ></a>
 </button>
 
 </div>
