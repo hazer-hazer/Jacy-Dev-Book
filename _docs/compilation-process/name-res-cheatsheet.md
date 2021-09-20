@@ -74,9 +74,13 @@ Fields:
 > _Direct storage_ mark means that this field is the final storage, i.e. it is not a mapping and other items map to it, _Indirect storage_ is an opposite.
 
 - _defs_ - `vector<Def>` - _Direct storage_ - Definition collection, `DefIndex` points to index in _defs_.
-- _modules_ - `DefMap<Module::Ptr>` - _Direct storage_ - Maps definitions to modules. _Named modules_
-- _blocks_ - `NodeMap<Module::Ptr>` - _Direct storage_ - Maps block nodes to modules. _Anonymous modules_
-- _useDeclModules_ - `NodeMap<Module::Ptr>` - _Indirect storage_
+- _modules_ - `DefMap<Module::Ptr>` - _Direct storage_ - Maps definitions to modules -- _Named modules_. Used everywhere, filled in the `ModuleTreeBuilder`.
+- _blocks_ - `NodeMap<Module::Ptr>` - _Direct storage_ - Maps block nodes to modules -- _Anonymous modules_. Used everywhere, filled in the `ModuleTreeBuilder`.
+- _useDeclModules_ - `NodeMap<Module::Ptr>` - _Indirect storage_ - Maps node id of `use` item to module it defined it. Used by `Importer`, filled in the `ModuleTreeBuilder`.
+- _defVisMap_ - `DefMap<Vis>` - Maps definition to its visibility.
+- _nodeIdDefIdMap_ -  - Maps definition node id to its [`DefId`](#defid-and-defindex)
+- _defIdNodeIdMap_ - Maps [`DefId`](#defid-and-defindex) to definition node id
+- _importAliases_ - Maps [`DefId`](#defid-and-defindex) of import alias, i.e. definition appeared from `use` declaration, to another definition (that also might be an import alias).
 
 ##### Basic API
 
