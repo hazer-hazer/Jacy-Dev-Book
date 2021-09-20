@@ -12,6 +12,10 @@ Okay, what classes do we have:
 
 #### Basic structures
 
+##### `Symbol`
+
+Identifies interned string, read more about symbols [here](../code-docs/interning.md)
+
 ##### `Namespace`
 
 An enumeration of namespaces. Each namespace is a separate storage for definitions, thus type names are not collided with value names, etc.
@@ -65,4 +69,21 @@ Fields:
 
 `DefTable` holds all data we need about definitions and relations between them.
 
+##### Fields, Storages
+
+> _Direct storage_ mark means that this field is the final storage, i.e. it is not a mapping and other items map to it, _Indirect storage_ is an opposite.
+
+- _defs_ - `vector<Def>` - _Direct storage_ - Definition collection, `DefIndex` points to index in _defs_.
+- _modules_ - `DefMap<Module::Ptr>` - _Direct storage_ - Maps definitions to modules. _Named modules_
+- _blocks_ - `NodeMap<Module::Ptr>` - _Direct storage_ - Maps block nodes to modules. _Anonymous modules_
+- _useDeclModules_ - `NodeMap<Module::Ptr>` - _Indirect storage_
+
+##### Basic API
+
+- _getDef([DefId/DefIndex](#defid-and-defindex)) -> [Def](#def)_ - get definition by `DefId` or `DefIndex`
+- _getDefUnwind([DefId](#defid-and-defindex)) -> [Def](#def)_ - get definition unwinding aliases (if definition is an `ImportAlias`)
+- _getDefVis([DefId](#defid-and-defindex)) -> [Vis](#vis)_ - get definition visibility
+- _getNodeIdByDefId([DefId](#defid-and-defindex)) -> NodeId_ - get node id of definition node by definition id
+- _getDefIdByNodeId(NodeId) -> [DefId](#defid-and-defindex)_ - get definition id by node id
+- _getDefNameSpan([DefId](#defid-and-defindex)) -> Span_ - get span of definition identifier (e.g. in `func foo() {}` it returns span for `foo`)
 
