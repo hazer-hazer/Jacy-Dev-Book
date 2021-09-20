@@ -84,10 +84,16 @@ Fields:
 
 ##### Basic API
 
-- _getDef([DefId/DefIndex](#defid-and-defindex)) -> [Def](#def)_ - get definition by `DefId` or `DefIndex`
-- _getDefUnwind([DefId](#defid-and-defindex)) -> [Def](#def)_ - get definition unwinding aliases (if definition is an `ImportAlias`)
-- _getDefVis([DefId](#defid-and-defindex)) -> [Vis](#vis)_ - get definition visibility
-- _getNodeIdByDefId([DefId](#defid-and-defindex)) -> NodeId_ - get node id of definition node by definition id
-- _getDefIdByNodeId(NodeId) -> [DefId](#defid-and-defindex)_ - get definition id by node id
-- _getDefNameSpan([DefId](#defid-and-defindex)) -> Span_ - get span of definition identifier (e.g. in `func foo() {}` it returns span for `foo`)
+This API is almost a list of helpers to retrieve items form fields described above.
 
+- Working with definitions:
+  - _getDef([DefId/DefIndex](#defid-and-defindex)) -> [Def](#def)_ - get definition by `DefId` or `DefIndex`
+  - _getDefUnwind([DefId](#defid-and-defindex)) -> [Def](#def)_ - get definition unwinding aliases (if definition is an `ImportAlias`)
+  - _getDefVis([DefId](#defid-and-defindex)) -> [Vis](#vis)_ - get definition visibility
+  - _getNodeIdByDefId([DefId](#defid-and-defindex)) -> NodeId_ - get node id of definition node by definition id
+  - _getDefIdByNodeId(NodeId) -> [DefId](#defid-and-defindex)_ - get definition id by node id
+  - _getDefNameSpan([DefId](#defid-and-defindex)) -> Span_ - get span of definition identifier (e.g. in `func foo() {}` it returns span for `foo`)
+
+- Working with modules:
+  - _getModule([DefId](#defid-and-defindex)) -> [Module::Ptr](#module)_ - get module by definition id
+  - _getBlock(NodeId) -> [Module::Ptr](#module)_ - get block (anonymous module) by node id
