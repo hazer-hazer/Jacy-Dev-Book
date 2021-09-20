@@ -28,6 +28,10 @@ Definition structure, holds [`DefKind`](#defkind) and [`DefId`](#defid-and-defin
 
 `DefId::index` is the index of vector from `DefTable::defs`. You can get particular definition by `DefId` or `DefIndex` from `DefTable` via `getDef`.
 
+###### `ROOT_DEF_ID`
+
+The constant for root module definition, used in many places for validations and logic checks.
+
 ##### `DefKind`
 
 Enumeration of definitions kinds. Each kind has some properties, e.g. [namespace](#namespace) where it will be defined.
@@ -38,6 +42,24 @@ To find out in which [namespace](#namespace) specific [`DefKind`](#defkind) must
 ##### `Vis`
 
 Visibility enumeration, for now only `Vis::Unset` and `Vis::Pub` exist.
+
+##### `PerNS<T>`
+
+A helper template structure that stores value of some type for each namespace.
+
+##### `PrimTypeSet`
+
+##### `Module`
+
+Module is a single node of Module Tree.
+Fields:
+- _kind_  - Kind of module, i.e. `Def` (named module bound to some definition) or `Block` (anonymous module). Type is the `ModuleKind` enumeration.
+- _id_ - Identifier of module - either `DefId` (for `ModuleKind::Def`) or `NodeId` (for `ModuleKind::Block`).
+- _parent_ - Optional parent that is an another module (only root module does not have parent).
+- _nearestModDef_ - Nearest definition of kind `DefKind::Mod`, always present. For modules which are `DefKind::Mod` by themselves _nearestModDef_ point to the same modules (root module is also of kind `DefKind`, thus _nearestModDef_ of root module is the same as [`ROOT_DEF_ID`](#root_def_id)).
+- _perNS_ - [`PerNS<map<Symbol, NameBinding>>`](#pernst). A per-namespace collection of mappings __Symbol__ (some name) __->__ __DefId__ (some definition).
+- _shadowedPrimTypes_ - module [`PrimTypeSet`](#primtypeset), i.e. flags showing which primitive types (e.g. `int`, `f32`) are shadowed in the module.
+
 
 #### `DefTable`
 
