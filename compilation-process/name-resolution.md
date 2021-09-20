@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Name resolution'
-nav_order: 104
+nav_order: 105
 parent: 'Compilation process'
 # No children
 ---
@@ -281,7 +281,7 @@ The logic of collecting names is following:
 This kind of `use` is called "specific", what it does is importing multiple paths relatively to prefix one, i.e. in `use path::to::something::{...}` all imports inside `{}` are resolved relatively to `path::to::something`. That's it, nothing complex, we just descend into the module `path::to::something` and then resolve each import inside `{}` starting the search from `path::to::something`.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/compilation-process/module-tree-building.html">< Module tree building</a>
+    <a class="link" href="/Jacy-Dev-Book/compilation-process/name-res-cheatsheet.html">< Name res cheatsheet</a>
 </button>
 
     
