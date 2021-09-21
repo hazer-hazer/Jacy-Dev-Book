@@ -73,7 +73,11 @@ code {
     font-family: monospace !important;
 }
 
-div.highlighter-rouge {
+div.highlighter-rouge,
+.rouge-gutter,
+.rouge-code,
+pre,
+pre.lineno {
     background-color: lighten(#fff1f1, 2%) !important;
 }
 
