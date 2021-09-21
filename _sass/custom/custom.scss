@@ -99,6 +99,22 @@ td.rouge-gutter.gl {
     padding: none !important;
 }
 
+
+a {
+    background-image: none !important;
+    color: #f03e3e;
+
+    box-shadow: 0 1px 1px #ddd;
+
+    &:hover {
+        box-shadow: 0 1px 1px #f03e3e;
+    }
+
+    code {
+        color: #f03e3e;
+    }
+}
+
 blockquote {
     display: block;
     position: relative;
