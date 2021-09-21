@@ -176,7 +176,8 @@ h3 {
 
     text-indent: 5px;
 
-    box-shadow: -2px 0 #f0f0f0, 2px 0 #f0f0f0, 0 2px #f0f0f0;
+    box-shadow: -1px 0 #ddd, 1px 0 #ddd, 0 1px #ddd;
+    border-radius: 0 0 3px 3px;
 
     code {
         font-size: 18px !important;
