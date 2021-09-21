@@ -25,7 +25,7 @@ There is one special variant - `Namespace::Any`, it is not used in definition st
 
 Definition structure, holds [`DefKind`](#defkind) and [`DefId`](#defid-and-defindex). You can access particular definition via `DefTable::getDef` or get all, defined, using `DefTable::getDefinitions`
 
-#### `DefId` and `DefIndex`
+#### `DefId` & `DefIndex`
 
 `DefIndex` is a simple index type, i.e. integer wrapper to create a distinct integer type (C++ does not support it).
 `DefId` is a unique definition identifier, currently, it only holds `DefIndex` but might be extended in the future.
