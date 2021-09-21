@@ -60,7 +60,7 @@ with `::` prefix, in this case, we'll resolve it starting from the root module b
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/compilation-process/name-res-cheatsheet.html">Name res cheatsheet ></a>
+    <a class="link" href="/Jacy-Dev-Book/compilation-process/name-resolution-cheatsheet.html">Name resolution cheatsheet ></a>
 </button>
 
 </div>
