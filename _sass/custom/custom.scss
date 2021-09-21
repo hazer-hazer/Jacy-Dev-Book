@@ -100,7 +100,7 @@ td.rouge-gutter.gl {
 }
 
 
-a:not(.anchor-heading) {
+a:not(.anchor-heading, .nav-list-link) {
     background-image: none !important;
     color: #f03e3e;
 
