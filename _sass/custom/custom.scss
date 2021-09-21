@@ -73,14 +73,14 @@ code {
     font-family: monospace !important;
 }
 
-// .highlighter-rouge,
-// .highlight,
-// .rouge-gutter,
-// .rouge-code,
-// pre,
-// pre.lineno {
-//     background-color: lighten(#fff1f1, 2%) !important;
-// }
+.highlighter-rouge,
+.highlight,
+.rouge-gutter,
+.rouge-code,
+pre,
+pre.lineno {
+    background-color: lighten(#fff1f1, 2%) !important;
+}
 
 pre.lineno {
     width: 100%;
