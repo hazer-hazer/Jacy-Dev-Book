@@ -45,7 +45,7 @@ const tmpl = {
     earlyTmpl({
         src,
         layout = 'default',
-        title = 'Untitled',
+        title,
         navOrder,
         parent,
         hasChildren,
