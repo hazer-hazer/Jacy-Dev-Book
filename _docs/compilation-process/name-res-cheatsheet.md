@@ -18,8 +18,8 @@ Identifies interned string, read more about symbols [here](../code-docs/internin
 
 ##### `Namespace`
 
-An enumeration of namespaces. Each namespace is a separate storage for definitions, thus type names are not collided with value names, etc.
-There is one special variant - `Namespace::Any`, it is not used in definition storages and mappings, by the way is used in methods, e.g. to collect definitions with the same name from all namespaces. Never store `Namespace::Any` in `DefTable`, only use it as a helper.
+An enumeration of namespaces. Each namespace is a separate storage for definitions, thus type names do not collide with value names, etc.
+There is one special variant - `Namespace::Any`, it is not used in definition storages and mappings, by the way, is used in methods, e.g. to collect definitions with the same name from all namespaces. Never store `Namespace::Any` in `DefTable`, only use it as a helper.
 
 ##### `Def`
 
@@ -27,7 +27,7 @@ Definition structure, holds [`DefKind`](#defkind) and [`DefId`](#defid-and-defin
 
 ##### `DefId` and `DefIndex`
 
-`DefIndex` is a simple index type, i.e. integer wrapper to create a distinct integer type (C++ does not support).
+`DefIndex` is a simple index type, i.e. integer wrapper to create a distinct integer type (C++ does not support it).
 `DefId` is a unique definition identifier, currently, it only holds `DefIndex` but might be extended in the future.
 
 `DefId::index` is the index of vector from `DefTable::defs`. You can get particular definition by `DefId` or `DefIndex` from `DefTable` via `getDef`.
