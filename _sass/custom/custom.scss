@@ -65,9 +65,19 @@ body {
     font-size: 18px;
 }
 
-code,
-.highlighter-rouge,
-.highlight,
+
+code {
+    background: transparent !important;
+    color: #444 !important;
+    border: none;
+    font-family: monospace !important;
+}
+
+.search-result:hover {
+    background: lighten(#f03e3e, 3%);
+}
+
+div.highlighter-rouge,
 .rouge-gutter,
 .rouge-code,
 pre,
@@ -93,6 +103,24 @@ td.rouge-gutter.gl {
     padding: none !important;
 }
 
+
+a:not(.anchor-heading, .nav-list-link, .nav-list-expander, .site-title, .site-button, .link) {
+    background-image: none !important;
+    color: #f03e3e;
+
+    box-shadow: 0 1px #ddd;
+
+    transition: box-shadow .15s ease;
+
+    &:hover {
+        box-shadow: 0 1px #f03e3e;
+    }
+
+    code {
+        color: #f03e3e;
+    }
+}
+
 blockquote {
     display: block;
     position: relative;
@@ -102,7 +130,7 @@ blockquote {
     padding: 1px 16px;
     box-sizing: border-box;
     border-radius: 6px;
-    box-shadow: 0 3px 6px -1px #ddd, 0 0 0 1px #f0f0f0;
+    box-shadow: 0 4px 8px -1px #ddd, 0 0 0 1px #f0f0f0;
 }
 
 .anchor-heading svg {
@@ -117,24 +145,71 @@ h4:hover .anchor-heading svg {
 
 p {
     font-size: $font-size-4;
+
+    code {
+        font-size: $font-size-4 !important;
+    }
 }
 
 h1 {
     font-size: 32px !important;
+
+    code {
+        font-size: 30px !important;
+    }
 }
 
 h2 {
     font-size: 24px !important;
+
+    code {
+        font-size: 22px !important;
+    }
 }
 
 h3 {
-    font-size: 18px !important;
+    height: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    margin-top: 30px;
+    font-size: 20px !important;
+
+    text-indent: 5px;
+
+    box-shadow: 0 0 0 1px #ddd;
+    border-radius: 4px;
+
+    code {
+        font-size: 18px !important;
+    }
 }
 
 h4 {
+    height: 24px;
+    line-height: 24px;
+    vertical-align: middle;
     margin-top: 25px;
     box-shadow: 0 1px #ddd;
     font-size: 16px !important;
+
+    code {
+        font-size: 15px !important;
+    }
+}
+
+h5 {
+    font-size: 14px !important;
+    code {
+        font-size: 14px !important;
+    }
+}
+
+li {
+    font-size: $font-size-4 !important;
+
+    code {
+        font-size: $font-size-4 !important;
+    }
 }
 
 // li {
@@ -175,6 +250,9 @@ div.side-bar {
     }
 }
 
+.site-footer {
+    opacity: 0.25;
+}
 
 .nav-btn-block {
     display: flex;
