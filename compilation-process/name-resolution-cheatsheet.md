@@ -72,9 +72,33 @@ Fields:
 - _id_ - Identifier of module - either `DefId` (for `ModuleKind::Def`) or `NodeId` (for `ModuleKind::Block`).
 - _parent_ - Optional parent that is another module (only root module does not have a parent).
 - _nearestModDef_ - Nearest definition of a kind `DefKind::Mod`, always present. For modules which are `DefKind::Mod` by themselves _nearestModDef_ point to the same modules (root module is also of a kind `DefKind`, thus _nearestModDef_ of root module is the same as [`ROOT_DEF_ID`](#root_def_id)).
-- _perNS_ - [`PerNS<map<Symbol, NameBinding>>`](#pernst). A per-namespace collection of mappings __Symbol__ (some name) __->__ __DefId__ (some definition).
+- _perNS_ - [PerNS<map<Symbol, [NameBinding](#namebinding)>>](#pernst). A per-namespace collection of mappings __Symbol__ (some name) __->__ __DefId__ (some definition).
 - _shadowedPrimTypes_ - module [`PrimTypeSet`](#primtypeset), i.e. flags showing which primitive types (e.g. `int`, `f32`) are shadowed in the module.
 
+#### `NameBinding`
+
+The `Module` binds names either to [`FOS`](#fosid) or to some [definition](#defid-and-defindex).
+This is why `NameBinding` exists, it is an ADT for `FOS` and `DefId`.
+
+#### `FOSId`
+
+FOS stands for "Function Overload Set". In _Jacy_ you can overload functions via different label names, i.e. not by types but `func foo(from: int)` and `func foo(to: int)` can exist together.
+
+`FOSId` is a unique identifier for one FOS -- a collection of functions with the same name, defined in the same module.
+
+For example, in:
+```rust
+mod m {
+    func foo(from: int) {}
+
+    func foo(to: int) {}
+}
+```
+
+`mod m` only holds [`NameBinding`](#namebinding) with name `foo` (base name of FOS) which points to `FOSId` of FOS `foo` in [`DefTable`](#deftable).
+To access a specific function, at first, you need to get `FOSId` from the module and then go to the [`DefTable`](#deftable) to search for a suffix.
+
+Function suffix is an interned string such as `(from:)` or `(to:)`, i.e. function label list.
 
 ### `DefTable`
 
@@ -89,8 +113,8 @@ Fields:
 - _blocks_ - `NodeMap<Module::Ptr>` - _Direct storage_ - Maps block nodes to modules -- _Anonymous modules_. Used everywhere, filled in the `ModuleTreeBuilder`.
 - _useDeclModules_ - `NodeMap<Module::Ptr>` - _Indirect storage_ - Maps node id of `use` item to module it defined it. Used by `Importer`, filled in the `ModuleTreeBuilder`.
 - _defVisMap_ - `DefMap<Vis>` - Maps definition to its visibility.
-- _nodeIdDefIdMap_ -  - Maps definition node id to its [`DefId`](#defid-and-defindex)
-- _defIdNodeIdMap_ - Maps [`DefId`](#defid-and-defindex) to definition node id
+- _nodeIdDefIdMap_ -  - Maps definition node id to its [`DefId`](#defid-and-defindex).
+- _defIdNodeIdMap_ - Maps [`DefId`](#defid-and-defindex) to definition node id.
 - _importAliases_ - Maps [`DefId`](#defid-and-defindex) of import alias, i.e. definition appeared from `use` declaration to another definition (that also might be an import alias).
 
 #### Basic API
@@ -98,16 +122,19 @@ Fields:
 This API is almost a list of helpers to retrieve items from the fields described above.
 
 - Working with definitions:
-  - _getDef([DefId/DefIndex](#defid-and-defindex)) -> [Def](#def)_ - get definition by `DefId` or `DefIndex`
-  - _getDefUnwind([DefId](#defid-and-defindex)) -> [Def](#def)_ - get definition unwinding aliases (if definition is an `ImportAlias`)
-  - _getDefVis([DefId](#defid-and-defindex)) -> [Vis](#vis)_ - get definition visibility
-  - _getNodeIdByDefId([DefId](#defid-and-defindex)) -> NodeId_ - get node id of definition node by definition id
-  - _getDefIdByNodeId(NodeId) -> [DefId](#defid-and-defindex)_ - get definition id by node id
-  - _getDefNameSpan([DefId](#defid-and-defindex)) -> Span_ - get span of definition identifier (e.g. in `func foo() {}` it returns span for `foo`)
+  - _getDef([DefId/DefIndex](#defid-and-defindex)) -> [Def](#def)_ - get definition by `DefId` or `DefIndex`.
+  - _getDefUnwind([DefId](#defid-and-defindex)) -> [Def](#def)_ - get definition unwinding aliases (if definition is an `ImportAlias`).
+  - _getDefVis([DefId](#defid-and-defindex)) -> [Vis](#vis)_ - get definition visibility.
+  - _getNodeIdByDefId([DefId](#defid-and-defindex)) -> NodeId_ - get node id of definition node by definition id.
+  - _getDefIdByNodeId(NodeId) -> [DefId](#defid-and-defindex)_ - get definition id by node id.
+  - _getDefNameSpan([DefId](#defid-and-defindex)) -> Span_ - get span of definition identifier (e.g. in `func foo() {}` it returns span for `foo`).
 
 - Working with modules:
-  - _getModule([DefId](#defid-and-defindex)) -> [Module::Ptr](#module)_ - get module by definition id
-  - _getBlock(NodeId) -> [Module::Ptr](#module)_ - get block (anonymous module) by node id
+  - _getModule([DefId](#defid-and-defindex)) -> [Module::Ptr](#module)_ - get module by definition id.
+  - _getBlock(NodeId) -> [Module::Ptr](#module)_ - get block (anonymous module) by node id.
+  - _getFuncModule([FOSId](#fosid), Symbol) -> [Module::Ptr](#module)_ - get function module by `FOSId` and specific suffix, together they non-ambiguously specify some function.
+  - _addModule([DefId](#defid-and-defindex), [Module::Ptr](#module))_ - Add named module, binding it by `DefId`.
+  - _addBlock(NodeId, [Module::Ptr](#module))_ - Add block (anonymous module), binding it by NodeId.
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/compilation-process/module-tree-building.html">< Module tree building</a>
