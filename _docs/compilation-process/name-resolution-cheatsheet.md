@@ -10,53 +10,53 @@ Okay, what classes do we have:
 - `PathResolver` - helper class that unifies path resolution logic for all name resolution sub-stages.
 - `DefTable` - common definitions info storage
 
-#### Basic structures
+### Basic structures
 
-##### `Symbol`
+#### `Symbol`
 
 Identifies interned string, read more about symbols [here](../code-docs/interning.md)
 
-##### `Namespace`
+#### `Namespace`
 
 An enumeration of namespaces. Each namespace is a separate storage for definitions, thus type names do not collide with value names, etc.
 There is one special variant - `Namespace::Any`, it is not used in definition storages and mappings, by the way, is used in methods, e.g. to collect definitions with the same name from all namespaces. Never store `Namespace::Any` in `DefTable`, only use it as a helper.
 
-##### `Def`
+#### `Def`
 
 Definition structure, holds [`DefKind`](#defkind) and [`DefId`](#defid-and-defindex). You can access particular definition via `DefTable::getDef` or get all, defined, using `DefTable::getDefinitions`
 
-##### `DefId` and `DefIndex`
+#### `DefId` and `DefIndex`
 
 `DefIndex` is a simple index type, i.e. integer wrapper to create a distinct integer type (C++ does not support it).
 `DefId` is a unique definition identifier, currently, it only holds `DefIndex` but might be extended in the future.
 
 `DefId::index` is the index of vector from `DefTable::defs`. You can get particular definition by `DefId` or `DefIndex` from `DefTable` via `getDef`.
 
-###### `ROOT_DEF_ID`
+##### `ROOT_DEF_ID`
 
 The constant for root module definition, used in many places for validations and logic checks.
 
-##### `DefKind`
+#### `DefKind`
 
 Enumeration of definitions kinds. Each kind has some properties, e.g. [namespace](#namespace) where it will be defined.
 You can get [`DefKind`](#defkind) from [`Def`](#def) structure if you have one on hand.
 
 To find out in which [namespace](#namespace) specific [`DefKind`](#defkind) must be defined call `Def::getDefKindNS`.
 
-##### `Vis`
+#### `Vis`
 
 Visibility enumeration, for now only `Vis::Unset` and `Vis::Pub` exist.
 
-##### `PerNS<T>`
+#### `PerNS<T>`
 
 A helper template structure that stores a value of some type for each namespace.
 
-##### `PrimTypeSet`
+#### `PrimTypeSet`
 
 Bits-optimized collection of primitive types flags. It can be used to mark specific primitive types used/shadowed, etc.
 Used by the module to save shadowed primitive types.
 
-##### `Module`
+#### `Module`
 
 The `Module` is a single node of the Module Tree.
 Fields:
@@ -68,11 +68,11 @@ Fields:
 - _shadowedPrimTypes_ - module [`PrimTypeSet`](#primtypeset), i.e. flags showing which primitive types (e.g. `int`, `f32`) are shadowed in the module.
 
 
-#### `DefTable`
+### `DefTable`
 
-`DefTable` holds all data we need about definitions and relations between them.
+`DefTable` holds all data, we need, about definitions and relations between them.
 
-##### Fields, Storages
+#### Fields, Storages
 
 > _Direct storage_ mark means that this field is the final storage, i.e. it is not a mapping and other items map to it, _Indirect storage_ is an opposite.
 
@@ -85,7 +85,7 @@ Fields:
 - _defIdNodeIdMap_ - Maps [`DefId`](#defid-and-defindex) to definition node id
 - _importAliases_ - Maps [`DefId`](#defid-and-defindex) of import alias, i.e. definition appeared from `use` declaration to another definition (that also might be an import alias).
 
-##### Basic API
+#### Basic API
 
 This API is almost a list of helpers to retrieve items from the fields described above.
 
