@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Lincy'
-nav_order: 114
+nav_order: 115
 # No parent
 has_children: true
 ---
