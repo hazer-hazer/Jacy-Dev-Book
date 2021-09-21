@@ -121,20 +121,36 @@ p {
 
 h1 {
     font-size: 32px !important;
+
+    code {
+        font-size: 32px !important;
+    }
 }
 
 h2 {
     font-size: 24px !important;
+
+    code {
+        font-size: 24px !important;
+    }
 }
 
 h3 {
     font-size: 18px !important;
+
+    code {
+        font-size: 18px !important;
+    }
 }
 
 h4 {
     margin-top: 25px;
     box-shadow: 0 1px #ddd;
     font-size: 16px !important;
+
+    code {
+        font-size: 16px !important;
+    }
 }
 
 // li {
