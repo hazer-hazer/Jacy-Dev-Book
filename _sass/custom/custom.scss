@@ -73,6 +73,10 @@ code {
     font-family: monospace !important;
 }
 
+.search-result:hover {
+    background: lighten(#f03e3e, 3%);
+}
+
 div.highlighter-rouge,
 .rouge-gutter,
 .rouge-code,
