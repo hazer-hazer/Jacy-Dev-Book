@@ -9,7 +9,7 @@ parent: Compilation Process
 
 # Name resolution
 
-If you want a brief overview of the Name Resolution internals, checkout [Name Resolution Cheatsheet](../cheatsheets/name-resolution-cheatsheet.md)
+If you want a brief overview of the Name Resolution internals, checkout [Name Resolution Cheatsheet](../cheatsheets/name-resolution-cheatsheet)
 
 Now, we've got the module tree, we forward-declared everything and can resolve all names.
 
