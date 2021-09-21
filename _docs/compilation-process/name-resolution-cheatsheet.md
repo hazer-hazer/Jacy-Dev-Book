@@ -100,30 +100,30 @@ Function suffix is an interned string such as `(from:)` or `(to:)`, i.e. functio
 
 > _Direct storage_ mark means that this field is the final storage, i.e. it is not a mapping and other items map to it, _Indirect storage_ is an opposite.
 
-- _defs_ - `vector<Def>` - _Direct storage_ - Definition collection, `DefIndex` points to index in _defs_.
-- _modules_ - `DefMap<Module::Ptr>` - _Direct storage_ - Maps definitions to modules -- _Named modules_. Used everywhere, filled in the `ModuleTreeBuilder`.
-- _blocks_ - `NodeMap<Module::Ptr>` - _Direct storage_ - Maps block nodes to modules -- _Anonymous modules_. Used everywhere, filled in the `ModuleTreeBuilder`.
-- _useDeclModules_ - `NodeMap<Module::Ptr>` - _Indirect storage_ - Maps node id of `use` item to module it defined it. Used by `Importer`, filled in the `ModuleTreeBuilder`.
-- _defVisMap_ - `DefMap<Vis>` - Maps definition to its visibility.
-- _nodeIdDefIdMap_ -  - Maps definition node id to its [`DefId`](#defid-and-defindex).
-- _defIdNodeIdMap_ - Maps [`DefId`](#defid-and-defindex) to definition node id.
-- _importAliases_ - Maps [`DefId`](#defid-and-defindex) of import alias, i.e. definition appeared from `use` declaration to another definition (that also might be an import alias).
+- `defs` - `vector<Def>` - _Direct storage_ - Definition collection, `DefIndex` points to index in `defs`.
+- `modules` - `DefMap<Module::Ptr>` - _Direct storage_ - Maps definitions to modules -- _Named modules_. Used everywhere, filled in the `ModuleTreeBuilder`.
+- `blocks` - `NodeMap<Module::Ptr>` - _Direct storage_ - Maps block nodes to modules -- _Anonymous modules_. Used everywhere, filled in the `ModuleTreeBuilder`.
+- `useDeclModules` - `NodeMap<Module::Ptr>` - _Indirect storage_ - Maps node id of `use` item to module it defined it. Used by `Importer`, filled in the `ModuleTreeBuilder`.
+- `defVisMap` - `DefMap<Vis>` - Maps definition to its visibility.
+- `nodeIdDefIdMap` -  - Maps definition node id to its [`DefId`](#defid-and-defindex).
+- `defIdNodeIdMap` - Maps [`DefId`](#defid-and-defindex) to definition node id.
+- `importAliases` - Maps [`DefId`](#defid-and-defindex) of import alias, i.e. definition appeared from `use` declaration to another definition (that also might be an import alias).
 
 #### Basic API
 
 This API is almost a list of helpers to retrieve items from the fields described above.
 
 - Working with definitions:
-  - _getDef([DefId/DefIndex](#defid-and-defindex)) -> [Def](#def)_ - get definition by `DefId` or `DefIndex`.
-  - _getDefUnwind([DefId](#defid-and-defindex)) -> [Def](#def)_ - get definition unwinding aliases (if definition is an `ImportAlias`).
-  - _getDefVis([DefId](#defid-and-defindex)) -> [Vis](#vis)_ - get definition visibility.
-  - _getNodeIdByDefId([DefId](#defid-and-defindex)) -> NodeId_ - get node id of definition node by definition id.
-  - _getDefIdByNodeId(NodeId) -> [DefId](#defid-and-defindex)_ - get definition id by node id.
-  - _getDefNameSpan([DefId](#defid-and-defindex)) -> Span_ - get span of definition identifier (e.g. in `func foo() {}` it returns span for `foo`).
+  - `getDef([DefId/DefIndex](#defid-and-defindex)) -> [Def](#def)` - get definition by `DefId` or `DefIndex`.
+  - `getDefUnwind([DefId](#defid-and-defindex)) -> [Def](#def)` - get definition unwinding aliases (if definition is an `ImportAlias`).
+  - `getDefVis([DefId](#defid-and-defindex)) -> [Vis](#vis)` - get definition visibility.
+  - `getNodeIdByDefId([DefId](#defid-and-defindex)) -> NodeId` - get node id of definition node by definition id.
+  - `getDefIdByNodeId(NodeId) -> [DefId](#defid-and-defindex)` - get definition id by node id.
+  - `getDefNameSpan([DefId](#defid-and-defindex)) -> Span` - get span of definition identifier (e.g. in `func foo() {}` it returns span for `foo`).
 
 - Working with modules:
-  - _getModule([DefId](#defid-and-defindex)) -> [Module::Ptr](#module)_ - get module by definition id.
-  - _getBlock(NodeId) -> [Module::Ptr](#module)_ - get block (anonymous module) by node id.
-  - _getFuncModule([FOSId](#fosid), Symbol) -> [Module::Ptr](#module)_ - get function module by `FOSId` and specific suffix, together they non-ambiguously specify some function.
-  - _addModule([DefId](#defid-and-defindex), [Module::Ptr](#module))_ - Add named module, binding it by `DefId`.
-  - _addBlock(NodeId, [Module::Ptr](#module))_ - Add block (anonymous module), binding it by NodeId.
+  - `getModule([DefId](#defid-and-defindex)) -> [Module::Ptr](#module)` - get module by definition id.
+  - `getBlock(NodeId) -> [Module::Ptr](#module)` - get block (anonymous module) by node id.
+  - `getFuncModule([FOSId](#fosid), Symbol) -> [Module::Ptr](#module)` - get function module by `FOSId` and specific suffix, together they non-ambiguously specify some function.
+  - `addModule([DefId](#defid-and-defindex), [Module::Ptr](#module))` - Add named module, binding it by `DefId`.
+  - `addBlock(NodeId, [Module::Ptr](#module))` - Add block (anonymous module), binding it by NodeId.
