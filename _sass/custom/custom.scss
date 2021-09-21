@@ -100,11 +100,13 @@ td.rouge-gutter.gl {
 }
 
 
-a {
+a:not(.anchor-heading) {
     background-image: none !important;
     color: #f03e3e;
 
     box-shadow: 0 1px #ddd;
+
+    transition: box-shadow .15s ease;
 
     &:hover {
         box-shadow: 0 1px #f03e3e;
