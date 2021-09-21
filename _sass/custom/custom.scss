@@ -65,15 +65,14 @@ body {
     font-size: 18px;
 }
 
-code,
-.highlighter-rouge,
-.highlight,
-.rouge-gutter,
-.rouge-code,
-pre,
-pre.lineno {
-    background-color: lighten(#fff1f1, 2%) !important;
-}
+// .highlighter-rouge,
+// .highlight,
+// .rouge-gutter,
+// .rouge-code,
+// pre,
+// pre.lineno {
+//     background-color: lighten(#fff1f1, 2%) !important;
+// }
 
 pre.lineno {
     width: 100%;
@@ -163,12 +162,6 @@ h4 {
 
 li {
     font-size: $font-size-4 !important;
-}
-
-code {
-    background: transparent !important;
-    color: #444 !important;
-    font-family: monospace !important;
 }
 
 // li {
