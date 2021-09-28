@@ -117,7 +117,7 @@ class Generator {
         const children = []
 
         if (!isRootDir) {
-            const childrenCount = entities.filter(en => en.endsWith('.md') && path.basename(en, '.md') !== 'index').length
+            const childrenCount = entities.filter(en => en.endsWith('.md') && path.basename(en, '.md') !== INDEX_FILENAME).length
 
             const indexSettings = {
                 title,
@@ -148,6 +148,7 @@ class Generator {
             const childPath = path.join(dirPath, subPath)
             const childIsDir = fs.lstatSync(childPath).isDirectory()
             const childFilename = path.basename(subPath, '.md')
+            const isIndexFile = childFilename === INDEX_FILENAME
 
             let childStruct = struct?.children?.[childFilename] || {}
 
