@@ -49,6 +49,7 @@ const tmpl = {
         navOrder,
         parent,
         hasChildren,
+        grandParent,
     }) {
         // Remove front matter if file has
         src = src.trim()
@@ -65,6 +66,7 @@ title: '${title}'
 ${navOrder ? `nav_order: ${navOrder}` : '# No nav_order'}
 ${parent ? `parent: '${parent}'` : '# No parent'}
 ${hasChildren ? 'has_children: true' : '# No children'}
+${grandParent ? `grand_parent: '${grandParent}'` : '# No grandparent'}
 ---
 
 ${src}
