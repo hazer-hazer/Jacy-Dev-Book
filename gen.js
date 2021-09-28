@@ -117,8 +117,7 @@ class Generator {
         const children = []
 
         if (!isRootDir) {
-            const childrenCount = entities.find(en => en.endsWith('.md') && path.basename(en, '.md') !== 'index').length
-            
+            const childrenCount = entities.filter(en => en.endsWith('.md') && path.basename(en, '.md') !== 'index').length
 
             const indexSettings = {
                 title,
@@ -129,20 +128,18 @@ class Generator {
                 hasChildren: !isRootDir && childrenCount > 1,
             }
 
-            const indexFileI = entities.filter(en => path.basename(en, '.md') === 'index')
+            const indexFileI = entities.indexOf('index.md')
             const indexFile = entities[indexFileI]
             if (indexFile) {
                 children.push(await this._processFile(path.join(dirPath, indexFile), struct, indexSettings))
             }
 
             entities.splice(indexFileI, 1)
-
-            console.log('cleared entities', entities);
         }
 
         const commonChildSettings = {
             parentTitle: title,
-            grandParentTitle: parentTitle,
+            grandParentTitle: !isRootDir ? parentTitle : null,
         }
 
         let index = 100
@@ -158,6 +155,7 @@ class Generator {
 
             const childSettings = {
                 ...commonChildSettings,
+                ...isRootDir && {parentTitle: null},
                 title: childStruct.title || nameFromFilename(childFilename),
                 navOrder,
             }
