@@ -28,6 +28,24 @@ module.exports = {
                 'name-res-stage': {
                     order: 10,
                     title: 'Name Resolution',
+                    children: {
+                        'module-tree-building': {
+                            order: 2,
+                            title: 'Module Tree Building',
+                        },
+                        'importation-&-module-system': {
+                            order: 4,
+                            title: 'Imports & Module System',
+                        },
+                        'name-resolution': {
+                            order: 6,
+                            title: 'Name Resolution',
+                        },
+                    },
+                },
+                lowering: {
+                    order: 15,
+                    title: 'Lowering & HIR',
                 },
                 'type-system': {
                     order: 50,
