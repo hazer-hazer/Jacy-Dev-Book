@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Appendices'
 nav_order: 10
 parent: 'Appendices'
-# No children
+has_children: true
 # No grandparent
 ---
 

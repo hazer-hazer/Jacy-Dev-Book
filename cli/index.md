@@ -3,7 +3,7 @@ layout: 'default'
 title: 'CLI'
 nav_order: 6
 # No parent
-# No children
+has_children: true
 # No grandparent
 ---
 

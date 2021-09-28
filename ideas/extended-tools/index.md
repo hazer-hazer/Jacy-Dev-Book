@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Extensions & External tools'
 nav_order: 10
 parent: 'Ideas [α RFCs]'
-# No children
+has_children: true
 # No grandparent
 ---
 

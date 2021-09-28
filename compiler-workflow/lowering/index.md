@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Lowering & HIR'
 nav_order: 15
 parent: 'Compiler Workflow'
-# No children
+has_children: true
 # No grandparent
 ---
 
