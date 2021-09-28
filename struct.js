@@ -5,12 +5,16 @@ module.exports = {
             order: 2,
             title: 'Introduction',
         },
-        'how-to-run': {
+        concept: {
             order: 3,
+            title: 'Concept',
+        },
+        'how-to-run': {
+            order: 5,
             title: 'How To Run',
         },
         cli: {
-            order: 4,
+            order: 6,
             title: 'CLI',
         },
         'compilation-process': {
@@ -29,8 +33,18 @@ module.exports = {
             order: 46,
             title: 'Lincy [Linter]',
         },
-        appendices: {
+        'ideas': {
             order: 50,
+            title: 'Ideas',
+            children: {
+                'extended-tools': {
+                    order: 10,
+                    title: 'Extensions & External tools',
+                },
+            },
+        },
+        appendices: {
+            order: 100,
             title: 'Appendices',
             children: {
                 cheatsheets: {
