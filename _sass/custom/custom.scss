@@ -353,11 +353,12 @@ div.side-bar {
     }
 
     .line:hover,
-    .line-num:hover + .line:hover {
+    .line-num:hover + .line {
         background: #8A91991A;
     }
 
     .line-num {
+        user-select: none;
         text-align: right;
         box-shadow: inset -1px 0 #ccc;
         font-size: 12px;
