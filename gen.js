@@ -152,12 +152,19 @@ class Generator {
 
             let childStruct = struct?.children?.[childFilename] || {}
 
+            let childTitle = null
+            if (isIndexFile) {
+                childTitle = struct.title || nameFromFilename(childFilename)
+            } else {
+                childTitle = childStruct.title || nameFromFilename(childFilename)
+            }
+
             const navOrder = childStruct.order || index
 
             const childSettings = {
                 ...commonChildSettings,
                 ...isRootDir && {parentTitle: null},
-                title: childStruct.title || nameFromFilename(childFilename),
+                title: childTitle,
                 navOrder,
             }
 
