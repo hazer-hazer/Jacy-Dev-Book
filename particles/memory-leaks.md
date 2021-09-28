@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Memory leaks'
 nav_order: 106
-parent: 'Particles'
+parent: 'Particles [β RFCs]'
 # No children
 ---
 
@@ -23,7 +23,7 @@ Actually, FFI kind of "requires" memory leaks as if memory is fully managed by t
 I want to disassemble an idea of first-class ARC. The reason to have ARC as first-class entity is an ability to statically check wherever a problem like cyclic references occur and may cause a memory leak.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/index.html">< Particles</a>
+    <a class="link" href="/Jacy-Dev-Book/particles/index.html">< Particles [β RFCs]</a>
 </button>
 
     <button class="nav-btn right">

@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Function type & names'
 nav_order: 104
-parent: 'Particles'
+parent: 'Particles [β RFCs]'
 # No children
 ---
 
@@ -102,7 +102,7 @@ Anyway, parameter names in function types are allowed, but they just markers for
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/index.html">Particles ></a>
+    <a class="link" href="/Jacy-Dev-Book/particles/index.html">Particles [β RFCs] ></a>
 </button>
 
 </div>

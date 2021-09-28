@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Concept'
-nav_order: 105
+nav_order: 3
 # No parent
 has_children: true
 ---

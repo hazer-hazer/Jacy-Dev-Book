@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Meaningful names'
 nav_order: 101
-parent: 'Lincy'
+parent: 'Lincy [Linter]'
 # No children
 ---
 
@@ -27,7 +27,7 @@ func badName(s: SomeTypeName); // Bad
 ```
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/Lincy/index.html">< Lincy</a>
+    <a class="link" href="/Jacy-Dev-Book/lincy/index.html">< Lincy [Linter]</a>
 </button>
 
     

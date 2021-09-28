@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Assignment'
 nav_order: 100
-parent: 'Particles'
+parent: 'Particles [β RFCs]'
 # No children
 ---
 

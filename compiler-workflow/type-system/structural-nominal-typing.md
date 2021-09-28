@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Structural nominal typing'
 nav_order: 101
-parent: 'Type system'
+parent: 'Type System'
 # No children
 ---
 
@@ -79,7 +79,7 @@ tokens as named-tuple (`a` case).
 >   `struct`)
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/type-system/index.html">< Type system</a>
+    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/type-system/index.html">< Type System</a>
 </button>
 
     

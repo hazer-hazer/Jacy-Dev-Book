@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Named arg alias'
-nav_order: 104
-parent: 'Ideas'
+nav_order: 103
+parent: 'Ideas [α RFCs]'
 # No children
 ---
 
@@ -19,7 +19,7 @@ func main {
 ```
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/ideas/index.html">< Ideas</a>
+    <a class="link" href="/Jacy-Dev-Book/ideas/index.html">< Ideas [α RFCs]</a>
 </button>
 
     <button class="nav-btn right">

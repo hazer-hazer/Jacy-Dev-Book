@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'How To Run'
-nav_order: 3
+nav_order: 5
 # No parent
 # No children
 ---
@@ -120,7 +120,7 @@ _This values are case insensitive, so you are able to write `Y` or `tRue` or `Fa
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/ideas">Ideas ></a>
+    <a class="link" href="/Jacy-Dev-Book/ideas">Ideas [α RFCs] ></a>
 </button>
 
 </div>

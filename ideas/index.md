@@ -1,7 +1,7 @@
 ---
 layout: 'default'
-title: 'Ideas'
-nav_order: 107
+title: 'Ideas [α RFCs]'
+nav_order: 50
 # No parent
 has_children: true
 ---
@@ -11,7 +11,7 @@ has_children: true
 Ideas, pre-RFCs, thoughts and early documentation.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/ideas/extended-tools">< Extended tools</a>
+    <a class="link" href="/Jacy-Dev-Book/ideas/extended-tools">< Extensions & External tools</a>
 </button>
 
     <button class="nav-btn right">

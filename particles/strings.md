@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Strings'
 nav_order: 113
-parent: 'Particles'
+parent: 'Particles [β RFCs]'
 # No children
 ---
 

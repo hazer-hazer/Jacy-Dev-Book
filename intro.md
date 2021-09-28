@@ -17,7 +17,7 @@ meticulous, but I want to cover even the simplest aspects of PL.
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/Lincy">Lincy ></a>
+    <a class="link" href="/Jacy-Dev-Book/lincy">Lincy [Linter] ></a>
 </button>
 
 </div>

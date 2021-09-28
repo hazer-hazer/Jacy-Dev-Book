@@ -1,8 +1,8 @@
 ---
 layout: 'default'
-title: '#1'
-nav_order: 100
-parent: 'Ideas'
+title: 'Taxonomy & glossary'
+nav_order: 109
+parent: 'Appendices'
 # No children
 ---
 
@@ -104,9 +104,9 @@ Borrowed references obey Rust borrow checker rules:
 
 Neither able to read or write to alias. Used for function pointers and other "externally-created" data.
 <div class="nav-btn-block">
-    
-    <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/ideas/code-style-conventions.html">Code style conventions ></a>
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/appendices/syntax-decisions">< Syntax Decisions</a>
 </button>
 
+    
 </div>
