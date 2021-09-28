@@ -349,6 +349,12 @@ div.side-bar {
     .line-num, .line {
         line-height: $line-height;
         vertical-align: middle;
+        transition: .15s ease;
+    }
+
+    .line:hover,
+    .line-num:hover + .line:hover {
+        background: #8A91991A;
     }
 
     .line-num {
