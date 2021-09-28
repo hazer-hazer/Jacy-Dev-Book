@@ -90,7 +90,7 @@ class Generator {
 
         let title = struct.title || nameFromFilename(filename)
 
-        if ('children' in struct) {
+        if ('children' in struct && !isIndex) {
             throw Error(`Invalid structure: ${filePath} has children but exists as file`)
         }
 
