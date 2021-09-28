@@ -32,3 +32,5 @@ search.button: true
 
 
 # footer_content: "<button type=\"button\" name=\"button\" class=\"toggle-theme\" onclick=\"jtd.setTheme(jtd.getTheme() === 'dark' ? 'light' : 'dark');\">🌗</button>"
+footer_content: '<img alt="GitHub Workflow Status" src="https://img.shields.io/github/workflow/status/jacylang/Jacy-Dev-Book/Pages%20generation?color=f36d6c&style=for-the-badge">'
+
