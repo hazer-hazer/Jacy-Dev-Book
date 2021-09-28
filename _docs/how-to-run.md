@@ -29,16 +29,21 @@ Example usage.
 
 **Key-value options**
 
-* `-print` - (any count of parameters) - debug argument that allows to print representations of some structures on
-  different compilation stages:
-  * `all` - prints everything described below
-  * `dir-tree` - prints directory tree where root file is placed, so we can check which files will be compiled
-  * `source` - prints source for each file will be compiled
-  * `tokens` - prints token stream (each on a new line) with position and length
-  * `ast` - prints source code from the view of AST (does not actually print AST as a tree)
-  * `sugg` - prints generated suggestions after each compilation stage (if it generates any)
-  * `names` - (not working) - prints AST with markers (connections to names) after name resolution
-* `-log-level` - (1 parameter) - Global log level
+* `--dev-print` - (any count of parameters) - Development option that enables printing of representations of some structures on different compilation stages:
+  * `suggestions` - Prints suggestions as non-formatted text for each stage.
+  * `summary` - Prints summary table after when compilation completes (even with error).
+  * `dir-tree` - Prints directory tree where root file is placed, so we can check which files will be compiled
+  * `source` - Prints source for each file will be compiled
+  * `tokens` - Prints token stream (each on a new line) with position and length
+  * `ast` - Prints source code from the view of AST (does not actually print AST as a tree)
+  * `ast-node-map` - (Ignores `ast` argument if passed) - Prints AST in the same way as `--dev-print=ast` by also appending node id after each AST node.
+  * `ast-names` - Prints AST with color markers (connections to names) after name resolution.
+  * `mod-tree` - Prints Module-Tree which, i.e. tree of items defined in scope tree.
+  * `ribs` - Prints ribs, i.e. scopes for local variables.
+  * `definitions` - Prints definition list.
+  * `resolutions` - Prints resolution list.
+  * `all` - prints everything described above
+* `--log-level` - (1 parameter; default: `info`) - Global log level. The level is checked by precedence where `dev` has the lowest one and `error` the higher.
   * `dev` - Prints all logs and adds dev-logs
   * `debug`
   * `info` - (Default)
