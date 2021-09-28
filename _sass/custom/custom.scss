@@ -352,8 +352,9 @@ div.side-bar {
         transition: .15s ease;
     }
 
-    .line:hover {
+    .line-num:hover {
         background: #8A91992A;
+        color: #f25858c0;
         cursor: pointer;
     }
 
