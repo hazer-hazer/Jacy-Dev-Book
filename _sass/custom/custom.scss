@@ -1,4 +1,5 @@
 @import './color-schemes/ayu.scss';
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 
 .site-logo {
     background-position: center;
@@ -338,6 +339,7 @@ div.side-bar {
     display: grid;
     padding: 5px;
     font-size: 16px;
+    font-family: 'JetBrains Mono', monospace;
 
     grid-template-columns: max-content auto;
     grid-template-rows: 18px;
