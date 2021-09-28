@@ -3,7 +3,7 @@ layout: 'default'
 title: 'Compiler Workflow'
 nav_order: 10
 # No parent
-# No children
+has_children: true
 # No grandparent
 ---
 
