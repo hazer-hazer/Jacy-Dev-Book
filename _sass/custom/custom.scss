@@ -344,7 +344,7 @@ div.side-bar {
 
     .line {
         display: grid;
-        grid-template-columns: auto auto;
+        grid-template-columns: 40px auto;
         grid-template-rows: 1fr;
 
         .line-num {
