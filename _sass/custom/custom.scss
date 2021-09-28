@@ -352,7 +352,11 @@ div.side-bar {
         transition: .15s ease;
     }
 
-    .line:hover,
+    .line:hover {
+        background: #8A91992A;
+        cursor: pointer;
+    }
+
     .line-num:hover + .line,
     .line-num:hover {
         background: #8A91991A;
