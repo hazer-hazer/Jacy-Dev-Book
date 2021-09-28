@@ -75,6 +75,10 @@ Example usage.
   * `entries` - Prints what syntax units parser enters and leave
   * `all` - Prints `entries` and also special much info about skipping, etc.
 
+{:> Toggle key-value option arguments:}
+> If you want to disable specific argument of key-value option, e.g. passing `--dev-print=all` to exclude `tokens` you need to write `--dev-print all=no` or `--dev-print=all=no`, but first form is more readable.
+> You can use any boolean value to toggle arguments, allowed boolean values described below.
+
 **Boolean options**
 
 * `--dev` - enables dev mode: all logs will be printed including `dev`-level logs and new logs will be added. Generally just produces more debug info everywhere.
