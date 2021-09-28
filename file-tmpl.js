@@ -1,3 +1,5 @@
+const hljs = require('highlight.js/lib/core')
+const jacyLang = require('highlight.js/lib/languages/javascript')
 const crypto = require('crypto')
 
 const md5 = str => crypto.createHash('md5').update(str).digest('hex')
