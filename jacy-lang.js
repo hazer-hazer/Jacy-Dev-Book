@@ -7,52 +7,45 @@ const LITERALS = [
     'false',
 ];
 
+// bool|char|[ui](?:8|16|32|64|128)|f(?:16|32|64|128)|int|uint|str|String|Self|Option|Result
 const TYPES = [
+    'bool',
+    'char',
     
+    'uint',
+    'u8',
+    'u16',
+    'u32',
+    'u64',
+    'u128',
+
+    'int',
+    'i8',
+    'i16',
+    'i32',
+    'i64',
+    'i128',
+
+    'str',
+
+    'String',
+    'Self',
+    'Option',
+    'Result',
 ];
 
 const ERROR_TYPES = [
-    'EvalError',
-    'InternalError',
-    'RangeError',
-    'ReferenceError',
-    'SyntaxError',
-    'TypeError',
-    'URIError'
+    
 ];
 
 const BUILT_IN_GLOBALS = [
-    'setInterval',
-    'setTimeout',
-    'clearInterval',
-    'clearTimeout',
-
-    'require',
-    'exports',
-
-    'eval',
-    'isFinite',
-    'isNaN',
-    'parseFloat',
-    'parseInt',
-    'decodeURI',
-    'decodeURIComponent',
-    'encodeURI',
-    'encodeURIComponent',
-    'escape',
-    'unescape'
+    'Some',
+    'None',
 ];
 
 const BUILT_IN_VARIABLES = [
-    'arguments',
-    'this',
+    'self',
     'super',
-    'console',
-    'window',
-    'document',
-    'localStorage',
-    'module',
-    'global' // Node.js
 ];
 
 const BUILT_INS = [].concat(
@@ -94,15 +87,8 @@ function concat(...args) {
     return joined;
 }
 
-/*
-Language: JavaScript
-Description: JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions.
-Category: common, scripting, web
-Website: https://developer.mozilla.org/en-US/docs/Web/JavaScript
-*/
-
 /** @type LanguageFn */
-function javascript(hljs) {
+function jacy(hljs) {
     /**
      * Takes a string like '<Booger' and checks to see
      * if we can find a matching '</Booger' later in the
@@ -157,118 +143,43 @@ function javascript(hljs) {
         'variable.language': BUILT_IN_VARIABLES
     };
 
-    // https://tc39.es/ecma262/#sec-literals-numeric-literals
-    const decimalDigits = '[0-9](_?[0-9])*';
-    const frac = `\\.(${decimalDigits})`;
-    // DecimalIntegerLiteral, including Annex B NonOctalDecimalIntegerLiteral
-    // https://tc39.es/ecma262/#sec-additional-syntax-numeric-literals
-    const decimalInteger = `0|[1-9](_?[0-9])*|0[0-7]*[89][0-9]*`;
     const NUMBER = {
         className: 'number',
         variants: [
-            // DecimalLiteral
+            // Dec
             {
-                begin: `(\\b(${decimalInteger})((${frac})|\\.)?|(${frac}))` +
-                    `[eE][+-]?(${decimalDigits})\\b`
+                begin: '\\b([0-9][0-9_]*)(?:([ui](?:8|16|32|64|128)|i|u))?\\b',
             },
-            { begin: `\\b(${decimalInteger})\\b((${frac})\\b|\\.)?|(${frac})\\b` },
 
-            // DecimalBigIntegerLiteral
-            { begin: `\\b(0|[1-9](_?[0-9])*)n\\b` },
+            // Hex
+            {
+                begin: '\\b(0x[a-fA-F0-9_]+)(?:([ui](?:8|16|32|64|128)|i|u))?\\b',
+            },
 
-            // NonDecimalIntegerLiteral
-            { begin: '\\b0[xX][0-9a-fA-F](_?[0-9a-fA-F])*n?\\b' },
-            { begin: '\\b0[bB][0-1](_?[0-1])*n?\\b' },
-            { begin: '\\b0[oO][0-7](_?[0-7])*n?\\b' },
+            // Octal
+            {
+                begin: '\\b(0o[0-7_]+)(?:([ui](?:8|16|32|64|128)|i|u))?\\b',
+            },
 
-            // LegacyOctalIntegerLiteral (does not include underscore separators)
-            // https://tc39.es/ecma262/#sec-additional-syntax-numeric-literals
-            { begin: '\\b0[0-7]+n?\\b' },
+            // Bin
+            {
+                begin: '\\b(0b[01_]+)(?:([ui](?:8|16|32|64|128)|i|u))?\\b',
+            },
+
+            // Float
+            {
+                begin: '\\b([0-9][0-9_]*\\.[0-9][0-9_]*)\\b',
+            },
+            {
+                begin: '\\b([0-9][0-9_]*(?:\\.[0-9][0-9_]*)?)(f32|f64|f|d)\\b',
+            },
+            {
+                begin: '\\b([0-9][0-9_]*(?:\\.[0-9][0-9_]*)?[eE][+-]?[0-9_]+)(f32|f64|f|d)?\\b',
+            }
         ],
         relevance: 0
     };
 
-    const SUBST = {
-        className: 'subst',
-        begin: '\\$\\{',
-        end: '\\}',
-        keywords: KEYWORDS$1,
-        contains: [] // defined later
-    };
-    const HTML_TEMPLATE = {
-        begin: 'html`',
-        end: '',
-        starts: {
-            end: '`',
-            returnEnd: false,
-            contains: [
-                hljs.BACKSLASH_ESCAPE,
-                SUBST
-            ],
-            subLanguage: 'xml'
-        }
-    };
-    const CSS_TEMPLATE = {
-        begin: 'css`',
-        end: '',
-        starts: {
-            end: '`',
-            returnEnd: false,
-            contains: [
-                hljs.BACKSLASH_ESCAPE,
-                SUBST
-            ],
-            subLanguage: 'css'
-        }
-    };
-    const TEMPLATE_STRING = {
-        className: 'string',
-        begin: '`',
-        end: '`',
-        contains: [
-            hljs.BACKSLASH_ESCAPE,
-            SUBST
-        ]
-    };
-    const JSDOC_COMMENT = hljs.COMMENT(
-        /\/\*\*(?!\/)/,
-        '\\*/',
-        {
-            relevance: 0,
-            contains: [
-                {
-                    begin: '(?=@[A-Za-z]+)',
-                    relevance: 0,
-                    contains: [
-                        {
-                            className: 'doctag',
-                            begin: '@[A-Za-z]+'
-                        },
-                        {
-                            className: 'type',
-                            begin: '\\{',
-                            end: '\\}',
-                            excludeEnd: true,
-                            excludeBegin: true,
-                            relevance: 0
-                        },
-                        {
-                            className: 'variable',
-                            begin: IDENT_RE$1 + '(?=\\s*(-)|$)',
-                            endsParent: true,
-                            relevance: 0
-                        },
-                        // eat spaces (not newlines) so we can find
-                        // types or variables
-                        {
-                            begin: /(?=[^\n])\s/,
-                            relevance: 0
-                        }
-                    ]
-                }
-            ]
-        }
-    );
     const COMMENT = {
         className: 'comment',
         variants: [
@@ -280,11 +191,7 @@ function javascript(hljs) {
     const SUBST_INTERNALS = [
         hljs.APOS_STRING_MODE,
         hljs.QUOTE_STRING_MODE,
-        HTML_TEMPLATE,
-        CSS_TEMPLATE,
-        TEMPLATE_STRING,
         NUMBER,
-        hljs.REGEXP_MODE
     ];
     SUBST.contains = SUBST_INTERNALS
         .concat({
@@ -469,8 +376,8 @@ function javascript(hljs) {
     };
 
     return {
-        name: 'Javascript',
-        aliases: ['js', 'jsx', 'mjs', 'cjs'],
+        name: 'Jacy',
+        aliases: ['jc'],
         keywords: KEYWORDS$1,
         // this will be extended by TypeScript
         exports: { PARAMS_CONTAINS },
@@ -621,4 +528,4 @@ function javascript(hljs) {
     };
 }
 
-module.exports = javascript;
+module.exports = jacy;
