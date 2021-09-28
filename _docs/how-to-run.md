@@ -1,30 +1,23 @@
----
-layout: default
-title: How to run
-nav_order: 5
-# description: 'Maybe... idk why, you wanna run it?'
----
-
 # How to run
 
-CLI tool needs improvements, anyway it works and here's the syntax.
+CLI tool needs improvements, anyway, it works, and here's the syntax.
 
 ```
 ./jc (.exe for windows) [source files] --boolean-argument -key-value-argument=param1, param2, ..., paramN
 ```
 
-There're two kinds of cli arguments:
+There're two kinds of CLI arguments:
 
 * Boolean, that is, just a flag
 * Key-value that receive parameters
 
-Also arguments have constraints:
+Also, arguments have constraints:
 
-* Non-existent arguments, obviously, leads to an error
-* For key-value arguments: count of arguments (may be any count) and allowed parameters (what you able to write after
+* Non-existent arguments leads to an error
+* For key-value arguments: count of arguments (maybe any count) and allowed parameters (what you are able to write after
   `=`)
-* Dependencies. It means that some arguments are not allowed if other argument is not set, e.g. you cannot use
-  `-compile-depth` (it controls how deep will compilation process go by workflow) without setting `--dev` argument.
+* Dependencies. It means that some arguments are not allowed if another argument is not set, e.g. you cannot use
+  `-compile-depth` (it controls how deep will compilation process go by workflow) without setting the `--dev` argument.
 
 Example usage.
 
@@ -77,7 +70,7 @@ Example usage.
 **Explicit Boolean argument value**
 
 What if you want to set bool-arg to `false`? Let's imagine that `--dev` is set by default (it is not anyway). There is
-pretty same syntax for bool-args as for key-value args.
+the pretty same syntax for bool-args as for key-value args.
 
 ```
 --dev=no
