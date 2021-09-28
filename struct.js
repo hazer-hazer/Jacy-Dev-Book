@@ -17,9 +17,23 @@ module.exports = {
             order: 6,
             title: 'CLI',
         },
-        'compilation-process': {
+        'compiler-workflow': {
             order: 10,
-            title: 'Compilation Process',
+            title: 'Compiler Workflow',
+            children: {
+                'parsing-stage': {
+                    order: 5,
+                    title: 'Parsing & AST',
+                },
+                'name-res-stage': {
+                    order: 10,
+                    title: 'Name Resolution',
+                },
+                'type-system': {
+                    order: 50,
+                    title: 'Type System',
+                },
+            },
         },
         'code-docs': {
             order: 30,
