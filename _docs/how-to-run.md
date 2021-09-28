@@ -49,20 +49,29 @@ Example usage.
   * `info` - (Default)
   * `warn` - (Don't confuse with warnings in the context of suggestions)
   * `error`
-* `-lexer-log-level` - (1 parameter) - Lexer log level
+* `--lexer-log-level` - (1 parameter) - Lexer log level
   * (Same parameters as in `-log-level`)
-* `-parser-log-level` - (1 parameter) - Parser log level
+* `--parser-log-level` - (1 parameter) - Parser log level
   * (Same parameters as in `-log-level`)
-* `-name-resolver-log-level` - (1 parameter) - NameResolver log level
+* `--name-resolver-log-level` - (1 parameter) - NameResolver log level
   * (Same parameters as in `-log-level`)
-* `-compile-depth` - (1 parameter, depends on `dev`) - controls how deep will compilation process go by workflow (each
+* `--compile-depth` - (1 parameter, depends on `dev`) - controls how deep will compilation process go by workflow (each
   next argument implicitly includes all previous arguments):
   * `parser` - stops after parsing files
   * `name-resolution` - stops after name resolution
-* `-benchmark` - (1 parameter) - controls benchmarks printing kind
-  * `final` - only one benchmark for the whole compilation process
-  * `each-stage` - benches each stage of the compilation process
-* `-parser-extra-debug` (depends on `dev`) - enables additional debug logs in parser
+* `--dev-stages` - (multiple parameters) - Enables dev-mode for specific stages, includes logs and additional info.
+  * `lexer` - Lexing stage
+  * `parser` - Parser stage
+  * `name-res` - Name resolution stage (includes "module tree building", "importation" and "name resolution")
+  * `lowering` - Lowering stage
+* `--dev-log` - Enables development logs for specific objects and storages.
+  * `lexer` - Enable dev logs for `Lexer`
+  * `parser` - Enable dev logs for `Parser`
+  * `mod-tree-builder` - Enable dev logs for `ModuleTreeBuilder`
+  * `importer` - Enable dev logs for `Importer`
+  * `name-resolver` - Enable dev logs for `NameResolver`
+  * `lowering` - Enable dev logs for `Lowering`
+* `--parser-extra-debug` (depends on `dev`) - enables additional debug logs in parser
   * `no` - (default) - No extra debug info
   * `entries` - Prints what syntax units parser enters and leave
   * `all` - Prints `entries` and also special much info about skipping, etc.
