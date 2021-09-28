@@ -108,7 +108,7 @@ class Generator {
     }
 
     async _processDir(dirPath, struct, {navOrder, parentTitle = null, grandParentTitle = null, isRootDir}) {
-        const entities = fs.readdirSync(dirPath)
+        let entities = fs.readdirSync(dirPath)
         entities.sort((lhs, rhs) => lhs.toLowerCase().localeCompare(rhs.toLowerCase()))
 
         const dirName = path.basename(dirPath)
@@ -116,20 +116,28 @@ class Generator {
 
         const children = []
 
-        const childrenCount = entities.filter(en => en.endsWith('.md') && path.basename(en, '.md') !== 'index').length
+        if (!isRootDir) {
+            const childrenCount = entities.find(en => en.endsWith('.md') && path.basename(en, '.md') !== 'index').length
+            
 
-        const indexSettings = {
-            title,
-            parentTitle,
-            grandParentTitle,
-            isIndex: true,
-            navOrder,
-            hasChildren: !isRootDir && childrenCount > 1,
-        }
+            const indexSettings = {
+                title,
+                parentTitle,
+                grandParentTitle,
+                isIndex: true,
+                navOrder,
+                hasChildren: !isRootDir && childrenCount > 1,
+            }
 
-        const indexFile = entities.filter(en => path.basename(en, '.md') === 'index')[0]
-        if (indexFile) {
-            children.push(await this._processFile(path.join(dirPath, indexFile), struct, indexSettings))
+            const indexFileI = entities.filter(en => path.basename(en, '.md') === 'index')
+            const indexFile = entities[indexFileI]
+            if (indexFile) {
+                children.push(await this._processFile(path.join(dirPath, indexFile), struct, indexSettings))
+            }
+
+            entities.splice(indexFileI, 1)
+
+            console.log('cleared entities', entities);
         }
 
         const commonChildSettings = {
@@ -137,15 +145,9 @@ class Generator {
             grandParentTitle: parentTitle,
         }
 
-        console.log('child settings', grandParentTitle);
-
         let index = 100
 
         for (const subPath of entities) {
-            if (path.basename(subPath, '.md') === 'index') {
-                continue
-            }
-
             const childPath = path.join(dirPath, subPath)
             const childIsDir = fs.lstatSync(childPath).isDirectory()
             const childFilename = path.basename(subPath, '.md')
