@@ -1,5 +1,7 @@
 const hljs = require('highlight.js/lib/core')
-const jacyLang = require('highlight.js/lib/languages/rust')
+const jacyLang = require('./jacy-lang')
+hljs.registerLanguage('jc', jacyLang);
+
 const crypto = require('crypto')
 
 const md5 = str => crypto.createHash('md5').update(str).digest('hex')
@@ -43,6 +45,20 @@ const addCustomElements = src => {
     })
 }
 
+const addLineNumbers = src => {
+    
+}
+
+const highlightJcCode = src => {
+    return src.replace(/```jc([\s\S]*?)```/g, (match, code) => {
+        return `
+        <pre class="code">
+            ${hljs.highlight(code, {language: 'jc'}).value}
+        </pre>
+        `.trim()
+    })
+}
+
 const tmpl = {
     earlyTmpl({
         src,
@@ -58,8 +74,10 @@ const tmpl = {
         if (src.startsWith('---')) {
             src = src.slice(src.indexOf('---', 3) + 3).trim()
         }
+        
+        src = highlightJcCode(src)
 
-        src = addCustomElements(src.replace(/```jc/g, '```rust'))
+        src = addCustomElements(src)
 
         return `
 ---

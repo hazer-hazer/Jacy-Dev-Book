@@ -5,9 +5,9 @@ const {
     DIST_PATH,
     INDEX_FILENAME,
     APPENDICES,
-} = require('./config')
-const STRUCT = require('./struct')
-const {earlyTmpl, addNavButtons} = require('./file-tmpl')
+} = require('./src/config')
+const STRUCT = require('./src/struct')
+const {earlyTmpl, addNavButtons} = require('./src/file-tmpl')
 
 const capitalize = str => str[0].toUpperCase() + str.slice(1)
 
