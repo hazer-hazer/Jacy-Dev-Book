@@ -341,7 +341,7 @@ div.side-bar {
     font-size: 14px;
     font-family: 'JetBrains Mono', monospace;
 
-    $line-height: 20px;
+    $line-height: 22px;
 
     grid-template-columns: max-content auto;
     grid-template-rows: $line-height;
@@ -353,16 +353,16 @@ div.side-bar {
 
     .line-num {
         text-align: right;
-        box-shadow: 1px 0 #ddd;
+        box-shadow: inset -1px 0 #ccc;
         vertical-align: top;
         padding: 0 10px 0 5px;
-        color: #555;
+        color: #aaa;
     }
 
     .line {
         text-align: left;
         white-space: pre;
-        padding-left: 10px;
+        padding-left: 2px;
     }
 
     // .line-num:before {
