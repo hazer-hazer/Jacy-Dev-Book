@@ -126,7 +126,7 @@ class Generator {
                 grandParentTitle,
                 isIndex: true,
                 navOrder,
-                hasChildren: childrenCount > 1,
+                hasChildren: childrenCount > 0,
             }
 
             const indexFileI = entities.indexOf('index.md')
