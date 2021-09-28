@@ -77,14 +77,6 @@ code {
     background: lighten(#f03e3e, 3%);
 }
 
-div.highlighter-rouge,
-.rouge-gutter,
-.rouge-code,
-pre,
-pre.lineno {
-    background-color: lighten(#fff1f1, 2%) !important;
-}
-
 pre.lineno {
     width: 100%;
     padding-right: 0.75em !important;
@@ -340,3 +332,30 @@ div.side-bar {
         display: block;
     }
 }
+
+pre.code-fence.highlight-jc {
+    .code-table {
+        border-collapse: collapse;
+
+        td {
+            padding: 0;
+        }
+
+        td.line-num-col {
+            text-align: center;
+            border-right: 1px solid #aaa;
+            vertical-align: top;
+            padding-right: 5px;
+            color: #555;
+        }
+
+        td.line-col {
+            padding-left: 10px;
+        }
+    }
+
+    .line-num:before {
+        content: attr(data-line-num);
+    }
+}
+

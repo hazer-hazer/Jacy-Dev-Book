@@ -26,7 +26,7 @@ const addLineNumbers = src => {
 module.exports = src => {
     return src.replace(/```jc([\s\S]*?)```/g, (match, code) => {
         return `
-        <pre class="code">
+        <pre class="code-fence highlight-jc">
             ${addLineNumbers(hljs.highlight(code, {language: 'jc'}).value)}
         </pre>
         `.trim()
