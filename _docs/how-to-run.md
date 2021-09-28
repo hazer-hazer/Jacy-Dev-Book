@@ -25,9 +25,9 @@ Example usage.
 ./bin example.jc -print=ast
 ```
 
-**The actual list of arguments**
+**The actual list of options**
 
-**Key-value arguments**
+**Key-value options**
 
 * `-print` - (any count of parameters) - debug argument that allows to print representations of some structures on
   different compilation stages:
@@ -62,12 +62,12 @@ Example usage.
   * `entries` - Prints what syntax units parser enters and leave
   * `all` - Prints `entries` and also special much info about skipping, etc.
 
-**Boolean arguments**
+**Boolean options**
 
-* `--dev` - enables dev mode: all logs will be printed including `dev`-level logs and new logs will be added. Generally
-  just produces more debug info everywhere.
+* `--dev` - enables dev mode: all logs will be printed including `dev`-level logs and new logs will be added. Generally just produces more debug info everywhere.
+* `--dev-full` - (depends on `--dev`) - Enable all development logs and (maybe) some additional info emitting. You still can disable something using specific option, e.g. `--dev-full --dev-print source=no`. `--dev-full` does not enable "extra" options like `--parser-extra-debug`.
 
-**Explicit Boolean argument value**
+**Explicit Boolean option value**
 
 What if you want to set bool-arg to `false`? Let's imagine that `--dev` is set by default (it is not anyway). There is
 the pretty same syntax for bool-args as for key-value args.
