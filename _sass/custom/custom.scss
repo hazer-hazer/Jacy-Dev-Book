@@ -341,8 +341,15 @@ div.side-bar {
     font-size: 16px;
     font-family: 'JetBrains Mono', monospace;
 
+    $line-height: 18px;
+
     grid-template-columns: max-content auto;
-    grid-template-rows: 18px;
+    grid-template-rows: $line-height;
+
+    .line-num, .line {
+        line-height: $line-height;
+        vertical-align: middle;
+    }
 
     .line-num {
         text-align: right;
@@ -353,6 +360,7 @@ div.side-bar {
     }
 
     .line {
+        text-align: left;
         white-space: pre;
         padding-left: 10px;
     }
