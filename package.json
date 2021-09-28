@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/hazer-hazer/Jacy-Dev-Book/issues"
   },
-  "homepage": "https://github.com/hazer-hazer/Jacy-Dev-Book#readme"
+  "homepage": "https://github.com/hazer-hazer/Jacy-Dev-Book#readme",
+  "dependencies": {
+    "highlight.js": "^11.2.0"
+  }
 }

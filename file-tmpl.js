@@ -1,3 +1,5 @@
+const hljs = require('highlight.js/lib/core')
+const jacyLang = require('highlight.js/lib/languages/javascript')
 const crypto = require('crypto')
 
 const md5 = str => crypto.createHash('md5').update(str).digest('hex')
@@ -49,6 +51,7 @@ const tmpl = {
         navOrder,
         parent,
         hasChildren,
+        grandParent,
     }) {
         // Remove front matter if file has
         src = src.trim()
@@ -65,6 +68,7 @@ title: '${title}'
 ${navOrder ? `nav_order: ${navOrder}` : '# No nav_order'}
 ${parent ? `parent: '${parent}'` : '# No parent'}
 ${hasChildren ? 'has_children: true' : '# No children'}
+${grandParent ? `grand_parent: '${grandParent}'` : '# No grandparent'}
 ---
 
 ${src}
