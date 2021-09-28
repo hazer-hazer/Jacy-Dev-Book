@@ -355,7 +355,7 @@ div.side-bar {
     .line:hover,
     .line-num:hover + .line,
     .line-num:hover,
-    .line ~ .line:hover {
+    .line:hover ~ .line-num {
         background: #8A91991A;
     }
 
