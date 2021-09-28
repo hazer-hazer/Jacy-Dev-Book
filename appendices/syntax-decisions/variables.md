@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'Variables'
-nav_order: 105
+nav_order: 104
 parent: 'Syntax Decisions'
 # No children
+grand_parent: 'Appendices'
 ---
 
 # Variables

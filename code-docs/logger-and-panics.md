@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'Logger and panics'
-nav_order: 105
+nav_order: 104
 parent: 'Code docs'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # Logger & Panics

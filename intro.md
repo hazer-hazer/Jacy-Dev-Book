@@ -2,8 +2,9 @@
 layout: 'default'
 title: 'Introduction'
 nav_order: 2
-# No parent
+parent: 'Table of contents'
 # No children
+# No grandparent
 ---
 
 # Intro
@@ -13,7 +14,7 @@ will explain why I've chosen certain solutions and not how to work with them. So
 meticulous, but I want to cover even the simplest aspects of PL.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/index.html">< Table of contents</a>
+    <a class="link" href="/Jacy-Dev-Book/ideas">< Ideas [α RFCs]</a>
 </button>
 
     <button class="nav-btn right">

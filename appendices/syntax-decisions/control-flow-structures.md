@@ -4,6 +4,7 @@ title: 'Control flow structures'
 nav_order: 101
 parent: 'Syntax Decisions'
 # No children
+grand_parent: 'Appendices'
 ---
 
 # Control-Flow structures
@@ -163,7 +164,7 @@ for x in &vec {
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/appendices/syntax-decisions/index.html">Syntax Decisions ></a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/syntax-decisions/lambdas.html">Lambdas ></a>
 </button>
 
 </div>

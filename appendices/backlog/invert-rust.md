@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'Invert rust'
-nav_order: 102
+nav_order: 101
 parent: 'Backlog'
 # No children
+grand_parent: 'Appendices'
 ---
 
 # Invert Rust for usability

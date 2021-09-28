@@ -3,7 +3,8 @@ layout: 'default'
 title: 'Type System'
 nav_order: 50
 parent: 'Compiler Workflow'
-has_children: true
+# No children
+grand_parent: 'Table of contents'
 ---
 
 # Type System

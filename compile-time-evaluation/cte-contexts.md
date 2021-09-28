@@ -4,6 +4,7 @@ title: 'Cte contexts'
 nav_order: 101
 parent: 'Compile time evaluation'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # CTE Contexts

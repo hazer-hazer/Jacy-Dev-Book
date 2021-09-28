@@ -4,6 +4,7 @@ title: 'Assignment'
 nav_order: 100
 parent: 'Particles [β RFCs]'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # Assignment
@@ -15,7 +16,10 @@ The reasons why overloading is not allowed are:
 2. Overloading of assignment brings bunch of implicitness that is not appreciated in _Jacy_
 3. It complicates the logic for devs as for target users.
 <div class="nav-btn-block">
-    
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/particles/index.html">< Particles [β RFCs]</a>
+</button>
+
     <button class="nav-btn right">
     <a class="link" href="/Jacy-Dev-Book/particles/computed-properties.html">Computed properties ></a>
 </button>

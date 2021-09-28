@@ -4,6 +4,7 @@ title: 'Const keyword'
 nav_order: 100
 parent: 'Compile time evaluation'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # `const` keyword
@@ -36,7 +37,10 @@ func main() {
 }
 ```
 <div class="nav-btn-block">
-    
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/index.html">< Compile time evaluation</a>
+</button>
+
     <button class="nav-btn right">
     <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/cte-contexts.html">Cte contexts ></a>
 </button>

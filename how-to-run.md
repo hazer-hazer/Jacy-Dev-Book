@@ -2,8 +2,9 @@
 layout: 'default'
 title: 'How To Run'
 nav_order: 5
-# No parent
+parent: 'Table of contents'
 # No children
+# No grandparent
 ---
 
 # How to run

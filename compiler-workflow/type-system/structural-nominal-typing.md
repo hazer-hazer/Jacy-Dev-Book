@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'Structural nominal typing'
-nav_order: 101
+nav_order: 100
 parent: 'Type System'
 # No children
+grand_parent: 'Compiler Workflow'
 ---
 
 # Structural/Nominal typing

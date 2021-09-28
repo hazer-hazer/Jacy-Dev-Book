@@ -2,8 +2,9 @@
 layout: 'default'
 title: 'Compiler Workflow'
 nav_order: 10
-# No parent
-has_children: true
+parent: 'Table of contents'
+# No children
+# No grandparent
 ---
 
 # compilation-process

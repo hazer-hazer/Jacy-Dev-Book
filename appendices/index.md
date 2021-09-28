@@ -2,18 +2,16 @@
 layout: 'default'
 title: 'Appendices'
 nav_order: 100
-# No parent
+parent: 'Table of contents'
 has_children: true
+# No grandparent
 ---
 
 
 <div class="nav-btn-block">
-    <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/appendices/checklist.html">< Checklist</a>
-</button>
-
+    
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/appendices/jon-files">JON Files ></a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/attributes.html">Attributes ></a>
 </button>
 
 </div>

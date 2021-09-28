@@ -4,6 +4,7 @@ title: 'Function type & names'
 nav_order: 104
 parent: 'Particles [β RFCs]'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # Function types & names
@@ -102,7 +103,7 @@ Anyway, parameter names in function types are allowed, but they just markers for
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/index.html">Particles [β RFCs] ></a>
+    <a class="link" href="/Jacy-Dev-Book/particles/memory-leaks.html">Memory leaks ></a>
 </button>
 
 </div>

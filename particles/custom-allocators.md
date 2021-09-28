@@ -4,6 +4,7 @@ title: 'Custom allocators'
 nav_order: 102
 parent: 'Particles [β RFCs]'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # Custom Allocators

@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'Std annotations'
-nav_order: 112
+nav_order: 111
 parent: 'Particles [β RFCs]'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # `std` annotations

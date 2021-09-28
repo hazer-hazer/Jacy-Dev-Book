@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'Ops and puncts'
-nav_order: 106
+nav_order: 105
 parent: 'Appendices'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # Operators and punctuations

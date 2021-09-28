@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'Taxonomy & glossary'
-nav_order: 109
+nav_order: 108
 parent: 'Appendices'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 ## Taxonomy and glossary

@@ -4,6 +4,7 @@ title: 'Cte expressions'
 nav_order: 102
 parent: 'Compile time evaluation'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # CTE Expressions

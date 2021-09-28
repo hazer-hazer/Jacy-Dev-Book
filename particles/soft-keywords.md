@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'Soft keywords'
-nav_order: 111
+nav_order: 110
 parent: 'Particles [β RFCs]'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # Soft keywords

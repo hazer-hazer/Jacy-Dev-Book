@@ -4,6 +4,7 @@ title: 'Config and cli'
 nav_order: 100
 parent: 'Code docs'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # Config & CLI
@@ -40,7 +41,10 @@ is we set the option in `Config`.
 It is important to note that all default values for options inside `Config` must be set in place, that is, inited like
 `PrintKind printKind{PrintKind::None}`.
 <div class="nav-btn-block">
-    
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/code-docs/index.html">< Code docs</a>
+</button>
+
     <button class="nav-btn right">
     <a class="link" href="/Jacy-Dev-Book/code-docs/dev-conventions.html">Dev conventions ></a>
 </button>

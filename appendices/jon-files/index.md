@@ -3,7 +3,8 @@ layout: 'default'
 title: 'JON Files'
 nav_order: 40
 parent: 'Appendices'
-has_children: true
+# No children
+grand_parent: 'Table of contents'
 ---
 
 # JON files

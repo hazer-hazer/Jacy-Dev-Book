@@ -4,6 +4,7 @@ title: 'Dev conventions'
 nav_order: 101
 parent: 'Code docs'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # Dev Conventions
@@ -17,7 +18,7 @@ means that there's a preferred way to do something but it is either optional eit
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/code-docs/index.html">Code docs ></a>
+    <a class="link" href="/Jacy-Dev-Book/code-docs/interface.html">Interface ></a>
 </button>
 
 </div>

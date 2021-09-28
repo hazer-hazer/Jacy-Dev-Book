@@ -4,6 +4,7 @@ title: 'Cte functions'
 nav_order: 103
 parent: 'Compile time evaluation'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # CTE Functions
@@ -67,8 +68,5 @@ compiler will check function for constness and tell you if it's not.
     <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/cte-expressions.html">< Cte expressions</a>
 </button>
 
-    <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/index.html">Compile time evaluation ></a>
-</button>
-
+    
 </div>

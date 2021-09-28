@@ -4,6 +4,7 @@ title: 'Dev mode'
 nav_order: 100
 parent: 'CLI'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # Dev Mode
@@ -35,9 +36,9 @@ And then, if I want to see logs for {ANOTHER_STAGE} stage, I would pass `--dev-l
 - `--dev-log={STAGE}` - single value - Enable dev-logs for specific stage `{STAGE}`.
 - `--dev-full` - boolean - Enable all `dev` options for all stages.
 <div class="nav-btn-block">
-    
-    <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/cli/index.html">CLI ></a>
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/cli/index.html">< CLI</a>
 </button>
 
+    
 </div>

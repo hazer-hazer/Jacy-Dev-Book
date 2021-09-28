@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'Strings'
-nav_order: 113
+nav_order: 112
 parent: 'Particles [β RFCs]'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # Strings

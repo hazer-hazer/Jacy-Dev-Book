@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'Intro'
-nav_order: 101
+nav_order: 100
 parent: 'Specification [WIP]'
 # No children
+grand_parent: 'Appendices'
 ---
 
 # Intro

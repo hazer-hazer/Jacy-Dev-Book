@@ -3,7 +3,8 @@ layout: 'default'
 title: 'Parsing & AST'
 nav_order: 5
 parent: 'Compiler Workflow'
-has_children: true
+# No children
+grand_parent: 'Table of contents'
 ---
 
 # Parsing & AST

@@ -3,7 +3,8 @@ layout: 'default'
 title: 'Appendices'
 nav_order: 10
 parent: 'Appendices'
-has_children: true
+# No children
+grand_parent: 'Table of contents'
 ---
 
 

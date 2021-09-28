@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'Not prepedent op'
-nav_order: 107
+nav_order: 106
 parent: 'Particles [β RFCs]'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # `not` prependent operator

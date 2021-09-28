@@ -4,6 +4,7 @@ title: 'Name Resolution'
 nav_order: 6
 parent: 'Names & Imports'
 # No children
+grand_parent: 'Compiler Workflow'
 ---
 
 # Name resolution

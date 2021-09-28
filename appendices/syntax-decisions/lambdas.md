@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'Lambdas'
-nav_order: 103
+nav_order: 102
 parent: 'Syntax Decisions'
 # No children
+grand_parent: 'Appendices'
 ---
 
 # Lambdas syntax
@@ -69,7 +70,7 @@ Also, this syntax allows simplifications:
 - We can allow `IDENT -> expr` as a shortcut for `BorrowPattern(IDENT) -> expr`
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/appendices/syntax-decisions/index.html">< Syntax Decisions</a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/syntax-decisions/control-flow-structures.html">< Control flow structures</a>
 </button>
 
     <button class="nav-btn right">

@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'Refs & moves'
-nav_order: 110
+nav_order: 109
 parent: 'Particles [β RFCs]'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # References and move semantics

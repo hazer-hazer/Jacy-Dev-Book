@@ -4,6 +4,7 @@ title: 'Checklist'
 nav_order: 103
 parent: 'Appendices'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # *Jacy* Programming language [checklist](https://www.mcmillen.dev/language_checklist.html)
@@ -117,7 +118,7 @@ In conclusion, this is what I think of you:
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/appendices/index.html">Appendices ></a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/jon-files">JON Files ></a>
 </button>
 
 </div>

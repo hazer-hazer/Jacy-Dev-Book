@@ -4,6 +4,7 @@ title: 'Custom operators'
 nav_order: 103
 parent: 'Particles [β RFCs]'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # Custom Operators

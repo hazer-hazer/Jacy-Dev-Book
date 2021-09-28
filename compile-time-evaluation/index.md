@@ -2,8 +2,9 @@
 layout: 'default'
 title: 'Compile time evaluation'
 nav_order: 103
-# No parent
+parent: 'Table of contents'
 has_children: true
+# No grandparent
 ---
 
 # Compile-Time Evaluation
@@ -19,9 +20,9 @@ There are some terms we need to establish:
 * CTE functions
 * CTE expressions
 <div class="nav-btn-block">
-    <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/cte-functions.html">< Cte functions</a>
+    
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/const-keyword.html">Const keyword ></a>
 </button>
 
-    
 </div>

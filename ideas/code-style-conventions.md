@@ -4,6 +4,7 @@ title: 'Code style conventions'
 nav_order: 100
 parent: 'Ideas [α RFCs]'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # Code Style Conventions
@@ -99,7 +100,10 @@ is specific? Here's the table of common cases:
 
 `mod` MUST BE named in __snake_case__: `std`, `my_lib`, `some_module`
 <div class="nav-btn-block">
-    
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/ideas/index.html">< Ideas [α RFCs]</a>
+</button>
+
     <button class="nav-btn right">
     <a class="link" href="/Jacy-Dev-Book/ideas/extended-tools">Extensions & External tools ></a>
 </button>

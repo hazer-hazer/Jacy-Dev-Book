@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'Name resolution cheatsheet'
-nav_order: 101
+nav_order: 100
 parent: 'Appendices'
 # No children
+grand_parent: 'Appendices'
 ---
 
 # Name Resolution Cheatsheet

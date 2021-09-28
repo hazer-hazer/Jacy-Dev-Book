@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'Interface'
-nav_order: 103
+nav_order: 102
 parent: 'Code docs'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # Interface
@@ -15,7 +16,7 @@ but not in stage classes, it's kinda bad but...
 compiler state, etc.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/code-docs/index.html">< Code docs</a>
+    <a class="link" href="/Jacy-Dev-Book/code-docs/dev-conventions.html">< Dev conventions</a>
 </button>
 
     <button class="nav-btn right">

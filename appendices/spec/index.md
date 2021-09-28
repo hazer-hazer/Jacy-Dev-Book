@@ -3,7 +3,8 @@ layout: 'default'
 title: 'Specification [WIP]'
 nav_order: 50
 parent: 'Appendices'
-has_children: true
+# No children
+grand_parent: 'Table of contents'
 ---
 
 # Spec

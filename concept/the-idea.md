@@ -1,9 +1,10 @@
 ---
 layout: 'default'
 title: 'The idea'
-nav_order: 102
+nav_order: 101
 parent: 'Concept'
 # No children
+grand_parent: 'Table of contents'
 ---
 
 # The Idea
@@ -40,7 +41,7 @@ Also, I want to describe some kind of Zen, I need a list of common values that _
 5. If we can help a user with avoiding mistakes -- we help him.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/concept/index.html">< Concept</a>
+    <a class="link" href="/Jacy-Dev-Book/concept/goal.html">< Goal</a>
 </button>
 
     

@@ -2,8 +2,9 @@
 layout: 'default'
 title: 'Lincy [Linter]'
 nav_order: 46
-# No parent
-has_children: true
+parent: 'Table of contents'
+# No children
+# No grandparent
 ---
 
 # _Lincy_

@@ -4,6 +4,7 @@ title: 'Hir'
 nav_order: 100
 parent: 'Lowering & HIR'
 # No children
+grand_parent: 'Compiler Workflow'
 ---
 
 # HIR
@@ -20,9 +21,9 @@ something". That is, `for` loop iterates over data until there're some data, sam
 
 By doing so, we reduce a large amount of AST nodes to some more common structures.
 <div class="nav-btn-block">
-    
-    <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/lowering/index.html">Lowering & HIR ></a>
+    <button class="nav-btn left">
+    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/lowering/index.html">< Lowering & HIR</a>
 </button>
 
+    
 </div>

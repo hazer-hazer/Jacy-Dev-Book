@@ -4,6 +4,7 @@ title: 'Module Tree Building'
 nav_order: 2
 parent: 'Names & Imports'
 # No children
+grand_parent: 'Compiler Workflow'
 ---
 
 # Module-Tree building
@@ -56,7 +57,7 @@ process it as a relative path, e.g. if we are inside `mod a` which contains `mod
 with `::` prefix, in this case, we'll resolve it starting from the root module but not from the current.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/index.html">< Names & Imports</a>
+    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/importation-&-module-system.html">< Imports & Module System</a>
 </button>
 
     <button class="nav-btn right">
