@@ -1,7 +1,5 @@
 # How to run
 
-CLI tool needs improvements, anyway, it works, and here's the syntax.
-
 ```
 ./jc (.exe for windows) [source files] --boolean-argument -key-value-argument=param1, param2, ..., paramN
 ```
