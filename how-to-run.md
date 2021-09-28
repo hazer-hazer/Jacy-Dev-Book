@@ -1,7 +1,7 @@
 ---
 layout: 'default'
-title: 'How to run'
-nav_order: 110
+title: 'How To Run'
+nav_order: 1
 # No parent
 # No children
 ---

@@ -135,7 +135,7 @@ func main {
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/how-to-run.html">How to run ></a>
+    <a class="link" href="/Jacy-Dev-Book/how-to-run.html">How To Run ></a>
 </button>
 
 </div>
