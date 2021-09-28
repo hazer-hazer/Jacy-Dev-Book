@@ -103,12 +103,4 @@ There's a bunch of allowed bool values:
 | 1 | 0 |
 | on | off |
 
-Also, they're case insensitive (alpha-values of course):
-
-| (Truthy) | (Falsy) |
-| :--- | :--- |
-| Yes | No |
-| Y | N |
-| True | False |
-| On | Off |
-
+_This values are case insensitive, so you are able to write `Y` or `tRue` or `False`, etc._.
