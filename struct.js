@@ -29,19 +29,24 @@ module.exports = {
             order: 45,
             title: 'User Guide',
         },
-        'lincy': {
+        lincy: {
             order: 46,
             title: 'Lincy [Linter]',
         },
-        'ideas': {
+        ideas: {
             order: 50,
-            title: 'Ideas',
+            title: 'Ideas [α RFCs]',
             children: {
                 'extended-tools': {
                     order: 10,
                     title: 'Extensions & External tools',
                 },
             },
+        },
+        particles: {
+            order: 60,
+            title: 'Particles [β RFCs]',
+            children: {},
         },
         appendices: {
             order: 100,
