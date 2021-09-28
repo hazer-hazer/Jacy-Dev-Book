@@ -1,3 +1,5 @@
+@import './color-schemes/ayu.scss';
+
 .site-logo {
     background-position: center;
 }
@@ -25,7 +27,7 @@ body {
 
     &::-webkit-scrollbar-thumb {
         background: darken(#fff0f0, 1%);
-        transition: .25s ease;
+        transition: 0.25s ease;
     }
 
     &::-webkit-scrollbar-thumb:hover {
@@ -43,7 +45,7 @@ body {
 .nav-list .nav-list-item .nav-list-link,
 .nav-list .nav-list-item .nav-list-expander,
 .site-button {
-    transition: .25s;
+    transition: 0.25s;
     background-image: none;
     font-size: 15px;
     border-radius: 7px 0 0 7px;
@@ -64,7 +66,6 @@ body {
     border-radius: 2px;
     font-size: 18px;
 }
-
 
 code {
     background: transparent !important;
@@ -95,14 +96,13 @@ td.rouge-gutter.gl {
     padding: none !important;
 }
 
-
 a:not(.anchor-heading, .nav-list-link, .nav-list-expander, .site-title, .site-button, .link) {
     background-image: none !important;
     color: #f03e3e;
 
     box-shadow: 0 1px #ddd;
 
-    transition: box-shadow .15s ease;
+    transition: box-shadow 0.15s ease;
 
     &:hover {
         box-shadow: 0 1px #f03e3e;
@@ -128,7 +128,7 @@ blockquote {
 .anchor-heading svg {
     visibility: visible;
     opacity: 0;
-    transition: .15s ease;
+    transition: 0.15s ease;
 }
 
 h4:hover .anchor-heading svg {
@@ -232,7 +232,7 @@ div.side-bar {
     border-radius: 10px;
     box-shadow: 0 2px 5px -1px #ddd;
     background: #fff;
-    transition: .25s ease;
+    transition: 0.25s ease;
     border: none;
     cursor: pointer;
     font-size: 18px;
@@ -269,7 +269,7 @@ div.side-bar {
         background: #fff;
         border: none;
 
-        transition: .2s ease;
+        transition: 0.2s ease;
 
         .link {
             padding: 5px 10px;
@@ -307,7 +307,7 @@ div.side-bar {
         text-align: left;
         background: #fff;
         border-radius: 5px;
-        transition: .15s ease;
+        transition: 0.15s ease;
         font-size: 16px;
         cursor: pointer;
         box-shadow: 0 0 0 1px #f0f0f0;
@@ -358,4 +358,3 @@ pre.code-fence.highlight-jc {
         content: attr(data-line-num);
     }
 }
-
