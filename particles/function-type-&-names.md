@@ -31,14 +31,14 @@ To disallow passing argument as named we need to place `_` instead of a label, t
 Swift by default requires a parameter label, and what if we invert this logic?
 For example:
 <div class="code-fence highlight-jc hljs">
-            <div class="line"><div class="line-num" data-line-num="1">1</div><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(label! paramName: Type)</div></div>
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(label! paramName: Type)</div>
         </div>
 
 Here, we annotate `label` with `!` to say that the user must pass a parameter with a label, otherwise, it would be an error.
 
 The shortcut variant would look like that:
 <div class="code-fence highlight-jc hljs">
-            <div class="line"><div class="line-num" data-line-num="1">1</div><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(paramName!: Type)</div></div>
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(paramName!: Type)</div>
         </div>
 
 Here, the parameter name is `paramName` and the label is `paramName` too, also it is required.
@@ -65,7 +65,7 @@ Anyway, there're some cons from the view of additional complexity in the compile
 ##### #1. Ambiguous invocation
 
 <div class="code-fence highlight-jc hljs">
-            <div class="line"><div class="line-num" data-line-num="1">1</div><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>(with: <span class="hljs-type">int</span>);</div></div><div class="line"><div class="line-num" data-line-num="2">2</div><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>(from: <span class="hljs-type">int</span>);</div></div><div class="line"><div class="line-num" data-line-num="3">3</div><div class="line-content"></div></div><div class="line"><div class="line-num" data-line-num="4">4</div><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div></div><div class="line"><div class="line-num" data-line-num="5">5</div><div class="line-content">    <span class="hljs-comment">// Error: Call to `doSmth` is ambiguous -- add argument label `with` or `from`</span></div></div><div class="line"><div class="line-num" data-line-num="6">6</div><div class="line-content">    <span class="hljs-title function_ invoke__">doSmth</span>(<span class="hljs-number">123</span>);</div></div><div class="line"><div class="line-num" data-line-num="7">7</div><div class="line-content">}</div></div>
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>(with: <span class="hljs-type">int</span>);</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>(from: <span class="hljs-type">int</span>);</div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="5">5</div><div class="line">    <span class="hljs-comment">// Error: Call to `doSmth` is ambiguous -- add argument label `with` or `from`</span></div><div class="line-num" data-line-num="6">6</div><div class="line">    <span class="hljs-title function_ invoke__">doSmth</span>(<span class="hljs-number">123</span>);</div><div class="line-num" data-line-num="7">7</div><div class="line">}</div>
         </div>
 
 The solution to disambiguate this case is the same as in Swift.
@@ -78,7 +78,7 @@ Anyway, to disambiguate the case present above we need some mechanism to say tha
 
 So, it looks such as:
 <div class="code-fence highlight-jc hljs">
-            <div class="line"><div class="line-num" data-line-num="1">1</div><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>(with: <span class="hljs-type">int</span>);</div></div><div class="line"><div class="line-num" data-line-num="2">2</div><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>(from: <span class="hljs-type">int</span>);</div></div><div class="line"><div class="line-num" data-line-num="3">3</div><div class="line-content"></div></div><div class="line"><div class="line-num" data-line-num="4">4</div><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div></div><div class="line"><div class="line-num" data-line-num="5">5</div><div class="line-content">    <span class="hljs-comment">// Error: Call to `doSmth` is ambiguous -- add argument label `with` or `from`</span></div></div><div class="line"><div class="line-num" data-line-num="6">6</div><div class="line-content">    <span class="hljs-title function_ invoke__">doSmth</span>(with:)(<span class="hljs-number">123</span>);</div></div><div class="line"><div class="line-num" data-line-num="7">7</div><div class="line-content">}</div></div>
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>(with: <span class="hljs-type">int</span>);</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>(from: <span class="hljs-type">int</span>);</div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="5">5</div><div class="line">    <span class="hljs-comment">// Error: Call to `doSmth` is ambiguous -- add argument label `with` or `from`</span></div><div class="line-num" data-line-num="6">6</div><div class="line">    <span class="hljs-title function_ invoke__">doSmth</span>(with:)(<span class="hljs-number">123</span>);</div><div class="line-num" data-line-num="7">7</div><div class="line">}</div>
         </div>
 
 I need to note that type of `doSmth(with:)` is not `(with: int) -> ()`, just a `(int) -> ()`. 
