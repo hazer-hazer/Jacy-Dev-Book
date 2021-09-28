@@ -86,6 +86,8 @@ class Generator {
             return null
         }
 
+        console.log('process file', filePath, ':', grandParentTitle, ggpTitle, parentNavOrder);
+
         const filename = path.basename(filePath, '.md')
 
         let title = struct.title || nameFromFilename(filename)
