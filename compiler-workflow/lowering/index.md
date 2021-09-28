@@ -6,7 +6,9 @@ parent: 'Compiler Workflow'
 has_children: true
 ---
 
-# Lowering Stage
+# Lowering & HIR
+
+In this chapter, we're going to look at the lowering stage, where AST is lowered, i.e. simplified, to HIR (High-level Intermediate Representation).
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/compiler-workflow/lowering/hir.html">< Hir</a>
