@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'User Guide'
 nav_order: 45
-parent: 'Table of contents'
+# No parent
 # No children
 # No grandparent
 ---

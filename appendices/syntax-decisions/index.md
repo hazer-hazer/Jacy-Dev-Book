@@ -4,7 +4,7 @@ title: 'Syntax Decisions'
 nav_order: 50
 parent: 'Appendices'
 has_children: true
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Syntax Decisions

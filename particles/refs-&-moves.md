@@ -4,7 +4,7 @@ title: 'Refs & moves'
 nav_order: 109
 parent: 'Particles [β RFCs]'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # References and move semantics

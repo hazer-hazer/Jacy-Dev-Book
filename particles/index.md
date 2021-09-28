@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Particles [β RFCs]'
 nav_order: 60
-parent: 'Table of contents'
+# No parent
 has_children: true
 # No grandparent
 ---

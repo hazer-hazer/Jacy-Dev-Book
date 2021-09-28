@@ -4,7 +4,7 @@ title: 'Parsing & AST'
 nav_order: 5
 parent: 'Compiler Workflow'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Parsing & AST

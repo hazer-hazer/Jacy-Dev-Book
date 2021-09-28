@@ -4,7 +4,7 @@ title: 'Lowering & HIR'
 nav_order: 15
 parent: 'Compiler Workflow'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Lowering & HIR

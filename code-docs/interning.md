@@ -4,7 +4,7 @@ title: 'Interning'
 nav_order: 103
 parent: 'Code docs'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 

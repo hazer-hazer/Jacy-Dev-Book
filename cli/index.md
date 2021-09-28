@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'CLI'
 nav_order: 6
-parent: 'Table of contents'
+# No parent
 # No children
 # No grandparent
 ---

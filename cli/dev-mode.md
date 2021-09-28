@@ -4,7 +4,7 @@ title: 'Dev mode'
 nav_order: 100
 parent: 'CLI'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Dev Mode

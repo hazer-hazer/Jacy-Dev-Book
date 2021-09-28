@@ -4,7 +4,7 @@ title: 'Strings'
 nav_order: 112
 parent: 'Particles [β RFCs]'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Strings

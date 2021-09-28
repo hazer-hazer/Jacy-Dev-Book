@@ -4,7 +4,7 @@ title: 'Goal'
 nav_order: 100
 parent: 'Concept'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Goal

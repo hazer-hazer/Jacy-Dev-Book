@@ -4,7 +4,7 @@ title: 'JON Files'
 nav_order: 40
 parent: 'Appendices'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # JON files

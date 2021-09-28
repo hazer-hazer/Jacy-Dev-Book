@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Ideas [α RFCs]'
 nav_order: 50
-parent: 'Table of contents'
+# No parent
 has_children: true
 # No grandparent
 ---

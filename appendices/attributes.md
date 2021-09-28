@@ -4,7 +4,7 @@ title: 'Attributes'
 nav_order: 100
 parent: 'Appendices'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Attributes

@@ -4,7 +4,7 @@ title: 'Code style conventions'
 nav_order: 100
 parent: 'Ideas [α RFCs]'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Code Style Conventions

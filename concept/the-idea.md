@@ -4,7 +4,7 @@ title: 'The idea'
 nav_order: 101
 parent: 'Concept'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # The Idea

@@ -4,7 +4,7 @@ title: 'Names & Imports'
 nav_order: 10
 parent: 'Compiler Workflow'
 has_children: true
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Names & Imports

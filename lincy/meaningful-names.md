@@ -4,7 +4,7 @@ title: 'Meaningful names'
 nav_order: 100
 parent: 'Lincy [Linter]'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Meaningful names check

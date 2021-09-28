@@ -4,7 +4,7 @@ title: 'Extensions & External tools'
 nav_order: 10
 parent: 'Ideas [α RFCs]'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Extensions & External tools

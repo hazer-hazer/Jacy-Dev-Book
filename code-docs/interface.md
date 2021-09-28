@@ -4,7 +4,7 @@ title: 'Interface'
 nav_order: 102
 parent: 'Code docs'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Interface

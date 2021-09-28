@@ -4,7 +4,7 @@ title: 'Organic jacy'
 nav_order: 108
 parent: 'Particles [β RFCs]'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Organic _Jacy_

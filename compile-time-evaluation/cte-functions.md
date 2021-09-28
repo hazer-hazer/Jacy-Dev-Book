@@ -4,7 +4,7 @@ title: 'Cte functions'
 nav_order: 103
 parent: 'Compile time evaluation'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # CTE Functions

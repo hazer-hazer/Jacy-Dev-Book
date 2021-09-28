@@ -4,7 +4,7 @@ title: 'Types as first class citizens'
 nav_order: 103
 parent: 'Ideas [α RFCs]'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Types as first-class citizens

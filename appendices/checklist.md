@@ -4,7 +4,7 @@ title: 'Checklist'
 nav_order: 103
 parent: 'Appendices'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # *Jacy* Programming language [checklist](https://www.mcmillen.dev/language_checklist.html)

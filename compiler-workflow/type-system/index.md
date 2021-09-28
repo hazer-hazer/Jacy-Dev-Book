@@ -4,7 +4,7 @@ title: 'Type System'
 nav_order: 50
 parent: 'Compiler Workflow'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Type System

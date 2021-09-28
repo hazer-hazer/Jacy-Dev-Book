@@ -4,7 +4,7 @@ title: 'Logger and panics'
 nav_order: 104
 parent: 'Code docs'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Logger & Panics

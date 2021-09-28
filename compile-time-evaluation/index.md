@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Compile time evaluation'
 nav_order: 103
-parent: 'Table of contents'
+# No parent
 has_children: true
 # No grandparent
 ---

@@ -4,7 +4,7 @@ title: 'Null coalesce'
 nav_order: 107
 parent: 'Particles [β RFCs]'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Null coalesce

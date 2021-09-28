@@ -4,7 +4,7 @@ title: 'Const keyword'
 nav_order: 100
 parent: 'Compile time evaluation'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # `const` keyword

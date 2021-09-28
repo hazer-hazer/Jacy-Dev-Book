@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'How To Run'
 nav_order: 5
-parent: 'Table of contents'
+# No parent
 # No children
 # No grandparent
 ---

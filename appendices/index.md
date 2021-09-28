@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Appendices'
 nav_order: 100
-parent: 'Table of contents'
+# No parent
 has_children: true
 # No grandparent
 ---

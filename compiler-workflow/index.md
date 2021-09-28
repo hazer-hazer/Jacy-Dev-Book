@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Compiler Workflow'
 nav_order: 10
-parent: 'Table of contents'
+# No parent
 # No children
 # No grandparent
 ---

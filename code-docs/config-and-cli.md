@@ -4,7 +4,7 @@ title: 'Config and cli'
 nav_order: 100
 parent: 'Code docs'
 # No children
-grand_parent: 'Table of contents'
+# No grandparent
 ---
 
 # Config & CLI
