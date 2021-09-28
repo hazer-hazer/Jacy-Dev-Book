@@ -135,11 +135,9 @@ Symbols considered punctuations: `(`, `)`, `[`, `]`, `{`, `}`, `,`, `;`, `:`, `<
 ## Intro
 
 Let's begin with the cliché -- "Hello, world" in _Jacy_:
-```rust
-func main {
-    print("Hello, world");
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-title function_ invoke__">print</span>(<span class="hljs-string">&quot;Hello, world&quot;</span>);</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 
 Here you can see:
 - Functions in _Jacy_ are defined with `func` keyword.
@@ -256,11 +254,9 @@ Array type looks like slice type but with size, ascription after `;` - `[T; N]`,
 You can declare a function with `func` keyword followed by its name, parameters, and body (there're also some more particles but we'll review them further).
 
 Let's disassemble a simple function:
-```rust
-func add(a: int, b: int): int {
-    return a + b;
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">add</span>(a: <span class="hljs-type">int</span>, b: <span class="hljs-type">int</span>): <span class="hljs-type">int</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">return</span> a + b;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 
 - `(a: int, b: int)` is a parameter list where `a` and `b` are names of parameters and `int`'s are types for each of them.
 - After the parameter list goes return type, it is annotated with the same punctuation - `:`
@@ -273,43 +269,32 @@ To invoke `add` we need to pass two integers in it -- `add(1, 2)`, this expressi
 _Jacy_ supports labeled arguments, it is a way to call a function without writing arguments in the same order as parameters are declared.
 
 Let's call `add` function from example above with named arguments:
-```rust
-add(a: 6, b: 13); // 19
-add(b: 13, a: 6); // 19. Order does not matter
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-title function_ invoke__">add</span>(a: <span class="hljs-number">6</span>, b: <span class="hljs-number">13</span>); <span class="hljs-comment">// 19</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content"><span class="hljs-title function_ invoke__">add</span>(b: <span class="hljs-number">13</span>, a: <span class="hljs-number">6</span>); <span class="hljs-comment">// 19. Order does not matter</span></div></td></tr></table>
+        </pre>
 
 #### Function overloading
 
 _Jacy_ does not support type function overloading, but you can overload function with different parameter labels.
 
 Example:
-```rust
-func add(intA: int, intB: int): int {
-    return intA + intB;
-}
-
-func add(floatA: f64, floatB: f64): f64 {
-    return floatA + floatB;
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">add</span>(intA: <span class="hljs-type">int</span>, intB: <span class="hljs-type">int</span>): <span class="hljs-type">int</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">return</span> intA + intB;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="4"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="5"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">add</span>(floatA: <span class="hljs-type">f64</span>, floatB: <span class="hljs-type">f64</span>): <span class="hljs-type">f64</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="6"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">return</span> floatA + floatB;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="7"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 
 ### Structures
 
 Structures in _Jacy_ are declared the same way as in Rust:
-```rust
-struct MyStruct {
-    field: i32,
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">MyStruct</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    field: <span class="hljs-type">i32</span>,</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 
 ### Traits
 
 Traits are also similar to Rust:
-```rust
-trait DoesSmth {
-    func doSmth();
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">trait</span> <span class="hljs-title class_">DoesSmth</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>();</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 <div class="nav-btn-block">
     
     

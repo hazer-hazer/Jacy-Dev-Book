@@ -17,97 +17,65 @@ This is a list of features and examples I wish would be possible in *Jacy*.
 
 #### References
 
-```rust
-let a = 123;
-let b = &a; // Borrow `a`
-
-let mut value = 0;
-let bor = &mut value;
-*bor = 1000;
-print(value); // Prints `1000`
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = <span class="hljs-number">123</span>;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">let</span> <span class="hljs-variable">b</span> = &amp;a; <span class="hljs-comment">// Borrow `a`</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="4"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">value</span> = <span class="hljs-number">0</span>;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="5"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">let</span> <span class="hljs-variable">bor</span> = &amp;<span class="hljs-keyword">mut</span> value;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="6"></div></td><td class="line-col"><div class="line-content">*bor = <span class="hljs-number">1000</span>;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="7"></div></td><td class="line-col"><div class="line-content"><span class="hljs-title function_ invoke__">print</span>(value); <span class="hljs-comment">// Prints `1000`</span></div></td></tr></table>
+        </pre>
 
 #### Non-Copy types are passed by reference
 
 #### *Jacy* supports structural sub-typing with tuples
 
-```rust
-let t = ("abcdef", 2.0, 123);
-
-func foo(tup: (str, float, int));
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">let</span> <span class="hljs-variable">t</span> = (<span class="hljs-string">&quot;abcdef&quot;</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">123</span>);</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(tup: (<span class="hljs-type">str</span>, float, <span class="hljs-type">int</span>));</div></td></tr></table>
+        </pre>
 
 ### *Jacy* is functional
 
 #### Pattern matching
 
-```rust
-let a = (1, 2, 3);
-let (f, s, t) = a;
-
-match a {
-    (f, s, t) => // Do something with `f`, `s` and `t`
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">let</span> (f, s, t) = a;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="4"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">match</span> a {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="5"></div></td><td class="line-col"><div class="line-content">    (f, s, t) =&gt; <span class="hljs-comment">// Do something with `f`, `s` and `t`</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="6"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 
 ##### It is possible to ignore non-important fields
 
-```rust
-match a {
-    (f, ...) => // Do something with `f` only
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">match</span> a {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    (f, ...) =&gt; <span class="hljs-comment">// Do something with `f` only</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 
 ##### Matched expression can be borrowed
 
-```rust
-match a {
-    (ref f, ...) => // Do something with `f` as reference to `a.0`
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">match</span> a {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    (<span class="hljs-keyword">ref</span> f, ...) =&gt; <span class="hljs-comment">// Do something with `f` as reference to `a.0`</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 
 ##### Lambdas (closures)
 
-```rust
-let l = x -> x * 2;
-print(l(2)); // 4
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">let</span> <span class="hljs-variable">l</span> = x <span class="hljs-punctuation">-&gt;</span> x * <span class="hljs-number">2</span>;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content"><span class="hljs-title function_ invoke__">print</span>(<span class="hljs-title function_ invoke__">l</span>(<span class="hljs-number">2</span>)); <span class="hljs-comment">// 4</span></div></td></tr></table>
+        </pre>
 
 ##### Pipeline operator
 
-```rust
-2 |> l |> print; // 4
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-number">2</span> |&gt; l |&gt; print; <span class="hljs-comment">// 4</span></div></td></tr></table>
+        </pre>
 
 ### *Jacy* is Object-Oriented
 
 Claiming that OOP means that PL has structures containing data and methods -- *Jacy* is OOP language.
 
-```rust
-struct A {
-    field: i32,
-}
-
-impl A {
-    func foo {
-        print(self.field);
-    }
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">A</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    field: <span class="hljs-type">i32</span>,</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="4"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="5"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">impl</span> <span class="hljs-title class_">A</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="6"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="7"></div></td><td class="line-col"><div class="line-content">        <span class="hljs-title function_ invoke__">print</span>(<span class="hljs-keyword">self</span>.field);</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="8"></div></td><td class="line-col"><div class="line-content">    }</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="9"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 
 #### *Jacy* respects composition over inheritance
 
 #### Struct implementations can be extended
 
-```rust
-struct A {
-    field: i32,
-}
-
-func A::foo {
-    print(self.field);
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">A</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    field: <span class="hljs-type">i32</span>,</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="4"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="5"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">A</span>::foo {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="6"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-title function_ invoke__">print</span>(<span class="hljs-keyword">self</span>.field);</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="7"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 
 ### No GC
 
@@ -115,21 +83,9 @@ Jacy doesn't have Garbage Collector, as far as it is statically sets `free` poin
 
 ### *Jacy* respects Compile-Time Evaluation
 
-```rust
-const a = 123;
-
-const func fib(n: i32): u64 = match n {
-    i32::MIN..=0 => panic("`n` is negative or zero"),
-    1 | 2 => 1,
-    3 => 2,
-    _ => fib(n - 1) + fib(n - 2),
-}
-
-func main {
-    const fib100 = fib(100); // 100 fibonacci number computed at compile-time
-    print(fib100);
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">const</span> a = <span class="hljs-number">123</span>;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">const</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">fib</span>(n: <span class="hljs-type">i32</span>): <span class="hljs-type">u64</span> = <span class="hljs-keyword">match</span> n {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="4"></div></td><td class="line-col"><div class="line-content">    i32::MIN..=<span class="hljs-number">0</span> =&gt; <span class="hljs-title function_ invoke__">panic</span>(<span class="hljs-string">&quot;`n` is negative or zero&quot;</span>),</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="5"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-number">1</span> | <span class="hljs-number">2</span> =&gt; <span class="hljs-number">1</span>,</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="6"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-number">3</span> =&gt; <span class="hljs-number">2</span>,</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="7"></div></td><td class="line-col"><div class="line-content">    _ =&gt; <span class="hljs-title function_ invoke__">fib</span>(n - <span class="hljs-number">1</span>) + <span class="hljs-title function_ invoke__">fib</span>(n - <span class="hljs-number">2</span>),</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="8"></div></td><td class="line-col"><div class="line-content">}</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="9"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="10"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="11"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">const</span> fib100 = <span class="hljs-title function_ invoke__">fib</span>(<span class="hljs-number">100</span>); <span class="hljs-comment">// 100 fibonacci number computed at compile-time</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="12"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-title function_ invoke__">print</span>(fib100);</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="13"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/concept/index.html">< Concept</a>

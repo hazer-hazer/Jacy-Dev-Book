@@ -73,26 +73,9 @@ I consider making operator declarations items as a good solution.
 #### Syntax
 
 For now, I propose this syntax:
-```rust
-// Operator type declaration
-operator type Assignment {
-    higherThan: Pipe
-    lowerThan: Additive
-    associativity: left
-}
-
-// Operator declaration
-infix operator `×=`: Assignment;
-
-struct S {
-    field: int
-
-    mut func `×=`(rhs: &Self): &mut self {
-        self.field *= rhs.field
-        return self
-    }
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-comment">// Operator type declaration</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">operator <span class="hljs-keyword">type</span> <span class="hljs-title class_">Assignment</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">    higherThan: Pipe</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="4"></div></td><td class="line-col"><div class="line-content">    lowerThan: Additive</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="5"></div></td><td class="line-col"><div class="line-content">    associativity: left</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="6"></div></td><td class="line-col"><div class="line-content">}</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="7"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="8"></div></td><td class="line-col"><div class="line-content"><span class="hljs-comment">// Operator declaration</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="9"></div></td><td class="line-col"><div class="line-content">infix operator `×=`: Assignment;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="10"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="11"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">S</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="12"></div></td><td class="line-col"><div class="line-content">    field: <span class="hljs-type">int</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="13"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="14"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">mut</span> <span class="hljs-keyword">func</span> `×=`(rhs: &amp;<span class="hljs-keyword">Self</span>): &amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="15"></div></td><td class="line-col"><div class="line-content">        <span class="hljs-keyword">self</span>.field *= rhs.field</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="16"></div></td><td class="line-col"><div class="line-content">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="17"></div></td><td class="line-col"><div class="line-content">    }</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="18"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 
 `operator type` pair is used to reduce the count of keywords against Swift solution with `precedencegroup`.
 `operator` might be a soft keyword in the future, anyway as all of the keywords, for now, it gonna be a hard keyword.
@@ -198,17 +181,15 @@ Symbols that might be used as part of custom operators (maybe only in the middle
 
 
 When an operator ends with `<` here comes a problem:
-```rust
-func <<<T>(other: T) {
-    // ...
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> &lt;&lt;&lt;T&gt;(other: T) {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-comment">// ...</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 
 Anyway, I already proposed a syntax where function generics are written after `func` keyword (like in Kotlin) instead of after identifier.
 So, this would be parsed successfully:
-```rust
-func<T> <<(other: T) {}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span>&lt;T&gt; &lt;&lt;(other: T) {}</div></td></tr></table>
+        </pre>
 
 ##### Function overloading
 

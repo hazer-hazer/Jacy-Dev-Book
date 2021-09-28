@@ -31,9 +31,9 @@ Operator syntax is not specified, thus `[OP]` will be used further.
 
 
 Code sample:
-```rust
-a [OP] b
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content">a [OP] b</div></td></tr></table>
+        </pre>
 Where `a` has type `Option<T>` and `Option<b>` has type `U`.
 
 This operator MUST return `None` in case when `a` OR `b` are `None` values.

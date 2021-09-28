@@ -24,17 +24,9 @@ Module system is similar to Rust, root file is the root of module tree and
 
 Function overloading via labels might seem to be easy-implemented and its true as we don't deal with types, anyway there's a problem with importation and exportation.
 Example:
-```rust
-mod m {
-    pub func foo(label1: int, label2: int);
-}
-
-mod n {
-    pub use m::foo;
-
-    pub func foo(label3: int, label4: int);
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">mod</span> m {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">pub</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(label1: <span class="hljs-type">int</span>, label2: <span class="hljs-type">int</span>);</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="4"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="5"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">mod</span> n {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="6"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">pub</span> <span class="hljs-keyword">use</span> m::foo;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="7"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="8"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">pub</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(label3: <span class="hljs-type">int</span>, label4: <span class="hljs-type">int</span>);</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="9"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 
 Here, module `m` exports overload `foo(label1:label2:)` and module `n` imports it and exports as well.
 
@@ -57,18 +49,9 @@ After importation, module `n` must contain alias to function `foo(label1:label2)
 When module tree is building we create FOSes (Function Overload Sets) each of those has a unique index id.
 So, when we importing a function with the same name should we update existent FOS? 
 
-```rust
-mod m {
-    func foo(private: int); // #1
-    pub func foo(public: int); // #2
-} // #0
-
-mod n {
-    use m::foo;
-
-    func foo(nested: int); // #4
-} // #3
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">mod</span> m {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(private: <span class="hljs-type">int</span>); <span class="hljs-comment">// #1</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">pub</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(public: <span class="hljs-type">int</span>); <span class="hljs-comment">// #2</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="4"></div></td><td class="line-col"><div class="line-content">} <span class="hljs-comment">// #0</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="5"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="6"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">mod</span> n {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="7"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">use</span> m::foo;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="8"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="9"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(nested: <span class="hljs-type">int</span>); <span class="hljs-comment">// #4</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="10"></div></td><td class="line-col"><div class="line-content">} <span class="hljs-comment">// #3</span></div></td></tr></table>
+        </pre>
 
 DefTable:
 ```jon

@@ -11,19 +11,9 @@ grand_parent: 'Compiler Workflow'
 
 Let's look at the code sample.
 
-```rust
-func main {
-    let var: a::A = 123;
-}
-
-mod a {
-    type A = b::B;
-}
-
-mod b {
-    type B = i32;
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">let</span> <span class="hljs-variable">var</span>: a::A = <span class="hljs-number">123</span>;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="4"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="5"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">mod</span> a {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="6"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">type</span> <span class="hljs-title class_">A</span> = b::B;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="7"></div></td><td class="line-col"><div class="line-content">}</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="8"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="9"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">mod</span> b {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="10"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">type</span> <span class="hljs-title class_">B</span> = <span class="hljs-type">i32</span>;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="11"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 
 This is a valid code in _Jacy_, and as you can see here we use items before they actually appear in the code. To make it
 possible name resolution goes in two stages, the first one is Module-Tree Building.

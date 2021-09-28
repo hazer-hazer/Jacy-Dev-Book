@@ -1,0 +1,126 @@
+$foreground: #5C6166;
+
+// ayu theme //
+.hljs {
+    color: #5C6166;
+    background: #FCFCFC;
+}
+
+// Variables //
+.hljs-variable {
+    color: $foreground;
+}
+
+// Keywords //
+.hljs-keyword,
+.hljs-meta .hljs-keyword,
+.hljs-template-variable,
+.hljs-variable.language_ {
+    color: #ff7b72;
+}
+
+// Operators //
+.hljs-operator {
+    color: #ED9366;
+}
+
+// Tags //
+.hljs-template-tag,
+.hljs-doctag,
+.hljs-selector-tag {
+    color: #55B4D4;
+}
+
+// Types //
+.hljs-type {
+    color: #399EE6;
+}
+
+// Function //
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
+.hljs-title.function_ {
+    color: #F2AE49;
+}
+
+// Literals //
+.hljs-attr,
+.hljs-attribute,
+.hljs-literal,
+.hljs-meta,
+.hljs-number,
+.hljs-selector-attr,
+.hljs-selector-class,
+.hljs-selector-id {
+    color: #A37ACC;
+}
+
+// Strings //
+.hljs-meta .hljs-string,
+.hljs-string {
+    color: #86B300;
+}
+
+// RegExpr //
+.hljs-regexp {
+    color: #4CBF99;
+}
+
+// Symbols //
+.hljs-built_in,
+.hljs-symbol {
+    color: #ffa657;
+}
+
+// Comments //
+.hljs-comment,
+.hljs-formula {
+    color: #787B8099;
+}
+
+// Names //
+.hljs-name,
+.hljs-selector-pseudo {
+    color: #F2AE49;
+}
+
+// Substrings //
+.hljs-subst {
+    color: $foreground;
+}
+
+.hljs-section {
+    color: #4CBF99;
+    font-weight: 700;
+}
+
+.hljs-bullet {
+    color: #E6BA7E;
+}
+
+.hljs-emphasis {
+    color: $foreground;
+    font-style: italic;
+}
+
+.hljs-strong {
+    color: $foreground;
+    font-weight: 700;
+}
+
+.hljs-addition {
+    color: #6CBF43;
+    background-color: #033a16;
+}
+
+.hljs-FF7383 {
+    color: #ffdcd7;
+    background-color: #67060c;
+}
+
+// Markdown code blocks //
+.hljs-quote,
+.hljs-code {
+    color: #F07171;
+}

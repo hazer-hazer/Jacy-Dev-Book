@@ -30,16 +30,16 @@ To disallow passing argument as named we need to place `_` instead of a label, t
 
 Swift by default requires a parameter label, and what if we invert this logic?
 For example:
-```rust
-func foo(label! paramName: Type)
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(label! paramName: Type)</div></td></tr></table>
+        </pre>
 
 Here, we annotate `label` with `!` to say that the user must pass a parameter with a label, otherwise, it would be an error.
 
 The shortcut variant would look like that:
-```rust
-func foo(paramName!: Type)
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(paramName!: Type)</div></td></tr></table>
+        </pre>
 
 Here, the parameter name is `paramName` and the label is `paramName` too, also it is required.
 
@@ -64,15 +64,9 @@ Anyway, there're some cons from the view of additional complexity in the compile
 
 ##### #1. Ambiguous invocation
 
-```rust
-func doSmth(with: int);
-func doSmth(from: int);
-
-func main {
-    // Error: Call to `doSmth` is ambiguous -- add argument label `with` or `from`
-    doSmth(123);
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>(with: <span class="hljs-type">int</span>);</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>(from: <span class="hljs-type">int</span>);</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="4"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="5"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-comment">// Error: Call to `doSmth` is ambiguous -- add argument label `with` or `from`</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="6"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-title function_ invoke__">doSmth</span>(<span class="hljs-number">123</span>);</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="7"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 
 The solution to disambiguate this case is the same as in Swift.
 1. Function types do not have labels
@@ -83,15 +77,9 @@ Summing up, parameter labels are just name-resolution level overloading and mark
 Anyway, to disambiguate the case present above we need some mechanism to say that we're gonna use the specific `doSmth` function. It is done with Swift-like syntax `functionName(label1:label2:...)`, that is, we don't call function but resolve its overloading.
 
 So, it looks such as:
-```rust
-func doSmth(with: int);
-func doSmth(from: int);
-
-func main {
-    // Error: Call to `doSmth` is ambiguous -- add argument label `with` or `from`
-    doSmth(with:)(123);
-}
-```
+<pre class="code-fence highlight-jc hljs">
+            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>(with: <span class="hljs-type">int</span>);</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>(from: <span class="hljs-type">int</span>);</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="4"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="5"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-comment">// Error: Call to `doSmth` is ambiguous -- add argument label `with` or `from`</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="6"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-title function_ invoke__">doSmth</span>(with:)(<span class="hljs-number">123</span>);</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="7"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
+        </pre>
 
 I need to note that type of `doSmth(with:)` is not `(with: int) -> ()`, just a `(int) -> ()`. 
 So, names have gone and cannot be used after.
