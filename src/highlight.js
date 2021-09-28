@@ -6,7 +6,7 @@ const getSourceLines = src => src.split(/\r\n|\r|\n/g)
 
 const addLineNum = (num, line) => {
     return `
-        <div class="line"><div class="line-num" data-line-num="${num}">${num}</div><div class="line-content">${line}</div></div>
+        <div class="line-num" data-line-num="${num}">${num}</div><div class="line">${line}</div>
     `.trim()
 }
 

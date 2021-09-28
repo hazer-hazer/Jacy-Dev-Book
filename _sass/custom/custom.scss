@@ -339,26 +339,20 @@ div.side-bar {
     padding: 5px;
     font-size: 16px;
 
-    grid-template-columns: 100%;
+    grid-template-columns: max-content auto;
     grid-template-rows: 18px;
 
-    .line {
-        display: grid;
-        grid-template-columns: 40px auto;
-        grid-template-rows: 1fr;
+    .line-num {
+        text-align: right;
+        box-shadow: 1px 0 #ddd;
+        vertical-align: top;
+        padding-right: 5px;
+        color: #555;
+    }
 
-        .line-num {
-            text-align: right;
-            box-shadow: 1px 0 #ddd;
-            vertical-align: top;
-            padding-right: 5px;
-            color: #555;
-        }
-    
-        .line-content {
-            white-space: pre;
-            padding-left: 10px;
-        }
+    .line {
+        white-space: pre;
+        padding-left: 10px;
     }
 
     // .line-num:before {
