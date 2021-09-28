@@ -183,37 +183,11 @@ function jacy(hljs) {
     const COMMENT = {
         className: 'comment',
         variants: [
-            JSDOC_COMMENT,
             hljs.C_BLOCK_COMMENT_MODE,
             hljs.C_LINE_COMMENT_MODE
         ]
     };
-    const SUBST_INTERNALS = [
-        hljs.APOS_STRING_MODE,
-        hljs.QUOTE_STRING_MODE,
-        NUMBER,
-    ];
-    SUBST.contains = SUBST_INTERNALS
-        .concat({
-            // we need to pair up {} inside our subst to prevent
-            // it from ending too early by matching another }
-            begin: /\{/,
-            end: /\}/,
-            keywords: KEYWORDS$1,
-            contains: [
-                'self'
-            ].concat(SUBST_INTERNALS)
-        });
-    const SUBST_AND_COMMENTS = [].concat(COMMENT, SUBST.contains);
-    const PARAMS_CONTAINS = SUBST_AND_COMMENTS.concat([
-        // eat recursive parens in sub expressions
-        {
-            begin: /\(/,
-            end: /\)/,
-            keywords: KEYWORDS$1,
-            contains: ['self'].concat(SUBST_AND_COMMENTS)
-        }
-    ]);
+
     const PARAMS = {
         className: 'params',
         begin: /\(/,
