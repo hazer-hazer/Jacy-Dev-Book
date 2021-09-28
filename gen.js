@@ -109,6 +109,7 @@ class Generator {
 
     async _processDir(dirPath, struct, {navOrder, parentTitle = null, grandParentTitle = null, isRootDir}) {
         let entities = fs.readdirSync(dirPath)
+
         entities.sort((lhs, rhs) => lhs.toLowerCase().localeCompare(rhs.toLowerCase()))
 
         const dirName = path.basename(dirPath)
@@ -117,7 +118,7 @@ class Generator {
         const children = []
 
         if (!isRootDir) {
-            const childrenCount = entities.filter(en => en.endsWith('.md') && path.basename(en, '.md') !== INDEX_FILENAME).length
+            const childrenCount = entities.filter(en => path.basename(en, '.md') !== INDEX_FILENAME).length
 
             const indexSettings = {
                 title,
@@ -125,7 +126,7 @@ class Generator {
                 grandParentTitle,
                 isIndex: true,
                 navOrder,
-                hasChildren: !isRootDir && childrenCount > 1,
+                hasChildren: childrenCount > 1,
             }
 
             const indexFileI = entities.indexOf('index.md')
