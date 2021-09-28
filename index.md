@@ -1,6 +1,6 @@
 ---
 layout: 'default'
-title: 'Index'
+title: 'Table of contents'
 nav_order: 108
 # No parent
 # No children
