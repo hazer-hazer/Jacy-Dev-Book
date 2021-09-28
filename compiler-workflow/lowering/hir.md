@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Hir'
 nav_order: 100
-parent: 'Name Resolution'
+parent: 'Lowering & HIR'
 # No children
 ---
 
@@ -22,7 +22,7 @@ By doing so, we reduce a large amount of AST nodes to some more common structure
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/importation-&-module-system.html">Importation & module system ></a>
+    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/lowering/index.html">Lowering & HIR ></a>
 </button>
 
 </div>

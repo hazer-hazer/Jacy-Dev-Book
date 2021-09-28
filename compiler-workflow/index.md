@@ -10,7 +10,7 @@ has_children: true
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage">Name Resolution ></a>
+    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/lowering">Lowering & HIR ></a>
 </button>
 
 </div>

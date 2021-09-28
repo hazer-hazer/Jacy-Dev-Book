@@ -1,8 +1,8 @@
 ---
 layout: 'default'
-title: 'Importation & module system'
-nav_order: 101
-parent: 'Name Resolution'
+title: 'Imports & Module System'
+nav_order: 4
+parent: 'Names & Imports'
 # No children
 ---
 
@@ -128,12 +128,9 @@ So, let's establish how overloads importation works:
 - On importation, FOS of the module where `use`-declaration present is modified -- imported overloads added
 - Each FOS is unique per module, never redefine the same FOS in different modules
 <div class="nav-btn-block">
-    <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/hir.html">< Hir</a>
-</button>
-
+    
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/index.html">Name Resolution ></a>
+    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/index.html">Names & Imports ></a>
 </button>
 
 </div>

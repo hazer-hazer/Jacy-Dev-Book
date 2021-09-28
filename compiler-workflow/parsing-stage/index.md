@@ -6,7 +6,7 @@ parent: 'Compiler Workflow'
 has_children: true
 ---
 
-# Parsing Stage
+# Parsing & AST
 
 __TODO__
 <div class="nav-btn-block">
