@@ -11,11 +11,11 @@ const addLineNum = (num, line) => {
 }
 
 const addLineNumbers = src => {
-    const lines = getSourceLines(src)
-    
+    const lines = getSourceLines(src.trim())
+
     let result = ''
     for (let i = 0; i < lines.length; i++) {
-        result += addLineNum(i, lines[i])
+        result += addLineNum(i + 1, lines[i])
     }
 
     return `
@@ -25,11 +25,11 @@ const addLineNumbers = src => {
 
 module.exports = src => {
     return src.replace(/```jc([\s\S]*?)```/g, (match, code) => {
-        return addLineNumbers(`
+        return `
         <pre class="code">
-            ${hljs.highlight(code, {language: 'jc'}).value}
+            ${addLineNumbers(hljs.highlight(code, {language: 'jc'}).value)}
         </pre>
-        `.trim())
+        `.trim()
     })
 }
 
