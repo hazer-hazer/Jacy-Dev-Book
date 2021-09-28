@@ -337,7 +337,7 @@ div.side-bar {
 // Highlighted Jacy code //
 .code-fence.highlight-jc {
     display: grid;
-    padding: 10px 10px 10px 0;
+    padding: 10px 0;
     font-size: 14px;
     font-family: 'JetBrains Mono', monospace;
 
@@ -354,7 +354,8 @@ div.side-bar {
 
     .line:hover,
     .line-num:hover + .line,
-    .line-num:hover {
+    .line-num:hover,
+    .line ~ .line:hover {
         background: #8A91991A;
     }
 
@@ -371,6 +372,7 @@ div.side-bar {
         text-align: left;
         white-space: pre;
         padding-left: 7px;
+        cursor: text;
     }
 
     // .line-num:before {
