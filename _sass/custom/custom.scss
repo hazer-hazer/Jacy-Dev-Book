@@ -358,6 +358,7 @@ div.side-bar {
     }
 
     .line-num {
+        user-select: none;
         text-align: right;
         box-shadow: inset -1px 0 #ccc;
         font-size: 12px;
