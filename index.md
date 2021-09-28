@@ -13,7 +13,7 @@ nav_order: 1
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/intro.html">Intro ></a>
+    <a class="link" href="/Jacy-Dev-Book/intro.html">Introduction ></a>
 </button>
 
 </div>

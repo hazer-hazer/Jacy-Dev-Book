@@ -1,8 +1,8 @@
 ---
 layout: 'default'
-title: 'Jon files'
-nav_order: 114
-# No parent
+title: 'JON Files'
+nav_order: 40
+parent: 'Appendices'
 has_children: true
 ---
 

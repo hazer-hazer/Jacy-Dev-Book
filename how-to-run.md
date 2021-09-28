@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'How To Run'
-nav_order: 1
+nav_order: 3
 # No parent
 # No children
 ---
@@ -116,7 +116,7 @@ There's a bunch of allowed bool values:
 _This values are case insensitive, so you are able to write `Y` or `tRue` or `False`, etc._.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/goal.html">< Goal</a>
+    <a class="link" href="/Jacy-Dev-Book/concept">< Concept</a>
 </button>
 
     <button class="nav-btn right">

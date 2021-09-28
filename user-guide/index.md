@@ -1,7 +1,7 @@
 ---
 layout: 'default'
-title: 'User guide'
-nav_order: 120
+title: 'User Guide'
+nav_order: 45
 # No parent
 has_children: true
 ---

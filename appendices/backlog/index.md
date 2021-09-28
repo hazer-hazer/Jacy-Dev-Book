@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Backlog'
-nav_order: 101
-# No parent
+nav_order: 100
+parent: 'Appendices'
 has_children: true
 ---
 
@@ -12,7 +12,7 @@ Deprecated ideas, etc.
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/backlog/invert-rust-v2.html">Invert rust v2 ></a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/backlog/invert-rust-v2.html">Invert rust v2 ></a>
 </button>
 
 </div>

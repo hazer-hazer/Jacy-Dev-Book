@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Ops and puncts'
-nav_order: 103
+nav_order: 106
 parent: 'Appendices'
 # No children
 ---
@@ -106,8 +106,11 @@ Precedence (from highest to lowest)
 | `return a` &nbsp; `break a` &nbsp; `() -> {}` |
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/appendices/index.html">< Appendices</a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/jon-files">< JON Files</a>
 </button>
 
-    
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/appendices/spec">Specification [WIP] ></a>
+</button>
+
 </div>

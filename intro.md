@@ -1,7 +1,7 @@
 ---
 layout: 'default'
-title: 'Intro'
-nav_order: 113
+title: 'Introduction'
+nav_order: 2
 # No parent
 # No children
 ---
@@ -17,7 +17,7 @@ meticulous, but I want to cover even the simplest aspects of PL.
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/jon files">Jon files ></a>
+    <a class="link" href="/Jacy-Dev-Book/Lincy">Lincy ></a>
 </button>
 
 </div>

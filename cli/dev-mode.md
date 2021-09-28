@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Dev mode'
 nav_order: 100
-parent: 'Cli'
+parent: 'CLI'
 # No children
 ---
 
@@ -37,7 +37,7 @@ And then, if I want to see logs for {ANOTHER_STAGE} stage, I would pass `--dev-l
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/cli/index.html">Cli ></a>
+    <a class="link" href="/Jacy-Dev-Book/cli/index.html">CLI ></a>
 </button>
 
 </div>

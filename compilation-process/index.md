@@ -1,7 +1,7 @@
 ---
 layout: 'default'
-title: 'Compilation process'
-nav_order: 105
+title: 'Compilation Process'
+nav_order: 10
 # No parent
 has_children: true
 ---

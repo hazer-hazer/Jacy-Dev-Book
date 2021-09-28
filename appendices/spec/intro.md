@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Intro'
 nav_order: 101
-parent: 'Spec'
+parent: 'Specification [WIP]'
 # No children
 ---
 
@@ -31,7 +31,7 @@ Rust has: function pointer types, `Fn`, `FnMut` and `FnOnce`.
 The answer is in what function pointer is -- it is pointer to function item, i.e.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/spec/index.html">< Spec</a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/spec/index.html">< Specification [WIP]</a>
 </button>
 
     

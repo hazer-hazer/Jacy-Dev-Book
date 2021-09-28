@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Named arg alias'
-nav_order: 103
+nav_order: 104
 parent: 'Ideas'
 # No children
 ---

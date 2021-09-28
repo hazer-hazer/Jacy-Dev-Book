@@ -1,8 +1,8 @@
 ---
 layout: 'default'
-title: 'Spec'
-nav_order: 117
-# No parent
+title: 'Specification [WIP]'
+nav_order: 50
+parent: 'Appendices'
 has_children: true
 ---
 
@@ -14,7 +14,7 @@ You can think of it as wishlist and collection of thoughts I came up with 🙂
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/spec/intro.html">Intro ></a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/spec/intro.html">Intro ></a>
 </button>
 
 </div>

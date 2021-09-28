@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Importation & module system'
 nav_order: 101
-parent: 'Compilation process'
+parent: 'Compilation Process'
 # No children
 ---
 
@@ -133,7 +133,7 @@ So, let's establish how overloads importation works:
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/compilation-process/index.html">Compilation process ></a>
+    <a class="link" href="/Jacy-Dev-Book/compilation-process/index.html">Compilation Process ></a>
 </button>
 
 </div>

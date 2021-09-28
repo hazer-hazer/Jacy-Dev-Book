@@ -110,11 +110,11 @@ But stop... Now we need to always write `own i32`, etc. just not to make a `&i32
 - We may be confused with `own` and `move`, because `own` is in-type annotation but `move` is in-expression annotation
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/backlog/index.html">< Backlog</a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/backlog/index.html">< Backlog</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/backlog/invert-rust.html">Invert rust ></a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/backlog/invert-rust.html">Invert rust ></a>
 </button>
 
 </div>

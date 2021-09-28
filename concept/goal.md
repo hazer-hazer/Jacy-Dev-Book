@@ -1,8 +1,8 @@
 ---
 layout: 'default'
 title: 'Goal'
-nav_order: 109
-# No parent
+nav_order: 100
+parent: 'Concept'
 # No children
 ---
 
@@ -130,12 +130,9 @@ func main {
 }
 ```
 <div class="nav-btn-block">
-    <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/extended-tools">< Extended tools</a>
-</button>
-
+    
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/how-to-run.html">How To Run ></a>
+    <a class="link" href="/Jacy-Dev-Book/concept/index.html">Concept ></a>
 </button>
 
 </div>

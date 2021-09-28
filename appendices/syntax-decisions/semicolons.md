@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Semicolons'
 nav_order: 104
-parent: 'Syntax decisions'
+parent: 'Syntax Decisions'
 # No children
 ---
 
@@ -28,11 +28,11 @@ Resources:
 * [Semicolon Inference](https://pling.jondgoodwin.com/post/semicolon-inference/)
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/syntax-decisions/lambdas.html">< Lambdas</a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/syntax-decisions/lambdas.html">< Lambdas</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/syntax-decisions/variables.html">Variables ></a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/syntax-decisions/variables.html">Variables ></a>
 </button>
 
 </div>

@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Module tree building'
 nav_order: 103
-parent: 'Compilation process'
+parent: 'Compilation Process'
 # No children
 ---
 
@@ -56,7 +56,7 @@ process it as a relative path, e.g. if we are inside `mod a` which contains `mod
 with `::` prefix, in this case, we'll resolve it starting from the root module but not from the current.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/compilation-process/index.html">< Compilation process</a>
+    <a class="link" href="/Jacy-Dev-Book/compilation-process/index.html">< Compilation Process</a>
 </button>
 
     <button class="nav-btn right">

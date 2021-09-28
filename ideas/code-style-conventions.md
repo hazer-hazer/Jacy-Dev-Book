@@ -104,7 +104,7 @@ is specific? Here's the table of common cases:
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/ideas/index.html">Ideas ></a>
+    <a class="link" href="/Jacy-Dev-Book/ideas/extended-tools">Extended tools ></a>
 </button>
 
 </div>

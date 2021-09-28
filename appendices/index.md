@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Appendices'
-nav_order: 100
+nav_order: 50
 # No parent
 has_children: true
 ---
@@ -13,7 +13,7 @@ has_children: true
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/appendices/ops-and-puncts.html">Ops and puncts ></a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/jon-files">JON Files ></a>
 </button>
 
 </div>

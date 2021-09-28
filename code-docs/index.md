@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Code docs'
-nav_order: 104
+nav_order: 30
 # No parent
 has_children: true
 ---

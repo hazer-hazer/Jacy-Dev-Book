@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Variables'
 nav_order: 105
-parent: 'Syntax decisions'
+parent: 'Syntax Decisions'
 # No children
 ---
 
@@ -26,7 +26,7 @@ pattern, just only an identifier, so we also lose the ability of destructuring. 
 with `let` and `let mut`.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/syntax-decisions/semicolons.html">< Semicolons</a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/syntax-decisions/semicolons.html">< Semicolons</a>
 </button>
 
     

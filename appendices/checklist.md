@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Checklist'
-nav_order: 101
+nav_order: 103
 parent: 'Appendices'
 # No children
 ---
@@ -113,7 +113,7 @@ In conclusion, this is what I think of you:
 ```
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/appendices/attributes.html">< Attributes</a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/cheatsheets">< Appendices</a>
 </button>
 
     <button class="nav-btn right">

@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Name resolution cheatsheet'
 nav_order: 101
-parent: 'Cheatsheets'
+parent: 'Appendices'
 # No children
 ---
 
@@ -137,7 +137,7 @@ This API is almost a list of helpers to retrieve items from the fields described
   - _addBlock(NodeId, [Module::Ptr](#module))_ - Add block (anonymous module), binding it by NodeId.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/cheatsheets/index.html">< Cheatsheets</a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/cheatsheets/index.html">< Appendices</a>
 </button>
 
     

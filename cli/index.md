@@ -1,7 +1,7 @@
 ---
 layout: 'default'
-title: 'Cli'
-nav_order: 103
+title: 'CLI'
+nav_order: 4
 # No parent
 has_children: true
 ---
