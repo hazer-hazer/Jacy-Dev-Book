@@ -17,12 +17,12 @@ Also, arguments have constraints:
 * For key-value arguments: count of arguments (maybe any count) and allowed parameters (what you are able to write after
   `=`)
 * Dependencies. It means that some arguments are not allowed if another argument is not set, e.g. you cannot use
-  `-compile-depth` (it controls how deep will compilation process go by workflow) without setting the `--dev` argument.
+  `--compile-depth` (it controls how deep will compilation process go by workflow) without setting the `--dev` argument.
 
 Example usage.
 
 ```
-./bin example.jc -print=ast
+./bin example.jc --print=ast
 ```
 
 **The actual list of options**
