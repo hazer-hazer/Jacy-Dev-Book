@@ -44,7 +44,6 @@ Example usage.
   * `resolutions` - Prints resolution list.
   * `all` - prints everything described above
 * `--log-level` - (1 parameter; default: `info`) - Global log level. The level is checked by precedence where `dev` has the lowest one and `error` the higher.
-  * `dev` - Prints all logs and adds dev-logs
   * `debug`
   * `info` - (Default)
   * `warn` - (Don't confuse with warnings in the context of suggestions)
