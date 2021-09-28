@@ -88,9 +88,9 @@ FOS stands for "Function Overload Set". In _Jacy_ you can overload functions via
 `FOSId` is a unique identifier for one FOS -- a collection of functions with the same name, defined in the same module.
 
 For example, in:
-<pre class="code-fence highlight-jc hljs">
-            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">mod</span> m {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(from: <span class="hljs-type">int</span>) {}</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="4"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(to: <span class="hljs-type">int</span>) {}</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="5"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
-        </pre>
+<div class="code-fence highlight-jc hljs">
+            <div class="line"><div class="line-num" data-line-num="1">1</div><div class="line-content"><span class="hljs-keyword">mod</span> m {</div></div><div class="line"><div class="line-num" data-line-num="2">2</div><div class="line-content">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(from: <span class="hljs-type">int</span>) {}</div></div><div class="line"><div class="line-num" data-line-num="3">3</div><div class="line-content"></div></div><div class="line"><div class="line-num" data-line-num="4">4</div><div class="line-content">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(to: <span class="hljs-type">int</span>) {}</div></div><div class="line"><div class="line-num" data-line-num="5">5</div><div class="line-content">}</div></div>
+        </div>
 
 `mod m` only holds [`NameBinding`](#namebinding) with name `foo` (base name of FOS) which points to `FOSId` of FOS `foo` in [`DefTable`](#deftable).
 To access a specific function, at first, you need to get `FOSId` from the module and then go to the [`DefTable`](#deftable) to search for a suffix.

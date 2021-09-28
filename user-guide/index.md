@@ -135,9 +135,9 @@ Symbols considered punctuations: `(`, `)`, `[`, `]`, `{`, `}`, `,`, `;`, `:`, `<
 ## Intro
 
 Let's begin with the cliché -- "Hello, world" in _Jacy_:
-<pre class="code-fence highlight-jc hljs">
-            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-title function_ invoke__">print</span>(<span class="hljs-string">&quot;Hello, world&quot;</span>);</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
-        </pre>
+<div class="code-fence highlight-jc hljs">
+            <div class="line"><div class="line-num" data-line-num="1">1</div><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div></div><div class="line"><div class="line-num" data-line-num="2">2</div><div class="line-content">    <span class="hljs-title function_ invoke__">print</span>(<span class="hljs-string">&quot;Hello, world&quot;</span>);</div></div><div class="line"><div class="line-num" data-line-num="3">3</div><div class="line-content">}</div></div>
+        </div>
 
 Here you can see:
 - Functions in _Jacy_ are defined with `func` keyword.
@@ -254,9 +254,9 @@ Array type looks like slice type but with size, ascription after `;` - `[T; N]`,
 You can declare a function with `func` keyword followed by its name, parameters, and body (there're also some more particles but we'll review them further).
 
 Let's disassemble a simple function:
-<pre class="code-fence highlight-jc hljs">
-            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">add</span>(a: <span class="hljs-type">int</span>, b: <span class="hljs-type">int</span>): <span class="hljs-type">int</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">return</span> a + b;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
-        </pre>
+<div class="code-fence highlight-jc hljs">
+            <div class="line"><div class="line-num" data-line-num="1">1</div><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">add</span>(a: <span class="hljs-type">int</span>, b: <span class="hljs-type">int</span>): <span class="hljs-type">int</span> {</div></div><div class="line"><div class="line-num" data-line-num="2">2</div><div class="line-content">    <span class="hljs-keyword">return</span> a + b;</div></div><div class="line"><div class="line-num" data-line-num="3">3</div><div class="line-content">}</div></div>
+        </div>
 
 - `(a: int, b: int)` is a parameter list where `a` and `b` are names of parameters and `int`'s are types for each of them.
 - After the parameter list goes return type, it is annotated with the same punctuation - `:`
@@ -269,32 +269,32 @@ To invoke `add` we need to pass two integers in it -- `add(1, 2)`, this expressi
 _Jacy_ supports labeled arguments, it is a way to call a function without writing arguments in the same order as parameters are declared.
 
 Let's call `add` function from example above with named arguments:
-<pre class="code-fence highlight-jc hljs">
-            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-title function_ invoke__">add</span>(a: <span class="hljs-number">6</span>, b: <span class="hljs-number">13</span>); <span class="hljs-comment">// 19</span></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content"><span class="hljs-title function_ invoke__">add</span>(b: <span class="hljs-number">13</span>, a: <span class="hljs-number">6</span>); <span class="hljs-comment">// 19. Order does not matter</span></div></td></tr></table>
-        </pre>
+<div class="code-fence highlight-jc hljs">
+            <div class="line"><div class="line-num" data-line-num="1">1</div><div class="line-content"><span class="hljs-title function_ invoke__">add</span>(a: <span class="hljs-number">6</span>, b: <span class="hljs-number">13</span>); <span class="hljs-comment">// 19</span></div></div><div class="line"><div class="line-num" data-line-num="2">2</div><div class="line-content"><span class="hljs-title function_ invoke__">add</span>(b: <span class="hljs-number">13</span>, a: <span class="hljs-number">6</span>); <span class="hljs-comment">// 19. Order does not matter</span></div></div>
+        </div>
 
 #### Function overloading
 
 _Jacy_ does not support type function overloading, but you can overload function with different parameter labels.
 
 Example:
-<pre class="code-fence highlight-jc hljs">
-            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">add</span>(intA: <span class="hljs-type">int</span>, intB: <span class="hljs-type">int</span>): <span class="hljs-type">int</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">return</span> intA + intB;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="4"></div></td><td class="line-col"><div class="line-content"></div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="5"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">add</span>(floatA: <span class="hljs-type">f64</span>, floatB: <span class="hljs-type">f64</span>): <span class="hljs-type">f64</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="6"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">return</span> floatA + floatB;</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="7"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
-        </pre>
+<div class="code-fence highlight-jc hljs">
+            <div class="line"><div class="line-num" data-line-num="1">1</div><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">add</span>(intA: <span class="hljs-type">int</span>, intB: <span class="hljs-type">int</span>): <span class="hljs-type">int</span> {</div></div><div class="line"><div class="line-num" data-line-num="2">2</div><div class="line-content">    <span class="hljs-keyword">return</span> intA + intB;</div></div><div class="line"><div class="line-num" data-line-num="3">3</div><div class="line-content">}</div></div><div class="line"><div class="line-num" data-line-num="4">4</div><div class="line-content"></div></div><div class="line"><div class="line-num" data-line-num="5">5</div><div class="line-content"><span class="hljs-keyword">func</span> <span class="hljs-title function_">add</span>(floatA: <span class="hljs-type">f64</span>, floatB: <span class="hljs-type">f64</span>): <span class="hljs-type">f64</span> {</div></div><div class="line"><div class="line-num" data-line-num="6">6</div><div class="line-content">    <span class="hljs-keyword">return</span> floatA + floatB;</div></div><div class="line"><div class="line-num" data-line-num="7">7</div><div class="line-content">}</div></div>
+        </div>
 
 ### Structures
 
 Structures in _Jacy_ are declared the same way as in Rust:
-<pre class="code-fence highlight-jc hljs">
-            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">MyStruct</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    field: <span class="hljs-type">i32</span>,</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
-        </pre>
+<div class="code-fence highlight-jc hljs">
+            <div class="line"><div class="line-num" data-line-num="1">1</div><div class="line-content"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">MyStruct</span> {</div></div><div class="line"><div class="line-num" data-line-num="2">2</div><div class="line-content">    field: <span class="hljs-type">i32</span>,</div></div><div class="line"><div class="line-num" data-line-num="3">3</div><div class="line-content">}</div></div>
+        </div>
 
 ### Traits
 
 Traits are also similar to Rust:
-<pre class="code-fence highlight-jc hljs">
-            <table class="code-table"><tr><td class="line-num-col"><div class="line-num" data-line-num="1"></div></td><td class="line-col"><div class="line-content"><span class="hljs-keyword">trait</span> <span class="hljs-title class_">DoesSmth</span> {</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="2"></div></td><td class="line-col"><div class="line-content">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>();</div></td></tr><tr><td class="line-num-col"><div class="line-num" data-line-num="3"></div></td><td class="line-col"><div class="line-content">}</div></td></tr></table>
-        </pre>
+<div class="code-fence highlight-jc hljs">
+            <div class="line"><div class="line-num" data-line-num="1">1</div><div class="line-content"><span class="hljs-keyword">trait</span> <span class="hljs-title class_">DoesSmth</span> {</div></div><div class="line"><div class="line-num" data-line-num="2">2</div><div class="line-content">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>();</div></div><div class="line"><div class="line-num" data-line-num="3">3</div><div class="line-content">}</div></div>
+        </div>
 <div class="nav-btn-block">
     
     
