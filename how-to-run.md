@@ -52,7 +52,6 @@ Example usage.
   * `resolutions` - Prints resolution list.
   * `all` - prints everything described above
 * `--log-level` - (1 parameter; default: `info`) - Global log level. The level is checked by precedence where `dev` has the lowest one and `error` the higher.
-  * `dev` - Prints all logs and adds dev-logs
   * `debug`
   * `info` - (Default)
   * `warn` - (Don't confuse with warnings in the context of suggestions)
@@ -84,6 +83,14 @@ Example usage.
   * `entries` - Prints what syntax units parser enters and leave
   * `all` - Prints `entries` and also special much info about skipping, etc.
 
+<div class="fold-block">
+    <input id="input-491ebead5ebc714c23f9f8c353636dd0" type="checkbox">
+    <label class="clicker" for="input-491ebead5ebc714c23f9f8c353636dd0">> Toggle key-value option arguments</label>
+    <blockquote class="content">If you want to disable specific argument of key-value option, e.g. passing `--dev-print=all` to exclude `tokens` you need to write `--dev-print all=no` or `--dev-print=all=no`, but first form is more readable.
+You can use any boolean value to toggle arguments, allowed boolean values described below.
+</blockquote>
+</div>
+
 **Boolean options**
 
 * `--dev` - enables dev mode: all logs will be printed including `dev`-level logs and new logs will be added. Generally just produces more debug info everywhere.
@@ -108,14 +115,7 @@ There's a bunch of allowed bool values:
 | 1 | 0 |
 | on | off |
 
-Also, they're case insensitive (alpha-values of course):
-
-| (Truthy) | (Falsy) |
-| :--- | :--- |
-| Yes | No |
-| Y | N |
-| True | False |
-| On | Off |
+_This values are case insensitive, so you are able to write `Y` or `tRue` or `False`, etc._.
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/goal.html">< Goal</a>
