@@ -27,7 +27,7 @@ module.exports = {
                 },
                 'name-res-stage': {
                     order: 10,
-                    title: 'Name Resolution',
+                    title: 'Names & Imports',
                     children: {
                         'module-tree-building': {
                             order: 2,
