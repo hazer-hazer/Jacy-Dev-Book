@@ -15,7 +15,7 @@ _Jacy_ supports affine types, not linear, however, linearity logic is controlled
 
 
 <div class="code-fence highlight-jc hljs">
-            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>() {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">r</span> = <span class="hljs-title function_ invoke__">Rc</span>()</div><div class="line-num" data-line-num="3">3</div><div class="line">}</div>
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>() {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">r</span> = <span class="hljs-title function_ invoke__">Rc</span>(<span class="hljs-number">0</span>);</div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">r1</span> = Rc::<span class="hljs-title function_ invoke__">clone</span>(r);</div><div class="line-num" data-line-num="4">4</div><div class="line">}</div>
         </div>
 <div class="nav-btn-block">
     <button class="nav-btn left">
