@@ -1,10 +1,3 @@
----
-layout: default
-title: Code docs
-nav_order: 12
-has_children: true
----
-
 # Code Docs
 
 Before compilation workflow, it is important to overview compiler source code structure, some documentation is written
