@@ -10,5 +10,3 @@ What I want:
 
 - Header message, i.e. the actual "error/warning" message, the most essential part
 - Span highlighting styles
-
-
