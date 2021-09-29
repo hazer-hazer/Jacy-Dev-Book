@@ -1,12 +1,3 @@
----
-layout: default
-title: Variables
-nav_order: 5
-parent: Syntax Decisions
-
-# description: 
----
-
 # Variables
 
 The first idea was to use `var` and `val`, it's pretty nice, we don't have weird `let` and `let mut` like Rust, but then
@@ -25,4 +16,3 @@ The syntax.
 Anyway, I'm able to add the `var` keyword and just use it as an alias for `let mut`. In this way, we are not able to use
 pattern, just only an identifier, so we also lose the ability of destructuring. I think it does not worth it, let's stay
 with `let` and `let mut`.
-
