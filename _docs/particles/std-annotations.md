@@ -1,29 +1,24 @@
----
-layout: default
-title: std annotations
-parent: Particles
-nav_order: 9
----
-
 # `std` annotations
 
-### Analysis helpers
+## Analysis helpers
 
 Converter marker:
-```
+
+```jc
 impl String {
-    @apiMarker(kind: 'converter')
-    func toInt = parseInt(self)
+    @apiMarker(kind: "converter")
+    func toInt() = parseInt(self);
 }
 
 func main {
-    let s: String = '123'
-    let a: int = s
+    let s: String = "123";
+    let a: int = s;
 }
 ```
 
 And this code will produce an error like:
-```
+
+```plaintext
 Invalid type String for int
 Note: try call s.toInt()
 ```
