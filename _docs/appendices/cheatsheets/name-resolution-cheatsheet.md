@@ -4,62 +4,64 @@ The Name Resolution stage is not that difficult stage of compilation, anyway tri
 Here I tried to collect workflows for different resolution cases and connections between them.
 
 Okay, what classes do we have:
+
 - `ModuleTreeBuilder` - by the name you can see that this one builds a module tree.
 - `Importer` - this one resolves `use` declarations and imports new items to the module tree.
 - `NameResolver` - resolves names, that is, binds each usage to the definition.
 - `PathResolver` - helper class that unifies path resolution logic for all name resolution sub-stages.
 - `DefTable` - common definitions info storage
 
-### Basic structures
+## Basic structures
 
-#### `Symbol`
+### `Symbol`
 
 Identifies interned string, read more about symbols [here](../code-docs/interning.md)
 
-#### `Namespace`
+### `Namespace`
 
 An enumeration of namespaces. Each namespace is a separate storage for definitions, thus type names do not collide with value names, etc.
 There is one special variant - `Namespace::Any`, it is not used in definition storages and mappings, by the way, is used in methods, e.g. to collect definitions with the same name from all namespaces. Never store `Namespace::Any` in `DefTable`, only use it as a helper.
 
-#### `Def`
+### `Def`
 
 Definition structure, holds [`DefKind`](#defkind) and [`DefId`](#defid-and-defindex). You can access particular definition via `DefTable::getDef` or get all, defined, using `DefTable::getDefinitions`
 
-#### `DefId` & `DefIndex`
+### `DefId` & `DefIndex`
 
 `DefIndex` is a simple index type, i.e. integer wrapper to create a distinct integer type (C++ does not support it).
 `DefId` is a unique definition identifier, currently, it only holds `DefIndex` but might be extended in the future.
 
 `DefId::index` is the index of vector from `DefTable::defs`. You can get particular definition by `DefId` or `DefIndex` from `DefTable` via `getDef`.
 
-##### `ROOT_DEF_ID`
+#### `ROOT_DEF_ID`
 
 The constant for root module definition, used in many places for validations and logic checks.
 
-#### `DefKind`
+### `DefKind`
 
 Enumeration of definitions kinds. Each kind has some properties, e.g. [namespace](#namespace) where it will be defined.
 You can get [`DefKind`](#defkind) from [`Def`](#def) structure if you have one on hand.
 
 To find out in which [namespace](#namespace) specific [`DefKind`](#defkind) must be defined call `Def::getDefKindNS`.
 
-#### `Vis`
+### `Vis`
 
 Visibility enumeration, for now only `Vis::Unset` and `Vis::Pub` exist.
 
-#### `PerNS<T>`
+### `PerNS<T>`
 
 A helper template structure that stores a value of some type for each namespace.
 
-#### `PrimTypeSet`
+### `PrimTypeSet`
 
 Bits-optimized collection of primitive types flags. It can be used to mark specific primitive types used/shadowed, etc.
 Used by the module to save shadowed primitive types.
 
-#### `Module`
+### `Module`
 
 The `Module` is a single node of the Module Tree.
 Fields:
+
 - _kind_  - Kind of module, i.e. `Def` (named module bound to some definition) or `Block` (anonymous module). Type is the `ModuleKind` enumeration.
 - _id_ - Identifier of module - either `DefId` (for `ModuleKind::Def`) or `NodeId` (for `ModuleKind::Block`).
 - _parent_ - Optional parent that is another module (only root module does not have a parent).
@@ -67,18 +69,19 @@ Fields:
 - _perNS_ - [PerNS<map<Symbol, [NameBinding](#namebinding)>>](#pernst). A per-namespace collection of mappings __Symbol__ (some name) __->__ __DefId__ (some definition).
 - _shadowedPrimTypes_ - module [`PrimTypeSet`](#primtypeset), i.e. flags showing which primitive types (e.g. `int`, `f32`) are shadowed in the module.
 
-#### `NameBinding`
+### `NameBinding`
 
 The `Module` binds names either to [`FOS`](#fosid) or to some [definition](#defid-and-defindex).
 This is why `NameBinding` exists, it is an ADT for `FOS` and `DefId`.
 
-#### `FOSId`
+### `FOSId`
 
 FOS stands for "Function Overload Set". In _Jacy_ you can overload functions via different label names, i.e. not by types but `func foo(from: int)` and `func foo(to: int)` can exist together.
 
 `FOSId` is a unique identifier for one FOS -- a collection of functions with the same name, defined in the same module.
 
 For example, in:
+
 ```jc
 mod m {
     func foo(from: int) {}
