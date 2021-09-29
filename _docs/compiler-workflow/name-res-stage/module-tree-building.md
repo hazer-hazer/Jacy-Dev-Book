@@ -1,12 +1,3 @@
----
-layout: default
-title: Module-Tree building
-nav_order: 15
-parent: Compilation Process
-
-# description: This stage is where name resolution begins.
----
-
 # Module-Tree building
 
 Let's look at the code sample.
@@ -36,7 +27,7 @@ resolve anything). All kinds of items (`type` alias, `func` or whatever else exc
 allows us to, for example, use function before it actually occurs in the code and what is more important -- we can
 access nested items from current currently compiled scope.
 
-#### Involved Data Structures and Types
+## Involved Data Structures and Types
 
 * `DefStorage` - Interface for definitions which presented in the form of index vector (vector where an offset is an identifier for some data) of `Def`s
 * `Def` - Definition structure with specific kind (`Func`, `Enum`, etc.) common for all namespaces (e.g. types and items
@@ -46,7 +37,7 @@ access nested items from current currently compiled scope.
   `string -> def_id`. Also contains a map of children and anonymous blocks, child is a named submodule (e.g. a `func`
   inside `mod`) and an anonymous block is either a block expression or function body.
 
-#### Module-Tree usage
+## Module-Tree usage
 
 You can think about the module tree as about directory structure in the computer filesystem -- module is like a
 directory and definitions are files. This analogy is also good to grasp how paths (e.g. `a::b::c`) are resolved. The
@@ -54,4 +45,3 @@ start point is the root module, that is, a module containing full Party definiti
 process it as a relative path, e.g. if we are inside `mod a` which contains `mod b` then we resolve the path
 `b::something` as `a::b::something`. Anyway, it is possible to qualify an absolute path (relative to the Party root)
 with `::` prefix, in this case, we'll resolve it starting from the root module but not from the current.
-

@@ -7,14 +7,13 @@ The importation process is what the compiler does when a user writes `use`.
 In _Jacy_ each file and each directory is a module, of course, including user-defined modules (`mod` items).
 Module system is similar to Rust, root file is the root of module tree and
 
-
 ## Importation
-
 
 ## The problem with overloads
 
 Function overloading via labels might seem to be easy-implemented and its true as we don't deal with types, anyway there's a problem with importation and exportation.
 Example:
+
 ```jc
 mod m {
     pub func foo(label1: int, label2: int);
@@ -30,7 +29,8 @@ mod n {
 Here, module `m` exports overload `foo(label1:label2:)` and module `n` imports it and exports as well.
 
 The module-tree before importation process will look so:
-```
+
+```jc
 [ROOT]: {
     `mod` 'm': {
         FOS#someID
@@ -46,7 +46,7 @@ The module-tree before importation process will look so:
 
 After importation, module `n` must contain alias to function `foo(label1:label2)` and locally defined `foo(label3:label4)`.
 When module tree is building we create FOSes (Function Overload Sets) each of those has a unique index id.
-So, when we importing a function with the same name should we update existent FOS? 
+So, when we importing a function with the same name should we update existent FOS?
 
 ```jc
 mod m {
@@ -62,6 +62,7 @@ mod n {
 ```
 
 DefTable:
+
 ```jon
 FOSes: [
     {
@@ -75,6 +76,7 @@ FOSes: [
 ```
 
 Module Tree:
+
 ```jon
 {
     'm': {
@@ -101,6 +103,7 @@ Module Tree:
 After importation, if FOSes updated.
 
 DefTable:
+
 ```jon
 FOSes: [
     {
@@ -116,6 +119,7 @@ FOSes: [
 ```
 
 So, let's establish how overloads importation works:
+
 - We never modify FOS which we import into the module
 - On importation, FOS of the module where `use`-declaration present is modified -- imported overloads added
 - Each FOS is unique per module, never redefine the same FOS in different modules

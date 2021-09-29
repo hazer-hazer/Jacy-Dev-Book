@@ -1,12 +1,3 @@
----
-layout: default
-title: Name resolution
-nav_order: 10
-parent: Compilation Process
-
-# description: This stage is where name resolution begins.
----
-
 # Name resolution
 
 If you want a brief overview of the Name Resolution internals, checkout [Name Resolution Cheatsheet](../cheatsheets/name-resolution-cheatsheet)
@@ -23,7 +14,7 @@ is a wider thing as it is pushed onto the stack each time one of these rules can
 So, a rib is pushed onto the rib stack not only when we enter a block `{}`, but also when `let` is met or when rib names
 could collide with other names but we don't want this for reasons of possibility to make it work.
 
-#### Name shadowing
+## Name shadowing
 
 The one important thing we need to establish -- _Jacy_ allows local names shadowing! Why? Let's look at an example where
 it is practically convenient.
@@ -112,7 +103,7 @@ We don't have raw identifiers in the code, even in types. So, if we write `a + 1
 much simpler and will be discussed further.
 
 All paths, including type paths, are pointing to some definition in the module tree, and as we've already defined
-everything at the previous stage, resolving paths is mostly a simple process. 
+everything at the previous stage, resolving paths is mostly a simple process.
 
 More about path resolution read [the further chapter](#path-resolution).
 
@@ -123,6 +114,7 @@ It is possible because all these items are context-dependent -- you cannot use f
 At the module-tree-building stage, we define all items, each in the namespace it belongs to, at the name resolution stage, we lookup for a name in a specific namespace in a module.
 
 For example:
+
 ```jc
 struct foo {}
 
@@ -134,10 +126,12 @@ func foo() {
 By convention, this code is not a good one, as we use a lower-case name for `struct`, but this code is valid from the view of name resolution.
 
 `ModuleTreeBuilder` defines:
+
 - `foo` in ROOT module in _type_ namespace
 - `foo` in ROOT module in _value_ namespace
 
 `NameResolver` goes inside the ROOT module and resolves:
+
 - `foo` type for local variable `f`, looking up for it in _type_ namespace (doesn't even try to find it in _value_ namespace).
 
 What namespace does each item belong to?
@@ -178,15 +172,13 @@ a binding.
 
 #### Labels and lifetimes
 
-__TODO__
-
+TODO
 
 #### `lang` items
 
 Some items are required for internal logic, e.g. when we write `int?`, it is an `Option<int>` type, and the compiler must at first find the `Option` ADT to lower `int?`.
 
 `lang` is an attribute of the form `@lang(name: '[NAME]')`, where `name` is an optional label and should be used to avoid problems if in the future new parameters will be added.
-
 
 ### Path resolution
 
@@ -195,6 +187,7 @@ In _Jacy_, a path is actually "any name", just an `a` is a path, `path::to::some
 
 For name resolution, we look at the path as at following structure:
 `path::to::something`
+
 - `path` is a prefix segment, which is always "something from type namespace"
 - `to` is also a prefix segment
 - `something` is, so-called, _target_ segment, this is what the user wants
@@ -204,9 +197,9 @@ All prefix segments are items from the _type_ namespace because only items from 
 One special, but the most popular case is a single-segment path. In that case, we need to think of a path not only as a possible path to an item but also as a local variable.
 In single-segment paths, local variables have higher precedence, that is, if we see a single-segment path we need at first check if there's a local variable with this name and only if it does not exists -- check for items.
 
-
 The work for resolving items in the module tree is implemented inside `PathResolver`.
 When resolving items we need to keep in mind some concepts:
+
 - Multiple namespaces - _type_, _value_, etc. namespaces have pretty different logic
 - Function overloading - in _value_ namespace instead of having pair `Name: DefId` it can be `Name: FuncOverloadId`, which points to, possibly multiple, function definitions
 - Only items from _type_ namespace export items outside
@@ -214,8 +207,10 @@ When resolving items we need to keep in mind some concepts:
 Even though resolution source code might look hard to comprehend, it's pretty straightforward, however complex.
 Assume we have path `path::to::something`, these steps are included in the workflow:
 0. At the start point we know:
-   - What namespace look for an item in. It is known from context, for example in `1 + foo` we are 100% sure that `foo` is from the _value_ namespace because it is used in an expression. Having a target namespace is not required for all resolution cases though.
-   - Suffix (option). E.g. if user has written `path::to::function(a: 123, b: 123)` the suffix is `(a:b:)`.
+
+- What namespace look for an item in. It is known from context, for example in `1 + foo` we are 100% sure that `foo` is from the _value_ namespace because it is used in an expression. Having a target namespace is not required for all resolution cases though.
+- Suffix (option). E.g. if user has written `path::to::function(a: 123, b: 123)` the suffix is `(a:b:)`.
+
 1. Lookup for a module that has a `path` item starting from the current module and going up until the root module
    - If the root module is reached and nothing is found -- report an error
 2. When the first "search-module" is found we don't repeat step one as only the first segment is resolved relatively and subsequent segments relative to it.
@@ -224,18 +219,20 @@ Assume we have path `path::to::something`, these steps are included in the workf
 5. __read further__
 
 There are three common resolution cases:
+
 1. Resolve specific item (usage of some item)
 2. Resolve single name import (`use ...`)
 3. Descend to the module and apply custom logic (specific for some `use ...` cases)
 
 > Some terminology:
+>
 > - `use *` is called use-all import
 > - `use {...}` is called use-specific import
 > - "target" namespace is the namespace context requires (e.g. in expression _value_ namespace is used). "target" segment is the last segment of the path, that in some cases is resolved inside a specific namespace, sometimes in all.
 > - "path prefix" or "prefix of the path" is a part of the path that includes all segments begin the last one.
 > - "import (-s)" one or more `use` declarations.
 
-##### 1. Resolving specific items
+#### 1. Resolving specific items
 
 This way is how the resolver works most of the time. When a user writes `let a = b` and `b` is not a local, we need to resolve `b` as some item.
 
@@ -254,7 +251,6 @@ As described above, we resolved the `path::to` prefix part, now having the `some
      - If we have a suffix and no matter how many overloads -- we lookup for an overload by `suffix -> DefId` map
 3. We always end up with either an error resolution or a __single__ definition id.
 
-
 ##### 2. Resolving single name imports
 
 When a user writes `use path::to::something` or `use path::to::something as rebinding` we need to resolve the whole path, but, in contrast with ["specific resolution"](#1-resolving-specific-items), we collect all the items with the name `something`.
@@ -271,6 +267,7 @@ Resolution of `use path::to::something::*` and `use {...}` differ from single na
 `use path::to::something::*` is a bad decision for general use in your code, anyway it is useful, for example, in the prelude.
 
 The logic of collecting names is following:
+
 - For each namespace in `path::to::something` module
   - Collect each definition
   - Collect all definitions of function overloads
@@ -278,9 +275,6 @@ The logic of collecting names is following:
 - If no definitions inside `path::to::something` module -- do nothing
 - Apply [Importation & Module System](importation-&-module-system) logic
 
-
 ###### `use {}`
 
 This kind of `use` is called "specific", what it does is importing multiple paths relatively to prefix one, i.e. in `use path::to::something::{...}` all imports inside `{}` are resolved relatively to `path::to::something`. That's it, nothing complex, we just descend into the module `path::to::something` and then resolve each import inside `{}` starting the search from `path::to::something`.
-
-
