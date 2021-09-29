@@ -3,7 +3,6 @@
 > This particle is mostly about the name resolution but also affects the type system.
 > Stuff discussed here grows from the idea of the function named arguments
 
-
 ## Named arguments
 
 Let's begin with what named arguments are.
@@ -21,6 +20,7 @@ To disallow passing argument as named we need to place `_` instead of a label, t
 
 Swift by default requires a parameter label, and what if we invert this logic?
 For example:
+
 ```jc
 func foo(label! paramName: Type)
 ```
@@ -28,6 +28,7 @@ func foo(label! paramName: Type)
 Here, we annotate `label` with `!` to say that the user must pass a parameter with a label, otherwise, it would be an error.
 
 The shortcut variant would look like that:
+
 ```jc
 func foo(paramName!: Type)
 ```
@@ -38,22 +39,23 @@ Here, the parameter name is `paramName` and the label is `paramName` too, also i
 
 Thanks to Swift for the idea of overloading without type checking.
 Swift supports overloading by parameter labels, e.g.:
+
 ```swift
 func do(with: Int)
 func do(from: Int)
 ```
 
 Why this is a really cool feature:
+
 - We don't need to know the types
 - We can have the same types but depend on label names.
 - Overloading's are resolved at the name resolution stage and don't require type check
 
-
 Anyway, there're some cons from the view of additional complexity in the compiler.
 
-#### Examples of errors
+### Examples of errors
 
-##### #1. Ambiguous invocation
+#### #1. Ambiguous invocation
 
 ```jc
 func doSmth(with: int);
@@ -66,6 +68,7 @@ func main {
 ```
 
 The solution to disambiguate this case is the same as in Swift.
+
 1. Function types do not have labels
 2. Labels are used only for function overloading resolution (in name resolution) and nowhere else
 
@@ -74,6 +77,7 @@ Summing up, parameter labels are just name-resolution level overloading and mark
 Anyway, to disambiguate the case present above we need some mechanism to say that we're gonna use the specific `doSmth` function. It is done with Swift-like syntax `functionName(label1:label2:...)`, that is, we don't call function but resolve its overloading.
 
 So, it looks such as:
+
 ```jc
 func doSmth(with: int);
 func doSmth(from: int);
@@ -84,7 +88,7 @@ func main {
 }
 ```
 
-I need to note that type of `doSmth(with:)` is not `(with: int) -> ()`, just a `(int) -> ()`. 
+I need to note that type of `doSmth(with:)` is not `(with: int) -> ()`, just a `(int) -> ()`.
 So, names have gone and cannot be used after.
 
 Anyway, parameter names in function types are allowed, but they just markers for user and do not affect real function type. That is to say, parameter names in types are used for documentation purposes.
