@@ -44,5 +44,8 @@ Also, I want to describe some kind of Zen, I need a list of common values that _
     <a class="link" href="/Jacy-Dev-Book/concept/goal.html">< Goal</a>
 </button>
 
-    
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/concept/why-affine-types.html">Why affine types ></a>
+</button>
+
 </div>
