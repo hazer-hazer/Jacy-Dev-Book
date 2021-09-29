@@ -7,6 +7,7 @@ _Jacy_ supports affine types, not linear, however, linearity logic is controlled
 
 ```jc
 func foo() {
-    let r = Rc()
+    let r = Rc(0);
+    let r1 = Rc::clone(r);
 }
 ```
