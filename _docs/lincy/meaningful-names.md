@@ -1,6 +1,7 @@
 # Meaningful names check
 
 Examples:
+
 ```jc
 type Token = str;
 

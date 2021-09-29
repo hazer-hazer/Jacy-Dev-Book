@@ -1,11 +1,14 @@
-The idea.
-```rust
+# Arguments labels
+
+## The idea
+
+```jc
 func printName(name: str) {
-  print(name);
+    print(name);
 }
 
 func main {
-  let name = "Kek";
-  foo(:name);
+    let name = "Kek";
+    foo(:name);
 }
 ```

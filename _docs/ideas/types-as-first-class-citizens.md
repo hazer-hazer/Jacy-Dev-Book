@@ -1,21 +1,15 @@
----
-layout: default
-title: Types as first-class citizens
-nav_order: 6
-parent: Ideas
----
-
 # Types as first-class citizens
 
 The idea is growing from powerfulness of compile-time evaluation. All types must be known at compile-time, and as far as
 I am going to implement comprehensive CTE system, "types as first-class citizens" sounds really fittable in this
 picture.
 
-### Type declarations
+## Type declarations
 
 At first, I thought it would be nice if we could use `type` for declaring not only aliases to types but also use them in
 the way as type variables. Types are items, all items are forwardly declared, that is, if some type is declared in a
 scope, it can be used before it actually appears in the code. Example.
+
 ```rust
 func foo {
     let a: MyType = 123;
@@ -25,6 +19,7 @@ func foo {
 ```
 
 For me, it looks problematic as the control flow with types would be either impossible or weird.
+
 ```rust
 func foo {
     if a {
@@ -34,6 +29,7 @@ func foo {
     type a = i32;
 }
 ```
+
 Hmm... WTF???
 
 Actually, control-flow for types is useless in the way of using declared aliases. Aliases are not dynamic, thus if we
@@ -43,6 +39,7 @@ get type parameter which is unknown, and what if it would be possible to check t
 ### Dynamic type checks
 
 Example.
+
 ```rust
 func foo<T>(arg: T) {
     if T == bool {
@@ -57,5 +54,3 @@ Looks useful, but... not, actually. I cannot come up with a case when this canno
 constraints.
 
 ### Returning types
-
-
