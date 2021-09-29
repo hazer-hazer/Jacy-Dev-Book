@@ -1,16 +1,4 @@
----
-layout: default
-title: Control-Flow structures
-nav_order: 20
-parent: Syntax Decisions
-
-# description: >- The control flow of *Jacy* is mostly inspired by Rust.We've got
-#   `if`/`if let` as an expression, `loop` as an expression,`while`/`while let`
-#   and `for`.`while`/`while let` and `for` are statements
----
-
 # Control-Flow structures
-
 
 The control flow of _Jacy_ is mostly inspired by Rust.
 
@@ -21,15 +9,15 @@ We've got `if`/`if let` as an expression, `loop` as an expression, `while`/`whil
 * Why we need to use them as expressions if they return `()` (unit)
 * I'm trying to solve the problem above, and it will be solved they'll become expression which returns an any-type value
 * If I made them expressions then it would break backward compatibility:
-* * You could put them in expression place, but they returned `()`, and in the new version, they started returning some
+  * You could put them in expression place, but they returned `()`, and in the new version, they started returning some
     non-`()` value
 
-**if/if let**
+## `if`/`if let`
 
 `if` is an expression, works the same as in other languages, here's nothing to say about except that I need to note that
 _Jacy_ does not support implicit `bool` conversion even through operator overloading like C++ does.
 
-**if let**
+### `if let`
 
 `if let` is a way to check if some value matches a specific pattern. Also, as this is a pattern matching we able to
 destruct our value.
@@ -40,13 +28,13 @@ Syntax is following.
 ifLetExpression: 'if let' pattern '=' expr block
 ```
 
-**while/while let**
+## `while`/`while let`
 
 `while` is a statement that works the same as `while` in other c-like languages
 
 `while let` is the same as `while` except that its condition behaves like `if let`.
 
-**while/while let as expressions**
+### `while`/`while let` are expressions
 
 Here are some thoughts about possible solutions.
 
@@ -125,7 +113,7 @@ let a = if myval {
 }
 ```
 
-**for**
+## `for` loop
 
 `for`-loop is a statement, not an expression, here, problems with making it an expression are the same as for `while`
 (read above) but even more complex. `for`-loop in _Jacy_ has only one syntax (`for ... in ...`) same as Rust, which
@@ -139,25 +127,29 @@ forLoop: 'for' pattern 'in' expression block
 
 Examples.
 
-```rust
+```c++
 // In C++ we write
 for (int i = 0; i < something; i++) {
     // ...
 }
 
+```jc
 // In Jacy:
 for i in 0..=something {
     // ...
 }
+```
 
+```c++
 // In C++
 for (const auto & x : vec) {
     // ...
 }
+```
 
+```jc
 // In Jacy
 for x in &vec {
     // ...
 }
 ```
-
