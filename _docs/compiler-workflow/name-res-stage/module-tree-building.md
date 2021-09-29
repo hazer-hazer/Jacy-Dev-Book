@@ -38,13 +38,12 @@ access nested items from current currently compiled scope.
 
 #### Involved Data Structures and Types
 
-* `DefStorage` - Interface for definitions which presented in the form of index vector (vector where an offset is an
-  identifier for some data) of `Def`s
+* `DefStorage` - Interface for definitions which presented in the form of index vector (vector where an offset is an identifier for some data) of `Def`s
 * `Def` - Definition structure with specific kind (`Func`, `Enum`, etc.) common for all namespaces (e.g. types and items
-  are all `Def` but with different kinds), points to name `nodeId`
+  are all `Def` but with different kinds), points to the name `nodeId`
 * `def_id` - `Def` identifier, numeric offset in `DefStorage` definitions collection
 * `Module` - Actually a scope with different namespaces (type, value, lifetime), where each namespace is a map of
-  `string -> def_id`. Also contains a map of children and anonymous blocks, child is a named submodule (e.g. `func`
+  `string -> def_id`. Also contains a map of children and anonymous blocks, child is a named submodule (e.g. a `func`
   inside `mod`) and an anonymous block is either a block expression or function body.
 
 #### Module-Tree usage

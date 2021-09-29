@@ -39,7 +39,7 @@ func main {
 ```
 
 The function `strangeCheck` returns `Option` and we want to do something with this result, in other languages we either
-don't in fact need this (because of lack of so many wrappers like `Option`, etc.) or we write code like that.
+don't need this (because of lack of so many wrappers like `Option`, etc.) or we write code like that.
 
 ```rust
 let maybeA = strangeCheck(10);
@@ -80,7 +80,7 @@ mod a {
 ```
 
 As a result, what does `NameResolver` actually do from the view of defining is only local variables definitions. Thus at
-the "Module-Tree Building" stage, we can use an easy concept of modules, and suppose to define the things which
+the "Module-Tree Building" stage, we can use an easy concept of modules and suppose to define the things which
 can be forward-used. And when we resolve names we define the things which cannot be forward-used, these are local
 variables, function/closure parameters, labels, and lifetimes, keeping name resolution simple.
 
