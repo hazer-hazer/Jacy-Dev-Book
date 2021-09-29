@@ -1,2 +1,1 @@
 # Jacy Development Book
-
