@@ -1,18 +1,14 @@
----
-layout: default
-title: Goal
-nav_order: 3
----
-
 # Goal
 
 This is a list of features and examples I wish would be possible in *Jacy*.
 
-#### *Jacy* is safe
+## Main features
+
+### *Jacy* is safe
 
 - *Jacy* follows Rust' borrowing rules
 
-#### References
+### References
 
 ```jc
 let a = 123;
@@ -24,9 +20,9 @@ let bor = &mut value;
 print(value); // Prints `1000`
 ```
 
-#### Non-Copy types are passed by reference
+### Non-Copy types are passed by reference
 
-#### *Jacy* supports structural sub-typing with tuples
+### *Jacy* supports structural sub-typing with tuples
 
 ```jc
 let t = ("abcdef", 2.0, 123);
@@ -34,9 +30,9 @@ let t = ("abcdef", 2.0, 123);
 func foo(tup: (str, float, int));
 ```
 
-### *Jacy* is functional
+## *Jacy* is functional
 
-#### Pattern matching
+### Pattern matching
 
 ```jc
 let a = (1, 2, 3);
@@ -47,7 +43,7 @@ match a {
 }
 ```
 
-##### It is possible to ignore non-important fields
+#### It is possible to ignore non-important fields
 
 ```jc
 match a {
@@ -55,7 +51,7 @@ match a {
 }
 ```
 
-##### Matched expression can be borrowed
+#### Matched expression can be borrowed
 
 ```jc
 match a {
@@ -63,14 +59,14 @@ match a {
 }
 ```
 
-##### Lambdas (closures)
+### Lambdas (closures)
 
 ```jc
 let l = x -> x * 2;
 print(l(2)); // 4
 ```
 
-##### Pipeline operator
+### Pipeline operator
 
 ```jc
 2 |> l |> print; // 4
@@ -127,4 +123,3 @@ func main {
     print(fib100);
 }
 ```
-
