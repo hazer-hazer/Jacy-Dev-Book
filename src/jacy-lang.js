@@ -114,7 +114,7 @@ function jacy(hljs) {
         "Vec"
     ];
 
-    const OPERATORS = [
+    const OPS_RE = [
         '=',
         '+=',
         '-=',
@@ -133,6 +133,7 @@ function jacy(hljs) {
         '/',
         '%',
         '**',
+        'not',
         'or',
         'and',
         '<<',
@@ -158,7 +159,7 @@ function jacy(hljs) {
         '|>',
         '$',
         '@'
-    ];
+    ].map(op => op.replace(/[-[\]{}()*+?.,\\^$|#\s]/g, '\\$&')).join('|');
 
     return {
         name: 'Jacy',
@@ -194,6 +195,10 @@ function jacy(hljs) {
             {
                 className: 'symbol',
                 begin: /'[a-zA-Z_][a-zA-Z0-9_]*/
+            },
+            {
+                className: 'operator',
+                begin: OPS_RE,
             },
             {
                 className: 'number',
