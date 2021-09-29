@@ -26,7 +26,7 @@ error.
 In another way, the result of the function won't be inlined in usage places, but it is possible to use a function that
 wasn't qualified as `const` in a CTE context. More about that below.
 
-**const inference**
+## const inference
 
 Another approach is more complex for the compiler but simple for the user: If we declare a function and use it in CTE
 context when compiler goes to this function and checks that it's CTE function. Anyway, if we use this function in a

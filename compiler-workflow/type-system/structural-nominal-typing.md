@@ -16,9 +16,9 @@ I wanna both:
 * Structurally typed tuples (raw tuples)
 * Nominally typed tuples (aka rustish tuple-structs)
 
-**Problems**
+## Problems
 
-**Structurally typed records**
+### Structurally typed records
 
 I consider using `()` for tuples and `{}` for structs. Anyway, there are some problems, as far as we've got
 block-expression. `{}` can be either a block-expression, either struct literal. This is why struct-literal is always
@@ -29,14 +29,14 @@ Why not use `()` and use named-tuples for structurally typed records? - I want t
 type annotation we cannot disambiguate named-tuple and lambda parameters, because in named-tuple we have `name:
 expression` but in lambda parameters `name: type`.
 
-**Solutions**
+#### Solutions
 
-**\#1** I don't like this one anyway:
+##### \#1 I don't like this one anyway
 
 * Use `|params...| expression` syntax for lambda functions
 * Use `(name: expression)` syntax for named-tuples
 
-**\#2**
+##### #2
 
 * Use `record {name: expression}`
 
@@ -44,7 +44,7 @@ Why this is a bad solution:
 
 * We reserve new keyword for mostly
 
-**\#3**
+##### #3
 
 This is the most complex way, but it likely will allow us to save all preferred syntaxes. We improve parsing of
 expressions enclosed into `()` and save everything inside `()` into some stack. Then if we see that there's a `->` after
@@ -62,7 +62,7 @@ When we parse `a`'s and `b`'s assigned expressions we see `(`, then collect all 
 `->` after `)` -- we parse these tokens as lambda parameters (`b` case), if there isn't `->` after `)` -- we parse
 tokens as named-tuple (`a` case).
 
-**\#4**
+###### #4
 
 * Do not have structurally typed records at all
 

@@ -7,7 +7,7 @@ has_children: true
 # No grandparent
 ---
 
-# compilation-process
+# Compilation Workflow
 <div class="nav-btn-block">
     
     <button class="nav-btn right">

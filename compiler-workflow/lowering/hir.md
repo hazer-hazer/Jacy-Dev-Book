@@ -12,7 +12,7 @@ grand_parent: 'Compiler Workflow'
 Same as Rust (again...) _Jacy_ has HIR - High-level Intermediate Representation. It AST-like IR that is well-formed and
 lowered.
 
-#### Lowering
+## Lowering
 
 Lowering is a process of converting some syntactically different structures to common structures.
 

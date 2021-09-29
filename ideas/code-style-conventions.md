@@ -16,20 +16,19 @@ As far as *Jacy* is VERY WIP, I won't describe serious conventions, thus it's go
 Okay, I respect Rust, but snake_case is not kind of what most of people use I think, even not considering things like
 "most people do ...", does not matter, I can describe everything from my view.
 
-
-##### To be (snake) or not to be
+### To be (snake) or not to be
 
 Actually, it does not matter for me. The only thing I won't accept is usage of, so called, PascalCase for functions,
 variables, etc. except types, names.
 
-
 ### Intro and common rules
 
 List of all writing styles referenced in convention:
- - __camelCase__ - starts with lowercase letter, each next word starts with uppercase
- - __PascalCase__ - starts with uppercase letter, each next word starts with uppercase
- - __snake_case__ - each word starts with lowercase letter, words separated with `_`
- - __SCREAMING_SNAKE_CASE__ - all letters in uppercase, words separated with `_`
+
+- __camelCase__ - starts with lowercase letter, each next word starts with uppercase
+- __PascalCase__ - starts with uppercase letter, each next word starts with uppercase
+- __snake_case__ - each word starts with lowercase letter, words separated with `_`
+- __SCREAMING_SNAKE_CASE__ - all letters in uppercase, words separated with `_`
 
 All other variations MUST NOT be used in code.
 
@@ -40,7 +39,6 @@ that gonna be clean what is my view.
 is written that something "SHOULD BE ..." but "MAY BE ..." and you've chosen a described alternative -- use it
 everywhere in your code.
 
-
 ### Variables and functions
 
 Variables and functions SHOULD be named in __camelCase__: `somethingSomewhere`, `myFunction`, `foo`, `barBazFuzz`
@@ -48,7 +46,6 @@ Variables and functions SHOULD be named in __camelCase__: `somethingSomewhere`, 
 Variables and functions MAY be named in __snake_case__: `something_somewhere`, `my_function`, `foo`, `bar_baz_fuzz`
 
 If one of style is chosen it MUST be followed in the whole code.
-
 
 ### Constants
 
@@ -64,11 +61,12 @@ Scientific constants like PI number MUST BE named in __SCREAMING_SNAKE_CASE__: `
 ### Type names
 
 Type names include names for:
- - `struct`
- - `trait`
- - `enum`
- - `type`
- - type parameters (read further)
+
+- `struct`
+- `trait`
+- `enum`
+- `type`
+- type parameters (read further)
 
 All types MUST be in __PascalCase__: `MyType`, `SomeStructure`, `EnumWithEverythingINeed`
 

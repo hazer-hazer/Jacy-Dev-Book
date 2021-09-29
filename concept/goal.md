@@ -11,51 +11,53 @@ parent: 'Concept'
 
 This is a list of features and examples I wish would be possible in *Jacy*.
 
-#### *Jacy* is safe
+## Main features
+
+### *Jacy* is safe
 
 - *Jacy* follows Rust' borrowing rules
 
-#### References
+### References
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = <span class="hljs-number">123</span>;</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">b</span> = &amp;a; <span class="hljs-comment">// Borrow `a`</span></div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">value</span> = <span class="hljs-number">0</span>;</div><div class="line-num" data-line-num="5">5</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">bor</span> = &amp;<span class="hljs-keyword">mut</span> value;</div><div class="line-num" data-line-num="6">6</div><div class="line">*bor = <span class="hljs-number">1000</span>;</div><div class="line-num" data-line-num="7">7</div><div class="line"><span class="hljs-title function_ invoke__">print</span>(value); <span class="hljs-comment">// Prints `1000`</span></div>
         </div>
 
-#### Non-Copy types are passed by reference
+### Non-Copy types are passed by reference
 
-#### *Jacy* supports structural sub-typing with tuples
+### *Jacy* supports structural sub-typing with tuples
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">t</span> = (<span class="hljs-string">&quot;abcdef&quot;</span>, <span class="hljs-number">2.0</span>, <span class="hljs-number">123</span>);</div><div class="line-num" data-line-num="2">2</div><div class="line"></div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(tup: (<span class="hljs-type">str</span>, float, <span class="hljs-type">int</span>));</div>
         </div>
 
-### *Jacy* is functional
+## *Jacy* is functional
 
-#### Pattern matching
+### Pattern matching
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = (<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>);</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> (f, s, t) = a;</div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-keyword">match</span> a {</div><div class="line-num" data-line-num="5">5</div><div class="line">    (f, s, t) =&gt; <span class="hljs-comment">// Do something with `f`, `s` and `t`</span></div><div class="line-num" data-line-num="6">6</div><div class="line">}</div>
         </div>
 
-##### It is possible to ignore non-important fields
+#### It is possible to ignore non-important fields
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">match</span> a {</div><div class="line-num" data-line-num="2">2</div><div class="line">    (f, ...) =&gt; <span class="hljs-comment">// Do something with `f` only</span></div><div class="line-num" data-line-num="3">3</div><div class="line">}</div>
         </div>
 
-##### Matched expression can be borrowed
+#### Matched expression can be borrowed
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">match</span> a {</div><div class="line-num" data-line-num="2">2</div><div class="line">    (<span class="hljs-keyword">ref</span> f, ...) =&gt; <span class="hljs-comment">// Do something with `f` as reference to `a.0`</span></div><div class="line-num" data-line-num="3">3</div><div class="line">}</div>
         </div>
 
-##### Lambdas (closures)
+### Lambdas (closures)
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">l</span> = x <span class="hljs-punctuation">-&gt;</span> x * <span class="hljs-number">2</span>;</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-title function_ invoke__">print</span>(<span class="hljs-title function_ invoke__">l</span>(<span class="hljs-number">2</span>)); <span class="hljs-comment">// 4</span></div>
         </div>
 
-##### Pipeline operator
+### Pipeline operator
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-number">2</span> |&gt; l |&gt; print; <span class="hljs-comment">// 4</span></div>

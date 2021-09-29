@@ -7,21 +7,21 @@ parent: 'Code docs'
 # No grandparent
 ---
 
-# Config & CLI
+# Config & CLI [OUTDATED]
 
 `Config` is a common singleton class that converts CLI options to programmer-friendly structures (`enum`s almost
 always).
 
 You can get`Config` via `getInstance` static method, all its properties are global.
 
-#### Options
+## Options
 
 `cli::Options` is a structure that contains all info about CLI options: existent boolean and key-value options, allowed
 source file extensions, options dependencies, etc.
 
 Also, `cli::Options` acts as a storage for specified CLI options.
 
-#### CLI
+## CLI
 
 `cli::CLI` is a class that processes input `argv` and produces separate collections of boolean and key-value options. At
 this step, options are stored as strings. `cli::CLI` class has an interface to work with options to check that something
@@ -32,7 +32,7 @@ string by delimiters like `=` (actually, options are already delimited by white 
 worry about cases when a user writes `-print = all` or `-print= all` or `-print =all` -- all these variants result to
 `["-print", "=", "all"]`.
 
-#### Config
+## Config
 
 After all the options are collected we can set configurations. It's done in a pretty simple way -- all the argument
 names are stored in maps with corresponding enum variants. We just need to check if some option is specified and if it

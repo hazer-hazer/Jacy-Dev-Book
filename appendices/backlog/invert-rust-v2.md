@@ -11,7 +11,7 @@ grand_parent: 'Appendices'
 
 ## This (new version of old "Invert Rust") idea is also DEPRECATED, because it cannot live without GC 😭
 
-#### Disclaimer
+### Disclaimer
 
 I know that pass-by-reference is often understood wrong, as far as I know, there're a small count of languages which
 support "real" pass-by-reference (C++ sometimes), thus I'll try to avoid this term. Let's name it as what it does: "Make
@@ -37,22 +37,23 @@ As *Jacy* is hardly inspired by Rust, let's, at first, look at what Rust does. R
 No, question is wider and deeper. Rust is very good, pass-by-move is a nice rule that leads to straightforward code and
 safes us from some accidents with owning. Anyway, as I claimed above -- we want reference by default. And __questions__
 that I need to answer are:
- - Can it be actually done and how?
- - Will it be consistent?
- - Is it beautiful and so convenient that we need it?
- - Does it cover enough low-level programming cases?
+
+- Can it be actually done and how?
+- Will it be consistent?
+- Is it beautiful and so convenient that we need it?
+- Does it cover enough low-level programming cases?
 
 #### Let's look at Rust
 
 Rust is pass by move, but what does "move" mean? `move` is nothing more than `memcpy` but with some static analysis that checks we don't use moved value.
 Actually, assignment in Rust is always byte-by-byte copy, and *Jacy* respects this, because assignment with side effects, etc. is bad.
 
-
 #### The key
 
 I'm sadly describing this idea after I marked it as DEPRECATED. Why it is deprecated described below, now, let's look how it would look like.
 
 Invert Rust means that:
+
 - Non-copy type `T` internally becomes `&T`
 - To make a non-ref type `own` must be used -- `own T`
 - Copy types automatically becomes `own T`
@@ -60,6 +61,7 @@ Invert Rust means that:
 At first, it might be confusing or even a nice solution.
 
 Let's look at examples:
+
 ```rust
 // We have
 func foo(a: str);
@@ -82,7 +84,7 @@ This examples show that when Rust use move -- we use `own`, and when Rust use `&
 
 `own` is kind of saying to compiler: "it could be a reference type, but here's `own` thus don't place here a reference by default".
 
-###### What we're unable to do
+##### What we're unable to do
 
 This solution covers all use cases, and doesn't break Rust semantics until we don't have elision for reference types, etc.
 If some rules becomes "implicitly make this type ..., because it is convenient" -- we break everything.

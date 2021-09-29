@@ -16,12 +16,12 @@ Logger formatting works simple, each logger method is a template function that a
 entities must be printed without white space and it's hard to implement overloading for each type which must not print
 white space after or before it as we need to compare each two neighbors types in the log method parameter list.
 
-#### Logger owners
+## Logger owners
 
 All big classes have a Logger instance inited with an owner name corresponding to the class name. Logs produced by
 logger owners with non-static methods are complemented with log info: owner name and colorized log-level name.
 
-#### Logger config
+### Logger config
 
 An owned logger can be configured, directly in the source code or automatically by Config with CLI options.
 
@@ -35,7 +35,7 @@ Configurations influencing each non-static log invocation:
 * `colorize` - (default: `true`) - Colorizes additional info (e.g. log-level name with corresponding color), each
   log-level has its own color.
 
-#### Panics
+## Panics
 
 Panic is actually throwing an exception, everywhere in the compiler code we panic when some check failed which
 considered a bug. For example, at the name resolution stage, we put some definition to storage and then extract it by
@@ -45,7 +45,7 @@ must panic.
 To panic, there's a static method `Logger::devPanic`, it follows common format rules, that is, we can pass any types
 that overload `std::ostream<<` operator to it delimited by commas as arguments.
 
-#### Log-levels
+## Log-levels
 
 This is the list of log levels ordered by priority (lowest -&gt; highest):
 
@@ -64,7 +64,7 @@ enabled, e.g. if a user added `-print=ast` in CLI then we print `info: Printing 
 `dev` log-level may seem confusing, but it is the most often used log-level in the code. Actually, its usage is to
 produce verbose debug info that is useful when working at a specific compilation stage.
 
-#### Additional methods
+## Additional methods
 
 These are methods that differ from log methods:
 

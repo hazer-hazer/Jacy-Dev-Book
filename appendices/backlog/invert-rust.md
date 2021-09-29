@@ -11,7 +11,7 @@ grand_parent: 'Appendices'
 
 ## This article is deprecated as far as the key concept was invalidly described, there're replacement in ideas/invert-rust which is right
 
-**Please read this**
+> __Please read this__
 > When reading my ideas keep in mind that it is a mind flow but not a RFC. While you read you can how my opinion is
 > jumping back and forth, so statements described earlier can conflict with some later.
 
@@ -103,7 +103,6 @@ are not under these rules. That's what Rust does -- making reference to some val
 immutably borrowing it. Considering this, our hands are clean 😃. Anyway, affine types in Rust give us some cleaner code
 than PIR, as we make references implicitly, thus it opens a vista to do break linearity of program.
 
-
 ### The problems I see
 
 I think it is actually impossible to replace Rustish "move by default" with "ref by default" and break everything. The
@@ -124,6 +123,7 @@ not known at compile-time, so we cannot allocate it on the stack. In PIR it woul
 far as the slice is not a Copy-Type (same in Rust). That's just an example of what we hide with PIR but not a problem.
 
 #### Actual types
+
 If we consider that a type which is not a Copy-Type and passed without any qualifiers -- it is a reference to type, then
 this is a reference type. So, let's assume we have some intrinsic method to get type of an expression as string, what
 will it print for function that accepts `Struct {field: 1234}`? -- `Struct` or `&Struct`.
@@ -133,6 +133,7 @@ As far as we don't remove references at all (they are still required to be in th
 as far as we anyway separate concepts of references and values, we need it to be a reference.
 
 #### Generics (!important)
+
 This is really interesting problem to solve. As we do not have GC we cannot rely on the fact that everything will be
 cleared as we put `free` at CT. The problem is not that `Vec<Struct>` is `&Vec<Struct>`... No, the problem is that is it
 `&Vec<Struct>` or `&Vec<&Struct>`?! Rapidly answering this question I would say, it is a `&Vec<Struct>`, because having
@@ -151,6 +152,7 @@ pass-by-value could be implemented" from view of code generation -- this is an a
 semantics and syntax. What am I talking about is that removing explicit reference types mostly everywhere we get lack of
 opportunity to qualify value type. Further I'm gonna describe a list of all rules about PIR, so here won't be
 comprehensive solution as it would be more understandable as if we just look at specific rules. Anyway, here it is.
+
 ```rust
 // `Kitty` is a structure declared somewhere
 func foo(kitty: Kitty) {
@@ -162,8 +164,10 @@ func main {
     foo(kitty);
 }
 ```
+
 Here I meant to copy `kitty`, but because of PIR `kitty` is passed by reference. STOP, it is C++ and not Rust, we don't
 copy by default, and we don't move by default. So... How do I make it creating a copy of `kitty`?
+
 - Overload `Copy` trait?
 - Overload `Clone` trait? Both.
 - `Copy` - When type overloads `Copy` trait, it is always (forget about optimizations) copied, thus no reference
@@ -175,9 +179,11 @@ still a problem -- why do we need a reference as we cloned source, we'll just ad
 not actually required?
 
 #### `Clone` trait (!important)
+
 `Clone` trait in *Jacy* as in Rust is used to provide explicit way to copy source object.
 
 Let's look at an example similar to one above.
+
 ```rust
 // Assume somewhere exists the `Kitty` type and it implements the `Clone` trait
 func foo(kitty: Kitty) {
@@ -201,11 +207,13 @@ only to handle copies but also references.
 not? -- Actually, they MUST.
 
 Let's assume we've got.
+
 ```rust
 struct StructType {
     field: Vec<i32>,
 }
 ```
+
 Note that `StructType.field` is not of type `&Vec<i32>`, it is non-reference, because PIR is only about passing values.
 
 ```rust
@@ -246,10 +254,12 @@ match &a {
 `a = b` in Rust is `a = move b` but with PIR it will become `a = &b`, if `b` is another variable of non-copy type.
 
 Let's look at examples to grasp when variable is automatically becomes a reference and where not.
+
 ```rust
 let a = StructType {field: Vec::new()};
 let b = a;
 ```
+
 Here, `a` is of type `StructType` because of move elision, but `b` would be `&StructType` as it is automatically
 borrowed.
 
@@ -262,13 +272,14 @@ Copy-types (e.g. `i32`) passed by copy, that is, they are passed by value and co
 of some variable containing copy type we would write `func foo(param: ref mut i32)` and must be explicitly passed with
 `ref mut` prefix.
 
-
 ### Rules
+
 Finally, after reviewing some cases, I'd like to reduce them to the list of rules.
 
 #### 1. If non-copy type passed to function or assigned, it is borrowed
 
 Examples.
+
 ```rust
 func foo(name: String) {
     print("My name is $name");
@@ -284,6 +295,7 @@ func main {
 #### 2. Moves are explicit in signatures and in calls
 
 Example.
+
 ```rust
 func foo(move name: String) {
     print("My name is $name");
@@ -298,6 +310,7 @@ func main {
 #### 3. Data, stored in structures must be explicitly qualified as reference
 
 Example.
+
 ```rust
 struct Data {
     inner: Vec<i32>
