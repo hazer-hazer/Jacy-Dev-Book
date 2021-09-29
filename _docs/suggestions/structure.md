@@ -4,7 +4,11 @@ Here, I'm going to describe what kinds of suggestions (should) exist and how the
 
 ## Suggestions update
 
-Currently (29.09.2021), suggestion system is pretty powerful for WIP language, however not that ideal and extensible.
-All suggestions are structured in the same way, and the only additional feature is the "hint" messages support.
+Currently (29.09.2021), suggestion system is pretty powerful for WIP language, however not that ideal and extensible -- all suggestions are structured in the same way, and the only additional feature is the "hint" messages support.
+
+What I want:
+
+- Header message, i.e. the actual "error/warning" message, the most essential part
+- Span highlighting styles
 
 
