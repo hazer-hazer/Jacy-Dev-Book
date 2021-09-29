@@ -9,7 +9,9 @@ nav_order: 5
 
 # How to run
 
-```
+## Basic usage
+
+```bash
 ./jc (.exe for windows) [source files] --boolean-argument -key-value-argument=param1, param2, ..., paramN
 ```
 
@@ -28,13 +30,13 @@ Also, arguments have constraints:
 
 Example usage.
 
-```
+```bash
 ./bin example.jc --print=ast
 ```
 
-**The actual list of options**
+### The actual list of options
 
-**Key-value options**
+#### Key-value options
 
 * `--dev-print` - (any count of parameters) - Development option that enables printing of representations of some structures on different compilation stages:
   * `suggestions` - Prints suggestions as non-formatted text for each stage.
@@ -90,17 +92,17 @@ You can use any boolean value to toggle arguments, allowed boolean values descri
 </blockquote>
 </div>
 
-**Boolean options**
+#### Boolean options
 
 * `--dev` - enables dev mode: all logs will be printed including `dev`-level logs and new logs will be added. Generally just produces more debug info everywhere.
 * `--dev-full` - (depends on `--dev`) - Enable all development logs and (maybe) some additional info emitting. You still can disable something using specific option, e.g. `--dev-full --dev-print source=no`. `--dev-full` does not enable "extra" options like `--parser-extra-debug`.
 
-**Explicit Boolean option value**
+##### Explicit Boolean option value
 
 What if you want to set bool-arg to `false`? Let's imagine that `--dev` is set by default (it is not anyway). There is
 the pretty same syntax for bool-args as for key-value args.
 
-```
+```bash
 --dev=no
 ```
 

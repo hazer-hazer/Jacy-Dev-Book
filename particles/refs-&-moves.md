@@ -36,6 +36,7 @@ Some things can be liberalized while saving all the safety rules in Rust.
 For example: passing by reference. We have function signature, we know that function accepts reference (possibly) mutable, that is, we don't lose safety if not requiring user to explicitly borrow value.
 
 Example:
+
 ```rust
 // Some non-copy type
 struct S {
@@ -58,6 +59,7 @@ func main {
 ```
 
 Rust version:
+
 - Comprehension is bipolar
   - In function `foo` user knows that `S` is reference
   - user cannot pass non-reference type to `foo` thus needs to explicitly borrow it
@@ -65,6 +67,7 @@ Rust version:
 - If function has to look like it accepts any value (`print` for example) -- user needs to write a macro which prepends `&` for each argument
 
 _Jacy_ version:
+
 - Comprehension is linear: Code reader have to look for function `foo` to know if it accepts reference, and cannot always see what actually is going in the code.
 - User does not need to always add `&` to borrow value
 - Functions like `print` can be easy made without troubles with passing non-reference types while borrowing them
@@ -75,6 +78,7 @@ When you're implementing a function -- you think what values it needs to accept 
 But when you're implementing a function which uses already implemented one -- you almost never need to think if you're passing your values by reference or by value.
 
 Let me describe what am talking about:
+
 ```rust
 struct S {
     field: int,
@@ -123,6 +127,7 @@ That all sounds good, but...
 Yes, we don't lose safety and Rustish semantics of reference passing, anyway, I missed something.
 Unlike C++, in Rust (and in _Jacy_) `&T` has different, more specific, semantics, that is, C++ operates on types and when you pass this type by reference it is not required it to be pointer-like (as Rust does). C++ specification does not tell must implementation always use pointers to implement references, that is internal behavior is implementation-relative. This is why C++ does not specify an operator for creating a reference -- you cannot make a reference manually because compiler could decide not to wrap reference to pointer.
 In _Jacy_, as in Rust, reference is a "pointer with constraint" that are:
+
 - References are always pointers, that is `T` and `&T`, and can be thought of as `T` and `ReferenceOf<T>`
 - Reference always points to valid data
   - It cannot be null
@@ -132,6 +137,7 @@ In _Jacy_, as in Rust, reference is a "pointer with constraint" that are:
 Keeping this in mind some problems arise, like, `impl &T`.
 
 Example:
+
 ```rust
 struct S {}
 
@@ -161,6 +167,7 @@ Actually, I would answer "No", as moving `s` is nearly what signature of functio
 So, this code will call `SomeTrait::kek(S)` (without `&`).
 
 User have to explicitly say that he wants to pass by reference (implicit pass does not exclude existence of Rustish `&` borrowing operator):
+
 ```rust
 func main {
     let s = S {};
@@ -170,6 +177,7 @@ func main {
 ```
 
 Okay, problem is solved? Actually, no. Let's look at more difficult example:
+
 ```rust
 struct S {}
 

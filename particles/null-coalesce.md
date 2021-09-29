@@ -29,18 +29,17 @@ This idea is pretty uncommon thus behavior I choose would not likely be useful, 
 
 Operator syntax is not specified, thus `[OP]` will be used further.
 
-
 Code sample:
+
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line">a [OP] b</div>
         </div>
+
 Where `a` has type `Option<T>` and `Option<b>` has type `U`.
 
 This operator MUST return `None` in case when `a` OR `b` are `None` values.
 
 What this operator should return if both of `a` AND `b` are `Some` values is described in variants below.
-
-
 
 ### Variant #1
 
