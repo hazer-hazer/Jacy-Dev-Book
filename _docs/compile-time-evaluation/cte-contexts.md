@@ -1,12 +1,3 @@
----
-layout: default
-title: CTE Contexts
-nav_order: 10
-parent: Compile-Time Evaluation
-
-# description: This stage is where name resolution begins.
----
-
 # CTE Contexts
 
 In some places, we cannot put run-time computed expressions, e.g. when we declare a fixed-sized array `[T; getSize()]`,
@@ -19,4 +10,3 @@ Here's the list of all (I hope) this kind of places (`N` and `M` are `const` exp
 * When we set default value for `const` parameter like `<const N: usize = M>`
 * Enum discriminant `enum MyEnum { Kind = N }`
 * `static` items initializers
-

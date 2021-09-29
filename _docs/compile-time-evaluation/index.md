@@ -1,10 +1,3 @@
----
-layout: default
-title: Compile-Time Evaluation
-nav_order: 15
-has_children: true
----
-
 # Compile-Time Evaluation
 
 One thing I appreciate much is the ability of compile-time evaluation (CTE - compile-time evaluated(-ion) further)
@@ -17,4 +10,3 @@ There are some terms we need to establish:
 * CTE contexts
 * CTE functions
 * CTE expressions
-
