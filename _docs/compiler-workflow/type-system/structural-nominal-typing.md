@@ -44,7 +44,7 @@ expressions enclosed into `()` and save everything inside `()` into some stack. 
 
 Example.
 
-```rust
+```jc
 let a = (name: 123)
 let b = (param: i32) -> param + 1
 ```

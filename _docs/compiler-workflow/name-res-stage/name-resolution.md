@@ -32,7 +32,7 @@ func main {
 The function `strangeCheck` returns `Option` and we want to do something with this result, in other languages we either
 don't need this (because of lack of so many wrappers like `Option`, etc.) or we write code like that.
 
-```rust
+```jc
 let maybeA = strangeCheck(10);
 let a = maybeA.unwrap();
 ```

@@ -10,7 +10,7 @@ At first, I thought it would be nice if we could use `type` for declaring not on
 the way as type variables. Types are items, all items are forwardly declared, that is, if some type is declared in a
 scope, it can be used before it actually appears in the code. Example.
 
-```rust
+```jc
 func foo {
     let a: MyType = 123;
 
@@ -20,7 +20,7 @@ func foo {
 
 For me, it looks problematic as the control flow with types would be either impossible or weird.
 
-```rust
+```jc
 func foo {
     if a {
         a = i64;
@@ -40,7 +40,7 @@ get type parameter which is unknown, and what if it would be possible to check t
 
 Example.
 
-```rust
+```jc
 func foo<T>(arg: T) {
     if T == bool {
         print("We've got 'bool'");

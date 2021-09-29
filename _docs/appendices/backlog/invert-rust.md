@@ -37,7 +37,7 @@ the `move` keyword.
 
 Example.
 
-```rust
+```jc
 struct Struct {
     field: i32,
 }
@@ -144,7 +144,7 @@ semantics and syntax. What am I talking about is that removing explicit referenc
 opportunity to qualify value type. Further I'm gonna describe a list of all rules about PIR, so here won't be
 comprehensive solution as it would be more understandable as if we just look at specific rules. Anyway, here it is.
 
-```rust
+```jc
 // `Kitty` is a structure declared somewhere
 func foo(kitty: Kitty) {
     print(kitty.msg);
@@ -175,7 +175,7 @@ not actually required?
 
 Let's look at an example similar to one above.
 
-```rust
+```jc
 // Assume somewhere exists the `Kitty` type and it implements the `Clone` trait
 func foo(kitty: Kitty) {
     print(kitty.msg);
@@ -199,7 +199,7 @@ not? -- Actually, they MUST.
 
 Let's assume we've got.
 
-```rust
+```jc
 struct StructType {
     field: Vec<i32>,
 }
@@ -207,7 +207,7 @@ struct StructType {
 
 Note that `StructType.field` is not of type `&Vec<i32>`, it is non-reference, because PIR is only about passing values.
 
-```rust
+```jc
 let a: StructType = structInstance; // `structInstance` is non-copy type
 
 // Desugared to
@@ -216,7 +216,7 @@ let a: &StructType = &structInstance;
 let ref a: &StructType = structInstance;
 ```
 
-```rust
+```jc
 func foo(param: StructType);
 foo(structInstance);
 
@@ -225,7 +225,7 @@ func foo(param: &StructType);
 foo(&structInstance);
 ```
 
-```rust
+```jc
 match a {
     StructType {field} => // ...
 }
@@ -246,7 +246,7 @@ match &a {
 
 Let's look at examples to grasp when variable is automatically becomes a reference and where not.
 
-```rust
+```jc
 let a = StructType {field: Vec::new()};
 let b = a;
 ```
@@ -271,7 +271,7 @@ Finally, after reviewing some cases, I'd like to reduce them to the list of rule
 
 Examples.
 
-```rust
+```jc
 func foo(name: String) {
     print("My name is $name");
 }
@@ -287,7 +287,7 @@ func main {
 
 Example.
 
-```rust
+```jc
 func foo(move name: String) {
     print("My name is $name");
 }
@@ -302,7 +302,7 @@ func main {
 
 Example.
 
-```rust
+```jc
 struct Data {
     inner: Vec<i32>
 }

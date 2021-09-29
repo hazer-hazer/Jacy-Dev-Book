@@ -28,7 +28,7 @@ For example: passing by reference. We have function signature, we know that func
 
 Example:
 
-```rust
+```jc
 // Some non-copy type
 struct S {
     field: int,
@@ -70,7 +70,7 @@ But when you're implementing a function which uses already implemented one -- yo
 
 Let me describe what am talking about:
 
-```rust
+```jc
 struct S {
     field: int,
 }
@@ -129,7 +129,7 @@ Keeping this in mind some problems arise, like, `impl &T`.
 
 Example:
 
-```rust
+```jc
 struct S {}
 
 impl SomeTrait for S {
@@ -159,7 +159,7 @@ So, this code will call `SomeTrait::kek(S)` (without `&`).
 
 User have to explicitly say that he wants to pass by reference (implicit pass does not exclude existence of Rustish `&` borrowing operator):
 
-```rust
+```jc
 func main {
     let s = S {};
 
@@ -169,7 +169,7 @@ func main {
 
 Okay, problem is solved? Actually, no. Let's look at more difficult example:
 
-```rust
+```jc
 struct S {}
 
 impl SomeTrait for &S {

@@ -38,7 +38,7 @@ ifLetExpression: 'if let' pattern '=' expr block
 
 Here are some thoughts about possible solutions.
 
-```rust
+```jc
 while myval {
     // Do something if `myval` is true
 } else {
@@ -56,7 +56,7 @@ It is an obvious solution, but has some problems:
 
 Problem example.
 
-```rust
+```jc
 let a = while myval {
     if somethingElse => break true
 } else {
@@ -70,7 +70,7 @@ For now, I cannot come up with any good solution, so `while` is a statement. Any
 
 **IDEA \#1** This one requires static-analysis (maybe complex).
 
-```rust
+```jc
 let a = while myval {
     if somethingElse => break true
     break false
@@ -83,7 +83,7 @@ We can analyze this code and say that each `break`-value is `bool`, so we allow 
 
 What about this?.
 
-```rust
+```jc
 let a = while myval {
     if somethingElse => break true
 } else {
@@ -97,7 +97,7 @@ We required some static-analysis on `while`, which is, as I see, is not really c
 `if` expression value inference. The only problem is that the use cases of `while-else` are not common, especially when
 we cover only this use case.
 
-```rust
+```jc
 let a = if myval {
     let mut result = false
     while myval {

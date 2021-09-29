@@ -5,7 +5,7 @@ It would allow us not to define new operators like `notin` or separately parse `
 
 So, it would look like this:
 
-```rust
+```jc
 a not in b
 // Becomes
 not (a in b)

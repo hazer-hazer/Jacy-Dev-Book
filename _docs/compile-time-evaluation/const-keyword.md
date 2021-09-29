@@ -16,7 +16,7 @@ After `'='` goes an expression which MUST also be CTE, but not exactly another `
 The difference between `let` and `const` is that `const` is an item, whereas `let` is a statement. As being an item
 `const` can be placed mostly on any level, including top-level.
 
-```antlr4
+```jc
 const a = 10
 
 trait MyTrait {

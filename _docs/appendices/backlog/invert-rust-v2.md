@@ -53,7 +53,7 @@ At first, it might be confusing or even a nice solution.
 
 Let's look at examples:
 
-```rust
+```jc
 // We have
 func foo(a: str);
 // Rust has
