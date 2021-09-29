@@ -9,7 +9,7 @@ parent: 'Appendices'
 
 # *Jacy* Programming language [checklist](https://www.mcmillen.dev/language_checklist.html)
 
-```
+```plaintext
 You appear to be advocating a new:
 [x] functional  [x] imperative  [x] object-oriented  [ ] procedural [ ] stack-based
 [x] "multi-paradigm"  [ ] lazy  [x] eager  [x] statically-typed  [ ] dynamically-typed

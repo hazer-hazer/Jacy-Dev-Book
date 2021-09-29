@@ -11,18 +11,19 @@ parent: 'Appendices'
 
 JON (Jacy Object Notation, ext.: `.jon`) is an alternative for JSON used by *Jacy* programming language.
 Its goals are:
+
 - Simpler and less noisy syntax
 - Data referencing
 
-### Basic properties
+## Basic properties
 
 - JON is case-sensitive, it this rule is applied to keywords too
 
-#### Root type
+### Root type
 
 JON does not support root type specification as JSON does, there's no root `{}` or `[]`, and a JON file is always an object.
 
-### Data types
+## Data types
 
 - `null` (non-value)
 - Boolean - `true`/`false`
@@ -46,8 +47,7 @@ JON does not support root type specification as JSON does, there's no root `{}` 
   - Each pair is `key: value` where
     - `key` is any text and does not require being enclosed into quotes (`'` or `"`) until it does not contain `:` character
 
-
-#### Numeric data types
+### Numeric data types
 
 There's no limit to Integer ("int" further) and Floating-point ("float" further) numbers, and is only specified by implementation.
 <div class="nav-btn-block">

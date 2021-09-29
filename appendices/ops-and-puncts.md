@@ -13,7 +13,7 @@ Operators in _Jacy_ are not something internally special in comparison with
 functions. When calling `a + b` the trait `std::ops::Add` will be used. Mostly
 all operators are overloadable.
 
-### Operators in expressions
+## Operators in expressions
 
 | Operator | Trait to overload |
 | :------: | :---------------- |
@@ -68,7 +68,7 @@ all operators are overloadable.
 * (\*\*) `RangeFull` is not a real operator, it is an empty `struct` which can
   be passed somewhere.
 
-### Punctuations
+## Punctuations
 
 | Punctuation | Usages |
 | :--- | :--- |
@@ -78,8 +78,7 @@ all operators are overloadable.
 | `=>` | `match` arms |
 |  |  |
 
-
-### Operators and punctuations precedence
+## Operators and punctuations precedence
 
 Precedence (from highest to lowest)
 

@@ -7,23 +7,23 @@ parent: 'Appendices'
 # No grandparent
 ---
 
-## Taxonomy and glossary
+# Taxonomy and glossary
 
-### Permissions
+## Permissions
 
-#### Mutability
+### Mutability
+
 **Mutable** - Allows read + write
 **Immutable** - Allows only read, disallows write
 **Opaque** - Disallows both read and write
 
 > Don't confuse Opaque permission with Rust's opaque types (aka `impl Trait`)
 
-#### Aliasing
+### Aliasing
 
 **Linear** - Disallows aliases
 **Locally sharable** - Allows aliases in single-thread
 **Globally sharable** - Allows aliases shared between threads
-
 
 ### Combinations
 
@@ -37,10 +37,11 @@ parent: 'Appendices'
 | Immutable | Locally/Globally sharable | [#4](#mut-loc-glob) |
 | Opaque | N/A | [#5](#opaque) |
 
-#### <a name="mut-imm-lin"></a> Mutable/Immutable + Linear
+### Mutable/Immutable + Linear
 
 This is the foundation of Rust -- move semantics.
 Example:
+
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">a</span> = MyStruct {field: <span class="hljs-number">123</span>};</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">b</span> = a; <span class="hljs-comment">// `a` is moved to `b`</span></div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">c</span> = b; <span class="hljs-comment">// `b` is moved to `c`</span></div>
         </div>
@@ -49,12 +50,12 @@ Linear type is orthogonal to aliasing as it cannot be aliased at all -- it is al
 Linear types allow moving from immutable context to mutable one.
 
 > Actually, it is important to note, that these are not the actual "Linear" types, more likely to say that these are "Affine" types as we don't require user to use value (except linter warnings)
-
 > Conclusion: **APPLIED**
 
-#### <a name="mut-loc"></a> Mutable + Locally sharable
+### Mutable + Locally sharable
 
 Example (pseudo Pony-like code):
+
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">a</span> = <span class="hljs-number">123</span>;</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">b</span> = <span class="hljs-keyword">mut</span> <span class="hljs-keyword">ref</span> a;</div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">c</span> = b; <span class="hljs-comment">// `b` is not moved to `c`, `c` re-borrows `a`</span></div><div class="line-num" data-line-num="4">4</div><div class="line"></div><div class="line-num" data-line-num="5">5</div><div class="line"><span class="hljs-comment">// `b` cannot be sent to another thread and can only be used in single one</span></div>
         </div>
@@ -63,7 +64,7 @@ The problem of multiple mutable aliases is that they bring possibility to make a
 
 > Conclusion: **DENIED**
 
-#### <a name="mut-glob"></a> Mutable + Globally sharable
+### Mutable + Globally sharable
 
 Raw usage is **UNSAFE** as it needs lock functionality.
 
@@ -71,14 +72,16 @@ The safe implementation is commonly known as Mutex.
 
 > Conclusion: **DENIED** (as first class item without a wrapper)
 
-#### <a name="imm-loc-glob"></a> Immutable + Locally/Globally sharable
+### Immutable + Locally/Globally sharable
 
 Immutable aliases are safe to share globally, obviously, checking that there're no mutable aliases to them.
 These are under the Rust borrowing rules.
 
 > Conclusion: **APPLIED**
 
-#### <a name="opaque"></a> Opaque
+### Opaque
+
+Neither able to read or write to alias. Used for function pointers and other "externally-created" data.
 
 Dividing opaque permission by aliasing is a nonsense as far as it just cannot be read or written to.
 
@@ -88,16 +91,11 @@ Dividing opaque permission by aliasing is a nonsense as far as it just cannot be
 
 > Conclusion: **?**
 
-# Borrowed references
+### Borrowed references
 
 Borrowed references obey Rust borrow checker rules:
+
 - There can only exist one mutable or any count of immutable borrows
-
-
-
-# Opaque
-
-Neither able to read or write to alias. Used for function pointers and other "externally-created" data.
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/appendices/syntax-decisions">< Syntax Decisions</a>
