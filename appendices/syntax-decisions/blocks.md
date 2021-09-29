@@ -19,19 +19,19 @@ same way. Let's look at some examples:
 * This block is of type `bool` and has result value `true`, even though we don't use this value
 
 <div class="code-fence highlight-jc hljs">
-            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = {<span class="hljs-literal">true</span>}</div>
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> {<span class="hljs-literal">true</span>}</div>
         </div>
 
 * This block will produce a type error because it either has a result of type of `myval` or `()` (unit type)
 
 <div class="code-fence highlight-jc hljs">
-            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = {<span class="hljs-keyword">if</span> myval =&gt; myval}</div>
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> {<span class="hljs-keyword">if</span> myval <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> myval}</div>
         </div>
 
 * This block won't produce a type error, because we don't use the result value
 
 <div class="code-fence highlight-jc hljs">
-            <div class="line-num" data-line-num="1">1</div><div class="line">{<span class="hljs-keyword">if</span> myval =&gt; myval}</div>
+            <div class="line-num" data-line-num="1">1</div><div class="line">{<span class="hljs-keyword">if</span> myval <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> myval}</div>
         </div>
 
 So, we already can establish some requirements about type analysis -- we need union types which are impossible to be
@@ -44,7 +44,7 @@ In this thing, _Jacy_ blocks differ from Rust's. I really appreciate the opportu
 one-line blocks we use the same syntax. Let's look at the syntax.
 
 <div class="code-fence highlight-jc hljs">
-            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">while</span> <span class="hljs-literal">true</span> =&gt; <span class="hljs-title function_ invoke__">print</span>(<span class="hljs-string">&quot;kek&quot;</span>)</div>
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">while</span> <span class="hljs-literal">true</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-title function_ invoke__">print</span>(<span class="hljs-string">&quot;kek&quot;</span>)</div>
         </div>
 
 After `=>` we can only place one expression, and if we put `{}` compiler will give a warning because there's no need to

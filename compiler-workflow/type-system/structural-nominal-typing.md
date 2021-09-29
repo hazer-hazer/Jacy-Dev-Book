@@ -54,7 +54,7 @@ expressions enclosed into `()` and save everything inside `()` into some stack. 
 Example.
 
 <div class="code-fence highlight-jc hljs">
-            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = (name: <span class="hljs-number">123</span>)</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">b</span> = (param: <span class="hljs-type">i32</span>) <span class="hljs-punctuation">-&gt;</span> param + <span class="hljs-number">1</span></div>
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> (name: <span class="hljs-number">123</span>)</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> (param: <span class="hljs-type">i32</span>) <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> param <span class="hljs-operator">+</span> <span class="hljs-number">1</span></div>
         </div>
 
 When we parse `a`'s and `b`'s assigned expressions we see `(`, then collect all tokens until we find `)` and if we found
