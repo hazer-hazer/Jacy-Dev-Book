@@ -62,23 +62,9 @@ At first, it might be confusing or even a nice solution.
 
 Let's look at examples:
 
-```rust
-// We have
-func foo(a: str);
-// Rust has
-func foo(a: &str);
-
-// We have
-func foo(a: own String);
-// Rust have
-func foo(a: String);
-
-// We have
-func foo(a: i32);
-// Rust has
-func foo(a: i32);
-// As `i32` is copy type -- it automatically becomes `own i32`, so we don't need to write `own i32` ourself 
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// We have</span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: <span class="hljs-type">str</span>);</div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-comment">// Rust has</span></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: &amp;<span class="hljs-type">str</span>);</div><div class="line-num" data-line-num="5">5</div><div class="line"></div><div class="line-num" data-line-num="6">6</div><div class="line"><span class="hljs-comment">// We have</span></div><div class="line-num" data-line-num="7">7</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: own <span class="hljs-type">String</span>);</div><div class="line-num" data-line-num="8">8</div><div class="line"><span class="hljs-comment">// Rust have</span></div><div class="line-num" data-line-num="9">9</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: <span class="hljs-type">String</span>);</div><div class="line-num" data-line-num="10">10</div><div class="line"></div><div class="line-num" data-line-num="11">11</div><div class="line"><span class="hljs-comment">// We have</span></div><div class="line-num" data-line-num="12">12</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: <span class="hljs-type">i32</span>);</div><div class="line-num" data-line-num="13">13</div><div class="line"><span class="hljs-comment">// Rust has</span></div><div class="line-num" data-line-num="14">14</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: <span class="hljs-type">i32</span>);</div><div class="line-num" data-line-num="15">15</div><div class="line"><span class="hljs-comment">// As `i32` is copy type -- it automatically becomes `own i32`, so we don&#x27;t need to write `own i32` ourself </span></div>
+        </div>
 
 This examples show that when Rust use move -- we use `own`, and when Rust use `&` -- we don't annotate it as reference type, because for non-copy type, reference is default.
 

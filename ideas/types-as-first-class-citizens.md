@@ -19,25 +19,15 @@ At first, I thought it would be nice if we could use `type` for declaring not on
 the way as type variables. Types are items, all items are forwardly declared, that is, if some type is declared in a
 scope, it can be used before it actually appears in the code. Example.
 
-```rust
-func foo {
-    let a: MyType = 123;
-
-    type MyType = i32;
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">a</span>: MyType = <span class="hljs-number">123</span>;</div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-keyword">type</span> <span class="hljs-title class_">MyType</span> = <span class="hljs-type">i32</span>;</div><div class="line-num" data-line-num="5">5</div><div class="line">}</div>
+        </div>
 
 For me, it looks problematic as the control flow with types would be either impossible or weird.
 
-```rust
-func foo {
-    if a {
-        a = i64;
-    }
-
-    type a = i32;
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">if</span> a {</div><div class="line-num" data-line-num="3">3</div><div class="line">        a = <span class="hljs-type">i64</span>;</div><div class="line-num" data-line-num="4">4</div><div class="line">    }</div><div class="line-num" data-line-num="5">5</div><div class="line"></div><div class="line-num" data-line-num="6">6</div><div class="line">    <span class="hljs-keyword">type</span> <span class="hljs-title class_">a</span> = <span class="hljs-type">i32</span>;</div><div class="line-num" data-line-num="7">7</div><div class="line">}</div>
+        </div>
 
 Hmm... WTF???
 
@@ -49,15 +39,9 @@ get type parameter which is unknown, and what if it would be possible to check t
 
 Example.
 
-```rust
-func foo<T>(arg: T) {
-    if T == bool {
-        print("We've got 'bool'");
-    } else {
-        print("We've got not a 'bool'");
-    }
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>&lt;T&gt;(arg: T) {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">if</span> T == <span class="hljs-type">bool</span> {</div><div class="line-num" data-line-num="3">3</div><div class="line">        <span class="hljs-title function_ invoke__">print</span>(<span class="hljs-string">&quot;We&#x27;ve got &#x27;bool&#x27;&quot;</span>);</div><div class="line-num" data-line-num="4">4</div><div class="line">    } <span class="hljs-keyword">else</span> {</div><div class="line-num" data-line-num="5">5</div><div class="line">        <span class="hljs-title function_ invoke__">print</span>(<span class="hljs-string">&quot;We&#x27;ve got not a &#x27;bool&#x27;&quot;</span>);</div><div class="line-num" data-line-num="6">6</div><div class="line">    }</div><div class="line-num" data-line-num="7">7</div><div class="line">}</div>
+        </div>
 
 Looks useful, but... not, actually. I cannot come up with a case when this cannot be described with generics and
 constraints.

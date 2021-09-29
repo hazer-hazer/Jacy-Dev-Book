@@ -37,26 +37,9 @@ For example: passing by reference. We have function signature, we know that func
 
 Example:
 
-```rust
-// Some non-copy type
-struct S {
-    field: int,
-}
-
-func foo(instance: &S) {
-    print(instance.field)
-}
-
-func main {
-    let s = S {field: 123};
-    
-    // This is how to do it in Rust
-    foo(&s);
-
-    // This is how to do it in Jacy
-    foo(s);
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// Some non-copy type</span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">S</span> {</div><div class="line-num" data-line-num="3">3</div><div class="line">    field: <span class="hljs-type">int</span>,</div><div class="line-num" data-line-num="4">4</div><div class="line">}</div><div class="line-num" data-line-num="5">5</div><div class="line"></div><div class="line-num" data-line-num="6">6</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(instance: &amp;S) {</div><div class="line-num" data-line-num="7">7</div><div class="line">    <span class="hljs-title function_ invoke__">print</span>(instance.field)</div><div class="line-num" data-line-num="8">8</div><div class="line">}</div><div class="line-num" data-line-num="9">9</div><div class="line"></div><div class="line-num" data-line-num="10">10</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="11">11</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">s</span> = S {field: <span class="hljs-number">123</span>};</div><div class="line-num" data-line-num="12">12</div><div class="line">    </div><div class="line-num" data-line-num="13">13</div><div class="line">    <span class="hljs-comment">// This is how to do it in Rust</span></div><div class="line-num" data-line-num="14">14</div><div class="line">    <span class="hljs-title function_ invoke__">foo</span>(&amp;s);</div><div class="line-num" data-line-num="15">15</div><div class="line"></div><div class="line-num" data-line-num="16">16</div><div class="line">    <span class="hljs-comment">// This is how to do it in Jacy</span></div><div class="line-num" data-line-num="17">17</div><div class="line">    <span class="hljs-title function_ invoke__">foo</span>(s);</div><div class="line-num" data-line-num="18">18</div><div class="line">}</div>
+        </div>
 
 Rust version:
 
@@ -79,44 +62,9 @@ But when you're implementing a function which uses already implemented one -- yo
 
 Let me describe what am talking about:
 
-```rust
-struct S {
-    field: int,
-}
-
-func byRef(instance: &S) {
-    // Do something with reference
-}
-
-func byVal(instance: S) {
-    // Do something with value
-}
-
-func byMutRef(instance: &mut S) {
-    // Do some mutating stuff
-}
-
-func example1 {
-    let s = S {field: 123};
-
-    byRef(s);
-    byRef(s);
-    byMutRef(s);
-    byRef(s);
-
-    byVal(s);
-
-    // Oops... `s` is moved in call to `byVal`
-    // byRef();
-}
-
-func example2 {
-    let s = S {field: 123};
-
-    // 
-    byRef(s);
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">S</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    field: <span class="hljs-type">int</span>,</div><div class="line-num" data-line-num="3">3</div><div class="line">}</div><div class="line-num" data-line-num="4">4</div><div class="line"></div><div class="line-num" data-line-num="5">5</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">byRef</span>(instance: &amp;S) {</div><div class="line-num" data-line-num="6">6</div><div class="line">    <span class="hljs-comment">// Do something with reference</span></div><div class="line-num" data-line-num="7">7</div><div class="line">}</div><div class="line-num" data-line-num="8">8</div><div class="line"></div><div class="line-num" data-line-num="9">9</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">byVal</span>(instance: S) {</div><div class="line-num" data-line-num="10">10</div><div class="line">    <span class="hljs-comment">// Do something with value</span></div><div class="line-num" data-line-num="11">11</div><div class="line">}</div><div class="line-num" data-line-num="12">12</div><div class="line"></div><div class="line-num" data-line-num="13">13</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">byMutRef</span>(instance: &amp;<span class="hljs-keyword">mut</span> S) {</div><div class="line-num" data-line-num="14">14</div><div class="line">    <span class="hljs-comment">// Do some mutating stuff</span></div><div class="line-num" data-line-num="15">15</div><div class="line">}</div><div class="line-num" data-line-num="16">16</div><div class="line"></div><div class="line-num" data-line-num="17">17</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">example1</span> {</div><div class="line-num" data-line-num="18">18</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">s</span> = S {field: <span class="hljs-number">123</span>};</div><div class="line-num" data-line-num="19">19</div><div class="line"></div><div class="line-num" data-line-num="20">20</div><div class="line">    <span class="hljs-title function_ invoke__">byRef</span>(s);</div><div class="line-num" data-line-num="21">21</div><div class="line">    <span class="hljs-title function_ invoke__">byRef</span>(s);</div><div class="line-num" data-line-num="22">22</div><div class="line">    <span class="hljs-title function_ invoke__">byMutRef</span>(s);</div><div class="line-num" data-line-num="23">23</div><div class="line">    <span class="hljs-title function_ invoke__">byRef</span>(s);</div><div class="line-num" data-line-num="24">24</div><div class="line"></div><div class="line-num" data-line-num="25">25</div><div class="line">    <span class="hljs-title function_ invoke__">byVal</span>(s);</div><div class="line-num" data-line-num="26">26</div><div class="line"></div><div class="line-num" data-line-num="27">27</div><div class="line">    <span class="hljs-comment">// Oops... `s` is moved in call to `byVal`</span></div><div class="line-num" data-line-num="28">28</div><div class="line">    <span class="hljs-comment">// byRef();</span></div><div class="line-num" data-line-num="29">29</div><div class="line">}</div><div class="line-num" data-line-num="30">30</div><div class="line"></div><div class="line-num" data-line-num="31">31</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">example2</span> {</div><div class="line-num" data-line-num="32">32</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">s</span> = S {field: <span class="hljs-number">123</span>};</div><div class="line-num" data-line-num="33">33</div><div class="line"></div><div class="line-num" data-line-num="34">34</div><div class="line">    <span class="hljs-comment">// </span></div><div class="line-num" data-line-num="35">35</div><div class="line">    <span class="hljs-title function_ invoke__">byRef</span>(s);</div><div class="line-num" data-line-num="36">36</div><div class="line">}</div>
+        </div>
 
 What I want to show is that we don't lose the safety as we still have move semantics and borrowing rules. The only change is that now passing by reference is implicit for callee that is, as I think, not really bad.
 
@@ -138,27 +86,9 @@ Keeping this in mind some problems arise, like, `impl &T`.
 
 Example:
 
-```rust
-struct S {}
-
-impl SomeTrait for S {
-    func kek {}
-}
-
-impl SomeTrait for &S {
-    func kek {}
-}
-
-func foo<T: SomeTrait>(st: T) {
-    st.kek();
-}
-
-func main {
-    let s = S {};
-
-    foo(s); // ???
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">S</span> {}</div><div class="line-num" data-line-num="2">2</div><div class="line"></div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-keyword">impl</span> <span class="hljs-title class_">SomeTrait</span> <span class="hljs-keyword">for</span> <span class="hljs-title class_">S</span> {</div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">kek</span> {}</div><div class="line-num" data-line-num="5">5</div><div class="line">}</div><div class="line-num" data-line-num="6">6</div><div class="line"></div><div class="line-num" data-line-num="7">7</div><div class="line"><span class="hljs-keyword">impl</span> <span class="hljs-title class_">SomeTrait</span> <span class="hljs-keyword">for</span> &amp;S {</div><div class="line-num" data-line-num="8">8</div><div class="line">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">kek</span> {}</div><div class="line-num" data-line-num="9">9</div><div class="line">}</div><div class="line-num" data-line-num="10">10</div><div class="line"></div><div class="line-num" data-line-num="11">11</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>&lt;T: SomeTrait&gt;(st: T) {</div><div class="line-num" data-line-num="12">12</div><div class="line">    st.<span class="hljs-title function_ invoke__">kek</span>();</div><div class="line-num" data-line-num="13">13</div><div class="line">}</div><div class="line-num" data-line-num="14">14</div><div class="line"></div><div class="line-num" data-line-num="15">15</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="16">16</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">s</span> = S {};</div><div class="line-num" data-line-num="17">17</div><div class="line"></div><div class="line-num" data-line-num="18">18</div><div class="line">    <span class="hljs-title function_ invoke__">foo</span>(s); <span class="hljs-comment">// ???</span></div><div class="line-num" data-line-num="19">19</div><div class="line">}</div>
+        </div>
 
 We passed `s` to `foo` which expects something implementing `SomeTrait`, but `SomeTrait` is implemented for both `S` and `&S`, do we need to implicitly pass `s` by reference?
 
@@ -168,37 +98,15 @@ So, this code will call `SomeTrait::kek(S)` (without `&`).
 
 User have to explicitly say that he wants to pass by reference (implicit pass does not exclude existence of Rustish `&` borrowing operator):
 
-```rust
-func main {
-    let s = S {};
-
-    foo(&s);
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">s</span> = S {};</div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-title function_ invoke__">foo</span>(&amp;s);</div><div class="line-num" data-line-num="5">5</div><div class="line">}</div>
+        </div>
 
 Okay, problem is solved? Actually, no. Let's look at more difficult example:
 
-```rust
-struct S {}
-
-impl SomeTrait for &S {
-    func kek {}
-}
-
-mod module {
-    impl SomeTrait for S {
-        func kek {}
-    }
-
-    pub func foo<T: SomeTrait>(s: T) {}
-}
-
-func main {
-    let s = S {};
-
-    module::foo(s);
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">S</span> {}</div><div class="line-num" data-line-num="2">2</div><div class="line"></div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-keyword">impl</span> <span class="hljs-title class_">SomeTrait</span> <span class="hljs-keyword">for</span> &amp;S {</div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">kek</span> {}</div><div class="line-num" data-line-num="5">5</div><div class="line">}</div><div class="line-num" data-line-num="6">6</div><div class="line"></div><div class="line-num" data-line-num="7">7</div><div class="line"><span class="hljs-keyword">mod</span> module {</div><div class="line-num" data-line-num="8">8</div><div class="line">    <span class="hljs-keyword">impl</span> <span class="hljs-title class_">SomeTrait</span> <span class="hljs-keyword">for</span> <span class="hljs-title class_">S</span> {</div><div class="line-num" data-line-num="9">9</div><div class="line">        <span class="hljs-keyword">func</span> <span class="hljs-title function_">kek</span> {}</div><div class="line-num" data-line-num="10">10</div><div class="line">    }</div><div class="line-num" data-line-num="11">11</div><div class="line"></div><div class="line-num" data-line-num="12">12</div><div class="line">    <span class="hljs-keyword">pub</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>&lt;T: SomeTrait&gt;(s: T) {}</div><div class="line-num" data-line-num="13">13</div><div class="line">}</div><div class="line-num" data-line-num="14">14</div><div class="line"></div><div class="line-num" data-line-num="15">15</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="16">16</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">s</span> = S {};</div><div class="line-num" data-line-num="17">17</div><div class="line"></div><div class="line-num" data-line-num="18">18</div><div class="line">    module::<span class="hljs-title function_ invoke__">foo</span>(s);</div><div class="line-num" data-line-num="19">19</div><div class="line">}</div>
+        </div>
 
 What is `T` in `module::foo`? `&T` or `T`? Actually, the answer is same as for example above -- the best fit for this call is `T` (without reference). Anyway, here, I want to show how difficult-to-read implicit pass-by-reference can be structured.
 

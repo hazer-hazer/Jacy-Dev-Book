@@ -46,55 +46,9 @@ the `move` keyword.
 
 Example.
 
-```rust
-struct Struct {
-    field: i32,
-}
-
-func printByRef(instance: A) {
-    print(instance.field);
-}
-
-func printMove(move instance: A) {
-    print(instance.field);
-}
-
-func printNum(num: i32) {
-    print(num);
-}
-
-func changeNum(ref num: i32) {
-    num = 0;
-}
-
-func main {
-    let instance = Struct {field: 666};
-
-    printByRef(instance); // `instance` is not moved here like in Rust
-    printByRef(instance); // `instance` here and before is passed by reference
-
-    printMove(move instance); // `move` is explicit
-    // printMove(move instance); // Error: `instance` is moved
-    // printByRef(instance); // Same error: `instance` is moved
-
-    let num = 1000;
-
-    printNum(num);
-    printNum(num); // Everything is find -- `i32` is a Copy-type
-
-    let mut var = 0xB16B00B5;
-
-    print(var); // Prints 2976579765
-    changeNum(var);
-    print(var); // Prints 0
-    
-
-    let mut a = Struct {field: 100};
-    
-    let mut r0 = a;
-    let mut r1 = a; // Error: Cannot borrow `a` as mutable more than once
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Struct</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    field: <span class="hljs-type">i32</span>,</div><div class="line-num" data-line-num="3">3</div><div class="line">}</div><div class="line-num" data-line-num="4">4</div><div class="line"></div><div class="line-num" data-line-num="5">5</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">printByRef</span>(instance: A) {</div><div class="line-num" data-line-num="6">6</div><div class="line">    <span class="hljs-title function_ invoke__">print</span>(instance.field);</div><div class="line-num" data-line-num="7">7</div><div class="line">}</div><div class="line-num" data-line-num="8">8</div><div class="line"></div><div class="line-num" data-line-num="9">9</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">printMove</span>(<span class="hljs-keyword">move</span> instance: A) {</div><div class="line-num" data-line-num="10">10</div><div class="line">    <span class="hljs-title function_ invoke__">print</span>(instance.field);</div><div class="line-num" data-line-num="11">11</div><div class="line">}</div><div class="line-num" data-line-num="12">12</div><div class="line"></div><div class="line-num" data-line-num="13">13</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">printNum</span>(num: <span class="hljs-type">i32</span>) {</div><div class="line-num" data-line-num="14">14</div><div class="line">    <span class="hljs-title function_ invoke__">print</span>(num);</div><div class="line-num" data-line-num="15">15</div><div class="line">}</div><div class="line-num" data-line-num="16">16</div><div class="line"></div><div class="line-num" data-line-num="17">17</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">changeNum</span>(<span class="hljs-keyword">ref</span> num: <span class="hljs-type">i32</span>) {</div><div class="line-num" data-line-num="18">18</div><div class="line">    num = <span class="hljs-number">0</span>;</div><div class="line-num" data-line-num="19">19</div><div class="line">}</div><div class="line-num" data-line-num="20">20</div><div class="line"></div><div class="line-num" data-line-num="21">21</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="22">22</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">instance</span> = Struct {field: <span class="hljs-number">666</span>};</div><div class="line-num" data-line-num="23">23</div><div class="line"></div><div class="line-num" data-line-num="24">24</div><div class="line">    <span class="hljs-title function_ invoke__">printByRef</span>(instance); <span class="hljs-comment">// `instance` is not moved here like in Rust</span></div><div class="line-num" data-line-num="25">25</div><div class="line">    <span class="hljs-title function_ invoke__">printByRef</span>(instance); <span class="hljs-comment">// `instance` here and before is passed by reference</span></div><div class="line-num" data-line-num="26">26</div><div class="line"></div><div class="line-num" data-line-num="27">27</div><div class="line">    <span class="hljs-title function_ invoke__">printMove</span>(<span class="hljs-keyword">move</span> instance); <span class="hljs-comment">// `move` is explicit</span></div><div class="line-num" data-line-num="28">28</div><div class="line">    <span class="hljs-comment">// printMove(move instance); // Error: `instance` is moved</span></div><div class="line-num" data-line-num="29">29</div><div class="line">    <span class="hljs-comment">// printByRef(instance); // Same error: `instance` is moved</span></div><div class="line-num" data-line-num="30">30</div><div class="line"></div><div class="line-num" data-line-num="31">31</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">num</span> = <span class="hljs-number">1000</span>;</div><div class="line-num" data-line-num="32">32</div><div class="line"></div><div class="line-num" data-line-num="33">33</div><div class="line">    <span class="hljs-title function_ invoke__">printNum</span>(num);</div><div class="line-num" data-line-num="34">34</div><div class="line">    <span class="hljs-title function_ invoke__">printNum</span>(num); <span class="hljs-comment">// Everything is find -- `i32` is a Copy-type</span></div><div class="line-num" data-line-num="35">35</div><div class="line"></div><div class="line-num" data-line-num="36">36</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">var</span> = <span class="hljs-number">0xB16B00B5</span>;</div><div class="line-num" data-line-num="37">37</div><div class="line"></div><div class="line-num" data-line-num="38">38</div><div class="line">    <span class="hljs-title function_ invoke__">print</span>(var); <span class="hljs-comment">// Prints 2976579765</span></div><div class="line-num" data-line-num="39">39</div><div class="line">    <span class="hljs-title function_ invoke__">changeNum</span>(var);</div><div class="line-num" data-line-num="40">40</div><div class="line">    <span class="hljs-title function_ invoke__">print</span>(var); <span class="hljs-comment">// Prints 0</span></div><div class="line-num" data-line-num="41">41</div><div class="line">    </div><div class="line-num" data-line-num="42">42</div><div class="line"></div><div class="line-num" data-line-num="43">43</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">a</span> = Struct {field: <span class="hljs-number">100</span>};</div><div class="line-num" data-line-num="44">44</div><div class="line">    </div><div class="line-num" data-line-num="45">45</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">r0</span> = a;</div><div class="line-num" data-line-num="46">46</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">r1</span> = a; <span class="hljs-comment">// Error: Cannot borrow `a` as mutable more than once</span></div><div class="line-num" data-line-num="47">47</div><div class="line">}</div>
+        </div>
 
 Rust revolves around an idea of owning, as *Jacy* does, thus being hardly inspired by Rust we can consider "making a
 reference" not being a "usage". What this means is just all about how we see the language to take a place in world of
@@ -153,17 +107,9 @@ semantics and syntax. What am I talking about is that removing explicit referenc
 opportunity to qualify value type. Further I'm gonna describe a list of all rules about PIR, so here won't be
 comprehensive solution as it would be more understandable as if we just look at specific rules. Anyway, here it is.
 
-```rust
-// `Kitty` is a structure declared somewhere
-func foo(kitty: Kitty) {
-    print(kitty.msg);
-}
-
-func main {
-    let kitty = Kitty {msg: "Meow, bitch"};
-    foo(kitty);
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// `Kitty` is a structure declared somewhere</span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(kitty: Kitty) {</div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-title function_ invoke__">print</span>(kitty.msg);</div><div class="line-num" data-line-num="4">4</div><div class="line">}</div><div class="line-num" data-line-num="5">5</div><div class="line"></div><div class="line-num" data-line-num="6">6</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="7">7</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">kitty</span> = Kitty {msg: <span class="hljs-string">&quot;Meow, bitch&quot;</span>};</div><div class="line-num" data-line-num="8">8</div><div class="line">    <span class="hljs-title function_ invoke__">foo</span>(kitty);</div><div class="line-num" data-line-num="9">9</div><div class="line">}</div>
+        </div>
 
 Here I meant to copy `kitty`, but because of PIR `kitty` is passed by reference. STOP, it is C++ and not Rust, we don't
 copy by default, and we don't move by default. So... How do I make it creating a copy of `kitty`?
@@ -184,17 +130,9 @@ not actually required?
 
 Let's look at an example similar to one above.
 
-```rust
-// Assume somewhere exists the `Kitty` type and it implements the `Clone` trait
-func foo(kitty: Kitty) {
-    print(kitty.msg);
-}
-
-func main {
-    let kitty = Kitty {msg: "Meow, bitch"};
-    foo(kitty.clone());
-} 
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// Assume somewhere exists the `Kitty` type and it implements the `Clone` trait</span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(kitty: Kitty) {</div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-title function_ invoke__">print</span>(kitty.msg);</div><div class="line-num" data-line-num="4">4</div><div class="line">}</div><div class="line-num" data-line-num="5">5</div><div class="line"></div><div class="line-num" data-line-num="6">6</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="7">7</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">kitty</span> = Kitty {msg: <span class="hljs-string">&quot;Meow, bitch&quot;</span>};</div><div class="line-num" data-line-num="8">8</div><div class="line">    <span class="hljs-title function_ invoke__">foo</span>(kitty.<span class="hljs-title function_ invoke__">clone</span>());</div><div class="line-num" data-line-num="9">9</div><div class="line">}</div>
+        </div>
 
 We made a clone, but is there any reason to pass it by reference? It is a rhetorical question, and the answer is NO, and
 it forces me to describe implicit-move rules. In C++, it is common to optimize some copy cases to move, e.g., when we
@@ -208,42 +146,23 @@ not? -- Actually, they MUST.
 
 Let's assume we've got.
 
-```rust
-struct StructType {
-    field: Vec<i32>,
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">StructType</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    field: <span class="hljs-type">Vec</span>&lt;<span class="hljs-type">i32</span>&gt;,</div><div class="line-num" data-line-num="3">3</div><div class="line">}</div>
+        </div>
 
 Note that `StructType.field` is not of type `&Vec<i32>`, it is non-reference, because PIR is only about passing values.
 
-```rust
-let a: StructType = structInstance; // `structInstance` is non-copy type
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span>: StructType = structInstance; <span class="hljs-comment">// `structInstance` is non-copy type</span></div><div class="line-num" data-line-num="2">2</div><div class="line"></div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-comment">// Desugared to</span></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span>: &amp;StructType = &amp;structInstance;</div><div class="line-num" data-line-num="5">5</div><div class="line"><span class="hljs-comment">// or</span></div><div class="line-num" data-line-num="6">6</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">ref</span> a: &amp;StructType = structInstance;</div>
+        </div>
 
-// Desugared to
-let a: &StructType = &structInstance;
-// or
-let ref a: &StructType = structInstance;
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(param: StructType);</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-title function_ invoke__">foo</span>(structInstance);</div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-comment">// Desugared to</span></div><div class="line-num" data-line-num="5">5</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(param: &amp;StructType);</div><div class="line-num" data-line-num="6">6</div><div class="line"><span class="hljs-title function_ invoke__">foo</span>(&amp;structInstance);</div>
+        </div>
 
-```rust
-func foo(param: StructType);
-foo(structInstance);
-
-// Desugared to
-func foo(param: &StructType);
-foo(&structInstance);
-```
-
-```rust
-match a {
-    StructType {field} => // ...
-}
-
-// Desugared to
-match &a {
-    StructType {ref field} => // ...
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">match</span> a {</div><div class="line-num" data-line-num="2">2</div><div class="line">    StructType {field} =&gt; <span class="hljs-comment">// ...</span></div><div class="line-num" data-line-num="3">3</div><div class="line">}</div><div class="line-num" data-line-num="4">4</div><div class="line"></div><div class="line-num" data-line-num="5">5</div><div class="line"><span class="hljs-comment">// Desugared to</span></div><div class="line-num" data-line-num="6">6</div><div class="line"><span class="hljs-keyword">match</span> &amp;a {</div><div class="line-num" data-line-num="7">7</div><div class="line">    StructType {<span class="hljs-keyword">ref</span> field} =&gt; <span class="hljs-comment">// ...</span></div><div class="line-num" data-line-num="8">8</div><div class="line">}</div>
+        </div>
 
 ### Examples
 
@@ -255,10 +174,9 @@ match &a {
 
 Let's look at examples to grasp when variable is automatically becomes a reference and where not.
 
-```rust
-let a = StructType {field: Vec::new()};
-let b = a;
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = StructType {field: Vec::<span class="hljs-title function_ invoke__">new</span>()};</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">b</span> = a;</div>
+        </div>
 
 Here, `a` is of type `StructType` because of move elision, but `b` would be `&StructType` as it is automatically
 borrowed.
@@ -280,53 +198,25 @@ Finally, after reviewing some cases, I'd like to reduce them to the list of rule
 
 Examples.
 
-```rust
-func foo(name: String) {
-    print("My name is $name");
-}
-
-func main {
-    let savedName = String::from("Mr. Doctor");
-    let name = savedName; // `savedName` is not either copied or moved -- `name` is an immutable reference to `savedName`
-    foo(name); // `name` is not moved -- it is passed by immutable reference
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(name: <span class="hljs-type">String</span>) {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-title function_ invoke__">print</span>(<span class="hljs-string">&quot;My name is $name&quot;</span>);</div><div class="line-num" data-line-num="3">3</div><div class="line">}</div><div class="line-num" data-line-num="4">4</div><div class="line"></div><div class="line-num" data-line-num="5">5</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="6">6</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">savedName</span> = String::<span class="hljs-title function_ invoke__">from</span>(<span class="hljs-string">&quot;Mr. Doctor&quot;</span>);</div><div class="line-num" data-line-num="7">7</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">name</span> = savedName; <span class="hljs-comment">// `savedName` is not either copied or moved -- `name` is an immutable reference to `savedName`</span></div><div class="line-num" data-line-num="8">8</div><div class="line">    <span class="hljs-title function_ invoke__">foo</span>(name); <span class="hljs-comment">// `name` is not moved -- it is passed by immutable reference</span></div><div class="line-num" data-line-num="9">9</div><div class="line">}</div>
+        </div>
 
 #### 2. Moves are explicit in signatures and in calls
 
 Example.
 
-```rust
-func foo(move name: String) {
-    print("My name is $name");
-}
-
-func main {
-    let name = "Brendan Eich";
-    foo(move name); // `name` must be moved explicitly
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(<span class="hljs-keyword">move</span> name: <span class="hljs-type">String</span>) {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-title function_ invoke__">print</span>(<span class="hljs-string">&quot;My name is $name&quot;</span>);</div><div class="line-num" data-line-num="3">3</div><div class="line">}</div><div class="line-num" data-line-num="4">4</div><div class="line"></div><div class="line-num" data-line-num="5">5</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="6">6</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">name</span> = <span class="hljs-string">&quot;Brendan Eich&quot;</span>;</div><div class="line-num" data-line-num="7">7</div><div class="line">    <span class="hljs-title function_ invoke__">foo</span>(<span class="hljs-keyword">move</span> name); <span class="hljs-comment">// `name` must be moved explicitly</span></div><div class="line-num" data-line-num="8">8</div><div class="line">}</div>
+        </div>
 
 #### 3. Data, stored in structures must be explicitly qualified as reference
 
 Example.
 
-```rust
-struct Data {
-    inner: Vec<i32>
-}
-
-struct Struct {
-    data: &Data,
-}
-
-func main {
-    let data = Data {inner: Vec::from([1, 2, 3])};
-    let s = Struct {data: &data};
-
-    // let s2 = Struct {data: data} // Error: expected `&Data` type for `data`
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Data</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    inner: <span class="hljs-type">Vec</span>&lt;<span class="hljs-type">i32</span>&gt;</div><div class="line-num" data-line-num="3">3</div><div class="line">}</div><div class="line-num" data-line-num="4">4</div><div class="line"></div><div class="line-num" data-line-num="5">5</div><div class="line"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">Struct</span> {</div><div class="line-num" data-line-num="6">6</div><div class="line">    data: &amp;Data,</div><div class="line-num" data-line-num="7">7</div><div class="line">}</div><div class="line-num" data-line-num="8">8</div><div class="line"></div><div class="line-num" data-line-num="9">9</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="10">10</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">data</span> = Data {inner: Vec::<span class="hljs-title function_ invoke__">from</span>([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])};</div><div class="line-num" data-line-num="11">11</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">s</span> = Struct {data: &amp;data};</div><div class="line-num" data-line-num="12">12</div><div class="line"></div><div class="line-num" data-line-num="13">13</div><div class="line">    <span class="hljs-comment">// let s2 = Struct {data: data} // Error: expected `&amp;Data` type for `data`</span></div><div class="line-num" data-line-num="14">14</div><div class="line">}</div>
+        </div>
 
 Actually, this is just an example where we omit usage of lifetimes. No-lifetimes solutions gonna be researched in
 further ideas.

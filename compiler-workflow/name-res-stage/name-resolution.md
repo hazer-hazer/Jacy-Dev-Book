@@ -35,10 +35,9 @@ it is practically convenient.
 The function `strangeCheck` returns `Option` and we want to do something with this result, in other languages we either
 don't need this (because of lack of so many wrappers like `Option`, etc.) or we write code like that.
 
-```rust
-let maybeA = strangeCheck(10);
-let a = maybeA.unwrap();
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">maybeA</span> = <span class="hljs-title function_ invoke__">strangeCheck</span>(<span class="hljs-number">10</span>);</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = maybeA.<span class="hljs-title function_ invoke__">unwrap</span>();</div>
+        </div>
 
 Which is annoying... Why do we need to add a new variable making code noisier? We've got `a` and it is logically still
 `a` wrapped it or not.

@@ -16,9 +16,9 @@ A function is CTE if:
 
 We mark a function as CTE so.
 
-```rust
-const func foo() {}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>() {}</div>
+        </div>
 
 Then the compiler will check that all computations performed inside this function `'foo'` are CTE, if not, it gives an
 error.
@@ -32,32 +32,15 @@ Another approach is more complex for the compiler but simple for the user: If we
 context when compiler goes to this function and checks that it's CTE function. Anyway, if we use this function in a
 run-time context it won't be inlined and evaluated at compile-time. Example.
 
-```rust
-// Just a simple function that returns `1`
-func foo = 1
-
-const func myConstFunc {
-    const a = foo()
-}
-
-func myRawFunc {
-    let a = foo()
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// Just a simple function that returns `1`</span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span> = <span class="hljs-number">1</span></div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">myConstFunc</span> {</div><div class="line-num" data-line-num="5">5</div><div class="line">    <span class="hljs-keyword">const</span> a = <span class="hljs-title function_ invoke__">foo</span>()</div><div class="line-num" data-line-num="6">6</div><div class="line">}</div><div class="line-num" data-line-num="7">7</div><div class="line"></div><div class="line-num" data-line-num="8">8</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">myRawFunc</span> {</div><div class="line-num" data-line-num="9">9</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = <span class="hljs-title function_ invoke__">foo</span>()</div><div class="line-num" data-line-num="10">10</div><div class="line">}</div>
+        </div>
 
 After `const` expansion this code will look (structurally) like that.
 
-```rust
-func foo() = 1
-
-const func myConstFunc() {
-    const a = 1
-}
-
-func myRawFunc() {
-    let a = foo()
-}
-```
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>() = <span class="hljs-number">1</span></div><div class="line-num" data-line-num="2">2</div><div class="line"></div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">myConstFunc</span>() {</div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span></div><div class="line-num" data-line-num="5">5</div><div class="line">}</div><div class="line-num" data-line-num="6">6</div><div class="line"></div><div class="line-num" data-line-num="7">7</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">myRawFunc</span>() {</div><div class="line-num" data-line-num="8">8</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = <span class="hljs-title function_ invoke__">foo</span>()</div><div class="line-num" data-line-num="9">9</div><div class="line">}</div>
+        </div>
 
 As you can see in `myRawFunc` `foo` is still a function call, because `foo` used in a non-`const` context. Whereas in
 `myConstFunc` value returned by `foo` was inlined as we declared `a` as `const`. `const` qualifier does not mean that
