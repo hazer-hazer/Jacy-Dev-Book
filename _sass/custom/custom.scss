@@ -343,8 +343,6 @@ div.side-bar {
     font-family: 'JetBrains Mono', monospace;
 
     $line-height: 22px;
-
-    grid-template-columns: max-content auto;
     grid-template-rows: $line-height;
 
     .quoted {
@@ -354,8 +352,12 @@ div.side-bar {
         }
     }
 
+    grid-template-columns: auto;
+
     // Styles for code fence with line numbers
     &.line-numbers {
+        grid-template-columns: max-content auto;
+
         .line-num, .line {
             line-height: $line-height;
             vertical-align: middle;
