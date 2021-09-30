@@ -52,7 +52,7 @@ module.exports = src => {
 
     highlighted = highlighted.replace(/`([^`\n\r]+)`/g, (match, code) => {
         return `
-        <span class="inline-code highlight-jc hljs">${hljs.highlight(code, {language: 'jc'}).value}</span>
+        <span class="inline-code line-numbers highlight-jc hljs">${hljs.highlight(code, {language: 'jc'}).value}</span>
         `.trim()
     })
 
