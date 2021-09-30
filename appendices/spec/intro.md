@@ -24,7 +24,7 @@ Everything is move by default, same as in Rust, and copy-types rule is applied t
 
 ### Can we get rid of multiple function types?
 
-Rust has: function pointer types, <span class="inline-code highlight-jc hljs">Fn</span>, <span class="inline-code highlight-jc hljs">FnMut</span> and <span class="inline-code highlight-jc hljs">FnOnce</span>.
+Rust has: function pointer types, <span class="inline-code line-numbers highlight-jc hljs">Fn</span>, <span class="inline-code line-numbers highlight-jc hljs">FnMut</span> and <span class="inline-code line-numbers highlight-jc hljs">FnOnce</span>.
 
 #### 1. Is it possible to remove function pointer type?
 

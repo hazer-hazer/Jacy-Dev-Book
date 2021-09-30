@@ -19,8 +19,8 @@ The AST produced by the parser is flattened into the collection of maps, e.g. th
 
 Lowering is a process of converting some syntactically different structures to common structures.
 
-E.g. all kinds of loops are converted to a <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">loop</span></span> structure because every loop is considered to "do something while
-something". That is, the <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">for</span></span> loop iterates over data until there're some data, same for while and <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span></span>.
+E.g. all kinds of loops are converted to a <span class="inline-code line-numbers highlight-jc hljs"><span class="hljs-keyword">loop</span></span> structure because every loop is considered to "do something while
+something". That is, the <span class="inline-code line-numbers highlight-jc hljs"><span class="hljs-keyword">for</span></span> loop iterates over data until there're some data, same for while and <span class="inline-code line-numbers highlight-jc hljs"><span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span></span>.
 
 By doing so, we reduce a large amount of AST nodes to some more common structures.
 

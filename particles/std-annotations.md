@@ -7,7 +7,7 @@ parent: 'Particles [β RFCs]'
 # No grandparent
 ---
 
-# <span class="inline-code highlight-jc hljs">std</span> annotations
+# <span class="inline-code line-numbers highlight-jc hljs">std</span> annotations
 
 ## Analysis helpers
 

@@ -7,10 +7,10 @@ parent: 'Particles [β RFCs]'
 # No grandparent
 ---
 
-# <span class="inline-code highlight-jc hljs"><span class="hljs-operator">not</span></span> prependent operator
+# <span class="inline-code line-numbers highlight-jc hljs"><span class="hljs-operator">not</span></span> prependent operator
 
-Briefly, the idea is to allow putting <span class="inline-code highlight-jc hljs"><span class="hljs-operator">not</span></span> operator before an infix operators.
-It would allow us not to define new operators like <span class="inline-code highlight-jc hljs">notin</span> or separately parse <span class="inline-code highlight-jc hljs"><span class="hljs-operator">not</span> <span class="hljs-keyword">in</span></span> as special case.
+Briefly, the idea is to allow putting <span class="inline-code line-numbers highlight-jc hljs"><span class="hljs-operator">not</span></span> operator before an infix operators.
+It would allow us not to define new operators like <span class="inline-code line-numbers highlight-jc hljs">notin</span> or separately parse <span class="inline-code line-numbers highlight-jc hljs"><span class="hljs-operator">not</span> <span class="hljs-keyword">in</span></span> as special case.
 
 So, it would look like this:
 
