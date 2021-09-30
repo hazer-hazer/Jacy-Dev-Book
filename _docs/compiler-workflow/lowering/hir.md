@@ -1,7 +1,7 @@
 # HIR
 
-Same as Rust (again...) _Jacy_ has HIR - High-level Intermediate Representation. It AST-like IR that is well-formed and
-lowered.
+Same as Rust (again...) _Jacy_ has HIR - High-level Intermediate Representation. It is an IR that contains flatten version of AST, i.e. not in the structure of the tree but a collection of mapping from some identifiers to objects.
+For example, you cannot access a child node from the parent node directly, every node that has children only contains a list of identifiers pointing to the children nodes. This is a convenient representation for type checking, etc. because we can walk through all specific items (e.g. all function bodies) to emit some logic on them.
 
 ## Lowering
 
