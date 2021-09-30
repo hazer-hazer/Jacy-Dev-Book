@@ -30,7 +30,7 @@ Here, module `m` exports overload `foo(label1:label2:)` and module `n` imports i
 
 The module tree before the importation process will look so:
 
-```plaintext
+```text
 [ROOT]: {
     `mod` 'm': {
         FOS#someID
