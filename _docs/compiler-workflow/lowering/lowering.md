@@ -22,13 +22,13 @@ for i in 0..100 {
 ```
 
 Let's disassemble this loop into instructions that are done implicitly.
-`for` loop accepts expression of type that implements the `Iterator` trait. In this case it is a integer range from `0` to `100` exclusively. So, at first we need to get an iterator of `0..100`.
+`for` loop accepts the expression of a type that implements the `Iterator` trait. In this case, it is an integer range from `0` to `100` exclusively. So, at first, we need to get an iterator of `0..100`.
 
 ```jc
 let mut iter = (0..100).intoIter();
 ```
 
-Here, compiler uses `intoIter` because `0..100` is moved into the `for` loop, not borrowed.
+Here, the compiler uses `intoIter` because `0..100` is moved into the `for` loop, not borrowed.
 
 Then we need to go through all values:
 
@@ -41,11 +41,11 @@ while let Some(i) = iter.next() {
 }
 ```
 
-Here we use `while let` which is a high level syntactic sugar that is in fact "while pattern on the left side matches the value on the right side do ...". `while let` loop is also lowered, read further for more information.
+Here we use `while let` which is a high-level syntactic sugar that is in fact "while the pattern on the left side matches the value on the right side do ...". `while let` loop is also lowered, read further for more information.
 `iter.next` (`Iterator::next`) method returns `T?` (in this particular case `T` is `int`), that is an optional next value if some exists.
 
 The body of the `while let` is the same as for the initial `for` loop.
 
-In next chapters we will discuss `while let` lowering where this example will be lowered completely.
+In next chapters, we will discuss `while let` lowering where this example will be lowered completely.
 
 #### `while` loop lowering
