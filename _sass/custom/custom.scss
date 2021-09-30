@@ -347,6 +347,13 @@ div.side-bar {
     grid-template-columns: max-content auto;
     grid-template-rows: $line-height;
 
+    .quoted {
+        &::before,
+        &::after {
+            content: '`';
+        }
+    }
+
     .line-num, .line {
         line-height: $line-height;
         vertical-align: middle;
