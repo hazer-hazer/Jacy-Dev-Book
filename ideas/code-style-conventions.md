@@ -27,8 +27,8 @@ List of all writing styles referenced in convention:
 
 - __camelCase__ - starts with lowercase letter, each next word starts with uppercase
 - __PascalCase__ - starts with uppercase letter, each next word starts with uppercase
-- __snake_case__ - each word starts with lowercase letter, words separated with function trim() { [native code] }
-- __SCREAMING_SNAKE_CASE__ - all letters in uppercase, words separated with `_`
+- __snake_case__ - each word starts with lowercase letter, words separated with <span class="inline-code highlight-jc hljs">_</span>
+- __SCREAMING_SNAKE_CASE__ - all letters in uppercase, words separated with <span class="inline-code highlight-jc hljs">_</span>
 
 All other variations MUST NOT be used in code.
 
@@ -41,37 +41,37 @@ everywhere in your code.
 
 ### Variables and functions
 
-Variables and functions SHOULD be named in __camelCase__: `somethingSomewhere`, `myFunction`, `foo`, `barBazFuzz`
+Variables and functions SHOULD be named in __camelCase__: <span class="inline-code highlight-jc hljs">somethingSomewhere`, `myFunction`, `foo`, `barBazFuzz</span>
 
-Variables and functions MAY be named in __snake_case__: `something_somewhere`, `my_function`, `foo`, `bar_baz_fuzz`
+Variables and functions MAY be named in __snake_case__: <span class="inline-code highlight-jc hljs">something_somewhere`, `my_function`, `foo`, `bar_baz_fuzz</span>
 
 If one of style is chosen it MUST be followed in the whole code.
 
 ### Constants
 
-Talking about constants, I mean constants declared with `const`. Actually `let` without `mut` is a constant, but `let`
+Talking about constants, I mean constants declared with <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span>`<span class="hljs-operator">.</span> Actually `<span class="hljs-keyword">let</span>` without `<span class="hljs-keyword">mut</span>` is a constant, but `<span class="hljs-keyword">let</span></span>
 is under rule above
 
-`const` SHOULD BE named in __SCREAMING_SNAKE_CASE__: `UNCHANGEABLE_VALUE`
+<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span>` SHOULD BE named <span class="hljs-keyword">in</span> __SCREAMING_SNAKE_CASE__: `UNCHANGEABLE_VALUE</span>
 
-Scientific constants like PI number MUST BE named in __SCREAMING_SNAKE_CASE__: `PI`, `G`
+Scientific constants like PI number MUST BE named in __SCREAMING_SNAKE_CASE__: <span class="inline-code highlight-jc hljs">PI`, `G</span>
 
-`const` MAY BE named in __camelCase__: `myImportantValue`
+<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span>` MAY BE named <span class="hljs-keyword">in</span> __camelCase__: `myImp<span class="hljs-operator">or</span>tantValue</span>
 
 ### Type names
 
 Type names include names for:
 
-- `struct`
-- `trait`
-- `enum`
-- `type`
+- <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">struct</span></span>
+- <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">trait</span></span>
+- <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">enum</span></span>
+- <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">type</span></span>
 - type parameters (read further)
 
-All types MUST be in __PascalCase__: `MyType`, `SomeStructure`, `EnumWithEverythingINeed`
+All types MUST be in __PascalCase__: <span class="inline-code highlight-jc hljs">MyType`, `SomeStructure`, `EnumWithEverythingINeed</span>
 
-__Exception__ is built-in primitive types: `i8`, `i16`, `i32`, `int`, `i64`, `i128`, `u8`, `u16`, `u32`, `uint`, `u64`,
-`u128`, `isize`, `usize`, `f32`, `f64`, `double`, `bool`, `char`, `str`
+__Exception__ is built-in primitive types: <span class="inline-code highlight-jc hljs"><span class="hljs-type">i8</span>`, `<span class="hljs-type">i16</span>`, `<span class="hljs-type">i32</span>`, `<span class="hljs-type">int</span>`, `<span class="hljs-type">i64</span>`, `<span class="hljs-type">i128</span>`, `<span class="hljs-type">u8</span>`, `<span class="hljs-type">u16</span>`, `<span class="hljs-type">u32</span>`, `<span class="hljs-type">uint</span>`, `<span class="hljs-type">u64</span></span>,
+<span class="inline-code highlight-jc hljs"><span class="hljs-type">u128</span>`, `isize`, `usize`, `<span class="hljs-type">f32</span>`, `<span class="hljs-type">f64</span>`, `double`, `<span class="hljs-type">bool</span>`, `<span class="hljs-type">char</span>`, `<span class="hljs-type">str</span></span>
 
 Nothing else CANNOT BE named in __PascalCase__ except user-defined types!
 
@@ -79,24 +79,24 @@ Nothing else CANNOT BE named in __PascalCase__ except user-defined types!
 
 Actually, type parameters are under rule above ("Type names"), anyway, they are styled a little bit different.
 
-Type parameters MUST BE named in __PascalCase__: `T`, `U`, `V` and SHOULD BE 1 character long.
+Type parameters MUST BE named in __PascalCase__: <span class="inline-code highlight-jc hljs">T`, `U`, `V</span> and SHOULD BE 1 character long.
 
 As you can see, 1 uppercase character is used for type parameters, but which to use when there're more than one or usage
 is specific? Here's the table of common cases:
 
 |   Case   |   Names   |
 | :------: | :-------- |
-| Single "any" type | `T` |
-| Key-value types | `K` for key and `V` for value. Often used in mapping structures |
-| Multiple types | First - `T`, Second - `S`, Third - `U`, Fourth - `V` |
-| Meaningful types | `TSize`, `TInput`, `TOutput` |
-| A lot of "any" types | `T0`, `T1`, `T2`, ..., `TN`. Rarely needed, but can occur in, for example, tuple type implementations |
+| Single "any" type | <span class="inline-code highlight-jc hljs">T</span> |
+| Key-value types | <span class="inline-code highlight-jc hljs">K` <span class="hljs-keyword">for</span> <span class="hljs-title class_">key</span> <span class="hljs-operator">and</span> `V</span> for value. Often used in mapping structures |
+| Multiple types | First - <span class="inline-code highlight-jc hljs">T`, Second <span class="hljs-operator">-</span> `S`, Third <span class="hljs-operator">-</span> `U`, Fourth <span class="hljs-operator">-</span> `V</span> |
+| Meaningful types | <span class="inline-code highlight-jc hljs">TSize`, `TInput`, `TOutput</span> |
+| A lot of "any" types | <span class="inline-code highlight-jc hljs">T0`, `T1`, `T2`, <span class="hljs-operator">..</span><span class="hljs-operator">.</span>, `TN</span>. Rarely needed, but can occur in, for example, tuple type implementations |
 
 > "any" type imply cases when it is not important to refer to this type, and it just needed to be annotated.
 
-### Modules (`mod`)
+### Modules (<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">mod</span></span>)
 
-`mod` MUST BE named in __snake_case__: `std`, `my_lib`, `some_module`
+<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">mod</span>` MUST BE named <span class="hljs-keyword">in</span> __snake_case__: `std`, `my_lib`, `some_module</span>
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/ideas/index.html">< Ideas [α RFCs]</a>

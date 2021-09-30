@@ -9,16 +9,16 @@ parent: 'Compile time evaluation'
 
 # CTE Contexts
 
-In some places, we cannot put run-time computed expressions, e.g. when we declare a fixed-sized array function trim() { [native code] },
-`getSize()` function must be CTE.
+In some places, we cannot put run-time computed expressions, e.g. when we declare a fixed-sized array <span class="inline-code highlight-jc hljs">[T; <span class="hljs-title function_ invoke__">getSize</span>()]</span>,
+<span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">getSize</span>()</span> function must be CTE.
 
-Here's the list of all (I hope) this kind of places (`N` and `M` are `const` expressions):
+Here's the list of all (I hope) this kind of places (<span class="inline-code highlight-jc hljs">N` <span class="hljs-operator">and</span> `M` are `<span class="hljs-keyword">const</span></span> expressions):
 
-* Array types `[T; N]`
-* Fill-array generator `[0; N]` (generate an array of `N` zeros)
-* When we set default value for `const` parameter like `<const N: usize = M>`
-* Enum discriminant `enum MyEnum { Kind = N }`
-* `static` items initializers
+* Array types <span class="inline-code highlight-jc hljs">[T; N]</span>
+* Fill-array generator <span class="inline-code highlight-jc hljs">[<span class="hljs-number">0</span>; N]` (generate an array of `N</span> zeros)
+* When we set default value for <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span>` parameter like `<span class="hljs-operator">&lt;</span><span class="hljs-keyword">const</span> N: usize <span class="hljs-operator">=</span> M<span class="hljs-operator">&gt;</span></span>
+* Enum discriminant <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">enum</span> <span class="hljs-title class_">MyEnum</span> { Kind <span class="hljs-operator">=</span> N }</span>
+* <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">static</span></span> items initializers
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/const-keyword.html">< Const keyword</a>

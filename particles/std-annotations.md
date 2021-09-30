@@ -7,7 +7,7 @@ parent: 'Particles [β RFCs]'
 # No grandparent
 ---
 
-# function trim() { [native code] } annotations
+# <span class="inline-code highlight-jc hljs">std</span> annotations
 
 ## Analysis helpers
 
@@ -19,10 +19,10 @@ Converter marker:
 
 And this code will produce an error like:
 
-```plaintext
+<span class="inline-code highlight-jc hljs">`</span>plaintext
 Invalid type String for int
 Note: try call s.toInt()
-```
+<span class="inline-code highlight-jc hljs">`</span>
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/particles/soft-keywords.html">< Soft keywords</a>

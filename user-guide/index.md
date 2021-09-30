@@ -29,23 +29,23 @@ This part is about Lexical structure, that is further, talking about syntax I wi
 
 Comments are syntax units that are ignored and do not affect program compilation.
 You can use them for any additional info and documentation for your code.
-_Jacy_ has C-style comments, function trim() { [native code] } for multiline.
-Documentation comments start with `///` for one-line and `/**` for multiline (with closing `*/`)
+_Jacy_ has C-style comments, <span class="inline-code highlight-jc hljs"><span class="hljs-comment">//` for one-line and `/**/</span></span> for multiline.
+Documentation comments start with <span class="inline-code highlight-jc hljs"><span class="hljs-comment">///` for one-line and `/**` for multiline (with closing `*/</span></span>)
 
 ### Identifiers
 
-Identifiers in _Jacy_ start with an English letter or `_` (underscore) followed by `_`, letters or digits.
+Identifiers in _Jacy_ start with an English letter or <span class="inline-code highlight-jc hljs">_` (undersc<span class="hljs-operator">or</span>e) followed by `_</span>, letters or digits.
 Identifiers are used as names and cannot be the same as reserved words (keywords), which are listed below.
 
-__Anyway, in _Jacy_ `_` is a reserved keyword__
+__Anyway, in _Jacy_ <span class="inline-code highlight-jc hljs">_</span> is a reserved keyword__
 
-Examples of valid identifiers: `text`, `_123`, `__someStrangeName`, `snake_style_name`
+Examples of valid identifiers: <span class="inline-code highlight-jc hljs">text`, `_123`, `__someStrangeName`, `snake_style_name</span>
 
 ### Keywords
 
-This words are keywords, thus cannot be used as identifiers: `and`, `as`, `async`, `await`, `break`, `const`, `continue`, `elif`, `else`, `enum`, `false`, `for`, `func`, `if`, `impl`, `in`, `infix`, `init`, `loop`, `match`, `mod`, `move`, `mut`, `not`, `of`, `or`, `return`, `party`, `pub`, `ref`, `self`, `static`, `struct`, `super`, `trait`, `true`, `type`, `use`, `let`, `where`, `while`.
+This words are keywords, thus cannot be used as identifiers: <span class="inline-code highlight-jc hljs"><span class="hljs-operator">and</span>`, `<span class="hljs-keyword">as</span>`, `async`, `await`, `<span class="hljs-keyword">break</span>`, `<span class="hljs-keyword">const</span>`, `<span class="hljs-keyword">continue</span>`, `elif`, `<span class="hljs-keyword">else</span>`, `<span class="hljs-keyword">enum</span>`, `<span class="hljs-literal">false</span>`, `f<span class="hljs-operator">or</span>`, `<span class="hljs-keyword">func</span>`, `<span class="hljs-keyword">if</span>`, `<span class="hljs-keyword">impl</span>`, `<span class="hljs-keyword">in</span>`, `infix`, `init`, `<span class="hljs-keyword">loop</span>`, `<span class="hljs-keyword">match</span>`, `<span class="hljs-keyword">mod</span>`, `<span class="hljs-keyword">move</span>`, `<span class="hljs-keyword">mut</span>`, `<span class="hljs-operator">not</span>`, `of`, `<span class="hljs-operator">or</span>`, `<span class="hljs-keyword">return</span>`, `<span class="hljs-keyword">party</span>`, `<span class="hljs-keyword">pub</span>`, `<span class="hljs-keyword">ref</span>`, `<span class="hljs-keyword">self</span>`, `<span class="hljs-keyword">static</span>`, `<span class="hljs-keyword">struct</span>`, `<span class="hljs-keyword">super</span>`, `<span class="hljs-keyword">trait</span>`, `<span class="hljs-literal">true</span>`, `<span class="hljs-keyword">type</span>`, `<span class="hljs-keyword">use</span>`, `<span class="hljs-keyword">let</span>`, `<span class="hljs-keyword">where</span>`, `<span class="hljs-keyword">while</span></span>.
 
-There're also reserved keywords that are not in use: `do`, `import`, `macro`, `of`.
+There're also reserved keywords that are not in use: <span class="inline-code highlight-jc hljs">do`, `imp<span class="hljs-operator">or</span>t`, `macro`, `of</span>.
 
 ### Operators
 
@@ -55,9 +55,9 @@ Prefix, infix, and postfix are about where an operator is placed: before, betwee
 
 Infix operators have some properties: precedence and associativity.
 
-Precedence is a strength of operator, for example, we all know that `a + b * c` is the same as `a + (b * c)`, as `*` operator in math is stronger than `+` operator.
+Precedence is a strength of operator, for example, we all know that <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">+</span> b <span class="hljs-operator">*</span> c` is the same <span class="hljs-keyword">as</span> `a <span class="hljs-operator">+</span> (b <span class="hljs-operator">*</span> c)`, <span class="hljs-keyword">as</span> `<span class="hljs-operator">*</span>` operat<span class="hljs-operator">or</span> <span class="hljs-keyword">in</span> math is stronger than `<span class="hljs-operator">+</span></span> operator.
 
-Associativity is about how operators with the same precedence are grouped, that is, if `+` operator is left-associative, then `a + b + c` is `(a + b) + c` and if it is right-associative then `a + (b + c)`.
+Associativity is about how operators with the same precedence are grouped, that is, if <span class="inline-code highlight-jc hljs"><span class="hljs-operator">+</span>` operat<span class="hljs-operator">or</span> is left<span class="hljs-operator">-</span>associative, then `a <span class="hljs-operator">+</span> b <span class="hljs-operator">+</span> c` is `(a <span class="hljs-operator">+</span> b) <span class="hljs-operator">+</span> c` <span class="hljs-operator">and</span> <span class="hljs-keyword">if</span> it is right<span class="hljs-operator">-</span>associative then `a <span class="hljs-operator">+</span> (b <span class="hljs-operator">+</span> c)</span>.
 Most infix operators are left-associative.
 
 Prefix and postfix operators in _Jacy_ all have one precedence by groups: postfix is stronger than prefix operator.
@@ -80,54 +80,52 @@ This table also includes expressions that are not operator expressions, anyway, 
 The table is from high to low precedence ordered -- the operators in the first row have the strongest precedence.
 
 | Precedence index | Operator groups / expressions | Associativity |
-|  | Paths (`::`) | N/A |
-|  | Field expression (aka member access - `a.b`) | left to right |
-|  | Invocations (aka calls - `a(...)`), array access (aka indexing - `a[...]`) | N/A |
-|  | [Postfix operators] `?` | N/A |
-|  | [Prefix operators] `!`, `&`, `&mut`, `-`, `*` | N/A |
-|  | `as` | left |
-|  | `*` `/` `%` | left |
-|  | `+` `-` | left |
-|  | `..` `..=` | Non-associative |
-|  | `<<` `>>` | left |
-|  | `&` (infix) | left |
-|  | `^` | left |
-|  | `|` | left |
-|  | `in` | Non-associative |
-|  | `<=>` | Non-associative |
-|  | `<` `>` `<=` `=>` | Non-associative |
-|  | `==` `!=` | Non-associative |
-|  | `and` | left |
-|  | `or` | left |
-|  | `=` `+=` `-=` `*=` `/=` `%=` `&=` `|=` `^=` `<<=` `>>=` | left |
+|  | Paths (<span class="inline-code highlight-jc hljs"><span class="hljs-operator">::</span></span>) | N/A |
+|  | Field expression (aka member access - <span class="inline-code highlight-jc hljs">a<span class="hljs-operator">.</span>b</span>) | left to right |
+|  | Invocations (aka calls - <span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">a</span>(<span class="hljs-operator">..</span><span class="hljs-operator">.</span>)`), array <span class="hljs-title function_ invoke__">access</span> (aka indexing <span class="hljs-operator">-</span> `a[<span class="hljs-operator">..</span><span class="hljs-operator">.</span>]</span>) | N/A |
+|  | [Postfix operators] <span class="inline-code highlight-jc hljs">?</span> | N/A |
+|  | [Prefix operators] <span class="inline-code highlight-jc hljs">!`, `<span class="hljs-operator">&amp;</span>`, `<span class="hljs-operator">&amp;</span><span class="hljs-keyword">mut</span>`, `<span class="hljs-operator">-</span>`, `<span class="hljs-operator">*</span></span> | N/A |
+|  | <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">as</span></span> | left |
+|  | <span class="inline-code highlight-jc hljs"><span class="hljs-operator">*</span>` `<span class="hljs-operator">/</span>` `<span class="hljs-operator">%</span></span> | left |
+|  | <span class="inline-code highlight-jc hljs"><span class="hljs-operator">+</span>` `<span class="hljs-operator">-</span></span> | left |
+|  | <span class="inline-code highlight-jc hljs"><span class="hljs-operator">..</span>` `<span class="hljs-operator">..</span><span class="hljs-operator">=</span></span> | Non-associative |
+|  | <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&lt;&lt;</span>` `<span class="hljs-operator">&gt;&gt;</span></span> | left |
+|  | <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&amp;</span></span> (infix) | left |
+|  | <span class="inline-code highlight-jc hljs"><span class="hljs-operator">^</span></span> | left |
+|  | <span class="inline-code highlight-jc hljs"><span class="hljs-operator">|</span></span> | left |
+|  | <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">in</span></span> | Non-associative |
+|  | <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&lt;</span><span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span></span> | Non-associative |
+|  | <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&lt;</span>` `<span class="hljs-operator">&gt;</span>` `<span class="hljs-operator">&lt;</span><span class="hljs-operator">=</span>` `<span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span></span> | Non-associative |
+|  | <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=</span><span class="hljs-operator">=</span>` `<span class="hljs-operator">!=</span></span> | Non-associative |
+|  | <span class="inline-code highlight-jc hljs"><span class="hljs-operator">and</span></span> | left |
+|  | <span class="inline-code highlight-jc hljs"><span class="hljs-operator">or</span></span> | left |
+|  | <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=</span>` `<span class="hljs-operator">+=</span>` `<span class="hljs-operator">-=</span>` `<span class="hljs-operator">*=</span>` `<span class="hljs-operator">/=</span>` `<span class="hljs-operator">%=</span>` `<span class="hljs-operator">&amp;=</span>` `<span class="hljs-operator">|=</span>` `<span class="hljs-operator">^=</span>` `<span class="hljs-operator">&lt;&lt;=</span>` `<span class="hljs-operator">&gt;&gt;=</span></span> | left |
 
-Prefix operators: `not`, `&` (borrow), `&mut` (borrow as mutable, `&` and `mut` can have whitespace between), `-` (negation), `*` (dereference).
+Prefix operators: <span class="inline-code highlight-jc hljs"><span class="hljs-operator">not</span>`, `<span class="hljs-operator">&amp;</span>` (b<span class="hljs-operator">or</span>row), `<span class="hljs-operator">&amp;</span><span class="hljs-keyword">mut</span>` (b<span class="hljs-operator">or</span>row <span class="hljs-keyword">as</span> mutable, `<span class="hljs-operator">&amp;</span>` <span class="hljs-operator">and</span> `<span class="hljs-keyword">mut</span>` can have whitespace between), `<span class="hljs-operator">-</span>` (negation), `<span class="hljs-operator">*</span></span> (dereference).
 
-Postfix operators: `?` (optional chaining), `!` (unwrap).
+Postfix operators: <span class="inline-code highlight-jc hljs">?` (optional chaining), `!</span> (unwrap).
 
 <div class="fold-block">
-    <input id="input-d074ed4df5bd2c7fc3f1f0654d00f9a8" type="checkbox">
-    <label class="clicker" for="input-d074ed4df5bd2c7fc3f1f0654d00f9a8">> Range operators precedence [why?]</label>
-    <blockquote class="content">Range operators have this kind of precedence as we want to write `a..b+1` which means `a..(b+1)`
-as far as writing `a..b == c..d` which means `(a..b) == (c..d)`
-</blockquote>
+    <input id="input-e32e9b2c342496858232e24fee30cd46" type="checkbox">
+    <label class="clicker" for="input-e32e9b2c342496858232e24fee30cd46">> Range operators precedence [why?]</label>
+    <blockquote class="content">Range operators have this kind of precedence as we want to write <span class="inline-code highlight-jc hljs"a<span class="hljs-operator"..</spanb<span class="hljs-operator"+</span<span class="hljs-number"1</span` which means `a<span class="hljs-operator"..</span(b<span class="hljs-operator"+</span<span class="hljs-number"1</span)</spanas far as writing <span class="inline-code highlight-jc hljs"a<span class="hljs-operator"..</spanb <span class="hljs-operator"=</span<span class="hljs-operator"=</spanc<span class="hljs-operator"..</spand` which means `(a<span class="hljs-operator"..</spanb) <span class="hljs-operator"=</span<span class="hljs-operator"=</span(c<span class="hljs-operator"..</spand)</span</blockquote>
 </div>
 
-#### `not` prefix
+#### <span class="inline-code highlight-jc hljs"><span class="hljs-operator">not</span></span> prefix
 
-_Jacy_ has a special feature -- you can put `not` operator before infix operator to negate boolean operation.
-Example: `a not in b` is the same as `not (a in b)`.
-This is useful for operators like `in`, by the way, it is possible to write something like `a not and b` that would be the same as `not (a and b)`, but code like this is hard to read.
+_Jacy_ has a special feature -- you can put <span class="inline-code highlight-jc hljs"><span class="hljs-operator">not</span></span> operator before infix operator to negate boolean operation.
+Example: <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">not</span> <span class="hljs-keyword">in</span> b` is the same <span class="hljs-keyword">as</span> `<span class="hljs-operator">not</span> (a <span class="hljs-keyword">in</span> b)</span>.
+This is useful for operators like <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">in</span>`, by the way, it is possible to write something like `a <span class="hljs-operator">not</span> <span class="hljs-operator">and</span> b` that would be the same <span class="hljs-keyword">as</span> `<span class="hljs-operator">not</span> (a <span class="hljs-operator">and</span> b)</span>, but code like this is hard to read.
 
-Of course, when you write `a not OP b` you got `not (a OP b)` thus keep in mind that `OP` must be a logical operator, otherwise you'll have a type error.
+Of course, when you write <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">not</span> OP b` you got `<span class="hljs-operator">not</span> (a OP b)` thus keep <span class="hljs-keyword">in</span> mind that `OP</span> must be a logical operator, otherwise you'll have a type error.
 
 ### Punctuation
 
 Some symbols are reserved punctuations, punctuations differ from operators in the sense that operators, obviously, perform some operations, whereas punctuations are used as syntax units: delimiters, disambiguators, etc.
 
-Also, some symbols depend on the context, sometimes they can be operators, sometimes punctuations. E.g. `=` is an assignment operator, but only in expressions, for function definition, we use `=` as body beginning (in expression-body case).
+Also, some symbols depend on the context, sometimes they can be operators, sometimes punctuations. E.g. <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=</span>` is an assignment operat<span class="hljs-operator">or</span>, but only <span class="hljs-keyword">in</span> expressions, <span class="hljs-keyword">for</span> <span class="hljs-title class_">function</span> definition, we <span class="hljs-keyword">use</span> `<span class="hljs-operator">=</span></span> as body beginning (in expression-body case).
 
-Symbols considered punctuations: `(`, `)`, `[`, `]`, `{`, `}`, `,`, `;`, `:`, `<`, `>` (in generics, not "less/greater than" operators).
+Symbols considered punctuations: <span class="inline-code highlight-jc hljs">(`, `)`, `[`, `]`, `{`, `}`, `,`, `;`, `:`, `<span class="hljs-operator">&lt;</span>`, `<span class="hljs-operator">&gt;</span></span> (in generics, not "less/greater than" operators).
 
 ## Intro
 
@@ -139,10 +137,10 @@ Let's begin with the cliché -- "Hello, world" in _Jacy_:
 
 Here you can see:
 
-- Functions in _Jacy_ are defined with `func` keyword.
+- Functions in _Jacy_ are defined with <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span></span> keyword.
 - Parentheses are omitted -- if a function expects 0 parameters you're able not to write parentheses.
 - _Jacy_ requires semicolons as a statement terminator.
-- There's a `main` function, that is, the entry point of the program, as in many other compiled programming languages.
+- There's a <span class="inline-code highlight-jc hljs">main</span> function, that is, the entry point of the program, as in many other compiled programming languages.
 
 <div class="fold-block">
     <input id="input-ef70f1ee0370354bbdf31bdcfc3e8f21" type="checkbox">
@@ -158,15 +156,15 @@ As we already started with a function, let's talk about them right after the int
 
 Primitive types in _Jacy_:
 
-- boolean type: `bool`.
-- character type `char`.
-- signed integer types: `i8`, `i16`, `i32`, `i64` and `int`.
-- unsigned integer types: `u8`, `u16`, `u32`, `u64` and `uint`.
-- floating-point number types: `f32` and `f64`.
-- slice type: `[T]`.
-- string slice type: `str`.
-- tuple type: `(T1, T2, T3, ...)`
-- array type: `[T; N]`
+- boolean type: <span class="inline-code highlight-jc hljs"><span class="hljs-type">bool</span></span>.
+- character type <span class="inline-code highlight-jc hljs"><span class="hljs-type">char</span></span>.
+- signed integer types: <span class="inline-code highlight-jc hljs"><span class="hljs-type">i8</span>`, `<span class="hljs-type">i16</span>`, `<span class="hljs-type">i32</span>`, `<span class="hljs-type">i64</span>` <span class="hljs-operator">and</span> `<span class="hljs-type">int</span></span>.
+- unsigned integer types: <span class="inline-code highlight-jc hljs"><span class="hljs-type">u8</span>`, `<span class="hljs-type">u16</span>`, `<span class="hljs-type">u32</span>`, `<span class="hljs-type">u64</span>` <span class="hljs-operator">and</span> `<span class="hljs-type">uint</span></span>.
+- floating-point number types: <span class="inline-code highlight-jc hljs"><span class="hljs-type">f32</span>` <span class="hljs-operator">and</span> `<span class="hljs-type">f64</span></span>.
+- slice type: <span class="inline-code highlight-jc hljs">[T]</span>.
+- string slice type: <span class="inline-code highlight-jc hljs"><span class="hljs-type">str</span></span>.
+- tuple type: <span class="inline-code highlight-jc hljs">(T1, T2, T3, <span class="hljs-operator">..</span><span class="hljs-operator">.</span>)</span>
+- array type: <span class="inline-code highlight-jc hljs">[T; N]</span>
 
 <div class="fold-block">
     <input id="input-c55c668b1bbd4234fcc7dd122826ebe0" type="checkbox">
@@ -178,77 +176,77 @@ Primitive type names are exceptions, you must use PascalCase (capitalized camelC
 
 #### Boolean
 
-The boolean type can hold one of two values: `true` or `false`.
+The boolean type can hold one of two values: <span class="inline-code highlight-jc hljs"><span class="hljs-literal">true</span>` <span class="hljs-operator">or</span> `<span class="hljs-literal">false</span></span>.
 
 #### Character
 
 In _Jacy_ characters are always valid, utf8 encoded Unicode points, thus the size of one character is 4 bytes.
 In contrast to Rust, C, C++, and other languages that have character literal, in _Jacy_, you character literal is written in the same way as a string literal (as in Swift).
 
-So, `"a"` can be a character, but `"abcde"` cannot, because it holds multiple characters (it is a string).
+So, <span class="inline-code highlight-jc hljs"><span class="hljs-string">&quot;a&quot;</span>` can be a character, but `<span class="hljs-string">&quot;abcde&quot;</span></span> cannot, because it holds multiple characters (it is a string).
 The question that you may come with is "How do I say that it is a character" -- you need to annotate the type of expression, depending on the context.
-For variables, you need to write `let a: char = "a"`, but for function, you can just pass character without any annotation `foo("a")` if function expects `char` as the first argument.
+For variables, you need to write <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span>: <span class="hljs-type">char</span> <span class="hljs-operator">=</span> <span class="hljs-string">&quot;a&quot;</span>`, but <span class="hljs-keyword">for</span> <span class="hljs-title class_">function</span>, you can just pass character without any an<span class="hljs-operator">not</span>ation `<span class="hljs-title function_ invoke__">foo</span>(<span class="hljs-string">&quot;a&quot;</span>)` <span class="hljs-keyword">if</span> function expects `<span class="hljs-type">char</span></span> as the first argument.
 
 #### Integer types
 
 Integer types in _Jacy_ exist in 4 static sizes: 8, 16, 32, and 64-bit size, and two kinds - signed and unsigned.
-The types `int` and `uint` are platform-dependent types, in Rust, they are the same as `isize` and `usize` respectively.
+The types <span class="inline-code highlight-jc hljs"><span class="hljs-type">int</span>` <span class="hljs-operator">and</span> `<span class="hljs-type">uint</span>` are platf<span class="hljs-operator">or</span>m<span class="hljs-operator">-</span>dependent types, <span class="hljs-keyword">in</span> Rust, they are the same <span class="hljs-keyword">as</span> `isize` <span class="hljs-operator">and</span> `usize</span> respectively.
 
-By default, integer literal is of type `int`.
-To create an integer literal of a specific type, you can use a type suffix same as a type name, e.g. for `u8` typed integer `123` you write `123u8`.
+By default, integer literal is of type <span class="inline-code highlight-jc hljs"><span class="hljs-type">int</span></span>.
+To create an integer literal of a specific type, you can use a type suffix same as a type name, e.g. for <span class="inline-code highlight-jc hljs"><span class="hljs-type">u8</span>` typed integer `<span class="hljs-number">123</span>` you write `<span class="hljs-number">123u8</span></span>.
 
 <div class="fold-block">
     <input id="input-388c3f4d31bac5234d3887b82bd07a59" type="checkbox">
-    <label class="clicker" for="input-388c3f4d31bac5234d3887b82bd07a59">> `i128` and `u128`</label>
+    <label class="clicker" for="input-388c3f4d31bac5234d3887b82bd07a59">> <span class="inline-code highlight-jc hljs"><span class="hljs-type">i128</span>` <span class="hljs-operator">and</span> `<span class="hljs-type">u128</span></span></label>
     <blockquote class="content">As you can see, there is no 128-bit sized integer type in _Jacy_ for now, by the way, they are in the future plan.
 </blockquote>
 </div>
 
 #### Floating point types
 
-For floating-point numbers, there're two types: `f32` and `f64` - 32-bit sized and 64-bit sized respectively.
+For floating-point numbers, there're two types: <span class="inline-code highlight-jc hljs"><span class="hljs-type">f32</span>` <span class="hljs-operator">and</span> `<span class="hljs-type">f64</span></span> - 32-bit sized and 64-bit sized respectively.
 
-Float literals support suffixes too as int's: `1.6783f32` or `55f64`.
+Float literals support suffixes too as int's: <span class="inline-code highlight-jc hljs"><span class="hljs-number">1.6783f32</span>` <span class="hljs-operator">or</span> `<span class="hljs-number">55f64</span></span>.
 
 <div class="fold-block">
-    <input id="input-c984ecac9b5c059b293c38301bde1255" type="checkbox">
-    <label class="clicker" for="input-c984ecac9b5c059b293c38301bde1255">> `f128`</label>
-    <blockquote class="content">As 128-bit integers, `f128` is in the future plan.
+    <input id="input-271f27446786dd8206194602f78ec97c" type="checkbox">
+    <label class="clicker" for="input-271f27446786dd8206194602f78ec97c">> <span class="inline-code highlight-jc hljs">f128</span></label>
+    <blockquote class="content">As 128-bit integers, <span class="inline-code highlight-jc hljs"f128</spanis in the future plan.
 </blockquote>
 </div>
 
 #### Slice type
 
 If you have no experience with Rust, slice type might be hard to comprehend. Slice is a kind of "view" into memory where data is placed, it is statically sized but the size is not unknown at compile-time.
-In C, a slice would be the same as pointer + size, like `char * arr; int size`. While in C you can access any address you want and you pass a size everywhere to know how many elements you have access to. In _Jacy_ it is impossible (without hack-like code) to access invalid memory locations.
+In C, a slice would be the same as pointer + size, like <span class="inline-code highlight-jc hljs"><span class="hljs-type">char</span> <span class="hljs-operator">*</span> arr; <span class="hljs-type">int</span> size</span>. While in C you can access any address you want and you pass a size everywhere to know how many elements you have access to. In _Jacy_ it is impossible (without hack-like code) to access invalid memory locations.
 
 Don't confuse "slice" in _Jacy_ with a slice of the list, etc. in other programming languages, while concepts are pretty relative.
 
-Slice type is a type enclosed into brackets - `[T]`, e.g. `[int]` is an "int slice".
+Slice type is a type enclosed into brackets - <span class="inline-code highlight-jc hljs">[T]`, e<span class="hljs-operator">.</span>g<span class="hljs-operator">.</span> `[<span class="hljs-type">int</span>]</span> is an "int slice".
 
-#### `str` / String Slice type
+#### <span class="inline-code highlight-jc hljs"><span class="hljs-type">str</span></span> / String Slice type
 
-There's one specific kind of slice that is used so often thus got his own type -- `str`.
-It is simply a string slice, pretty same as `[char]`.
+There's one specific kind of slice that is used so often thus got his own type -- <span class="inline-code highlight-jc hljs"><span class="hljs-type">str</span></span>.
+It is simply a string slice, pretty same as <span class="inline-code highlight-jc hljs">[<span class="hljs-type">char</span>]</span>.
 
 #### Tuple type
 
-Tuple is a heterogeneous collection, i.e. collection of different types. Tuple elements do not have names and can be accessed by index, e.g. `(123, 666).0` will be `123`.
+Tuple is a heterogeneous collection, i.e. collection of different types. Tuple elements do not have names and can be accessed by index, e.g. <span class="inline-code highlight-jc hljs">(<span class="hljs-number">123</span>, <span class="hljs-number">666</span>)<span class="hljs-operator">.</span><span class="hljs-number">0</span>` will be `<span class="hljs-number">123</span></span>.
 
 ##### Unit type
 
-Unit type is an empty tuple - `()`, its purpose is the same as of `void` in some programming languages.
-By default, if type omitted - functions return `()`.
+Unit type is an empty tuple - <span class="inline-code highlight-jc hljs">()`, its purpose is the same <span class="hljs-keyword">as</span> of `void</span> in some programming languages.
+By default, if type omitted - functions return <span class="inline-code highlight-jc hljs">()</span>.
 
 #### Array type
 
 Array is a homogeneous collection, i.e. all elements are of the same type. Arrays have static compile-time-known size, so you cannot resize it.
 
-Array type looks like slice type but with size, ascription after `;` - `[T; N]`, e.g. `[int; 100]` is an array of `100` ints.
+Array type looks like slice type but with size, ascription after <span class="inline-code highlight-jc hljs">;` <span class="hljs-operator">-</span> `[T; N]`, e<span class="hljs-operator">.</span>g<span class="hljs-operator">.</span> `[<span class="hljs-type">int</span>; <span class="hljs-number">100</span>]` is an array of `<span class="hljs-number">100</span></span> ints.
 
 ### Functions
 
-You can declare a function with `func` keyword followed by its name, parameters, and body (there're also some more particles but we'll review them further).
+You can declare a function with <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span></span> keyword followed by its name, parameters, and body (there're also some more particles but we'll review them further).
 
 Let's disassemble a simple function:
 
@@ -256,17 +254,17 @@ Let's disassemble a simple function:
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">add</span>(a: <span class="hljs-type">int</span>, b: <span class="hljs-type">int</span>): <span class="hljs-type">int</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">return</span> a <span class="hljs-operator">+</span> b;</div><div class="line-num" data-line-num="3">3</div><div class="line">}</div>
         </div>
 
-- `(a: int, b: int)` is a parameter list where `a` and `b` are names of parameters and `int`'s are types for each of them.
-- After the parameter list goes return type, it is annotated with the same punctuation - `:`
-- Function body is enclosed into `{}` (curly brackets, also I'll probably call them "braces" further)
+- <span class="inline-code highlight-jc hljs">(a: <span class="hljs-type">int</span>, b: <span class="hljs-type">int</span>)` is a parameter list <span class="hljs-keyword">where</span> `a` <span class="hljs-operator">and</span> `b` are names of parameters <span class="hljs-operator">and</span> `<span class="hljs-type">int</span></span>'s are types for each of them.
+- After the parameter list goes return type, it is annotated with the same punctuation - <span class="inline-code highlight-jc hljs">:</span>
+- Function body is enclosed into <span class="inline-code highlight-jc hljs">{}</span> (curly brackets, also I'll probably call them "braces" further)
 
-To invoke `add` we need to pass two integers in it -- `add(1, 2)`, this expression will result in integer `3`.
+To invoke <span class="inline-code highlight-jc hljs">add` we need to pass two integers <span class="hljs-keyword">in</span> it <span class="hljs-operator">-</span><span class="hljs-operator">-</span> `<span class="hljs-title function_ invoke__">add</span>(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>)`, this expression will result <span class="hljs-keyword">in</span> integer `<span class="hljs-number">3</span></span>.
 
 #### Invocations with labels
 
 _Jacy_ supports labeled arguments, it is a way to call a function without writing arguments in the same order as parameters are declared.
 
-Let's call `add` function from example above with named arguments:
+Let's call <span class="inline-code highlight-jc hljs">add</span> function from example above with named arguments:
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-title function_ invoke__">add</span>(a: <span class="hljs-number">6</span>, b: <span class="hljs-number">13</span>); <span class="hljs-comment">// 19</span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-title function_ invoke__">add</span>(b: <span class="hljs-number">13</span>, a: <span class="hljs-number">6</span>); <span class="hljs-comment">// 19. Order does not matter</span></div>

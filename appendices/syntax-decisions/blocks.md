@@ -10,19 +10,19 @@ grand_parent: 'Appendices'
 # Blocks
 
 Before the control-flow chapter, I have to establish rules about blocks, which are different from Rust's. All blocks (in
-control-flow) which enclosed into function trim() { [native code] } are last-statement typed (it means that the last expression of this block is the
+control-flow) which enclosed into <span class="inline-code highlight-jc hljs">{}</span> are last-statement typed (it means that the last expression of this block is the
 value and type of the whole block).
 
-While Rust has rules about the absence of `;`, _Jacy_ does not have required `;`, so this rule cannot be applied in the
+While Rust has rules about the absence of <span class="inline-code highlight-jc hljs">;`, _Jacy_ does <span class="hljs-operator">not</span> have required `;</span>, so this rule cannot be applied in the
 same way. Let's look at some examples:
 
-* This block is of type `bool` and has result value `true`, even though we don't use this value
+* This block is of type <span class="inline-code highlight-jc hljs"><span class="hljs-type">bool</span>` <span class="hljs-operator">and</span> has result value `<span class="hljs-literal">true</span></span>, even though we don't use this value
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> {<span class="hljs-literal">true</span>}</div>
         </div>
 
-* This block will produce a type error because it either has a result of type of `myval` or `()` (unit type)
+* This block will produce a type error because it either has a result of type of <span class="inline-code highlight-jc hljs">myval` <span class="hljs-operator">or</span> `()</span> (unit type)
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> {<span class="hljs-keyword">if</span> myval <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> myval}</div>
@@ -40,21 +40,21 @@ declared in language, but may exist in the type system.
 ## One-line blocks
 
 In this thing, _Jacy_ blocks differ from Rust's. I really appreciate the opportunity to declare one-line blocks without
-`{}`. As far as I wanna _Jacy_ to be consistent, and I established that syntax of `match` expression arms use `=>`, for
+<span class="inline-code highlight-jc hljs">{}`<span class="hljs-operator">.</span> As far <span class="hljs-keyword">as</span> I wanna _Jacy_ to be consistent, <span class="hljs-operator">and</span> I established that syntax of `<span class="hljs-keyword">match</span>` expression arms <span class="hljs-keyword">use</span> `<span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span></span>, for
 one-line blocks we use the same syntax. Let's look at the syntax.
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">while</span> <span class="hljs-literal">true</span> <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-title function_ invoke__">print</span>(<span class="hljs-string">&quot;kek&quot;</span>)</div>
         </div>
 
-After `=>` we can only place one expression, and if we put `{}` compiler will give a warning because there's no need to
-put `{}` after `=>`. So, the syntax looks kind of like that.
+After <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span>` we can only place one expression, <span class="hljs-operator">and</span> <span class="hljs-keyword">if</span> we put `{}</span> compiler will give a warning because there's no need to
+put <span class="inline-code highlight-jc hljs">{}` after `<span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span></span>. So, the syntax looks kind of like that.
 
-```antlr4
-block: `=>` expr | blockExpression | ';';
-```
+<span class="inline-code highlight-jc hljs">`</span>antlr4
+block: <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span></span> expr | blockExpression | ';';
+<span class="inline-code highlight-jc hljs">`</span>
 
-`{}` blocks in control-flow behave absolutely the same way as block-expressions.
+<span class="inline-code highlight-jc hljs">{}</span> blocks in control-flow behave absolutely the same way as block-expressions.
 
 One important thing is that function declaration has different syntax and rules about blocks, more about that soon
 below.
@@ -62,7 +62,7 @@ below.
 ## Ignoring blocks
 
 This is a feature that satisfies one definite rule from Zen -- prototyping ease. It is a pretty simple thing -- we can
-ignore any block (including control-structures, `mod`s, `func`s, etc.) with `;`.
+ignore any block (including control-structures, <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">mod</span>`s, `<span class="hljs-keyword">func</span>`s, etc<span class="hljs-operator">.</span>) with `;</span>.
 
 Examples.
 

@@ -11,8 +11,8 @@ grand_parent: 'Compiler Workflow'
 
 I wanna both:
 
-* Structurally typed records (aka function trim() { [native code] } or named-tuple)
-* Nominally typed records (aka `struct`)
+* Structurally typed records (aka <span class="inline-code highlight-jc hljs">rec<span class="hljs-operator">or</span>d</span> or named-tuple)
+* Nominally typed records (aka <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">struct</span></span>)
 * Structurally typed tuples (raw tuples)
 * Nominally typed tuples (aka rustish tuple-structs)
 
@@ -20,25 +20,25 @@ I wanna both:
 
 ### Structurally typed records
 
-I consider using `()` for tuples and `{}` for structs. Anyway, there are some problems, as far as we've got
-block-expression. `{}` can be either a block-expression, either struct literal. This is why struct-literal is always
-nominal: `path::to::Struct {...}`.
+I consider using <span class="inline-code highlight-jc hljs">()` <span class="hljs-keyword">for</span> <span class="hljs-title class_">tuples</span> <span class="hljs-operator">and</span> `{}</span> for structs. Anyway, there are some problems, as far as we've got
+block-expression. <span class="inline-code highlight-jc hljs">{}</span> can be either a block-expression, either struct literal. This is why struct-literal is always
+nominal: <span class="inline-code highlight-jc hljs">path::to::Struct {<span class="hljs-operator">..</span><span class="hljs-operator">.</span>}</span>.
 
-Why not use `()` and use named-tuples for structurally typed records? - I want to change syntax of lambda functions
-(which now use `|params...| expression` syntax) to `(params...) -> expression`. As far as lambda parameters can have
+Why not use <span class="inline-code highlight-jc hljs">()</span> and use named-tuples for structurally typed records? - I want to change syntax of lambda functions
+(which now use <span class="inline-code highlight-jc hljs"><span class="hljs-operator">|</span>params<span class="hljs-operator">..</span><span class="hljs-operator">.</span><span class="hljs-operator">|</span> expression` syntax) to `(params<span class="hljs-operator">..</span><span class="hljs-operator">.</span>) <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> expression</span>. As far as lambda parameters can have
 type annotation we cannot disambiguate named-tuple and lambda parameters, because in named-tuple we have `name:
-expression` but in lambda parameters `name: type`.
+expression<span class="inline-code highlight-jc hljs"> but <span class="hljs-keyword">in</span> lambda parameters `name: <span class="hljs-keyword">type</span></span>.
 
 #### Solutions
 
 ##### \#1 I don't like this one anyway
 
-* Use `|params...| expression` syntax for lambda functions
-* Use `(name: expression)` syntax for named-tuples
+* Use <span class="inline-code highlight-jc hljs"><span class="hljs-operator">|</span>params<span class="hljs-operator">..</span><span class="hljs-operator">.</span><span class="hljs-operator">|</span> expression</span> syntax for lambda functions
+* Use <span class="inline-code highlight-jc hljs">(name: expression)</span> syntax for named-tuples
 
 ##### #2
 
-* Use `record {name: expression}`
+* Use <span class="inline-code highlight-jc hljs">rec<span class="hljs-operator">or</span>d {name: expression}</span>
 
 Why this is a bad solution:
 
@@ -47,9 +47,9 @@ Why this is a bad solution:
 ##### #3
 
 This is the most complex way, but it likely will allow us to save all preferred syntaxes. We improve parsing of
-expressions enclosed into `()` and save everything inside `()` into some stack. Then if we see that there's a `->` after
-`)` -- it is a lambda, otherwise -- it is a named-tuple. As knowing that, we can parse tokens inside `()` considering
-`something` in `(name: something)` to be either an expression either type.
+expressions enclosed into <span class="inline-code highlight-jc hljs">()` <span class="hljs-operator">and</span> save everything inside `()` into some stack<span class="hljs-operator">.</span> Then <span class="hljs-keyword">if</span> we see that there<span class="hljs-symbol">&#x27;s</span> a `<span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span></span> after
+<span class="inline-code highlight-jc hljs">)` <span class="hljs-operator">-</span><span class="hljs-operator">-</span> it is a lambda, otherwise <span class="hljs-operator">-</span><span class="hljs-operator">-</span> it is a named<span class="hljs-operator">-</span>tuple<span class="hljs-operator">.</span> As knowing that, we can parse tokens inside `()</span> considering
+<span class="inline-code highlight-jc hljs">something` <span class="hljs-keyword">in</span> `(name: something)</span> to be either an expression either type.
 
 Example.
 
@@ -57,9 +57,9 @@ Example.
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> (name: <span class="hljs-number">123</span>)</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">b</span> <span class="hljs-operator">=</span> (param: <span class="hljs-type">i32</span>) <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> param <span class="hljs-operator">+</span> <span class="hljs-number">1</span></div>
         </div>
 
-When we parse `a`'s and `b`'s assigned expressions we see `(`, then collect all tokens until we find `)` and if we found
-`->` after `)` -- we parse these tokens as lambda parameters (`b` case), if there isn't `->` after `)` -- we parse
-tokens as named-tuple (`a` case).
+When we parse <span class="inline-code highlight-jc hljs">a`<span class="hljs-symbol">&#x27;s</span> <span class="hljs-operator">and</span> `b`<span class="hljs-symbol">&#x27;s</span> assigned expressions we see `(`, then collect all tokens until we find `)</span> and if we found
+<span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>` after `)` <span class="hljs-operator">-</span><span class="hljs-operator">-</span> we parse these tokens <span class="hljs-keyword">as</span> lambda <span class="hljs-title function_ invoke__">parameters</span> (`b` case), <span class="hljs-keyword">if</span> there isn<span class="hljs-symbol">&#x27;t</span> `<span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span>` after `)</span> -- we parse
+tokens as named-tuple (<span class="inline-code highlight-jc hljs">a</span> case).
 
 ###### #4
 
@@ -76,7 +76,7 @@ tokens as named-tuple (`a` case).
 >
 >   implementations for them, so in every complex case we would prefer
 >
->   `struct`)
+>   <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">struct</span></span>)
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/compiler-workflow/type-system/index.html">< Type System</a>

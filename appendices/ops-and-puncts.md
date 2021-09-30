@@ -10,72 +10,72 @@ parent: 'Appendices'
 # Operators and punctuations
 
 Operators in _Jacy_ are not something internally special in comparison with
-functions. When calling function trim() { [native code] } will be used. Mostly
+functions. When calling <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">+</span> b` the <span class="hljs-keyword">trait</span> `std::ops::Add</span> will be used. Mostly
 all operators are overloadable.
 
 ## Operators in expressions
 
 | Operator | Trait to overload |
 | :------: | :---------------- |
-| `a + b` | `std::ops::Add` |
-| `a - b` | `std::ops::Sub` |
-| `a * b` | `std::ops::Mul` |
-| `a / b` | `std::ops::Div` |
-| `a % b` | `std::ops::Rem` |
-| `a ** b` (\*) | `std::ops::Pow` |
-| `a or b` | N/A |
-| `a and b` | N/A |
-| `!a` | `std::ops::Not` |
-| `a & b` | `std::ops::BitAnd` |
-| `a | b` | `std::ops::BitOr` |
-| `a << b` | `std::ops::Shl` |
-| `a >> b` | `std::ops::Shr` |
-| `a ^ b` | `std::ops::Xor` |
-| `a < b` &nbsp; `a > b` &nbsp; `a >= b` &nbsp; `a <= b` &nbsp; `a <=> b` | `std::ops::Cmp` |
-| `a == b` &nbsp; `a != b` | `std::ops::Eq` |
-| `a === b` &nbsp; `a !== b` | ??? (Not described) |
-| `a..b` | `std::ops::Range` |
-| `a..=b` | `std::ops::RangeIncl` |
-| `..b` | `std::ops::RangeTo` |
-| `a..` | `std::ops::RangeFrom` |
-| `..=b` | `std::ops::RangeToIncl` |
-| `..` | `std::ops::RangeFull` (\*\*) |
-| `a += b` | `std::ops::AddAssign` |
-| `a -= b` | `std::ops::SubAssign` |
-| `a *= b` | `std::ops::MulAssign` |
-| `a /= b` | `std::ops::DivAssign` |
-| `a %= b` | `std::ops::RemAssign` |
-| `a **= b` | `std::ops::PowAssign` |
-| `a |= b` | `std::ops::BitOrAssign` |
-| `a &= b` | `std::ops::BitAndAssign` |
-| `a <<= b` | `std::ops::ShlAssign` |
-| `a >>= b` | `std::ops::ShrAssign` |
-| `a ^= b` | `std::ops::XorAssign` |
-| `a?` | `std::ops::Try::branch` |
-| `a!` | `std::ops::Try::unwrap` |
-| `a.b` | N/A |
-| `a()` | `std::ops::Invoke` |
-| `*a` | `std::ops::Deref` |
-| `*a = b` | `std::ops::DerefMut` |
-| `&a` | N/A |
-| `a |> b` | N/A |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">+</span> b` <span class="hljs-operator">|</span> `std::ops::Add</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">-</span> b` <span class="hljs-operator">|</span> `std::ops::Sub</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">*</span> b` <span class="hljs-operator">|</span> `std::ops::Mul</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">/</span> b` <span class="hljs-operator">|</span> `std::ops::Div</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">%</span> b` <span class="hljs-operator">|</span> `std::ops::Rem</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">*</span><span class="hljs-operator">*</span> b` (\<span class="hljs-operator">*</span>) <span class="hljs-operator">|</span> `std::ops::Pow</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">or</span> b</span> | N/A |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">and</span> b</span> | N/A |
+| <span class="inline-code highlight-jc hljs">!a` <span class="hljs-operator">|</span> `std::ops::Not</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">&amp;</span> b` <span class="hljs-operator">|</span> `std::ops::BitAnd</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">|</span> b` <span class="hljs-operator">|</span> `std::ops::BitOr</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">&lt;&lt;</span> b` <span class="hljs-operator">|</span> `std::ops::Shl</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">&gt;&gt;</span> b` <span class="hljs-operator">|</span> `std::ops::Shr</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">^</span> b` <span class="hljs-operator">|</span> `std::ops::X<span class="hljs-operator">or</span></span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">&lt;</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">&gt;</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">&lt;</span><span class="hljs-operator">=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">&lt;</span><span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> b` <span class="hljs-operator">|</span> `std::ops::Cmp</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">=</span><span class="hljs-operator">=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">!=</span> b` <span class="hljs-operator">|</span> `std::ops::Eq</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">=</span><span class="hljs-operator">=</span><span class="hljs-operator">=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">!=</span><span class="hljs-operator">=</span> b</span> | ??? (Not described) |
+| <span class="inline-code highlight-jc hljs">a<span class="hljs-operator">..</span>b` <span class="hljs-operator">|</span> `std::ops::Range</span> |
+| <span class="inline-code highlight-jc hljs">a<span class="hljs-operator">..</span><span class="hljs-operator">=</span>b` <span class="hljs-operator">|</span> `std::ops::RangeIncl</span> |
+| <span class="inline-code highlight-jc hljs"><span class="hljs-operator">..</span>b` <span class="hljs-operator">|</span> `std::ops::RangeTo</span> |
+| <span class="inline-code highlight-jc hljs">a<span class="hljs-operator">..</span>` <span class="hljs-operator">|</span> `std::ops::RangeFrom</span> |
+| <span class="inline-code highlight-jc hljs"><span class="hljs-operator">..</span><span class="hljs-operator">=</span>b` <span class="hljs-operator">|</span> `std::ops::RangeToIncl</span> |
+| <span class="inline-code highlight-jc hljs"><span class="hljs-operator">..</span>` <span class="hljs-operator">|</span> `std::ops::RangeFull</span> (\*\*) |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">+=</span> b` <span class="hljs-operator">|</span> `std::ops::AddAssign</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">-=</span> b` <span class="hljs-operator">|</span> `std::ops::SubAssign</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">*=</span> b` <span class="hljs-operator">|</span> `std::ops::MulAssign</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">/=</span> b` <span class="hljs-operator">|</span> `std::ops::DivAssign</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">%=</span> b` <span class="hljs-operator">|</span> `std::ops::RemAssign</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">**=</span> b` <span class="hljs-operator">|</span> `std::ops::PowAssign</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">|=</span> b` <span class="hljs-operator">|</span> `std::ops::BitOrAssign</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">&amp;=</span> b` <span class="hljs-operator">|</span> `std::ops::BitAndAssign</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">&lt;&lt;=</span> b` <span class="hljs-operator">|</span> `std::ops::ShlAssign</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">&gt;&gt;=</span> b` <span class="hljs-operator">|</span> `std::ops::ShrAssign</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">^=</span> b` <span class="hljs-operator">|</span> `std::ops::X<span class="hljs-operator">or</span>Assign</span> |
+| <span class="inline-code highlight-jc hljs">a?` <span class="hljs-operator">|</span> `std::ops::Try::branch</span> |
+| <span class="inline-code highlight-jc hljs">a!` <span class="hljs-operator">|</span> `std::ops::Try::unwrap</span> |
+| <span class="inline-code highlight-jc hljs">a<span class="hljs-operator">.</span>b</span> | N/A |
+| <span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">a</span>()` <span class="hljs-operator">|</span> `std::ops::Invoke</span> |
+| <span class="inline-code highlight-jc hljs"><span class="hljs-operator">*</span>a` <span class="hljs-operator">|</span> `std::ops::Deref</span> |
+| <span class="inline-code highlight-jc hljs"><span class="hljs-operator">*</span>a <span class="hljs-operator">=</span> b` <span class="hljs-operator">|</span> `std::ops::DerefMut</span> |
+| <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&amp;</span>a</span> | N/A |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">|</span><span class="hljs-operator">&gt;</span> b</span> | N/A |
 
 * (\*) For the exponentiation operator, there can be a conflict with
-  dereferencing operator `*`, to solve it you need to put white space between
-  terms. E.g. `a**b` == `a ** b` as far as `a **b` == `a ** b` but not == `a *
-  *b`, and `a*b` == `a * b`. So, with dereferencing, always put white space
-  before `*` (as dereferencing operator).
-* (\*\*) `RangeFull` is not a real operator, it is an empty `struct` which can
+  dereferencing operator <span class="inline-code highlight-jc hljs"><span class="hljs-operator">*</span></span>, to solve it you need to put white space between
+  terms. E.g. <span class="inline-code highlight-jc hljs">a<span class="hljs-operator">*</span><span class="hljs-operator">*</span>b` <span class="hljs-operator">=</span><span class="hljs-operator">=</span> `a <span class="hljs-operator">*</span><span class="hljs-operator">*</span> b` <span class="hljs-keyword">as</span> far <span class="hljs-keyword">as</span> `a <span class="hljs-operator">*</span><span class="hljs-operator">*</span>b` <span class="hljs-operator">=</span><span class="hljs-operator">=</span> `a <span class="hljs-operator">*</span><span class="hljs-operator">*</span> b` but <span class="hljs-operator">not</span> <span class="hljs-operator">=</span><span class="hljs-operator">=</span> </span>a *
+  *b<span class="inline-code highlight-jc hljs">, <span class="hljs-operator">and</span> `a<span class="hljs-operator">*</span>b` <span class="hljs-operator">=</span><span class="hljs-operator">=</span> `a <span class="hljs-operator">*</span> b</span>. So, with dereferencing, always put white space
+  before <span class="inline-code highlight-jc hljs"><span class="hljs-operator">*</span></span> (as dereferencing operator).
+* (\*\*) <span class="inline-code highlight-jc hljs">RangeFull` is <span class="hljs-operator">not</span> a real operat<span class="hljs-operator">or</span>, it is an empty `<span class="hljs-keyword">struct</span></span> which can
   be passed somewhere.
 
 ## Punctuations
 
 | Punctuation | Usages |
 | :--- | :--- |
-| `:` | Type annotations in almost all constructions, function call argument name |
-| `->` | Function types, lambdas |
-| `;` | Statement terminator, body ignorance, item declaration |
-| `=>` | `match` arms |
+| <span class="inline-code highlight-jc hljs">:</span> | Type annotations in almost all constructions, function call argument name |
+| <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span></span> | Function types, lambdas |
+| <span class="inline-code highlight-jc hljs">;</span> | Statement terminator, body ignorance, item declaration |
+| <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span>` <span class="hljs-operator">|</span> `<span class="hljs-keyword">match</span></span> arms |
 |  |  |
 
 ## Operators and punctuations precedence
@@ -84,26 +84,26 @@ Precedence (from highest to lowest)
 
 | Symbols |
 | :-----: |
-| `a::b` |
-| `a.b` |
-| `a()` &nbsp; `a[]` |
-| `a?` |
-| `-a` &nbsp; `*a` &nbsp; `!a` &nbsp; `&a` &nbsp; `&mut a` |
-| `a as b` |
-| `a ** b` |
-| `a * b` &nbsp; `a / b` &nbsp; `a % b` |
-| `a + b` &nbsp; `a - b` |
-| `a << b` &nbsp; `a >> b` |
-| `a & b` |
-| `a ^ b` |
-| `a | b` |
-| `a == b` &nbsp; `a != b` &nbsp; `a === b` &nbsp; `a !== b` &nbsp; `a < b` &nbsp; `a > b` &nbsp; `a <= b` &nbsp; `a >= b` &nbsp; `<=>` |
-| `a and b` |
-| `a or b` |
-| `a..b` &nbsp; `a..` &nbsp; `..` &nbsp; `..=b` &nbsp; `..b` &nbsp; `a..=b` |
-| `a |> b` |
-| `a = b` &nbsp; `a += b` &nbsp; `a -= b` &nbsp; `a *= b` &nbsp; `a /= b` &nbsp; `a %= b` &nbsp; `a **= b` &nbsp; `a &= b` &nbsp; `a |= b` &nbsp; `a ^= b` &nbsp; `a <<= b` &nbsp; `a >>= b` |
-| `return a` &nbsp; `break a` &nbsp; `() -> {}` |
+| <span class="inline-code highlight-jc hljs">a::b</span> |
+| <span class="inline-code highlight-jc hljs">a<span class="hljs-operator">.</span>b</span> |
+| <span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">a</span>()` <span class="hljs-operator">&amp;</span>nbsp; `a[]</span> |
+| <span class="inline-code highlight-jc hljs">a?</span> |
+| <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span>a` <span class="hljs-operator">&amp;</span>nbsp; `<span class="hljs-operator">*</span>a` <span class="hljs-operator">&amp;</span>nbsp; `!a` <span class="hljs-operator">&amp;</span>nbsp; `<span class="hljs-operator">&amp;</span>a` <span class="hljs-operator">&amp;</span>nbsp; `<span class="hljs-operator">&amp;</span><span class="hljs-keyword">mut</span> a</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-keyword">as</span> b</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">*</span><span class="hljs-operator">*</span> b</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">*</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">/</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">%</span> b</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">+</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">-</span> b</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">&lt;&lt;</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">&gt;&gt;</span> b</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">&amp;</span> b</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">^</span> b</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">|</span> b</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">=</span><span class="hljs-operator">=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">!=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">=</span><span class="hljs-operator">=</span><span class="hljs-operator">=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">!=</span><span class="hljs-operator">=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">&lt;</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">&gt;</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">&lt;</span><span class="hljs-operator">=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">&gt;</span><span class="hljs-operator">=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `<span class="hljs-operator">&lt;</span><span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span></span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">and</span> b</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">or</span> b</span> |
+| <span class="inline-code highlight-jc hljs">a<span class="hljs-operator">..</span>b` <span class="hljs-operator">&amp;</span>nbsp; `a<span class="hljs-operator">..</span>` <span class="hljs-operator">&amp;</span>nbsp; `<span class="hljs-operator">..</span>` <span class="hljs-operator">&amp;</span>nbsp; `<span class="hljs-operator">..</span><span class="hljs-operator">=</span>b` <span class="hljs-operator">&amp;</span>nbsp; `<span class="hljs-operator">..</span>b` <span class="hljs-operator">&amp;</span>nbsp; `a<span class="hljs-operator">..</span><span class="hljs-operator">=</span>b</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">|</span><span class="hljs-operator">&gt;</span> b</span> |
+| <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">+=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">-=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">*=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">/=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">%=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">**=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">&amp;=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">|=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">^=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">&lt;&lt;=</span> b` <span class="hljs-operator">&amp;</span>nbsp; `a <span class="hljs-operator">&gt;&gt;=</span> b</span> |
+| <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">return</span> a` <span class="hljs-operator">&amp;</span>nbsp; `<span class="hljs-keyword">break</span> a` <span class="hljs-operator">&amp;</span>nbsp; `() <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> {}</span> |
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/appendices/jon-files">< JON Files</a>

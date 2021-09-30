@@ -18,8 +18,8 @@ Some main features _Jacy_ would have one day:
   etc.)
 
 * Rustish ownership system and safety
-* function trim() { [native code] } system
-* Comprehensive type system (generics, type bounds, `where` clause,
+* <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">trait</span></span> system
+* Comprehensive type system (generics, type bounds, <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">where</span></span> clause,
 
   etc.)
 

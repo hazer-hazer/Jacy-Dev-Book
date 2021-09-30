@@ -9,7 +9,7 @@ has_children: true
 
 # Names & Imports
 
-This chapter is all about name resolution, module system, and imports (function trim() { [native code] } declarations).
+This chapter is all about name resolution, module system, and imports (<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span></span> declarations).
 <div class="nav-btn-block">
     
     <button class="nav-btn right">

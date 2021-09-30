@@ -11,53 +11,53 @@ grand_parent: 'Appendices'
 
 The control flow of _Jacy_ is mostly inspired by Rust.
 
-We've got function trim() { [native code] }.
+We've got <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">if</span>`<span class="hljs-operator">/</span>`<span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span>` <span class="hljs-keyword">as</span> an expression, `<span class="hljs-keyword">loop</span>` <span class="hljs-keyword">as</span> an expression, `<span class="hljs-keyword">while</span>`<span class="hljs-operator">/</span>`<span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span>` <span class="hljs-operator">and</span> `f<span class="hljs-operator">or</span></span>.
 
-`while`/`while let` and `for` are statements, because:
+<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span>`<span class="hljs-operator">/</span>`<span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span>` <span class="hljs-operator">and</span> `f<span class="hljs-operator">or</span></span> are statements, because:
 
-* Why we need to use them as expressions if they return `()` (unit)
+* Why we need to use them as expressions if they return <span class="inline-code highlight-jc hljs">()</span> (unit)
 * I'm trying to solve the problem above, and it will be solved they'll become expression which returns an any-type value
 * If I made them expressions then it would break backward compatibility:
-  * You could put them in expression place, but they returned `()`, and in the new version, they started returning some
-    non-`()` value
+  * You could put them in expression place, but they returned <span class="inline-code highlight-jc hljs">()</span>, and in the new version, they started returning some
+    non-<span class="inline-code highlight-jc hljs">()</span> value
 
-## `if`/`if let`
+## <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">if</span>`<span class="hljs-operator">/</span>`<span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span></span>
 
-`if` is an expression, works the same as in other languages, here's nothing to say about except that I need to note that
-_Jacy_ does not support implicit `bool` conversion even through operator overloading like C++ does.
+<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">if</span></span> is an expression, works the same as in other languages, here's nothing to say about except that I need to note that
+_Jacy_ does not support implicit <span class="inline-code highlight-jc hljs"><span class="hljs-type">bool</span></span> conversion even through operator overloading like C++ does.
 
-### `if let`
+### <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span></span>
 
-`if let` is a way to check if some value matches a specific pattern. Also, as this is a pattern matching we able to
+<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span></span> is a way to check if some value matches a specific pattern. Also, as this is a pattern matching we able to
 destruct our value.
 
 Syntax is following.
 
-```antlr4
+<span class="inline-code highlight-jc hljs">`</span>antlr4
 ifLetExpression: 'if let' pattern '=' expr block
-```
+<span class="inline-code highlight-jc hljs">`</span>
 
-## `while`/`while let`
+## <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span>`<span class="hljs-operator">/</span>`<span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span></span>
 
-`while` is a statement that works the same as `while` in other c-like languages
+<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span>` is a statement that w<span class="hljs-operator">or</span>ks the same <span class="hljs-keyword">as</span> `<span class="hljs-keyword">while</span></span> in other c-like languages
 
-`while let` is the same as `while` except that its condition behaves like `if let`.
+<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span>` is the same <span class="hljs-keyword">as</span> `<span class="hljs-keyword">while</span>` except that its condition behaves like `<span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span></span>.
 
-### `while`/`while let` are expressions
+### <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span>`<span class="hljs-operator">/</span>`<span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span></span> are expressions
 
 Here are some thoughts about possible solutions.
 
 <div class="code-fence highlight-jc hljs">
-            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">while</span> myval {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-comment">// Do something if `myval` is true</span></div><div class="line-num" data-line-num="3">3</div><div class="line">} <span class="hljs-keyword">else</span> {</div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-comment">// Do something if `myval` is false (at first)</span></div><div class="line-num" data-line-num="5">5</div><div class="line">}</div>
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">while</span> myval {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-comment">// Do something if <span class="inline-code highlight-jc hljs">myval` is <span class="hljs-literal">true</span><span class="hljs-operator">&lt;</span><span class="hljs-operator">/</span>span<span class="hljs-operator">&gt;</span><span class="hljs-operator">&lt;</span><span class="hljs-operator">/</span>div<span class="hljs-operator">&gt;</span><span class="hljs-operator">&lt;</span>div class<span class="hljs-operator">=</span><span class="hljs-string">&quot;line-num&quot;</span> data<span class="hljs-operator">-</span>line<span class="hljs-operator">-</span>num<span class="hljs-operator">=</span><span class="hljs-string">&quot;3&quot;</span><span class="hljs-operator">&gt;</span><span class="hljs-number">3</span><span class="hljs-operator">&lt;</span><span class="hljs-operator">/</span>div<span class="hljs-operator">&gt;</span><span class="hljs-operator">&lt;</span>div class<span class="hljs-operator">=</span><span class="hljs-string">&quot;line&quot;</span><span class="hljs-operator">&gt;</span>} <span class="hljs-operator">&lt;</span>span class<span class="hljs-operator">=</span><span class="hljs-string">&quot;hljs-keyword&quot;</span><span class="hljs-operator">&gt;</span><span class="hljs-keyword">else</span><span class="hljs-operator">&lt;</span><span class="hljs-operator">/</span>span<span class="hljs-operator">&gt;</span> {<span class="hljs-operator">&lt;</span><span class="hljs-operator">/</span>div<span class="hljs-operator">&gt;</span><span class="hljs-operator">&lt;</span>div class<span class="hljs-operator">=</span><span class="hljs-string">&quot;line-num&quot;</span> data<span class="hljs-operator">-</span>line<span class="hljs-operator">-</span>num<span class="hljs-operator">=</span><span class="hljs-string">&quot;4&quot;</span><span class="hljs-operator">&gt;</span><span class="hljs-number">4</span><span class="hljs-operator">&lt;</span><span class="hljs-operator">/</span>div<span class="hljs-operator">&gt;</span><span class="hljs-operator">&lt;</span>div class<span class="hljs-operator">=</span><span class="hljs-string">&quot;line&quot;</span><span class="hljs-operator">&gt;</span>    <span class="hljs-operator">&lt;</span>span class<span class="hljs-operator">=</span><span class="hljs-string">&quot;hljs-comment&quot;</span><span class="hljs-operator">&gt;</span><span class="hljs-comment">// Do something if `myval</span></span> is false (at first)</span></div><div class="line-num" data-line-num="5">5</div><div class="line">}</div>
         </div>
 
 It is an obvious solution, but has some problems:
 
-* As far as `while` can return some value it must explicitly `break` with value. We cannot just use the last statement
-  of the `while` block as the result value, because `while` is possibly multiple-times iterable.
+* As far as <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span>` can <span class="hljs-keyword">return</span> some value it must explicitly `<span class="hljs-keyword">break</span></span> with value. We cannot just use the last statement
+  of the <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span>` block <span class="hljs-keyword">as</span> the result value, because `<span class="hljs-keyword">while</span></span> is possibly multiple-times iterable.
 
-* If we don't `break` with value, then what would be the result? - It cannot be simply written in asm-like code with
-  jumps, because we don't know when our `while` "does not break".
+* If we don't <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">break</span></span> with value, then what would be the result? - It cannot be simply written in asm-like code with
+  jumps, because we don't know when our <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span></span> "does not break".
 
 Problem example.
 
@@ -65,9 +65,9 @@ Problem example.
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">while</span> myval {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">if</span> somethingElse <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">break</span> <span class="hljs-literal">true</span></div><div class="line-num" data-line-num="3">3</div><div class="line">} <span class="hljs-keyword">else</span> {</div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-literal">false</span></div><div class="line-num" data-line-num="5">5</div><div class="line">}</div>
         </div>
 
-* What is the type of this `while` expression? - `bool | ()`, but we don't support inferred union types.
+* What is the type of this <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span>` expression? <span class="hljs-operator">-</span> `<span class="hljs-type">bool</span> <span class="hljs-operator">|</span> ()</span>, but we don't support inferred union types.
 
-For now, I cannot come up with any good solution, so `while` is a statement. Anyway, let's try something:
+For now, I cannot come up with any good solution, so <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span></span> is a statement. Anyway, let's try something:
 
 **IDEA \#1** This one requires static-analysis (maybe complex).
 
@@ -75,7 +75,7 @@ For now, I cannot come up with any good solution, so `while` is a statement. Any
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">while</span> myval {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">if</span> somethingElse <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">break</span> <span class="hljs-literal">true</span></div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-keyword">break</span> <span class="hljs-literal">false</span></div><div class="line-num" data-line-num="4">4</div><div class="line">} <span class="hljs-keyword">else</span> {</div><div class="line-num" data-line-num="5">5</div><div class="line">    <span class="hljs-literal">false</span></div><div class="line-num" data-line-num="6">6</div><div class="line">}</div>
         </div>
 
-We can analyze this code and say that each `break`-value is `bool`, so we allow this.
+We can analyze this code and say that each <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">break</span>`<span class="hljs-operator">-</span>value is `<span class="hljs-type">bool</span></span>, so we allow this.
 
 What about this?.
 
@@ -83,31 +83,31 @@ What about this?.
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">while</span> myval {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">if</span> somethingElse <span class="hljs-operator">=</span><span class="hljs-operator">&gt;</span> <span class="hljs-keyword">break</span> <span class="hljs-literal">true</span></div><div class="line-num" data-line-num="3">3</div><div class="line">} <span class="hljs-keyword">else</span> {</div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-literal">false</span></div><div class="line-num" data-line-num="5">5</div><div class="line">}</div>
         </div>
 
-Each `break`-value is of type `bool`, so we allow it because the alternative workflow is an infinite loop.
+Each <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">break</span>`<span class="hljs-operator">-</span>value is of <span class="hljs-keyword">type</span> `<span class="hljs-type">bool</span></span>, so we allow it because the alternative workflow is an infinite loop.
 
-We required some static-analysis on `while`, which is, as I see, is not really complex and not differs much from the
-`if` expression value inference. The only problem is that the use cases of `while-else` are not common, especially when
+We required some static-analysis on <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span></span>, which is, as I see, is not really complex and not differs much from the
+<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">if</span>` expression value inference<span class="hljs-operator">.</span> The only problem is that the <span class="hljs-keyword">use</span> cases of `<span class="hljs-keyword">while</span><span class="hljs-operator">-</span><span class="hljs-keyword">else</span></span> are not common, especially when
 we cover only this use case.
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">if</span> myval {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">result</span> <span class="hljs-operator">=</span> <span class="hljs-literal">false</span></div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-keyword">while</span> myval {</div><div class="line-num" data-line-num="4">4</div><div class="line">        <span class="hljs-comment">// ...</span></div><div class="line-num" data-line-num="5">5</div><div class="line">        <span class="hljs-keyword">if</span> somethingElse {</div><div class="line-num" data-line-num="6">6</div><div class="line">            result <span class="hljs-operator">=</span> <span class="hljs-literal">true</span></div><div class="line-num" data-line-num="7">7</div><div class="line">            <span class="hljs-keyword">break</span></div><div class="line-num" data-line-num="8">8</div><div class="line">        }</div><div class="line-num" data-line-num="9">9</div><div class="line">    }</div><div class="line-num" data-line-num="10">10</div><div class="line">    <span class="hljs-keyword">return</span> result</div><div class="line-num" data-line-num="11">11</div><div class="line">} <span class="hljs-keyword">else</span> {</div><div class="line-num" data-line-num="12">12</div><div class="line">    <span class="hljs-literal">false</span></div><div class="line-num" data-line-num="13">13</div><div class="line">}</div>
         </div>
 
-## `for` loop
+## <span class="inline-code highlight-jc hljs">f<span class="hljs-operator">or</span></span> loop
 
-`for`-loop is a statement, not an expression, here, problems with making it an expression are the same as for `while`
-(read above) but even more complex. `for`-loop in _Jacy_ has only one syntax (`for ... in ...`) same as Rust, which
-covers all usages (almost) of `for`-loop from C++.
+<span class="inline-code highlight-jc hljs">f<span class="hljs-operator">or</span>`<span class="hljs-operator">-</span><span class="hljs-keyword">loop</span> is a statement, <span class="hljs-operator">not</span> an expression, here, problems with making it an expression are the same <span class="hljs-keyword">as</span> f<span class="hljs-operator">or</span> `<span class="hljs-keyword">while</span></span>
+(read above) but even more complex. <span class="inline-code highlight-jc hljs">f<span class="hljs-operator">or</span>`<span class="hljs-operator">-</span><span class="hljs-keyword">loop</span> <span class="hljs-keyword">in</span> _Jacy_ has only one <span class="hljs-title function_ invoke__">syntax</span> (`f<span class="hljs-operator">or</span> <span class="hljs-operator">..</span><span class="hljs-operator">.</span> <span class="hljs-keyword">in</span> <span class="hljs-operator">..</span><span class="hljs-operator">.</span></span>) same as Rust, which
+covers all usages (almost) of <span class="inline-code highlight-jc hljs">f<span class="hljs-operator">or</span></span>-loop from C++.
 
 The syntax is the following.
 
-```antlr4
+<span class="inline-code highlight-jc hljs">`</span>antlr4
 forLoop: 'for' pattern 'in' expression block
-```
+<span class="inline-code highlight-jc hljs">`</span>
 
 Examples.
 
-```c++
+<span class="inline-code highlight-jc hljs">`</span>c++
 // In C++ we write
 for (int i = 0; i < something; i++) {
     // ...
@@ -117,12 +117,12 @@ for (int i = 0; i < something; i++) {
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// In Jacy:</span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">for</span> <span class="hljs-variable">i</span> <span class="hljs-keyword">in</span> <span class="hljs-number">0</span><span class="hljs-operator">..</span><span class="hljs-operator">=</span>something {</div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-comment">// ...</span></div><div class="line-num" data-line-num="4">4</div><div class="line">}</div>
         </div>
 
-```c++
+<span class="inline-code highlight-jc hljs">`</span>c++
 // In C++
 for (const auto & x : vec) {
     // ...
 }
-```
+<span class="inline-code highlight-jc hljs">`</span>
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// In Jacy</span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">for</span> <span class="hljs-variable">x</span> <span class="hljs-keyword">in</span> <span class="hljs-operator">&amp;</span>vec {</div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-comment">// ...</span></div><div class="line-num" data-line-num="4">4</div><div class="line">}</div>

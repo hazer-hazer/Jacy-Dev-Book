@@ -7,23 +7,23 @@ parent: 'Compile time evaluation'
 # No grandparent
 ---
 
-# function trim() { [native code] } keyword
+# <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> keyword
 
-In CTE `const` used to declare, obviously, a constant which will be evaluated at compile-time and which usages will be
+In CTE <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> used to declare, obviously, a constant which will be evaluated at compile-time and which usages will be
 inlined.
 
-I wanna note that `const` is a synonym for compile-time evaluable expression, so further I'll use it in this context.
+I wanna note that <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> is a synonym for compile-time evaluable expression, so further I'll use it in this context.
 
-`const` must be immediately assigned when declared. Syntax.
+<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> must be immediately assigned when declared. Syntax.
 
-```antlr4
+<span class="inline-code highlight-jc hljs">`</span>antlr4
 'const' IDENT '=' expr
-```
+<span class="inline-code highlight-jc hljs">`</span>
 
-After `'='` goes an expression which MUST also be CTE, but not exactly another `const`.
+After <span class="inline-code highlight-jc hljs"><span class="hljs-string">&#x27;=&#x27;</span>` goes an expression which MUST also be CTE, but <span class="hljs-operator">not</span> exactly a<span class="hljs-operator">not</span>her `<span class="hljs-keyword">const</span></span>.
 
-The difference between `let` and `const` is that `const` is an item, whereas `let` is a statement. As being an item
-`const` can be placed mostly on any level, including top-level.
+The difference between <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span>` <span class="hljs-operator">and</span> `<span class="hljs-keyword">const</span>` is that `<span class="hljs-keyword">const</span>` is an item, whereas `<span class="hljs-keyword">let</span></span> is a statement. As being an item
+<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> can be placed mostly on any level, including top-level.
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">const</span> a <span class="hljs-operator">=</span> <span class="hljs-number">10</span></div><div class="line-num" data-line-num="2">2</div><div class="line"></div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-keyword">trait</span> <span class="hljs-title class_">MyTrait</span> {</div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-keyword">const</span> traitConst <span class="hljs-operator">=</span> <span class="hljs-number">1010</span></div><div class="line-num" data-line-num="5">5</div><div class="line">}</div><div class="line-num" data-line-num="6">6</div><div class="line"></div><div class="line-num" data-line-num="7">7</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span>() {</div><div class="line-num" data-line-num="8">8</div><div class="line">    <span class="hljs-keyword">const</span> b <span class="hljs-operator">=</span> <span class="hljs-number">123</span></div><div class="line-num" data-line-num="9">9</div><div class="line">}</div>

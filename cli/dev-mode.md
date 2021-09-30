@@ -9,12 +9,12 @@ parent: 'CLI'
 
 # Dev Mode
 
-This is a plan (I'm going to implement it now 😇) for function trim() { [native code] } CLI dev-mode enhancement and documentation for dev-mode at all.
+This is a plan (I'm going to implement it now 😇) for <span class="inline-code highlight-jc hljs">jc</span> CLI dev-mode enhancement and documentation for dev-mode at all.
 
 ## What is dev-mode
 
 Dev mode is nothing more than just a controller taking root all over the _Jacy_ compiler.
-Currently, dev-mode can be enabled via `--dev` boolean option (flag), but I'm going to make it more tunable.
+Currently, dev-mode can be enabled via <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span><span class="hljs-operator">-</span>dev</span> boolean option (flag), but I'm going to make it more tunable.
 
 ## Functionality
 
@@ -30,12 +30,12 @@ And to that all for each stage only when I want.
 > __--dev option MUST be passed to cli to enable all other dev options__
 
 The main point is to make dev-mode tuning as simple as possible.
-My view is following: "I'm working on {STAGE} stage, so turn on logs for {STAGE} - `--dev-log={STAGE}`, print debug info related to {STAGE} - `--dev-print={STAGE}`, etc."
-And then, if I want to see logs for {ANOTHER_STAGE} stage, I would pass `--dev-log={ANOTHER_STAGE}` or by adding `{ANOTHER_STAGE}` to the already passed `--dev-log` option after `,`.
+My view is following: "I'm working on {STAGE} stage, so turn on logs for {STAGE} - <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span><span class="hljs-operator">-</span>dev<span class="hljs-operator">-</span>log<span class="hljs-operator">=</span>{STAGE}`, print debug info related to {STAGE} <span class="hljs-operator">-</span> `<span class="hljs-operator">-</span><span class="hljs-operator">-</span>dev<span class="hljs-operator">-</span>print<span class="hljs-operator">=</span>{STAGE}</span>, etc."
+And then, if I want to see logs for {ANOTHER_STAGE} stage, I would pass <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span><span class="hljs-operator">-</span>dev<span class="hljs-operator">-</span>log<span class="hljs-operator">=</span>{ANOTHER_STAGE}` <span class="hljs-operator">or</span> by adding `{ANOTHER_STAGE}` to the already passed `<span class="hljs-operator">-</span><span class="hljs-operator">-</span>dev<span class="hljs-operator">-</span>log` option after `,</span>.
 
-- `--dev-print={STAGE}` - single value - Enable stage-related IRs and storages pretty printing.
-- `--dev-log={STAGE}` - single value - Enable dev-logs for specific stage `{STAGE}`.
-- `--dev-full` - boolean - Enable all `dev` options for all stages.
+- <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span><span class="hljs-operator">-</span>dev<span class="hljs-operator">-</span>print<span class="hljs-operator">=</span>{STAGE}</span> - single value - Enable stage-related IRs and storages pretty printing.
+- <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span><span class="hljs-operator">-</span>dev<span class="hljs-operator">-</span>log<span class="hljs-operator">=</span>{STAGE}` <span class="hljs-operator">-</span> single value <span class="hljs-operator">-</span> Enable dev<span class="hljs-operator">-</span>logs <span class="hljs-keyword">for</span> <span class="hljs-title class_">specific</span> stage `{STAGE}</span>.
+- <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span><span class="hljs-operator">-</span>dev<span class="hljs-operator">-</span>full` <span class="hljs-operator">-</span> boolean <span class="hljs-operator">-</span> Enable all `dev</span> options for all stages.
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/cli/index.html">< CLI</a>

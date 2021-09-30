@@ -16,20 +16,20 @@ This is a list of keywords that seem to be possible to make "soft".
 
 For now, I'll leave all keywords hard, as syntax often changes, thus there would be some conflicts.
 
-## function trim() { [native code] }
+## <span class="inline-code highlight-jc hljs">init</span>
 
-`init` keyword is used for initializers (constructors), and syntax is following:
+<span class="inline-code highlight-jc hljs">init</span> keyword is used for initializers (constructors), and syntax is following:
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-title function_ invoke__">init</span>() {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-comment">// ...</span></div><div class="line-num" data-line-num="3">3</div><div class="line">}</div>
         </div>
 
-Same as function item but without `func` keyword. Absence of `func` keyword gives us opportunity to softly check for `init` keyword.
-`init` is an item, thus only appears on item-only level (in structures), so it is possible to check if it's an initializer but not a function call.
+Same as function item but without <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span>` keyw<span class="hljs-operator">or</span>d<span class="hljs-operator">.</span> Absence of `<span class="hljs-keyword">func</span>` keyw<span class="hljs-operator">or</span>d gives us opp<span class="hljs-operator">or</span>tunity to softly check f<span class="hljs-operator">or</span> `init</span> keyword.
+<span class="inline-code highlight-jc hljs">init</span> is an item, thus only appears on item-only level (in structures), so it is possible to check if it's an initializer but not a function call.
 
 ### Problems
 
-- Requires context-dependent parsing, as we need to check for `init` appearance only inside `struct` (maybe `trait`) but not in `func` (expression context)
+- Requires context-dependent parsing, as we need to check for <span class="inline-code highlight-jc hljs">init` appearance only inside `<span class="hljs-keyword">struct</span>` (maybe `<span class="hljs-keyword">trait</span>`) but <span class="hljs-operator">not</span> <span class="hljs-keyword">in</span> `<span class="hljs-keyword">func</span></span> (expression context)
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/particles/refs-&-moves.html">< Refs & moves</a>

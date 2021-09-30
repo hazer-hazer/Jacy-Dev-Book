@@ -9,7 +9,7 @@ parent: 'Appendices'
 
 # *Jacy* Programming language [checklist](https://www.mcmillen.dev/language_checklist.html)
 
-function trim() { [native code] }plaintext
+<span class="inline-code highlight-jc hljs">`</span>plaintext
 You appear to be advocating a new:
 [x] functional  [x] imperative  [x] object-oriented  [ ] procedural [ ] stack-based
 [x] "multi-paradigm"  [ ] lazy  [x] eager  [x] statically-typed  [ ] dynamically-typed
@@ -111,7 +111,7 @@ In conclusion, this is what I think of you:
 [ ] You have some interesting ideas, but this won't fly.
 [ ] This is a bad language, and you should feel bad for inventing it.
 [ ] Programming in this language is an adequate punishment for inventing it.
-```
+<span class="inline-code highlight-jc hljs">`</span>
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/appendices/cheatsheets">< Appendices</a>
