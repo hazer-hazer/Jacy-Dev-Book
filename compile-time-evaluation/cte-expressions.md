@@ -17,7 +17,7 @@ find if it is by yourself. To do that you need to check that every CTEE rule fol
 
 Expression is CTEE if:
 
-* It is a literal (e.g. <span class="inline-code highlight-jc hljs"><span class="hljs-number">1</span>`, `<span class="hljs-number">123.45</span>`, `<span class="hljs-string">&quot;Hello, Jacy&quot;</span></span>, etc.)
+* It is a literal (e.g. <span class="inline-code highlight-jc hljs"><span class="hljs-number">1</span></span>, <span class="inline-code highlight-jc hljs"><span class="hljs-number">123.45</span></span>, <span class="inline-code highlight-jc hljs"><span class="hljs-string">&quot;Hello, Jacy&quot;</span></span>, etc.)
 * It is a struct whose fields are all CTEE types
 * It is an enum whose variants are all CTEE types
 * It is a result of <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span> <span class="hljs-keyword">func</span></span>

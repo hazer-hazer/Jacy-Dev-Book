@@ -19,10 +19,10 @@ Converter marker:
 
 And this code will produce an error like:
 
-<span class="inline-code highlight-jc hljs">`</span>plaintext
-Invalid type String for int
-Note: try call s.toInt()
-<span class="inline-code highlight-jc hljs">`</span>
+<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">plaintext
+Invalid <span class="hljs-keyword">type</span> <span class="hljs-title class_">String</span> <span class="hljs-keyword">for</span> <span class="hljs-title class_">int</span>
+Note: try call s<span class="hljs-operator">.</span><span class="hljs-title function_ invoke__">toInt</span>()
+</span><span class="inline-code highlight-jc hljs"></span>
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/particles/soft-keywords.html">< Soft keywords</a>

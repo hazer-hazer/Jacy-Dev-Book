@@ -27,19 +27,19 @@ An owned logger can be configured, directly in the source code or automatically 
 
 Configurations influencing each non-static log invocation:
 
-* <span class="inline-code highlight-jc hljs">level` <span class="hljs-operator">-</span> (default: Set by `Config`) <span class="hljs-operator">-</span> Logger instance log<span class="hljs-operator">-</span>level, set by `Config</span> default value, global CLI option
+* <span class="inline-code highlight-jc hljs">level</span> - (default: Set by <span class="inline-code highlight-jc hljs">Config</span>) - Logger instance log-level, set by <span class="inline-code highlight-jc hljs">Config</span> default value, global CLI option
   <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span>log<span class="hljs-operator">-</span>level</span> or by specific CLI options for owner (some logger owners have CLI-confugurable log-level)
   <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span>{owner}<span class="hljs-operator">-</span>log<span class="hljs-operator">-</span>level</span>
-* <span class="inline-code highlight-jc hljs">printOwner` <span class="hljs-operator">-</span> (default: `<span class="hljs-literal">true</span></span>) - Prints owner name
-* <span class="inline-code highlight-jc hljs">printLevel` <span class="hljs-operator">-</span> (default: `<span class="hljs-literal">true</span></span>) - Prints log-level name in each non-static log invocation
-* <span class="inline-code highlight-jc hljs">col<span class="hljs-operator">or</span>ize` <span class="hljs-operator">-</span> (default: `<span class="hljs-literal">true</span></span>) - Colorizes additional info (e.g. log-level name with corresponding color), each
+* <span class="inline-code highlight-jc hljs">printOwner</span> - (default: <span class="inline-code highlight-jc hljs"><span class="hljs-literal">true</span></span>) - Prints owner name
+* <span class="inline-code highlight-jc hljs">printLevel</span> - (default: <span class="inline-code highlight-jc hljs"><span class="hljs-literal">true</span></span>) - Prints log-level name in each non-static log invocation
+* <span class="inline-code highlight-jc hljs">col<span class="hljs-operator">or</span>ize</span> - (default: <span class="inline-code highlight-jc hljs"><span class="hljs-literal">true</span></span>) - Colorizes additional info (e.g. log-level name with corresponding color), each
   log-level has its own color.
 
 ## Panics
 
 Panic is actually throwing an exception, everywhere in the compiler code we panic when some check failed which
 considered a bug. For example, at the name resolution stage, we put some definition to storage and then extract it by
-its id, we cannot have wrong <span class="inline-code highlight-jc hljs">defId` on the h<span class="hljs-operator">and</span>s so <span class="hljs-keyword">if</span> non<span class="hljs-operator">-</span>existent `defId</span> was requested it is actually a bug and we
+its id, we cannot have wrong <span class="inline-code highlight-jc hljs">defId</span> on the hands so if non-existent <span class="inline-code highlight-jc hljs">defId</span> was requested it is actually a bug and we
 must panic.
 
 To panic, there's a static method <span class="inline-code highlight-jc hljs">Logger::devPanic</span>, it follows common format rules, that is, we can pass any types
@@ -59,7 +59,7 @@ Each log-level Logger has a corresponding method with the same name.
 
 Don't confuse logs with suggestions (errors, warning, notes about code given to user), logs are about compiler internals
 and used mostly for development. By default, the log level is <span class="inline-code highlight-jc hljs">info</span> that is used to notify a user about something is
-enabled, e.g. if a user added <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span>print<span class="hljs-operator">=</span>ast` <span class="hljs-keyword">in</span> CLI then we print `info: Printing AST<span class="hljs-operator">..</span><span class="hljs-operator">.</span></span> before printing AST.
+enabled, e.g. if a user added <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span>print<span class="hljs-operator">=</span>ast</span> in CLI then we print <span class="inline-code highlight-jc hljs">info: Printing AST<span class="hljs-operator">..</span><span class="hljs-operator">.</span></span> before printing AST.
 
 <span class="inline-code highlight-jc hljs">dev</span> log-level may seem confusing, but it is the most often used log-level in the code. Actually, its usage is to
 produce verbose debug info that is useful when working at a specific compilation stage.
@@ -69,13 +69,13 @@ produce verbose debug info that is useful when working at a specific compilation
 These are methods that differ from log methods:
 
 * <span class="inline-code highlight-jc hljs">print</span> - (no NL) - static method for raw formatted text printing
-* <span class="inline-code highlight-jc hljs">raw` <span class="hljs-operator">-</span> (no NL) <span class="hljs-operator">-</span> same <span class="hljs-keyword">as</span> `print</span> but non-static
+* <span class="inline-code highlight-jc hljs">raw</span> - (no NL) - same as <span class="inline-code highlight-jc hljs">print</span> but non-static
 * <span class="inline-code highlight-jc hljs">f<span class="hljs-operator">or</span>mat</span> - receives parameters list and formats it producing a string
-* <span class="inline-code highlight-jc hljs">devDebug` <span class="hljs-operator">-</span> (appends NL) <span class="hljs-operator">-</span> <span class="hljs-keyword">static</span> alternative f<span class="hljs-operator">or</span> `dev</span> method used in classes that aren't logger owners
-* <span class="inline-code highlight-jc hljs">nl` <span class="hljs-operator">-</span> sh<span class="hljs-operator">or</span>tcut f<span class="hljs-operator">or</span> `std::endl</span>, convenient for logger methods chaining
-* <span class="inline-code highlight-jc hljs">printTitleDev` <span class="hljs-operator">-</span> (appends NL) <span class="hljs-operator">-</span> prints text <span class="hljs-keyword">in</span> title <span class="hljs-title function_ invoke__">style</span> (sh<span class="hljs-operator">or</span>t text wrapped into repeated `<span class="hljs-operator">=</span></span>) only if dev-mode is
+* <span class="inline-code highlight-jc hljs">devDebug</span> - (appends NL) - static alternative for <span class="inline-code highlight-jc hljs">dev</span> method used in classes that aren't logger owners
+* <span class="inline-code highlight-jc hljs">nl</span> - shortcut for <span class="inline-code highlight-jc hljs">std::endl</span>, convenient for logger methods chaining
+* <span class="inline-code highlight-jc hljs">printTitleDev</span> - (appends NL) - prints text in title style (short text wrapped into repeated <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=</span></span>) only if dev-mode is
   enabled. Used only for compilation stage visual separation.
-* <span class="inline-code highlight-jc hljs">col<span class="hljs-operator">or</span>ized` <span class="hljs-operator">-</span> (appends NL) <span class="hljs-operator">-</span> Receives `Col<span class="hljs-operator">or</span></span> as first argument and print full text colorized resetting color at the
+* <span class="inline-code highlight-jc hljs">col<span class="hljs-operator">or</span>ized</span> - (appends NL) - Receives <span class="inline-code highlight-jc hljs">Col<span class="hljs-operator">or</span></span> as first argument and print full text colorized resetting color at the
   end. Used rarely as not so many logs should be fully colorized.
 * <span class="inline-code highlight-jc hljs"><span class="hljs-operator">not</span>Implemented</span> - TODO dev-panic.
 <div class="nav-btn-block">

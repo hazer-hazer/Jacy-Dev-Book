@@ -11,10 +11,10 @@ grand_parent: 'Appendices'
 
 I've made a bad decision to make all <span class="inline-code highlight-jc hljs">;</span> optional at the start of development.
 
-Now, <span class="inline-code highlight-jc hljs">;` is required, anyway, I won<span class="hljs-symbol">&#x27;t</span> add rules about `;</span> like Rust does. In Rust, if you place a semicolon at the end
+Now, <span class="inline-code highlight-jc hljs">;</span> is required, anyway, I won't add rules about <span class="inline-code highlight-jc hljs">;</span> like Rust does. In Rust, if you place a semicolon at the end
 of expression-statement, it is treated as return-expression or the value of the block. In Jacy there won't be any rules
 like that, for control-flow structure blocks the last expression is always the value of the block and in functions
-explicit <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">return</span>` is always required <span class="hljs-keyword">if</span> <span class="hljs-title function_ invoke__">block</span> (\`{}\</span>) syntax is used.
+explicit <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">return</span></span> is always required if block (\<span class="inline-code highlight-jc hljs">{}\</span>) syntax is used.
 
 I've promised myself to add "semicolon inference" in the future, so I cannot rely on semicolon as part of any additional
 rules except the only one -- using as a terminating token.

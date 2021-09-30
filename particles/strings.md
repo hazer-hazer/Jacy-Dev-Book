@@ -14,19 +14,19 @@ This particle is about the design of strings and characters, from view of the sy
 ## Escape sequences
 
 _Jacy_ supports common C-like escape sequences, with some changes.
-These are: <span class="inline-code highlight-jc hljs">\n`, `\r`, `\t`, `\b`, `\f`, `\v</span>, that have the same meaning as in other languages.
+These are: <span class="inline-code highlight-jc hljs">\n</span>, <span class="inline-code highlight-jc hljs">\r</span>, <span class="inline-code highlight-jc hljs">\t</span>, <span class="inline-code highlight-jc hljs">\b</span>, <span class="inline-code highlight-jc hljs">\f</span>, <span class="inline-code highlight-jc hljs">\v</span>, that have the same meaning as in other languages.
 
 Numeric character literals:
 <span class="inline-code highlight-jc hljs">\###</span> - octal representation
 <span class="inline-code highlight-jc hljs">\x##</span> - hexadecimal representation
-<span class="inline-code highlight-jc hljs">\u##` <span class="hljs-operator">-</span> unicode codepoint below `<span class="hljs-number">10000</span></span>
+<span class="inline-code highlight-jc hljs">\u##</span> - unicode codepoint below <span class="inline-code highlight-jc hljs"><span class="hljs-number">10000</span></span>
 <span class="inline-code highlight-jc hljs">\U####</span> - unicode codepoint
 
 ### Proposals
 
 #### Platform-dependent new-line
 
-The idea is to use <span class="inline-code highlight-jc hljs">\p` <span class="hljs-keyword">for</span> <span class="hljs-title class_">new</span><span class="hljs-operator">-</span>line, on unix<span class="hljs-operator">-</span>like systems it will exp<span class="hljs-operator">and</span> to `\n` (LF) <span class="hljs-operator">and</span> `\r\n</span> (CRLF).
+The idea is to use <span class="inline-code highlight-jc hljs">\p</span> for new-line, on unix-like systems it will expand to <span class="inline-code highlight-jc hljs">\n</span> (LF) and <span class="inline-code highlight-jc hljs">\r\n</span> (CRLF).
 
 ## Character literals
 

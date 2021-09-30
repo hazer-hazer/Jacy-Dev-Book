@@ -9,10 +9,10 @@ parent: 'Code docs'
 
 # Config & CLI [OUTDATED]
 
-<span class="inline-code highlight-jc hljs">Config` is a common singleton class that converts CLI options to programmer<span class="hljs-operator">-</span>friendly <span class="hljs-title function_ invoke__">structures</span> (`<span class="hljs-keyword">enum</span></span>s almost
+<span class="inline-code highlight-jc hljs">Config</span> is a common singleton class that converts CLI options to programmer-friendly structures (<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">enum</span></span>s almost
 always).
 
-You can get<span class="inline-code highlight-jc hljs">Config` via `getInstance</span> static method, all its properties are global.
+You can get<span class="inline-code highlight-jc hljs">Config</span> via <span class="inline-code highlight-jc hljs">getInstance</span> static method, all its properties are global.
 
 ## Options
 
@@ -23,13 +23,13 @@ Also, <span class="inline-code highlight-jc hljs">cli::Options</span> acts as a 
 
 ## CLI
 
-<span class="inline-code highlight-jc hljs">cli::CLI` is a class that processes input `argv</span> and produces separate collections of boolean and key-value options. At
+<span class="inline-code highlight-jc hljs">cli::CLI</span> is a class that processes input <span class="inline-code highlight-jc hljs">argv</span> and produces separate collections of boolean and key-value options. At
 this step, options are stored as strings. <span class="inline-code highlight-jc hljs">cli::CLI</span> class has an interface to work with options to check that something
 specified or to find if some value passed to a key-value option.
 
 To simplify <span class="inline-code highlight-jc hljs">argv</span> processing we don't actually walk through all of them. At first, we split them into a vector of
 string by delimiters like <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=</span></span> (actually, options are already delimited by white space). By doing so we don't need to
-worry about cases when a user writes <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span>print <span class="hljs-operator">=</span> all` <span class="hljs-operator">or</span> `<span class="hljs-operator">-</span>print<span class="hljs-operator">=</span> all` <span class="hljs-operator">or</span> `<span class="hljs-operator">-</span>print <span class="hljs-operator">=</span>all</span> -- all these variants result to
+worry about cases when a user writes <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span>print <span class="hljs-operator">=</span> all</span> or <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span>print<span class="hljs-operator">=</span> all</span> or <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span>print <span class="hljs-operator">=</span>all</span> -- all these variants result to
 <span class="inline-code highlight-jc hljs">[<span class="hljs-string">&quot;-print&quot;</span>, <span class="hljs-string">&quot;=&quot;</span>, <span class="hljs-string">&quot;all&quot;</span>]</span>.
 
 ## Config

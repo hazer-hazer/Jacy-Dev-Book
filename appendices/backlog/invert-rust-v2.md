@@ -45,7 +45,7 @@ that I need to answer are:
 
 #### Let's look at Rust
 
-Rust is pass by move, but what does "move" mean? <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">move</span>` is <span class="hljs-operator">not</span>hing m<span class="hljs-operator">or</span>e than `memcpy</span> but with some static analysis that checks we don't use moved value.
+Rust is pass by move, but what does "move" mean? <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">move</span></span> is nothing more than <span class="inline-code highlight-jc hljs">memcpy</span> but with some static analysis that checks we don't use moved value.
 Actually, assignment in Rust is always byte-by-byte copy, and *Jacy* respects this, because assignment with side effects, etc. is bad.
 
 #### The key
@@ -54,8 +54,8 @@ I'm sadly describing this idea after I marked it as DEPRECATED. Why it is deprec
 
 Invert Rust means that:
 
-- Non-copy type <span class="inline-code highlight-jc hljs">T` internally becomes `<span class="hljs-operator">&amp;</span>T</span>
-- To make a non-ref type <span class="inline-code highlight-jc hljs">own` must be used <span class="hljs-operator">-</span><span class="hljs-operator">-</span> `own T</span>
+- Non-copy type <span class="inline-code highlight-jc hljs">T</span> internally becomes <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&amp;</span>T</span>
+- To make a non-ref type <span class="inline-code highlight-jc hljs">own</span> must be used -- <span class="inline-code highlight-jc hljs">own T</span>
 - Copy types automatically becomes <span class="inline-code highlight-jc hljs">own T</span>
 
 At first, it might be confusing or even a nice solution.
@@ -63,12 +63,12 @@ At first, it might be confusing or even a nice solution.
 Let's look at examples:
 
 <div class="code-fence highlight-jc hljs">
-            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// We have</span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: <span class="hljs-type">str</span>);</div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-comment">// Rust has</span></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: <span class="hljs-operator">&amp;</span><span class="hljs-type">str</span>);</div><div class="line-num" data-line-num="5">5</div><div class="line"></div><div class="line-num" data-line-num="6">6</div><div class="line"><span class="hljs-comment">// We have</span></div><div class="line-num" data-line-num="7">7</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: own <span class="hljs-type">String</span>);</div><div class="line-num" data-line-num="8">8</div><div class="line"><span class="hljs-comment">// Rust have</span></div><div class="line-num" data-line-num="9">9</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: <span class="hljs-type">String</span>);</div><div class="line-num" data-line-num="10">10</div><div class="line"></div><div class="line-num" data-line-num="11">11</div><div class="line"><span class="hljs-comment">// We have</span></div><div class="line-num" data-line-num="12">12</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: <span class="hljs-type">i32</span>);</div><div class="line-num" data-line-num="13">13</div><div class="line"><span class="hljs-comment">// Rust has</span></div><div class="line-num" data-line-num="14">14</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: <span class="hljs-type">i32</span>);</div><div class="line-num" data-line-num="15">15</div><div class="line"><span class="hljs-comment">// As <span class="inline-code highlight-jc hljs"><span class="hljs-type">i32</span>` is copy <span class="hljs-keyword">type</span> <span class="hljs-operator">-</span><span class="hljs-operator">-</span> it automatically becomes `own <span class="hljs-type">i32</span>`, so we don<span class="hljs-operator">&amp;</span>#x27;t need to write `own <span class="hljs-type">i32</span></span> ourself </span></div>
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// We have</span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: <span class="hljs-type">str</span>);</div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-comment">// Rust has</span></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: <span class="hljs-operator">&amp;</span><span class="hljs-type">str</span>);</div><div class="line-num" data-line-num="5">5</div><div class="line"></div><div class="line-num" data-line-num="6">6</div><div class="line"><span class="hljs-comment">// We have</span></div><div class="line-num" data-line-num="7">7</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: own <span class="hljs-type">String</span>);</div><div class="line-num" data-line-num="8">8</div><div class="line"><span class="hljs-comment">// Rust have</span></div><div class="line-num" data-line-num="9">9</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: <span class="hljs-type">String</span>);</div><div class="line-num" data-line-num="10">10</div><div class="line"></div><div class="line-num" data-line-num="11">11</div><div class="line"><span class="hljs-comment">// We have</span></div><div class="line-num" data-line-num="12">12</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: <span class="hljs-type">i32</span>);</div><div class="line-num" data-line-num="13">13</div><div class="line"><span class="hljs-comment">// Rust has</span></div><div class="line-num" data-line-num="14">14</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(a: <span class="hljs-type">i32</span>);</div><div class="line-num" data-line-num="15">15</div><div class="line"><span class="hljs-comment">// As <span class="inline-code highlight-jc hljs"><span class="hljs-type">i32</span></span> is copy type -- it automatically becomes <span class="inline-code highlight-jc hljs">own <span class="hljs-type">i32</span></span>, so we don&#x27;t need to write <span class="inline-code highlight-jc hljs">own <span class="hljs-type">i32</span></span> ourself </span></div>
         </div>
 
-This examples show that when Rust use move -- we use <span class="inline-code highlight-jc hljs">own`, <span class="hljs-operator">and</span> when Rust <span class="hljs-keyword">use</span> `<span class="hljs-operator">&amp;</span></span> -- we don't annotate it as reference type, because for non-copy type, reference is default.
+This examples show that when Rust use move -- we use <span class="inline-code highlight-jc hljs">own</span>, and when Rust use <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&amp;</span></span> -- we don't annotate it as reference type, because for non-copy type, reference is default.
 
-<span class="inline-code highlight-jc hljs">own` is kind of saying to compiler: <span class="hljs-string">&quot;it could be a reference type, but here&#x27;s `own</span></span> thus don't place here a reference by default".
+<span class="inline-code highlight-jc hljs">own</span> is kind of saying to compiler: "it could be a reference type, but here's <span class="inline-code highlight-jc hljs">own</span> thus don't place here a reference by default".
 
 ##### What we're unable to do
 
@@ -80,23 +80,23 @@ Thus, all semantics must be saved, but just inverted.
 
 Actually, by "problems" I mean "cover the most popular use cases to simplify writing code".
 
-- Code becomes cleaner as we don't annotate <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&amp;</span>` <span class="hljs-operator">and</span> `<span class="hljs-keyword">ref</span></span> mostly everywhere
+- Code becomes cleaner as we don't annotate <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&amp;</span></span> and <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">ref</span></span> mostly everywhere
 - We don't have strange <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&amp;</span><span class="hljs-type">str</span></span>, etc.
 
 ##### What problems we produce?
 
 The first one is the problem with copy-types. Above, I said that copy-types are <span class="inline-code highlight-jc hljs">own T</span> by default, sounds simple, but... How do we make a reference to copy-type?!
 If we apply this rule -- no way, without annotating it with <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&amp;</span></span>.
-And here we go again... Doing so, code becomes noisier, as we've got <span class="inline-code highlight-jc hljs">T`, `own T` <span class="hljs-operator">and</span> `<span class="hljs-operator">&amp;</span>T` (<span class="hljs-operator">*</span>but `<span class="hljs-operator">&amp;</span>T</span> is used just for some rare cases*) -- disgusting 🤢.
+And here we go again... Doing so, code becomes noisier, as we've got <span class="inline-code highlight-jc hljs">T</span>, <span class="inline-code highlight-jc hljs">own T</span> and <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&amp;</span>T</span> (*but <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&amp;</span>T</span> is used just for some rare cases*) -- disgusting 🤢.
 
 What could we do? - Remove rule "copy-type becomes <span class="inline-code highlight-jc hljs">own T</span>", we save all the semantics.
-But stop... Now we need to always write <span class="inline-code highlight-jc hljs">own <span class="hljs-type">i32</span>`, etc<span class="hljs-operator">.</span> just <span class="hljs-operator">not</span> to make a `<span class="hljs-operator">&amp;</span><span class="hljs-type">i32</span></span> by default?!! 🤦
+But stop... Now we need to always write <span class="inline-code highlight-jc hljs">own <span class="hljs-type">i32</span></span>, etc. just not to make a <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&amp;</span><span class="hljs-type">i32</span></span> by default?!! 🤦
 
 #### Why is that idea deprecated?
 
 - Problem with copy-types, like <span class="inline-code highlight-jc hljs">own <span class="hljs-type">i32</span></span>
 - Generics become <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&lt;</span>own T, own T2, <span class="hljs-operator">..</span><span class="hljs-operator">.</span><span class="hljs-operator">&gt;</span></span>
-- We may be confused with <span class="inline-code highlight-jc hljs">own` <span class="hljs-operator">and</span> `<span class="hljs-keyword">move</span>`, because `own` is <span class="hljs-keyword">in</span><span class="hljs-operator">-</span><span class="hljs-keyword">type</span> <span class="hljs-title class_">annotation</span> but `<span class="hljs-keyword">move</span></span> is in-expression annotation
+- We may be confused with <span class="inline-code highlight-jc hljs">own</span> and <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">move</span></span>, because <span class="inline-code highlight-jc hljs">own</span> is in-type annotation but <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">move</span></span> is in-expression annotation
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/appendices/backlog/index.html">< Backlog</a>

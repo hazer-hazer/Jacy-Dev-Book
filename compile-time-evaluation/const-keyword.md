@@ -16,13 +16,13 @@ I wanna note that <span class="inline-code highlight-jc hljs"><span class="hljs-
 
 <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> must be immediately assigned when declared. Syntax.
 
-<span class="inline-code highlight-jc hljs">`</span>antlr4
-'const' IDENT '=' expr
-<span class="inline-code highlight-jc hljs">`</span>
+<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">antlr4
+<span class="hljs-symbol">&#x27;const</span>&#x27; IDENT <span class="hljs-string">&#x27;=&#x27;</span> expr
+</span><span class="inline-code highlight-jc hljs"></span>
 
-After <span class="inline-code highlight-jc hljs"><span class="hljs-string">&#x27;=&#x27;</span>` goes an expression which MUST also be CTE, but <span class="hljs-operator">not</span> exactly a<span class="hljs-operator">not</span>her `<span class="hljs-keyword">const</span></span>.
+After <span class="inline-code highlight-jc hljs"><span class="hljs-string">&#x27;=&#x27;</span></span> goes an expression which MUST also be CTE, but not exactly another <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span>.
 
-The difference between <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span>` <span class="hljs-operator">and</span> `<span class="hljs-keyword">const</span>` is that `<span class="hljs-keyword">const</span>` is an item, whereas `<span class="hljs-keyword">let</span></span> is a statement. As being an item
+The difference between <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span></span> and <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> is that <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> is an item, whereas <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span></span> is a statement. As being an item
 <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> can be placed mostly on any level, including top-level.
 
 <div class="code-fence highlight-jc hljs">

@@ -15,7 +15,7 @@ Here I tried to collect workflows for different resolution cases and connections
 Okay, what classes do we have:
 
 - <span class="inline-code highlight-jc hljs">ModuleTreeBuilder</span> - by the name you can see that this one builds a module tree.
-- <span class="inline-code highlight-jc hljs">Imp<span class="hljs-operator">or</span>ter` <span class="hljs-operator">-</span> this one resolves `<span class="hljs-keyword">use</span></span> declarations and imports new items to the module tree.
+- <span class="inline-code highlight-jc hljs">Imp<span class="hljs-operator">or</span>ter</span> - this one resolves <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span></span> declarations and imports new items to the module tree.
 - <span class="inline-code highlight-jc hljs">NameResolver</span> - resolves names, that is, binds each usage to the definition.
 - <span class="inline-code highlight-jc hljs">PathResolver</span> - helper class that unifies path resolution logic for all name resolution sub-stages.
 - <span class="inline-code highlight-jc hljs">DefTable</span> - common definitions info storage
@@ -29,18 +29,18 @@ Identifies interned string, read more about symbols [here](../code-docs/internin
 ### <span class="inline-code highlight-jc hljs">Namespace</span>
 
 An enumeration of namespaces. Each namespace is a separate storage for definitions, thus type names do not collide with value names, etc.
-There is one special variant - <span class="inline-code highlight-jc hljs">Namespace::Any`, it is <span class="hljs-operator">not</span> used <span class="hljs-keyword">in</span> definition st<span class="hljs-operator">or</span>ages <span class="hljs-operator">and</span> mappings, by the way, is used <span class="hljs-keyword">in</span> methods, e<span class="hljs-operator">.</span>g<span class="hljs-operator">.</span> to collect definitions with the same name from all namespaces<span class="hljs-operator">.</span> Never st<span class="hljs-operator">or</span>e `Namespace::Any` <span class="hljs-keyword">in</span> `DefTable</span>, only use it as a helper.
+There is one special variant - <span class="inline-code highlight-jc hljs">Namespace::Any</span>, it is not used in definition storages and mappings, by the way, is used in methods, e.g. to collect definitions with the same name from all namespaces. Never store <span class="inline-code highlight-jc hljs">Namespace::Any</span> in <span class="inline-code highlight-jc hljs">DefTable</span>, only use it as a helper.
 
 ### <span class="inline-code highlight-jc hljs">Def</span>
 
-Definition structure, holds [<span class="inline-code highlight-jc hljs">DefKind`](#defkind) <span class="hljs-operator">and</span> [`DefId`](#defid<span class="hljs-operator">-</span><span class="hljs-operator">and</span><span class="hljs-operator">-</span>defindex)<span class="hljs-operator">.</span> You can access particular definition via `DefTable::getDef` <span class="hljs-operator">or</span> get all, defined, using `DefTable::getDefinitions</span>
+Definition structure, holds [<span class="inline-code highlight-jc hljs">DefKind</span>](#defkind) and [<span class="inline-code highlight-jc hljs">DefId</span>](#defid-and-defindex). You can access particular definition via <span class="inline-code highlight-jc hljs">DefTable::getDef</span> or get all, defined, using <span class="inline-code highlight-jc hljs">DefTable::getDefinitions</span>
 
-### <span class="inline-code highlight-jc hljs">DefId` <span class="hljs-operator">&amp;</span> `DefIndex</span>
+### <span class="inline-code highlight-jc hljs">DefId</span> & <span class="inline-code highlight-jc hljs">DefIndex</span>
 
 <span class="inline-code highlight-jc hljs">DefIndex</span> is a simple index type, i.e. integer wrapper to create a distinct integer type (C++ does not support it).
-<span class="inline-code highlight-jc hljs">DefId` is a unique definition identifier, currently, it only holds `DefIndex</span> but might be extended in the future.
+<span class="inline-code highlight-jc hljs">DefId</span> is a unique definition identifier, currently, it only holds <span class="inline-code highlight-jc hljs">DefIndex</span> but might be extended in the future.
 
-<span class="inline-code highlight-jc hljs">DefId::index` is the index of vect<span class="hljs-operator">or</span> from `DefTable::defs`<span class="hljs-operator">.</span> You can get particular definition by `DefId` <span class="hljs-operator">or</span> `DefIndex` from `DefTable` via `getDef</span>.
+<span class="inline-code highlight-jc hljs">DefId::index</span> is the index of vector from <span class="inline-code highlight-jc hljs">DefTable::defs</span>. You can get particular definition by <span class="inline-code highlight-jc hljs">DefId</span> or <span class="inline-code highlight-jc hljs">DefIndex</span> from <span class="inline-code highlight-jc hljs">DefTable</span> via <span class="inline-code highlight-jc hljs">getDef</span>.
 
 #### <span class="inline-code highlight-jc hljs">ROOT_DEF_ID</span>
 
@@ -49,13 +49,13 @@ The constant for root module definition, used in many places for validations and
 ### <span class="inline-code highlight-jc hljs">DefKind</span>
 
 Enumeration of definitions kinds. Each kind has some properties, e.g. [namespace](#namespace) where it will be defined.
-You can get [<span class="inline-code highlight-jc hljs">DefKind`](#defkind) from [`Def</span>](#def) structure if you have one on hand.
+You can get [<span class="inline-code highlight-jc hljs">DefKind</span>](#defkind) from [<span class="inline-code highlight-jc hljs">Def</span>](#def) structure if you have one on hand.
 
-To find out in which [namespace](#namespace) specific [<span class="inline-code highlight-jc hljs">DefKind`](#defkind) must be defined call `Def::getDefKindNS</span>.
+To find out in which [namespace](#namespace) specific [<span class="inline-code highlight-jc hljs">DefKind</span>](#defkind) must be defined call <span class="inline-code highlight-jc hljs">Def::getDefKindNS</span>.
 
 ### <span class="inline-code highlight-jc hljs">Vis</span>
 
-Visibility enumeration, for now only <span class="inline-code highlight-jc hljs">Vis::Unset` <span class="hljs-operator">and</span> `Vis::Pub</span> exist.
+Visibility enumeration, for now only <span class="inline-code highlight-jc hljs">Vis::Unset</span> and <span class="inline-code highlight-jc hljs">Vis::Pub</span> exist.
 
 ### <span class="inline-code highlight-jc hljs">PerNS<span class="hljs-operator">&lt;</span>T<span class="hljs-operator">&gt;</span></span>
 
@@ -71,21 +71,21 @@ Used by the module to save shadowed primitive types.
 The <span class="inline-code highlight-jc hljs">Module</span> is a single node of the Module Tree.
 Fields:
 
-- _kind_  - Kind of module, i.e. <span class="inline-code highlight-jc hljs">Def` (named module bound to some definition) <span class="hljs-operator">or</span> `Block` (anonymous module)<span class="hljs-operator">.</span> Type is the `ModuleKind</span> enumeration.
-- _id_ - Identifier of module - either <span class="inline-code highlight-jc hljs">DefId` (f<span class="hljs-operator">or</span> `ModuleKind::Def`) <span class="hljs-operator">or</span> `NodeId` (f<span class="hljs-operator">or</span> `ModuleKind::Block</span>).
+- _kind_  - Kind of module, i.e. <span class="inline-code highlight-jc hljs">Def</span> (named module bound to some definition) or <span class="inline-code highlight-jc hljs">Block</span> (anonymous module). Type is the <span class="inline-code highlight-jc hljs">ModuleKind</span> enumeration.
+- _id_ - Identifier of module - either <span class="inline-code highlight-jc hljs">DefId</span> (for <span class="inline-code highlight-jc hljs">ModuleKind::Def</span>) or <span class="inline-code highlight-jc hljs">NodeId</span> (for <span class="inline-code highlight-jc hljs">ModuleKind::Block</span>).
 - _parent_ - Optional parent that is another module (only root module does not have a parent).
-- _nearestModDef_ - Nearest definition of a kind <span class="inline-code highlight-jc hljs">DefKind::Mod`, always present<span class="hljs-operator">.</span> F<span class="hljs-operator">or</span> modules which are `DefKind::Mod` by themselves _nearestModDef_ point to the same <span class="hljs-title function_ invoke__">modules</span> (root module is also of a kind `DefKind`, thus _nearestModDef_ of root module is the same <span class="hljs-keyword">as</span> [`ROOT_DEF_ID</span>](#root_def_id)).
+- _nearestModDef_ - Nearest definition of a kind <span class="inline-code highlight-jc hljs">DefKind::Mod</span>, always present. For modules which are <span class="inline-code highlight-jc hljs">DefKind::Mod</span> by themselves _nearestModDef_ point to the same modules (root module is also of a kind <span class="inline-code highlight-jc hljs">DefKind</span>, thus _nearestModDef_ of root module is the same as [<span class="inline-code highlight-jc hljs">ROOT_DEF_ID</span>](#root_def_id)).
 - _perNS_ - [PerNS<map<Symbol, [NameBinding](#namebinding)>>](#pernst). A per-namespace collection of mappings __Symbol__ (some name) __->__ __DefId__ (some definition).
-- _shadowedPrimTypes_ - module [<span class="inline-code highlight-jc hljs">PrimTypeSet`](#primtypeset), i<span class="hljs-operator">.</span>e<span class="hljs-operator">.</span> flags showing which primitive <span class="hljs-title function_ invoke__">types</span> (e<span class="hljs-operator">.</span>g<span class="hljs-operator">.</span> `<span class="hljs-type">int</span>`, `<span class="hljs-type">f32</span></span>) are shadowed in the module.
+- _shadowedPrimTypes_ - module [<span class="inline-code highlight-jc hljs">PrimTypeSet</span>](#primtypeset), i.e. flags showing which primitive types (e.g. <span class="inline-code highlight-jc hljs"><span class="hljs-type">int</span></span>, <span class="inline-code highlight-jc hljs"><span class="hljs-type">f32</span></span>) are shadowed in the module.
 
 ### <span class="inline-code highlight-jc hljs">NameBinding</span>
 
-The <span class="inline-code highlight-jc hljs">Module` binds names either to [`FOS</span>](#fosid) or to some [definition](#defid-and-defindex).
-This is why <span class="inline-code highlight-jc hljs">NameBinding` exists, it is an ADT f<span class="hljs-operator">or</span> `FOS` <span class="hljs-operator">and</span> `DefId</span>.
+The <span class="inline-code highlight-jc hljs">Module</span> binds names either to [<span class="inline-code highlight-jc hljs">FOS</span>](#fosid) or to some [definition](#defid-and-defindex).
+This is why <span class="inline-code highlight-jc hljs">NameBinding</span> exists, it is an ADT for <span class="inline-code highlight-jc hljs">FOS</span> and <span class="inline-code highlight-jc hljs">DefId</span>.
 
 ### <span class="inline-code highlight-jc hljs">FOSId</span>
 
-FOS stands for "Function Overload Set". In _Jacy_ you can overload functions via different label names, i.e. not by types but <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(from: <span class="hljs-type">int</span>)` <span class="hljs-operator">and</span> `<span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(to: <span class="hljs-type">int</span>)</span> can exist together.
+FOS stands for "Function Overload Set". In _Jacy_ you can overload functions via different label names, i.e. not by types but <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(from: <span class="hljs-type">int</span>)</span> and <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(to: <span class="hljs-type">int</span>)</span> can exist together.
 
 <span class="inline-code highlight-jc hljs">FOSId</span> is a unique identifier for one FOS -- a collection of functions with the same name, defined in the same module.
 
@@ -95,10 +95,10 @@ For example, in:
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">mod</span> m {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(from: <span class="hljs-type">int</span>) {}</div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(to: <span class="hljs-type">int</span>) {}</div><div class="line-num" data-line-num="5">5</div><div class="line">}</div>
         </div>
 
-<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">mod</span> m` only holds [`NameBinding`](#namebinding) with name `foo` (base name of FOS) which points to `FOSId` of FOS `foo` <span class="hljs-keyword">in</span> [`DefTable</span>](#deftable).
-To access a specific function, at first, you need to get <span class="inline-code highlight-jc hljs">FOSId` from the module <span class="hljs-operator">and</span> then go to the [`DefTable</span>](#deftable) to search for a suffix.
+<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">mod</span> m</span> only holds [<span class="inline-code highlight-jc hljs">NameBinding</span>](#namebinding) with name <span class="inline-code highlight-jc hljs">foo</span> (base name of FOS) which points to <span class="inline-code highlight-jc hljs">FOSId</span> of FOS <span class="inline-code highlight-jc hljs">foo</span> in [<span class="inline-code highlight-jc hljs">DefTable</span>](#deftable).
+To access a specific function, at first, you need to get <span class="inline-code highlight-jc hljs">FOSId</span> from the module and then go to the [<span class="inline-code highlight-jc hljs">DefTable</span>](#deftable) to search for a suffix.
 
-Function suffix is an interned string such as <span class="inline-code highlight-jc hljs">(from:)` <span class="hljs-operator">or</span> `(to:)</span>, i.e. function label list.
+Function suffix is an interned string such as <span class="inline-code highlight-jc hljs">(from:)</span> or <span class="inline-code highlight-jc hljs">(to:)</span>, i.e. function label list.
 
 ### <span class="inline-code highlight-jc hljs">DefTable</span>
 
@@ -108,26 +108,26 @@ Function suffix is an interned string such as <span class="inline-code highlight
 
 > _Direct storage_ mark means that this field is the final storage, i.e. it is not a mapping and other items map to it, _Indirect storage_ is an opposite.
 
-- _defs_ - <span class="inline-code highlight-jc hljs">vect<span class="hljs-operator">or</span><span class="hljs-operator">&lt;</span>Def<span class="hljs-operator">&gt;</span>` <span class="hljs-operator">-</span> _Direct st<span class="hljs-operator">or</span>age_ <span class="hljs-operator">-</span> Definition collection, `DefIndex</span> points to index in _defs_.
-- _modules_ - <span class="inline-code highlight-jc hljs">DefMap<span class="hljs-operator">&lt;</span>Module::Ptr<span class="hljs-operator">&gt;</span>` <span class="hljs-operator">-</span> _Direct st<span class="hljs-operator">or</span>age_ <span class="hljs-operator">-</span> Maps definitions to modules <span class="hljs-operator">-</span><span class="hljs-operator">-</span> _Named modules_<span class="hljs-operator">.</span> Used everywhere, filled <span class="hljs-keyword">in</span> the `ModuleTreeBuilder</span>.
-- _blocks_ - <span class="inline-code highlight-jc hljs">NodeMap<span class="hljs-operator">&lt;</span>Module::Ptr<span class="hljs-operator">&gt;</span>` <span class="hljs-operator">-</span> _Direct st<span class="hljs-operator">or</span>age_ <span class="hljs-operator">-</span> Maps block nodes to modules <span class="hljs-operator">-</span><span class="hljs-operator">-</span> _Anonymous modules_<span class="hljs-operator">.</span> Used everywhere, filled <span class="hljs-keyword">in</span> the `ModuleTreeBuilder</span>.
-- _useDeclModules_ - <span class="inline-code highlight-jc hljs">NodeMap<span class="hljs-operator">&lt;</span>Module::Ptr<span class="hljs-operator">&gt;</span>` <span class="hljs-operator">-</span> _Indirect st<span class="hljs-operator">or</span>age_ <span class="hljs-operator">-</span> Maps node id of `<span class="hljs-keyword">use</span>` item to module it defined it<span class="hljs-operator">.</span> Used by `Imp<span class="hljs-operator">or</span>ter`, filled <span class="hljs-keyword">in</span> the `ModuleTreeBuilder</span>.
+- _defs_ - <span class="inline-code highlight-jc hljs">vect<span class="hljs-operator">or</span><span class="hljs-operator">&lt;</span>Def<span class="hljs-operator">&gt;</span></span> - _Direct storage_ - Definition collection, <span class="inline-code highlight-jc hljs">DefIndex</span> points to index in _defs_.
+- _modules_ - <span class="inline-code highlight-jc hljs">DefMap<span class="hljs-operator">&lt;</span>Module::Ptr<span class="hljs-operator">&gt;</span></span> - _Direct storage_ - Maps definitions to modules -- _Named modules_. Used everywhere, filled in the <span class="inline-code highlight-jc hljs">ModuleTreeBuilder</span>.
+- _blocks_ - <span class="inline-code highlight-jc hljs">NodeMap<span class="hljs-operator">&lt;</span>Module::Ptr<span class="hljs-operator">&gt;</span></span> - _Direct storage_ - Maps block nodes to modules -- _Anonymous modules_. Used everywhere, filled in the <span class="inline-code highlight-jc hljs">ModuleTreeBuilder</span>.
+- _useDeclModules_ - <span class="inline-code highlight-jc hljs">NodeMap<span class="hljs-operator">&lt;</span>Module::Ptr<span class="hljs-operator">&gt;</span></span> - _Indirect storage_ - Maps node id of <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span></span> item to module it defined it. Used by <span class="inline-code highlight-jc hljs">Imp<span class="hljs-operator">or</span>ter</span>, filled in the <span class="inline-code highlight-jc hljs">ModuleTreeBuilder</span>.
 - _defVisMap_ - <span class="inline-code highlight-jc hljs">DefMap<span class="hljs-operator">&lt;</span>Vis<span class="hljs-operator">&gt;</span></span> - Maps definition to its visibility.
 - _nodeIdDefIdMap_ -  - Maps definition node id to its [<span class="inline-code highlight-jc hljs">DefId</span>](#defid-and-defindex).
 - _defIdNodeIdMap_ - Maps [<span class="inline-code highlight-jc hljs">DefId</span>](#defid-and-defindex) to definition node id.
-- _importAliases_ - Maps [<span class="inline-code highlight-jc hljs">DefId`](#defid<span class="hljs-operator">-</span><span class="hljs-operator">and</span><span class="hljs-operator">-</span>defindex) of imp<span class="hljs-operator">or</span>t alias, i<span class="hljs-operator">.</span>e<span class="hljs-operator">.</span> definition appeared from `<span class="hljs-keyword">use</span></span> declaration to another definition (that also might be an import alias).
+- _importAliases_ - Maps [<span class="inline-code highlight-jc hljs">DefId</span>](#defid-and-defindex) of import alias, i.e. definition appeared from <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span></span> declaration to another definition (that also might be an import alias).
 
 #### Basic API
 
 This API is almost a list of helpers to retrieve items from the fields described above.
 
 - Working with definitions:
-  - _getDef([DefId/DefIndex](#defid-and-defindex)) -> [Def](#def)_ - get definition by <span class="inline-code highlight-jc hljs">DefId` <span class="hljs-operator">or</span> `DefIndex</span>.
+  - _getDef([DefId/DefIndex](#defid-and-defindex)) -> [Def](#def)_ - get definition by <span class="inline-code highlight-jc hljs">DefId</span> or <span class="inline-code highlight-jc hljs">DefIndex</span>.
   - _getDefUnwind([DefId](#defid-and-defindex)) -> [Def](#def)_ - get definition unwinding aliases (if definition is an <span class="inline-code highlight-jc hljs">Imp<span class="hljs-operator">or</span>tAlias</span>).
   - _getDefVis([DefId](#defid-and-defindex)) -> [Vis](#vis)_ - get definition visibility.
   - _getNodeIdByDefId([DefId](#defid-and-defindex)) -> NodeId_ - get node id of definition node by definition id.
   - _getDefIdByNodeId(NodeId) -> [DefId](#defid-and-defindex)_ - get definition id by node id.
-  - _getDefNameSpan([DefId](#defid-and-defindex)) -> Span_ - get span of definition identifier (e.g. in <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>() {}` it returns span f<span class="hljs-operator">or</span> `foo</span>).
+  - _getDefNameSpan([DefId](#defid-and-defindex)) -> Span_ - get span of definition identifier (e.g. in <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>() {}</span> it returns span for <span class="inline-code highlight-jc hljs">foo</span>).
 
 - Working with modules:
   - _getModule([DefId](#defid-and-defindex)) -> [Module::Ptr](#module)_ - get module by definition id.

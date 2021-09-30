@@ -20,7 +20,7 @@ is a wider thing as it is pushed onto the stack each time one of these rules can
 2. We enter scope which name-resolution rules are specific
 3. We actually enter a new scope
 
-So, a rib is pushed onto the rib stack not only when we enter a block <span class="inline-code highlight-jc hljs">{}`, but also when `<span class="hljs-keyword">let</span></span> is met or when rib names
+So, a rib is pushed onto the rib stack not only when we enter a block <span class="inline-code highlight-jc hljs">{}</span>, but also when <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span></span> is met or when rib names
 could collide with other names but we don't want this for reasons of possibility to make it work.
 
 ## Name shadowing
@@ -29,10 +29,10 @@ The one important thing we need to establish -- _Jacy_ allows local names shadow
 it is practically convenient.
 
 <div class="code-fence highlight-jc hljs">
-            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">strangeCheck</span>(param: <span class="hljs-type">i32</span>): <span class="hljs-type">i32</span>? <span class="hljs-operator">=</span> <span class="hljs-comment">// Note: <span class="inline-code highlight-jc hljs">T?` is a sh<span class="hljs-operator">or</span>tcut f<span class="hljs-operator">or</span> `<span class="hljs-type">Option</span><span class="hljs-operator">&amp;</span>lt;T<span class="hljs-operator">&amp;</span>gt;</span></span></div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">if</span> param <span class="hljs-operator">&lt;</span><span class="hljs-operator">=</span> <span class="hljs-number">10</span> {<span class="hljs-literal">None</span>} <span class="hljs-keyword">else</span> {<span class="hljs-title function_ invoke__">Some</span>(param)}</div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="5">5</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-title function_ invoke__">strangeCheck</span>(<span class="hljs-number">10</span>);</div><div class="line-num" data-line-num="6">6</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> a<span class="hljs-operator">.</span><span class="hljs-title function_ invoke__">unwrap</span>();</div><div class="line-num" data-line-num="7">7</div><div class="line">}</div>
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">strangeCheck</span>(param: <span class="hljs-type">i32</span>): <span class="hljs-type">i32</span>? <span class="hljs-operator">=</span> <span class="hljs-comment">// Note: <span class="inline-code highlight-jc hljs">T?</span> is a shortcut for <span class="inline-code highlight-jc hljs"><span class="hljs-type">Option</span><span class="hljs-operator">&amp;</span>lt;T<span class="hljs-operator">&amp;</span>gt;</span></span></div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">if</span> param <span class="hljs-operator">&lt;</span><span class="hljs-operator">=</span> <span class="hljs-number">10</span> {<span class="hljs-literal">None</span>} <span class="hljs-keyword">else</span> {<span class="hljs-title function_ invoke__">Some</span>(param)}</div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="5">5</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> <span class="hljs-title function_ invoke__">strangeCheck</span>(<span class="hljs-number">10</span>);</div><div class="line-num" data-line-num="6">6</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> a<span class="hljs-operator">.</span><span class="hljs-title function_ invoke__">unwrap</span>();</div><div class="line-num" data-line-num="7">7</div><div class="line">}</div>
         </div>
 
-The function <span class="inline-code highlight-jc hljs">strangeCheck` returns `<span class="hljs-type">Option</span></span> and we want to do something with this result, in other languages we either
+The function <span class="inline-code highlight-jc hljs">strangeCheck</span> returns <span class="inline-code highlight-jc hljs"><span class="hljs-type">Option</span></span> and we want to do something with this result, in other languages we either
 don't need this (because of lack of so many wrappers like <span class="inline-code highlight-jc hljs"><span class="hljs-type">Option</span></span>, etc.) or we write code like that.
 
 <div class="code-fence highlight-jc hljs">
@@ -68,7 +68,7 @@ variables, function/closure parameters, labels, and lifetimes, keeping name reso
 
 ### Ribs
 
-Why do we need ribs instead of raw scopes? You've already read about <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span>` <span class="hljs-operator">and</span> how ribs solve name shadowing, but there<span class="hljs-symbol">&#x27;re</span> also some cases when ribs are helpful<span class="hljs-operator">.</span> Each rib has a kind <span class="hljs-operator">and</span> each kind has lookup restrictions, e<span class="hljs-operator">.</span>g<span class="hljs-operator">.</span> when we enter a local <span class="hljs-title function_ invoke__">function</span> (a function defined inside a<span class="hljs-operator">not</span>her function), we<span class="hljs-symbol">&#x27;re</span> unable to <span class="hljs-keyword">use</span> the upper function locals <span class="hljs-operator">-</span><span class="hljs-operator">-</span> this rule is described with rib kind<span class="hljs-operator">.</span> There<span class="hljs-symbol">&#x27;s</span> also `Raw</span> kind, that is, just a rib without specific restrictions.
+Why do we need ribs instead of raw scopes? You've already read about <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span></span> and how ribs solve name shadowing, but there're also some cases when ribs are helpful. Each rib has a kind and each kind has lookup restrictions, e.g. when we enter a local function (a function defined inside another function), we're unable to use the upper function locals -- this rule is described with rib kind. There's also <span class="inline-code highlight-jc hljs">Raw</span> kind, that is, just a rib without specific restrictions.
 
 Rib does not have to contain any definitions except local variables (actually function parameters too) because
 everything is already defined in the module tree. When a new rib is pushed onto the rib stack specific module from the
@@ -100,7 +100,7 @@ More about path resolution read [the further chapter](#path-resolution).
 
 #### Namespaces
 
-In _Jacy_, you can define type <span class="inline-code highlight-jc hljs"><span class="hljs-type">i32</span>`, function `<span class="hljs-type">i32</span>`, <span class="hljs-operator">or</span> a lifetime with the name `<span class="hljs-type">i32</span></span>.
+In _Jacy_, you can define type <span class="inline-code highlight-jc hljs"><span class="hljs-type">i32</span></span>, function <span class="inline-code highlight-jc hljs"><span class="hljs-type">i32</span></span>, or a lifetime with the name <span class="inline-code highlight-jc hljs"><span class="hljs-type">i32</span></span>.
 It is possible because all these items are context-dependent -- you cannot use function as a type and cannot use type alias as a value in an expression.
 At the module-tree-building stage, we define all items, each in the namespace it belongs to, at the name resolution stage, we lookup for a name in a specific namespace in a module.
 
@@ -119,16 +119,16 @@ By convention, this code is not a good one, as we use a lower-case name for <spa
 
 <span class="inline-code highlight-jc hljs">NameResolver</span> goes inside the ROOT module and resolves:
 
-- <span class="inline-code highlight-jc hljs">foo` <span class="hljs-keyword">type</span> <span class="hljs-title class_">for</span> local variable `f</span>, looking up for it in _type_ namespace (doesn't even try to find it in _value_ namespace).
+- <span class="inline-code highlight-jc hljs">foo</span> type for local variable <span class="inline-code highlight-jc hljs">f</span>, looking up for it in _type_ namespace (doesn't even try to find it in _value_ namespace).
 
 What namespace does each item belong to?
 
 - Value namespace
   - <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span></span>
   - <span class="inline-code highlight-jc hljs">init</span> (initializers, aka constructors)
-  - <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span>` items <span class="hljs-operator">and</span> `<span class="hljs-keyword">const</span></span> generic parameters
+  - <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> items and <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> generic parameters
   - <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">static</span></span>
-  - Pattern bindings in <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span>` locals, `f<span class="hljs-operator">or</span>` loops, `<span class="hljs-keyword">match</span>` (`<span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span>`, `<span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span></span>), function parameters and lambda parameters. Just all pattern bindings.
+  - Pattern bindings in <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span></span> locals, <span class="inline-code highlight-jc hljs">f<span class="hljs-operator">or</span></span> loops, <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">match</span></span> (<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">if</span> <span class="hljs-keyword">let</span></span>, <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span></span>), function parameters and lambda parameters. Just all pattern bindings.
 - Type namespace
   - <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">mod</span></span> (modules)
   - <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">struct</span></span>
@@ -141,19 +141,19 @@ There are also Lifetime, macro, and label namespaces, but I'll write about them 
 
 #### Result -- Resolutions
 
-As a result, we've got filled <span class="inline-code highlight-jc hljs">ResSt<span class="hljs-operator">or</span>age` which contains mapped values `name nodeId <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> Res`, <span class="hljs-keyword">where</span> `Res</span> is a structure
+As a result, we've got filled <span class="inline-code highlight-jc hljs">ResSt<span class="hljs-operator">or</span>age</span> which contains mapped values <span class="inline-code highlight-jc hljs">name nodeId <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> Res</span>, where <span class="inline-code highlight-jc hljs">Res</span> is a structure
 containing info about a resolved name.
 
 <span class="inline-code highlight-jc hljs">Res</span> can be of different kinds as far as some names could point to definitions, some to local variables, etc. Also
-<span class="inline-code highlight-jc hljs">Res` can be ill<span class="hljs-operator">-</span><span class="hljs-title function_ invoke__">formed</span> (of kind `<span class="hljs-literal">Err</span><span class="hljs-operator">or</span></span>) that is an unresolved name.
+<span class="inline-code highlight-jc hljs">Res</span> can be ill-formed (of kind <span class="inline-code highlight-jc hljs"><span class="hljs-literal">Err</span><span class="hljs-operator">or</span></span>) that is an unresolved name.
 
 An important thing that I need to establish is that resolution (<span class="inline-code highlight-jc hljs">Res</span>) points to the identifier node (either to an
-identifier of name in <span class="inline-code highlight-jc hljs">Def` <span class="hljs-operator">or</span> to a local variable identifier) but key <span class="hljs-keyword">in</span> `ResSt<span class="hljs-operator">or</span>age</span> map is a node id of a resolved
-path (<span class="inline-code highlight-jc hljs">TypePath` <span class="hljs-operator">or</span> `PathExpr</span>), except labels and lifetimes which are not paths.
+identifier of name in <span class="inline-code highlight-jc hljs">Def</span> or to a local variable identifier) but key in <span class="inline-code highlight-jc hljs">ResSt<span class="hljs-operator">or</span>age</span> map is a node id of a resolved
+path (<span class="inline-code highlight-jc hljs">TypePath</span> or <span class="inline-code highlight-jc hljs">PathExpr</span>), except labels and lifetimes which are not paths.
 
 #### Patterns
 
-What about patterns? We talked about the <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span>` statement <span class="hljs-operator">and</span> `<span class="hljs-keyword">func</span></span> parameters, but they are patterns. There's
+What about patterns? We talked about the <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span></span> statement and <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span></span> parameters, but they are patterns. There's
 nothing hard in pattern name resolution -- mostly every identifier, except PathExpr, that appeared in the pattern is
 a binding.
 
@@ -163,14 +163,14 @@ TODO
 
 #### <span class="inline-code highlight-jc hljs">lang</span> items
 
-Some items are required for internal logic, e.g. when we write <span class="inline-code highlight-jc hljs"><span class="hljs-type">int</span>?`, it is an `<span class="hljs-type">Option</span><span class="hljs-operator">&lt;</span><span class="hljs-type">int</span><span class="hljs-operator">&gt;</span>` <span class="hljs-keyword">type</span>, <span class="hljs-operator">and</span> the compiler must at first find the `<span class="hljs-type">Option</span>` ADT to lower `<span class="hljs-type">int</span>?</span>.
+Some items are required for internal logic, e.g. when we write <span class="inline-code highlight-jc hljs"><span class="hljs-type">int</span>?</span>, it is an <span class="inline-code highlight-jc hljs"><span class="hljs-type">Option</span><span class="hljs-operator">&lt;</span><span class="hljs-type">int</span><span class="hljs-operator">&gt;</span></span> type, and the compiler must at first find the <span class="inline-code highlight-jc hljs"><span class="hljs-type">Option</span></span> ADT to lower <span class="inline-code highlight-jc hljs"><span class="hljs-type">int</span>?</span>.
 
-<span class="inline-code highlight-jc hljs">lang` is an attribute of the f<span class="hljs-operator">or</span>m `<span class="hljs-operator">@</span><span class="hljs-title function_ invoke__">lang</span>(name: &#x27;[NAME]&#x27;)`, <span class="hljs-keyword">where</span> `name</span> is an optional label and should be used to avoid problems if in the future new parameters will be added.
+<span class="inline-code highlight-jc hljs">lang</span> is an attribute of the form <span class="inline-code highlight-jc hljs"><span class="hljs-operator">@</span><span class="hljs-title function_ invoke__">lang</span>(name: &#x27;[NAME]&#x27;)</span>, where <span class="inline-code highlight-jc hljs">name</span> is an optional label and should be used to avoid problems if in the future new parameters will be added.
 
 ### Path resolution
 
 Here the interesting things come up.
-In _Jacy_, a path is actually "any name", just an <span class="inline-code highlight-jc hljs">a` is a path, `path::to::something</span> is a path too.
+In _Jacy_, a path is actually "any name", just an <span class="inline-code highlight-jc hljs">a</span> is a path, <span class="inline-code highlight-jc hljs">path::to::something</span> is a path too.
 
 For name resolution, we look at the path as at following structure:
 <span class="inline-code highlight-jc hljs">path::to::something</span>
@@ -188,21 +188,21 @@ The work for resolving items in the module tree is implemented inside <span clas
 When resolving items we need to keep in mind some concepts:
 
 - Multiple namespaces - _type_, _value_, etc. namespaces have pretty different logic
-- Function overloading - in _value_ namespace instead of having pair <span class="inline-code highlight-jc hljs">Name: DefId` it can be `Name: FuncOverloadId</span>, which points to, possibly multiple, function definitions
+- Function overloading - in _value_ namespace instead of having pair <span class="inline-code highlight-jc hljs">Name: DefId</span> it can be <span class="inline-code highlight-jc hljs">Name: FuncOverloadId</span>, which points to, possibly multiple, function definitions
 - Only items from _type_ namespace export items outside
 
 Even though resolution source code might look hard to comprehend, it's pretty straightforward, however complex.
 Assume we have path <span class="inline-code highlight-jc hljs">path::to::something</span>, these steps are included in the workflow:
 0. At the start point we know:
 
-- What namespace look for an item in. It is known from context, for example in <span class="inline-code highlight-jc hljs"><span class="hljs-number">1</span> <span class="hljs-operator">+</span> foo` we are <span class="hljs-number">100</span><span class="hljs-operator">%</span> sure that `foo</span> is from the _value_ namespace because it is used in an expression. Having a target namespace is not required for all resolution cases though.
-- Suffix (option). E.g. if user has written <span class="inline-code highlight-jc hljs">path::to::<span class="hljs-title function_ invoke__">function</span>(a: <span class="hljs-number">123</span>, b: <span class="hljs-number">123</span>)` the suffix is `(a:b:)</span>.
+- What namespace look for an item in. It is known from context, for example in <span class="inline-code highlight-jc hljs"><span class="hljs-number">1</span> <span class="hljs-operator">+</span> foo</span> we are 100% sure that <span class="inline-code highlight-jc hljs">foo</span> is from the _value_ namespace because it is used in an expression. Having a target namespace is not required for all resolution cases though.
+- Suffix (option). E.g. if user has written <span class="inline-code highlight-jc hljs">path::to::<span class="hljs-title function_ invoke__">function</span>(a: <span class="hljs-number">123</span>, b: <span class="hljs-number">123</span>)</span> the suffix is <span class="inline-code highlight-jc hljs">(a:b:)</span>.
 
 1. Lookup for a module that has a <span class="inline-code highlight-jc hljs">path</span> item starting from the current module and going up until the root module
    - If the root module is reached and nothing is found -- report an error
 2. When the first "search-module" is found we don't repeat step one as only the first segment is resolved relatively and subsequent segments relative to it.
 3. Lookup for a <span class="inline-code highlight-jc hljs">to</span> item in the current "search-module".
-4. After the <span class="inline-code highlight-jc hljs">path::to` <span class="hljs-title function_ invoke__">prefix</span> (this is how I call all segments going bef<span class="hljs-operator">or</span>e the last one) is successfully resolved <span class="hljs-operator">and</span> we are now searching inside the `path::to</span> module, we apply specific rules for the last segment, depending on resolution case.
+4. After the <span class="inline-code highlight-jc hljs">path::to</span> prefix (this is how I call all segments going before the last one) is successfully resolved and we are now searching inside the <span class="inline-code highlight-jc hljs">path::to</span> module, we apply specific rules for the last segment, depending on resolution case.
 5. __read further__
 
 There are three common resolution cases:
@@ -221,18 +221,18 @@ There are three common resolution cases:
 
 #### 1. Resolving specific items
 
-This way is how the resolver works most of the time. When a user writes <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> b` <span class="hljs-operator">and</span> `b` is <span class="hljs-operator">not</span> a local, we need to resolve `b</span> as some item.
+This way is how the resolver works most of the time. When a user writes <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> <span class="hljs-operator">=</span> b</span> and <span class="inline-code highlight-jc hljs">b</span> is not a local, we need to resolve <span class="inline-code highlight-jc hljs">b</span> as some item.
 
-As described above, we resolved the <span class="inline-code highlight-jc hljs">path::to` prefix part, now having the `something</span> part on hand we lookup for a specific item in the target namespace.
-<span class="inline-code highlight-jc hljs">path::` <span class="hljs-operator">and</span> `to::</span> parts were found in the _type_ namespace because only items from _type_ namespace can be looked into via path.
+As described above, we resolved the <span class="inline-code highlight-jc hljs">path::to</span> prefix part, now having the <span class="inline-code highlight-jc hljs">something</span> part on hand we lookup for a specific item in the target namespace.
+<span class="inline-code highlight-jc hljs">path::</span> and <span class="inline-code highlight-jc hljs">to::</span> parts were found in the _type_ namespace because only items from _type_ namespace can be looked into via path.
 
 1. Search for an item in the current "search-module"
-2. If found, now we have either <span class="inline-code highlight-jc hljs">DefId` <span class="hljs-operator">or</span> `FuncOverloadId</span>
-   - In the case of <span class="inline-code highlight-jc hljs">DefId` we reached the target <span class="hljs-operator">and</span> just set the resolution binding `path<span class="hljs-operator">.</span>node_id <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> found DefId</span>
+2. If found, now we have either <span class="inline-code highlight-jc hljs">DefId</span> or <span class="inline-code highlight-jc hljs">FuncOverloadId</span>
+   - In the case of <span class="inline-code highlight-jc hljs">DefId</span> we reached the target and just set the resolution binding <span class="inline-code highlight-jc hljs">path<span class="hljs-operator">.</span>node_id <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> found DefId</span>
    - In the case of <span class="inline-code highlight-jc hljs">FuncOverloadId</span> we need to get overloads
      - If there is a single overload -- just use it
      - If there is a single overload and it is private -- report an error
-     - If there are no overloads -- it is a resolution error (actually, having <span class="inline-code highlight-jc hljs">FuncOverloadId` pointing to empty overloads list is considered a bug <span class="hljs-keyword">as</span> we don<span class="hljs-symbol">&#x27;t</span> create `FuncOverloadId</span> unless some function appeared)
+     - If there are no overloads -- it is a resolution error (actually, having <span class="inline-code highlight-jc hljs">FuncOverloadId</span> pointing to empty overloads list is considered a bug as we don't create <span class="inline-code highlight-jc hljs">FuncOverloadId</span> unless some function appeared)
      - If there are multiple overloads we need to disambiguate usage of function with suffix, if no suffix is present it is an "ambiguous use of the function"
      - If there are multiple overloads and all of them are not public -- report an error
      - If we have a suffix and no matter how many overloads -- we lookup for an overload by <span class="inline-code highlight-jc hljs">suffix <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> DefId</span> map
@@ -240,14 +240,14 @@ As described above, we resolved the <span class="inline-code highlight-jc hljs">
 
 ##### 2. Resolving single name imports
 
-When a user writes <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span> path::to::something` <span class="hljs-operator">or</span> `<span class="hljs-keyword">use</span> path::to::something <span class="hljs-keyword">as</span> rebinding` we need to resolve the whole path, but, <span class="hljs-keyword">in</span> contrast with [<span class="hljs-string">&quot;specific resolution&quot;</span>](#<span class="hljs-number">1</span><span class="hljs-operator">-</span>resolving<span class="hljs-operator">-</span>specific<span class="hljs-operator">-</span>items), we collect all the items with the name `something</span>.
+When a user writes <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span> path::to::something</span> or <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span> path::to::something <span class="hljs-keyword">as</span> rebinding</span> we need to resolve the whole path, but, in contrast with ["specific resolution"](#1-resolving-specific-items), we collect all the items with the name <span class="inline-code highlight-jc hljs">something</span>.
 As a result, we got an error or a list of definitions ids.
 
 More about importing items read [Importation & Module System](importation-&-module-system).
 
-##### 3. Descending to module (<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span> <span class="hljs-operator">*</span>` <span class="hljs-operator">and</span> `<span class="hljs-keyword">use</span> {}</span>)
+##### 3. Descending to module (<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span> <span class="hljs-operator">*</span></span> and <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span> {}</span>)
 
-Resolution of <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span> path::to::something::<span class="hljs-operator">*</span>` <span class="hljs-operator">and</span> `<span class="hljs-keyword">use</span> {<span class="hljs-operator">..</span><span class="hljs-operator">.</span>}</span> differ from single name imports resolution -- in these cases we import multiple names.
+Resolution of <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span> path::to::something::<span class="hljs-operator">*</span></span> and <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span> {<span class="hljs-operator">..</span><span class="hljs-operator">.</span>}</span> differ from single name imports resolution -- in these cases we import multiple names.
 
 ###### <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span> <span class="hljs-operator">*</span></span>
 
@@ -264,7 +264,7 @@ The logic of collecting names is following:
 
 ###### <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span> {}</span>
 
-This kind of <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span>` is called <span class="hljs-string">&quot;specific&quot;</span>, what it does is imp<span class="hljs-operator">or</span>ting multiple paths relatively to prefix one, i<span class="hljs-operator">.</span>e<span class="hljs-operator">.</span> <span class="hljs-keyword">in</span> `<span class="hljs-keyword">use</span> path::to::something::{<span class="hljs-operator">..</span><span class="hljs-operator">.</span>}` all imp<span class="hljs-operator">or</span>ts inside `{}` are resolved relatively to `path::to::something`<span class="hljs-operator">.</span> That<span class="hljs-symbol">&#x27;s</span> it, <span class="hljs-operator">not</span>hing complex, we just descend into the module `path::to::something` <span class="hljs-operator">and</span> then resolve each imp<span class="hljs-operator">or</span>t inside `{}` starting the search from `path::to::something</span>.
+This kind of <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span></span> is called "specific", what it does is importing multiple paths relatively to prefix one, i.e. in <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span> path::to::something::{<span class="hljs-operator">..</span><span class="hljs-operator">.</span>}</span> all imports inside <span class="inline-code highlight-jc hljs">{}</span> are resolved relatively to <span class="inline-code highlight-jc hljs">path::to::something</span>. That's it, nothing complex, we just descend into the module <span class="inline-code highlight-jc hljs">path::to::something</span> and then resolve each import inside <span class="inline-code highlight-jc hljs">{}</span> starting the search from <span class="inline-code highlight-jc hljs">path::to::something</span>.
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/module-tree-building.html">< Module Tree Building</a>
