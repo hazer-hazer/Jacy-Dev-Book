@@ -31,7 +31,7 @@ all operators are overloadable.
 | <span class="inline-code highlight-jc hljs">a &lt;&lt; b</span> | <span class="inline-code highlight-jc hljs">std::ops::Shl</span> |
 | <span class="inline-code highlight-jc hljs">a &gt;&gt; b</span> | <span class="inline-code highlight-jc hljs">std::ops::Shr</span> |
 | <span class="inline-code highlight-jc hljs">a ^ b</span> | <span class="inline-code highlight-jc hljs">std::ops::Xor</span> |
-| <span class="inline-code highlight-jc hljs">a &lt; b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &gt; b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &gt;= b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &lt;= b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &lt;=&gt; b</span> | <span class="inline-code highlight-jc hljs">std::ops::Cmp</span> |
+| <span class="inline-code highlight-jc hljs">a &lt; b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &gt; b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &gt;= b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &lt;= b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &lt;<span class="hljs-operator">=&gt;</span> b</span> | <span class="inline-code highlight-jc hljs">std::ops::Cmp</span> |
 | <span class="inline-code highlight-jc hljs">a == b</span> &nbsp; <span class="inline-code highlight-jc hljs">a != b</span> | <span class="inline-code highlight-jc hljs">std::ops::Eq</span> |
 | <span class="inline-code highlight-jc hljs">a === b</span> &nbsp; <span class="inline-code highlight-jc hljs">a !== b</span> | ??? (Not described) |
 | <span class="inline-code highlight-jc hljs">a..b</span> | <span class="inline-code highlight-jc hljs">std::ops::Range</span> |
@@ -73,9 +73,9 @@ all operators are overloadable.
 | Punctuation | Usages |
 | :--- | :--- |
 | <span class="inline-code highlight-jc hljs">:</span> | Type annotations in almost all constructions, function call argument name |
-| <span class="inline-code highlight-jc hljs"><span class="hljs-punctuation">-&gt;</span></span> | Function types, lambdas |
+| <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-&gt;</span></span> | Function types, lambdas |
 | <span class="inline-code highlight-jc hljs">;</span> | Statement terminator, body ignorance, item declaration |
-| <span class="inline-code highlight-jc hljs">=&gt;</span> | <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">match</span></span> arms |
+| <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=&gt;</span></span> | <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">match</span></span> arms |
 |  |  |
 
 ## Operators and punctuations precedence
@@ -97,13 +97,13 @@ Precedence (from highest to lowest)
 | <span class="inline-code highlight-jc hljs">a &amp; b</span> |
 | <span class="inline-code highlight-jc hljs">a ^ b</span> |
 | <span class="inline-code highlight-jc hljs">a | b</span> |
-| <span class="inline-code highlight-jc hljs">a == b</span> &nbsp; <span class="inline-code highlight-jc hljs">a != b</span> &nbsp; <span class="inline-code highlight-jc hljs">a === b</span> &nbsp; <span class="inline-code highlight-jc hljs">a !== b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &lt; b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &gt; b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &lt;= b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &gt;= b</span> &nbsp; <span class="inline-code highlight-jc hljs">&lt;=&gt;</span> |
+| <span class="inline-code highlight-jc hljs">a == b</span> &nbsp; <span class="inline-code highlight-jc hljs">a != b</span> &nbsp; <span class="inline-code highlight-jc hljs">a === b</span> &nbsp; <span class="inline-code highlight-jc hljs">a !== b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &lt; b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &gt; b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &lt;= b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &gt;= b</span> &nbsp; <span class="inline-code highlight-jc hljs">&lt;<span class="hljs-operator">=&gt;</span></span> |
 | <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">and</span> b</span> |
 | <span class="inline-code highlight-jc hljs">a <span class="hljs-operator">or</span> b</span> |
 | <span class="inline-code highlight-jc hljs">a..b</span> &nbsp; <span class="inline-code highlight-jc hljs">a..</span> &nbsp; <span class="inline-code highlight-jc hljs">..</span> &nbsp; <span class="inline-code highlight-jc hljs">..=b</span> &nbsp; <span class="inline-code highlight-jc hljs">..b</span> &nbsp; <span class="inline-code highlight-jc hljs">a..=b</span> |
 | <span class="inline-code highlight-jc hljs">a |&gt; b</span> |
 | <span class="inline-code highlight-jc hljs">a = b</span> &nbsp; <span class="inline-code highlight-jc hljs">a += b</span> &nbsp; <span class="inline-code highlight-jc hljs">a -= b</span> &nbsp; <span class="inline-code highlight-jc hljs">a *= b</span> &nbsp; <span class="inline-code highlight-jc hljs">a /= b</span> &nbsp; <span class="inline-code highlight-jc hljs">a %= b</span> &nbsp; <span class="inline-code highlight-jc hljs">a **= b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &amp;= b</span> &nbsp; <span class="inline-code highlight-jc hljs">a |= b</span> &nbsp; <span class="inline-code highlight-jc hljs">a ^= b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &lt;&lt;= b</span> &nbsp; <span class="inline-code highlight-jc hljs">a &gt;&gt;= b</span> |
-| <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">return</span> a</span> &nbsp; <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">break</span> a</span> &nbsp; <span class="inline-code highlight-jc hljs">() <span class="hljs-punctuation">-&gt;</span> {}</span> |
+| <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">return</span> a</span> &nbsp; <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">break</span> a</span> &nbsp; <span class="inline-code highlight-jc hljs">() <span class="hljs-operator">-&gt;</span> {}</span> |
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/appendices/jon-files">< JON Files</a>

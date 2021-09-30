@@ -33,7 +33,7 @@ access nested items from current currently compiled scope.
   are all <span class="inline-code highlight-jc hljs">Def</span> but with different kinds), points to the name <span class="inline-code highlight-jc hljs">nodeId</span>
 * <span class="inline-code highlight-jc hljs">def_id</span> - <span class="inline-code highlight-jc hljs">Def</span> identifier, numeric offset in <span class="inline-code highlight-jc hljs">DefStorage</span> definitions collection
 * <span class="inline-code highlight-jc hljs">Module</span> - Actually a scope with different namespaces (type, value, lifetime), where each namespace is a map of
-  <span class="inline-code highlight-jc hljs">string <span class="hljs-punctuation">-&gt;</span> def_id</span>. Also contains a map of children and anonymous blocks, child is a named submodule (e.g. a <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span></span>
+  <span class="inline-code highlight-jc hljs">string <span class="hljs-operator">-&gt;</span> def_id</span>. Also contains a map of children and anonymous blocks, child is a named submodule (e.g. a <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span></span>
   inside <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">mod</span></span>) and an anonymous block is either a block expression or function body.
 
 ## Module-Tree usage

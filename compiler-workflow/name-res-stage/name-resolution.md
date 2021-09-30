@@ -141,7 +141,7 @@ There are also Lifetime, macro, and label namespaces, but I'll write about them 
 
 #### Result -- Resolutions
 
-As a result, we've got filled <span class="inline-code highlight-jc hljs">ResStorage</span> which contains mapped values <span class="inline-code highlight-jc hljs">name nodeId <span class="hljs-punctuation">-&gt;</span> Res</span>, where <span class="inline-code highlight-jc hljs">Res</span> is a structure
+As a result, we've got filled <span class="inline-code highlight-jc hljs">ResStorage</span> which contains mapped values <span class="inline-code highlight-jc hljs">name nodeId <span class="hljs-operator">-&gt;</span> Res</span>, where <span class="inline-code highlight-jc hljs">Res</span> is a structure
 containing info about a resolved name.
 
 <span class="inline-code highlight-jc hljs">Res</span> can be of different kinds as far as some names could point to definitions, some to local variables, etc. Also
@@ -228,14 +228,14 @@ As described above, we resolved the <span class="inline-code highlight-jc hljs">
 
 1. Search for an item in the current "search-module"
 2. If found, now we have either <span class="inline-code highlight-jc hljs">DefId</span> or <span class="inline-code highlight-jc hljs">FuncOverloadId</span>
-   - In the case of <span class="inline-code highlight-jc hljs">DefId</span> we reached the target and just set the resolution binding <span class="inline-code highlight-jc hljs">path.node_id <span class="hljs-punctuation">-&gt;</span> found DefId</span>
+   - In the case of <span class="inline-code highlight-jc hljs">DefId</span> we reached the target and just set the resolution binding <span class="inline-code highlight-jc hljs">path.node_id <span class="hljs-operator">-&gt;</span> found DefId</span>
    - In the case of <span class="inline-code highlight-jc hljs">FuncOverloadId</span> we need to get overloads
      - If there is a single overload -- just use it
      - If there is a single overload and it is private -- report an error
      - If there are no overloads -- it is a resolution error (actually, having <span class="inline-code highlight-jc hljs">FuncOverloadId</span> pointing to empty overloads list is considered a bug as we don't create <span class="inline-code highlight-jc hljs">FuncOverloadId</span> unless some function appeared)
      - If there are multiple overloads we need to disambiguate usage of function with suffix, if no suffix is present it is an "ambiguous use of the function"
      - If there are multiple overloads and all of them are not public -- report an error
-     - If we have a suffix and no matter how many overloads -- we lookup for an overload by <span class="inline-code highlight-jc hljs">suffix <span class="hljs-punctuation">-&gt;</span> DefId</span> map
+     - If we have a suffix and no matter how many overloads -- we lookup for an overload by <span class="inline-code highlight-jc hljs">suffix <span class="hljs-operator">-&gt;</span> DefId</span> map
 3. We always end up with either an error resolution or a __single__ definition id.
 
 ##### 2. Resolving single name imports

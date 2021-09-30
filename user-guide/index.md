@@ -94,8 +94,8 @@ The table is from high to low precedence ordered -- the operators in the first r
 |  | <span class="inline-code highlight-jc hljs">^</span> | left |
 |  | <span class="inline-code highlight-jc hljs">|</span> | left |
 |  | <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">in</span></span> | Non-associative |
-|  | <span class="inline-code highlight-jc hljs">&lt;=&gt;</span> | Non-associative |
-|  | <span class="inline-code highlight-jc hljs">&lt;</span> <span class="inline-code highlight-jc hljs">&gt;</span> <span class="inline-code highlight-jc hljs">&lt;=</span> <span class="inline-code highlight-jc hljs">=&gt;</span> | Non-associative |
+|  | <span class="inline-code highlight-jc hljs">&lt;<span class="hljs-operator">=&gt;</span></span> | Non-associative |
+|  | <span class="inline-code highlight-jc hljs">&lt;</span> <span class="inline-code highlight-jc hljs">&gt;</span> <span class="inline-code highlight-jc hljs">&lt;=</span> <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=&gt;</span></span> | Non-associative |
 |  | <span class="inline-code highlight-jc hljs">==</span> <span class="inline-code highlight-jc hljs">!=</span> | Non-associative |
 |  | <span class="inline-code highlight-jc hljs"><span class="hljs-operator">and</span></span> | left |
 |  | <span class="inline-code highlight-jc hljs"><span class="hljs-operator">or</span></span> | left |

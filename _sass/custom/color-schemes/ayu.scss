@@ -25,6 +25,9 @@ $foreground: #5C6166;
 }
 
 // Tags //
+.hljs-title,
+.hljs-title.class_,
+.hljs-title.class_.inherited__,
 .hljs-template-tag,
 .hljs-doctag,
 .hljs-selector-tag {
@@ -37,9 +40,6 @@ $foreground: #5C6166;
 }
 
 // Function //
-.hljs-title,
-.hljs-title.class_,
-.hljs-title.class_.inherited__,
 .hljs-title.function_ {
     color: #F2AE49;
 }

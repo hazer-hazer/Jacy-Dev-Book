@@ -25,7 +25,7 @@ block-expression. <span class="inline-code highlight-jc hljs">{}</span> can be e
 nominal: <span class="inline-code highlight-jc hljs">path::to::Struct {...}</span>.
 
 Why not use <span class="inline-code highlight-jc hljs">()</span> and use named-tuples for structurally typed records? - I want to change syntax of lambda functions
-(which now use <span class="inline-code highlight-jc hljs">|params...| expression</span> syntax) to <span class="inline-code highlight-jc hljs">(params...) <span class="hljs-punctuation">-&gt;</span> expression</span>. As far as lambda parameters can have
+(which now use <span class="inline-code highlight-jc hljs">|params...| expression</span> syntax) to <span class="inline-code highlight-jc hljs">(params...) <span class="hljs-operator">-&gt;</span> expression</span>. As far as lambda parameters can have
 type annotation we cannot disambiguate named-tuple and lambda parameters, because in named-tuple we have <span class="inline-code highlight-jc hljs">name:
 expression</span> but in lambda parameters <span class="inline-code highlight-jc hljs">name: <span class="hljs-keyword">type</span></span>.
 
@@ -47,18 +47,18 @@ Why this is a bad solution:
 ##### #3
 
 This is the most complex way, but it likely will allow us to save all preferred syntaxes. We improve parsing of
-expressions enclosed into <span class="inline-code highlight-jc hljs">()</span> and save everything inside <span class="inline-code highlight-jc hljs">()</span> into some stack. Then if we see that there's a <span class="inline-code highlight-jc hljs"><span class="hljs-punctuation">-&gt;</span></span> after
+expressions enclosed into <span class="inline-code highlight-jc hljs">()</span> and save everything inside <span class="inline-code highlight-jc hljs">()</span> into some stack. Then if we see that there's a <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-&gt;</span></span> after
 <span class="inline-code highlight-jc hljs">)</span> -- it is a lambda, otherwise -- it is a named-tuple. As knowing that, we can parse tokens inside <span class="inline-code highlight-jc hljs">()</span> considering
 <span class="inline-code highlight-jc hljs">something</span> in <span class="inline-code highlight-jc hljs">(name: something)</span> to be either an expression either type.
 
 Example.
 
 <div class="code-fence highlight-jc hljs">
-            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = (name: <span class="hljs-number">123</span>)</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">b</span> = (param: <span class="hljs-type">i32</span>) <span class="hljs-punctuation">-&gt;</span> param + <span class="hljs-number">1</span></div>
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = (name: <span class="hljs-number">123</span>)</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">b</span> = (param: <span class="hljs-type">i32</span>) <span class="hljs-operator">-&gt;</span> param + <span class="hljs-number">1</span></div>
         </div>
 
 When we parse <span class="inline-code highlight-jc hljs">a</span>'s and <span class="inline-code highlight-jc hljs">b</span>'s assigned expressions we see <span class="inline-code highlight-jc hljs">(</span>, then collect all tokens until we find <span class="inline-code highlight-jc hljs">)</span> and if we found
-<span class="inline-code highlight-jc hljs"><span class="hljs-punctuation">-&gt;</span></span> after <span class="inline-code highlight-jc hljs">)</span> -- we parse these tokens as lambda parameters (<span class="inline-code highlight-jc hljs">b</span> case), if there isn't <span class="inline-code highlight-jc hljs"><span class="hljs-punctuation">-&gt;</span></span> after <span class="inline-code highlight-jc hljs">)</span> -- we parse
+<span class="inline-code highlight-jc hljs"><span class="hljs-operator">-&gt;</span></span> after <span class="inline-code highlight-jc hljs">)</span> -- we parse these tokens as lambda parameters (<span class="inline-code highlight-jc hljs">b</span> case), if there isn't <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-&gt;</span></span> after <span class="inline-code highlight-jc hljs">)</span> -- we parse
 tokens as named-tuple (<span class="inline-code highlight-jc hljs">a</span> case).
 
 ###### #4
