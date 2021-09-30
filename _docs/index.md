@@ -8,5 +8,3 @@ This is a kind of notebook where I write as much as I can about _Jacy_. You can 
 ## How to use DevBook
 
 If you are interested in the _Jacy_ compiler and how it works you can find an abstract description for almost every stage in the [compiler workflow](compiler-workflow/index.md), which includes information about the important parts of the compiler, i.e. there's no information about logging, suggestions, etc. but about IRs and the main logic.
-
-

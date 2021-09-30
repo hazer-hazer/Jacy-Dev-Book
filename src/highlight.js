@@ -1,5 +1,5 @@
 const hljs = require('highlight.js/lib/core')
-const jacyLang = require('./jacy-lang')
+const jacyLang = require('@jacy-lang/jacy.highlight.js')
 hljs.registerLanguage('jc', jacyLang);
 
 const getSourceLines = src => src.split(/\r\n|\r|\n/g)
