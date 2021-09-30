@@ -11,8 +11,8 @@ func foo() {
 }
 ```
 
-On the code generation stage we need to create a so called "destruction scope", where we will drop the values owned by scope we exit.
-The RC `r` and `r1` will be dropped when body of the function `foo` ends. `Rc` implements `Drop::drop` method which accepts `self` by move, thus you cannot `drop` the value twice.
+At the code generation stage, we need to create a so-called "destruction scope", where we will drop the values owned by the scope we exit.
+The RC `r` and `r1` will be dropped when the body of the function `foo` ends. `Rc` implements `Drop::drop` method which accepts `self` by-move, thus you cannot `drop` the value twice.
 
 ```jc
 func foo() {
@@ -30,4 +30,4 @@ In this code, if we hadn't affine types, we could drop value `r1` or value `r` t
 
 This example is the reason why affine types are cool, it just presents their main advantage -- data flow control. We know where data goes, from where, and that we lose access to it as it is moved.
 
-Of course, there is the borrowing concept that allows us not to copy or move the data, but alias it with new object.
+Of course, there is the borrowing concept that allows us not to copy or move the data, but alias it with a new object.
