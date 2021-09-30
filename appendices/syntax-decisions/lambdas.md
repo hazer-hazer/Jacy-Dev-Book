@@ -36,7 +36,7 @@ But as I wrote above, I want opening and closing delimiter in lambda parameters.
 ## Idea #3 "Full inference"
 
 <div class="code-fence">
-            (p1, ..., pN) -&gt; expr
+            (p1, ..., pN) -> expr
 
         </div>
 
@@ -64,7 +64,7 @@ Cons:
 ## Idea #5 "Haskell-like"
 
 <div class="code-fence">
-            \(p1: type, ..., pN: type): type -&gt; expr
+            \(p1: type, ..., pN: type): type -> expr
 
         </div>
 

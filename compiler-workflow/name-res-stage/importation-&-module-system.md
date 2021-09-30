@@ -33,14 +33,14 @@ The module tree before the importation process will look so:
 
 <div class="code-fence">
             [ROOT]: {
-    &lt;span class=&quot;inline-code highlight-jc hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;mod&lt;/span&gt;&lt;/span&gt; &#039;m&#039;: {
+    <span>mod</span> 'm': {
         FOS#someID
-          - &lt;span class=&quot;inline-code highlight-jc hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;func&lt;/span&gt;&lt;/span&gt; &#039;foo&#039;: &#039;foo(label1:label2:)&#039;
+          - <span>func</span> 'foo': 'foo(label1:label2:)'
     }
 
-    `mod &#039;n&#039;: {
+    <span>mod</span> 'n': {
         FOS#someID
-          - &lt;span class=&quot;inline-code highlight-jc hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;func&lt;/span&gt;&lt;/span&gt; &#039;foo&#039;: &#039;foo(label3:label4:)&#039;
+          - <span>func</span> 'foo': 'foo(label3:label4:)'
     }
 }
 
@@ -59,11 +59,11 @@ The <span class="inline-code highlight-jc hljs">DefTable</span>:
 <div class="code-fence">
             FOSes: [
     {
-        &#039;(private:)&#039;: #1
-        &#039;(public:)&#039;: #2
+        '(private:)': #1
+        '(public:)': #2
     }
     {
-        &#039;(nested:)&#039;: #4
+        '(nested:)': #4
     }
 ]
 
@@ -73,8 +73,8 @@ Module Tree:
 
 <div class="code-fence">
             {
-    &#039;m&#039;: {
-        kind: &#039;mod&#039;
+    'm': {
+        kind: 'mod'
         defId: 0
         defs: {
             foo: {
@@ -82,8 +82,8 @@ Module Tree:
             }
         }
     }
-    &#039;n&#039;: {
-        kind: &#039;mod&#039;
+    'n': {
+        kind: 'mod'
         defId: 1
         defs: {
             foo: {
@@ -102,13 +102,13 @@ The <span class="inline-code highlight-jc hljs">DefTable</span>:
 <div class="code-fence">
             FOSes: [
     {
-        &#039;(private:)&#039;: #1
-        &#039;(public:)&#039;: #2
+        '(private:)': #1
+        '(public:)': #2
     }
     {
-        &#039;(private:)&#039;: &#039;Alias to #1&#039;
-        &#039;(public:)&#039;: &#039;Alias to #2&#039;
-        &#039;(nested:)&#039;: #4
+        '(private:)': 'Alias to #1'
+        '(public:)': 'Alias to #2'
+        '(nested:)': #4
     }
 ]
 

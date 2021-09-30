@@ -51,7 +51,7 @@ After <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=&
 put <span class="inline-code highlight-jc hljs">{}</span> after <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=&gt;</span></span>. So, the syntax looks kind of like that.
 
 <div class="code-fence">
-            block: &lt;span class=&quot;inline-code highlight-jc hljs&quot;&gt;&lt;span class=&quot;hljs-operator&quot;&gt;=&amp;gt;&lt;/span&gt;&lt;/span&gt; expr | blockExpression | &#039;;&#039;;
+            block: <span>=></span> expr | blockExpression | ';';
 
         </div>
 

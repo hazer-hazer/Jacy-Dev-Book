@@ -17,7 +17,7 @@ I wanna note that <span class="inline-code highlight-jc hljs"><span class="hljs-
 <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> must be immediately assigned when declared. Syntax.
 
 <div class="code-fence">
-            &#039;const&#039; IDENT &#039;=&#039; expr
+            'const' IDENT '=' expr
 
         </div>
 
