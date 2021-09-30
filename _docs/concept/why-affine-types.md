@@ -31,3 +31,5 @@ In this code, if we hadn't affine types, we could drop value `r1` or value `r` t
 This example is the reason why affine types are cool, it just presents their main advantage -- data flow control. We know where data goes, from where, and that we lose access to it as it is moved.
 
 Of course, there is the borrowing concept that allows us not to copy or move the data, but alias it with a new object.
+
+Affine types solve many problems while making code stricter and safe from occasional user mistakes.
