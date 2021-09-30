@@ -26,8 +26,8 @@ nominal: <span class="inline-code highlight-jc hljs">path::to::Struct {...}</spa
 
 Why not use <span class="inline-code highlight-jc hljs">()</span> and use named-tuples for structurally typed records? - I want to change syntax of lambda functions
 (which now use <span class="inline-code highlight-jc hljs">|params...| expression</span> syntax) to <span class="inline-code highlight-jc hljs">(params...) <span class="hljs-operator">-&gt;</span> expression</span>. As far as lambda parameters can have
-type annotation we cannot disambiguate named-tuple and lambda parameters, because in named-tuple we have <span class="inline-code highlight-jc hljs">name:
-expression</span> but in lambda parameters <span class="inline-code highlight-jc hljs">name: <span class="hljs-keyword">type</span></span>.
+type annotation we cannot disambiguate named-tuple and lambda parameters, because in named-tuple we have `name:
+expression<span class="inline-code highlight-jc hljs"> but <span class="hljs-keyword">in</span> lambda parameters </span>name: type`.
 
 #### Solutions
 

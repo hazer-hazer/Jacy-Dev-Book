@@ -35,9 +35,9 @@ But as I wrote above, I want opening and closing delimiter in lambda parameters.
 
 ## Idea #3 "Full inference"
 
-<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">plaintext</span>
-(p1, ..., pN) <span class="hljs-operator">-&gt;</span> expr
-</span><span class="inline-code highlight-jc hljs"></span>
+```plaintext
+(p1, ..., pN) -> expr
+```
 
 - No type annotations and full inference
 
@@ -62,9 +62,9 @@ Cons:
 
 ## Idea #5 "Haskell-like"
 
-<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">plaintext
-\(p1: <span class="hljs-keyword">type</span>, ..., pN: <span class="hljs-keyword">type</span>): <span class="hljs-keyword">type</span> <span class="hljs-operator">-&gt;</span> expr
-</span><span class="inline-code highlight-jc hljs"></span>
+```plaintext
+\(p1: type, ..., pN: type): type -> expr
+```
 
 Pros:
 

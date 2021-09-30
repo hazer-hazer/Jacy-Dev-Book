@@ -62,8 +62,8 @@ all operators are overloadable.
 
 * (\*) For the exponentiation operator, there can be a conflict with
   dereferencing operator <span class="inline-code highlight-jc hljs">*</span>, to solve it you need to put white space between
-  terms. E.g. <span class="inline-code highlight-jc hljs">a**b</span> == <span class="inline-code highlight-jc hljs">a ** b</span> as far as <span class="inline-code highlight-jc hljs">a **b</span> == <span class="inline-code highlight-jc hljs">a ** b</span> but not == <span class="inline-code highlight-jc hljs">a *
-  *b</span>, and <span class="inline-code highlight-jc hljs">a*b</span> == <span class="inline-code highlight-jc hljs">a * b</span>. So, with dereferencing, always put white space
+  terms. E.g. <span class="inline-code highlight-jc hljs">a**b</span> == <span class="inline-code highlight-jc hljs">a ** b</span> as far as <span class="inline-code highlight-jc hljs">a **b</span> == <span class="inline-code highlight-jc hljs">a ** b</span> but not == `a *
+  *b<span class="inline-code highlight-jc hljs">, <span class="hljs-operator">and</span> </span>a*b<span class="inline-code highlight-jc hljs"> == </span>a * b`. So, with dereferencing, always put white space
   before <span class="inline-code highlight-jc hljs">*</span> (as dereferencing operator).
 * (\*\*) <span class="inline-code highlight-jc hljs">RangeFull</span> is not a real operator, it is an empty <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">struct</span></span> which can
   be passed somewhere.

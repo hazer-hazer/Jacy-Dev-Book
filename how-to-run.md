@@ -11,9 +11,9 @@ nav_order: 5
 
 ## Basic usage
 
-<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">bash
-./<span class="hljs-title function_ invoke__">jc</span> (.exe <span class="hljs-keyword">for</span> <span class="hljs-title class_">windows</span>) [source files] --boolean-argument -key-value-argument=param1, param2, ..., paramN
-</span><span class="inline-code highlight-jc hljs"></span>
+```bash
+./jc (.exe for windows) [source files] --boolean-argument -key-value-argument=param1, param2, ..., paramN
+```
 
 There're two kinds of CLI arguments:
 
@@ -30,9 +30,9 @@ Also, arguments have constraints:
 
 Example usage.
 
-<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">bash
+```bash
 ./bin example.jc --print=ast
-</span><span class="inline-code highlight-jc hljs"></span>
+```
 
 ### The actual list of options
 
@@ -102,9 +102,9 @@ You can use any boolean value to toggle arguments, allowed boolean values descri
 What if you want to set bool-arg to <span class="inline-code highlight-jc hljs"><span class="hljs-literal">false</span></span>? Let's imagine that <span class="inline-code highlight-jc hljs">--dev</span> is set by default (it is not anyway). There is
 the pretty same syntax for bool-args as for key-value args.
 
-<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">bash
+```bash
 --dev=no
-</span><span class="inline-code highlight-jc hljs"></span>
+```
 
 There's a bunch of allowed bool values:
 

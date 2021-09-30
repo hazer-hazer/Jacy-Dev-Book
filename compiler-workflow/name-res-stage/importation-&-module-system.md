@@ -31,31 +31,31 @@ Here, module <span class="inline-code highlight-jc hljs">m</span> exports overlo
 
 The module tree before the importation process will look so:
 
-<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">plaintext
+```text
 [ROOT]: {
-    </span>mod<span class="inline-code highlight-jc hljs"> <span class="hljs-string">&#x27;m&#x27;</span>: {
+    <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">mod</span></span> 'm': {
         FOS#someID
-          - </span>func<span class="inline-code highlight-jc hljs"> <span class="hljs-symbol">&#x27;foo</span>&#x27;: <span class="hljs-symbol">&#x27;foo</span>(label1:label2:)&#x27;
+          - <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span></span> 'foo': 'foo(label1:label2:)'
     }
 
-    </span>mod 'n': {
+    `mod 'n': {
         FOS#someID
           - <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span></span> 'foo': 'foo(label3:label4:)'
     }
 }
-<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">
+```
 
-After importation, module </span>n<span class="inline-code highlight-jc hljs"> must contain alias to function </span>foo(label1:label2)<span class="inline-code highlight-jc hljs"> <span class="hljs-operator">and</span> locally defined </span>foo(label3:label4)<span class="inline-code highlight-jc hljs">.
-When the module tree is building we create <span class="hljs-title function_ invoke__">FOSes</span> (Function Overload Sets) each of those has a unique index id.
+After importation, module <span class="inline-code highlight-jc hljs">n</span> must contain alias to function <span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">foo</span>(label1:label2)</span> and locally defined <span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">foo</span>(label3:label4)</span>.
+When the module tree is building we create FOSes (Function Overload Sets) each of those has a unique index id.
 So, when we importing a function with the same name should we update existent FOS?
 
-&lt;div class=<span class="hljs-string">&quot;code-fence highlight-jc hljs&quot;</span>&gt;
-            &lt;div class=<span class="hljs-string">&quot;line-num&quot;</span> data-line-num=<span class="hljs-string">&quot;1&quot;</span>&gt;<span class="hljs-number">1</span>&lt;/div&gt;&lt;div class=<span class="hljs-string">&quot;line&quot;</span>&gt;&lt;span class=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;<span class="hljs-keyword">mod</span>&lt;/span&gt; &lt;span class=<span class="hljs-string">&quot;hljs-title class_&quot;</span>&gt;m&lt;/span&gt; {&lt;/div&gt;&lt;div class=<span class="hljs-string">&quot;line-num&quot;</span> data-line-num=<span class="hljs-string">&quot;2&quot;</span>&gt;<span class="hljs-number">2</span>&lt;/div&gt;&lt;div class=<span class="hljs-string">&quot;line&quot;</span>&gt;    &lt;span class=<span class="hljs-string">&quot;hljs-keyword&quot;</span>&gt;<span class="hljs-keyword">func</span>&lt;/span&gt; &lt;span class=<span class="hljs-string">&quot;hljs-title function_&quot;</span>&gt;foo&lt;/span&gt;(private: &lt;span class=<span class="hljs-string">&quot;hljs-type&quot;</span>&gt;<span class="hljs-type">int</span>&lt;/span&gt;); &lt;span class=<span class="hljs-string">&quot;hljs-comment&quot;</span>&gt;<span class="hljs-comment">// #1&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line-num&quot; data-line-num=&quot;3&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;pub&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;hljs-title function_&quot;&gt;foo&lt;/span&gt;(public: &lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;// #2&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line-num&quot; data-line-num=&quot;4&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;} &lt;span class=&quot;hljs-comment&quot;&gt;// #0&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line-num&quot; data-line-num=&quot;5&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line-num&quot; data-line-num=&quot;6&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;mod&lt;/span&gt; &lt;span class=&quot;hljs-title class_&quot;&gt;n&lt;/span&gt; {&lt;/div&gt;&lt;div class=&quot;line-num&quot; data-line-num=&quot;7&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;use&lt;/span&gt; m::foo;&lt;/div&gt;&lt;div class=&quot;line-num&quot; data-line-num=&quot;8&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line-num&quot; data-line-num=&quot;9&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-keyword&quot;&gt;func&lt;/span&gt; &lt;span class=&quot;hljs-title function_&quot;&gt;foo&lt;/span&gt;(nested: &lt;span class=&quot;hljs-type&quot;&gt;int&lt;/span&gt;); &lt;span class=&quot;hljs-comment&quot;&gt;// #4&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line-num&quot; data-line-num=&quot;10&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;} &lt;span class=&quot;hljs-comment&quot;&gt;// #3&lt;/span&gt;&lt;/div&gt;</span>
-        &lt;/div&gt;
+<div class="code-fence highlight-jc hljs">
+            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">mod</span> <span class="hljs-title class_">m</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(private: <span class="hljs-type">int</span>); <span class="hljs-comment">// #1</span></div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-keyword">pub</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(public: <span class="hljs-type">int</span>); <span class="hljs-comment">// #2</span></div><div class="line-num" data-line-num="4">4</div><div class="line">} <span class="hljs-comment">// #0</span></div><div class="line-num" data-line-num="5">5</div><div class="line"></div><div class="line-num" data-line-num="6">6</div><div class="line"><span class="hljs-keyword">mod</span> <span class="hljs-title class_">n</span> {</div><div class="line-num" data-line-num="7">7</div><div class="line">    <span class="hljs-keyword">use</span> m::foo;</div><div class="line-num" data-line-num="8">8</div><div class="line"></div><div class="line-num" data-line-num="9">9</div><div class="line">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(nested: <span class="hljs-type">int</span>); <span class="hljs-comment">// #4</span></div><div class="line-num" data-line-num="10">10</div><div class="line">} <span class="hljs-comment">// #3</span></div>
+        </div>
 
-The </span>DefTable<span class="inline-code highlight-jc hljs">:
+The <span class="inline-code highlight-jc hljs">DefTable</span>:
 
-</span><span class="inline-code highlight-jc hljs"></span>jon
+```jon
 FOSes: [
     {
         '(private:)': #1
@@ -65,11 +65,11 @@ FOSes: [
         '(nested:)': #4
     }
 ]
-<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">
+```
 
 Module Tree:
 
-</span><span class="inline-code highlight-jc hljs"></span>jon
+```jon
 {
     'm': {
         kind: 'mod'
@@ -90,13 +90,13 @@ Module Tree:
         }
     }
 }
-<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">
+```
 
-After importation, <span class="hljs-keyword">if</span> FOSes updated.
+After importation, if FOSes updated.
 
-The </span>DefTable<span class="inline-code highlight-jc hljs">:
+The <span class="inline-code highlight-jc hljs">DefTable</span>:
 
-</span><span class="inline-code highlight-jc hljs"></span>jon
+```jon
 FOSes: [
     {
         '(private:)': #1
@@ -108,12 +108,12 @@ FOSes: [
         '(nested:)': #4
     }
 ]
-<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">
+```
 
-So, <span class="hljs-keyword">let</span><span class="hljs-symbol">&#x27;s</span> establish how overloads importation works:
+So, let's establish how overloads importation works:
 
 - We never modify FOS which we import into the module
-- On importation, FOS of the module <span class="hljs-keyword">where</span> </span>use`-declaration present is modified -- imported overloads added
+- On importation, FOS of the module where <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span></span>-declaration present is modified -- imported overloads added
 - Each FOS is unique per module, never redefine the same FOS in different modules
 <div class="nav-btn-block">
     <button class="nav-btn left">

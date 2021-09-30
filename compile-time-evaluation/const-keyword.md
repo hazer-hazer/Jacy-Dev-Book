@@ -16,9 +16,9 @@ I wanna note that <span class="inline-code highlight-jc hljs"><span class="hljs-
 
 <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> must be immediately assigned when declared. Syntax.
 
-<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">antlr4
-<span class="hljs-symbol">&#x27;const</span>&#x27; IDENT <span class="hljs-string">&#x27;=&#x27;</span> expr
-</span><span class="inline-code highlight-jc hljs"></span>
+```antlr4
+'const' IDENT '=' expr
+```
 
 After <span class="inline-code highlight-jc hljs"><span class="hljs-string">&#x27;=&#x27;</span></span> goes an expression which MUST also be CTE, but not exactly another <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span>.
 

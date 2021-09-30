@@ -18,9 +18,9 @@ Let's begin with what named arguments are.
 
 In Swift parameter labels is a really important concept: labels are required by default and much of internal logic is dependent on labels (function overloading, name resolution, etc).
 
-<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">swift
-<span class="hljs-keyword">func</span> <span class="hljs-title function_">NAME</span>((LABEL | _)? PARAM_NAME: TYPE)
-</span><span class="inline-code highlight-jc hljs"></span>
+```swift
+func NAME((LABEL | _)? PARAM_NAME: TYPE)
+```
 
 <span class="inline-code highlight-jc hljs">LABEL</span> is optional, and if no label is given -- <span class="inline-code highlight-jc hljs">PARAM_NAME</span> becomes a label name, as a shortcut <span class="inline-code highlight-jc hljs">PARAM_NAME: TYPE</span> = <span class="inline-code highlight-jc hljs">PARAM_NAME PARAM_NAME: TYPE</span>.
 To disallow passing argument as named we need to place <span class="inline-code highlight-jc hljs">_</span> instead of a label, then parameter becomes positional.
@@ -49,10 +49,10 @@ Here, the parameter name is <span class="inline-code highlight-jc hljs">paramNam
 Thanks to Swift for the idea of overloading without type checking.
 Swift supports overloading by parameter labels, e.g.:
 
-<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">swift
-<span class="hljs-keyword">func</span> <span class="hljs-title function_">do</span>(with: Int)
-<span class="hljs-keyword">func</span> <span class="hljs-title function_">do</span>(from: Int)
-</span><span class="inline-code highlight-jc hljs"></span>
+```swift
+func do(with: Int)
+func do(from: Int)
+```
 
 Why this is a really cool feature:
 

@@ -50,9 +50,9 @@ one-line blocks we use the same syntax. Let's look at the syntax.
 After <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=&gt;</span></span> we can only place one expression, and if we put <span class="inline-code highlight-jc hljs">{}</span> compiler will give a warning because there's no need to
 put <span class="inline-code highlight-jc hljs">{}</span> after <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=&gt;</span></span>. So, the syntax looks kind of like that.
 
-<span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">antlr4
-block: </span>=><span class="inline-code highlight-jc hljs"> expr | blockExpression | <span class="hljs-string">&#x27;;&#x27;</span>;
-</span><span class="inline-code highlight-jc hljs"></span>
+```antlr4
+block: <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=&gt;</span></span> expr | blockExpression | ';';
+```
 
 <span class="inline-code highlight-jc hljs">{}</span> blocks in control-flow behave absolutely the same way as block-expressions.
 
