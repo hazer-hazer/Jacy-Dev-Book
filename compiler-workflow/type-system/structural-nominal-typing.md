@@ -11,7 +11,7 @@ grand_parent: 'Compiler Workflow'
 
 I wanna both:
 
-* Structurally typed records (aka `record` or named-tuple)
+* Structurally typed records (aka function trim() { [native code] } or named-tuple)
 * Nominally typed records (aka `struct`)
 * Structurally typed tuples (raw tuples)
 * Nominally typed tuples (aka rustish tuple-structs)

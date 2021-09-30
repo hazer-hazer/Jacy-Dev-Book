@@ -9,7 +9,7 @@ has_children: true
 
 # Names & Imports
 
-This chapter is all about name resolution, module system, and imports (`use` declarations).
+This chapter is all about name resolution, module system, and imports (function trim() { [native code] } declarations).
 <div class="nav-btn-block">
     
     <button class="nav-btn right">

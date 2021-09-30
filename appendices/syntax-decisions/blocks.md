@@ -10,7 +10,7 @@ grand_parent: 'Appendices'
 # Blocks
 
 Before the control-flow chapter, I have to establish rules about blocks, which are different from Rust's. All blocks (in
-control-flow) which enclosed into `{}` are last-statement typed (it means that the last expression of this block is the
+control-flow) which enclosed into function trim() { [native code] } are last-statement typed (it means that the last expression of this block is the
 value and type of the whole block).
 
 While Rust has rules about the absence of `;`, _Jacy_ does not have required `;`, so this rule cannot be applied in the

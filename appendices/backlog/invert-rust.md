@@ -28,7 +28,7 @@ explicit/low-level, etc.).
 ### Move by default
 
 Rust is "always move" PL, which means that even primitives are moved but copied before. This is a good solution and I
-like it more than C++ where we need to write `const &` or `std::move` always everywhere.
+like it more than C++ where we need to write function trim() { [native code] } always everywhere.
 
 Anyway, most of the time we pass non-Copy types as immutable references, that is, we rarely need to get a reference to
 modify its underlying value. Moves, as I think, used more often than `&mut` but not as often as immutable references.

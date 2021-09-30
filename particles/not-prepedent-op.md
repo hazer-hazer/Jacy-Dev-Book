@@ -7,7 +7,7 @@ parent: 'Particles [β RFCs]'
 # No grandparent
 ---
 
-# `not` prependent operator
+# function trim() { [native code] } prependent operator
 
 Briefly, the idea is to allow putting `not` operator before an infix operators.
 It would allow us not to define new operators like `notin` or separately parse `not in` as special case.

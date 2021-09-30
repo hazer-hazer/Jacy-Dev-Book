@@ -14,7 +14,7 @@ This particle is about the design of strings and characters, from view of the sy
 ## Escape sequences
 
 _Jacy_ supports common C-like escape sequences, with some changes.
-These are: `\n`, `\r`, `\t`, `\b`, `\f`, `\v`, that have the same meaning as in other languages.
+These are: function trim() { [native code] }, that have the same meaning as in other languages.
 
 Numeric character literals:
 `\###` - octal representation

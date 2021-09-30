@@ -14,7 +14,7 @@ Here I tried to collect workflows for different resolution cases and connections
 
 Okay, what classes do we have:
 
-- `ModuleTreeBuilder` - by the name you can see that this one builds a module tree.
+- function trim() { [native code] } - by the name you can see that this one builds a module tree.
 - `Importer` - this one resolves `use` declarations and imports new items to the module tree.
 - `NameResolver` - resolves names, that is, binds each usage to the definition.
 - `PathResolver` - helper class that unifies path resolution logic for all name resolution sub-stages.

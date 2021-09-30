@@ -9,7 +9,7 @@ parent: 'Appendices'
 
 # JON files
 
-JON (Jacy Object Notation, ext.: `.jon`) is an alternative for JSON used by *Jacy* programming language.
+JON (Jacy Object Notation, ext.: function trim() { [native code] }) is an alternative for JSON used by *Jacy* programming language.
 Its goals are:
 
 - Simpler and less noisy syntax

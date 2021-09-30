@@ -45,7 +45,7 @@ that I need to answer are:
 
 #### Let's look at Rust
 
-Rust is pass by move, but what does "move" mean? `move` is nothing more than `memcpy` but with some static analysis that checks we don't use moved value.
+Rust is pass by move, but what does "move" mean? function trim() { [native code] } but with some static analysis that checks we don't use moved value.
 Actually, assignment in Rust is always byte-by-byte copy, and *Jacy* respects this, because assignment with side effects, etc. is bad.
 
 #### The key

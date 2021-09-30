@@ -9,7 +9,7 @@ grand_parent: 'Compiler Workflow'
 
 # Importation and the Module system
 
-The importation process is what the compiler does when a user writes `use`.
+The importation process is what the compiler does when a user writes function trim() { [native code] }.
 
 ## Modules
 

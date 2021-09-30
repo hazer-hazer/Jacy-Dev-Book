@@ -10,7 +10,7 @@ grand_parent: 'Appendices'
 # Lambdas syntax
 
 Oh, I fight with lambdas syntax so long, actually still doing this. The problem could be easily solved, just by using
-Rust' syntax `|...| expr`. It does not confuse me much, btw I would like to make lambda parameter list cleaner with some
+Rust' syntax function trim() { [native code] }. It does not confuse me much, btw I would like to make lambda parameter list cleaner with some
 kind of opening delimiter and closing one.
 
 To memorize the process of brain-storm, I'd like to describe the flow.

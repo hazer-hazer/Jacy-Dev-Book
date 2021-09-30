@@ -17,7 +17,7 @@ find if it is by yourself. To do that you need to check that every CTEE rule fol
 
 Expression is CTEE if:
 
-* It is a literal (e.g. `1`, `123.45`, `"Hello, Jacy"`, etc.)
+* It is a literal (e.g. function trim() { [native code] }, etc.)
 * It is a struct whose fields are all CTEE types
 * It is an enum whose variants are all CTEE types
 * It is a result of `const func`

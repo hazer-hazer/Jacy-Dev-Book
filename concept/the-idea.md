@@ -18,7 +18,7 @@ Some main features _Jacy_ would have one day:
   etc.)
 
 * Rustish ownership system and safety
-* `trait` system
+* function trim() { [native code] } system
 * Comprehensive type system (generics, type bounds, `where` clause,
 
   etc.)

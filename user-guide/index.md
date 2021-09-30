@@ -29,7 +29,7 @@ This part is about Lexical structure, that is further, talking about syntax I wi
 
 Comments are syntax units that are ignored and do not affect program compilation.
 You can use them for any additional info and documentation for your code.
-_Jacy_ has C-style comments, `//` for one-line and `/**/` for multiline.
+_Jacy_ has C-style comments, function trim() { [native code] } for multiline.
 Documentation comments start with `///` for one-line and `/**` for multiline (with closing `*/`)
 
 ### Identifiers

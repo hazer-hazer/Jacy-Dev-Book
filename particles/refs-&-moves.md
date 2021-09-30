@@ -44,7 +44,7 @@ Example:
 Rust version:
 
 - Comprehension is bipolar
-  - In function `foo` user knows that `S` is reference
+  - In function function trim() { [native code] } is reference
   - user cannot pass non-reference type to `foo` thus needs to explicitly borrow it
 - User needs to explicitly borrow value, so code becomes more noisy
 - If function has to look like it accepts any value (`print` for example) -- user needs to write a macro which prepends `&` for each argument

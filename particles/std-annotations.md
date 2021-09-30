@@ -7,7 +7,7 @@ parent: 'Particles [β RFCs]'
 # No grandparent
 ---
 
-# `std` annotations
+# function trim() { [native code] } annotations
 
 ## Analysis helpers
 

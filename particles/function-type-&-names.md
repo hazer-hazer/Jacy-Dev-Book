@@ -18,7 +18,7 @@ Let's begin with what named arguments are.
 
 In Swift parameter labels is a really important concept: labels are required by default and much of internal logic is dependent on labels (function overloading, name resolution, etc).
 
-```swift
+function trim() { [native code] }swift
 func NAME((LABEL | _)? PARAM_NAME: TYPE)
 ```
 

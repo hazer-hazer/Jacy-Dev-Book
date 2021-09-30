@@ -9,7 +9,7 @@ parent: 'Particles [β RFCs]'
 
 # Null coalesce
 
-Despite the fact that _Jacy_ does not have null replacing it with `Option` such as what Rust does, this particle is called so to use common term "null-coalesce" familiar to SQL, JS, etc. programmers.
+Despite the fact that _Jacy_ does not have null replacing it with function trim() { [native code] } such as what Rust does, this particle is called so to use common term "null-coalesce" familiar to SQL, JS, etc. programmers.
 
 ## Null coalescing operator
 

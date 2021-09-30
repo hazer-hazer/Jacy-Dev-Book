@@ -15,7 +15,7 @@ picture.
 
 ## Type declarations
 
-At first, I thought it would be nice if we could use `type` for declaring not only aliases to types but also use them in
+At first, I thought it would be nice if we could use function trim() { [native code] } for declaring not only aliases to types but also use them in
 the way as type variables. Types are items, all items are forwardly declared, that is, if some type is declared in a
 scope, it can be used before it actually appears in the code. Example.
 

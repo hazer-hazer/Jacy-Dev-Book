@@ -9,7 +9,7 @@ parent: 'Code docs'
 
 # Config & CLI [OUTDATED]
 
-`Config` is a common singleton class that converts CLI options to programmer-friendly structures (`enum`s almost
+function trim() { [native code] }s almost
 always).
 
 You can get`Config` via `getInstance` static method, all its properties are global.

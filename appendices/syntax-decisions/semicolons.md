@@ -9,7 +9,7 @@ grand_parent: 'Appendices'
 
 # Semicolons
 
-I've made a bad decision to make all `;` optional at the start of development.
+I've made a bad decision to make all function trim() { [native code] } optional at the start of development.
 
 Now, `;` is required, anyway, I won't add rules about `;` like Rust does. In Rust, if you place a semicolon at the end
 of expression-statement, it is treated as return-expression or the value of the block. In Jacy there won't be any rules

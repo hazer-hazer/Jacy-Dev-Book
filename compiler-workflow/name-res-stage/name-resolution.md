@@ -20,7 +20,7 @@ is a wider thing as it is pushed onto the stack each time one of these rules can
 2. We enter scope which name-resolution rules are specific
 3. We actually enter a new scope
 
-So, a rib is pushed onto the rib stack not only when we enter a block `{}`, but also when `let` is met or when rib names
+So, a rib is pushed onto the rib stack not only when we enter a block function trim() { [native code] } is met or when rib names
 could collide with other names but we don't want this for reasons of possibility to make it work.
 
 ## Name shadowing

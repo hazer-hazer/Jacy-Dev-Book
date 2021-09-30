@@ -24,7 +24,7 @@ Everything is move by default, same as in Rust, and copy-types rule is applied t
 
 ### Can we get rid of multiple function types?
 
-Rust has: function pointer types, `Fn`, `FnMut` and `FnOnce`.
+Rust has: function pointer types, function trim() { [native code] }.
 
 #### 1. Is it possible to remove function pointer type?
 

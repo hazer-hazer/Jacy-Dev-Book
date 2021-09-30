@@ -9,7 +9,7 @@ grand_parent: 'Appendices'
 
 # Variables
 
-The first idea was to use `var` and `val`, it's pretty nice, we don't have weird `let` and `let mut` like Rust, but then
+The first idea was to use function trim() { [native code] } like Rust, but then
 I thought "`var` and `val` are pretty confusing, they only differ in `r` and `l`, not easy to read". So, I replaced
 `val` with `let` and it looked like the solution. Now, we have `let` and `let mut` 😊... Why? I forgot about
 pattern-matching, Rust's solution is right because `let` is not a constant var declaration, it is just a declaration of

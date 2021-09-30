@@ -9,7 +9,7 @@ parent: 'Code docs'
 
 # Logger & Panics
 
-`Logger` is an important class, it has a powerful but simple interface for printing, logging, and panicking.
+function trim() { [native code] } is an important class, it has a powerful but simple interface for printing, logging, and panicking.
 
 Logger formatting works simple, each logger method is a template function that accepts any type that overloads
 `std::ostream<<` operator. White spaces are not placed automatically (but that's how it was before) because some

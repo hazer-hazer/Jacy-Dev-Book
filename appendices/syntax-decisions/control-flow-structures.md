@@ -11,7 +11,7 @@ grand_parent: 'Appendices'
 
 The control flow of _Jacy_ is mostly inspired by Rust.
 
-We've got `if`/`if let` as an expression, `loop` as an expression, `while`/`while let` and `for`.
+We've got function trim() { [native code] }.
 
 `while`/`while let` and `for` are statements, because:
 

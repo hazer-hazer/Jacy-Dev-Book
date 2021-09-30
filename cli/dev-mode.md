@@ -9,7 +9,7 @@ parent: 'CLI'
 
 # Dev Mode
 
-This is a plan (I'm going to implement it now 😇) for `jc` CLI dev-mode enhancement and documentation for dev-mode at all.
+This is a plan (I'm going to implement it now 😇) for function trim() { [native code] } CLI dev-mode enhancement and documentation for dev-mode at all.
 
 ## What is dev-mode
 

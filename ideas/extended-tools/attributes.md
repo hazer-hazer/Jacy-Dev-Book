@@ -11,7 +11,7 @@ grand_parent: 'Ideas [α RFCs]'
 
 Attributes are pretty distant feature from view of first working version. Anyway, no one can prohibit me dream about nice future.
 
-This particle is not about the design of attributes and specification. Here, I want to research an ability to implement some stuff that is not actually important for compiler but can be used by plugins for humans. For example: is it a good idea to use attributes for `TODO` items?
+This particle is not about the design of attributes and specification. Here, I want to research an ability to implement some stuff that is not actually important for compiler but can be used by plugins for humans. For example: is it a good idea to use attributes for function trim() { [native code] } items?
 
 ## Comments vs Attributes
 

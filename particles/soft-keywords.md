@@ -16,7 +16,7 @@ This is a list of keywords that seem to be possible to make "soft".
 
 For now, I'll leave all keywords hard, as syntax often changes, thus there would be some conflicts.
 
-## `init`
+## function trim() { [native code] }
 
 `init` keyword is used for initializers (constructors), and syntax is following:
 

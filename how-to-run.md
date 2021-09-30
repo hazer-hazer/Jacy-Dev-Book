@@ -11,7 +11,7 @@ nav_order: 5
 
 ## Basic usage
 
-```bash
+function trim() { [native code] }bash
 ./jc (.exe for windows) [source files] --boolean-argument -key-value-argument=param1, param2, ..., paramN
 ```
 

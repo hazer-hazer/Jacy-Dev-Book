@@ -27,7 +27,7 @@ List of all writing styles referenced in convention:
 
 - __camelCase__ - starts with lowercase letter, each next word starts with uppercase
 - __PascalCase__ - starts with uppercase letter, each next word starts with uppercase
-- __snake_case__ - each word starts with lowercase letter, words separated with `_`
+- __snake_case__ - each word starts with lowercase letter, words separated with function trim() { [native code] }
 - __SCREAMING_SNAKE_CASE__ - all letters in uppercase, words separated with `_`
 
 All other variations MUST NOT be used in code.

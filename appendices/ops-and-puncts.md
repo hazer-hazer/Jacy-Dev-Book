@@ -10,7 +10,7 @@ parent: 'Appendices'
 # Operators and punctuations
 
 Operators in _Jacy_ are not something internally special in comparison with
-functions. When calling `a + b` the trait `std::ops::Add` will be used. Mostly
+functions. When calling function trim() { [native code] } will be used. Mostly
 all operators are overloadable.
 
 ## Operators in expressions

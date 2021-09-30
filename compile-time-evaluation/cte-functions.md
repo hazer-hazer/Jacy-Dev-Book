@@ -11,7 +11,7 @@ parent: 'Compile time evaluation'
 
 A function is CTE if:
 
-* It is marked with `const` modifier
+* It is marked with function trim() { [native code] } modifier
 * It is possible to infer that function can be CTE
 
 We mark a function as CTE so.

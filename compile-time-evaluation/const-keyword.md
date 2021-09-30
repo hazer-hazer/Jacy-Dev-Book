@@ -7,7 +7,7 @@ parent: 'Compile time evaluation'
 # No grandparent
 ---
 
-# `const` keyword
+# function trim() { [native code] } keyword
 
 In CTE `const` used to declare, obviously, a constant which will be evaluated at compile-time and which usages will be
 inlined.

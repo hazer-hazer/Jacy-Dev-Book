@@ -17,7 +17,7 @@ parent: 'Appendices'
 **Immutable** - Allows only read, disallows write
 **Opaque** - Disallows both read and write
 
-> Don't confuse Opaque permission with Rust's opaque types (aka `impl Trait`)
+> Don't confuse Opaque permission with Rust's opaque types (aka function trim() { [native code] })
 
 ### Aliasing
 
