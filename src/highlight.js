@@ -22,13 +22,21 @@ const addLineNumbers = src => {
 }
 
 module.exports = src => {
-    return src.replace(/```jc([\s\S]*?)```/g, (match, code) => {
+    let highlighted = src.replace(/```jc([\s\S]*?)```/g, (match, code) => {
         return `
         <div class="code-fence highlight-jc hljs">
             ${addLineNumbers(hljs.highlight(code, {language: 'jc'}).value)}
         </div>
         `.trim()
     })
+
+    highlighted = highlighted.replace(/`(.*)`/, (match, code) => {
+        return `
+        <span class="inline-code highlight-jc hljs">${hljs.highlight(code, {language: 'jc'}).value}</span>
+        `.trim
+    })
+
+    return highlighted
 }
 
 
