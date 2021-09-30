@@ -33,14 +33,14 @@ The module tree before the importation process will look so:
 
 <div class="code-fence">
             [ROOT]: {
-    <span>mod</span> 'm': {
+    <span class="quoted">mod</span> 'm': {
         FOS#someID
-          - <span>func</span> 'foo': 'foo(label1:label2:)'
+          - <span class="quoted">func</span> 'foo': 'foo(label1:label2:)'
     }
 
-    <span>mod</span> 'n': {
+    <span class="quoted">mod</span> 'n': {
         FOS#someID
-          - <span>func</span> 'foo': 'foo(label3:label4:)'
+          - <span class="quoted">func</span> 'foo': 'foo(label3:label4:)'
     }
 }
 
