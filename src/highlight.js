@@ -36,6 +36,14 @@ module.exports = src => {
         `.trim()
     })
 
+    highlighted = highlighted.replace(/```plaintext\n((?:(?!```)[\s\S])+)```/g, (match, text) => {
+        return `
+        <div class="code-fence">
+            ${text}
+        </div>
+        `.trim()
+    })
+
     return highlighted
 }
 
