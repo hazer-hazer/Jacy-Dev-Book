@@ -353,8 +353,11 @@ div.side-bar {
     }
 
     &:not(.line-numbers) {
-        white-space: pre;
         grid-template-columns: auto;
+        
+        .quoted {
+            white-space: pre;
+        }
     }
 
     // Styles for code fence with line numbers
