@@ -19,10 +19,11 @@ Converter marker:
 
 And this code will produce an error like:
 
-```plaintext
-Invalid type String for int
+<div class="code-fence">
+            Invalid type String for int
 Note: try call s.toInt()
-```
+
+        </div>
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/particles/soft-keywords.html">< Soft keywords</a>

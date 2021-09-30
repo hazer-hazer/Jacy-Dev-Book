@@ -35,9 +35,10 @@ But as I wrote above, I want opening and closing delimiter in lambda parameters.
 
 ## Idea #3 "Full inference"
 
-```plaintext
-(p1, ..., pN) -> expr
-```
+<div class="code-fence">
+            (p1, ..., pN) -> expr
+
+        </div>
 
 - No type annotations and full inference
 
@@ -62,9 +63,10 @@ Cons:
 
 ## Idea #5 "Haskell-like"
 
-```plaintext
-\(p1: type, ..., pN: type): type -> expr
-```
+<div class="code-fence">
+            \(p1: type, ..., pN: type): type -> expr
+
+        </div>
 
 Pros:
 
