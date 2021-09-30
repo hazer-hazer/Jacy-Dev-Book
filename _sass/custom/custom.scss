@@ -352,7 +352,10 @@ div.side-bar {
         }
     }
 
-    grid-template-columns: auto;
+    &:not(.line-numbers) {
+        white-space: pre;
+        grid-template-columns: auto;
+    }
 
     // Styles for code fence with line numbers
     &.line-numbers {
