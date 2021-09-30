@@ -20,7 +20,7 @@
   },
   "homepage": "https://github.com/hazer-hazer/Jacy-Dev-Book#readme",
   "dependencies": {
-    "highlight.js": "^11.2.0",
-    "@jacy-lang/jacy.highlight.js": "latest"
+    "@jacy-lang/jacy.highlight.js": "latest",
+    "highlight.js": "^11.2.0"
   }
 }
