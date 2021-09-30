@@ -10,6 +10,13 @@ const addLineNum = (num, line) => {
     `.trim()
 }
 
+const escapeHtml = src => src
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;")
+
 const addLineNumbers = src => {
     const lines = getSourceLines(src.trim())
 
@@ -36,10 +43,10 @@ module.exports = src => {
         `.trim()
     })
 
-    highlighted = highlighted.replace(/```plaintext\n((?:(?!```)[\s\S])+)```/g, (match, text) => {
+    highlighted = highlighted.replace(/```.*\n((?:(?!```)[\s\S])+)```/g, (match, text) => {
         return `
         <div class="code-fence">
-            ${text}
+            ${escapeHtml(text)}
         </div>
         `.trim()
     })
