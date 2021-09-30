@@ -28,8 +28,8 @@ this step, options are stored as strings. <span class="inline-code highlight-jc 
 specified or to find if some value passed to a key-value option.
 
 To simplify <span class="inline-code highlight-jc hljs">argv</span> processing we don't actually walk through all of them. At first, we split them into a vector of
-string by delimiters like <span class="inline-code highlight-jc hljs"><span class="hljs-operator">=</span></span> (actually, options are already delimited by white space). By doing so we don't need to
-worry about cases when a user writes <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span>print <span class="hljs-operator">=</span> all</span> or <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span>print<span class="hljs-operator">=</span> all</span> or <span class="inline-code highlight-jc hljs"><span class="hljs-operator">-</span>print <span class="hljs-operator">=</span>all</span> -- all these variants result to
+string by delimiters like <span class="inline-code highlight-jc hljs">=</span> (actually, options are already delimited by white space). By doing so we don't need to
+worry about cases when a user writes <span class="inline-code highlight-jc hljs">-print = all</span> or <span class="inline-code highlight-jc hljs">-print= all</span> or <span class="inline-code highlight-jc hljs">-print =all</span> -- all these variants result to
 <span class="inline-code highlight-jc hljs">[<span class="hljs-string">&quot;-print&quot;</span>, <span class="hljs-string">&quot;=&quot;</span>, <span class="hljs-string">&quot;all&quot;</span>]</span>.
 
 ## Config

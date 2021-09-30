@@ -17,10 +17,10 @@ Despite the fact that _Jacy_ does not have null replacing it with <span class="i
 
 This operator exists in, for example JavaScript - <span class="inline-code highlight-jc hljs">??</span>, also known as Elvis operator - <span class="inline-code highlight-jc hljs">?:</span> in many languages (PHP, Kotlin) or <span class="inline-code highlight-jc hljs">COALESCE</span> in SQL.
 
-At first I would like to remind that _Jacy_ does not have ternary operator <span class="inline-code highlight-jc hljs">a ? b : c</span> that was the source of Elvis operator syntax with removed second term <span class="inline-code highlight-jc hljs">a ?: b <span class="hljs-operator">=</span> a ? a : b</span>. Thus _Jacy_ will use <span class="inline-code highlight-jc hljs">??</span> operator further in this particle and likely in the implementation.
+At first I would like to remind that _Jacy_ does not have ternary operator <span class="inline-code highlight-jc hljs">a ? b : c</span> that was the source of Elvis operator syntax with removed second term <span class="inline-code highlight-jc hljs">a ?: b = a ? a : b</span>. Thus _Jacy_ will use <span class="inline-code highlight-jc hljs">??</span> operator further in this particle and likely in the implementation.
 
-Null coalescing operator is a kind of disjunction (<span class="inline-code highlight-jc hljs"><span class="hljs-operator">|</span><span class="hljs-operator">|</span></span>, or <span class="inline-code highlight-jc hljs"><span class="hljs-operator">or</span></span> in _Jacy_) but for values which are "optional" (nullable).
-That's why I came up with an idea of null-conjunction, that is <span class="inline-code highlight-jc hljs"><span class="hljs-operator">&amp;</span><span class="hljs-operator">&amp;</span></span> operator for optional values.
+Null coalescing operator is a kind of disjunction (<span class="inline-code highlight-jc hljs">||</span>, or <span class="inline-code highlight-jc hljs"><span class="hljs-operator">or</span></span> in _Jacy_) but for values which are "optional" (nullable).
+That's why I came up with an idea of null-conjunction, that is <span class="inline-code highlight-jc hljs">&amp;&amp;</span> operator for optional values.
 
 ## Nullack operator
 
@@ -35,7 +35,7 @@ Code sample:
             <div class="line-num" data-line-num="1">1</div><div class="line">a [OP] b</div>
         </div>
 
-Where <span class="inline-code highlight-jc hljs">a</span> has type <span class="inline-code highlight-jc hljs"><span class="hljs-type">Option</span><span class="hljs-operator">&lt;</span>T<span class="hljs-operator">&gt;</span></span> and <span class="inline-code highlight-jc hljs"><span class="hljs-type">Option</span><span class="hljs-operator">&lt;</span>b<span class="hljs-operator">&gt;</span></span> has type <span class="inline-code highlight-jc hljs">U</span>.
+Where <span class="inline-code highlight-jc hljs">a</span> has type <span class="inline-code highlight-jc hljs"><span class="hljs-type">Option</span>&lt;T&gt;</span> and <span class="inline-code highlight-jc hljs"><span class="hljs-type">Option</span>&lt;b&gt;</span> has type <span class="inline-code highlight-jc hljs">U</span>.
 
 This operator MUST return <span class="inline-code highlight-jc hljs"><span class="hljs-literal">None</span></span> in case when <span class="inline-code highlight-jc hljs">a</span> OR <span class="inline-code highlight-jc hljs">b</span> are <span class="inline-code highlight-jc hljs"><span class="hljs-literal">None</span></span> values.
 

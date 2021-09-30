@@ -56,7 +56,7 @@ is under rule above
 
 Scientific constants like PI number MUST BE named in __SCREAMING_SNAKE_CASE__: <span class="inline-code highlight-jc hljs">PI</span>, <span class="inline-code highlight-jc hljs">G</span>
 
-<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> MAY BE named in __camelCase__: <span class="inline-code highlight-jc hljs">myImp<span class="hljs-operator">or</span>tantValue</span>
+<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> MAY BE named in __camelCase__: <span class="inline-code highlight-jc hljs">myImportantValue</span>
 
 ### Type names
 

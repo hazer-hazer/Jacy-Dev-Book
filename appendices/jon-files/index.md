@@ -9,7 +9,7 @@ parent: 'Appendices'
 
 # JON files
 
-JON (Jacy Object Notation, ext.: <span class="inline-code highlight-jc hljs"><span class="hljs-operator">.</span>jon</span>) is an alternative for JSON used by *Jacy* programming language.
+JON (Jacy Object Notation, ext.: <span class="inline-code highlight-jc hljs">.jon</span>) is an alternative for JSON used by *Jacy* programming language.
 Its goals are:
 
 - Simpler and less noisy syntax
@@ -36,7 +36,7 @@ JON does not support root type specification as JSON does, there's no root <span
   - Raw - <span class="inline-code highlight-jc hljs"><span class="hljs-number">0.1523</span></span>
   - With exponential notation - <span class="inline-code highlight-jc hljs"><span class="hljs-number">0.123213e-123</span></span>
 - Strings
-  - One line - <span class="inline-code highlight-jc hljs"><span class="hljs-symbol">&#x27;Hello</span>, w<span class="hljs-operator">or</span>ld!&#x27;</span> and <span class="inline-code highlight-jc hljs"><span class="hljs-string">&quot;Hello, world!&quot;</span></span> are same
+  - One line - <span class="inline-code highlight-jc hljs"><span class="hljs-symbol">&#x27;Hello</span>, world!&#x27;</span> and <span class="inline-code highlight-jc hljs"><span class="hljs-string">&quot;Hello, world!&quot;</span></span> are same
   - Multi-line - <span class="inline-code highlight-jc hljs"><span class="hljs-string">&#x27;&#x27;&#x27;</span>My multiline string<span class="hljs-string">&#x27;&#x27;&#x27;</span></span> and <span class="inline-code highlight-jc hljs"><span class="hljs-string">&quot;&quot;</span><span class="hljs-string">&quot;My multiline string&quot;</span><span class="hljs-string">&quot;&quot;</span></span> are same
 - Arrays
   - Collection of values enclosed into <span class="inline-code highlight-jc hljs">[]</span> and delimited with <span class="inline-code highlight-jc hljs">,</span> (optionally, read further)

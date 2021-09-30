@@ -19,7 +19,7 @@ Let's begin with what named arguments are.
 In Swift parameter labels is a really important concept: labels are required by default and much of internal logic is dependent on labels (function overloading, name resolution, etc).
 
 <span class="inline-code highlight-jc hljs"></span><span class="inline-code highlight-jc hljs">swift
-<span class="hljs-keyword">func</span> <span class="hljs-title function_">NAME</span>((LABEL <span class="hljs-operator">|</span> _)? PARAM_NAME: TYPE)
+<span class="hljs-keyword">func</span> <span class="hljs-title function_">NAME</span>((LABEL | _)? PARAM_NAME: TYPE)
 </span><span class="inline-code highlight-jc hljs"></span>
 
 <span class="inline-code highlight-jc hljs">LABEL</span> is optional, and if no label is given -- <span class="inline-code highlight-jc hljs">PARAM_NAME</span> becomes a label name, as a shortcut <span class="inline-code highlight-jc hljs">PARAM_NAME: TYPE</span> = <span class="inline-code highlight-jc hljs">PARAM_NAME PARAM_NAME: TYPE</span>.
@@ -75,9 +75,9 @@ The solution to disambiguate this case is the same as in Swift.
 1. Function types do not have labels
 2. Labels are used only for function overloading resolution (in name resolution) and nowhere else
 
-We cannot store some function in a variable with type <span class="inline-code highlight-jc hljs">(foo: T, bar: U) <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> V</span>, it would be <span class="inline-code highlight-jc hljs">(T, U) <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> V</span>, thus when a function is assigned to a variable (or passed to function), that is, stored somewhere, it does not have labels.
+We cannot store some function in a variable with type <span class="inline-code highlight-jc hljs">(foo: T, bar: U) <span class="hljs-punctuation">-&gt;</span> V</span>, it would be <span class="inline-code highlight-jc hljs">(T, U) <span class="hljs-punctuation">-&gt;</span> V</span>, thus when a function is assigned to a variable (or passed to function), that is, stored somewhere, it does not have labels.
 Summing up, parameter labels are just name-resolution level overloading and markers for calls, nothing more.
-Anyway, to disambiguate the case present above we need some mechanism to say that we're gonna use the specific <span class="inline-code highlight-jc hljs">doSmth</span> function. It is done with Swift-like syntax <span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">functionName</span>(label1:label2:<span class="hljs-operator">..</span><span class="hljs-operator">.</span>)</span>, that is, we don't call function but resolve its overloading.
+Anyway, to disambiguate the case present above we need some mechanism to say that we're gonna use the specific <span class="inline-code highlight-jc hljs">doSmth</span> function. It is done with Swift-like syntax <span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">functionName</span>(label1:label2:...)</span>, that is, we don't call function but resolve its overloading.
 
 So, it looks such as:
 
@@ -85,7 +85,7 @@ So, it looks such as:
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>(with: <span class="hljs-type">int</span>);</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>(from: <span class="hljs-type">int</span>);</div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="5">5</div><div class="line">    <span class="hljs-comment">// Error: Call to <span class="inline-code highlight-jc hljs">doSmth</span> is ambiguous -- add argument label <span class="inline-code highlight-jc hljs">with</span> or <span class="inline-code highlight-jc hljs">from</span></span></div><div class="line-num" data-line-num="6">6</div><div class="line">    <span class="hljs-title function_ invoke__">doSmth</span>(with:)(<span class="hljs-number">123</span>);</div><div class="line-num" data-line-num="7">7</div><div class="line">}</div>
         </div>
 
-I need to note that type of <span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">doSmth</span>(with:)</span> is not <span class="inline-code highlight-jc hljs">(with: <span class="hljs-type">int</span>) <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> ()</span>, just a <span class="inline-code highlight-jc hljs">(<span class="hljs-type">int</span>) <span class="hljs-operator">-</span><span class="hljs-operator">&gt;</span> ()</span>.
+I need to note that type of <span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">doSmth</span>(with:)</span> is not <span class="inline-code highlight-jc hljs">(with: <span class="hljs-type">int</span>) <span class="hljs-punctuation">-&gt;</span> ()</span>, just a <span class="inline-code highlight-jc hljs">(<span class="hljs-type">int</span>) <span class="hljs-punctuation">-&gt;</span> ()</span>.
 So, names have gone and cannot be used after.
 
 Anyway, parameter names in function types are allowed, but they just markers for user and do not affect real function type. That is to say, parameter names in types are used for documentation purposes.
