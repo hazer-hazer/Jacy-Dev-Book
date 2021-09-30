@@ -37,7 +37,7 @@ The module tree before the importation process will look so:
           - `func` 'foo': 'foo(label1:label2:)'
     }
 
-    `mod 'n': {
+    `mod` 'n': {
         FOS#someID
           - `func` 'foo': 'foo(label3:label4:)'
     }

@@ -29,6 +29,7 @@ const addLineNumbers = src => {
 }
 
 module.exports = src => {
+    // let highlighted = src
     let highlighted = src.replace(/```jc\n((?:(?!```)[\s\S])+)```/g, (match, code) => {
         return `
         <div class="code-fence highlight-jc hljs">
@@ -37,17 +38,21 @@ module.exports = src => {
         `.trim()
     })
 
-    highlighted = highlighted.replace(/`([^`\n\r]+)`/g, (match, code) => {
+    highlighted = highlighted.replace(/```(?!(?:jc|jacy))\w+\n((?:(?!```)[\s\S])+)```/g, (match, text) => {
+        // Note: Replace inner quoted text to avoid replacement of inline code on the next step
+        text = text.replace(/`([^`\n\r]+)`/g, (match, code) => {
+            return `<span>${code}</span>`
+        })
         return `
-        <span class="inline-code highlight-jc hljs">${hljs.highlight(code, {language: 'jc'}).value}</span>
+        <div class="code-fence">
+            ${text}
+        </div>
         `.trim()
     })
 
-    highlighted = highlighted.replace(/```.*\n((?:(?!```)[\s\S])+)```/g, (match, text) => {
+    highlighted = highlighted.replace(/`([^`\n\r]+)`/g, (match, code) => {
         return `
-        <div class="code-fence">
-            ${escapeHtml(text)}
-        </div>
+        <span class="inline-code highlight-jc hljs">${hljs.highlight(code, {language: 'jc'}).value}</span>
         `.trim()
     })
 
