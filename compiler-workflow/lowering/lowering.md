@@ -22,7 +22,7 @@ In the HIR there is nothing like <span class="inline-code highlight-jc hljs"><sp
 
 #### <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">for</span></span> loop lowering
 
-At first, we need to establish what <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">for</span></span> loop can do in _Jacy_. No C-like <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">for</span></span> loop exists and the only one construction is using iterator. C-like loops iterating over integer values are covered with iteration over ranges.
+At first, we need to establish what the <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">for</span></span> loop can do in _Jacy_. No C-like <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">for</span></span> loop exists and the only one construction is using iterator. C-like loops iterating over integer values are covered with iteration over ranges.
 
 <div class="code-fence highlight-jc hljs">
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">for</span> <span class="hljs-variable">i</span> <span class="hljs-keyword">in</span> <span class="hljs-number">0</span>..<span class="hljs-number">100</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-title function_ invoke__">print</span>(i);</div><div class="line-num" data-line-num="3">3</div><div class="line">}</div>
@@ -48,7 +48,7 @@ Here we use <span class="inline-code highlight-jc hljs"><span class="hljs-keywor
 
 The body of the <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span></span> is the same as for the initial <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">for</span></span> loop.
 
-In next chapters, we will discuss <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span></span> lowering where this example will be lowered completely.
+In the next chapters, we will discuss <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span></span> lowering where this example will be lowered completely.
 
 #### <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span></span> loop lowering
 <div class="nav-btn-block">
