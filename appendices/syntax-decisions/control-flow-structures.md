@@ -33,9 +33,10 @@ destruct our value.
 
 Syntax is following.
 
-```antlr4
-ifLetExpression: 'if let' pattern '=' expr block
-```
+<div class="code-fence">
+            ifLetExpression: &#039;if let&#039; pattern &#039;=&#039; expr block
+
+        </div>
 
 ## <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span></span>/<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span></span>
 
@@ -101,23 +102,25 @@ covers all usages (almost) of <span class="inline-code highlight-jc hljs"><span 
 
 The syntax is the following.
 
-```antlr4
-forLoop: 'for' pattern 'in' expression block
-```
+<div class="code-fence">
+            forLoop: &#039;for&#039; pattern &#039;in&#039; expression block
+
+        </div>
 
 Examples.
 
-```c++
-// In C++ we write
-for (int i = 0; i < something; i++) {
+<div class="code-fence">
+            // In C++ we write
+for (int i = 0; i &lt; something; i++) {
     // ...
 }
 
-<div class="code-fence highlight-jc hljs">
-            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// In Jacy:</span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">for</span> <span class="hljs-variable">i</span> <span class="hljs-keyword">in</span> <span class="hljs-number">0</span>..=something {</div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-comment">// ...</span></div><div class="line-num" data-line-num="4">4</div><div class="line">}</div>
-        </div>
+&lt;div class=&quot;code-fence highlight-jc hljs&quot;&gt;
+            &lt;div class=&quot;line-num&quot; data-line-num=&quot;1&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;hljs-comment&quot;&gt;// In Jacy:&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line-num&quot; data-line-num=&quot;2&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;hljs-variable&quot;&gt;i&lt;/span&gt; &lt;span class=&quot;hljs-keyword&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;hljs-number&quot;&gt;0&lt;/span&gt;..=something {&lt;/div&gt;&lt;div class=&quot;line-num&quot; data-line-num=&quot;3&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    &lt;span class=&quot;hljs-comment&quot;&gt;// ...&lt;/span&gt;&lt;/div&gt;&lt;div class=&quot;line-num&quot; data-line-num=&quot;4&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;}&lt;/div&gt;
+        &lt;/div&gt;
 
-```c++
+
+        </div>c++
 // In C++
 for (const auto & x : vec) {
     // ...

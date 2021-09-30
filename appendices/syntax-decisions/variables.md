@@ -18,9 +18,10 @@ the <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">mut</
 
 The syntax.
 
-```antlr4
-'let' pattern (':' type)? ('=' expr)?
-```
+<div class="code-fence">
+            &#039;let&#039; pattern (&#039;:&#039; type)? (&#039;=&#039; expr)?
+
+        </div>
 
 Anyway, I'm able to add the <span class="inline-code highlight-jc hljs">var</span> keyword and just use it as an alias for <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span> <span class="hljs-variable">mut</span></span>. In this way, we are not able to use
 pattern, just only an identifier, so we also lose the ability of destructuring. I think it does not worth it, let's stay

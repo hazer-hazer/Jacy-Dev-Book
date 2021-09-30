@@ -12,7 +12,7 @@ parent: 'Appendices'
 <div class="code-fence">
             You appear to be advocating a new:
 [x] functional  [x] imperative  [x] object-oriented  [ ] procedural [ ] stack-based
-[x] "multi-paradigm"  [ ] lazy  [x] eager  [x] statically-typed  [ ] dynamically-typed
+[x] &quot;multi-paradigm&quot;  [ ] lazy  [x] eager  [x] statically-typed  [ ] dynamically-typed
 [ ] pure  [ ] impure  [ ] non-hygienic  [ ] visual  [ ] beginner-friendly
 [ ] non-programmer-friendly  [ ] completely incomprehensible
 programming language.  Your language will not work.  Here is why it will not work.
@@ -28,8 +28,8 @@ You appear to believe that:
 [ ] Convincing programmers to adopt a new language will be easy
 [ ] Convincing programmers to adopt a language-specific IDE will be easy
 [ ] Programmers love writing lots of boilerplate
-[ ] Specifying behaviors as "undefined" means that programmers won't rely on them
-[ ] "Spooky action at a distance" makes programming more fun
+[ ] Specifying behaviors as &quot;undefined&quot; means that programmers won&#039;t rely on them
+[ ] &quot;Spooky action at a distance&quot; makes programming more fun
 
 Unfortunately, your language (has/lacks):
 [h] comprehensible syntax  [h] semicolons  [ ] significant whitespace  [One day 🙃] macros
@@ -42,19 +42,19 @@ Unfortunately, your language (has/lacks):
 [h] call-by-value  [ ] call-by-name  [h] call-by-reference  [ ] call-cc
 
 The following philosophical objections apply:
-[ ] Programmers should not need to understand category theory to write "Hello, World!"
-[ ] Programmers should not develop RSI from writing "Hello, World!"
+[ ] Programmers should not need to understand category theory to write &quot;Hello, World!&quot;
+[ ] Programmers should not develop RSI from writing &quot;Hello, World!&quot;
 [ ] The most significant program written in your language is its own compiler
-[ ] The most significant program written in your language isn't even its own compiler
+[ ] The most significant program written in your language isn&#039;t even its own compiler
 [x] No language spec
-[x] "The implementation is the spec"
+[x] &quot;The implementation is the spec&quot;
    [ ] The implementation is closed-source  [ ] covered by patents  [ ] not owned by you
 [ ] Your type system is unsound  [ ] Your language cannot be unambiguously parsed
    [ ] a proof of same is attached
    [ ] invoking this proof crashes the compiler
 [ ] The name of your language makes it impossible to find on Google
 [ ] Interpreted languages will never be as fast as C
-[ ] Compiled languages will never be "extensible"
+[ ] Compiled languages will never be &quot;extensible&quot;
 [ ] Writing a compiler that understands English is AI-complete
 [ ] Your language relies on an optimization which has never been shown possible
 [ ] There are less than 100 programmers on Earth smart enough to use your language
@@ -74,14 +74,14 @@ Your implementation has the following flaws:
 [ ] Dangerous behavior is only a warning
 [ ] The compiler crashes if you look at it funny
 [ ] The VM crashes if you look at it funny
-[ ] You don't seem to understand basic optimization techniques
-[ ] You don't seem to understand basic systems programming
-[ ] You don't seem to understand pointers
-[ ] You don't seem to understand functions
+[ ] You don&#039;t seem to understand basic optimization techniques
+[ ] You don&#039;t seem to understand basic systems programming
+[ ] You don&#039;t seem to understand pointers
+[ ] You don&#039;t seem to understand functions
 
 Additionally, your marketing has the following problems:
 [ ] Unsupported claims of increased productivity
-[ ] Unsupported claims of greater "ease of use"
+[ ] Unsupported claims of greater &quot;ease of use&quot;
 [ ] Obviously rigged benchmarks
    [ ] Graphics, simulation, or crypto benchmarks where your code just calls
        handwritten assembly through your FFI
@@ -104,11 +104,11 @@ Taking the wider ecosystem into account, I would like to note that:
 [ ] You have reinvented Java but worse
 [ ] You have reinvented C++ but worse
 [ ] You have reinvented PHP but worse
-[ ] You have reinvented PHP better, but that's still no justification
+[ ] You have reinvented PHP better, but that&#039;s still no justification
 [ ] You have reinvented Brainfuck but non-ironically
 
 In conclusion, this is what I think of you:
-[ ] You have some interesting ideas, but this won't fly.
+[ ] You have some interesting ideas, but this won&#039;t fly.
 [ ] This is a bad language, and you should feel bad for inventing it.
 [ ] Programming in this language is an adequate punishment for inventing it.
 

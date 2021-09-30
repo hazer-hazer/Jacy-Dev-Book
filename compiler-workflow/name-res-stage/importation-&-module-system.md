@@ -31,19 +31,20 @@ Here, module <span class="inline-code highlight-jc hljs">m</span> exports overlo
 
 The module tree before the importation process will look so:
 
-```text
-[ROOT]: {
-    <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">mod</span></span> 'm': {
+<div class="code-fence">
+            [ROOT]: {
+    &lt;span class=&quot;inline-code highlight-jc hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;mod&lt;/span&gt;&lt;/span&gt; &#039;m&#039;: {
         FOS#someID
-          - <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span></span> 'foo': 'foo(label1:label2:)'
+          - &lt;span class=&quot;inline-code highlight-jc hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;func&lt;/span&gt;&lt;/span&gt; &#039;foo&#039;: &#039;foo(label1:label2:)&#039;
     }
 
-    `mod 'n': {
+    `mod &#039;n&#039;: {
         FOS#someID
-          - <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span></span> 'foo': 'foo(label3:label4:)'
+          - &lt;span class=&quot;inline-code highlight-jc hljs&quot;&gt;&lt;span class=&quot;hljs-keyword&quot;&gt;func&lt;/span&gt;&lt;/span&gt; &#039;foo&#039;: &#039;foo(label3:label4:)&#039;
     }
 }
-```
+
+        </div>
 
 After importation, module <span class="inline-code highlight-jc hljs">n</span> must contain alias to function <span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">foo</span>(label1:label2)</span> and locally defined <span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">foo</span>(label3:label4)</span>.
 When the module tree is building we create FOSes (Function Overload Sets) each of those has a unique index id.
@@ -55,24 +56,25 @@ So, when we importing a function with the same name should we update existent FO
 
 The <span class="inline-code highlight-jc hljs">DefTable</span>:
 
-```jon
-FOSes: [
+<div class="code-fence">
+            FOSes: [
     {
-        '(private:)': #1
-        '(public:)': #2
+        &#039;(private:)&#039;: #1
+        &#039;(public:)&#039;: #2
     }
     {
-        '(nested:)': #4
+        &#039;(nested:)&#039;: #4
     }
 ]
-```
+
+        </div>
 
 Module Tree:
 
-```jon
-{
-    'm': {
-        kind: 'mod'
+<div class="code-fence">
+            {
+    &#039;m&#039;: {
+        kind: &#039;mod&#039;
         defId: 0
         defs: {
             foo: {
@@ -80,8 +82,8 @@ Module Tree:
             }
         }
     }
-    'n': {
-        kind: 'mod'
+    &#039;n&#039;: {
+        kind: &#039;mod&#039;
         defId: 1
         defs: {
             foo: {
@@ -90,25 +92,27 @@ Module Tree:
         }
     }
 }
-```
+
+        </div>
 
 After importation, if FOSes updated.
 
 The <span class="inline-code highlight-jc hljs">DefTable</span>:
 
-```jon
-FOSes: [
+<div class="code-fence">
+            FOSes: [
     {
-        '(private:)': #1
-        '(public:)': #2
+        &#039;(private:)&#039;: #1
+        &#039;(public:)&#039;: #2
     }
     {
-        '(private:)': 'Alias to #1'
-        '(public:)': 'Alias to #2'
-        '(nested:)': #4
+        &#039;(private:)&#039;: &#039;Alias to #1&#039;
+        &#039;(public:)&#039;: &#039;Alias to #2&#039;
+        &#039;(nested:)&#039;: #4
     }
 ]
-```
+
+        </div>
 
 So, let's establish how overloads importation works:
 
