@@ -354,40 +354,39 @@ div.side-bar {
         }
     }
 
-    .line-num, .line {
-        line-height: $line-height;
-        vertical-align: middle;
-        transition: .15s ease;
+    // Styles for code fence with line numbers
+    &.line-numbers {
+        .line-num, .line {
+            line-height: $line-height;
+            vertical-align: middle;
+            transition: .15s ease;
+        }
+    
+        .line-num:hover {
+            background: #8A91992A;
+            color: #f25858c0;
+            cursor: pointer;
+        }
+    
+        .line-num:hover + .line,
+        .line:hover {
+            background: #8A91991A;
+        }
+    
+        .line-num {
+            user-select: none;
+            text-align: right;
+            box-shadow: inset -1px 0 #ccc;
+            font-size: 12px;
+            padding: 0 12px;
+            color: #888;
+        }
+    
+        .line {
+            text-align: left;
+            white-space: pre;
+            padding-left: 7px;
+            cursor: text;
+        }
     }
-
-    .line-num:hover {
-        background: #8A91992A;
-        color: #f25858c0;
-        cursor: pointer;
-    }
-
-    .line-num:hover + .line,
-    .line:hover {
-        background: #8A91991A;
-    }
-
-    .line-num {
-        user-select: none;
-        text-align: right;
-        box-shadow: inset -1px 0 #ccc;
-        font-size: 12px;
-        padding: 0 12px;
-        color: #888;
-    }
-
-    .line {
-        text-align: left;
-        white-space: pre;
-        padding-left: 7px;
-        cursor: text;
-    }
-
-    // .line-num:before {
-    //     content: attr(data-line-num);
-    // }
 }
