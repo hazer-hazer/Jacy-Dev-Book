@@ -13,7 +13,7 @@ In the HIR there is nothing like `for` or `while` loops -- they are replaced wit
 
 #### `for` loop lowering
 
-At first, we need to establish what `for` loop can do in _Jacy_. No C-like `for` loop exists and the only one construction is using iterator. C-like loops iterating over integer values are covered with iteration over ranges.
+At first, we need to establish what the `for` loop can do in _Jacy_. No C-like `for` loop exists and the only one construction is using iterator. C-like loops iterating over integer values are covered with iteration over ranges.
 
 ```jc
 for i in 0..100 {
@@ -46,6 +46,6 @@ Here we use `while let` which is a high-level syntactic sugar that is in fact "w
 
 The body of the `while let` is the same as for the initial `for` loop.
 
-In next chapters, we will discuss `while let` lowering where this example will be lowered completely.
+In the next chapters, we will discuss `while let` lowering where this example will be lowered completely.
 
 #### `while` loop lowering
