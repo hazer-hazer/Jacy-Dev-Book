@@ -9,8 +9,7 @@ parent: 'Appendices'
 
 # *Jacy* Programming language [checklist](https://www.mcmillen.dev/language_checklist.html)
 
-<div class="code-fence">
-            You appear to be advocating a new:
+<div class="code-fence">You appear to be advocating a new:
 [x] functional  [x] imperative  [x] object-oriented  [ ] procedural [ ] stack-based
 [x] "multi-paradigm"  [ ] lazy  [x] eager  [x] statically-typed  [ ] dynamically-typed
 [ ] pure  [ ] impure  [ ] non-hygienic  [ ] visual  [ ] beginner-friendly
@@ -111,8 +110,7 @@ In conclusion, this is what I think of you:
 [ ] You have some interesting ideas, but this won't fly.
 [ ] This is a bad language, and you should feel bad for inventing it.
 [ ] Programming in this language is an adequate punishment for inventing it.
-
-        </div>
+</div>
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/appendices/cheatsheets">< Appendices</a>

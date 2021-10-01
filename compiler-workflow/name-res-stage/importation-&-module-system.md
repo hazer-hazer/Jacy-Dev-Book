@@ -31,8 +31,7 @@ Here, module <span class="inline-code highlight-jc hljs">m</span> exports overlo
 
 The module tree before the importation process will look so:
 
-<div class="code-fence">
-            [ROOT]: {
+<div class="code-fence">[ROOT]: {
     mod 'm': {
         FOS#someID
           - func 'foo': 'foo(label1:label2:)'
@@ -43,8 +42,7 @@ The module tree before the importation process will look so:
           - func 'foo': 'foo(label3:label4:)'
     }
 }
-
-        </div>
+</div>
 
 After importation, module <span class="inline-code highlight-jc hljs">n</span> must contain alias to function <span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">foo</span>(label1:label2)</span> and locally defined <span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">foo</span>(label3:label4)</span>.
 When the module tree is building we create FOSes (Function Overload Sets) each of those has a unique index id.
@@ -56,8 +54,7 @@ So, when we importing a function with the same name should we update existent FO
 
 The <span class="inline-code highlight-jc hljs">DefTable</span>:
 
-<div class="code-fence">
-            FOSes: [
+<div class="code-fence">FOSes: [
     {
         '(private:)': #1
         '(public:)': #2
@@ -66,13 +63,11 @@ The <span class="inline-code highlight-jc hljs">DefTable</span>:
         '(nested:)': #4
     }
 ]
-
-        </div>
+</div>
 
 Module Tree:
 
-<div class="code-fence">
-            {
+<div class="code-fence">{
     'm': {
         kind: 'mod'
         defId: 0
@@ -92,15 +87,13 @@ Module Tree:
         }
     }
 }
-
-        </div>
+</div>
 
 After importation, if FOSes updated.
 
 The <span class="inline-code highlight-jc hljs">DefTable</span>:
 
-<div class="code-fence">
-            FOSes: [
+<div class="code-fence">FOSes: [
     {
         '(private:)': #1
         '(public:)': #2
@@ -111,8 +104,7 @@ The <span class="inline-code highlight-jc hljs">DefTable</span>:
         '(nested:)': #4
     }
 ]
-
-        </div>
+</div>
 
 So, let's establish how overloads importation works:
 

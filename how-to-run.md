@@ -11,10 +11,8 @@ nav_order: 5
 
 ## Basic usage
 
-<div class="code-fence">
-            ./jc (.exe for windows) [source files] --boolean-argument -key-value-argument=param1, param2, ..., paramN
-
-        </div>
+<div class="code-fence">./jc (.exe for windows) [source files] --boolean-argument -key-value-argument=param1, param2, ..., paramN
+</div>
 
 There're two kinds of CLI arguments:
 
@@ -31,10 +29,8 @@ Also, arguments have constraints:
 
 Example usage.
 
-<div class="code-fence">
-            ./bin example.jc --print=ast
-
-        </div>
+<div class="code-fence">./bin example.jc --print=ast
+</div>
 
 ### The actual list of options
 
@@ -104,10 +100,8 @@ You can use any boolean value to toggle arguments, allowed boolean values descri
 What if you want to set bool-arg to <span class="inline-code highlight-jc hljs"><span class="hljs-literal">false</span></span>? Let's imagine that <span class="inline-code highlight-jc hljs">--dev</span> is set by default (it is not anyway). There is
 the pretty same syntax for bool-args as for key-value args.
 
-<div class="code-fence">
-            --dev=no
-
-        </div>
+<div class="code-fence">--dev=no
+</div>
 
 There's a bunch of allowed bool values:
 

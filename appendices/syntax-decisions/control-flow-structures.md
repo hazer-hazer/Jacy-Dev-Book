@@ -33,10 +33,8 @@ destruct our value.
 
 Syntax is following.
 
-<div class="code-fence">
-            ifLetExpression: 'if let' pattern '=' expr block
-
-        </div>
+<div class="code-fence">ifLetExpression: 'if let' pattern '=' expr block
+</div>
 
 ## <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span></span>/<span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span></span>
 
@@ -102,10 +100,8 @@ covers all usages (almost) of <span class="inline-code highlight-jc hljs"><span 
 
 The syntax is the following.
 
-<div class="code-fence">
-            forLoop: 'for' pattern 'in' expression block
-
-        </div>
+<div class="code-fence">forLoop: 'for' pattern 'in' expression block
+</div>
 
 Examples.
 
