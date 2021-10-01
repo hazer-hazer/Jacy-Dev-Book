@@ -91,8 +91,10 @@ FOS stands for "Function Overload Set". In _Jacy_ you can overload functions via
 
 For example, in:
 
-<div class="code-fence line-numbers highlight-jc hljs">
-            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">mod</span> <span class="hljs-title class_">m</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(from: <span class="hljs-type">int</span>) {}</div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(to: <span class="hljs-type">int</span>) {}</div><div class="line-num" data-line-num="5">5</div><div class="line">}</div>
+<div class="code-fence">
+            <div class="code line-numbers highlight-jc hljs">
+                <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">mod</span> <span class="hljs-title class_">m</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(from: <span class="hljs-type">int</span>) {}</div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(to: <span class="hljs-type">int</span>) {}</div><div class="line-num" data-line-num="5">5</div><div class="line">}</div>
+            </div>
         </div>
 
 <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">mod</span> <span class="hljs-title class_">m</span></span> only holds [<span class="inline-code highlight-jc hljs">NameBinding</span>](#namebinding) with name <span class="inline-code highlight-jc hljs">foo</span> (base name of FOS) which points to <span class="inline-code highlight-jc hljs">FOSId</span> of FOS <span class="inline-code highlight-jc hljs">foo</span> in [<span class="inline-code highlight-jc hljs">DefTable</span>](#deftable).

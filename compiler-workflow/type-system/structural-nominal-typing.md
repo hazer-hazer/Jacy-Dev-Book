@@ -53,8 +53,10 @@ expressions enclosed into <span class="inline-code highlight-jc hljs">()</span> 
 
 Example.
 
-<div class="code-fence line-numbers highlight-jc hljs">
-            <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = (name: <span class="hljs-number">123</span>)</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">b</span> = (param: <span class="hljs-type">i32</span>) <span class="hljs-operator">-&gt;</span> param + <span class="hljs-number">1</span></div>
+<div class="code-fence">
+            <div class="code line-numbers highlight-jc hljs">
+                <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = (name: <span class="hljs-number">123</span>)</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">b</span> = (param: <span class="hljs-type">i32</span>) <span class="hljs-operator">-&gt;</span> param + <span class="hljs-number">1</span></div>
+            </div>
         </div>
 
 When we parse <span class="inline-code highlight-jc hljs">a</span>'s and <span class="inline-code highlight-jc hljs">b</span>'s assigned expressions we see <span class="inline-code highlight-jc hljs">(</span>, then collect all tokens until we find <span class="inline-code highlight-jc hljs">)</span> and if we found

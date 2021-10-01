@@ -31,8 +31,10 @@ Operator syntax is not specified, thus <span class="inline-code highlight-jc hlj
 
 Code sample:
 
-<div class="code-fence line-numbers highlight-jc hljs">
-            <div class="line-num" data-line-num="1">1</div><div class="line">a [OP] b</div>
+<div class="code-fence">
+            <div class="code line-numbers highlight-jc hljs">
+                <div class="line-num" data-line-num="1">1</div><div class="line">a [OP] b</div>
+            </div>
         </div>
 
 Where <span class="inline-code highlight-jc hljs">a</span> has type <span class="inline-code highlight-jc hljs"><span class="hljs-type">Option</span>&lt;T&gt;</span> and <span class="inline-code highlight-jc hljs"><span class="hljs-type">Option</span>&lt;b&gt;</span> has type <span class="inline-code highlight-jc hljs">U</span>.
