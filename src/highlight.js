@@ -41,7 +41,7 @@ module.exports = src => {
     highlighted = highlighted.replace(/```(?!(?:jc|jacy))\w+\n((?:(?!```)[\s\S])+)```/g, (match, text) => {
         // Note: Replace inner quoted text to avoid replacement of inline code on the next step
         text = text.replace(/`([^`\n\r]+)`/g, (match, code) => {
-            return `<span class="quoted">${code}</span>`
+            return `${code}`
         })
         return `
         <div class="code-fence">
