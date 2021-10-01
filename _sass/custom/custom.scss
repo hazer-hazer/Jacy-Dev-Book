@@ -355,6 +355,8 @@ div.side-bar {
     display: block;
     position: relative;
     padding: 10px 0;
+    box-shadow: 0 2px 5px -1px #ddd;
+    border-radius: 3px;
 
     .copy {
         display: inline-block;
