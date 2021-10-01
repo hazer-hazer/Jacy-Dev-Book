@@ -10,6 +10,7 @@ const DIST_PATH = path.join(process.cwd(), DIST_DIR)
 const APPENDICES = [
     '_sass',
     'assets',
+    '_includes',
     '_config.yml'
 ]
 
