@@ -352,6 +352,8 @@ div.side-bar {
 
 // Highlighted Jacy code //
 .code-fence {
+    display: block;
+    position: relative;
     padding: 10px 0;
 
     .copy {
