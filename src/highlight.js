@@ -44,9 +44,7 @@ module.exports = src => {
             return `${code}`
         })
         return `
-        <div class="code-fence">
-            ${text}
-        </div>
+        <div class="code-fence">${text}</div>
         `.trim()
     })
 
