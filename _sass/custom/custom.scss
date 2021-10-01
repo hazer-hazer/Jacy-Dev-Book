@@ -337,13 +337,11 @@ div.side-bar {
 
 // Highlighted Jacy code //
 .code-fence {
-    display: grid;
     padding: 10px 0;
     font-size: 14px;
     font-family: 'JetBrains Mono', monospace;
 
     $line-height: 22px;
-    grid-template-rows: $line-height;
 
     .quoted {
         &::before,
@@ -353,12 +351,13 @@ div.side-bar {
     }
 
     &:not(.line-numbers) {
-        grid-template-columns: auto;
         white-space: pre;
     }
 
     // Styles for code fence with line numbers
     &.line-numbers {
+        display: grid;
+        grid-template-rows: $line-height;
         grid-template-columns: max-content auto;
 
         .line-num, .line {
