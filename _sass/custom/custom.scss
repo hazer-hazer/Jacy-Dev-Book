@@ -374,7 +374,7 @@ div.side-bar {
         z-index: 5;
         box-shadow: 0 2px 5px -1px #ddd;
         background: #fff;
-        border-radius: 3px;
+        border-radius: 0 3px 0 5px;
 
         transition: .25s ease;
         cursor: pointer;
