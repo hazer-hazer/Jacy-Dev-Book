@@ -355,9 +355,10 @@ div.side-bar {
 .code-fence {
     display: block;
     position: relative;
-    padding: 0;
+    padding: 5px 0;
     box-shadow: 0 3px 8px -1px #ddd;
-    border-radius: 3px;
+    border-radius: 5px;
+    overflow: hidden;
 
     .copy {
         display: inline-block;
