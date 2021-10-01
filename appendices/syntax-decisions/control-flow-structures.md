@@ -47,6 +47,7 @@ Syntax is following.
 Here are some thoughts about possible solutions.
 
 <div class="code-fence line-numbers highlight-jc hljs">
+            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">while</span> myval {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-comment">// Do something if <span class="inline-code highlight-jc hljs">myval</span> is true</span></div><div class="line-num" data-line-num="3">3</div><div class="line">} <span class="hljs-keyword">else</span> {</div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-comment">// Do something if <span class="inline-code highlight-jc hljs">myval</span> is false (at first)</span></div><div class="line-num" data-line-num="5">5</div><div class="line">}</div>
         </div>
 
@@ -61,6 +62,7 @@ It is an obvious solution, but has some problems:
 Problem example.
 
 <div class="code-fence line-numbers highlight-jc hljs">
+            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = <span class="hljs-keyword">while</span> myval {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">if</span> somethingElse <span class="hljs-operator">=&gt;</span> <span class="hljs-keyword">break</span> <span class="hljs-literal">true</span></div><div class="line-num" data-line-num="3">3</div><div class="line">} <span class="hljs-keyword">else</span> {</div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-literal">false</span></div><div class="line-num" data-line-num="5">5</div><div class="line">}</div>
         </div>
 
@@ -71,6 +73,7 @@ For now, I cannot come up with any good solution, so <span class="inline-code hi
 **IDEA \#1** This one requires static-analysis (maybe complex).
 
 <div class="code-fence line-numbers highlight-jc hljs">
+            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = <span class="hljs-keyword">while</span> myval {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">if</span> somethingElse <span class="hljs-operator">=&gt;</span> <span class="hljs-keyword">break</span> <span class="hljs-literal">true</span></div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-keyword">break</span> <span class="hljs-literal">false</span></div><div class="line-num" data-line-num="4">4</div><div class="line">} <span class="hljs-keyword">else</span> {</div><div class="line-num" data-line-num="5">5</div><div class="line">    <span class="hljs-literal">false</span></div><div class="line-num" data-line-num="6">6</div><div class="line">}</div>
         </div>
 
@@ -79,6 +82,7 @@ We can analyze this code and say that each <span class="inline-code highlight-jc
 What about this?.
 
 <div class="code-fence line-numbers highlight-jc hljs">
+            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = <span class="hljs-keyword">while</span> myval {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">if</span> somethingElse <span class="hljs-operator">=&gt;</span> <span class="hljs-keyword">break</span> <span class="hljs-literal">true</span></div><div class="line-num" data-line-num="3">3</div><div class="line">} <span class="hljs-keyword">else</span> {</div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-literal">false</span></div><div class="line-num" data-line-num="5">5</div><div class="line">}</div>
         </div>
 
@@ -89,6 +93,7 @@ We required some static-analysis on <span class="inline-code highlight-jc hljs">
 we cover only this use case.
 
 <div class="code-fence line-numbers highlight-jc hljs">
+            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = <span class="hljs-keyword">if</span> myval {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">result</span> = <span class="hljs-literal">false</span></div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-keyword">while</span> myval {</div><div class="line-num" data-line-num="4">4</div><div class="line">        <span class="hljs-comment">// ...</span></div><div class="line-num" data-line-num="5">5</div><div class="line">        <span class="hljs-keyword">if</span> somethingElse {</div><div class="line-num" data-line-num="6">6</div><div class="line">            result = <span class="hljs-literal">true</span></div><div class="line-num" data-line-num="7">7</div><div class="line">            <span class="hljs-keyword">break</span></div><div class="line-num" data-line-num="8">8</div><div class="line">        }</div><div class="line-num" data-line-num="9">9</div><div class="line">    }</div><div class="line-num" data-line-num="10">10</div><div class="line">    <span class="hljs-keyword">return</span> result</div><div class="line-num" data-line-num="11">11</div><div class="line">} <span class="hljs-keyword">else</span> {</div><div class="line-num" data-line-num="12">12</div><div class="line">    <span class="hljs-literal">false</span></div><div class="line-num" data-line-num="13">13</div><div class="line">}</div>
         </div>
 
@@ -112,6 +117,7 @@ for (int i = 0; i < something; i++) {
 }
 
 <div class="code-fence line-numbers highlight-jc hljs">
+            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// In Jacy:</span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">for</span> <span class="hljs-variable">i</span> <span class="hljs-keyword">in</span> <span class="hljs-number">0</span>..=something {</div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-comment">// ...</span></div><div class="line-num" data-line-num="4">4</div><div class="line">}</div>
         </div>
 
@@ -123,6 +129,7 @@ for (const auto & x : vec) {
 ```
 
 <div class="code-fence line-numbers highlight-jc hljs">
+            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// In Jacy</span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">for</span> <span class="hljs-variable">x</span> <span class="hljs-keyword">in</span> &amp;vec {</div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-comment">// ...</span></div><div class="line-num" data-line-num="4">4</div><div class="line">}</div>
         </div>
 <div class="nav-btn-block">

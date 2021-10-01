@@ -25,6 +25,7 @@ In the HIR there is nothing like <span class="inline-code highlight-jc hljs"><sp
 At first, we need to establish what the <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">for</span></span> loop can do in _Jacy_. No C-like <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">for</span></span> loop exists and the only one construction is using iterator. C-like loops iterating over integer values are covered with iteration over ranges.
 
 <div class="code-fence line-numbers highlight-jc hljs">
+            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">for</span> <span class="hljs-variable">i</span> <span class="hljs-keyword">in</span> <span class="hljs-number">0</span>..<span class="hljs-number">100</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-title function_ invoke__">print</span>(i);</div><div class="line-num" data-line-num="3">3</div><div class="line">}</div>
         </div>
 
@@ -32,6 +33,7 @@ Let's disassemble this loop into instructions that are done implicitly.
 <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">for</span></span> loop accepts the expression of a type that implements the <span class="inline-code highlight-jc hljs">Iterator</span> trait. In this case, it is an integer range from <span class="inline-code highlight-jc hljs"><span class="hljs-number">0</span></span> to <span class="inline-code highlight-jc hljs"><span class="hljs-number">100</span></span> exclusively. So, at first, we need to get an iterator of <span class="inline-code highlight-jc hljs"><span class="hljs-number">0</span>..<span class="hljs-number">100</span></span>.
 
 <div class="code-fence line-numbers highlight-jc hljs">
+            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">iter</span> = (<span class="hljs-number">0</span>..<span class="hljs-number">100</span>).<span class="hljs-title function_ invoke__">intoIter</span>();</div>
         </div>
 
@@ -40,6 +42,7 @@ Here, the compiler uses <span class="inline-code highlight-jc hljs">intoIter</sp
 Then we need to go through all values:
 
 <div class="code-fence line-numbers highlight-jc hljs">
+            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">iter</span> = (<span class="hljs-number">0</span>..<span class="hljs-number">100</span>).<span class="hljs-title function_ invoke__">intoIter</span>();</div><div class="line-num" data-line-num="2">2</div><div class="line"></div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-comment">// Added</span></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-keyword">while</span> <span class="hljs-keyword">let</span> <span class="hljs-variable">Some</span>(i) = iter.<span class="hljs-title function_ invoke__">next</span>() {</div><div class="line-num" data-line-num="5">5</div><div class="line">    <span class="hljs-title function_ invoke__">print</span>(i);</div><div class="line-num" data-line-num="6">6</div><div class="line">}</div>
         </div>
 
