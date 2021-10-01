@@ -1,5 +1,12 @@
 @import './color-schemes/ayu.scss';
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body {
+    * {
+        font-family: 'Roboto', sans-serif;
+    }
+}
 
 .site-logo {
     background-position: center;
