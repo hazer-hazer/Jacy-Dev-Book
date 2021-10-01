@@ -19,21 +19,18 @@ same way. Let's look at some examples:
 * This block is of type <span class="inline-code highlight-jc hljs"><span class="hljs-type">bool</span></span> and has result value <span class="inline-code highlight-jc hljs"><span class="hljs-literal">true</span></span>, even though we don't use this value
 
 <div class="code-fence line-numbers highlight-jc hljs">
-            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = {<span class="hljs-literal">true</span>}</div>
         </div>
 
 * This block will produce a type error because it either has a result of type of <span class="inline-code highlight-jc hljs">myval</span> or <span class="inline-code highlight-jc hljs">()</span> (unit type)
 
 <div class="code-fence line-numbers highlight-jc hljs">
-            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = {<span class="hljs-keyword">if</span> myval <span class="hljs-operator">=&gt;</span> myval}</div>
         </div>
 
 * This block won't produce a type error, because we don't use the result value
 
 <div class="code-fence line-numbers highlight-jc hljs">
-            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line">{<span class="hljs-keyword">if</span> myval <span class="hljs-operator">=&gt;</span> myval}</div>
         </div>
 
@@ -47,7 +44,6 @@ In this thing, _Jacy_ blocks differ from Rust's. I really appreciate the opportu
 one-line blocks we use the same syntax. Let's look at the syntax.
 
 <div class="code-fence line-numbers highlight-jc hljs">
-            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">while</span> <span class="hljs-literal">true</span> <span class="hljs-operator">=&gt;</span> <span class="hljs-title function_ invoke__">print</span>(<span class="hljs-string">&quot;kek&quot;</span>)</div>
         </div>
 
@@ -70,7 +66,6 @@ ignore any block (including control-structures, <span class="inline-code highlig
 Examples.
 
 <div class="code-fence line-numbers highlight-jc hljs">
-            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">if</span> myval;</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">else</span> <span class="hljs-title function_ invoke__">doSomething</span>()</div>
         </div>
 

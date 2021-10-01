@@ -32,7 +32,6 @@ Operator syntax is not specified, thus <span class="inline-code highlight-jc hlj
 Code sample:
 
 <div class="code-fence line-numbers highlight-jc hljs">
-            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line">a [OP] b</div>
         </div>
 

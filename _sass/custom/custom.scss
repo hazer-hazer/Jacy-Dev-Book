@@ -335,6 +335,11 @@ div.side-bar {
     }
 }
 
+.inline-code {
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #f0f0f0;
+}
+
 // Highlighted Jacy code //
 .code-fence {
     padding: 10px 0;
@@ -343,23 +348,23 @@ div.side-bar {
 
     $line-height: 22px;
 
-    .copy {
-        display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: max-content;
-        height: 20px;
-        font-size: 16px;
-        line-height: 20px;
-        vertical-align: middle;
-        padding: 5px 10px;
+    // .copy {
+    //     display: block;
+    //     position: absolute;
+    //     top: 0;
+    //     right: 0;
+    //     width: max-content;
+    //     height: 20px;
+    //     font-size: 16px;
+    //     line-height: 20px;
+    //     vertical-align: middle;
+    //     padding: 5px 10px;
 
-        transition: .25s ease;
-        &:hover {
-            background: #f0f0f0;
-        }
-    }
+    //     transition: .25s ease;
+    //     &:hover {
+    //         background: #f0f0f0;
+    //     }
+    // }
 
     .quoted {
         &::before,

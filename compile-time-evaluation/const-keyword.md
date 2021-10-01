@@ -25,7 +25,6 @@ The difference between <span class="inline-code highlight-jc hljs"><span class="
 <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> can be placed mostly on any level, including top-level.
 
 <div class="code-fence line-numbers highlight-jc hljs">
-            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">const</span> a = <span class="hljs-number">10</span></div><div class="line-num" data-line-num="2">2</div><div class="line"></div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-keyword">trait</span> <span class="hljs-title class_">MyTrait</span> {</div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-keyword">const</span> traitConst = <span class="hljs-number">1010</span></div><div class="line-num" data-line-num="5">5</div><div class="line">}</div><div class="line-num" data-line-num="6">6</div><div class="line"></div><div class="line-num" data-line-num="7">7</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span>() {</div><div class="line-num" data-line-num="8">8</div><div class="line">    <span class="hljs-keyword">const</span> b = <span class="hljs-number">123</span></div><div class="line-num" data-line-num="9">9</div><div class="line">}</div>
         </div>
 <div class="nav-btn-block">

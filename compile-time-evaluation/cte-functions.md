@@ -17,7 +17,6 @@ A function is CTE if:
 We mark a function as CTE so.
 
 <div class="code-fence line-numbers highlight-jc hljs">
-            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>() {}</div>
         </div>
 
@@ -34,14 +33,12 @@ context when compiler goes to this function and checks that it's CTE function. A
 run-time context it won't be inlined and evaluated at compile-time. Example.
 
 <div class="code-fence line-numbers highlight-jc hljs">
-            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// Just a simple function that returns <span class="inline-code highlight-jc hljs"><span class="hljs-number">1</span></span></span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span> = <span class="hljs-number">1</span></div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">myConstFunc</span> {</div><div class="line-num" data-line-num="5">5</div><div class="line">    <span class="hljs-keyword">const</span> a = <span class="hljs-title function_ invoke__">foo</span>()</div><div class="line-num" data-line-num="6">6</div><div class="line">}</div><div class="line-num" data-line-num="7">7</div><div class="line"></div><div class="line-num" data-line-num="8">8</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">myRawFunc</span> {</div><div class="line-num" data-line-num="9">9</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = <span class="hljs-title function_ invoke__">foo</span>()</div><div class="line-num" data-line-num="10">10</div><div class="line">}</div>
         </div>
 
 After <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">const</span></span> expansion this code will look (structurally) like that.
 
 <div class="code-fence line-numbers highlight-jc hljs">
-            <div class="copy">copy</div>
             <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>() = <span class="hljs-number">1</span></div><div class="line-num" data-line-num="2">2</div><div class="line"></div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-keyword">const</span> <span class="hljs-keyword">func</span> <span class="hljs-title function_">myConstFunc</span>() {</div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-keyword">const</span> a = <span class="hljs-number">1</span></div><div class="line-num" data-line-num="5">5</div><div class="line">}</div><div class="line-num" data-line-num="6">6</div><div class="line"></div><div class="line-num" data-line-num="7">7</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">myRawFunc</span>() {</div><div class="line-num" data-line-num="8">8</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = <span class="hljs-title function_ invoke__">foo</span>()</div><div class="line-num" data-line-num="9">9</div><div class="line">}</div>
         </div>
 
