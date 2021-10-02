@@ -7,7 +7,7 @@ aux_links:
 
 aux_links_new_tab: true
 
-color_scheme: nil
+color_scheme: main
 
 back_to_top: true
 back_to_top_text: "Back to top"
