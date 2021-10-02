@@ -43,7 +43,7 @@ This is the foundation of Rust -- move semantics.
 Example:
 
 <div class="code-fence">
-            <div class="copy">copy</div>
+            <div class="copy"><i class="fas fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">a</span> = MyStruct {field: <span class="hljs-number">123</span>};</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">b</span> = a; <span class="hljs-comment">// <span class="inline-code highlight-jc hljs">a</span> is moved to <span class="inline-code highlight-jc hljs">b</span></span></div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">c</span> = b; <span class="hljs-comment">// <span class="inline-code highlight-jc hljs">b</span> is moved to <span class="inline-code highlight-jc hljs">c</span></span></div>
             </div>
@@ -60,7 +60,7 @@ Linear types allow moving from immutable context to mutable one.
 Example (pseudo Pony-like code):
 
 <div class="code-fence">
-            <div class="copy">copy</div>
+            <div class="copy"><i class="fas fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">a</span> = <span class="hljs-number">123</span>;</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">b</span> = <span class="hljs-keyword">mut</span> <span class="hljs-keyword">ref</span> a;</div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-keyword">mut </span><span class="hljs-variable">c</span> = b; <span class="hljs-comment">// <span class="inline-code highlight-jc hljs">b</span> is not moved to <span class="inline-code highlight-jc hljs">c</span>, <span class="inline-code highlight-jc hljs">c</span> re-borrows <span class="inline-code highlight-jc hljs">a</span></span></div><div class="line-num" data-line-num="4">4</div><div class="line"></div><div class="line-num" data-line-num="5">5</div><div class="line"><span class="hljs-comment">// <span class="inline-code highlight-jc hljs">b</span> cannot be sent to another thread and can only be used in single one</span></div>
             </div>

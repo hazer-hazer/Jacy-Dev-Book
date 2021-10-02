@@ -14,7 +14,7 @@ parent: 'Particles [β RFCs]'
 Converter marker:
 
 <div class="code-fence">
-            <div class="copy">copy</div>
+            <div class="copy"><i class="fas fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">impl</span> <span class="hljs-title class_">String</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    @<span class="hljs-title function_ invoke__">apiMarker</span>(kind: <span class="hljs-string">&quot;converter&quot;</span>)</div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">toInt</span>() = <span class="hljs-title function_ invoke__">parseInt</span>(<span class="hljs-keyword">self</span>);</div><div class="line-num" data-line-num="4">4</div><div class="line">}</div><div class="line-num" data-line-num="5">5</div><div class="line"></div><div class="line-num" data-line-num="6">6</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="7">7</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">s</span>: <span class="hljs-type">String</span> = <span class="hljs-string">&quot;123&quot;</span>;</div><div class="line-num" data-line-num="8">8</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">a</span>: <span class="hljs-type">int</span> = s;</div><div class="line-num" data-line-num="9">9</div><div class="line">}</div>
             </div>
@@ -23,7 +23,7 @@ Converter marker:
 And this code will produce an error like:
 
 <div class="code-fence">
-            <div class="copy">copy</div>
+            <div class="copy"><i class="fas fa-copy"></i></div>
             <div class="code">Invalid type String for int
 Note: try call s.toInt()
 </div>

@@ -12,7 +12,7 @@ nav_order: 5
 ## Basic usage
 
 <div class="code-fence">
-            <div class="copy">copy</div>
+            <div class="copy"><i class="fas fa-copy"></i></div>
             <div class="code">./jc (.exe for windows) [source files] --boolean-argument -key-value-argument=param1, param2, ..., paramN
 </div>
         </div>
@@ -33,7 +33,7 @@ Also, arguments have constraints:
 Example usage.
 
 <div class="code-fence">
-            <div class="copy">copy</div>
+            <div class="copy"><i class="fas fa-copy"></i></div>
             <div class="code">./bin example.jc --print=ast
 </div>
         </div>
@@ -107,7 +107,7 @@ What if you want to set bool-arg to <span class="inline-code highlight-jc hljs">
 the pretty same syntax for bool-args as for key-value args.
 
 <div class="code-fence">
-            <div class="copy">copy</div>
+            <div class="copy"><i class="fas fa-copy"></i></div>
             <div class="code">--dev=no
 </div>
         </div>
