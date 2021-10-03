@@ -1,11 +1,10 @@
 remote_theme: pmarsceill/just-the-docs
-
-url: "https://jacylang.github.io"
-baseurl: "/dev-book"
-
-permalink: pretty
-
 logo: "/assets/img/JacyLarge.png"
+
+# url: "https://jacylang.github.io"
+# baseurl: "/dev-book"
+
+# permalink: pretty
 
 aux_links:
   "Jacy on GitHub":
@@ -13,7 +12,7 @@ aux_links:
 
 aux_links_new_tab: true
 
-color_scheme: nil
+color_scheme: main
 
 back_to_top: true
 back_to_top_text: "Back to top"
