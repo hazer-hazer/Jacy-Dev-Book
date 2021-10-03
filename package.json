@@ -4,7 +4,7 @@
   "description": "Page-gen script",
   "main": "gen.js",
   "scripts": {
-    "gen": "node gen.js"
+    "build": "node gen.js"
   },
   "repository": {
     "type": "git",
