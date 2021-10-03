@@ -2,13 +2,14 @@ Zepto($ => {
     $('.code-fence > .copy').on('click', function (el) {
         const code = $(this).parent().find('.line').text()
     
-        const bufferInput = document.createElement('input')
-    
-        bufferInput.innerText = code
-        bufferInput.focus()
+        const bufferInput = document.createElement('textarea')
+
+        bufferInput.value = code
         bufferInput.select()
 
         console.log('copied', bufferInput.innerText);
         document.execCommand('copy')
+
+        document.body.removeChild(bufferInput)
     })
 })
