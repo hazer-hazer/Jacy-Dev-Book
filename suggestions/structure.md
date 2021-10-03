@@ -19,6 +19,11 @@ What I want:
 
 - Header message, i.e. the actual "error/warning" message, the most essential part
 - Span highlighting styles
+
+## The structure
+
+Each suggestion must have a base, i.e. the main message and span (currently required and likely non-spanned suggestions will be implemented differently).
+Each suggestion can have any count of children.
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/Jacy-Dev-Book/suggestions/index.html">< Suggestions</a>
