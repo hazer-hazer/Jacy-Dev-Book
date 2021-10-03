@@ -1,10 +1,10 @@
 remote_theme: pmarsceill/just-the-docs
 logo: "/assets/img/JacyLarge.png"
 
-# url: "https://jacylang.github.io"
-# baseurl: "/dev-book"
+url: "https://jacylang.github.io"
+baseurl: "/dev-book"
 
-# permalink: pretty
+permalink: pretty
 
 aux_links:
   "Jacy on GitHub":
