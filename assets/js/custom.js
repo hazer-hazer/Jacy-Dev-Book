@@ -3,6 +3,7 @@ Zepto($ => {
         const code = $(this).parent().find('.line').text()
     
         const bufferInput = document.createElement('textarea')
+        document.body.appendChild(bufferInput)
 
         bufferInput.value = code
         bufferInput.select()
