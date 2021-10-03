@@ -19,7 +19,7 @@ the <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">mut</
 The syntax.
 
 <div class="code-fence">
-            <div class="copy"><i class="fas fa-copy"></i></div>
+            <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code">'let' pattern (':' type)? ('=' expr)?
 </div>
         </div>

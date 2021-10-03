@@ -81,7 +81,7 @@ I consider making operator declarations items as a good solution.
 For now, I propose this syntax:
 
 <div class="code-fence">
-            <div class="copy"><i class="fas fa-copy"></i></div>
+            <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// Operator type declaration</span></div><div class="line-num" data-line-num="2">2</div><div class="line">operator <span class="hljs-keyword">type</span> <span class="hljs-title class_">Assignment</span> {</div><div class="line-num" data-line-num="3">3</div><div class="line">    higherThan: Pipe</div><div class="line-num" data-line-num="4">4</div><div class="line">    lowerThan: Additive</div><div class="line-num" data-line-num="5">5</div><div class="line">    associativity: left</div><div class="line-num" data-line-num="6">6</div><div class="line">}</div><div class="line-num" data-line-num="7">7</div><div class="line"></div><div class="line-num" data-line-num="8">8</div><div class="line"><span class="hljs-comment">// Operator declaration</span></div><div class="line-num" data-line-num="9">9</div><div class="line">infix operator <span class="inline-code highlight-jc hljs">×=</span>: Assignment;</div><div class="line-num" data-line-num="10">10</div><div class="line"></div><div class="line-num" data-line-num="11">11</div><div class="line"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">S</span> {</div><div class="line-num" data-line-num="12">12</div><div class="line">    field: <span class="hljs-type">int</span></div><div class="line-num" data-line-num="13">13</div><div class="line"></div><div class="line-num" data-line-num="14">14</div><div class="line">    <span class="hljs-keyword">mut</span> <span class="hljs-keyword">func</span> <span class="inline-code highlight-jc hljs">×=</span>(rhs: &amp;<span class="hljs-keyword">Self</span>): &amp;<span class="hljs-keyword">mut</span> <span class="hljs-keyword">self</span> {</div><div class="line-num" data-line-num="15">15</div><div class="line">        <span class="hljs-keyword">self</span>.field *= rhs.field</div><div class="line-num" data-line-num="16">16</div><div class="line">        <span class="hljs-keyword">return</span> <span class="hljs-keyword">self</span></div><div class="line-num" data-line-num="17">17</div><div class="line">    }</div><div class="line-num" data-line-num="18">18</div><div class="line">}</div>
             </div>
@@ -200,7 +200,7 @@ Symbols that might be used as part of custom operators (maybe only in the middle
 When an operator ends with <span class="inline-code highlight-jc hljs">&lt;</span> here comes a problem:
 
 <div class="code-fence">
-            <div class="copy"><i class="fas fa-copy"></i></div>
+            <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> &lt;&lt;&lt;T&gt;(other: T) {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-comment">// ...</span></div><div class="line-num" data-line-num="3">3</div><div class="line">}</div>
             </div>
@@ -210,7 +210,7 @@ Anyway, I already proposed a syntax where function generics are written after <s
 So, this would be parsed successfully:
 
 <div class="code-fence">
-            <div class="copy"><i class="fas fa-copy"></i></div>
+            <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span>&lt;T&gt; &lt;&lt;(other: T) {}</div>
             </div>
