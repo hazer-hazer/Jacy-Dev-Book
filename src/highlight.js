@@ -2,6 +2,8 @@ const hljs = require('highlight.js/lib/core')
 const jacyLang = require('@jacy-lang/jacy.highlight.js')
 hljs.registerLanguage('jc', jacyLang);
 
+const COPY_EL = '<div class="copy"><i class="far fa-copy"></i></div>'
+
 const getSourceLines = src => src.split(/\r\n|\r|\n/g)
 
 const addLineNum = (num, line) => {
@@ -33,7 +35,7 @@ module.exports = src => {
     let highlighted = src.replace(/```jc\n((?:(?!```)[\s\S])+)```/g, (match, code) => {
         return `
         <div class="code-fence">
-            <div class="copy"><i class="fas fa-copy"></i></div>
+            ${COPY_EL}
             <div class="code line-numbers highlight-jc hljs">
                 ${addLineNumbers(hljs.highlight(code, {language: 'jc'}).value)}
             </div>
@@ -48,7 +50,7 @@ module.exports = src => {
         })
         return `
         <div class="code-fence">
-            <div class="copy"><i class="fas fa-copy"></i></div>
+            ${COPY_EL}
             <div class="code">${text}</div>
         </div>
         `.trim()
