@@ -6,7 +6,8 @@ Zepto($ => {
     
         bufferInput.innerText = code
         bufferInput.focus()
-    
+        bufferInput.select()
+
         console.log('copied', bufferInput.innerText);
         document.execCommand('copy')
     })
