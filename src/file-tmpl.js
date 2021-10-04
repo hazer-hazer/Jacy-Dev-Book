@@ -28,8 +28,8 @@ return `
 `.trim() + '\n'
 }
 
-const addCustomElements = src => {
-    return src.replace(/\{:>(.*):\}\n+((>.*\n?)+)/g, (match, name, contents) => {
+const addCustomElements = src => src
+    .replace(/\{:>(.*):\}\n+((>.*\n?)+)/g, (match, name, contents) => {
         contents = contents.replace(/>\s*/g, '')
         let id = `input-${md5(contents)}`
         return `
@@ -40,7 +40,11 @@ const addCustomElements = src => {
 </div>
 `.trim() + '\n'
     })
-}
+    .replace(/\{:@(.*):\}/g, (match, text) => {
+        return `
+<span class="label-highlight">${text}</span>
+        `.trim()
+    })
 
 const tmpl = {
     earlyTmpl({
