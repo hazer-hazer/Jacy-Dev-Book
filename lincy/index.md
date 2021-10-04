@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Lincy [Linter]'
-nav_order: 46
+nav_order: 48
 # No parent
 has_children: true
 # No grandparent
