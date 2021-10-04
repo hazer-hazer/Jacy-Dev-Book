@@ -3,6 +3,10 @@
 
 @import './color-schemes/ayu.scss';
 
+html {
+    font-size: 100%;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
 }
@@ -54,7 +58,7 @@ body {
 .site-button {
     transition: 0.25s;
     background-image: none;
-    font-size: 0.8em;
+    font-size: 0.8rem;
     border-radius: 7px 0 0 7px;
 }
 
@@ -71,7 +75,7 @@ body {
 
 .site-button {
     border-radius: 2px;
-    font-size: 0.8em;
+    font-size: 0.8rem;
 }
 
 code {
@@ -87,10 +91,10 @@ code {
 
 pre.lineno {
     width: 100%;
-    padding-right: 0.75em !important;
+    padding-right: 0.75rem !important;
     text-align: right;
     box-shadow: 1px 0 #afaaaa;
-    font-size: 0.6em;
+    font-size: 0.6rem;
 }
 
 .rouge-table tbody tr {
@@ -152,21 +156,21 @@ p {
 
 h1 {
     margin: 15px auto;
-    font-size: 2.1em !important;
+    font-size: 2.1rem !important;
     font-weight: 200 !important;
 
     code {
-        font-size: 1.8em !important;
+        font-size: 1.8rem !important;
     }
 }
 
 h2 {
-    font-size: 1.8em !important;
+    font-size: 1.8rem !important;
     font-weight: 300 !important;
     margin-top: 30px;
 
     code {
-        font-size: 1.6em !important;
+        font-size: 1.6rem !important;
     }
 }
 
@@ -176,12 +180,12 @@ h3 {
     vertical-align: middle;
     font-weight: 300 !important;
 
-    font-size: 1.4em !important;
+    font-size: 1.4rem !important;
 
     margin-top: 20px;
 
     code {
-        font-size: 1.2em !important;
+        font-size: 1.2rem !important;
     }
 }
 
@@ -195,17 +199,17 @@ h4 {
     vertical-align: middle;
     margin-top: 25px;
     box-shadow: 0 1px #ddd;
-    font-size: 1em !important;
+    font-size: 1rem !important;
 
     code {
-        font-size: 0.9em !important;
+        font-size: 0.9rem !important;
     }
 }
 
 h5 {
-    font-size: 0.8em !important;
+    font-size: 0.8rem !important;
     code {
-        font-size: 0.75em !important;
+        font-size: 0.75rem !important;
     }
 }
 
@@ -221,12 +225,12 @@ li {
 //     font-size: $font-size-4;
 
 //     &::before {
-//         margin-left: 0.5em !important;
+//         margin-left: 0.5rem !important;
 //     }
 // }
 
 // ul {
-//     padding-left: 1em !important;
+//     padding-left: 1rem !important;
 // }
 
 div.side-bar {
@@ -248,7 +252,7 @@ div.side-bar {
     transition: 0.25s ease;
     border: none;
     cursor: pointer;
-    font-size: 1em;
+    font-size: 1rem;
 
     &:hover {
         background: #f0f0f0;
@@ -289,7 +293,7 @@ div.side-bar {
             height: 30px !important;
             line-height: 30px;
             vertical-align: middle;
-            font-size: 1.1em;
+            font-size: 1.1rem;
             font-weight: 500;
             text-decoration: none;
         }
@@ -321,7 +325,7 @@ div.side-bar {
         background: #fff;
         border-radius: 5px;
         transition: 0.15s ease;
-        font-size: 0.9em;
+        font-size: 0.9rem;
         cursor: pointer;
         box-shadow: 0 0 0 1px #f0f0f0;
 
@@ -338,7 +342,7 @@ div.side-bar {
         display: none;
         width: 100%;
         padding: 5px 8px;
-        font-size: 0.9em !important;
+        font-size: 0.9rem !important;
     }
 
     input:checked ~ .content {
@@ -382,7 +386,7 @@ div.side-bar {
         right: 0;
         width: max-content;
         height: max-content;
-        font-size: 0.9em;
+        font-size: 0.9rem;
         line-height: 20px;
         vertical-align: middle;
         padding: 5px 10px;
@@ -404,7 +408,7 @@ div.side-bar {
     }
 
     .code {
-        font-size: 0.8em;
+        font-size: 0.8rem;
         font-family: 'JetBrains Mono', monospace;
     
         $line-height: 22px;
@@ -447,7 +451,7 @@ div.side-bar {
                 user-select: none;
                 text-align: right;
                 box-shadow: inset -1px 0 #ccc;
-                font-size: 0.6em;
+                font-size: 0.6rem;
                 padding: 0 12px;
                 color: #888;
             }
