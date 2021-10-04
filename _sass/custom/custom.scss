@@ -352,6 +352,16 @@ div.side-bar {
     vertical-align: middle;
 }
 
+.label {
+    position: relative;
+    top: -1px;
+    border-radius: 5px;
+    box-shadow: 0 0 0 1px #f0f0f0, 0 2px 4px -1px #f0f0f0;
+    padding: 1px 3px;
+    vertical-align: middle;
+    color: lighten(#f03e3e, 20%);
+}
+
 // Highlighted Jacy code //
 .code-fence {
     display: block;
