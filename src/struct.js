@@ -61,8 +61,18 @@ module.exports = {
             order: 45,
             title: 'User Guide',
         },
-        lincy: {
+        roadmaps: {
             order: 46,
+            title: 'Roadmaps',
+            children: {
+                'v0.1.0': {
+                    order: 1,
+                    title: 'v0.1.0 [First alpha version]',
+                },
+            },
+        },
+        lincy: {
+            order: 48,
             title: 'Lincy [Linter]',
         },
         ideas: {
