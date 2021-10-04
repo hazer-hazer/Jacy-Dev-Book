@@ -132,15 +132,15 @@ blockquote {
     box-shadow: 0 4px 8px -1px #ddd, 0 0 0 1px #f0f0f0;
 }
 
-.anchor-heading svg {
-    visibility: visible;
-    opacity: 0;
-    transition: 0.15s ease;
-}
+// .anchor-heading svg {
+//     visibility: visible;
+//     opacity: 0;
+//     transition: 0.15s ease;
+// }
 
-h4:hover .anchor-heading svg {
-    opacity: 1;
-}
+// h4:hover .anchor-heading svg {
+//     opacity: 1;
+// }
 
 p {
     font-size: $font-size-4;
