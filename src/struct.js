@@ -77,7 +77,7 @@ module.exports = {
         },
         ideas: {
             order: 50,
-            title: 'Ideas [α RFCs]',
+            title: 'Ideas',
             children: {
                 'extended-tools': {
                     order: 10,
@@ -87,7 +87,7 @@ module.exports = {
         },
         particles: {
             order: 60,
-            title: 'Particles [β RFCs]',
+            title: 'Particles',
             children: {},
         },
         appendices: {
