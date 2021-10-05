@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Function type & names'
 nav_order: 104
-parent: 'Particles [β RFCs]'
+parent: 'Particles'
 # No children
 # No grandparent
 ---

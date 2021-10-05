@@ -1,6 +1,6 @@
 ---
 layout: 'default'
-title: 'Ideas [α RFCs]'
+title: 'Ideas'
 nav_order: 50
 # No parent
 has_children: true

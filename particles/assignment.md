@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Assignment'
 nav_order: 100
-parent: 'Particles [β RFCs]'
+parent: 'Particles'
 # No children
 # No grandparent
 ---
@@ -18,7 +18,7 @@ The reasons why overloading is not allowed are:
 3. It complicates the logic for devs as for target users.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/index.html">< Particles [β RFCs]</a>
+    <a class="link" href="/Jacy-Dev-Book/particles/index.html">< Particles</a>
 </button>
 
     <button class="nav-btn right">

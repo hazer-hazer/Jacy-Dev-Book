@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Refs & moves'
 nav_order: 109
-parent: 'Particles [β RFCs]'
+parent: 'Particles'
 # No children
 # No grandparent
 ---

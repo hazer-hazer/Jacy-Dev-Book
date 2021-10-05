@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Named arg alias'
 nav_order: 102
-parent: 'Ideas [α RFCs]'
+parent: 'Ideas'
 # No children
 # No grandparent
 ---

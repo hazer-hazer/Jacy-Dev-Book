@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Types as first class citizens'
 nav_order: 103
-parent: 'Ideas [α RFCs]'
+parent: 'Ideas'
 # No children
 # No grandparent
 ---

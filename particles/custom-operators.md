@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Custom operators'
 nav_order: 103
-parent: 'Particles [β RFCs]'
+parent: 'Particles'
 # No children
 # No grandparent
 ---

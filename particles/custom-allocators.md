@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Custom allocators'
 nav_order: 102
-parent: 'Particles [β RFCs]'
+parent: 'Particles'
 # No children
 # No grandparent
 ---

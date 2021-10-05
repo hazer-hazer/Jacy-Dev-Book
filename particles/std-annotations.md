@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Std annotations'
 nav_order: 111
-parent: 'Particles [β RFCs]'
+parent: 'Particles'
 # No children
 # No grandparent
 ---

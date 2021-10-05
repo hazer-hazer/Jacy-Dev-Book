@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Organic jacy'
 nav_order: 108
-parent: 'Particles [β RFCs]'
+parent: 'Particles'
 # No children
 # No grandparent
 ---

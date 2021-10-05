@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Code style conventions'
 nav_order: 100
-parent: 'Ideas [α RFCs]'
+parent: 'Ideas'
 # No children
 # No grandparent
 ---
@@ -99,7 +99,7 @@ is specific? Here's the table of common cases:
 <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">mod</span></span> MUST BE named in __snake_case__: <span class="inline-code highlight-jc hljs">std</span>, <span class="inline-code highlight-jc hljs">my_lib</span>, <span class="inline-code highlight-jc hljs">some_module</span>
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/ideas/index.html">< Ideas [α RFCs]</a>
+    <a class="link" href="/Jacy-Dev-Book/ideas/index.html">< Ideas</a>
 </button>
 
     <button class="nav-btn right">

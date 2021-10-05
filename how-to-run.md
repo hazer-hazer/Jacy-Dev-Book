@@ -129,7 +129,7 @@ _This values are case insensitive, so you are able to write <span class="inline-
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/ideas">Ideas [α RFCs] ></a>
+    <a class="link" href="/Jacy-Dev-Book/ideas">Ideas ></a>
 </button>
 
 </div>

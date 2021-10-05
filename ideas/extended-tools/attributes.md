@@ -4,7 +4,7 @@ title: 'Attributes'
 nav_order: 100
 parent: 'Extensions & External tools'
 # No children
-grand_parent: 'Ideas [α RFCs]'
+grand_parent: 'Ideas'
 ---
 
 # Attributes for extended tools

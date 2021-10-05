@@ -1,6 +1,6 @@
 ---
 layout: 'default'
-title: 'Particles [β RFCs]'
+title: 'Particles'
 nav_order: 60
 # No parent
 has_children: true

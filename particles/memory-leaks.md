@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Memory leaks'
 nav_order: 105
-parent: 'Particles [β RFCs]'
+parent: 'Particles'
 # No children
 # No grandparent
 ---

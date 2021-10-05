@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Not prepedent op'
 nav_order: 106
-parent: 'Particles [β RFCs]'
+parent: 'Particles'
 # No children
 # No grandparent
 ---

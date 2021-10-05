@@ -2,7 +2,7 @@
 layout: 'default'
 title: 'Computed properties'
 nav_order: 101
-parent: 'Particles [β RFCs]'
+parent: 'Particles'
 # No children
 # No grandparent
 ---
