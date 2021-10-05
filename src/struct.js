@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'Table of contents',
+    title: 'Jacy DevBook',
     children: {
         intro: {
             order: 2,
