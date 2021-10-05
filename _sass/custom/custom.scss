@@ -282,7 +282,7 @@ div.side-bar {
     .nav-btn {
         width: max-content;
         height: max-content;
-        border-radius: 6px;
+        border-radius: 4px;
         background: #fff;
         border: none;
 
@@ -300,7 +300,7 @@ div.side-bar {
 
         &:hover {
             background: darken(#fff0f0, 2%);
-            box-shadow: 0 3px 6px -1px #ddd;
+            box-shadow: 0 3px 5px -1px #f0f0f0;
         }
     }
 }
