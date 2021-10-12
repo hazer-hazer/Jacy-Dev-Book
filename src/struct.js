@@ -88,7 +88,12 @@ module.exports = {
         particles: {
             order: 60,
             title: 'Particles',
-            children: {},
+            children: {
+                'syntax-decisions': {
+                    order: 50,
+                    title: 'Syntax Decisions',
+                },
+            },
         },
         appendices: {
             order: 100,
@@ -101,10 +106,6 @@ module.exports = {
                 'jon-files': {
                     order: 40,
                     title: 'JON Files',
-                },
-                'syntax-decisions': {
-                    order: 50,
-                    title: 'Syntax Decisions',
                 },
                 spec: {
                     order: 50,
