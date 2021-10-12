@@ -62,7 +62,7 @@ In the next chapters, we will discuss <span class="inline-code highlight-jc hljs
 #### <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">while</span></span> loop lowering
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/lowering/hir.md">< Hir</a>
+    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/lowering/hir">< Hir</a>
 </button>
 
     

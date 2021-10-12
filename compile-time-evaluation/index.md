@@ -22,7 +22,7 @@ There are some terms we need to establish:
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/const-keyword.md">Const keyword ></a>
+    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/const-keyword">Const keyword ></a>
 </button>
 
 </div>

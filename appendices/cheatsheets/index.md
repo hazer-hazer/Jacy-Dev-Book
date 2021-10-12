@@ -14,7 +14,7 @@ You don't have to read it specifically as if some cheatsheet exists it is linked
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/appendices/cheatsheets/name-resolution-cheatsheet.md">Name resolution cheatsheet ></a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/cheatsheets/name-resolution-cheatsheet">Name resolution cheatsheet ></a>
 </button>
 
 </div>

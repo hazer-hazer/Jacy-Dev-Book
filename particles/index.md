@@ -19,7 +19,7 @@ I want to keep a list of almost every particular decision I've made to make it p
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/assignment.md">Assignment ></a>
+    <a class="link" href="/Jacy-Dev-Book/particles/assignment">Assignment ></a>
 </button>
 
 </div>

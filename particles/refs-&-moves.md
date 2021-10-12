@@ -132,11 +132,11 @@ __STATUS__ - IDEA IS DENIED.
 __REVISIONS__ - ALLOWED
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/organic-jacy.md">< Organic jacy</a>
+    <a class="link" href="/Jacy-Dev-Book/particles/organic-jacy">< Organic jacy</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/soft-keywords.md">Soft keywords ></a>
+    <a class="link" href="/Jacy-Dev-Book/particles/soft-keywords">Soft keywords ></a>
 </button>
 
 </div>

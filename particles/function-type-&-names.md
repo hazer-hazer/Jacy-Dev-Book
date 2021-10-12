@@ -107,11 +107,11 @@ So, names have gone and cannot be used after.
 Anyway, parameter names in function types are allowed, but they just markers for user and do not affect real function type. That is to say, parameter names in types are used for documentation purposes.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/custom-operators.md">< Custom operators</a>
+    <a class="link" href="/Jacy-Dev-Book/particles/custom-operators">< Custom operators</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/memory-leaks.md">Memory leaks ></a>
+    <a class="link" href="/Jacy-Dev-Book/particles/memory-leaks">Memory leaks ></a>
 </button>
 
 </div>

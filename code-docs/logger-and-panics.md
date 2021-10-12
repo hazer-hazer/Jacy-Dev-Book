@@ -80,7 +80,7 @@ These are methods that differ from log methods:
 * <span class="inline-code highlight-jc hljs">notImplemented</span> - TODO dev-panic.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/code-docs/interning.md">< Interning</a>
+    <a class="link" href="/Jacy-Dev-Book/code-docs/interning">< Interning</a>
 </button>
 
     

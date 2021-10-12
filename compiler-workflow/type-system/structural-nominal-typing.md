@@ -82,7 +82,7 @@ tokens as named-tuple (<span class="inline-code highlight-jc hljs">a</span> case
 >   <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">struct</span></span>)
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/type-system/index.md">< Type System</a>
+    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/type-system/index">< Type System</a>
 </button>
 
     

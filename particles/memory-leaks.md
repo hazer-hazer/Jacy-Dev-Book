@@ -24,11 +24,11 @@ Actually, FFI kind of "requires" memory leaks as if memory is fully managed by t
 I want to disassemble an idea of first-class ARC. The reason to have ARC as first-class entity is an ability to statically check wherever a problem like cyclic references occur and may cause a memory leak.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/function-type-&-names.md">< Function type & names</a>
+    <a class="link" href="/Jacy-Dev-Book/particles/function-type-&-names">< Function type & names</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/not-prepedent-op.md">Not prepedent op ></a>
+    <a class="link" href="/Jacy-Dev-Book/particles/not-prepedent-op">Not prepedent op ></a>
 </button>
 
 </div>

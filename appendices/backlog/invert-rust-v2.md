@@ -102,11 +102,11 @@ But stop... Now we need to always write <span class="inline-code highlight-jc hl
 - We may be confused with <span class="inline-code highlight-jc hljs">own</span> and <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">move</span></span>, because <span class="inline-code highlight-jc hljs">own</span> is in-type annotation but <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">move</span></span> is in-expression annotation
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/appendices/backlog/index.md">< Backlog</a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/backlog/index">< Backlog</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/appendices/backlog/invert-rust.md">Invert rust ></a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/backlog/invert-rust">Invert rust ></a>
 </button>
 
 </div>

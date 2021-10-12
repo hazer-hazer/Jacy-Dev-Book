@@ -39,7 +39,7 @@ Of course, there is the borrowing concept that allows us not to copy or move the
 Affine types solve many problems while making code stricter and safe from occasional user mistakes.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/concept/the-idea.md">< The idea</a>
+    <a class="link" href="/Jacy-Dev-Book/concept/the-idea">< The idea</a>
 </button>
 
     

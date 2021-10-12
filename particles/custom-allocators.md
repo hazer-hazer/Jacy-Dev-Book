@@ -10,11 +10,11 @@ parent: 'Particles'
 # Custom Allocators
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/computed-properties.md">< Computed properties</a>
+    <a class="link" href="/Jacy-Dev-Book/particles/computed-properties">< Computed properties</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/custom-operators.md">Custom operators ></a>
+    <a class="link" href="/Jacy-Dev-Book/particles/custom-operators">Custom operators ></a>
 </button>
 
 </div>

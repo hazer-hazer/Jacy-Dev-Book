@@ -13,7 +13,7 @@ This chapter is all about name resolution, module system, and imports (<span cla
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/importation-&-module-system.md">Imports & Module System ></a>
+    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/importation-&-module-system">Imports & Module System ></a>
 </button>
 
 </div>

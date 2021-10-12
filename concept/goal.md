@@ -120,11 +120,11 @@ Jacy doesn't have Garbage Collector, as far as it is statically sets <span class
         </div>
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/concept/index.md">< Concept</a>
+    <a class="link" href="/Jacy-Dev-Book/concept/index">< Concept</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/concept/the-idea.md">The idea ></a>
+    <a class="link" href="/Jacy-Dev-Book/concept/the-idea">The idea ></a>
 </button>
 
 </div>
