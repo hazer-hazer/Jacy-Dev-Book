@@ -11,7 +11,7 @@ has_children: true
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/ideas/extended-tools/attributes">Attributes ></a>
+    <a class="link" href="/dev-book/ideas/extended-tools/attributes">Attributes ></a>
 </button>
 
 </div>

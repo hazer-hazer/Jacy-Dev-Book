@@ -106,11 +106,11 @@ Precedence (from highest to lowest)
 | <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">return</span> a</span> &nbsp; <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">break</span> a</span> &nbsp; <span class="inline-code highlight-jc hljs">() <span class="hljs-operator">-&gt;</span> {}</span> |
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/appendices/jon-files">< JON Files</a>
+    <a class="link" href="/dev-book/appendices/jon-files">< JON Files</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/appendices/spec">Specification [WIP] ></a>
+    <a class="link" href="/dev-book/appendices/spec">Specification [WIP] ></a>
 </button>
 
 </div>

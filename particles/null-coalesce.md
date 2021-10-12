@@ -49,11 +49,11 @@ What this operator should return if both of <span class="inline-code highlight-j
 Return <span class="inline-code highlight-jc hljs">(a!, b!): (T, U)</span>, that is a tuple where first and second elements are unwrapped <span class="inline-code highlight-jc hljs">a</span> and <span class="inline-code highlight-jc hljs">b</span> respectively.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/not-prepedent-op">< Not prepedent op</a>
+    <a class="link" href="/dev-book/particles/not-prepedent-op">< Not prepedent op</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/organic-jacy">Organic jacy ></a>
+    <a class="link" href="/dev-book/particles/organic-jacy">Organic jacy ></a>
 </button>
 
 </div>

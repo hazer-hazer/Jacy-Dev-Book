@@ -58,7 +58,7 @@ constraints.
 ### Returning types
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/ideas/named-arg-alias">< Named arg alias</a>
+    <a class="link" href="/dev-book/ideas/named-arg-alias">< Named arg alias</a>
 </button>
 
     

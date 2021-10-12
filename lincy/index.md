@@ -14,7 +14,7 @@ It will be a separate project but hardly tied to _Jacy_ internals.
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/lincy/meaningful-names">Meaningful names ></a>
+    <a class="link" href="/dev-book/lincy/meaningful-names">Meaningful names ></a>
 </button>
 
 </div>

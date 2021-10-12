@@ -125,11 +125,11 @@ There's a bunch of allowed bool values:
 _This values are case insensitive, so you are able to write <span class="inline-code highlight-jc hljs">Y</span> or <span class="inline-code highlight-jc hljs">tRue</span> or <span class="inline-code highlight-jc hljs">False</span>, etc._.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/concept">< Concept</a>
+    <a class="link" href="/dev-book/concept">< Concept</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/ideas">Ideas ></a>
+    <a class="link" href="/dev-book/ideas">Ideas ></a>
 </button>
 
 </div>

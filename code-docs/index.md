@@ -18,7 +18,7 @@ that _Jacy_ is very WIP so some things change often and this documentation would
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/code-docs/config-and-cli">Config and cli ></a>
+    <a class="link" href="/dev-book/code-docs/config-and-cli">Config and cli ></a>
 </button>
 
 </div>

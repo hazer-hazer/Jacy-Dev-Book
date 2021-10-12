@@ -104,7 +104,7 @@ Borrowed references obey Rust borrow checker rules:
 - There can only exist one mutable or any count of immutable borrows
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/appendices/spec">< Specification [WIP]</a>
+    <a class="link" href="/dev-book/appendices/spec">< Specification [WIP]</a>
 </button>
 
     

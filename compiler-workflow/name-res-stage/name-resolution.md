@@ -282,7 +282,7 @@ The logic of collecting names is following:
 This kind of <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span></span> is called "specific", what it does is importing multiple paths relatively to prefix one, i.e. in <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">use</span> path::to::something::{...}</span> all imports inside <span class="inline-code highlight-jc hljs">{}</span> are resolved relatively to <span class="inline-code highlight-jc hljs">path::to::something</span>. That's it, nothing complex, we just descend into the module <span class="inline-code highlight-jc hljs">path::to::something</span> and then resolve each import inside <span class="inline-code highlight-jc hljs">{}</span> starting the search from <span class="inline-code highlight-jc hljs">path::to::something</span>.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/module-tree-building">< Module Tree Building</a>
+    <a class="link" href="/dev-book/compiler-workflow/name-res-stage/module-tree-building">< Module Tree Building</a>
 </button>
 
     

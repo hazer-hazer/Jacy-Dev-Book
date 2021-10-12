@@ -99,11 +99,11 @@ is specific? Here's the table of common cases:
 <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">mod</span></span> MUST BE named in __snake_case__: <span class="inline-code highlight-jc hljs">std</span>, <span class="inline-code highlight-jc hljs">my_lib</span>, <span class="inline-code highlight-jc hljs">some_module</span>
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/ideas/alg-effects">< Alg effects</a>
+    <a class="link" href="/dev-book/ideas/alg-effects">< Alg effects</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/ideas/extended-tools">Extensions & External tools ></a>
+    <a class="link" href="/dev-book/ideas/extended-tools">Extensions & External tools ></a>
 </button>
 
 </div>

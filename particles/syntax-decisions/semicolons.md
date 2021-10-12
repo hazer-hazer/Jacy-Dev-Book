@@ -29,11 +29,11 @@ Resources:
 * [Semicolon Inference](https://pling.jondgoodwin.com/post/semicolon-inference/)
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/range-operators">< Range operators</a>
+    <a class="link" href="/dev-book/particles/syntax-decisions/range-operators">< Range operators</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/variables">Variables ></a>
+    <a class="link" href="/dev-book/particles/syntax-decisions/variables">Variables ></a>
 </button>
 
 </div>

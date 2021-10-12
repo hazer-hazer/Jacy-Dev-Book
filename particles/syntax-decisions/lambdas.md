@@ -85,11 +85,11 @@ Also, this syntax allows simplifications:
 - We can allow <span class="inline-code highlight-jc hljs">IDENT <span class="hljs-operator">-&gt;</span> expr</span> as a shortcut for <span class="inline-code highlight-jc hljs"><span class="hljs-title function_ invoke__">BorrowPattern</span>(IDENT) <span class="hljs-operator">-&gt;</span> expr</span>
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/control-flow-structures">< Control flow structures</a>
+    <a class="link" href="/dev-book/particles/syntax-decisions/control-flow-structures">< Control flow structures</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/range-operators">Range operators ></a>
+    <a class="link" href="/dev-book/particles/syntax-decisions/range-operators">Range operators ></a>
 </button>
 
 </div>

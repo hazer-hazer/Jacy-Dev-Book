@@ -36,11 +36,11 @@ Anyway, Swift gift me an solution -- no character literals 😐.  Btw, Swift doe
 To infer that user assumed to use character instead of string we need to know types at first, thus, creating character becomes something run-time dependent 🤔.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/std-annotations">< Std annotations</a>
+    <a class="link" href="/dev-book/particles/std-annotations">< Std annotations</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions">Syntax Decisions ></a>
+    <a class="link" href="/dev-book/particles/syntax-decisions">Syntax Decisions ></a>
 </button>
 
 </div>

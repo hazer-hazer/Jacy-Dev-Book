@@ -13,7 +13,7 @@ Various of sundries, useful and not really 😺
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/appendices/attributes">Attributes ></a>
+    <a class="link" href="/dev-book/appendices/attributes">Attributes ></a>
 </button>
 
 </div>

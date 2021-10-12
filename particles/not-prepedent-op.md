@@ -24,11 +24,11 @@ So, it would look like this:
 I'm not sure, but think that there won't be any troubles with precedence, as expressions are already parsed, and then transformed.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/memory-leaks">< Memory leaks</a>
+    <a class="link" href="/dev-book/particles/memory-leaks">< Memory leaks</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/null-coalesce">Null coalesce ></a>
+    <a class="link" href="/dev-book/particles/null-coalesce">Null coalesce ></a>
 </button>
 
 </div>

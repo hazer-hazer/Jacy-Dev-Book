@@ -38,7 +38,7 @@ And then, if I want to see logs for {ANOTHER_STAGE} stage, I would pass <span cl
 - <span class="inline-code highlight-jc hljs">--dev-full</span> - boolean - Enable all <span class="inline-code highlight-jc hljs">dev</span> options for all stages.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/cli/index">< CLI</a>
+    <a class="link" href="/dev-book/cli/index">< CLI</a>
 </button>
 
     

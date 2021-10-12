@@ -18,11 +18,11 @@ The reasons why overloading is not allowed are:
 3. It complicates the logic for devs as for target users.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/index">< Particles</a>
+    <a class="link" href="/dev-book/particles/index">< Particles</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/computed-properties">Computed properties ></a>
+    <a class="link" href="/dev-book/particles/computed-properties">Computed properties ></a>
 </button>
 
 </div>

@@ -26,11 +26,11 @@ Each suggestion must have a base, i.e. the main message and span (currently requ
 Each suggestion can have any count of children.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/suggestions/index">< Suggestions</a>
+    <a class="link" href="/dev-book/suggestions/index">< Suggestions</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/suggestions/syntax-highlighting">Syntax highlighting ></a>
+    <a class="link" href="/dev-book/suggestions/syntax-highlighting">Syntax highlighting ></a>
 </button>
 
 </div>

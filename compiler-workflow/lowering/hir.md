@@ -27,11 +27,11 @@ By doing so, we reduce a large amount of AST nodes to some more common structure
 More on lowering in the next chapter...
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/lowering/index">< Lowering & HIR</a>
+    <a class="link" href="/dev-book/compiler-workflow/lowering/index">< Lowering & HIR</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/lowering/lowering">Lowering ></a>
+    <a class="link" href="/dev-book/compiler-workflow/lowering/lowering">Lowering ></a>
 </button>
 
 </div>

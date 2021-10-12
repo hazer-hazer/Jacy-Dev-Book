@@ -19,11 +19,11 @@ parent: 'Ideas'
         </div>
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/ideas/extended-tools">< Extensions & External tools</a>
+    <a class="link" href="/dev-book/ideas/extended-tools">< Extensions & External tools</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/ideas/types-as-first-class-citizens">Types as first class citizens ></a>
+    <a class="link" href="/dev-book/ideas/types-as-first-class-citizens">Types as first class citizens ></a>
 </button>
 
 </div>

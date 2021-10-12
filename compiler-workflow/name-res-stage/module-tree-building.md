@@ -49,11 +49,11 @@ process it as a relative path, e.g. if we are inside <span class="inline-code hi
 with <span class="inline-code highlight-jc hljs">::</span> prefix, in this case, we'll resolve it starting from the root module but not from the current.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/importation-&-module-system">< Imports & Module System</a>
+    <a class="link" href="/dev-book/compiler-workflow/name-res-stage/importation-&-module-system">< Imports & Module System</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/name-resolution">Name Resolution ></a>
+    <a class="link" href="/dev-book/compiler-workflow/name-res-stage/name-resolution">Name Resolution ></a>
 </button>
 
 </div>

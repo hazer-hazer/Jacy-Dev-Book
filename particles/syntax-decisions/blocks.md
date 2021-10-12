@@ -93,11 +93,11 @@ be a warning if you're writing code like that.
 > Don't confuse block-ignorance with trait method signatures, in case of traits it is not ignorance.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/index">< Syntax Decisions</a>
+    <a class="link" href="/dev-book/particles/syntax-decisions/index">< Syntax Decisions</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/control-flow-structures">Control flow structures ></a>
+    <a class="link" href="/dev-book/particles/syntax-decisions/control-flow-structures">Control flow structures ></a>
 </button>
 
 </div>

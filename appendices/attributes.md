@@ -12,11 +12,11 @@ parent: 'Appendices'
 In \*Jacy\* attributes are
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/appendices/index">< Appendices</a>
+    <a class="link" href="/dev-book/appendices/index">< Appendices</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/appendices/backlog">Backlog ></a>
+    <a class="link" href="/dev-book/appendices/backlog">Backlog ></a>
 </button>
 
 </div>

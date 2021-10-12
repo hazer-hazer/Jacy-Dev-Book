@@ -230,11 +230,11 @@ The 1. solution sounds better for me as I assumed to implement function overload
 If one day I'll 100% establish that _Jacy_ would never have function overloading -- 2. variant will be used.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/custom-allocators">< Custom allocators</a>
+    <a class="link" href="/dev-book/particles/custom-allocators">< Custom allocators</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/function-type-&-names">Function type & names ></a>
+    <a class="link" href="/dev-book/particles/function-type-&-names">Function type & names ></a>
 </button>
 
 </div>

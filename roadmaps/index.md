@@ -11,7 +11,7 @@ has_children: true
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/roadmaps/v0.1.0">v0.1.0 [First alpha version] ></a>
+    <a class="link" href="/dev-book/roadmaps/v0.1.0">v0.1.0 [First alpha version] ></a>
 </button>
 
 </div>

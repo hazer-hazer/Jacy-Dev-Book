@@ -57,7 +57,7 @@ everything inside it will be inlined, you still can declare <span class="inline-
 compiler will check function for constness and tell you if it's not.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/cte-expressions">< Cte expressions</a>
+    <a class="link" href="/dev-book/compile-time-evaluation/cte-expressions">< Cte expressions</a>
 </button>
 
     

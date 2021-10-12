@@ -42,11 +42,11 @@ It is important to note that all default values for options inside <span class="
 <span class="inline-code highlight-jc hljs">PrintKind printKind{PrintKind::<span class="hljs-literal">None</span>}</span>.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/code-docs/index">< Code docs</a>
+    <a class="link" href="/dev-book/code-docs/index">< Code docs</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/code-docs/dev-conventions">Dev conventions ></a>
+    <a class="link" href="/dev-book/code-docs/dev-conventions">Dev conventions ></a>
 </button>
 
 </div>

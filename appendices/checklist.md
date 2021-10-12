@@ -116,11 +116,11 @@ In conclusion, this is what I think of you:
         </div>
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/appendices/cheatsheets">< Appendices</a>
+    <a class="link" href="/dev-book/appendices/cheatsheets">< Appendices</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/appendices/jon-files">JON Files ></a>
+    <a class="link" href="/dev-book/appendices/jon-files">JON Files ></a>
 </button>
 
 </div>
