@@ -34,7 +34,7 @@ module.exports = src => {
     // let highlighted = src
     let highlighted = src.replace(/```jc\n((?:(?!```)[\s\S])+)```/g, (match, code) => {
         return `
-        <div class="code-fence">
+        <div class="code-fence highlight-jacy">
             ${COPY_EL}
             <div class="code line-numbers highlight-jc hljs">
                 ${addLineNumbers(hljs.highlight(code, {language: 'jc'}).value)}
