@@ -89,7 +89,7 @@ Also, this syntax allows simplifications:
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/appendices/syntax-decisions/semicolons.html">Semicolons ></a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/syntax-decisions/range-operators.html">Range operators ></a>
 </button>
 
 </div>

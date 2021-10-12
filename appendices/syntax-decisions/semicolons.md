@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Semicolons'
-nav_order: 103
+nav_order: 104
 parent: 'Syntax Decisions'
 # No children
 grand_parent: 'Appendices'
@@ -29,7 +29,7 @@ Resources:
 * [Semicolon Inference](https://pling.jondgoodwin.com/post/semicolon-inference/)
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/appendices/syntax-decisions/lambdas.html">< Lambdas</a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/syntax-decisions/range-operators.html">< Range operators</a>
 </button>
 
     <button class="nav-btn right">
