@@ -92,7 +92,7 @@ code {
 
 .search-result {
     background: #fff;
-    transition: .25s ease;
+    transition: .25s ease !important;
 
     &:hover {
         background: #fafafa;
