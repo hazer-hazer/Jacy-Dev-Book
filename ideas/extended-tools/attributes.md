@@ -25,7 +25,7 @@ The power of attributes is that they are:
 As far as attributes are namespaced we can build a huge "official" ecosystem for _Jacy_ with no loss for user to build his/her own.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/ideas/extended-tools/index.html">< Extensions & External tools</a>
+    <a class="link" href="/Jacy-Dev-Book/ideas/extended-tools/index.md">< Extensions & External tools</a>
 </button>
 
     

@@ -29,7 +29,7 @@ pattern, just only an identifier, so we also lose the ability of destructuring. 
 with <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span></span> and <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">let</span> <span class="hljs-variable">mut</span></span>.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/semicolons.html">< Semicolons</a>
+    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/semicolons.md">< Semicolons</a>
 </button>
 
     

@@ -14,11 +14,11 @@ rule MUST be followed, "SHOULD" means that in most cases it is better to choose 
 means that there's a preferred way to do something but it is either optional either often requires another approach.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/code-docs/config-and-cli.html">< Config and cli</a>
+    <a class="link" href="/Jacy-Dev-Book/code-docs/config-and-cli.md">< Config and cli</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/code-docs/interface.html">Interface ></a>
+    <a class="link" href="/Jacy-Dev-Book/code-docs/interface.md">Interface ></a>
 </button>
 
 </div>

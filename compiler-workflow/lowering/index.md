@@ -13,7 +13,7 @@ In this chapter, we're going to look at the lowering stage, where AST is lowered
 <div class="nav-btn-block">
     
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/lowering/hir.html">Hir ></a>
+    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/lowering/hir.md">Hir ></a>
 </button>
 
 </div>

@@ -22,11 +22,11 @@ This exclusions leave us with two options <span class="inline-code highlight-jc 
 That's all.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/lambdas.html">< Lambdas</a>
+    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/lambdas.md">< Lambdas</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/semicolons.html">Semicolons ></a>
+    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/semicolons.md">Semicolons ></a>
 </button>
 
 </div>

@@ -31,7 +31,7 @@ Rust has: function pointer types, <span class="inline-code highlight-jc hljs">Fn
 The answer is in what function pointer is -- it is pointer to function item, i.e.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/appendices/spec/index.html">< Specification [WIP]</a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/spec/index.md">< Specification [WIP]</a>
 </button>
 
     

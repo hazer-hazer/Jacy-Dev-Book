@@ -35,11 +35,11 @@ The difference between <span class="inline-code highlight-jc hljs"><span class="
         </div>
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/index.html">< Compile time evaluation</a>
+    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/index.md">< Compile time evaluation</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/cte-contexts.html">Cte contexts ></a>
+    <a class="link" href="/Jacy-Dev-Book/compile-time-evaluation/cte-contexts.md">Cte contexts ></a>
 </button>
 
 </div>

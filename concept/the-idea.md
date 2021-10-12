@@ -41,11 +41,11 @@ Also, I want to describe some kind of Zen, I need a list of common values that _
 5. If we can help a user with avoiding mistakes -- we help him.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/concept/goal.html">< Goal</a>
+    <a class="link" href="/Jacy-Dev-Book/concept/goal.md">< Goal</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/concept/why-affine-types.html">Why affine types ></a>
+    <a class="link" href="/Jacy-Dev-Book/concept/why-affine-types.md">Why affine types ></a>
 </button>
 
 </div>

@@ -23,7 +23,7 @@ parent: 'Ideas'
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/ideas/types-as-first-class-citizens.html">Types as first class citizens ></a>
+    <a class="link" href="/Jacy-Dev-Book/ideas/types-as-first-class-citizens.md">Types as first class citizens ></a>
 </button>
 
 </div>

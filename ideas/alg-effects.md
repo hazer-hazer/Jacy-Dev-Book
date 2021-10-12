@@ -48,11 +48,11 @@ The keyword <span class="inline-code highlight-jc hljs">perform</span> is simila
         </div>
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/ideas/index.html">< Ideas</a>
+    <a class="link" href="/Jacy-Dev-Book/ideas/index.md">< Ideas</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/ideas/code-style-conventions.html">Code style conventions ></a>
+    <a class="link" href="/Jacy-Dev-Book/ideas/code-style-conventions.md">Code style conventions ></a>
 </button>
 
 </div>

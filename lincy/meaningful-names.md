@@ -19,7 +19,7 @@ Examples:
         </div>
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/lincy/index.html">< Lincy [Linter]</a>
+    <a class="link" href="/Jacy-Dev-Book/lincy/index.md">< Lincy [Linter]</a>
 </button>
 
     

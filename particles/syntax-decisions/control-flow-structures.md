@@ -154,11 +154,11 @@ for (const auto & x : vec) {
         </div>
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/blocks.html">< Blocks</a>
+    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/blocks.md">< Blocks</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/lambdas.html">Lambdas ></a>
+    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions/lambdas.md">Lambdas ></a>
 </button>
 
 </div>

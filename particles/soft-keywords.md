@@ -35,11 +35,11 @@ Same as function item but without <span class="inline-code highlight-jc hljs"><s
 - Requires context-dependent parsing, as we need to check for <span class="inline-code highlight-jc hljs">init</span> appearance only inside <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">struct</span></span> (maybe <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">trait</span></span>) but not in <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">func</span></span> (expression context)
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/particles/refs-&-moves.html">< Refs & moves</a>
+    <a class="link" href="/Jacy-Dev-Book/particles/refs-&-moves.md">< Refs & moves</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/particles/std-annotations.html">Std annotations ></a>
+    <a class="link" href="/Jacy-Dev-Book/particles/std-annotations.md">Std annotations ></a>
 </button>
 
 </div>

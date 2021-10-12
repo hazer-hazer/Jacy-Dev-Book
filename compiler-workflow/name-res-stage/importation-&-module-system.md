@@ -131,11 +131,11 @@ So, let's establish how overloads importation works:
 - Each FOS is unique per module, never redefine the same FOS in different modules
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/index.html">< Names & Imports</a>
+    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/index.md">< Names & Imports</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/module-tree-building.html">Module Tree Building ></a>
+    <a class="link" href="/Jacy-Dev-Book/compiler-workflow/name-res-stage/module-tree-building.md">Module Tree Building ></a>
 </button>
 
 </div>

@@ -16,11 +16,11 @@ but not in stage classes, it's kinda bad but...
 compiler state, etc.
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/code-docs/dev-conventions.html">< Dev conventions</a>
+    <a class="link" href="/Jacy-Dev-Book/code-docs/dev-conventions.md">< Dev conventions</a>
 </button>
 
     <button class="nav-btn right">
-    <a class="link" href="/Jacy-Dev-Book/code-docs/interning.html">Interning ></a>
+    <a class="link" href="/Jacy-Dev-Book/code-docs/interning.md">Interning ></a>
 </button>
 
 </div>
