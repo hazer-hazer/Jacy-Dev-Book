@@ -40,7 +40,7 @@ The keywords I think pretty to use for ae:
 
 The keyword <span class="inline-code highlight-jc hljs">perform</span> is similar to <span class="inline-code highlight-jc hljs"><span class="hljs-keyword">break</span></span> expression with a value (optional too, though).
 
-<div class="code-fence">
+<div class="code-fence highlight-jacy">
             <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// Let&#x27;s imagine we are somewhere in a function</span></div><div class="line-num" data-line-num="2">2</div><div class="line">{</div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-keyword">if</span> something {</div><div class="line-num" data-line-num="4">4</div><div class="line">        perform effect1.</div><div class="line-num" data-line-num="5">5</div><div class="line">    }</div><div class="line-num" data-line-num="6">6</div><div class="line">}</div>

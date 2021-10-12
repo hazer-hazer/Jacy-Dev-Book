@@ -28,7 +28,7 @@ could collide with other names but we don't want this for reasons of possibility
 The one important thing we need to establish -- _Jacy_ allows local names shadowing! Why? Let's look at an example where
 it is practically convenient.
 
-<div class="code-fence">
+<div class="code-fence highlight-jacy">
             <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">strangeCheck</span>(param: <span class="hljs-type">i32</span>): <span class="hljs-type">i32</span>? = <span class="hljs-comment">// Note: <span class="inline-code highlight-jc hljs">T?</span> is a shortcut for <span class="inline-code highlight-jc hljs"><span class="hljs-type">Option</span>&amp;lt;T&amp;gt;</span></span></div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">if</span> param &lt;= <span class="hljs-number">10</span> {<span class="hljs-literal">None</span>} <span class="hljs-keyword">else</span> {<span class="hljs-title function_ invoke__">Some</span>(param)}</div><div class="line-num" data-line-num="3">3</div><div class="line"></div><div class="line-num" data-line-num="4">4</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="5">5</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = <span class="hljs-title function_ invoke__">strangeCheck</span>(<span class="hljs-number">10</span>);</div><div class="line-num" data-line-num="6">6</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = a.<span class="hljs-title function_ invoke__">unwrap</span>();</div><div class="line-num" data-line-num="7">7</div><div class="line">}</div>
@@ -38,7 +38,7 @@ it is practically convenient.
 The function <span class="inline-code highlight-jc hljs">strangeCheck</span> returns <span class="inline-code highlight-jc hljs"><span class="hljs-type">Option</span></span> and we want to do something with this result, in other languages we either
 don't need this (because of lack of so many wrappers like <span class="inline-code highlight-jc hljs"><span class="hljs-type">Option</span></span>, etc.) or we write code like that.
 
-<div class="code-fence">
+<div class="code-fence highlight-jacy">
             <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">maybeA</span> = <span class="hljs-title function_ invoke__">strangeCheck</span>(<span class="hljs-number">10</span>);</div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = maybeA.<span class="hljs-title function_ invoke__">unwrap</span>();</div>
@@ -52,7 +52,7 @@ One could argue that someone would write unclear code using this feature. This i
 these cases, and the rule not to get this warning is simple: "Only shadow variable with computations related to the
 shadowed variable", for example.
 
-<div class="code-fence">
+<div class="code-fence highlight-jacy">
             <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-comment">// This is a good case to use variable shadowing</span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span>: <span class="hljs-type">i32</span>? = <span class="hljs-literal">None</span>;</div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-keyword">let</span> <span class="hljs-variable">a</span> = a.<span class="hljs-title function_ invoke__">unwrap</span>();</div><div class="line-num" data-line-num="4">4</div><div class="line"></div><div class="line-num" data-line-num="5">5</div><div class="line"><span class="hljs-comment">// This one will produce a warning,</span></div><div class="line-num" data-line-num="6">6</div><div class="line"><span class="hljs-comment">//  because you just lost the previous value of <span class="inline-code highlight-jc hljs">param</span></span></div><div class="line-num" data-line-num="7">7</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>(param: <span class="hljs-type">i32</span>) {</div><div class="line-num" data-line-num="8">8</div><div class="line">    param = <span class="hljs-number">123</span>;</div><div class="line-num" data-line-num="9">9</div><div class="line">}</div>
@@ -66,7 +66,7 @@ far as when we're building the module tree we operating with strict scopes -- re
 
 Example.
 
-<div class="code-fence">
+<div class="code-fence highlight-jacy">
             <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">mod</span> <span class="hljs-title class_">a</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">nested</span>() {}</div><div class="line-num" data-line-num="3">3</div><div class="line">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">nested</span>() {} <span class="hljs-comment">// Here is an error produced at &quot;Module-tree Building&quot; stage</span></div><div class="line-num" data-line-num="4">4</div><div class="line">}</div>
@@ -118,7 +118,7 @@ At the module-tree-building stage, we define all items, each in the namespace it
 
 For example:
 
-<div class="code-fence">
+<div class="code-fence highlight-jacy">
             <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">foo</span> {}</div><div class="line-num" data-line-num="2">2</div><div class="line"></div><div class="line-num" data-line-num="3">3</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">foo</span>() {</div><div class="line-num" data-line-num="4">4</div><div class="line">    <span class="hljs-keyword">let</span> <span class="hljs-variable">f</span>: foo;</div><div class="line-num" data-line-num="5">5</div><div class="line">}</div>

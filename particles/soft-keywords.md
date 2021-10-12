@@ -20,7 +20,7 @@ For now, I'll leave all keywords hard, as syntax often changes, thus there would
 
 <span class="inline-code highlight-jc hljs">init</span> keyword is used for initializers (constructors), and syntax is following:
 
-<div class="code-fence">
+<div class="code-fence highlight-jacy">
             <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-title function_ invoke__">init</span>() {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-comment">// ...</span></div><div class="line-num" data-line-num="3">3</div><div class="line">}</div>

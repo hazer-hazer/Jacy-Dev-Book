@@ -131,7 +131,7 @@ Symbols considered punctuations: <span class="inline-code highlight-jc hljs">(</
 
 Let's begin with the cliché -- "Hello, world" in _Jacy_:
 
-<div class="code-fence">
+<div class="code-fence highlight-jacy">
             <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">main</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-title function_ invoke__">print</span>(<span class="hljs-string">&quot;Hello, world&quot;</span>);</div><div class="line-num" data-line-num="3">3</div><div class="line">}</div>
@@ -253,7 +253,7 @@ You can declare a function with <span class="inline-code highlight-jc hljs"><spa
 
 Let's disassemble a simple function:
 
-<div class="code-fence">
+<div class="code-fence highlight-jacy">
             <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">add</span>(a: <span class="hljs-type">int</span>, b: <span class="hljs-type">int</span>): <span class="hljs-type">int</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">return</span> a + b;</div><div class="line-num" data-line-num="3">3</div><div class="line">}</div>
@@ -272,7 +272,7 @@ _Jacy_ supports labeled arguments, it is a way to call a function without writin
 
 Let's call <span class="inline-code highlight-jc hljs">add</span> function from example above with named arguments:
 
-<div class="code-fence">
+<div class="code-fence highlight-jacy">
             <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-title function_ invoke__">add</span>(a: <span class="hljs-number">6</span>, b: <span class="hljs-number">13</span>); <span class="hljs-comment">// 19</span></div><div class="line-num" data-line-num="2">2</div><div class="line"><span class="hljs-title function_ invoke__">add</span>(b: <span class="hljs-number">13</span>, a: <span class="hljs-number">6</span>); <span class="hljs-comment">// 19. Order does not matter</span></div>
@@ -285,7 +285,7 @@ _Jacy_ does not support type function overloading, but you can overload function
 
 Example:
 
-<div class="code-fence">
+<div class="code-fence highlight-jacy">
             <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">add</span>(intA: <span class="hljs-type">int</span>, intB: <span class="hljs-type">int</span>): <span class="hljs-type">int</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">return</span> intA + intB;</div><div class="line-num" data-line-num="3">3</div><div class="line">}</div><div class="line-num" data-line-num="4">4</div><div class="line"></div><div class="line-num" data-line-num="5">5</div><div class="line"><span class="hljs-keyword">func</span> <span class="hljs-title function_">add</span>(floatA: <span class="hljs-type">f64</span>, floatB: <span class="hljs-type">f64</span>): <span class="hljs-type">f64</span> {</div><div class="line-num" data-line-num="6">6</div><div class="line">    <span class="hljs-keyword">return</span> floatA + floatB;</div><div class="line-num" data-line-num="7">7</div><div class="line">}</div>
@@ -296,7 +296,7 @@ Example:
 
 Structures in _Jacy_ are declared the same way as in Rust:
 
-<div class="code-fence">
+<div class="code-fence highlight-jacy">
             <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">struct</span> <span class="hljs-title class_">MyStruct</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    field: <span class="hljs-type">i32</span>,</div><div class="line-num" data-line-num="3">3</div><div class="line">}</div>
@@ -307,7 +307,7 @@ Structures in _Jacy_ are declared the same way as in Rust:
 
 Traits are also similar to Rust:
 
-<div class="code-fence">
+<div class="code-fence highlight-jacy">
             <div class="copy"><i class="far fa-copy"></i></div>
             <div class="code line-numbers highlight-jc hljs">
                 <div class="line-num" data-line-num="1">1</div><div class="line"><span class="hljs-keyword">trait</span> <span class="hljs-title class_">DoesSmth</span> {</div><div class="line-num" data-line-num="2">2</div><div class="line">    <span class="hljs-keyword">func</span> <span class="hljs-title function_">doSmth</span>();</div><div class="line-num" data-line-num="3">3</div><div class="line">}</div>
