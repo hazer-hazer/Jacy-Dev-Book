@@ -39,5 +39,8 @@ To infer that user assumed to use character instead of string we need to know ty
     <a class="link" href="/Jacy-Dev-Book/particles/std-annotations.html">< Std annotations</a>
 </button>
 
-    
+    <button class="nav-btn right">
+    <a class="link" href="/Jacy-Dev-Book/particles/syntax-decisions">Syntax Decisions ></a>
+</button>
+
 </div>

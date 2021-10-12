@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Taxonomy & glossary'
-nav_order: 108
+nav_order: 107
 parent: 'Appendices'
 # No children
 # No grandparent
@@ -104,7 +104,7 @@ Borrowed references obey Rust borrow checker rules:
 - There can only exist one mutable or any count of immutable borrows
 <div class="nav-btn-block">
     <button class="nav-btn left">
-    <a class="link" href="/Jacy-Dev-Book/appendices/syntax-decisions">< Syntax Decisions</a>
+    <a class="link" href="/Jacy-Dev-Book/appendices/spec">< Specification [WIP]</a>
 </button>
 
     
