@@ -373,6 +373,8 @@ div.side-bar {
 // Highlighted Jacy code //
 .code-fence {
     display: block;
+    height: max-content;
+    min-height: 35px;
     position: relative;
     padding: 5px 0;
     margin: 5px auto;
@@ -390,7 +392,7 @@ div.side-bar {
         font-size: 0.9rem;
         line-height: 20px;
         vertical-align: middle;
-        padding: 5px 10px;
+        padding: 7.5px 10px;
         z-index: 5;
         box-shadow: 0 2px 5px -1px #f0f0f0;
         background: #fff;
