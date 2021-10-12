@@ -89,8 +89,13 @@ code {
     font-family: monospace !important;
 }
 
-.search-result:hover {
-    background: lighten(#f03e3e, 3%);
+.search-result {
+    background: #fff;
+    transition: .25s ease;
+
+    &:hover {
+        background: #f0f0f0;
+    }
 }
 
 pre.lineno {
