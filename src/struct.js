@@ -1,5 +1,6 @@
 module.exports = {
     title: 'Jacy DevBook',
+    order: 1,
     children: {
         intro: {
             order: 2,
