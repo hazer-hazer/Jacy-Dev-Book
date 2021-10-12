@@ -96,7 +96,8 @@ code {
 
     &:hover {
         background: #fafafa;
-        box-shadow: 0 2px 4px -1px #f0f0f0;
+        box-shadow: 0 3px 5px -1px #ddd;
+        z-index: 10;
     }
 }
 
