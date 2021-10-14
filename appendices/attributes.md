@@ -8,8 +8,6 @@ parent: 'Appendices'
 ---
 
 # Attributes
-
-In \*Jacy\* attributes are
 <div class="nav-btn-block">
     <button class="nav-btn left">
     <a class="link" href="/dev-book/appendices/index">< Appendices</a>

@@ -3,7 +3,7 @@ layout: 'default'
 title: 'User Guide'
 nav_order: 45
 # No parent
-# No children
+has_children: true
 # No grandparent
 ---
 
@@ -315,5 +315,8 @@ Traits are also similar to Rust:
         </div>
 <div class="nav-btn-block">
     
-    
+    <button class="nav-btn right">
+    <a class="link" href="/dev-book/user-guide/why">Why ></a>
+</button>
+
 </div>
