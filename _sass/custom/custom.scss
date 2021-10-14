@@ -322,6 +322,9 @@ div.side-bar {
 }
 
 .fold-block {
+    display: block;
+    position: relative;
+
     label {
         display: inline-block;
     }
@@ -354,14 +357,16 @@ div.side-bar {
         }
 
         &::after {
+            display: block;
             content: "click to toggle";
             position: absolute;
             width: max-content;
             height: 30px;
+            line-height: 30px;
             top: 0; bottom: 0;
             right: 5px;
             padding: 5px 10px;
-            font-size: 20px;
+            font-size: 0.6rem;
             opacity: 0.5;
             background: transparent;
         }
