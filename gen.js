@@ -117,26 +117,26 @@ class Generator {
 
         const children = []
 
-        if (!isRootDir) {
-            const childrenCount = entities.filter(en => path.basename(en, '.md') !== INDEX_FILENAME).length
+        // if (!isRootDir) {
+        const childrenCount = entities.filter(en => path.basename(en, '.md') !== INDEX_FILENAME).length
 
-            const indexSettings = {
-                title,
-                parentTitle,
-                grandParentTitle,
-                isIndex: true,
-                navOrder,
-                hasChildren: childrenCount > 0,
-            }
-
-            const indexFileI = entities.indexOf('index.md')
-            const indexFile = entities[indexFileI]
-            if (indexFile) {
-                children.push(await this._processFile(path.join(dirPath, indexFile), struct, indexSettings))
-            }
-
-            entities.splice(indexFileI, 1)
+        const indexSettings = {
+            title,
+            parentTitle,
+            grandParentTitle,
+            isIndex: true,
+            navOrder,
+            hasChildren: !isRootDir && childrenCount > 0,
         }
+
+        const indexFileI = entities.indexOf('index.md')
+        const indexFile = entities[indexFileI]
+        if (indexFile) {
+            children.push(await this._processFile(path.join(dirPath, indexFile), struct, indexSettings))
+        }
+
+        entities.splice(indexFileI, 1)
+        // }
 
         const commonChildSettings = {
             parentTitle: title,
