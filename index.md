@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Jacy DevBook'
-nav_order: 108
+nav_order: 1
 # No parent
 # No children
 # No grandparent
@@ -21,12 +21,9 @@ That's not the real documentation especially a tutorial, just some thoughts abou
 will explain why I've chosen certain solutions and not how to work with them. Some thoughts may seem simple and
 meticulous, but I want to cover even the simplest aspects of PL.
 <div class="nav-btn-block">
-    <button class="nav-btn left">
-    <a class="link" href="/dev-book/ideas">< Ideas</a>
-</button>
-
+    
     <button class="nav-btn right">
-    <a class="link" href="/dev-book/lincy">Lincy [Linter] ></a>
+    <a class="link" href="/dev-book/appendices">Appendices ></a>
 </button>
 
 </div>

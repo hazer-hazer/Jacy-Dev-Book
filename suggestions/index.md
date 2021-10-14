@@ -1,7 +1,7 @@
 ---
 layout: 'default'
 title: 'Suggestions'
-nav_order: 112
+nav_order: 111
 # No parent
 has_children: true
 # No grandparent
