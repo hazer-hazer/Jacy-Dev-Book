@@ -61,7 +61,7 @@ const tmpl = {
         if (src.startsWith('---')) {
             src = src.slice(src.indexOf('---', 3) + 3).trim()
         }
-        
+
         src = highlight(src)
 
         src = addCustomElements(src)

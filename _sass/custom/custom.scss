@@ -31,6 +31,7 @@ body {
 .site-nav,
 div.table-wrapper,
 .search-results,
+.code-fence,
 body {
     &::-webkit-scrollbar {
         width: 7px;
@@ -414,7 +415,8 @@ div.side-bar {
     margin: 5px auto;
     box-shadow: 0 2px 5px -1px #ddd;
     border-radius: 5px;
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: auto;
 
     &:not(.highlight-jacy) {
         padding: 5px;
