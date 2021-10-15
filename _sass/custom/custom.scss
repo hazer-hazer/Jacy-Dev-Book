@@ -408,15 +408,17 @@ div.side-bar {
 // Highlighted Jacy code //
 .code-fence {
     display: block;
+    position: relative;
+    width: 100%;
     height: max-content;
     min-height: 35px;
-    position: relative;
     padding: 5px 0;
     margin: 5px auto;
     box-shadow: 0 2px 5px -1px #ddd;
     border-radius: 5px;
     overflow-y: hidden;
     overflow-x: auto;
+    box-sizing: border-box;
 
     &:not(.highlight-jacy) {
         padding: 5px;
